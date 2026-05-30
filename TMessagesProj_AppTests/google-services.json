@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811900975748",
+    "project_id": "tajgram-4c73f",
+    "storage_bucket": "tajgram-4c73f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811900975748:android:db0b579604e729ec9e20d1",
+        "android_client_info": {
+          "package_name": "org.tajgram.messenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrpbBz6Tix4WAygcIjIsfpovKDnofIWl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
