@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="WelcomeBellTitle">Ба барномаи Tajgram хуш омадед!</string>
+    <string name="WelcomeBellDesc">Аз интихоби шумо ниҳоят миннатдорем. Барои бо мо буданатон хушхолем!</string>
+    <string name="WelcomeChannelSuggest">Лутфан, ба канали расмии Tajgram ворид шавед.</string>
     <string name="SmsJobsMenu">SMS Statistics</string>
 
     <string name="SmsJobsPremiumHintTitle">Premium Subscription **for free**</string>

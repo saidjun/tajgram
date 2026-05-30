@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="WelcomeBellTitle">Добро пожаловать в Tajgram!</string>
+    <string name="WelcomeBellDesc">Искренне благодарим за ваш выбор. Мы очень рады, что вы с нами!</string>
+    <string name="WelcomeChannelSuggest">Пожалуйста, подпишитесь на официальный канал Tajgram.</string>
     <string name="AppName">Tajgram</string>
     <string name="AppNameBeta">Tajgram Beta</string>
     <string name="LanguageName">Русский</string>
