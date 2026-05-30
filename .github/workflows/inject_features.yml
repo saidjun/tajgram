@@ -21,7 +21,7 @@ jobs:
           git clean -fd
           # Таъмири якҷоя ва 100%-и тамоми хатогиҳои системавии Грэдл
           find . -type f -name "build.gradle" -exec sed -i 's/APP_VERSION_NAME/\"10.5.0\"/g' {} +
-          find . -type f -name "build.gradle" -exec sed -i 's/APP_VERSION_CODE/\"10500\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i 's/10500/\"10500\"/g' {} +
           find . -type f -name "build.gradle" -exec sed -i 's/APP_PACKAGE/\"org.tajgram.messenger\"/g' {} +
           find . -type f -name "build.gradle" -exec sed -i '/android {/a \    buildFeatures { buildConfig true }\n    signingConfigs { debug { storePassword "android"\n keyPassword "android"\n keyAlias "AndroidDebugKey" } }\n    buildTypes { release { signingConfig signingConfigs.debug } }' {} +
           # Таъмири якҷояи калидҳои амниятии имзоӣ
