@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -259,7 +259,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
         if (!checkPasscode(intent, isNew, restore, fromPassword, intentAccount, state)) {
             return false;
         }
-        if ("org.telegram.passport.AUTHORIZE".equals(intent.getAction())) {
+        if ("org.tajgram.passport.AUTHORIZE".equals(intent.getAction())) {
             if (state == 0) {
                 int activatedAccountsCount = UserConfig.getActivatedAccountsCount();
                 if (activatedAccountsCount == 0) {

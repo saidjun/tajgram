@@ -3,7 +3,7 @@ package org.tajgram.ui.Stories.recorder;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
-import static org.telegram.ui.ActionBar.Theme.RIPPLE_MASK_CIRCLE_20DP;
+import static org.tajgram.ui.ActionBar.Theme.RIPPLE_MASK_CIRCLE_20DP;
 
 import android.content.Context;
 import android.content.DialogInterface;

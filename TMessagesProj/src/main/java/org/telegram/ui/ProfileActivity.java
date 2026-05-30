@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -17,9 +17,9 @@ import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarGiftSheet.replaceUnderstood;
-import static org.telegram.ui.Stars.StarsIntroActivity.formatStarsAmountShort;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.tajgram.ui.Stars.StarGiftSheet.replaceUnderstood;
+import static org.tajgram.ui.Stars.StarsIntroActivity.formatStarsAmountShort;
+import static org.tajgram.ui.bots.AffiliateProgramFragment.percents;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -340,8 +340,8 @@ import me.vkryl.android.animator.BoolAnimator;
 public class ProfileActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, SharedMediaLayout.SharedMediaPreloaderDelegate, ImageUpdater.ImageUpdaterDelegate, SharedMediaLayout.Delegate, MainTabsActivity.TabFragmentDelegate {
     private final static int PHONE_OPTION_CALL = 0,
             PHONE_OPTION_COPY = 1,
-            PHONE_OPTION_TELEGRAM_CALL = 2,
-            PHONE_OPTION_TELEGRAM_VIDEO_CALL = 3;
+            PHONE_OPTION_TAJGRAM_CALL = 2,
+            PHONE_OPTION_TAJGRAM_VIDEO_CALL = 3;
 
     private RecyclerListView listView;
     private RecyclerListView searchListView;
@@ -4520,7 +4520,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             } else if (position == questionRow) {
                 showDialog(AlertsCreator.createSupportAlert(ProfileActivity.this, resourcesProvider));
             } else if (position == faqRow) {
-                Browser.openUrl(getParentActivity(), LocaleController.getString(R.string.TelegramFaqUrl));
+                Browser.openUrl(getParentActivity(), LocaleController.getString(R.string.TajgramFaqUrl));
             } else if (position == policyRow) {
                 Browser.openUrl(getParentActivity(), LocaleController.getString(R.string.PrivacyPolicyUrl));
             } else if (position == sendLogsRow) {
@@ -7421,12 +7421,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             o.setScrimViewBackground(listView.getClipBackground(view));
             if (position == phoneRow) {
                 if (userInfo != null && userInfo.phone_calls_available) {
-                    o.add(R.drawable.msg_calls, getString(R.string.CallViaTelegram), () -> {
+                    o.add(R.drawable.msg_calls, getString(R.string.CallViaTajgram), () -> {
                         if (getParentActivity() == null) return;
                         VoIPHelper.startCall(user, false, userInfo != null && userInfo.video_calls_available, getParentActivity(), userInfo, getAccountInstance());
                     });
                     if (userInfo.video_calls_available) {
-                        o.add(R.drawable.msg_videocall, getString(R.string.VideoCallViaTelegram), () -> {
+                        o.add(R.drawable.msg_videocall, getString(R.string.VideoCallViaTajgram), () -> {
                             if (getParentActivity() == null) return;
                             VoIPHelper.startCall(user, true, userInfo != null && userInfo.video_calls_available, getParentActivity(), userInfo, getAccountInstance());
                         });
@@ -13713,7 +13713,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     } else if (position == questionRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.AskAQuestion), R.drawable.msg2_ask_question, true);
                     } else if (position == faqRow) {
-                        textCell.setTextAndIcon(LocaleController.getString(R.string.TelegramFAQ), R.drawable.msg2_help, true);
+                        textCell.setTextAndIcon(LocaleController.getString(R.string.TajgramFAQ), R.drawable.msg2_help, true);
                     } else if (position == policyRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.PrivacyPolicy), R.drawable.msg2_policy, false);
                     } else if (position == sendLogsRow) {
@@ -13737,12 +13737,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     } else if (position == addToGroupButtonRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.AddToGroupOrChannel), R.drawable.msg_groups_create, false);
                     } else if (position == premiumRow) {
-                        textCell.setTextAndIcon(LocaleController.getString(R.string.TelegramPremium), new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().premiumStarMenuDrawable, dp(24), dp(24)), true);
+                        textCell.setTextAndIcon(LocaleController.getString(R.string.TajgramPremium), new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().premiumStarMenuDrawable, dp(24), dp(24)), true);
                         textCell.setImageLeft(23);
                     } else if (position == starsRow) {
                         StarsController c = StarsController.getInstance(currentAccount);
                         long balance = c.getBalance().amount;
-                        textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.MenuTelegramStars), c.balanceAvailable() && balance > 0 ? StarsIntroActivity.formatStarsAmount(c.getBalance(), 0.85f, ' ') : "", new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().goldenStarMenuDrawable, dp(24), dp(24)), true);
+                        textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.MenuTajgramStars), c.balanceAvailable() && balance > 0 ? StarsIntroActivity.formatStarsAmount(c.getBalance(), 0.85f, ' ') : "", new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().goldenStarMenuDrawable, dp(24), dp(24)), true);
                         textCell.setImageLeft(23);
                     } else if (position == tonRow) {
                         StarsController c = StarsController.getTonInstance(currentAccount);
@@ -13750,7 +13750,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         textCell.setTextAndValueAndIcon(getString(R.string.MyTON), c.balanceAvailable() && balance > 0 ? StarsIntroActivity.formatStarsAmount(c.getBalance(), 0.85f, ' ') : "", R.drawable.menu_my_ton, true);
                         textCell.setImageLeft(23);
                     } else if (position == businessRow) {
-                        textCell.setTextAndIcon(LocaleController.getString(R.string.TelegramBusiness), R.drawable.menu_shop, true);
+                        textCell.setTextAndIcon(LocaleController.getString(R.string.TajgramBusiness), R.drawable.menu_shop, true);
                         textCell.setImageLeft(23);
                     } else if (position == premiumGiftingRow) {
                         textCell.setTextAndIcon(LocaleController.getString(R.string.SendAGift), R.drawable.menu_gift, false);
@@ -14540,20 +14540,20 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     new SearchResult(700, getString(R.string.Filters), null, R.drawable.msg2_folder, () -> f.presentFragment(new FiltersSetupActivity())).withLink("tg://settings/folders"),
                     new SearchResult(701, getString(R.string.CreateNewFilter), "createFilterRow", getString(R.string.Filters), R.drawable.msg2_folder, () -> f.presentFragment(new FiltersSetupActivity())).withLink("tg://settings/folders/create"),
 
-                    isPremiumFeatureAvailable(currentAccount, -1) ? new SearchResult(800, getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.presentFragment(new PremiumPreviewFragment("settings"))) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_LIMITS) ? new SearchResult(801, getString(R.string.PremiumPreviewLimits), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_LIMITS, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_EMOJI) ? new SearchResult(802, getString(R.string.PremiumPreviewEmoji), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_EMOJI, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_UPLOAD_LIMIT) ? new SearchResult(803, getString(R.string.PremiumPreviewUploads), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_UPLOAD_LIMIT, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_DOWNLOAD_SPEED) ? new SearchResult(804, getString(R.string.PremiumPreviewDownloadSpeed), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_DOWNLOAD_SPEED, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_VOICE_TO_TEXT) ? new SearchResult(805, getString(R.string.PremiumPreviewVoiceToText), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_VOICE_TO_TEXT, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ADS) ? new SearchResult(806, getString(R.string.PremiumPreviewNoAds), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ADS, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_REACTIONS) ? new SearchResult(807, getString(R.string.PremiumPreviewReactions), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_REACTIONS, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_STICKERS) ? new SearchResult(808, getString(R.string.PremiumPreviewStickers), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_STICKERS, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ADVANCED_CHAT_MANAGEMENT) ? new SearchResult(809, getString(R.string.PremiumPreviewAdvancedChatManagement), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ADVANCED_CHAT_MANAGEMENT, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_PROFILE_BADGE) ? new SearchResult(810, getString(R.string.PremiumPreviewProfileBadge), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_PROFILE_BADGE, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_AVATARS) ? new SearchResult(811, getString(R.string.PremiumPreviewAnimatedProfiles), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_AVATARS, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_APPLICATION_ICONS) ? new SearchResult(812, getString(R.string.PremiumPreviewAppIcon), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_APPLICATION_ICONS, false).setForceAbout())) : null,
-                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_EMOJI_STATUS) ? new SearchResult(813, getString(R.string.PremiumPreviewEmojiStatus), getString(R.string.TelegramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_EMOJI_STATUS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, -1) ? new SearchResult(800, getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.presentFragment(new PremiumPreviewFragment("settings"))) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_LIMITS) ? new SearchResult(801, getString(R.string.PremiumPreviewLimits), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_LIMITS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_EMOJI) ? new SearchResult(802, getString(R.string.PremiumPreviewEmoji), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_EMOJI, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_UPLOAD_LIMIT) ? new SearchResult(803, getString(R.string.PremiumPreviewUploads), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_UPLOAD_LIMIT, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_DOWNLOAD_SPEED) ? new SearchResult(804, getString(R.string.PremiumPreviewDownloadSpeed), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_DOWNLOAD_SPEED, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_VOICE_TO_TEXT) ? new SearchResult(805, getString(R.string.PremiumPreviewVoiceToText), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_VOICE_TO_TEXT, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ADS) ? new SearchResult(806, getString(R.string.PremiumPreviewNoAds), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ADS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_REACTIONS) ? new SearchResult(807, getString(R.string.PremiumPreviewReactions), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_REACTIONS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_STICKERS) ? new SearchResult(808, getString(R.string.PremiumPreviewStickers), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_STICKERS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ADVANCED_CHAT_MANAGEMENT) ? new SearchResult(809, getString(R.string.PremiumPreviewAdvancedChatManagement), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ADVANCED_CHAT_MANAGEMENT, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_PROFILE_BADGE) ? new SearchResult(810, getString(R.string.PremiumPreviewProfileBadge), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_PROFILE_BADGE, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_AVATARS) ? new SearchResult(811, getString(R.string.PremiumPreviewAnimatedProfiles), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_ANIMATED_AVATARS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_APPLICATION_ICONS) ? new SearchResult(812, getString(R.string.PremiumPreviewAppIcon), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_APPLICATION_ICONS, false).setForceAbout())) : null,
+                    isPremiumFeatureAvailable(currentAccount, PremiumPreviewFragment.PREMIUM_FEATURE_EMOJI_STATUS) ? new SearchResult(813, getString(R.string.PremiumPreviewEmojiStatus), getString(R.string.TajgramPremium), R.drawable.msg_settings_premium, () -> f.showDialog(new PremiumFeatureBottomSheet(f, PremiumPreviewFragment.PREMIUM_FEATURE_EMOJI_STATUS, false).setForceAbout())) : null,
 
                     new SearchResult(900, getString(R.string.PowerUsage), null, R.drawable.msg2_battery, () -> f.presentFragment(new LiteModeSettingsActivity())).withLink("tg://settings/power-saving"),
                     new SearchResult(901, getString(R.string.LiteOptionsStickers), getString(R.string.PowerUsage), R.drawable.msg2_battery, () -> {
@@ -14657,7 +14657,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     MessagesController.getInstance(currentAccount).getTranslateController().isContextTranslateEnabled() ? new SearchResult(406, getString(R.string.DoNotTranslate), getString(R.string.Language), R.drawable.msg2_language, () -> f.presentFragment(new LanguageSelectActivity())).withLink("tg://settings/language/do-not-translate") : null,
 
                     new SearchResult(402, getString(R.string.AskAQuestion), getString(R.string.SettingsHelp), R.drawable.msg2_help, () -> f.showDialog(AlertsCreator.createSupportAlert(f, null))).withLink("tg://settings/ask-question"),
-                    new SearchResult(403, getString(R.string.TelegramFAQ), getString(R.string.SettingsHelp), R.drawable.msg2_help, () -> Browser.openUrl(f.getParentActivity(), getString(R.string.TelegramFaqUrl))).withLink("tg://settings/faq"),
+                    new SearchResult(403, getString(R.string.TajgramFAQ), getString(R.string.SettingsHelp), R.drawable.msg2_help, () -> Browser.openUrl(f.getParentActivity(), getString(R.string.TajgramFaqUrl))).withLink("tg://settings/faq"),
                     new SearchResult(404, getString(R.string.PrivacyPolicy), getString(R.string.SettingsHelp), R.drawable.msg2_help, () -> Browser.openUrl(f.getParentActivity(), getString(R.string.PrivacyPolicyUrl))).withLink("tg://settings/privacy-policy"),
             };
         }
@@ -14680,7 +14680,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             loadingFaqPage = true;
             final TLRPC.TL_messages_getWebPage req2 = new TLRPC.TL_messages_getWebPage();
-            req2.url = LocaleController.getString(R.string.TelegramFaqUrl);
+            req2.url = LocaleController.getString(R.string.TajgramFaqUrl);
             req2.hash = 0;
             ConnectionsManager.getInstance(currentAccount).sendRequest(req2, (response2, error2) -> {
                 if (response2 instanceof TLRPC.TL_messages_webPage) {
@@ -16237,7 +16237,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             });
         } else if (position == bizLocationRow) {
             itemOptions.add(R.drawable.msg_edit, getString(R.string.ProfileLocationEdit), () -> {
-                presentFragment(new org.telegram.ui.Business.LocationActivity());
+                presentFragment(new org.tajgram.ui.Business.LocationActivity());
             });
             itemOptions.add(R.drawable.msg_delete, getString(R.string.ProfileLocationRemove), true, () -> {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());

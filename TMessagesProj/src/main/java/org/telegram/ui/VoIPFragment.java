@@ -2,7 +2,7 @@ package org.tajgram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.isTablet;
-import static org.telegram.ui.GroupCallActivity.TRANSITION_DURATION;
+import static org.tajgram.ui.GroupCallActivity.TRANSITION_DURATION;
 
 import android.Manifest;
 import android.animation.Animator;

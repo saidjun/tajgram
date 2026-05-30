@@ -6,9 +6,9 @@ import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet.TYPE_CHANNEL;
-import static org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet.TYPE_COUNTRY;
-import static org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet.TYPE_USER;
+import static org.tajgram.ui.Components.Premium.boosts.SelectorBottomSheet.TYPE_CHANNEL;
+import static org.tajgram.ui.Components.Premium.boosts.SelectorBottomSheet.TYPE_COUNTRY;
+import static org.tajgram.ui.Components.Premium.boosts.SelectorBottomSheet.TYPE_USER;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -507,7 +507,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     }
 
     private void showLocationAlert() {
-        org.telegram.ui.LocationActivity fragment = new org.telegram.ui.LocationActivity(ChatAttachAlertLocationLayout.LOCATION_TYPE_BIZ);
+        org.tajgram.ui.LocationActivity fragment = new org.tajgram.ui.LocationActivity(ChatAttachAlertLocationLayout.LOCATION_TYPE_BIZ);
         if (geo != null) {
             TLRPC.TL_channelLocation initialLocation = new TLRPC.TL_channelLocation();
             initialLocation.address = address;

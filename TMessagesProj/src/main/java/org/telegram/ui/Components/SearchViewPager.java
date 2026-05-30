@@ -1,7 +1,7 @@
 package org.tajgram.ui.Components;
 
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.PremiumPreviewFragment.applyNewSpan;
+import static org.tajgram.ui.PremiumPreviewFragment.applyNewSpan;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

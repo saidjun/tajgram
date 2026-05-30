@@ -7,9 +7,9 @@ import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stars.StarsIntroActivity.StarsTransactionView.getPlatformDrawable;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsIntroActivity.StarsTransactionView.getPlatformDrawable;
+import static org.tajgram.ui.bots.AffiliateProgramFragment.percents;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -1521,7 +1521,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             cardBackground.setPattern(null);
             cardBackground.setStrokeColors(null);
             titleView.setText(LocaleController.formatPluralString("Gift2Months", months));
-            subtitleView.setText(getString(R.string.TelegramPremiumShort));
+            subtitleView.setText(getString(R.string.TajgramPremiumShort));
             titleView.setVisibility(View.VISIBLE);
             subtitleView.setVisibility(View.VISIBLE);
             imageView.setTranslationY(-dp(8));

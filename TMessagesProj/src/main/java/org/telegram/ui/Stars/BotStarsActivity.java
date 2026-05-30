@@ -5,8 +5,8 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.ChannelMonetizationLayout.replaceTON;
-import static org.telegram.ui.ChatEditActivity.applyNewSpan;
+import static org.tajgram.ui.ChannelMonetizationLayout.replaceTON;
+import static org.tajgram.ui.ChatEditActivity.applyNewSpan;
 
 import android.app.Activity;
 import android.content.Context;

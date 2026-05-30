@@ -3,7 +3,7 @@ package org.tajgram.ui;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.tajgram.ui.bots.AffiliateProgramFragment.percents;
 
 import android.content.Context;
 import android.graphics.PorterDuff;

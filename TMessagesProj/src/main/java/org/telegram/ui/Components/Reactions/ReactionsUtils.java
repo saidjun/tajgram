@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Reactions;
 
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_BOOSTS_FOR_REACTIONS;
+import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_BOOSTS_FOR_REACTIONS;
 
 import android.graphics.Paint;
 import android.os.Bundle;

@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -8,7 +8,7 @@
 
 package org.tajgram.ui;
 
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
+import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
 
 import android.animation.AnimatorSet;
 import android.app.Dialog;

@@ -16,7 +16,7 @@ import org.tajgram.ui.Components.CubicBezierInterpolator;
 import org.tajgram.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
-public class SubtitleWithCounterCell extends org.telegram.ui.Cells.HeaderCell {
+public class SubtitleWithCounterCell extends org.tajgram.ui.Cells.HeaderCell {
 
     private final AnimatedTextView counterTextView;
 

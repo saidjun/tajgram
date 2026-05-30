@@ -2,8 +2,8 @@ package org.tajgram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsIntroActivity.formatTON;
-import static org.telegram.ui.Stars.StarsIntroActivity.replaceDiamond;
+import static org.tajgram.ui.Stars.StarsIntroActivity.formatTON;
+import static org.tajgram.ui.Stars.StarsIntroActivity.replaceDiamond;
 
 import android.content.Context;
 import android.graphics.Canvas;

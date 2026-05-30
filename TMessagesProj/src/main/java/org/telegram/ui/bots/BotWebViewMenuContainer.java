@@ -1,7 +1,7 @@
 package org.tajgram.ui.bots;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.ActionBar.Theme.key_windowBackgroundWhiteBlackText;
+import static org.tajgram.ui.ActionBar.Theme.key_windowBackgroundWhiteBlackText;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

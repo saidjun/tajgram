@@ -36,7 +36,7 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
 	private static UriMatcher getUriMatcher() {
 		if (matcher == null) {
 			matcher = new UriMatcher(UriMatcher.NO_MATCH);
-			matcher.addURI(getAuthority(), "msg_media_raw/#/*", 1); // content://org.telegram..../msg_media_raw/account/filename.ext
+			matcher.addURI(getAuthority(), "msg_media_raw/#/*", 1); // content://org.tajgram..../msg_media_raw/account/filename.ext
 		}
 		return matcher;
 	}

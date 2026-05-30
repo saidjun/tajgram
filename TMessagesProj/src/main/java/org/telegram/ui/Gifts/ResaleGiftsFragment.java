@@ -7,7 +7,7 @@ import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
 import static org.tajgram.messenger.Utilities.clamp01;
-import static org.telegram.ui.Stars.StarsController.findAttributes;
+import static org.tajgram.ui.Stars.StarsController.findAttributes;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

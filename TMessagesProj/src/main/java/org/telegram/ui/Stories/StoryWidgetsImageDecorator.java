@@ -1,6 +1,6 @@
 package org.tajgram.ui.Stories;
 
-import static org.telegram.ui.Stories.StoryMediaAreasView.rgbaToArgb;
+import static org.tajgram.ui.Stories.StoryMediaAreasView.rgbaToArgb;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

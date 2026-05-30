@@ -7,10 +7,10 @@ import static org.tajgram.messenger.LocaleController.formatNumber;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarGiftSheet.addAttributeRow;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stars.StarsIntroActivity.replaceStars;
-import static org.telegram.ui.Stars.StarsIntroActivity.replaceStarsWithPlain;
+import static org.tajgram.ui.Stars.StarGiftSheet.addAttributeRow;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsIntroActivity.replaceStars;
+import static org.tajgram.ui.Stars.StarsIntroActivity.replaceStarsWithPlain;
 
 import android.content.Context;
 import android.graphics.PorterDuff;

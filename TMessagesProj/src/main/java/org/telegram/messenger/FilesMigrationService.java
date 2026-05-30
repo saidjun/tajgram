@@ -97,14 +97,14 @@ public class FilesMigrationService extends Service {
         }
 
         File newPath = ApplicationLoader.applicationContext.getExternalFilesDir(null);
-        File telegramPath = new File(newPath, "Telegram");
-        File oldPath = new File(path, "Telegram");
+        File tajgramPath = new File(newPath, "Tajgram");
+        File oldPath = new File(path, "Tajgram");
 
         totalFilesCount = getFilesCount(oldPath);
 
         long moveStart = System.currentTimeMillis();
         if (oldPath.canRead() && oldPath.canWrite()) {
-            moveDirectory(oldPath, telegramPath);
+            moveDirectory(oldPath, tajgramPath);
         }
         long dt = System.currentTimeMillis() - moveStart;
 
@@ -204,7 +204,7 @@ public class FilesMigrationService extends Service {
                     }
                 }
             }
-            File oldDirectory = new File(path, "Telegram");
+            File oldDirectory = new File(path, "Tajgram");
             hasOldFolder = oldDirectory.exists();
         }
         if (hasOldFolder) {

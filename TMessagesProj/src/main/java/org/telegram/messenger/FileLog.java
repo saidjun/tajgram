@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -263,7 +263,7 @@ public class FileLog {
         public JsonElement serialize(TLObject src, Type typeOfSrc, JsonSerializationContext context) {
             JsonObject jsonObj = new JsonObject();
             String className = src.getClass().getName();
-            final String usualPrefix = "org.telegram.tgnet.";
+            final String usualPrefix = "org.tajgram.tgnet.";
             if (className.startsWith(usualPrefix)) {
                 className = className.substring(usualPrefix.length());
             }

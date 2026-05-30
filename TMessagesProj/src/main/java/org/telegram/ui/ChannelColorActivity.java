@@ -3,7 +3,7 @@ package org.tajgram.ui;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_BOOSTS_FOR_CUSTOM_EMOJI_PACK;
+import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_BOOSTS_FOR_CUSTOM_EMOJI_PACK;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

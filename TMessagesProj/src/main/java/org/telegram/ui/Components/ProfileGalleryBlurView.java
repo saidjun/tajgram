@@ -1,7 +1,7 @@
 package org.tajgram.ui.Components;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.Components.ProfileMetaballView.profileBlurQueue;
+import static org.tajgram.ui.Components.ProfileMetaballView.profileBlurQueue;
 
 import android.content.Context;
 import android.graphics.Bitmap;

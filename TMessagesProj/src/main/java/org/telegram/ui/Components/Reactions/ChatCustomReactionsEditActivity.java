@@ -4,8 +4,8 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.replaceTags;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.Reactions.ReactionsUtils.addReactionToEditText;
-import static org.telegram.ui.Components.Reactions.ReactionsUtils.createAnimatedEmojiSpan;
+import static org.tajgram.ui.Components.Reactions.ReactionsUtils.addReactionToEditText;
+import static org.tajgram.ui.Components.Reactions.ReactionsUtils.createAnimatedEmojiSpan;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

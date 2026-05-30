@@ -1,8 +1,8 @@
 package org.tajgram.ui.Components;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.Components.Forum.ForumUtilities.createGeneralTopicDrawable;
-import static org.telegram.ui.Components.Forum.ForumUtilities.createTopicDrawable;
+import static org.tajgram.ui.Components.Forum.ForumUtilities.createGeneralTopicDrawable;
+import static org.tajgram.ui.Components.Forum.ForumUtilities.createTopicDrawable;
 
 import android.content.Context;
 import android.graphics.Canvas;

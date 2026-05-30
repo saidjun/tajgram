@@ -5,7 +5,7 @@ import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

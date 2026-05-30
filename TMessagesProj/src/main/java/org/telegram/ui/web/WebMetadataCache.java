@@ -436,7 +436,7 @@ public class WebMetadataCache {
         webView.addJavascriptInterface(new SitenameProxy(name -> {
             sitename[0] = name;
             checkDone.run(false);
-        }), "TelegramWebview");
+        }), "TajgramWebview");
 
         webViewContainer.addView(webView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
         webView.loadUrl(url);

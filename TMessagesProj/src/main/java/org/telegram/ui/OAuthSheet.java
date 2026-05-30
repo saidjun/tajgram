@@ -5,7 +5,7 @@ import static org.tajgram.messenger.AndroidUtilities.replaceSingleLink;
 import static org.tajgram.messenger.AndroidUtilities.replaceSingleLinkBold;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.web.BotWebViewContainer.obj;
+import static org.tajgram.ui.web.BotWebViewContainer.obj;
 
 import android.app.Activity;
 import android.content.Context;

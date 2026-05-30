@@ -3,8 +3,8 @@ package org.tajgram.ui.Stories;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.ilerp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
-import static org.telegram.ui.Stories.HighlightMessageSheet.TIER_COLOR1;
-import static org.telegram.ui.Stories.HighlightMessageSheet.getTierOption;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.TIER_COLOR1;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.getTierOption;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

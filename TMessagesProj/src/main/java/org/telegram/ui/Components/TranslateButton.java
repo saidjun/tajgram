@@ -4,7 +4,7 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarGiftSheet.replaceUnderstood;
+import static org.tajgram.ui.Stars.StarGiftSheet.replaceUnderstood;
 
 import android.content.Context;
 import android.graphics.Canvas;

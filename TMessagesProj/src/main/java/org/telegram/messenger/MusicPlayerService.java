@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -51,14 +51,14 @@ import java.io.File;
 
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
 
-    public static final String NOTIFY_PREVIOUS = "org.telegram.android.musicplayer.previous";
-    public static final String NOTIFY_CLOSE = "org.telegram.android.musicplayer.close";
-    public static final String NOTIFY_PAUSE = "org.telegram.android.musicplayer.pause";
-    public static final String NOTIFY_PLAY = "org.telegram.android.musicplayer.play";
-    public static final String NOTIFY_NEXT = "org.telegram.android.musicplayer.next";
-    public static final String NOTIFY_SEEK = "org.telegram.android.musicplayer.seek";
-    public static final String NOTIFY_REPEAT = "org.telegram.android.musicplayer.repeat";
-    public static final String NOTIFY_SHUFFLE = "org.telegram.android.musicplayer.shuffle";
+    public static final String NOTIFY_PREVIOUS = "org.tajgram.android.musicplayer.previous";
+    public static final String NOTIFY_CLOSE = "org.tajgram.android.musicplayer.close";
+    public static final String NOTIFY_PAUSE = "org.tajgram.android.musicplayer.pause";
+    public static final String NOTIFY_PLAY = "org.tajgram.android.musicplayer.play";
+    public static final String NOTIFY_NEXT = "org.tajgram.android.musicplayer.next";
+    public static final String NOTIFY_SEEK = "org.tajgram.android.musicplayer.seek";
+    public static final String NOTIFY_REPEAT = "org.tajgram.android.musicplayer.repeat";
+    public static final String NOTIFY_SHUFFLE = "org.tajgram.android.musicplayer.shuffle";
 
     private static final int ID_NOTIFICATION = 5;
 
@@ -112,7 +112,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mediaSession = new MediaSessionCompat(this, "telegramAudioPlayer");
+            mediaSession = new MediaSessionCompat(this, "tajgramAudioPlayer");
             playbackState = new PlaybackStateCompat.Builder();
             albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102), AndroidUtilities.dp(102), Bitmap.Config.ARGB_8888);
             Drawable placeholder = getResources().getDrawable(R.drawable.nocover_big);

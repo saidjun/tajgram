@@ -3,8 +3,8 @@ package org.tajgram.ui.Components;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.TranslateAlert2.capitalFirst;
-import static org.telegram.ui.Components.TranslateAlert2.languageName;
+import static org.tajgram.ui.Components.TranslateAlert2.capitalFirst;
+import static org.tajgram.ui.Components.TranslateAlert2.languageName;
 
 import android.content.Context;
 import android.graphics.Canvas;

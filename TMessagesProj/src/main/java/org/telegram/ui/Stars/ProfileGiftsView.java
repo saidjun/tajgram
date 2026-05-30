@@ -3,7 +3,7 @@ package org.tajgram.ui.Stars;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
 
 import android.animation.TimeInterpolator;
 import android.content.Context;

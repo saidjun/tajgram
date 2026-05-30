@@ -2,7 +2,7 @@ package org.tajgram.ui.Cells;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.EditTextEmoji.STYLE_GIFT;
+import static org.tajgram.ui.Components.EditTextEmoji.STYLE_GIFT;
 
 import android.content.Context;
 import android.graphics.Canvas;

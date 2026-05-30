@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Reactions;
 
-import static org.telegram.ui.ChatActivity.MODE_DEFAULT;
+import static org.tajgram.ui.ChatActivity.MODE_DEFAULT;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

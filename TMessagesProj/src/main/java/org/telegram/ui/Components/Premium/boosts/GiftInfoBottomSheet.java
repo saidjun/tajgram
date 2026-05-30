@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Premium.boosts;
 
-import static org.telegram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
+import static org.tajgram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -85,7 +85,7 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
             if (scheme != null) {
                 if ((scheme.equals("http") || scheme.equals("https"))) {
                     String host = data.getHost().toLowerCase();
-                    if (host.equals("telegram.me") || host.equals("t.me") || host.equals("telegram.dog")) {
+                    if (host.equals("tajgram.me") || host.equals("t.me") || host.equals("tajgram.dog")) {
                         String path = data.getPath();
                         if (path != null) {
                             String lastPathSegment = data.getLastPathSegment();

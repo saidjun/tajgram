@@ -1,11 +1,11 @@
 package org.tajgram.ui.Components.Reactions;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.Components.ReactionsContainerLayout.TYPE_MESSAGE_EFFECTS;
-import static org.telegram.ui.Components.ReactionsContainerLayout.TYPE_STICKER_SET_EMOJI;
-import static org.telegram.ui.Components.ReactionsContainerLayout.TYPE_STORY;
-import static org.telegram.ui.Components.ReactionsContainerLayout.TYPE_STORY_LIKES;
-import static org.telegram.ui.Components.ReactionsContainerLayout.TYPE_TAGS;
+import static org.tajgram.ui.Components.ReactionsContainerLayout.TYPE_MESSAGE_EFFECTS;
+import static org.tajgram.ui.Components.ReactionsContainerLayout.TYPE_STICKER_SET_EMOJI;
+import static org.tajgram.ui.Components.ReactionsContainerLayout.TYPE_STORY;
+import static org.tajgram.ui.Components.ReactionsContainerLayout.TYPE_STORY_LIKES;
+import static org.tajgram.ui.Components.ReactionsContainerLayout.TYPE_TAGS;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

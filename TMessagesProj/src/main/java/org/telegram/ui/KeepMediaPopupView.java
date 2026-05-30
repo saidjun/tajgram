@@ -1,6 +1,6 @@
 package org.tajgram.ui;
 
-import static org.telegram.ui.CacheControlActivity.KEEP_MEDIA_TYPE_STORIES;
+import static org.tajgram.ui.CacheControlActivity.KEEP_MEDIA_TYPE_STORIES;
 
 import android.content.Context;
 import android.os.Bundle;

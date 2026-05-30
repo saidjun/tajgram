@@ -3,11 +3,11 @@ package org.tajgram.ui.Stories;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable.drawStroke;
-import static org.telegram.ui.Stories.HighlightMessageSheet.TIER_EMOJIS;
-import static org.telegram.ui.Stories.HighlightMessageSheet.TIER_LENGTH;
-import static org.telegram.ui.Stories.HighlightMessageSheet.getMaxLength;
-import static org.telegram.ui.Stories.HighlightMessageSheet.getTierOption;
+import static org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable.drawStroke;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.TIER_EMOJIS;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.TIER_LENGTH;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.getMaxLength;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.getTierOption;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

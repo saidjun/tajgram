@@ -1,6 +1,6 @@
-package org.tajgram.tlrpc.telegram
+package org.tajgram.tlrpc.tajgram
 
-data class TelegramTlClass(
+data class TajgramTlClass(
     val constructor: UInt?,
 
     val packageName: String,

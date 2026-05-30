@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -1177,7 +1177,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                         value = getString(feeValue ? R.string.ContactsAndFee : noncontactsValue ? R.string.ContactsAndPremium : R.string.P2PEverybody);
                         textCell.setTextAndValue(getMessagesController().newNoncontactPeersRequirePremiumWithoutOwnpremium && !getMessagesController().starsPaidMessagesAvailable ? getString(R.string.PrivacyMessages) : addPremiumStar(getString(R.string.PrivacyMessages)), value, musicRow != -1);
                     } else if (position == passportRow) {
-                        textCell.setText(getString("TelegramPassport", R.string.TelegramPassport), true);
+                        textCell.setText(getString("TajgramPassport", R.string.TajgramPassport), true);
                     } else if (position == deleteAccountRow) {
                         if (getContactsController().getLoadingDeleteInfo()) {
                             showLoading = true;
@@ -1206,7 +1206,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                     } else if (position == secretMapRow) {
                         switch (SharedConfig.mapPreviewType) {
                             case 0:
-                                value = getString("MapPreviewProviderTelegram", R.string.MapPreviewProviderTelegram);
+                                value = getString("MapPreviewProviderTajgram", R.string.MapPreviewProviderTajgram);
                                 break;
                             case 1:
                                 value = getString("MapPreviewProviderGoogle", R.string.MapPreviewProviderGoogle);

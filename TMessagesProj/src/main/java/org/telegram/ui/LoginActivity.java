@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -1255,13 +1255,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                 Intent mailer = new Intent(Intent.ACTION_SENDTO);
                 mailer.setData(Uri.parse("mailto:"));
-                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{banned ? "recover@telegram.org" : "login@stel.com"});
+                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{banned ? "recover@tajgram.org" : "login@stel.com"});
                 if (banned) {
                     mailer.putExtra(Intent.EXTRA_SUBJECT, "Banned phone number: " + phoneNumber);
-                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Telegram says it's banned. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
+                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Tajgram says it's banned. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
                 } else {
                     mailer.putExtra(Intent.EXTRA_SUBJECT, "Invalid phone number: " + phoneNumber);
-                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Telegram says it's invalid. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
+                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Tajgram says it's invalid. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
                 }
                 fragment.getParentActivity().startActivity(Intent.createChooser(mailer, "Send email..."));
             } catch (Exception e) {
@@ -3984,7 +3984,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                                         Intent mailer = new Intent(Intent.ACTION_SENDTO);
                                         mailer.setData(Uri.parse("mailto:"));
-                                        mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@telegram.org"});
+                                        mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@tajgram.org"});
                                         mailer.putExtra(Intent.EXTRA_SUBJECT, emailPhone + " Android Registration/Login Issue " + version + (paid ? " #paidauth" : ""));
 
                                         StringBuilder body = new StringBuilder();
@@ -9888,7 +9888,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             if (!TextUtils.isEmpty(support_email_email)) {
                                 mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{support_email_email});
                             } else {
-                                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@telegram.org"});
+                                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@tajgram.org"});
                             }
                             if (!TextUtils.isEmpty(support_email_subject)) {
                                 mailer.putExtra(Intent.EXTRA_SUBJECT, support_email_subject);

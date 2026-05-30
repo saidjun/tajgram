@@ -1,9 +1,9 @@
 package org.tajgram.ui;
 
-import static org.telegram.ui.CacheControlActivity.TYPE_DOCUMENTS;
-import static org.telegram.ui.CacheControlActivity.TYPE_MUSIC;
-import static org.telegram.ui.CacheControlActivity.TYPE_VIDEOS;
-import static org.telegram.ui.CacheControlActivity.UNKNOWN_CHATS_DIALOG_ID;
+import static org.tajgram.ui.CacheControlActivity.TYPE_DOCUMENTS;
+import static org.tajgram.ui.CacheControlActivity.TYPE_MUSIC;
+import static org.tajgram.ui.CacheControlActivity.TYPE_VIDEOS;
+import static org.tajgram.ui.CacheControlActivity.UNKNOWN_CHATS_DIALOG_ID;
 
 import android.content.Context;
 import android.graphics.Canvas;

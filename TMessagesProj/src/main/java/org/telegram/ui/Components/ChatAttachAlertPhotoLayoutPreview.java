@@ -5,7 +5,7 @@ import static org.tajgram.messenger.MessageObject.POSITION_FLAG_BOTTOM;
 import static org.tajgram.messenger.MessageObject.POSITION_FLAG_LEFT;
 import static org.tajgram.messenger.MessageObject.POSITION_FLAG_RIGHT;
 import static org.tajgram.messenger.MessageObject.POSITION_FLAG_TOP;
-import static org.telegram.ui.Components.UndoView.ACTION_PREVIEW_MEDIA_DESELECTED;
+import static org.tajgram.ui.Components.UndoView.ACTION_PREVIEW_MEDIA_DESELECTED;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

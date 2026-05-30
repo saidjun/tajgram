@@ -6,8 +6,8 @@ import static org.tajgram.messenger.AndroidUtilities.makeBlurBitmap;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.tgnet.ConnectionsManager.DEFAULT_DATACENTER_ID;
-import static org.telegram.ui.ChatEditActivity.applyNewSpan;
+import static org.tajgram.tgnet.ConnectionsManager.DEFAULT_DATACENTER_ID;
+import static org.tajgram.ui.ChatEditActivity.applyNewSpan;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,6 +1,6 @@
 package org.tajgram.ui.ActionBar;
 
-import static org.telegram.ui.ActionBar.Theme.*;
+import static org.tajgram.ui.ActionBar.Theme.*;
 
 import android.graphics.Color;
 import android.util.SparseArray;
@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 public class ThemeColors {
 
-    public static final int TELEGRAM_COLOR = 0xFF229AF0;        // -14509328
-    public static final int TELEGRAM_COLOR_TEXT = 0xFF298ACF;   // -14054705
+    public static final int TAJGRAM_COLOR = 0xFF229AF0;        // -14509328
+    public static final int TAJGRAM_COLOR_TEXT = 0xFF298ACF;   // -14054705
     public static final int DEFAULT_BLACK_TEXT = 0xFF1A1D21;   // -15065823
 
     private static SparseArray<String> colorKeysMap;
@@ -36,21 +36,21 @@ public class ThemeColors {
         defaultColors[key_dialogTextHint] = 0xff979797;
         defaultColors[key_dialogIcon] = DEFAULT_BLACK_TEXT;
         defaultColors[key_dialogGrayLine] = 0xffd2d2d2;
-        defaultColors[key_dialogTopBackground] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_dialogTopBackground] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_dialogInputField] = 0xffdbdbdb;
-        defaultColors[key_dialogInputFieldActivated] = TELEGRAM_COLOR;
-        defaultColors[key_dialogCheckboxSquareBackground] = TELEGRAM_COLOR;
+        defaultColors[key_dialogInputFieldActivated] = TAJGRAM_COLOR;
+        defaultColors[key_dialogCheckboxSquareBackground] = TAJGRAM_COLOR;
         defaultColors[key_dialogCheckboxSquareCheck] = 0xffffffff;
         defaultColors[key_dialogCheckboxSquareUnchecked] = 0xff737373;
         defaultColors[key_dialogCheckboxSquareDisabled] = 0xffb0b0b0;
         defaultColors[key_dialogRadioBackground] = 0xffb3b3b3;
-        defaultColors[key_dialogRadioBackgroundChecked] = TELEGRAM_COLOR;
+        defaultColors[key_dialogRadioBackgroundChecked] = TAJGRAM_COLOR;
         defaultColors[key_dialogLineProgress] = 0xff527da3;
         defaultColors[key_dialogLineProgressBackground] = 0xffdbdbdb;
-        defaultColors[key_dialogButton] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_dialogButton] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_dialogButtonSelector] = 0x0f000000;
         defaultColors[key_dialogScrollGlow] = 0xfff5f6f7;
-        defaultColors[key_dialogRoundCheckBox] = TELEGRAM_COLOR;
+        defaultColors[key_dialogRoundCheckBox] = TAJGRAM_COLOR;
         defaultColors[key_dialogRoundCheckBoxCheck] = 0xffffffff;
         defaultColors[key_dialog_inlineProgressBackground] = 0xf6f0f2f5;
         defaultColors[key_dialog_inlineProgress] = 0xff6b7378;
@@ -58,7 +58,7 @@ public class ThemeColors {
         defaultColors[key_dialogSearchHint] = 0xff98a0a7;
         defaultColors[key_dialogSearchIcon] = 0xffa1a8af;
         defaultColors[key_dialogSearchText] = 0xff222222;
-        defaultColors[key_dialogFloatingButton] = TELEGRAM_COLOR;
+        defaultColors[key_dialogFloatingButton] = TAJGRAM_COLOR;
         defaultColors[key_dialogFloatingButtonPressed] = 0x0f000000;
         defaultColors[key_dialogFloatingIcon] = 0xffffffff;
         defaultColors[key_dialogShadowLine] = 0x12000000;
@@ -106,14 +106,14 @@ public class ThemeColors {
         defaultColors[key_windowBackgroundWhiteGrayText8] = 0xff6d6d72;
         defaultColors[key_windowBackgroundWhiteBlackText] = DEFAULT_BLACK_TEXT;
         defaultColors[key_windowBackgroundWhiteHintText] = 0xffa8a8a8;
-        defaultColors[key_windowBackgroundWhiteValueText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_windowBackgroundWhiteValueText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_windowBackgroundWhiteLinkText] = 0xff2678b6;
         defaultColors[key_windowBackgroundWhiteLinkSelection] = 0x3362a9e3;
-        defaultColors[key_windowBackgroundWhiteBlueHeader] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_windowBackgroundWhiteBlueHeader] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_windowBackgroundWhiteInputField] = 0xffdbdbdb;
-        defaultColors[key_windowBackgroundWhiteInputFieldActivated] = TELEGRAM_COLOR;
+        defaultColors[key_windowBackgroundWhiteInputFieldActivated] = TAJGRAM_COLOR;
         defaultColors[key_switchTrack] = 0xffa6adb3;
-        defaultColors[key_switchTrackChecked] = TELEGRAM_COLOR;
+        defaultColors[key_switchTrackChecked] = TAJGRAM_COLOR;
         defaultColors[key_switchTrackBlue] = 0xff78828A;
         defaultColors[key_switchTrackBlueChecked] = 0xff1079C4;
         defaultColors[key_switchTrackBlueThumb] = 0xffffffff;
@@ -121,15 +121,15 @@ public class ThemeColors {
         defaultColors[key_switchTrackBlueSelector] = 0x17404a53;
         defaultColors[key_switchTrackBlueSelectorChecked] = 0x21024781;
         defaultColors[key_switch2Track] = 0xfff57e7e;
-        defaultColors[key_switch2TrackChecked] = TELEGRAM_COLOR;
-        defaultColors[key_checkboxSquareBackground] = TELEGRAM_COLOR;
+        defaultColors[key_switch2TrackChecked] = TAJGRAM_COLOR;
+        defaultColors[key_checkboxSquareBackground] = TAJGRAM_COLOR;
         defaultColors[key_checkboxSquareCheck] = 0xffffffff;
         defaultColors[key_checkboxSquareUnchecked] = 0xff737373;
         defaultColors[key_checkboxSquareDisabled] = 0xffb0b0b0;
         defaultColors[key_listSelector] = 0x0f000000;
         defaultColors[key_settings_listSelector] = 0x1d000010;
         defaultColors[key_radioBackground] = 0xffb3b3b3;
-        defaultColors[key_radioBackgroundChecked] = TELEGRAM_COLOR;
+        defaultColors[key_radioBackgroundChecked] = TAJGRAM_COLOR;
         defaultColors[key_windowBackgroundGray] = 0xffF1F1F3;
         defaultColors[key_windowBackgroundGrayShadow] = 0xff000000;
         defaultColors[key_emptyListPlaceholder] = 0xff73787b;
@@ -144,7 +144,7 @@ public class ThemeColors {
         defaultColors[key_contextProgressOuter3] = 0xffffffff;
         defaultColors[key_contextProgressInner4] = 0xffcacdd0;
         defaultColors[key_contextProgressOuter4] = 0xff2f3438;
-        defaultColors[key_fastScrollActive] = TELEGRAM_COLOR;
+        defaultColors[key_fastScrollActive] = TAJGRAM_COLOR;
         defaultColors[key_fastScrollInactive] = 0xffc9cdd1;
         defaultColors[key_fastScrollText] = 0xffffffff;
         defaultColors[key_pollCreateIcons] = 0xff909599;
@@ -154,7 +154,7 @@ public class ThemeColors {
         defaultColors[key_avatar_backgroundSaved] = 0xff69BDF9;
         defaultColors[key_avatar_background2Saved] = 0xff409FE1;
         defaultColors[key_avatar_backgroundArchived] = 0xffB8C2CC;
-        defaultColors[key_avatar_backgroundArchivedHidden] = TELEGRAM_COLOR;
+        defaultColors[key_avatar_backgroundArchivedHidden] = TAJGRAM_COLOR;
         defaultColors[key_avatar_backgroundRed] = 0xffFF845E;
         defaultColors[key_avatar_background2Red] = 0xffD45246;
         defaultColors[key_avatar_backgroundOrange] = 0xffFEBB5B;
@@ -205,10 +205,10 @@ public class ThemeColors {
         defaultColors[key_actionBarActionModeReaction] = 0xfff0f0f0;
         defaultColors[key_actionBarActionModeReactionText] = 0xff82868a;
         defaultColors[key_actionBarActionModeReactionDot] = 0xffc0c0c0;
-        defaultColors[key_actionBarTabActiveText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_actionBarTabActiveText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_actionBarTabUnactiveText] = 0xff777c7f;
-        defaultColors[key_actionBarTabLine] = TELEGRAM_COLOR_TEXT;
-        defaultColors[key_chats_tabUnreadActiveBackground] = 0xFF66ade1; //TELEGRAM_COLOR_TEXT;
+        defaultColors[key_actionBarTabLine] = TAJGRAM_COLOR_TEXT;
+        defaultColors[key_chats_tabUnreadActiveBackground] = 0xFF66ade1; //TAJGRAM_COLOR_TEXT;
         defaultColors[key_chats_tabUnreadUnactiveBackground] = 0xffc5c9cc;
         defaultColors[key_actionBarTabSelector] = 0x121a1d21;
         defaultColors[key_actionBarBrowser] = 0xffffffff;
@@ -224,10 +224,10 @@ public class ThemeColors {
         defaultColors[key_actionBarDefaultArchivedSearchPlaceholder] = 0xff838c96;
 
         defaultColors[key_chats_onlineCircle] = 0xff4bcb1c;
-        defaultColors[key_chats_unreadCounter] = TELEGRAM_COLOR;
+        defaultColors[key_chats_unreadCounter] = TAJGRAM_COLOR;
         defaultColors[key_chats_unreadCounterMuted] = 0xffBEC3C7;
         defaultColors[key_chats_unreadCounterText] = 0xffffffff;
-        defaultColors[key_chats_archiveBackground] = TELEGRAM_COLOR;
+        defaultColors[key_chats_archiveBackground] = TAJGRAM_COLOR;
         defaultColors[key_chats_archivePinBackground] = 0xff9faab3;
         defaultColors[key_chats_archiveIcon] = 0xffffffff;
         defaultColors[key_chats_archiveText] = 0xffffffff;
@@ -240,12 +240,12 @@ public class ThemeColors {
         defaultColors[key_chats_messageArchived] = 0xff919191;
         defaultColors[key_chats_message_threeLines] = 0xff8e9091;
         defaultColors[key_chats_draft] = 0xffdd4b39;
-        defaultColors[key_chats_nameMessage] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chats_nameMessage] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chats_nameMessageArchived] = 0xff8b8d8f;
         defaultColors[key_chats_nameMessage_threeLines] = 0xff424449;
         defaultColors[key_chats_nameMessageArchived_threeLines] = 0xff5e5e5e;
-        defaultColors[key_chats_attachMessage] = TELEGRAM_COLOR_TEXT;
-        defaultColors[key_chats_actionMessage] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chats_attachMessage] = TAJGRAM_COLOR_TEXT;
+        defaultColors[key_chats_actionMessage] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chats_date] = 0xff848688;
         defaultColors[key_chats_date_bold] = 0xff919395;
         defaultColors[key_chats_pinnedOverlay] = 0x08000000;
@@ -271,10 +271,10 @@ public class ThemeColors {
         defaultColors[key_chats_actionPressedBackground] = 0xff569dd6;
         defaultColors[key_chats_menuTopBackgroundCats] = 0xff598fba;
         defaultColors[key_chats_archivePullDownBackground] = 0xffc6c9cc;
-        defaultColors[key_chats_archivePullDownBackgroundActive] = TELEGRAM_COLOR;
+        defaultColors[key_chats_archivePullDownBackgroundActive] = TAJGRAM_COLOR;
 
         defaultColors[key_chat_attachCheckBoxCheck] = 0xffffffff;
-        defaultColors[key_chat_attachCheckBoxBackground] = TELEGRAM_COLOR;
+        defaultColors[key_chat_attachCheckBoxBackground] = TAJGRAM_COLOR;
         defaultColors[key_chat_attachPhotoBackground] = 0x0c000000;
         defaultColors[key_chat_attachActiveTab] = 0xff33a7f5;
         defaultColors[key_chat_attachUnactiveTab] = 0xff92999e;
@@ -296,7 +296,7 @@ public class ThemeColors {
         defaultColors[key_chat_inPollWrongAnswer] = 0xffeb6060;
         defaultColors[key_chat_outPollWrongAnswer] = 0xffeb6060;
 
-        defaultColors[key_chat_status] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_status] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_inGreenCall] = 0xff00c853;
         defaultColors[key_chat_outGreenCall] = 0xff00c853;
         defaultColors[key_chat_lockIcon] = 0xff222222;
@@ -342,14 +342,14 @@ public class ThemeColors {
         defaultColors[key_chat_mediaMenu] = 0xffffffff;
         defaultColors[key_chat_outInstant] = 0xff55ab4f;
         defaultColors[key_chat_outInstantSelected] = 0xff489943;
-        defaultColors[key_chat_inInstant] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inInstant] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_inInstantSelected] = 0xff3079b5;
         defaultColors[key_chat_sentError] = 0xffdb3535;
         defaultColors[key_chat_sentErrorIcon] = 0xffffffff;
         defaultColors[key_chat_selectedBackground] = 0x280a90f0;
         defaultColors[key_chat_previewDurationText] = 0xffffffff;
         defaultColors[key_chat_previewGameText] = 0xffffffff;
-        defaultColors[key_chat_inPreviewInstantText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inPreviewInstantText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_outPreviewInstantText] = 0xff55ab4f;
         defaultColors[key_chat_secretTimeText] = 0xffe4e2e0;
         defaultColors[key_chat_stickerNameText] = 0xffffffff;
@@ -358,14 +358,14 @@ public class ThemeColors {
         defaultColors[key_chat_outForwardedNameText] = 0xff55ab4f;
         defaultColors[key_chat_inPsaNameText] = 0xff5a9c39;
         defaultColors[key_chat_outPsaNameText] = 0xff5a9c39;
-        defaultColors[key_chat_inViaBotNameText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inViaBotNameText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_outViaBotNameText] = 0xff55ab4f;
         defaultColors[key_chat_stickerViaBotNameText] = 0xffffffff;
         defaultColors[key_chat_inReplyLine] = 0xff599fd8;
         defaultColors[key_chat_outReplyLine] = 0xff6eb969;
         defaultColors[key_chat_outReplyLine2] = 0xff40A920;
         defaultColors[key_chat_stickerReplyLine] = 0xffffffff;
-        defaultColors[key_chat_inReplyNameText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inReplyNameText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_outReplyNameText] = 0xff55ab4f;
         defaultColors[key_chat_stickerReplyNameText] = 0xffffffff;
         defaultColors[key_chat_inReplyMessageText] = 0xff000000;
@@ -377,7 +377,7 @@ public class ThemeColors {
         defaultColors[key_chat_stickerReplyMessageText] = 0xffffffff;
         defaultColors[key_chat_inPreviewLine] = 0xff70b4e8;
         defaultColors[key_chat_outPreviewLine] = 0xff88c97b;
-        defaultColors[key_chat_inSiteNameText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inSiteNameText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_outSiteNameText] = 0xff55ab4f;
         defaultColors[key_chat_inContactNameText] = 0xff4e9ad4;
         defaultColors[key_chat_outContactNameText] = 0xff55ab4f;
@@ -415,19 +415,19 @@ public class ThemeColors {
         defaultColors[key_chat_outAudioCacheSeekbar] = 0x3fbbe3ac;
         defaultColors[key_chat_inAudioSeekbarSelected] = 0xffbcdee8;
         defaultColors[key_chat_outAudioSeekbarSelected] = 0xffa9dd96;
-        defaultColors[key_chat_inAudioSeekbarFill] = TELEGRAM_COLOR;
+        defaultColors[key_chat_inAudioSeekbarFill] = TAJGRAM_COLOR;
         defaultColors[key_chat_outAudioSeekbarFill] = 0xff78c272;
         defaultColors[key_chat_inVoiceSeekbar] = 0xffdee5eb;
         defaultColors[key_chat_outVoiceSeekbar] = 0xffbbe3ac;
         defaultColors[key_chat_inVoiceSeekbarSelected] = 0xffbcdee8;
         defaultColors[key_chat_outVoiceSeekbarSelected] = 0xffa9dd96;
-        defaultColors[key_chat_inVoiceSeekbarFill] = TELEGRAM_COLOR;
+        defaultColors[key_chat_inVoiceSeekbarFill] = TAJGRAM_COLOR;
         defaultColors[key_chat_outVoiceSeekbarFill] = 0xff78c272;
         defaultColors[key_chat_inFileProgress] = 0xffebf0f5;
         defaultColors[key_chat_outFileProgress] = 0xffdaf5c3;
         defaultColors[key_chat_inFileProgressSelected] = 0xffcbeaf6;
         defaultColors[key_chat_outFileProgressSelected] = 0xffc5eca7;
-        defaultColors[key_chat_inFileNameText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inFileNameText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_outFileNameText] = 0xff55ab4f;
         defaultColors[key_chat_inFileInfoText] = 0xffa1aab3;
         defaultColors[key_chat_outFileInfoText] = 0xff65b05b;
@@ -470,18 +470,18 @@ public class ThemeColors {
         defaultColors[key_chat_inLocationBackground] = 0xffebf0f5;
         defaultColors[key_chat_inLocationIcon] = 0xffa2b5c7;
         defaultColors[key_chat_outLocationIcon] = 0xff87bf78;
-        defaultColors[key_chat_inContactBackground] = TELEGRAM_COLOR;
+        defaultColors[key_chat_inContactBackground] = TAJGRAM_COLOR;
         defaultColors[key_chat_inContactIcon] = 0xffffffff;
         defaultColors[key_chat_outContactBackground] = 0xff78c272;
         defaultColors[key_chat_outContactIcon] = 0xffefffde;
         defaultColors[key_chat_searchPanelIcons] = 0xff676a6f;
         defaultColors[key_chat_searchPanelText] = 0xff676a6f;
         defaultColors[key_chat_secretChatStatusText] = 0xff7f7f7f;
-        defaultColors[key_chat_fieldOverlayText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_fieldOverlayText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_stickersHintPanel] = 0xffffffff;
         defaultColors[key_chat_replyPanelIcons] = 0xff57a8e6;
         defaultColors[key_chat_replyPanelClose] = 0xff8e959b;
-        defaultColors[key_chat_replyPanelName] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_replyPanelName] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_replyPanelLine] = 0xffe8e8e8;
         defaultColors[key_chat_messagePanelBackground] = 0xffffffff;
         defaultColors[key_chat_messagePanelText] = 0xff000000;
@@ -496,7 +496,7 @@ public class ThemeColors {
         defaultColors[key_chat_recordedVoiceProgress] = 0xffB1DEFF;
         defaultColors[key_chat_recordedVoiceProgressInner] = 0xffffffff;
         defaultColors[key_chat_recordVoiceCancel] = 0xff3A95D4;
-        defaultColors[key_chat_messagePanelSend] = TELEGRAM_COLOR;
+        defaultColors[key_chat_messagePanelSend] = TAJGRAM_COLOR;
         defaultColors[key_chat_messagePanelVoiceLock] = 0xffa4a4a4;
         defaultColors[key_chat_messagePanelVoiceLockBackground] = 0xffffffff;
         defaultColors[key_chat_messagePanelVoiceLockShadow] = 0xff000000;
@@ -506,20 +506,20 @@ public class ThemeColors {
         defaultColors[key_chat_gifSaveHintBackground] = 0xE21f2b38;
         defaultColors[key_chat_goDownButton] = 0xffffffff;
         defaultColors[key_chat_goDownButtonCounter] = 0xffffffff;
-        defaultColors[key_chat_goDownButtonCounterBackground] = TELEGRAM_COLOR;
+        defaultColors[key_chat_goDownButtonCounterBackground] = TAJGRAM_COLOR;
         defaultColors[key_chat_messagePanelCancelInlineBot] = 0xffadadad;
         defaultColors[key_chat_messagePanelVoicePressed] = 0xffffffff;
-        defaultColors[key_chat_messagePanelVoiceBackground] = TELEGRAM_COLOR;
+        defaultColors[key_chat_messagePanelVoiceBackground] = TAJGRAM_COLOR;
         defaultColors[key_chat_messagePanelVoiceDelete] = 0xff737373;
         defaultColors[key_chat_messagePanelVoiceDuration] = 0xffffffff;
         defaultColors[key_chat_inlineResultIcon] = 0xff5795cc;
         defaultColors[key_chat_topPanelBackground] = 0xffffffff;
         defaultColors[key_chat_topPanelClose] = 0xff818786;
         defaultColors[key_chat_topPanelLine] = 0xff3fa8ef;
-        defaultColors[key_chat_topPanelTitle] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_topPanelTitle] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_topPanelMessage] = 0xff767e7c;
-        defaultColors[key_chat_addContact] = TELEGRAM_COLOR_TEXT;
-        defaultColors[key_chat_inLoader] = TELEGRAM_COLOR;
+        defaultColors[key_chat_addContact] = TAJGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inLoader] = TAJGRAM_COLOR;
         defaultColors[key_chat_inLoaderSelected] = 0xff65abe0;
         defaultColors[key_chat_outLoader] = 0xff78c272;
         defaultColors[key_chat_outLoaderSelected] = 0xff6ab564;
@@ -536,7 +536,7 @@ public class ThemeColors {
         defaultColors[key_profile_actionIcon] = 0xff81868a;
         defaultColors[key_profile_actionBackground] = 0xffffffff;
         defaultColors[key_profile_actionPressedBackground] = 0x121a1d21;
-        defaultColors[key_profile_verifiedBackground] = TELEGRAM_COLOR;
+        defaultColors[key_profile_verifiedBackground] = TAJGRAM_COLOR;
         defaultColors[key_profile_verifiedCheck] = 0xffffffff;
         defaultColors[key_profile_title] = 0xff222222;
         defaultColors[key_profile_status] = 0xff222222;
@@ -591,9 +591,9 @@ public class ThemeColors {
         defaultColors[key_calls_callReceivedGreenIcon] = 0xff00c853;
         defaultColors[key_calls_callReceivedRedIcon] = 0xffff4848;
 
-        defaultColors[key_featuredStickers_addedIcon] = TELEGRAM_COLOR;
+        defaultColors[key_featuredStickers_addedIcon] = TAJGRAM_COLOR;
         defaultColors[key_featuredStickers_buttonProgress] = 0xffffffff;
-        defaultColors[key_featuredStickers_addButton] = TELEGRAM_COLOR;
+        defaultColors[key_featuredStickers_addButton] = TAJGRAM_COLOR;
         defaultColors[key_featuredStickers_addButton2] = 0xFF56baf0;
         defaultColors[key_featuredStickers_addButtonPressed] = 0xff2288d1;
         defaultColors[key_featuredStickers_removeButtonText] = 0xff5093d3;
@@ -605,7 +605,7 @@ public class ThemeColors {
         defaultColors[key_inappPlayerPerformer] = 0xff1a1d21;
         defaultColors[key_inappPlayerTitle] = 0xff1a1d21;
         defaultColors[key_inappPlayerBackground] = 0xffffffff;
-        defaultColors[key_inappPlayerPlayPause] = TELEGRAM_COLOR;
+        defaultColors[key_inappPlayerPlayPause] = TAJGRAM_COLOR;
         defaultColors[key_inappPlayerClose] = 0xff898b86;
 
         defaultColors[key_returnToCallBackground] = 0xff44a1e3;
@@ -624,7 +624,7 @@ public class ThemeColors {
         defaultColors[key_stickers_menu] = 0xffb6bdc5;
         defaultColors[key_stickers_menuSelector] = 0x0f000000;
 
-        defaultColors[key_changephoneinfo_image2] = TELEGRAM_COLOR;
+        defaultColors[key_changephoneinfo_image2] = TAJGRAM_COLOR;
 
         defaultColors[key_groupcreate_hintText] = 0xffa1aab3;
         defaultColors[key_groupcreate_cursor] = 0xff52a3db;
@@ -757,11 +757,11 @@ public class ThemeColors {
         defaultColors[key_voipgroup_mutedByAdminMuteButton] = 0x7F78A3FF;
         defaultColors[key_voipgroup_mutedByAdminMuteButtonDisabled] = 0x3378A3FF;
         defaultColors[key_voipgroup_windowBackgroundWhiteInputField] = 0xffdbdbdb;
-        defaultColors[key_voipgroup_windowBackgroundWhiteInputFieldActivated] = TELEGRAM_COLOR;
+        defaultColors[key_voipgroup_windowBackgroundWhiteInputFieldActivated] = TAJGRAM_COLOR;
 
         defaultColors[key_chat_outReactionButtonBackground] = 0xff78c272;
-        defaultColors[key_chat_inReactionButtonBackground] = TELEGRAM_COLOR;
-        defaultColors[key_chat_inReactionButtonText] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_chat_inReactionButtonBackground] = TAJGRAM_COLOR;
+        defaultColors[key_chat_inReactionButtonText] = TAJGRAM_COLOR_TEXT;
         defaultColors[key_chat_outReactionButtonText] = 0xff55ab4f;
         defaultColors[key_chat_inReactionButtonTextSelected] = 0xffffffff;
         defaultColors[key_chat_outReactionButtonTextSelected] = 0xffffffff;
@@ -814,7 +814,7 @@ public class ThemeColors {
 
         defaultColors[key_iv_background] = 0xFFFFFFFF;
         defaultColors[key_iv_backgroundGray] = 0xfff0f0f0;
-        defaultColors[key_iv_ab_progress] = TELEGRAM_COLOR;
+        defaultColors[key_iv_ab_progress] = TAJGRAM_COLOR;
         defaultColors[key_iv_navigationBackground] = 0xfff0f0f0;
 
         defaultColors[key_reactionStarSelector] = 0x40F0AB1F;
@@ -828,12 +828,12 @@ public class ThemeColors {
         defaultColors[key_glass_tabUnselected] = 0xFF1A1D21;
 
         defaultColors[key_botKeyboard_button_danger] = 0xFFdb4646;
-        defaultColors[key_botKeyboard_button_primary] = TELEGRAM_COLOR;
+        defaultColors[key_botKeyboard_button_primary] = TAJGRAM_COLOR;
         defaultColors[key_botKeyboard_button_success] = 0xFF40b135;
 
-        defaultColors[key_telegram_color_dialogsLogo] = 0xFF168bdb;
-        defaultColors[key_telegram_color] = TELEGRAM_COLOR;
-        defaultColors[key_telegram_color_text] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_tajgram_color_dialogsLogo] = 0xFF168bdb;
+        defaultColors[key_tajgram_color] = TAJGRAM_COLOR;
+        defaultColors[key_tajgram_color_text] = TAJGRAM_COLOR_TEXT;
 
         return defaultColors;
     }
@@ -1612,9 +1612,9 @@ public class ThemeColors {
         colorKeysMap.put(key_botKeyboard_button_danger, "botKeyboard_button_danger");
         colorKeysMap.put(key_botKeyboard_button_primary, "botKeyboard_button_primary");
         colorKeysMap.put(key_botKeyboard_button_success, "botKeyboard_button_success");
-        colorKeysMap.put(key_telegram_color, "telegram_color");
-        colorKeysMap.put(key_telegram_color_text, "telegram_color_text");
-        colorKeysMap.put(key_telegram_color_dialogsLogo, "telegram_color_dialogsLogo");
+        colorKeysMap.put(key_tajgram_color, "tajgram_color");
+        colorKeysMap.put(key_tajgram_color_text, "tajgram_color_text");
+        colorKeysMap.put(key_tajgram_color_dialogsLogo, "tajgram_color_dialogsLogo");
 
         return colorKeysMap;
     }

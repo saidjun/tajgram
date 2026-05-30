@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Premium.boosts.adapters;
 
-import static org.telegram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
+import static org.tajgram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
 
 import android.content.Context;
 import android.os.Bundle;

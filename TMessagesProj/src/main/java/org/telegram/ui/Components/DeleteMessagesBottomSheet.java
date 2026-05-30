@@ -4,12 +4,12 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.UniversalAdapter.VIEW_TYPE_EXPANDABLE_SWITCH;
-import static org.telegram.ui.Components.UniversalAdapter.VIEW_TYPE_ROUND_CHECKBOX;
-import static org.telegram.ui.Components.UniversalAdapter.VIEW_TYPE_SHADOW_COLLAPSE_BUTTON;
-import static org.telegram.ui.Components.UniversalAdapter.VIEW_TYPE_SWITCH;
-import static org.telegram.ui.Components.UniversalAdapter.VIEW_TYPE_USER_GROUP_CHECKBOX;
-import static org.telegram.ui.Components.UniversalAdapter.VIEW_TYPE_USER_CHECKBOX;
+import static org.tajgram.ui.Components.UniversalAdapter.VIEW_TYPE_EXPANDABLE_SWITCH;
+import static org.tajgram.ui.Components.UniversalAdapter.VIEW_TYPE_ROUND_CHECKBOX;
+import static org.tajgram.ui.Components.UniversalAdapter.VIEW_TYPE_SHADOW_COLLAPSE_BUTTON;
+import static org.tajgram.ui.Components.UniversalAdapter.VIEW_TYPE_SWITCH;
+import static org.tajgram.ui.Components.UniversalAdapter.VIEW_TYPE_USER_GROUP_CHECKBOX;
+import static org.tajgram.ui.Components.UniversalAdapter.VIEW_TYPE_USER_CHECKBOX;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;

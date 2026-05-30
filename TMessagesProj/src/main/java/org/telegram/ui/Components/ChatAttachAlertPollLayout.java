@@ -288,7 +288,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             quizOnly = quizPoll ? 1 : 2;
         }*/
 
-        checkboxPaint.setColor(getThemedColor(Theme.key_telegram_color));
+        checkboxPaint.setColor(getThemedColor(Theme.key_tajgram_color));
         parentAlert.sizeNotifierFrameLayout.setDelegate(this);
         listAdapter = new ListAdapter(context);
 
@@ -1972,7 +1972,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                     } else if (position == poll2vLimitDurationTimeRow) {
                         checkDurationInfoRow(textCell, false);
                     } else {
-                        textCell.setColors(-1, Theme.key_telegram_color_text);
+                        textCell.setColors(-1, Theme.key_tajgram_color_text);
                         Drawable drawable1 = mContext.getResources().getDrawable(R.drawable.poll_add_circle);
                         Drawable drawable2 = mContext.getResources().getDrawable(R.drawable.poll_add_plus);
                         drawable1.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
@@ -2694,7 +2694,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
 
         themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
 
-        themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, null, null, null, Theme.key_telegram_color_text));
+        themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, null, null, null, Theme.key_tajgram_color_text));
         themeDescriptions.add(new ThemeDescription(listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, null, null, null, Theme.key_switchTrackChecked));
         themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextCell.class}, new String[]{"imageView"}, null, null, null, Theme.key_checkboxCheck));
 

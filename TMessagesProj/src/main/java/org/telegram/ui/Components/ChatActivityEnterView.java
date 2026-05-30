@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -13,7 +13,7 @@ import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.LaunchActivity.getLastFragment;
+import static org.tajgram.ui.LaunchActivity.getLastFragment;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -8556,7 +8556,7 @@ public class ChatActivityEnterView extends FrameLayout implements
             try {
                 if (wakeLock == null) {
                     PowerManager pm = (PowerManager) ApplicationLoader.applicationContext.getSystemService(Context.POWER_SERVICE);
-                    wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "telegram:audio_record_lock");
+                    wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "tajgram:audio_record_lock");
                     wakeLock.acquire();
                 }
             } catch (Exception e) {

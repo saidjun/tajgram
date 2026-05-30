@@ -9,8 +9,8 @@ import static org.tajgram.messenger.AndroidUtilities.setRectD;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.ActionBar.Theme.getColor;
-import static org.telegram.ui.ActionBar.Theme.multAlpha;
+import static org.tajgram.ui.ActionBar.Theme.getColor;
+import static org.tajgram.ui.ActionBar.Theme.multAlpha;
 
 import android.content.Context;
 import android.graphics.Canvas;

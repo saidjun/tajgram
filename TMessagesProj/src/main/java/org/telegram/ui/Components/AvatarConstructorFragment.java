@@ -4,9 +4,9 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.AndroidUtilities.premiumText;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.ImageUpdater.FOR_TYPE_CHANNEL;
-import static org.telegram.ui.Components.ImageUpdater.FOR_TYPE_GROUP;
-import static org.telegram.ui.Components.ImageUpdater.TYPE_SUGGEST_PHOTO_FOR_USER;
+import static org.tajgram.ui.Components.ImageUpdater.FOR_TYPE_CHANNEL;
+import static org.tajgram.ui.Components.ImageUpdater.FOR_TYPE_GROUP;
+import static org.tajgram.ui.Components.ImageUpdater.TYPE_SUGGEST_PHOTO_FOR_USER;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

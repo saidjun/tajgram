@@ -4,7 +4,7 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.DialogsActivity.highlightFoundQuote;
+import static org.tajgram.ui.DialogsActivity.highlightFoundQuote;
 
 import android.app.Activity;
 import android.content.Context;

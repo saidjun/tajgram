@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -227,7 +227,7 @@ public class Browser {
         return (
             isTelegraphUrl(url, false, true) ||
             url.matches("^(https://)?t\\.me/iv\\??(/.*|$)") || // t.me/iv?
-            url.matches("^(https://)?telegram\\.org/(blog|tour)(/.*|$)") || // telegram.org/blog, telegram.org/tour
+            url.matches("^(https://)?tajgram\\.org/(blog|tour)(/.*|$)") || // tajgram.org/blog, tajgram.org/tour
             url.matches("^(https://)?fragment\\.com(/.*|$)") // fragment.com
         );
     }
@@ -307,7 +307,7 @@ public class Browser {
         if (tryTelegraph) {
             try {
                 String host = AndroidUtilities.getHostAuthority(uri);
-                if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null && (isTelegraphUrl(host, true) || "telegram.org".equalsIgnoreCase(host) && (uri.toString().toLowerCase().contains("telegram.org/faq") || uri.toString().toLowerCase().contains("telegram.org/privacy") || uri.toString().toLowerCase().contains("telegram.org/blog")))) {
+                if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null && (isTelegraphUrl(host, true) || "tajgram.org".equalsIgnoreCase(host) && (uri.toString().toLowerCase().contains("tajgram.org/faq") || uri.toString().toLowerCase().contains("tajgram.org/privacy") || uri.toString().toLowerCase().contains("tajgram.org/blog")))) {
                     final AlertDialog[] progressDialog = new AlertDialog[] {
                         new AlertDialog(context, AlertDialog.ALERT_TYPE_SPINNER)
                     };
@@ -433,7 +433,7 @@ public class Browser {
                                 uri = Uri.parse(fallbackUrl);
                             }
                         }
-                        openInTelegramBrowser(context, uri.toString(), inCaseLoading);
+                        openInTajgramBrowser(context, uri.toString(), inCaseLoading);
                     }
                 } else {
                     openInExternalBrowser(context, uri.toString(), allowIntent, browserPackage);
@@ -485,7 +485,7 @@ public class Browser {
         return fragment != null && fragment.getArticleViewer() != null;
     }
 
-    public static boolean openInTelegramBrowser(Context context, String url, Browser.Progress progress) {
+    public static boolean openInTajgramBrowser(Context context, String url, Browser.Progress progress) {
         if (LaunchActivity.instance != null) {
             BottomSheetTabs tabs = LaunchActivity.instance.getBottomSheetTabs();
             if (tabs != null && tabs.tryReopenTab(url) != null) {
@@ -656,7 +656,7 @@ public class Browser {
         }
         try {
             url = url.toLowerCase();
-            if (url.startsWith("tg:passport") || url.startsWith("tg://passport") || url.startsWith("tg:secureid") || url.contains("resolve") && url.contains("domain=telegrampassport")) {
+            if (url.startsWith("tg:passport") || url.startsWith("tg://passport") || url.startsWith("tg:secureid") || url.contains("resolve") && url.contains("domain=tajgrampassport")) {
                 return true;
             }
         } catch (Throwable ignore) {
@@ -711,7 +711,7 @@ public class Browser {
             return true;
         } else if ("tg".equals(uri.getScheme())) {
             return true;
-        } else if ("telegram.dog".equals(host)) {
+        } else if ("tajgram.dog".equals(host)) {
             String path = uri.getPath();
             if (path != null && path.length() > 1) {
                 if (all) {
@@ -726,7 +726,7 @@ public class Browser {
                 }
                 return true;
             }
-        } else if ("telegram.me".equals(host) || "t.me".equals(host)) {
+        } else if ("tajgram.me".equals(host) || "t.me".equals(host)) {
             String path = uri.getPath();
             if (path != null && path.length() > 1) {
                 if (all) {
@@ -741,10 +741,10 @@ public class Browser {
                 }
                 return true;
             }
-        } else if ("telegram.org".equals(host) && uri != null && uri.getPath() != null && uri.getPath().startsWith("/blog/")) {
+        } else if ("tajgram.org".equals(host) && uri != null && uri.getPath() != null && uri.getPath().startsWith("/blog/")) {
             return true;
         } else if (all) {
-            if (host.endsWith("telegram.org") || host.endsWith("telegra.ph") || host.endsWith("telesco.pe")) {
+            if (host.endsWith("tajgram.org") || host.endsWith("telegra.ph") || host.endsWith("telesco.pe")) {
                 return true;
             }
         }

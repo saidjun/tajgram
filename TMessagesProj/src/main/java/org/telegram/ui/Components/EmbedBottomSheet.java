@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -449,7 +449,7 @@ public class EmbedBottomSheet extends BottomSheet {
                 }
                 videoView.loadVideo(null, null, null, null, false);
                 HashMap<String, String> args = new HashMap<>();
-                args.put("Referer", "messenger.telegram.org");
+                args.put("Referer", "messenger.tajgram.org");
                 try {
                     webView.loadUrl(embedUrl, args);
                 } catch (Exception e) {
@@ -911,7 +911,7 @@ public class EmbedBottomSheet extends BottomSheet {
                     }
                     videoView.loadVideo(null, null, null, null, false);
                     HashMap<String, String> args = new HashMap<>();
-                    args.put("Referer", "messenger.telegram.org");
+                    args.put("Referer", "messenger.tajgram.org");
                     try {
                         String currentYoutubeId = videoView.getYoutubeId();
                         if (currentYoutubeId != null) {
@@ -943,7 +943,7 @@ public class EmbedBottomSheet extends BottomSheet {
                                     FileLog.e(e);
                                 }
                             }
-                            webView.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, youtubeFrame, currentYoutubeId, seekToTime), "text/html", "UTF-8", "https://youtube.com");
+                            webView.loadDataWithBaseURL("https://messenger.tajgram.org/", String.format(Locale.US, youtubeFrame, currentYoutubeId, seekToTime), "text/html", "UTF-8", "https://youtube.com");
                         } else {
                             webView.loadUrl(embedUrl, args);
                         }

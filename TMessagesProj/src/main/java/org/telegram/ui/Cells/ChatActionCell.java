@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -14,7 +14,7 @@ import static org.tajgram.messenger.LocaleController.formatNumber;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

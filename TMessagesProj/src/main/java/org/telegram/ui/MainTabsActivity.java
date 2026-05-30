@@ -3,7 +3,7 @@ package org.tajgram.ui;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
+import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
 
 import android.animation.Animator;
 import android.content.Context;

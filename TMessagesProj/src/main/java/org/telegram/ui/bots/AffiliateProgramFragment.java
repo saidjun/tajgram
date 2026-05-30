@@ -3,7 +3,7 @@ package org.tajgram.ui.bots;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell.buildCountDownTime;
+import static org.tajgram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell.buildCountDownTime;
 
 import android.content.Context;
 import android.graphics.Canvas;

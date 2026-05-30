@@ -2020,7 +2020,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 } else if (viewType == VIEW_TYPE_HEADER3) {
                     view = new HeaderCell2(context, resourcesProvider, false);
                 } else if (viewType == VIEW_TYPE_HEADER_CELL) {
-                    view = new org.telegram.ui.Cells.HeaderCell(context, resourcesProvider);
+                    view = new org.tajgram.ui.Cells.HeaderCell(context, resourcesProvider);
                     view.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
                 } else if (viewType == VIEW_TYPE_NO_USERS) {
                     StickerEmptyView searchEmptyView = new StickerEmptyView(context, null, StickerEmptyView.STICKER_TYPE_SEARCH, resourcesProvider);
@@ -2125,7 +2125,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         ((TextCell) holder.itemView).setTextAndValue(item.text, item.text2, divider);
                     }
                 } else if (viewType == VIEW_TYPE_HEADER_CELL) {
-                    ((org.telegram.ui.Cells.HeaderCell) holder.itemView).setText(item.text);
+                    ((org.tajgram.ui.Cells.HeaderCell) holder.itemView).setText(item.text);
                 } else if (viewType == VIEW_TYPE_SLIDER) {
                     int max = (int) MessagesController.getInstance(currentAccount).starsPaidMessageAmountMax;
                     final int[] steps = SlideIntChooseView.cut(new int[] { 0, 1, 10, 50, 100, 200, 250, 400, 500, 1000, 2500, 5000, 7500, 9000, 10_000 }, max);

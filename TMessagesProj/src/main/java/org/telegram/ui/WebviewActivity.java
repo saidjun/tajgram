@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -81,7 +81,7 @@ public class WebviewActivity extends BaseFragment {
 
     private int type;
 
-    private class TelegramWebviewProxy {
+    private class TajgramWebviewProxy {
         @JavascriptInterface
         public void postEvent(final String eventName, final String eventData) {
             AndroidUtilities.runOnUIThread(() -> {
@@ -230,7 +230,7 @@ public class WebviewActivity extends BaseFragment {
             CookieManager cookieManager = CookieManager.getInstance();
             cookieManager.setAcceptThirdPartyCookies(webView, true);
             if (type == TYPE_GAME) {
-                webView.addJavascriptInterface(new TelegramWebviewProxy(), "TelegramWebviewProxy");
+                webView.addJavascriptInterface(new TajgramWebviewProxy(), "TajgramWebviewProxy");
             }
         }
 
@@ -244,7 +244,7 @@ public class WebviewActivity extends BaseFragment {
                 if ("tg".equals(uri.getScheme())) {
                     if (type == TYPE_STAT) {
                         try {
-                            uri = Uri.parse(url.replace("tg:statsrefresh", "tg://telegram.org"));
+                            uri = Uri.parse(url.replace("tg:statsrefresh", "tg://tajgram.org"));
                             reloadStats(uri.getQueryParameter("params"));
                         } catch (Throwable e) {
                             FileLog.e(e);

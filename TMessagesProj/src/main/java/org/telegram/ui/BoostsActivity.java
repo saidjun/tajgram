@@ -1,8 +1,8 @@
 package org.tajgram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
-import static org.telegram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_FEATURES;
+import static org.tajgram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
+import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_FEATURES;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -304,7 +304,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                 TL_stories.PrepaidGiveaway prepaidGiveaway = item.prepaidGiveaway;
                 GiveawayCell giveawayCell = (GiveawayCell) holder.itemView;
                 if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-                    String name = LocaleController.formatPluralString("BoostingTelegramPremiumCountPlural", prepaidGiveaway.quantity);
+                    String name = LocaleController.formatPluralString("BoostingTajgramPremiumCountPlural", prepaidGiveaway.quantity);
                     String info = LocaleController.formatPluralString("BoostingSubscriptionsCountPlural", prepaidGiveaway.quantity, LocaleController.formatPluralString("PrepaidGiveawayMonths", ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months));
                     giveawayCell.setData(prepaidGiveaway, name, info, 0, !item.isLast);
                 } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {

@@ -1,7 +1,7 @@
 package org.tajgram.messenger;
 
 import static org.tajgram.messenger.AndroidUtilities.isInAirplaneMode;
-import static org.telegram.ui.PremiumPreviewFragment.applyNewSpan;
+import static org.tajgram.ui.PremiumPreviewFragment.applyNewSpan;
 
 import android.app.Activity;
 import android.content.Context;

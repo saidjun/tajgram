@@ -2,7 +2,7 @@ package org.tajgram.ui.bots;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
-import static org.telegram.ui.Components.Bulletin.DURATION_PROLONG;
+import static org.tajgram.ui.Components.Bulletin.DURATION_PROLONG;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

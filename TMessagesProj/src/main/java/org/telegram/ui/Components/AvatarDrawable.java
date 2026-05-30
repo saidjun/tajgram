@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -103,7 +103,7 @@ public class AvatarDrawable extends Drawable {
     public static final int AVATAR_TYPE_SUGGESTION = 27;
 
     /**
-     * Matches {@link org.telegram.ui.Components.AvatarConstructorFragment#defaultColors}
+     * Matches {@link org.tajgram.ui.Components.AvatarConstructorFragment#defaultColors}
      * but reordered to preserve color tints.
      */
     public static final int[][] advancedGradients = new int[][]{

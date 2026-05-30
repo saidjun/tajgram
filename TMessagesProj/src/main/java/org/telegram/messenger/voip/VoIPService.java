@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -4644,7 +4644,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 				Instance.setBufferSize(AudioTrack.getMinBufferSize(48000, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT) / 2);
 			}
 
-			cpuWakelock = ((PowerManager) getSystemService(POWER_SERVICE)).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "telegram-voip");
+			cpuWakelock = ((PowerManager) getSystemService(POWER_SERVICE)).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "tajgram-voip");
 			cpuWakelock.acquire();
 
 			btAdapter = am.isBluetoothScoAvailableOffCall() ? BluetoothAdapter.getDefaultAdapter() : null;
@@ -4901,7 +4901,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 		Sensor proximity = sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 		try {
 			if (proximity != null) {
-				proximityWakelock = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(PROXIMITY_SCREEN_OFF_WAKE_LOCK, "telegram-voip-prx");
+				proximityWakelock = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(PROXIMITY_SCREEN_OFF_WAKE_LOCK, "tajgram-voip-prx");
 				sm.registerListener(this, proximity, SensorManager.SENSOR_DELAY_NORMAL);
 			}
 		} catch (Exception x) {
@@ -5675,7 +5675,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 	private PhoneAccountHandle addAccountToTelecomManager() {
 		TelecomManager tm = (TelecomManager) getSystemService(TELECOM_SERVICE);
 		TLRPC.User self = UserConfig.getInstance(currentAccount).getCurrentUser();
-		PhoneAccountHandle handle = new PhoneAccountHandle(new ComponentName(this, TelegramConnectionService.class), "" + self.id);
+		PhoneAccountHandle handle = new PhoneAccountHandle(new ComponentName(this, TajgramConnectionService.class), "" + self.id);
 		PhoneAccount account = new PhoneAccount.Builder(handle, ContactsController.formatName(self.first_name, self.last_name))
 				.setCapabilities(PhoneAccount.CAPABILITY_SELF_MANAGED)
 				.setIcon(Icon.createWithResource(this, R.drawable.ic_launcher_dr))

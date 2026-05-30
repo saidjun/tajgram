@@ -3,7 +3,7 @@ package org.tajgram.ui.TON;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsIntroActivity.formatStarsAmount;
+import static org.tajgram.ui.Stars.StarsIntroActivity.formatStarsAmount;
 
 import android.content.Context;
 import android.graphics.Paint;

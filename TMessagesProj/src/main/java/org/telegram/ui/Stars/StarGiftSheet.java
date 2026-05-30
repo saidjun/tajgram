@@ -13,14 +13,14 @@ import static org.tajgram.messenger.LocaleController.formatSpannable;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
 import static org.tajgram.messenger.MessagesController.findUpdates;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stars.StarsController.findAttributes;
-import static org.telegram.ui.Stars.StarsController.showNoSupportDialog;
-import static org.telegram.ui.Stars.StarsIntroActivity.addAvailabilityRow;
-import static org.telegram.ui.Stars.StarsIntroActivity.replaceStars;
-import static org.telegram.ui.Stars.StarsIntroActivity.replaceStarsWithPlain;
-import static org.telegram.ui.Stars.StarsIntroActivity.setGiftImage;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsController.findAttributes;
+import static org.tajgram.ui.Stars.StarsController.showNoSupportDialog;
+import static org.tajgram.ui.Stars.StarsIntroActivity.addAvailabilityRow;
+import static org.tajgram.ui.Stars.StarsIntroActivity.replaceStars;
+import static org.tajgram.ui.Stars.StarsIntroActivity.replaceStarsWithPlain;
+import static org.tajgram.ui.Stars.StarsIntroActivity.setGiftImage;
+import static org.tajgram.ui.bots.AffiliateProgramFragment.percents;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -8009,7 +8009,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 } else if (info.last_sale_on_fragment) {
                     textView.setText(AndroidUtilities.replaceTags(formatString(R.string.GiftValueLastFragment, giftName)));
                 } else {
-                    textView.setText(AndroidUtilities.replaceTags(formatString(R.string.GiftValueLastTelegram, giftName)));
+                    textView.setText(AndroidUtilities.replaceTags(formatString(R.string.GiftValueLastTajgram, giftName)));
                 }
 
                 final FrameLayout tableLayout = new FrameLayout(getContext());
@@ -8088,7 +8088,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     sb.append("e");
                     sb.setSpan(new AnimatedEmojiSpan(sticker, 1.5f, button1.getTextPaint().getFontMetricsInt()), sb.length() - 1, sb.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                     sb.append(" ");
-                    sb.append(getString(R.string.GiftValueOnSaleTelegram));
+                    sb.append(getString(R.string.GiftValueOnSaleTajgram));
                     button1.setText(AndroidUtilities.replaceArrows(sb, false, dp(2), dp(1)), false);
                     button1.setOnClickListener(v -> {
                         final BaseFragment lastFragment = LaunchActivity.getLastFragment();

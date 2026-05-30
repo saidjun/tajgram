@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -11,7 +11,7 @@ package org.tajgram.ui;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.dpf2;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.ActionBar.Theme.multAlpha;
+import static org.tajgram.ui.ActionBar.Theme.multAlpha;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -844,7 +844,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             if (viewType == 1) {
                 final TextCell textCell = new TextCell(context);
                 textCell.setColors(Theme.key_windowBackgroundWhiteBlackText, Theme.key_windowBackgroundWhiteBlackText);
-                textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.ShareTelegram2), "", R.drawable.msg_shareout, false);
+                textCell.setTextAndValueAndIcon(LocaleController.getString(R.string.ShareTajgram2), "", R.drawable.msg_shareout, false);
                 view = textCell;
             } else if (viewType == 2) {
                 view = new ShadowSectionCell(context, 12);

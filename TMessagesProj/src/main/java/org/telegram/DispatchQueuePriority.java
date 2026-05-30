@@ -1,4 +1,4 @@
-package org.telegram;
+package org.tajgram;
 
 import org.tajgram.messenger.FileLog;
 

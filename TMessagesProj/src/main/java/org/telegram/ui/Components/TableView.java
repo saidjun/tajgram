@@ -2,7 +2,7 @@ package org.tajgram.ui.Components;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsIntroActivity.StarsTransactionView.getPlatformDrawable;
+import static org.tajgram.ui.Stars.StarsIntroActivity.StarsTransactionView.getPlatformDrawable;
 
 import android.content.Context;
 import android.graphics.Canvas;

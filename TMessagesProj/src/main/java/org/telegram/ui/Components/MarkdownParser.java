@@ -502,14 +502,14 @@ public class MarkdownParser {
     private static int flagFor(String name) {
         if (name == null) return 0;
         switch (name.toLowerCase()) {
-            case "u": case "ins":            return org.telegram.ui.ArticleViewer.TEXT_FLAG_UNDERLINE;
-            case "mark":                     return org.telegram.ui.ArticleViewer.TEXT_FLAG_MARKED;
-            case "sub":                      return org.telegram.ui.ArticleViewer.TEXT_FLAG_SUB;
-            case "sup":                      return org.telegram.ui.ArticleViewer.TEXT_FLAG_SUP;
-            case "del": case "s": case "strike": return org.telegram.ui.ArticleViewer.TEXT_FLAG_STRIKE;
-            case "b": case "strong":         return org.telegram.ui.ArticleViewer.TEXT_FLAG_MEDIUM;
-            case "i": case "em":             return org.telegram.ui.ArticleViewer.TEXT_FLAG_ITALIC;
-            case "code": case "tt":          return org.telegram.ui.ArticleViewer.TEXT_FLAG_MONO;
+            case "u": case "ins":            return org.tajgram.ui.ArticleViewer.TEXT_FLAG_UNDERLINE;
+            case "mark":                     return org.tajgram.ui.ArticleViewer.TEXT_FLAG_MARKED;
+            case "sub":                      return org.tajgram.ui.ArticleViewer.TEXT_FLAG_SUB;
+            case "sup":                      return org.tajgram.ui.ArticleViewer.TEXT_FLAG_SUP;
+            case "del": case "s": case "strike": return org.tajgram.ui.ArticleViewer.TEXT_FLAG_STRIKE;
+            case "b": case "strong":         return org.tajgram.ui.ArticleViewer.TEXT_FLAG_MEDIUM;
+            case "i": case "em":             return org.tajgram.ui.ArticleViewer.TEXT_FLAG_ITALIC;
+            case "code": case "tt":          return org.tajgram.ui.ArticleViewer.TEXT_FLAG_MONO;
             default:                         return 0;
         }
     }
@@ -540,14 +540,14 @@ public class MarkdownParser {
             final TextStyle ts = (TextStyle) rt;
             TLRPC.RichText cur = materializeStyles(ts.text);
             final int f = ts.styleFlags;
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_MONO)      != 0) cur = wrapStyle(new TLRPC.TL_textFixed(),       cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_STRIKE)    != 0) cur = wrapStyle(new TLRPC.TL_textStrike(),      cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_UNDERLINE) != 0) cur = wrapStyle(new TLRPC.TL_textUnderline(),   cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_MARKED)    != 0) cur = wrapStyle(new TLRPC.TL_textMarked(),      cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_SUB)       != 0) cur = wrapStyle(new TLRPC.TL_textSubscript(),   cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_SUP)       != 0) cur = wrapStyle(new TLRPC.TL_textSuperscript(), cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_ITALIC)    != 0) cur = wrapStyle(new TLRPC.TL_textItalic(),      cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_MEDIUM)    != 0) cur = wrapStyle(new TLRPC.TL_textBold(),        cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_MONO)      != 0) cur = wrapStyle(new TLRPC.TL_textFixed(),       cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_STRIKE)    != 0) cur = wrapStyle(new TLRPC.TL_textStrike(),      cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_UNDERLINE) != 0) cur = wrapStyle(new TLRPC.TL_textUnderline(),   cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_MARKED)    != 0) cur = wrapStyle(new TLRPC.TL_textMarked(),      cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_SUB)       != 0) cur = wrapStyle(new TLRPC.TL_textSubscript(),   cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_SUP)       != 0) cur = wrapStyle(new TLRPC.TL_textSuperscript(), cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_ITALIC)    != 0) cur = wrapStyle(new TLRPC.TL_textItalic(),      cur);
+            if ((f & org.tajgram.ui.ArticleViewer.TEXT_FLAG_MEDIUM)    != 0) cur = wrapStyle(new TLRPC.TL_textBold(),        cur);
             return cur;
         }
         if (rt.text != null) rt.text = materializeStyles(rt.text);

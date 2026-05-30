@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -16,7 +16,7 @@ import static org.tajgram.messenger.MessageObject.POSITION_FLAG_BOTTOM;
 import static org.tajgram.messenger.MessageObject.POSITION_FLAG_LEFT;
 import static org.tajgram.messenger.MessageObject.POSITION_FLAG_RIGHT;
 import static org.tajgram.messenger.MessageObject.POSITION_FLAG_TOP;
-import static org.telegram.ui.Components.MarkdownParser.richTextToString;
+import static org.tajgram.ui.Components.MarkdownParser.richTextToString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -4805,7 +4805,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             Browser.openAsInternalIntent(parentActivity, link);
         } else if (!Browser.openInExternalApp(parentActivity, link, false)) {
             if (pages[0] == null || pages[0].getWebView() == null) {
-                Browser.openInTelegramBrowser(parentActivity, link, null);
+                Browser.openInTajgramBrowser(parentActivity, link, null);
             } else {
                 pages[0].getWebView().loadUrl(link);
             }
@@ -4816,7 +4816,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         if (parentActivity == null || entry == null) return;
         actionBar.showAddress(false, true);
         if (pages[0] == null || pages[0].getWebView() == null) {
-            Browser.openInTelegramBrowser(parentActivity, entry.url, null);
+            Browser.openInTajgramBrowser(parentActivity, entry.url, null);
         } else {
             pages[0].getWebView().loadUrl(entry.url, entry.meta);
         }
@@ -8427,7 +8427,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
     private class BlockEmbedCell extends FrameLayout implements TextSelectionHelper.ArticleSelectableView {
 
-        private class TelegramWebviewProxy {
+        private class TajgramWebviewProxy {
             @Keep
             @JavascriptInterface
             public void postEvent(final String eventName, final String eventData) {
@@ -8590,7 +8590,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
 
                 webView.getSettings().setAllowContentAccess(true);
                 webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
-                webView.addJavascriptInterface(new TelegramWebviewProxy(), "TelegramWebviewProxy");
+                webView.addJavascriptInterface(new TajgramWebviewProxy(), "TajgramWebviewProxy");
 
                 webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
                 CookieManager cookieManager = CookieManager.getInstance();
@@ -8726,7 +8726,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 try {
                     if (currentBlock.html != null) {
                         if (webView != null) {
-                            webView.loadDataWithBaseURL("https://telegram.org/embed", currentBlock.html, "text/html", "UTF-8", null);
+                            webView.loadDataWithBaseURL("https://tajgram.org/embed", currentBlock.html, "text/html", "UTF-8", null);
                             webView.setVisibility(VISIBLE);
                         }
                         if (videoView != null) {
@@ -10177,7 +10177,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (currentBlock.isCheckbox) {
                     if (checkbox == null) {
                         checkbox = new CheckBoxBase(this, 20, getResourcesProvider());
-                        checkbox.setColor(Theme.key_telegram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
+                        checkbox.setColor(Theme.key_tajgram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
                         checkbox.setBackgroundType(10);
                         checkbox.setDrawUnchecked(true);
                         checkbox.setCustomRadius(dp(5));
@@ -10435,7 +10435,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 if (currentBlock.isCheckbox) {
                     if (checkbox == null) {
                         checkbox = new CheckBoxBase(this, 20, getResourcesProvider());
-                        checkbox.setColor(Theme.key_telegram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
+                        checkbox.setColor(Theme.key_tajgram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
                         checkbox.setBackgroundType(10);
                         checkbox.setDrawUnchecked(true);
                         checkbox.setCustomRadius(dp(5));

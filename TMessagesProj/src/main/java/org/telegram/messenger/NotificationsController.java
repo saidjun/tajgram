@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -222,7 +222,7 @@ public class NotificationsController extends BaseController {
 
         try {
             PowerManager pm = (PowerManager) ApplicationLoader.applicationContext.getSystemService(Context.POWER_SERVICE);
-            notificationDelayWakelock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "telegram:notification_delay_lock");
+            notificationDelayWakelock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "tajgram:notification_delay_lock");
             notificationDelayWakelock.setReferenceCounted(false);
         } catch (Exception e) {
             FileLog.e(e);
@@ -3375,7 +3375,7 @@ public class NotificationsController extends BaseController {
             SharedPreferences preferences = getAccountInstance().getNotificationsSettings();
             SharedPreferences.Editor editor = preferences.edit();
             if (what == 0 || what == -1) {
-                String key = "org.telegram.key" + dialogId;
+                String key = "org.tajgram.key" + dialogId;
                 if (topicId != 0) {
                     key += ".topic" + topicId;
                 }
@@ -3393,7 +3393,7 @@ public class NotificationsController extends BaseController {
                 }
             }
             if (what == 1 || what == -1) {
-                String key = "org.telegram.keyia" + dialogId;
+                String key = "org.tajgram.keyia" + dialogId;
                 String channelId = preferences.getString(key, null);
                 if (channelId != null) {
                     editor.remove(key).remove(key + "_s");
@@ -3521,7 +3521,7 @@ public class NotificationsController extends BaseController {
                 SharedPreferences.Editor editor = preferences.edit();
                 for (Map.Entry<String, ?> entry : values.entrySet()) {
                     String key = entry.getKey();
-                    if (key.startsWith("org.telegram.key")) {
+                    if (key.startsWith("org.tajgram.key")) {
                         if (!key.endsWith("_s")) {
                             String id = (String) entry.getValue();
                             systemNotificationManager.deleteNotificationChannel(id);
@@ -3802,7 +3802,7 @@ public class NotificationsController extends BaseController {
                 name = LocaleController.formatString(R.string.NotificationsChatInApp, name);
             }
             //TODO notifications
-            key = (isInApp ? "org.telegram.keyia" : "org.telegram.key") + dialogId + "_" + topicId;
+            key = (isInApp ? "org.tajgram.keyia" : "org.tajgram.key") + dialogId + "_" + topicId;
         }
         key += "_" + soundHash;
         String channelId = preferences.getString(key, null);

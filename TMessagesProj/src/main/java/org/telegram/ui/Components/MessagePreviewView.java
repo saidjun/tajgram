@@ -1178,7 +1178,7 @@ public class MessagePreviewView extends FrameLayout {
                 if (textSelectionOverlay.getParent() instanceof ViewGroup) {
                     ((ViewGroup) textSelectionOverlay.getParent()).removeView(textSelectionOverlay);
                 }
-                addView(textSelectionOverlay, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP | Gravity.LEFT, 0, org.telegram.ui.ActionBar.ActionBar.getCurrentActionBarHeight() / AndroidUtilities.density, 0, 0));
+                addView(textSelectionOverlay, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP | Gravity.LEFT, 0, org.tajgram.ui.ActionBar.ActionBar.getCurrentActionBarHeight() / AndroidUtilities.density, 0, 0));
             }
             textSelectionHelper.setParentView(chatListView);
 
@@ -1338,7 +1338,7 @@ public class MessagePreviewView extends FrameLayout {
             menu.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec), MeasureSpec.UNSPECIFIED));
             buttonsHeight = Math.max(buttonsHeight, menu.getMeasuredHeight() + rect.top + rect.bottom);
 
-            ((MarginLayoutParams) chatListView.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.ActionBar.getCurrentActionBarHeight();
+            ((MarginLayoutParams) chatListView.getLayoutParams()).topMargin = org.tajgram.ui.ActionBar.ActionBar.getCurrentActionBarHeight();
             if (isLandscapeMode) {
                 chatPreviewContainer.getLayoutParams().height = LayoutHelper.MATCH_PARENT;
                 ((MarginLayoutParams) chatPreviewContainer.getLayoutParams()).topMargin = dp(8);

@@ -2,7 +2,7 @@ package org.tajgram.ui.web;
 
 import static org.tajgram.messenger.LocaleController.formatPluralString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.web.AddressBarList.getLink;
+import static org.tajgram.ui.web.AddressBarList.getLink;
 
 import android.content.Context;
 import android.text.TextUtils;

@@ -16,7 +16,7 @@ import org.tajgram.tlrpc.models.TlParams
 import org.tajgram.tlrpc.schema.TlSchemaPrimitiveType
 
 object SchemeCodeGen {
-    private val CLASS_OUTPUT = ClassName("org.telegram.tgnet", "OutputSerializedData")
+    private val CLASS_OUTPUT = ClassName("org.tajgram.tgnet", "OutputSerializedData")
 
     fun generateDataClass(tl: TlObjectWithLayer, superclass: TypeName?): TypeSpec {
         val className = tl.codegenDataClassName
@@ -50,7 +50,7 @@ object SchemeCodeGen {
         superclass?.let { builder.superclass(it) }
 
         if (superclass == null) {
-            builder.addSuperinterface(ClassName("org.telegram.tgnet.model", "TlGen_Object"))
+            builder.addSuperinterface(ClassName("org.tajgram.tgnet.model", "TlGen_Object"))
         }
 
         return builder.build()
@@ -354,7 +354,7 @@ object SchemeCodeGen {
                 if (type.name == "Bool") {
                     com.squareup.kotlinpoet.BOOLEAN
                 } else {
-                    ClassName("org.telegram.tgnet.model.generated", "TlGen_" + type.name.replace('.', '_'))
+                    ClassName("org.tajgram.tgnet.model.generated", "TlGen_" + type.name.replace('.', '_'))
                 }
             }
 
@@ -362,7 +362,7 @@ object SchemeCodeGen {
 
             is TlSchemaParamType.Flag.True -> com.squareup.kotlinpoet.BOOLEAN
 
-            is TlSchemaParamType.Primary.X -> ClassName("org.telegram.tgnet.model", "TlGen_Object")
+            is TlSchemaParamType.Primary.X -> ClassName("org.tajgram.tgnet.model", "TlGen_Object")
             is TlSchemaParamType.Flags -> null
         }
     }

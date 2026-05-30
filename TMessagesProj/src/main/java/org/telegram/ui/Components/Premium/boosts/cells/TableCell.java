@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Premium.boosts.cells;
 
-import static org.telegram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
+import static org.tajgram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -223,7 +223,7 @@ public class TableCell extends FrameLayout {
         }
 
         String monthsStr = giftCode.months == 12 ? LocaleController.formatPluralString("Years", 1) : LocaleController.formatPluralString("Months", giftCode.months);
-        giftTextView.setText(LocaleController.formatString("BoostingTelegramPremiumFor", R.string.BoostingTelegramPremiumFor, monthsStr));
+        giftTextView.setText(LocaleController.formatString("BoostingTajgramPremiumFor", R.string.BoostingTajgramPremiumFor, monthsStr));
 
         if (fromChat != null) {
             SpannableStringBuilder builder = new SpannableStringBuilder();

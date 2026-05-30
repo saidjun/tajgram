@@ -462,7 +462,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 final PackageInfo packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
                 final int perf = SharedConfig.getDevicePerformanceClass();
                 final String perfName = perf == SharedConfig.PERFORMANCE_CLASS_LOW ? "LOW" : perf == SharedConfig.PERFORMANCE_CLASS_AVERAGE ? "AVERAGE" : "HIGH";
-                useragent += " Telegram-Android/" + packageInfo.versionName + " (" + capitalizeFirst(Build.MANUFACTURER) + " " + Build.MODEL + "; Android " + Build.VERSION.RELEASE + "; SDK " + Build.VERSION.SDK_INT + "; " + perfName + ")";
+                useragent += " Tajgram-Android/" + packageInfo.versionName + " (" + capitalizeFirst(Build.MANUFACTURER) + " " + Build.MODEL + "; Android " + Build.VERSION.RELEASE + "; SDK " + Build.VERSION.SDK_INT + "; " + perfName + ")";
             }
             settings.setUserAgentString(useragent);
         } catch (Exception e) {
@@ -492,9 +492,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
                 if (botWebViewProxy == null) {
                     botWebViewProxy = new BotWebViewProxy(this);
-                    webView.addJavascriptInterface(botWebViewProxy, "TelegramWebviewProxy");
+                    webView.addJavascriptInterface(botWebViewProxy, "TajgramWebviewProxy");
                 } else if (replaceWith == null) {
-                    webView.addJavascriptInterface(botWebViewProxy, "TelegramWebviewProxy");
+                    webView.addJavascriptInterface(botWebViewProxy, "TajgramWebviewProxy");
                 }
                 botWebViewProxy.setContainer(this);
             } else {
@@ -503,9 +503,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 }
                 if (webViewProxy == null) {
                     webViewProxy = new WebViewProxy(webView, this);
-                    webView.addJavascriptInterface(webViewProxy, "TelegramWebviewProxy");
+                    webView.addJavascriptInterface(webViewProxy, "TajgramWebviewProxy");
                 } else if (replaceWith == null) {
-                    webView.addJavascriptInterface(webViewProxy, "TelegramWebviewProxy");
+                    webView.addJavascriptInterface(webViewProxy, "TajgramWebviewProxy");
                 }
                 webViewProxy.setContainer(this);
             }
@@ -1159,12 +1159,12 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     public void notifyEvent(String event, JSONObject eventData) {
         d("notifyEvent " + event);
-        evaluateJs("window.Telegram.WebView.receiveEvent('" + event + "', " + eventData + ");", false);
+        evaluateJs("window.Tajgram.WebView.receiveEvent('" + event + "', " + eventData + ");", false);
     }
 
     private void notifyEvent_fast(String event, String eventData) {
         StringBuilder sb = new StringBuilder();
-        sb.append("window.Telegram.WebView.receiveEvent('");
+        sb.append("window.Tajgram.WebView.receiveEvent('");
         sb.append(event);
         sb.append("', ");
         sb.append(eventData);
@@ -1175,7 +1175,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     private static void notifyEvent(int currentAccount, MyWebView webView, String event, JSONObject eventData) {
         if (webView == null) return;
         NotificationCenter.getInstance(currentAccount).doOnIdle(() -> {
-            webView.evaluateJS("window.Telegram.WebView.receiveEvent('" + event + "', " + eventData + ");");
+            webView.evaluateJS("window.Tajgram.WebView.receiveEvent('" + event + "', " + eventData + ");");
         });
     }
 
@@ -3772,7 +3772,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             builder.setTitleMultipleLines(true);
                             builder.setTitle(formattedUrl);
                             builder.setItems(new CharSequence[]{
-                                    LocaleController.getString(R.string.OpenInTelegramBrowser),
+                                    LocaleController.getString(R.string.OpenInTajgramBrowser),
                                     LocaleController.getString(R.string.OpenInSystemBrowser),
                                     LocaleController.getString(R.string.Copy)
                             }, (dialog, which) -> {

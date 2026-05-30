@@ -6,8 +6,8 @@ import static org.tajgram.messenger.AndroidUtilities.replaceSingleLink;
 import static org.tajgram.messenger.AndroidUtilities.replaceSingleTag;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Cells.TextCell.applyNewSpan;
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
+import static org.tajgram.ui.Cells.TextCell.applyNewSpan;
+import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
 
 import android.content.Context;
 import android.content.SharedPreferences;

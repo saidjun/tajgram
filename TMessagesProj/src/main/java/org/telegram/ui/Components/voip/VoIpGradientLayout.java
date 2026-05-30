@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.voip;
 
-import static org.telegram.ui.Components.voip.VoIPBackgroundProvider.REVEAL_SCALE_FACTOR;
+import static org.tajgram.ui.Components.voip.VoIPBackgroundProvider.REVEAL_SCALE_FACTOR;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

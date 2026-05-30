@@ -2,8 +2,8 @@ package org.tajgram.ui.Cells;
 
 import static com.google.zxing.common.detector.MathUtils.distance;
 import static org.tajgram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.ActionBar.FloatingToolbar.STYLE_THEME;
-import static org.telegram.ui.ActionBar.Theme.key_chat_inTextSelectionHighlight;
+import static org.tajgram.ui.ActionBar.FloatingToolbar.STYLE_THEME;
+import static org.tajgram.ui.ActionBar.Theme.key_chat_inTextSelectionHighlight;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

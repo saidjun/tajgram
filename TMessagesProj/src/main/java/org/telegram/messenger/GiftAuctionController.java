@@ -1,6 +1,6 @@
 package org.tajgram.messenger;
 
-import static org.telegram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;

@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -13,7 +13,7 @@ import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.formatString;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.tajgram.ui.bots.AffiliateProgramFragment.percents;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -9449,7 +9449,7 @@ public class ChatActivity extends BaseFragment implements
         emojiStatusSpamHint.setTextColor(getThemedColor(Theme.key_chat_topPanelMessage));
         emojiStatusSpamHint.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13.3f);
         emojiStatusSpamHint.setDisablePaddingsOffset(true);
-        emojiStatusSpamHint.setLinkTextColor(getThemedColor(Theme.key_telegram_color_text));
+        emojiStatusSpamHint.setLinkTextColor(getThemedColor(Theme.key_tajgram_color_text));
         emojiStatusSpamHint.setGravity(Gravity.CENTER);
         emojiStatusSpamHint.setPadding(0, dp(9), 0, dp(9));
         topPanelLayout.addView(emojiStatusSpamHint, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 25, 0, 25, 0));
@@ -14013,7 +14013,7 @@ public class ChatActivity extends BaseFragment implements
                 }
             }
             if (media != null) {
-                if (media.webpage != null && "telegram_story".equals(media.webpage.type)) {
+                if (media.webpage != null && "tajgram_story".equals(media.webpage.type)) {
                     TLRPC.TL_webPageAttributeStory _attrStory = null;
                     if (media.webpage.attributes != null) {
                         for (int i = 0; i < media.webpage.attributes.size(); ++i) {
@@ -26041,7 +26041,7 @@ public class ChatActivity extends BaseFragment implements
                 }
                 if (old.isWebpage() && messageObject.isWebpage()) {
                     TLRPC.TL_messageMediaWebPage media = (TLRPC.TL_messageMediaWebPage) MessageObject.getMedia(old.messageOwner);
-                    if (media.webpage != null && "telegram_story".equals(media.webpage.type)) {
+                    if (media.webpage != null && "tajgram_story".equals(media.webpage.type)) {
                         TL_stories.StoryItem storyItem = null;
                         for (int i = 0; i < media.webpage.attributes.size(); ++i) {
                             TLRPC.WebPageAttribute attr = media.webpage.attributes.get(i);
@@ -27660,7 +27660,7 @@ public class ChatActivity extends BaseFragment implements
         if (
             message != null && message.messageOwner != null &&
             message.messageOwner.media != null && message.messageOwner.media.webpage != null &&
-            "telegram_call".equalsIgnoreCase(message.messageOwner.media.webpage.type)
+            "tajgram_call".equalsIgnoreCase(message.messageOwner.media.webpage.type)
         ) {
             return message.messageOwner.media.webpage.display_url;
         }
@@ -27917,7 +27917,7 @@ public class ChatActivity extends BaseFragment implements
                         pinnedMessageObject.messageOwner != null &&
                         pinnedMessageObject.messageOwner.media != null &&
                         pinnedMessageObject.messageOwner.media.webpage != null &&
-                        "telegram_call".equalsIgnoreCase(pinnedMessageObject.messageOwner.media.webpage.type)
+                        "tajgram_call".equalsIgnoreCase(pinnedMessageObject.messageOwner.media.webpage.type)
                     ) {
                         final SpannableStringBuilder sb = new SpannableStringBuilder("x ").append(getString(R.string.PinnedCall));
                         final ColoredImageSpan span = new ColoredImageSpan(R.drawable.call);
@@ -28864,7 +28864,7 @@ public class ChatActivity extends BaseFragment implements
                     span.full = false;
                     emoji.setSpan(span, 0, emoji.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 }
-                SpannableString link = new SpannableString(LocaleController.getString(R.string.TelegramPremium));
+                SpannableString link = new SpannableString(LocaleController.getString(R.string.TajgramPremium));
                 link.setSpan(new ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View view) {
@@ -35821,7 +35821,7 @@ public class ChatActivity extends BaseFragment implements
                     if (messageObject != null && messageObject.messageOwner.media instanceof TLRPC.TL_messageMediaWebPage && messageObject.messageOwner.media.webpage != null && messageObject.messageOwner.media.webpage.cached_page != null) {
                         String lowerUrl = urlFinal.toLowerCase();
                         String lowerUrl2 = messageObject.messageOwner.media.webpage.url.toLowerCase();
-                        if ((lowerUrl.contains("telegram.org/blog") || Browser.isTelegraphUrl(lowerUrl, false) || lowerUrl.contains("t.me/iv")) && (lowerUrl.contains(lowerUrl2) || lowerUrl2.contains(lowerUrl))) {
+                        if ((lowerUrl.contains("tajgram.org/blog") || Browser.isTelegraphUrl(lowerUrl, false) || lowerUrl.contains("t.me/iv")) && (lowerUrl.contains(lowerUrl2) || lowerUrl2.contains(lowerUrl))) {
                             if (LaunchActivity.instance != null && LaunchActivity.instance.getBottomSheetTabs() != null && LaunchActivity.instance.getBottomSheetTabs().tryReopenTab(messageObject) != null) {
                                 return;
                             }
@@ -41237,7 +41237,7 @@ public class ChatActivity extends BaseFragment implements
             cell.invalidate();
         } : null;
         if (urlFinal.startsWith("tg:privatepost") || urlFinal.startsWith("tg://privatepost")) {
-            String urlTmp = urlFinal.replace("tg:privatepost", "tg://telegram.org").replace("tg://privatepost", "tg://telegram.org");
+            String urlTmp = urlFinal.replace("tg:privatepost", "tg://tajgram.org").replace("tg://privatepost", "tg://tajgram.org");
             Uri data = Uri.parse(urlTmp);
             int messageId = Utilities.parseInt(data.getQueryParameter("post"));
             long channelId = Utilities.parseLong(data.getQueryParameter("channel"));
@@ -41301,7 +41301,7 @@ public class ChatActivity extends BaseFragment implements
                     }
                     return true;
                 } else if (urlFinal.startsWith("tg:resolve") || urlFinal.startsWith("tg://resolve")) {
-                    String urlTmp = urlFinal.replace("tg:resolve", "tg://telegram.org").replace("tg://resolve", "tg://telegram.org");
+                    String urlTmp = urlFinal.replace("tg:resolve", "tg://tajgram.org").replace("tg://resolve", "tg://tajgram.org");
                     Uri data = Uri.parse(urlTmp);
                     String usernameE = data.getQueryParameter("domain").toLowerCase();
                     int messageId = Utilities.parseInt(data.getQueryParameter("post"));
@@ -43483,11 +43483,11 @@ public class ChatActivity extends BaseFragment implements
         final boolean isMail = str.startsWith("mailto:");
 
         if (!isMail) {
-            options.add(R.drawable.msg_openin, getString(customTabs && !isHashtag ? R.string.OpenInTelegramBrowser : R.string.Open), () -> {
+            options.add(R.drawable.msg_openin, getString(customTabs && !isHashtag ? R.string.OpenInTajgramBrowser : R.string.Open), () -> {
                 if (str.startsWith("video?")) {
                     didPressMessageUrl(span, false, messageObject, cell);
                 } else if (customTabs && !isHashtag) {
-                    Browser.openInTelegramBrowser(getParentActivity(), str, null);
+                    Browser.openInTajgramBrowser(getParentActivity(), str, null);
                 } else {
                     logSponsoredClicked(messageObject, false, false);
                     openClickableLink(span, str, false, cell, messageObject, false);
@@ -43500,8 +43500,8 @@ public class ChatActivity extends BaseFragment implements
                 Browser.openInExternalBrowser(getParentActivity(), str, false);
             });
         } else if (!isMail && !isHashtag && !customTabs && allowCustomTabs && !SharedConfig.inappBrowser) {
-            options.add(R.drawable.msg_language, getString(R.string.OpenInTelegramBrowser), () -> {
-                Browser.openInTelegramBrowser(getParentActivity(), str, null);
+            options.add(R.drawable.msg_language, getString(R.string.OpenInTajgramBrowser), () -> {
+                Browser.openInTajgramBrowser(getParentActivity(), str, null);
             });
         }
 
@@ -43943,7 +43943,7 @@ public class ChatActivity extends BaseFragment implements
                 options.addGap();
             }
             if (user == null) {
-                options.add(R.drawable.menu_invit_telegram, getString(R.string.InviteToTelegramShort), () -> {
+                options.add(R.drawable.menu_invit_tajgram, getString(R.string.InviteToTajgramShort), () -> {
                     if (getParentActivity() == null) return;
                     try {
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", phone, null));
@@ -43961,14 +43961,14 @@ public class ChatActivity extends BaseFragment implements
                     BulletinFactory.of(this).createCopyBulletin(LocaleController.getString(R.string.PhoneCopied)).show();
                 });
                 options.addGap();
-                options.addText(getString(R.string.NumberNotOnTelegram), 13);
+                options.addText(getString(R.string.NumberNotOnTajgram), 13);
             } else {
                 options.add(R.drawable.msg_discussion, getString(R.string.SendMessage), () -> presentFragment(ChatActivity.of(user.id)));
                 if (!UserObject.isUserSelf(user)) {
-                    options.add(R.drawable.msg_calls, getString(R.string.VoiceCallViaTelegram), () -> {
+                    options.add(R.drawable.msg_calls, getString(R.string.VoiceCallViaTajgram), () -> {
                         VoIPHelper.startCall(user, false, userInfo != null && userInfo.video_calls_available, getParentActivity(), userInfo, getAccountInstance());
                     });
-                    options.add(R.drawable.msg_videocall, getString(R.string.VideoCallViaTelegram), () -> {
+                    options.add(R.drawable.msg_videocall, getString(R.string.VideoCallViaTajgram), () -> {
                         VoIPHelper.startCall(user, true, userInfo != null && userInfo.video_calls_available, getParentActivity(), userInfo, getAccountInstance());
                     });
                 }

@@ -1,4 +1,4 @@
-#include "org_telegram_messenger_voip_Instance.h"
+#include "org_tajgram_messenger_voip_Instance.h"
 
 #include <jni.h>
 #include <sdk/android/native_api/video/wrapper.h>
@@ -52,7 +52,7 @@ public:
     void call(JNIEnv *env, jobjectArray audioSsrcs) {
         std::vector<MediaChannelDescription> descriptions;
 
-        jclass clz = env->FindClass("org/telegram/messenger/voip/VoIPService$RequestedParticipant");
+        jclass clz = env->FindClass("org/tajgram/messenger/voip/VoIPService$RequestedParticipant");
         jsize size = env->GetArrayLength(audioSsrcs);
         for (int i = 0; i < size; i++) {
             auto obj = env->GetObjectArrayElement(audioSsrcs, i);
@@ -279,27 +279,27 @@ void savePersistentState(const char *filePath, const PersistentState &persistent
 
 NetworkType parseNetworkType(jint networkType) {
     switch (networkType) {
-        case org_telegram_messenger_voip_Instance_NET_TYPE_GPRS:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_GPRS:
             return NetworkType::Gprs;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_EDGE:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_EDGE:
             return NetworkType::Edge;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_3G:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_3G:
             return NetworkType::ThirdGeneration;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_HSPA:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_HSPA:
             return NetworkType::Hspa;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_LTE:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_LTE:
             return NetworkType::Lte;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_WIFI:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_WIFI:
             return NetworkType::WiFi;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_ETHERNET:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_ETHERNET:
             return NetworkType::Ethernet;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_OTHER_HIGH_SPEED:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_OTHER_HIGH_SPEED:
             return NetworkType::OtherHighSpeed;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_OTHER_LOW_SPEED:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_OTHER_LOW_SPEED:
             return NetworkType::OtherLowSpeed;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_DIALUP:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_DIALUP:
             return NetworkType::Dialup;
-        case org_telegram_messenger_voip_Instance_NET_TYPE_OTHER_MOBILE:
+        case org_tajgram_messenger_voip_Instance_NET_TYPE_OTHER_MOBILE:
             return NetworkType::OtherMobile;
         default:
             return NetworkType::Unknown;
@@ -308,13 +308,13 @@ NetworkType parseNetworkType(jint networkType) {
 
 DataSaving parseDataSaving(JNIEnv *env, jint dataSaving) {
     switch (dataSaving) {
-        case org_telegram_messenger_voip_Instance_DATA_SAVING_NEVER:
+        case org_tajgram_messenger_voip_Instance_DATA_SAVING_NEVER:
             return DataSaving::Never;
-        case org_telegram_messenger_voip_Instance_DATA_SAVING_MOBILE:
+        case org_tajgram_messenger_voip_Instance_DATA_SAVING_MOBILE:
             return DataSaving::Mobile;
-        case org_telegram_messenger_voip_Instance_DATA_SAVING_ALWAYS:
+        case org_tajgram_messenger_voip_Instance_DATA_SAVING_ALWAYS:
             return DataSaving::Always;
-        case org_telegram_messenger_voip_Instance_DATA_SAVING_ROAMING:
+        case org_tajgram_messenger_voip_Instance_DATA_SAVING_ROAMING:
             throwNewJavaIllegalArgumentException(env, "DATA_SAVING_ROAMING is not supported");
             return DataSaving::Never;
         default:
@@ -325,13 +325,13 @@ DataSaving parseDataSaving(JNIEnv *env, jint dataSaving) {
 
 EndpointType parseEndpointType(JNIEnv *env, jint endpointType) {
     switch (endpointType) {
-        case org_telegram_messenger_voip_Instance_ENDPOINT_TYPE_INET:
+        case org_tajgram_messenger_voip_Instance_ENDPOINT_TYPE_INET:
             return EndpointType::Inet;
-        case org_telegram_messenger_voip_Instance_ENDPOINT_TYPE_LAN:
+        case org_tajgram_messenger_voip_Instance_ENDPOINT_TYPE_LAN:
             return EndpointType::Lan;
-        case org_telegram_messenger_voip_Instance_ENDPOINT_TYPE_TCP_RELAY:
+        case org_tajgram_messenger_voip_Instance_ENDPOINT_TYPE_TCP_RELAY:
             return EndpointType::TcpRelay;
-        case org_telegram_messenger_voip_Instance_ENDPOINT_TYPE_UDP_RELAY:
+        case org_tajgram_messenger_voip_Instance_ENDPOINT_TYPE_UDP_RELAY:
             return EndpointType::UdpRelay;
         default:
             throwNewJavaIllegalArgumentException(env, std::string("Unknown endpoint type: ").append(std::to_string(endpointType)).c_str());
@@ -342,15 +342,15 @@ EndpointType parseEndpointType(JNIEnv *env, jint endpointType) {
 jint asJavaState(const State &state) {
     switch (state) {
         case State::WaitInit:
-            return org_telegram_messenger_voip_Instance_STATE_WAIT_INIT;
+            return org_tajgram_messenger_voip_Instance_STATE_WAIT_INIT;
         case State::WaitInitAck:
-            return org_telegram_messenger_voip_Instance_STATE_WAIT_INIT_ACK;
+            return org_tajgram_messenger_voip_Instance_STATE_WAIT_INIT_ACK;
         case State::Established:
-            return org_telegram_messenger_voip_Instance_STATE_ESTABLISHED;
+            return org_tajgram_messenger_voip_Instance_STATE_ESTABLISHED;
         case State::Failed:
-            return org_telegram_messenger_voip_Instance_STATE_FAILED;
+            return org_tajgram_messenger_voip_Instance_STATE_FAILED;
         case State::Reconnecting:
-            return org_telegram_messenger_voip_Instance_STATE_RECONNECTING;
+            return org_tajgram_messenger_voip_Instance_STATE_RECONNECTING;
     }
 }
 
@@ -391,18 +391,18 @@ void initWebRTC(JNIEnv *env) {
     webrtcLoaded = true;
 
     DEBUG_REF("NativeInstanceClass");
-    NativeInstanceClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/telegram/messenger/voip/NativeInstance")));
+    NativeInstanceClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/tajgram/messenger/voip/NativeInstance")));
     DEBUG_REF("TrafficStatsClass");
-    TrafficStatsClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/telegram/messenger/voip/Instance$TrafficStats")));
+    TrafficStatsClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/tajgram/messenger/voip/Instance$TrafficStats")));
     DEBUG_REF("FingerprintClass");
-    FingerprintClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/telegram/messenger/voip/Instance$Fingerprint")));
+    FingerprintClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/tajgram/messenger/voip/Instance$Fingerprint")));
     DEBUG_REF("FinalStateClass");
-    FinalStateClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/telegram/messenger/voip/Instance$FinalState")));
-    FinalStateInitMethod = env->GetMethodID(FinalStateClass, "<init>", "([BLjava/lang/String;Lorg/telegram/messenger/voip/Instance$TrafficStats;Z)V");
+    FinalStateClass = static_cast<jclass>(env->NewGlobalRef(env->FindClass("org/tajgram/messenger/voip/Instance$FinalState")));
+    FinalStateInitMethod = env->GetMethodID(FinalStateClass, "<init>", "([BLjava/lang/String;Lorg/tajgram/messenger/voip/Instance$TrafficStats;Z)V");
 }
 
 extern "C"
-JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_makeGroupNativeInstance(JNIEnv *env, jclass clazz, jobject instanceObj, jstring logFilePath, jboolean highQuality, jlong videoCapturer, jboolean screencast, jboolean noiseSupression, jboolean conference) {
+JNIEXPORT jlong JNICALL Java_org_tajgram_messenger_voip_NativeInstance_makeGroupNativeInstance(JNIEnv *env, jclass clazz, jobject instanceObj, jstring logFilePath, jboolean highQuality, jlong videoCapturer, jboolean screencast, jboolean noiseSupression, jboolean conference) {
     initWebRTC(env);
 
     std::shared_ptr<VideoCaptureInterface> videoCapture;
@@ -547,7 +547,7 @@ JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_makeGrou
     return reinterpret_cast<jlong>(holder);
 }
 
-extern "C" JNIEXPORT jbyteArray JNICALL Java_org_telegram_messenger_voip_GroupCallMessagesController_groupCallMessageDecryptImpl(
+extern "C" JNIEXPORT jbyteArray JNICALL Java_org_tajgram_messenger_voip_GroupCallMessagesController_groupCallMessageDecryptImpl(
     JNIEnv *env, jclass clazz,
     jlong callId,
     jlong userId,
@@ -579,7 +579,7 @@ extern "C" JNIEXPORT jbyteArray JNICALL Java_org_telegram_messenger_voip_GroupCa
     }
 }
 
-extern "C" JNIEXPORT jbyteArray JNICALL Java_org_telegram_messenger_voip_GroupCallMessagesController_groupCallMessageEncryptImpl(
+extern "C" JNIEXPORT jbyteArray JNICALL Java_org_tajgram_messenger_voip_GroupCallMessagesController_groupCallMessageEncryptImpl(
         JNIEnv *env, jclass clazz,
         jlong callId,
         jbyteArray decrypted
@@ -605,7 +605,7 @@ extern "C" JNIEXPORT jbyteArray JNICALL Java_org_telegram_messenger_voip_GroupCa
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setJoinResponsePayload(JNIEnv *env, jobject obj, jstring payload) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setJoinResponsePayload(JNIEnv *env, jobject obj, jstring payload) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -615,7 +615,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setJoinRe
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_prepareForStream(JNIEnv *env, jobject obj, jboolean isRtmpStream) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_prepareForStream(JNIEnv *env, jobject obj, jboolean isRtmpStream) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -631,7 +631,7 @@ void onEmitJoinPayload(const std::shared_ptr<PlatformContext>& platformContext, 
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_resetGroupInstance(JNIEnv *env, jobject obj, jboolean set, jboolean disconnect) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_resetGroupInstance(JNIEnv *env, jobject obj, jboolean set, jboolean disconnect) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -659,7 +659,7 @@ void broadcastRequestedSinks(InstanceHolder *instance) {
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setNoiseSuppressionEnabled(JNIEnv *env, jobject obj, jboolean enabled) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setNoiseSuppressionEnabled(JNIEnv *env, jobject obj, jboolean enabled) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -669,7 +669,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setNoiseS
 
 
 extern "C"
-JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_addIncomingVideoOutput(JNIEnv *env, jobject obj, jint quality, jstring endpointId, jobjectArray ssrcGroups, jobject remoteSink, jlong userId) {
+JNIEXPORT jlong JNICALL Java_org_tajgram_messenger_voip_NativeInstance_addIncomingVideoOutput(JNIEnv *env, jobject obj, jint quality, jstring endpointId, jobjectArray ssrcGroups, jobject remoteSink, jlong userId) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return 0;
@@ -702,7 +702,7 @@ JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_addIncom
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_removeIncomingVideoOutput(JNIEnv *env, jobject obj, jlong nativeRemoteSink) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_removeIncomingVideoOutput(JNIEnv *env, jobject obj, jlong nativeRemoteSink) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -721,7 +721,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_removeInc
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setVideoEndpointQuality(JNIEnv *env, jobject obj, jstring endpointId, jint quality) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setVideoEndpointQuality(JNIEnv *env, jobject obj, jstring endpointId, jint quality) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -736,7 +736,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setVideoE
 }
 
 extern "C"
-JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_makeNativeInstance(
+JNIEXPORT jlong JNICALL Java_org_tajgram_messenger_voip_NativeInstance_makeNativeInstance(
     JNIEnv *env, jclass clazz,
     jstring version,
     jobject instanceObj,
@@ -905,23 +905,23 @@ JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_makeNati
     return reinterpret_cast<jlong>(holder);
 }
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setGlobalServerConfig(JNIEnv *env, jobject obj, jstring serverConfigJson) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setGlobalServerConfig(JNIEnv *env, jobject obj, jstring serverConfigJson) {
     SetLegacyGlobalServerConfig(tgvoip::jni::JavaStringToStdString(env, serverConfigJson));
 }
 
 extern "C"
-JNIEXPORT jstring JNICALL Java_org_telegram_messenger_voip_NativeInstance_getVersion(JNIEnv *env, jobject obj) {
+JNIEXPORT jstring JNICALL Java_org_tajgram_messenger_voip_NativeInstance_getVersion(JNIEnv *env, jobject obj) {
     return env->NewStringUTF(tgvoip::VoIPController::GetVersion());
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setBufferSize(JNIEnv *env, jobject obj, jint size) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setBufferSize(JNIEnv *env, jobject obj, jint size) {
     tgvoip::audio::AudioOutputOpenSLES::nativeBufferSize = (unsigned int) size;
     tgvoip::audio::AudioInputOpenSLES::nativeBufferSize = (unsigned int) size;
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setNetworkType(JNIEnv *env, jobject obj, jint networkType) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setNetworkType(JNIEnv *env, jobject obj, jint networkType) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return;
@@ -930,7 +930,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setNetwor
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setMuteMicrophone(JNIEnv *env, jobject obj, jboolean muteMicrophone) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setMuteMicrophone(JNIEnv *env, jobject obj, jboolean muteMicrophone) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->nativeInstance != nullptr) {
         instance->nativeInstance->setMuteMicrophone(muteMicrophone);
@@ -940,7 +940,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setMuteMi
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setVolume(JNIEnv *env, jobject obj, jint ssrc, jdouble volume) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setVolume(JNIEnv *env, jobject obj, jint ssrc, jdouble volume) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance != nullptr) {
         instance->groupNativeInstance->setVolume(ssrc, volume);
@@ -948,7 +948,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setVolume
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setAudioOutputGainControlEnabled(JNIEnv *env, jobject obj, jboolean enabled) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setAudioOutputGainControlEnabled(JNIEnv *env, jobject obj, jboolean enabled) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return;
@@ -957,7 +957,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setAudioO
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setEchoCancellationStrength(JNIEnv *env, jobject obj, jint strength) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setEchoCancellationStrength(JNIEnv *env, jobject obj, jint strength) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return;
@@ -966,7 +966,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setEchoCa
 }
 
 extern "C"
-JNIEXPORT jstring JNICALL Java_org_telegram_messenger_voip_NativeInstance_getLastError(JNIEnv *env, jobject obj) {
+JNIEXPORT jstring JNICALL Java_org_tajgram_messenger_voip_NativeInstance_getLastError(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return nullptr;
@@ -975,7 +975,7 @@ JNIEXPORT jstring JNICALL Java_org_telegram_messenger_voip_NativeInstance_getLas
 }
 
 extern "C"
-JNIEXPORT jstring JNICALL Java_org_telegram_messenger_voip_NativeInstance_getDebugInfo(JNIEnv *env, jobject obj) {
+JNIEXPORT jstring JNICALL Java_org_tajgram_messenger_voip_NativeInstance_getDebugInfo(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return nullptr;
@@ -984,7 +984,7 @@ JNIEXPORT jstring JNICALL Java_org_telegram_messenger_voip_NativeInstance_getDeb
 }
 
 extern "C"
-JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_getPreferredRelayId(JNIEnv *env, jobject obj) {
+JNIEXPORT jlong JNICALL Java_org_tajgram_messenger_voip_NativeInstance_getPreferredRelayId(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return 0;
@@ -993,7 +993,7 @@ JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_getPrefe
 }
 
 extern "C"
-JNIEXPORT jobject JNICALL Java_org_telegram_messenger_voip_NativeInstance_getTrafficStats(JNIEnv *env, jobject obj) {
+JNIEXPORT jobject JNICALL Java_org_tajgram_messenger_voip_NativeInstance_getTrafficStats(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return nullptr;
@@ -1002,7 +1002,7 @@ JNIEXPORT jobject JNICALL Java_org_telegram_messenger_voip_NativeInstance_getTra
 }
 
 extern "C"
-JNIEXPORT jbyteArray JNICALL Java_org_telegram_messenger_voip_NativeInstance_getPersistentState(JNIEnv *env, jobject obj) {
+JNIEXPORT jbyteArray JNICALL Java_org_tajgram_messenger_voip_NativeInstance_getPersistentState(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return nullptr;
@@ -1011,7 +1011,7 @@ JNIEXPORT jbyteArray JNICALL Java_org_telegram_messenger_voip_NativeInstance_get
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_stopNative(JNIEnv *env, jobject obj) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_stopNative(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return;
@@ -1021,13 +1021,13 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_stopNativ
         jobject globalRef = ((AndroidContext *) instance->_platformContext.get())->getJavaPeerInstance();
         const std::string &path = tgvoip::jni::JavaStringToStdString(env, JavaObject(env, globalRef).getStringField("persistentStateFilePath"));
         savePersistentState(path.c_str(), finalState.persistentState);
-        env->CallVoidMethod(globalRef, env->GetMethodID(NativeInstanceClass, "onStop", "(Lorg/telegram/messenger/voip/Instance$FinalState;)V"), asJavaFinalState(env, finalState));
+        env->CallVoidMethod(globalRef, env->GetMethodID(NativeInstanceClass, "onStop", "(Lorg/tajgram/messenger/voip/Instance$FinalState;)V"), asJavaFinalState(env, finalState));
         delete instance;
     });
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_stopGroupNative(JNIEnv *env, jobject obj) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_stopGroupNative(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -1038,7 +1038,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_stopGroup
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onStreamPartAvailable(JNIEnv *env, jobject obj, jlong ts, jobject byteBuffer, jint size, jlong responseTs, jint videoChannel, jint quality) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_onStreamPartAvailable(JNIEnv *env, jobject obj, jlong ts, jobject byteBuffer, jint size, jlong responseTs, jint videoChannel, jint quality) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->groupNativeInstance == nullptr) {
         return;
@@ -1074,7 +1074,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onStreamP
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onMediaDescriptionAvailable(JNIEnv *env, jobject obj, jlong taskPtr, jobjectArray arr) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_onMediaDescriptionAvailable(JNIEnv *env, jobject obj, jlong taskPtr, jobjectArray arr) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -1091,7 +1091,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onMediaDe
 }
 
 extern "C"
-JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_createVideoCapturer(JNIEnv *env, jclass clazz, jobject localSink, jint type) {
+JNIEXPORT jlong JNICALL Java_org_tajgram_messenger_voip_NativeInstance_createVideoCapturer(JNIEnv *env, jclass clazz, jobject localSink, jint type) {
     initWebRTC(env);
     std::unique_ptr<VideoCaptureInterface> capture;
     if (type == 0 || type == 1) {
@@ -1107,7 +1107,7 @@ JNIEXPORT jlong JNICALL Java_org_telegram_messenger_voip_NativeInstance_createVi
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_activateVideoCapturer(JNIEnv *env, jobject obj, jlong videoCapturer) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_activateVideoCapturer(JNIEnv *env, jobject obj, jlong videoCapturer) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->nativeInstance) {
         instance->nativeInstance->setVideoCapture(nullptr);
@@ -1120,7 +1120,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_activateV
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_clearVideoCapturer(JNIEnv *env, jobject obj) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_clearVideoCapturer(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->nativeInstance) {
         instance->nativeInstance->setVideoCapture(nullptr);
@@ -1136,28 +1136,28 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_clearVide
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_destroyVideoCapturer(JNIEnv *env, jclass clazz, jlong videoCapturer) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_destroyVideoCapturer(JNIEnv *env, jclass clazz, jlong videoCapturer) {
     DEBUG_D("destroyVideoCapturer");
     auto* holder = reinterpret_cast<std::shared_ptr<tgcalls::VideoCaptureInterface>*>(videoCapturer);
     delete holder;
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_switchCameraCapturer(JNIEnv *env, jclass clazz, jlong videoCapturer, jboolean front) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_switchCameraCapturer(JNIEnv *env, jclass clazz, jlong videoCapturer, jboolean front) {
     auto* captureHolder = reinterpret_cast<std::shared_ptr<tgcalls::VideoCaptureInterface>*>(videoCapturer);
     auto capturer = *captureHolder;
     capturer->switchToDevice(front ? "front" : "back", false);
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setVideoStateCapturer(JNIEnv *env, jclass clazz, jlong videoCapturer, jint videoState) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setVideoStateCapturer(JNIEnv *env, jclass clazz, jlong videoCapturer, jint videoState) {
     auto* captureHolder = reinterpret_cast<std::shared_ptr<tgcalls::VideoCaptureInterface>*>(videoCapturer);
     auto capturer = *captureHolder;
     capturer->setState(static_cast<VideoState>(videoState));
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_switchCamera(JNIEnv *env, jobject obj, jboolean front) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_switchCamera(JNIEnv *env, jobject obj, jboolean front) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->_videoCapture == nullptr) {
         return;
@@ -1166,7 +1166,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_switchCam
 }
 
 extern "C"
-JNIEXPORT jboolean JNICALL Java_org_telegram_messenger_voip_NativeInstance_hasVideoCapturer(JNIEnv *env, jobject obj) {
+JNIEXPORT jboolean JNICALL Java_org_tajgram_messenger_voip_NativeInstance_hasVideoCapturer(JNIEnv *env, jobject obj) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->_videoCapture == nullptr) {
         return JNI_FALSE;
@@ -1175,7 +1175,7 @@ JNIEXPORT jboolean JNICALL Java_org_telegram_messenger_voip_NativeInstance_hasVi
 }
 
 extern "C"
-JNIEXPORT void Java_org_telegram_messenger_voip_NativeInstance_setVideoState(JNIEnv *env, jobject obj, jint state) {
+JNIEXPORT void Java_org_tajgram_messenger_voip_NativeInstance_setVideoState(JNIEnv *env, jobject obj, jint state) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     std::shared_ptr<tgcalls::VideoCaptureInterface> capturer = instance->useScreencast ? instance->_screenVideoCapture : instance->_videoCapture;
     if (capturer == nullptr) {
@@ -1185,7 +1185,7 @@ JNIEXPORT void Java_org_telegram_messenger_voip_NativeInstance_setVideoState(JNI
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setupOutgoingVideo(JNIEnv *env, jobject obj, jobject localSink, jint type) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setupOutgoingVideo(JNIEnv *env, jobject obj, jobject localSink, jint type) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     std::shared_ptr<tgcalls::VideoCaptureInterface> capturer;
     if (type == 0 || type == 1) {
@@ -1211,7 +1211,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setupOutg
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setupOutgoingVideoCreated(JNIEnv *env, jobject obj, jlong videoCapturer) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_setupOutgoingVideoCreated(JNIEnv *env, jobject obj, jlong videoCapturer) {
     if (videoCapturer == 0) {
         return;
     }
@@ -1232,7 +1232,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_setupOutg
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onSignalingDataReceive(JNIEnv *env, jobject obj, jbyteArray value) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_onSignalingDataReceive(JNIEnv *env, jobject obj, jbyteArray value) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance == nullptr || instance->nativeInstance == nullptr) {
         return;
@@ -1247,7 +1247,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onSignali
 }
 
 extern "C"
-JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onRequestTimeComplete(JNIEnv *env, jobject obj, jlong taskPtr, jlong currentTime) {
+JNIEXPORT void JNICALL Java_org_tajgram_messenger_voip_NativeInstance_onRequestTimeComplete(JNIEnv *env, jobject obj, jlong taskPtr, jlong currentTime) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
         return;
@@ -1262,7 +1262,7 @@ JNIEXPORT void JNICALL Java_org_telegram_messenger_voip_NativeInstance_onRequest
 }
 extern "C"
 JNIEXPORT void JNICALL
-Java_org_telegram_messenger_voip_NativeInstance_setConferenceCallId(JNIEnv *env, jobject obj,
+Java_org_tajgram_messenger_voip_NativeInstance_setConferenceCallId(JNIEnv *env, jobject obj,
                                                                     jlong call_id) {
     InstanceHolder *instance = getInstanceHolder(env, obj);
     if (instance->groupNativeInstance == nullptr) {
@@ -1275,7 +1275,7 @@ Java_org_telegram_messenger_voip_NativeInstance_setConferenceCallId(JNIEnv *env,
 
 extern "C"
 JNIEXPORT jobjectArray JNICALL
-Java_org_telegram_messenger_voip_NativeInstance_getAllVersions(JNIEnv* env) {
+Java_org_tajgram_messenger_voip_NativeInstance_getAllVersions(JNIEnv* env) {
     std::vector<std::string> v = tgcalls::Meta::Versions();
     jclass stringClass = env->FindClass("java/lang/String");
     if (!stringClass) {

@@ -2,7 +2,7 @@ package org.tajgram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
-import static org.telegram.ui.Components.TextStyleSpan.FLAG_STYLE_SPOILER;
+import static org.tajgram.ui.Components.TextStyleSpan.FLAG_STYLE_SPOILER;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

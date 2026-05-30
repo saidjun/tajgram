@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -3660,7 +3660,7 @@ public class AndroidUtilities {
         }
         File storageDir = null;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Telegram");
+            storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Tajgram");
             if (!storageDir.mkdirs()) {
                 if (!storageDir.exists()) {
                     if (BuildVars.LOGS_ENABLED) {
@@ -4596,7 +4596,7 @@ public class AndroidUtilities {
                 if (scheme != null) {
                     if ((scheme.equals("http") || scheme.equals("https"))) {
                         String host = data.getHost().toLowerCase();
-                        if (host.equals("telegram.me") || host.equals("t.me") || host.equals("telegram.dog")) {
+                        if (host.equals("tajgram.me") || host.equals("t.me") || host.equals("tajgram.dog")) {
                             String path = data.getPath();
                             if (path != null) {
                                 if (path.startsWith("/socks") || path.startsWith("/proxy")) {
@@ -4614,7 +4614,7 @@ public class AndroidUtilities {
                     } else if (scheme.equals("tg")) {
                         String url = data.toString();
                         if (url.startsWith("tg:proxy") || url.startsWith("tg://proxy") || url.startsWith("tg:socks") || url.startsWith("tg://socks")) {
-                            url = url.replace("tg:proxy", "tg://telegram.org").replace("tg://proxy", "tg://telegram.org").replace("tg://socks", "tg://telegram.org").replace("tg:socks", "tg://telegram.org");
+                            url = url.replace("tg:proxy", "tg://tajgram.org").replace("tg://proxy", "tg://tajgram.org").replace("tg://socks", "tg://tajgram.org").replace("tg:socks", "tg://tajgram.org");
                             data = Uri.parse(url);
                             address = data.getQueryParameter("server");
                             if (AndroidUtilities.checkHostForPunycode(address)) {
@@ -4753,7 +4753,7 @@ public class AndroidUtilities {
             }
         }));
         if (!TextUtils.isEmpty(secret)) {
-            final TableView.TableRowFullContent tableRow = tableView.addFullRow(getString(R.string.UseProxyTelegramInfo2));
+            final TableView.TableRowFullContent tableRow = tableView.addFullRow(getString(R.string.UseProxyTajgramInfo2));
             tableRow.setFilled(true);
             final SpoilersTextView textView = (SpoilersTextView) tableRow.getChildAt(0);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 11);
@@ -6696,7 +6696,7 @@ public class AndroidUtilities {
                     }
                     break;
             }
-            return formatString("TelegramVersion", R.string.TelegramVersion, String.format(Locale.US, "v%s (%d) %s", pInfo.versionName, code, abi));
+            return formatString("TajgramVersion", R.string.TajgramVersion, String.format(Locale.US, "v%s (%d) %s", pInfo.versionName, code, abi));
         } catch (Exception e) {
             FileLog.e(e);
         }

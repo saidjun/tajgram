@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -9678,7 +9678,7 @@ public class TLRPC {
                     months = 1;
                     currency = finalResult.currency;
                     amount = finalResult.monthly_amount;
-                    store_product = "telegram_premium";
+                    store_product = "tajgram_premium";
                 }});
             }
             return result;

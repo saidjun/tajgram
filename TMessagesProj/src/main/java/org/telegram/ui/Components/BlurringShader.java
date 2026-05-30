@@ -264,8 +264,8 @@ public class BlurringShader {
         }
         GLES20.glUniform1f(p.hasVideoMatrixHandle, oes ? 1 : 0);
 
-        org.telegram.ui.Components.Paint.Shader.SetColorUniform(p.gradientTopHandle, gradientTop);
-        org.telegram.ui.Components.Paint.Shader.SetColorUniform(p.gradientBottomHandle, gradientBottom);
+        org.tajgram.ui.Components.Paint.Shader.SetColorUniform(p.gradientTopHandle, gradientTop);
+        org.tajgram.ui.Components.Paint.Shader.SetColorUniform(p.gradientBottomHandle, gradientBottom);
 
         synchronized (matrixLock) {
             GLES20.glUniformMatrix4fv(p.matrixHandle, 1, false, this.matrix, 0);
@@ -288,8 +288,8 @@ public class BlurringShader {
             GLES20.glUniform2f(p.texSzHandle, textureWidth, textureHeight);
             GLES20.glUniform1i(p.stepHandle, 0);
 
-            org.telegram.ui.Components.Paint.Shader.SetColorUniform(p.gradientTopHandle, gradientTop);
-            org.telegram.ui.Components.Paint.Shader.SetColorUniform(p.gradientBottomHandle, gradientBottom);
+            org.tajgram.ui.Components.Paint.Shader.SetColorUniform(p.gradientTopHandle, gradientTop);
+            org.tajgram.ui.Components.Paint.Shader.SetColorUniform(p.gradientBottomHandle, gradientBottom);
 
             GLES20.glUniform1f(p.flipyHandle, 0f);
 

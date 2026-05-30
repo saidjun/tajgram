@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -14,11 +14,11 @@ import static org.tajgram.messenger.NotificationsController.TYPE_CHANNEL;
 import static org.tajgram.messenger.NotificationsController.TYPE_PRIVATE;
 import static org.tajgram.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;
 import static org.tajgram.messenger.Utilities.tryParseLong;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stories.HighlightMessageSheet.parseTiers;
-import static org.telegram.ui.Stories.HighlightMessageSheet.parseTiersString;
-import static org.telegram.ui.Stories.HighlightMessageSheet.tiersEqual;
-import static org.telegram.ui.Stories.HighlightMessageSheet.tiersToString;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.parseTiers;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.parseTiersString;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.tiersEqual;
+import static org.tajgram.ui.Stories.HighlightMessageSheet.tiersToString;
 
 import android.Manifest;
 import android.app.Activity;
@@ -607,8 +607,8 @@ public class MessagesController extends BaseController implements NotificationCe
     public int reactionsInChatMax;
     public int forumUpgradeParticipantsMin;
     public int topicsPinnedLimit;
-    public long telegramAntispamUserId;
-    public int telegramAntispamGroupSizeMin;
+    public long tajgramAntispamUserId;
+    public int tajgramAntispamGroupSizeMin;
     public int hiddenMembersGroupSizeMin;
     private int chatlistUpdatePeriod;
     public int storyExpiringLimitDefault;
@@ -1632,8 +1632,8 @@ public class MessagesController extends BaseController implements NotificationCe
         transcribeButtonPressed = mainPreferences.getInt("transcribeButtonPressed", 0);
         forumUpgradeParticipantsMin = mainPreferences.getInt("forumUpgradeParticipantsMin", 200);
         topicsPinnedLimit = mainPreferences.getInt("topicsPinnedLimit", 3);
-        telegramAntispamUserId = mainPreferences.getLong("telegramAntispamUserId", -1);
-        telegramAntispamGroupSizeMin = mainPreferences.getInt("telegramAntispamGroupSizeMin", 100);
+        tajgramAntispamUserId = mainPreferences.getLong("tajgramAntispamUserId", -1);
+        tajgramAntispamGroupSizeMin = mainPreferences.getInt("tajgramAntispamGroupSizeMin", 100);
         hiddenMembersGroupSizeMin = mainPreferences.getInt("hiddenMembersGroupSizeMin", 100);
         chatlistUpdatePeriod = mainPreferences.getInt("chatlistUpdatePeriod", 3600);
         uploadMarkupVideo = mainPreferences.getBoolean("uploadMarkupVideo", true);
@@ -1731,7 +1731,7 @@ public class MessagesController extends BaseController implements NotificationCe
         channelRevenueWithdrawalEnabled = mainPreferences.getBoolean("channelRevenueWithdrawalEnabled", false);
         newNoncontactPeersRequirePremiumWithoutOwnpremium = mainPreferences.getBoolean("newNoncontactPeersRequirePremiumWithoutOwnpremium", false);
         reactionsUniqMax = mainPreferences.getInt("reactionsUniqMax", 11);
-        premiumManageSubscriptionUrl = mainPreferences.getString("premiumManageSubscriptionUrl", ApplicationLoader.isStandaloneBuild() ? "https://t.me/premiumbot?start=status" : "https://play.google.com/store/account/subscriptions?sku=telegram_premium&package=org.tajgram.messenger");
+        premiumManageSubscriptionUrl = mainPreferences.getString("premiumManageSubscriptionUrl", ApplicationLoader.isStandaloneBuild() ? "https://t.me/premiumbot?start=status" : "https://play.google.com/store/account/subscriptions?sku=tajgram_premium&package=org.tajgram.messenger");
         androidDisableRoundCamera2 = mainPreferences.getBoolean("androidDisableRoundCamera2", true);
         storiesPinnedToTopCountMax = mainPreferences.getInt("storiesPinnedToTopCountMax", 3);
         showAnnualPerMonth = mainPreferences.getBoolean("showAnnualPerMonth", false);
@@ -3715,14 +3715,14 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                     break;
                 }
-                case "telegram_antispam_user_id": {
+                case "tajgram_antispam_user_id": {
                     if (value.value instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString string = (TLRPC.TL_jsonString) value.value;
                         try {
                             long number = Long.parseLong(string.value);
-                            if (number != telegramAntispamUserId) {
-                                telegramAntispamUserId = number;
-                                editor.putLong("telegramAntispamUserId", telegramAntispamUserId);
+                            if (number != tajgramAntispamUserId) {
+                                tajgramAntispamUserId = number;
+                                editor.putLong("tajgramAntispamUserId", tajgramAntispamUserId);
                                 changed = true;
                             }
                         } catch (Exception e) {
@@ -3731,12 +3731,12 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                     break;
                 }
-                case "telegram_antispam_group_size_min": {
+                case "tajgram_antispam_group_size_min": {
                     if (value.value instanceof TLRPC.TL_jsonNumber) {
                         TLRPC.TL_jsonNumber number = (TLRPC.TL_jsonNumber) value.value;
-                        if (number.value != telegramAntispamGroupSizeMin) {
-                            telegramAntispamGroupSizeMin = (int) number.value;
-                            editor.putInt("telegramAntispamGroupSizeMin", telegramAntispamGroupSizeMin);
+                        if (number.value != tajgramAntispamGroupSizeMin) {
+                            tajgramAntispamGroupSizeMin = (int) number.value;
+                            editor.putInt("tajgramAntispamGroupSizeMin", tajgramAntispamGroupSizeMin);
                             changed = true;
                         }
                     }
@@ -5704,7 +5704,7 @@ public class MessagesController extends BaseController implements NotificationCe
             Theme.checkCurrentRemoteTheme(false);
 
             if (config.static_maps_provider == null) {
-                config.static_maps_provider = "telegram";
+                config.static_maps_provider = "tajgram";
             }
 
             mapKey = null;
@@ -5733,7 +5733,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                 }
                             }
                             availableMapProviders |= 1;
-                        } else if ("telegram".equals(typeAndKey[0])) {
+                        } else if ("tajgram".equals(typeAndKey[0])) {
                             if (a == 0) {
                                 mapProvider = 2;
                             }
@@ -5796,7 +5796,7 @@ public class MessagesController extends BaseController implements NotificationCe
         TLRPC.TL_userForeign_old2 user = new TLRPC.TL_userForeign_old2();
         user.phone = "333";
         user.id = 333000;
-        user.first_name = "Telegram";
+        user.first_name = "Tajgram";
         user.last_name = "";
         user.status = null;
         user.photo = new TLRPC.TL_userProfilePhotoEmpty();
@@ -5806,7 +5806,7 @@ public class MessagesController extends BaseController implements NotificationCe
         user.phone = "42777";
         user.id = 777000;
         user.verified = true;
-        user.first_name = "Telegram";
+        user.first_name = "Tajgram";
         user.last_name = "Notifications";
         user.status = null;
         user.photo = new TLRPC.TL_userProfilePhotoEmpty();
@@ -8043,7 +8043,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         if (dialogId == getUserConfig().getClientUserId()) {
             settings.business_bot_id = UserObject.REPLY_BOT;
-            settings.business_bot_manage_url = "https://telegram.org/";
+            settings.business_bot_manage_url = "https://tajgram.org/";
         }
         editor.apply();
         userPeerSettings.put(dialogId, settings);

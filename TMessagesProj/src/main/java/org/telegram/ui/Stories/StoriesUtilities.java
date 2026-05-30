@@ -3,9 +3,9 @@ package org.tajgram.ui.Stories;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stories.StoriesController.STATE_UNREAD;
-import static org.telegram.ui.Stories.StoriesController.STATE_UNREAD_CLOSE_FRIEND;
-import static org.telegram.ui.Stories.StoriesController.STATE_LIVE;
+import static org.tajgram.ui.Stories.StoriesController.STATE_UNREAD;
+import static org.tajgram.ui.Stories.StoriesController.STATE_UNREAD_CLOSE_FRIEND;
+import static org.tajgram.ui.Stories.StoriesController.STATE_LIVE;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

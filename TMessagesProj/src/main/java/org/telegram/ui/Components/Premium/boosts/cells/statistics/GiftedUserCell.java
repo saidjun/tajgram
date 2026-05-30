@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Premium.boosts.cells.statistics;
 
-import static org.telegram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
+import static org.tajgram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -3,8 +3,8 @@ package org.tajgram.ui.Stars;
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.formatPluralStringComma;
 import static org.tajgram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stars.StarsIntroActivity.setGiftImage;
+import static org.tajgram.ui.Stars.StarsController.findAttribute;
+import static org.tajgram.ui.Stars.StarsIntroActivity.setGiftImage;
 
 import android.graphics.Canvas;
 import android.graphics.Matrix;

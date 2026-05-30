@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -2691,7 +2691,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 final float bottom = getMeasuredHeight() - (isInsideBubble ? 0 : dp(2));
                 final float top = bottom - dpf2(2);
 
-                progressPaint.setColor(getThemedColor(Theme.key_telegram_color));
+                progressPaint.setColor(getThemedColor(Theme.key_tajgram_color));
                 canvas.drawRoundRect(left, top, p, bottom, dpf2(1), dpf2(1), progressPaint);
             }
         }

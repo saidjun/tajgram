@@ -178,7 +178,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
 
         GroupCallStatusIcon statusIcon;
 
-        org.telegram.ui.Cells.GroupCallUserCell.AvatarWavesDrawable avatarWavesDrawable = new org.telegram.ui.Cells.GroupCallUserCell.AvatarWavesDrawable(AndroidUtilities.dp(26), AndroidUtilities.dp(29));
+        org.tajgram.ui.Cells.GroupCallUserCell.AvatarWavesDrawable avatarWavesDrawable = new org.tajgram.ui.Cells.GroupCallUserCell.AvatarWavesDrawable(AndroidUtilities.dp(26), AndroidUtilities.dp(29));
 
         public GroupCallUserCell(@NonNull Context context) {
             super(context);

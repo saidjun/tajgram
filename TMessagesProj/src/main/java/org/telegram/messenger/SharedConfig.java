@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Tajgram for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -1574,10 +1574,10 @@ public class SharedConfig {
     public static void checkSaveToGalleryFiles() {
         Utilities.globalQueue.postRunnable(() -> {
             try {
-                File telegramPath = new File(Environment.getExternalStorageDirectory(), "Telegram");
-                File imagePath = new File(telegramPath, "Telegram Images");
+                File tajgramPath = new File(Environment.getExternalStorageDirectory(), "Tajgram");
+                File imagePath = new File(tajgramPath, "Tajgram Images");
                 imagePath.mkdir();
-                File videoPath = new File(telegramPath, "Telegram Video");
+                File videoPath = new File(tajgramPath, "Tajgram Video");
                 videoPath.mkdir();
 
                 if (!BuildVars.NO_SCOPED_STORAGE) {
