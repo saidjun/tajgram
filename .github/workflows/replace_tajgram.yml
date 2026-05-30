@@ -16,29 +16,34 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Total Million Folder and String Replacement (Куллӣ ва То Охир)
+      - name: Total Million Folder and String Replacement (Калону Майда Пурра)
         run: |
-          # 1. АЛИШ КАРДАНИ ТАМОМИ КАЛИМАҲОИ org.telegram ВА org/telegram БА org.tajgram ДАР ТАМОМИ ЛОИҲА
+          # 1. АЛИШ КАРДАНИ ТАМОМИ ВАРИАНТҲОИ ОРГ.ТЕЛЕГРАМ БА ОРГ.ТАҶГРАМ
           find . -type f \( -name "*.java" -o -name "*.kt" -o -name "*.xml" -o -name "*.gradle" -o -name "*.h" -o -name "*.cpp" -o -name "*.txt" \) -not -path '*/.*' | while read file; do
             sed -i 's/org\.telegram/org.tajgram/g' "$file" 2>/dev/null || true
             sed -i 's/org\/telegram/org\/tajgram/g' "$file" 2>/dev/null || true
             sed -i 's/org\.tajgram\.messenger\.messenger/org.tajgram.messenger/g' "$file" 2>/dev/null || true
           done
 
-      - name: Deep Visual App Branding (Strings, Names, Premium, Stars)
+      - name: Complete Case-Insensitive Branding Engine (Калон ва Майда)
         run: |
-          # 2. БРЕНДИНГИ ВИЗУАЛӢ: ТАБДИЛИ ТАМОМИ НАВИШТАҶОТҲО БА TAJGRAM ВА TAJGRAM PREMIUM VIP
-          find . -name "strings.xml" | while read file; do
-            sed -i 's/<string name="AppName">Telegram<\/string>/<string name="AppName">Tajgram<\/string>/g' "$file" 2>/dev/null || true
-            sed -i 's/>Telegram</>Tajgram</g' "$file" 2>/dev/null || true
+          # 2. АЛИШ КАРДАНИ ТАМОМИ КАЛИМАҲОИ ТЕЛЕГРАМ (КАЛОН, МАЙДА ВА ОМЕХТА) ДАР ФАЙЛҲОИ МАТНӢ
+          find . -type f \( -name "*.java" -o -name "*.kt" -o -name "*.xml" -o -name "*.gradle" -o -name "*.h" -o -name "*.cpp" -o -name "*.txt" \) -not -path '*/.*' | while read file; do
+            # Иваз кардани Telegram (ҳарфи аввал калон)
             sed -i 's/Telegram Premium/Tajgram Premium VIP/g' "$file" 2>/dev/null || true
             sed -i 's/Telegram Stars/Tajgram Stars VIP/g' "$file" 2>/dev/null || true
             sed -i 's/Telegram/Tajgram/g' "$file" 2>/dev/null || true
+            
+            # Иваз кардани telegram (ҳамааш ҳарфи хурд)
+            sed -i 's/telegram/tajgram/g' "$file" 2>/dev/null || true
+            
+            # Иваз кардани TELEGRAM (ҳамааш ҳарфи калон)
+            sed -i 's/TELEGRAM/TAJGRAM/g' "$file" 2>/dev/null || true
           done
 
       - name: Fixed Build.gradle Application ID and Namespaces for Firebase
         run: |
-          # 3. ТАНЗИМИ ҚАТЪИИ APPLICATION ID БАРОИ FIREBASE-И НАВ
+          # 3. ТАНЗИМИ ҚАТЪИИ APPLICATION ID БАРОИ FIREBASE
           find . -name "build.gradle" | while read file; do
             sed -i 's/applicationId "org\.telegram\.messenger"/applicationId "org.tajgram.messenger"/g' "$file" 2>/dev/null || true
             sed -i 's/namespace "org\.telegram\.messenger"/namespace "org.tajgram.messenger"/g' "$file" 2>/dev/null || true
@@ -52,5 +57,5 @@ jobs:
           git config --global user.email "saidjun@tajgram.messenger"
           
           git add .
-          git commit -m "🔥 TAJGRAM ULTIMATE OVERHAUL: Million lines and paths converted deeply to Tajgram for Firebase!" || exit 0
+          git commit -m "🔥 TAJGRAM ULTIMATE OVERHAUL: Case-insensitive replacement done for all folders and lines!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
