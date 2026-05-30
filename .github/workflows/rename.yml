@@ -1,0 +1,35 @@
+name: Ultimate Permanent Rename to Tajgram
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Global Safe Case-Insensitive and Multi-Language Rename
+        run: |
+          # 1. Иваз кардани ҳама гуна шакли калимаи Telegram (майда, калон, омехта) ба Tajgram
+          find . -type f -name "strings.xml" -exec sed -i -E 's/[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]/Tajgram/g' {} +
+          
+          # 2. Иваз кардани калимаи Telegram бо забони Арабӣ (ҳарду шакли навишт) ба Tajgram
+          find . -type f -name "strings.xml" -exec sed -i 's/تيليجرام/Tajgram/g' {} +
+          find . -type f -name "strings.xml" -exec sed -i 's/تيليغرام/Tajgram/g' {} +
+          
+          # 3. Иваз кардани калимаи Telegram бо забони Форсӣ ба Tajgram
+          find . -type f -name "strings.xml" -exec sed -i 's/تلگرام/Tajgram/g' {} +
+          
+          # 4. Иваз кардани номи расмӣ дар Манифест (бо назардошти ҳарфҳои калону хурд)
+          find . -type f -name "AndroidManifest.xml" -exec sed -i -E 's/android:label="[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]"/android:label="Tajgram"/g' {} +
+      - name: Commit and Push Changes Back to GitHub
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Ultimate global rename of Telegram to Tajgram in all cases and languages including Arabic and Persian"
+          git push origin HEAD:${{ github.ref }}
