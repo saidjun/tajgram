@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,8 +17,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class CounterView extends View {
 

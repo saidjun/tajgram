@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.spoilers;
+package org.tajgram.ui.Components.spoilers;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -12,11 +12,11 @@ import android.view.Choreographer;
 
 import androidx.annotation.Size;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
 
 import java.util.ArrayList;
 import java.util.Arrays;

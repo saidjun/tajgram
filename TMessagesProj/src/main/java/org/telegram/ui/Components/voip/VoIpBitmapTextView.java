@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.graphics.Paint;
 import android.text.TextPaint;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
 
 /**
  * Fixed ANR on Samsung after one and a half minutes.

@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -27,16 +27,16 @@ import android.widget.TextView;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Components.ColorSpanUnderline;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Components.ColorSpanUnderline;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3;
+package org.tajgram.ui.Components.blur3;
 
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
@@ -7,7 +7,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
+import org.tajgram.ui.Components.blur3.capture.IBlur3Hash;
 
 @RequiresApi(api = Build.VERSION_CODES.Q)
 public class RenderNodeWithHash {

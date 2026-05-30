@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip;
+package org.tajgram.messenger.pip;
 
 import android.app.Activity;
 import android.app.PictureInPictureParams;
@@ -14,15 +14,15 @@ import android.view.Choreographer;
 import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.pip.activity.IPipActivity;
-import org.telegram.messenger.pip.activity.IPipActivityActionListener;
-import org.telegram.messenger.pip.activity.IPipActivityAnimationListener;
-import org.telegram.messenger.pip.activity.IPipActivityHandler;
-import org.telegram.messenger.pip.activity.IPipActivityListener;
-import org.telegram.messenger.pip.utils.PipActions;
-import org.telegram.messenger.pip.utils.PipDuration;
-import org.telegram.messenger.pip.utils.PipUtils;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.pip.activity.IPipActivity;
+import org.tajgram.messenger.pip.activity.IPipActivityActionListener;
+import org.tajgram.messenger.pip.activity.IPipActivityAnimationListener;
+import org.tajgram.messenger.pip.activity.IPipActivityHandler;
+import org.tajgram.messenger.pip.activity.IPipActivityListener;
+import org.tajgram.messenger.pip.utils.PipActions;
+import org.tajgram.messenger.pip.utils.PipDuration;
+import org.tajgram.messenger.pip.utils.PipUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

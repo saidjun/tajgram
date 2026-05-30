@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -9,9 +9,9 @@ import android.view.ViewTreeObserver;
 import androidx.annotation.NonNull;
 import androidx.annotation.Size;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
 
 public class KeyboardNotifier {
 

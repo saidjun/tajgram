@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,15 +9,15 @@ import android.view.View;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.RLottieDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DownloadController;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.RLottieDrawable;
 
 import java.util.ArrayList;
 import java.util.HashMap;

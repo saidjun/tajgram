@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -19,8 +19,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class SlidingTabView extends LinearLayout {
 

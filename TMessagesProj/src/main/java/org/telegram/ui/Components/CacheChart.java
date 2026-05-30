@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -27,12 +27,12 @@ import android.view.View;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Premium.StarParticlesView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.Premium.StarParticlesView;
 
 import java.util.Arrays;
 

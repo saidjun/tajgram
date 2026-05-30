@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -24,11 +24,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RLottieDrawable;
 
 import java.util.ArrayList;
 

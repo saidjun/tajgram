@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -13,22 +13,22 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.ChatActionCell;
+import org.tajgram.ui.LaunchActivity;
 
 public class SuggestBirthdayActionLayout {
 

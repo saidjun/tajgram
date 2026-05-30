@@ -1,14 +1,14 @@
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.TextView;
 
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CircularProgressDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.CircularProgressDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 public class TextViewWithLoading extends TextView {
 

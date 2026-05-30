@@ -1,12 +1,12 @@
-package org.telegram.ui.Components.chat;
+package org.tajgram.ui.Components.chat;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
 
 public class ChatListViewPaddingsAnimator {
     private final RecyclerView recyclerView;

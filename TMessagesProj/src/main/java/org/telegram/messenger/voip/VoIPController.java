@@ -6,7 +6,7 @@
  * Copyright Grishka, 2013-2016.
  */
 
-package org.telegram.messenger.voip;
+package org.tajgram.messenger.voip;
 
 import android.content.SharedPreferences;
 import android.media.audiofx.AcousticEchoCanceler;
@@ -14,10 +14,10 @@ import android.media.audiofx.NoiseSuppressor;
 import android.os.Build;
 import android.os.SystemClock;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.voip.VoIPHelper;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.ui.Components.voip.VoIPHelper;
 
 import java.io.File;
 import java.util.ArrayList;

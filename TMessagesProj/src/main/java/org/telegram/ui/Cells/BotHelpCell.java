@@ -6,11 +6,11 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -32,32 +32,32 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FileRefController;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatEditActivity;
-import org.telegram.ui.Components.ClipRoundedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.URLSpanNoUnderline;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.FileRefController;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_bots;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatEditActivity;
+import org.tajgram.ui.Components.ClipRoundedDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LinkPath;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.TypefaceSpan;
+import org.tajgram.ui.Components.URLSpanNoUnderline;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.Objects;
 

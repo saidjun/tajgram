@@ -11,14 +11,14 @@ import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
-import org.telegram.tlrpc.SchemeAllLayersParser
-import org.telegram.tlrpc.SchemeCodeGen
-import org.telegram.tlrpc.SchemeTlValidator
-import org.telegram.tlrpc.models.RULES
-import org.telegram.tlrpc.models.TlObjectWithLayer
-import org.telegram.tlrpc.schema.TlSchemaJsonParser
-import org.telegram.tlrpc.telegram.TelegramCodeParser
-import org.telegram.tlrpc.telegram.TelegramTlClass
+import org.tajgram.tlrpc.SchemeAllLayersParser
+import org.tajgram.tlrpc.SchemeCodeGen
+import org.tajgram.tlrpc.SchemeTlValidator
+import org.tajgram.tlrpc.models.RULES
+import org.tajgram.tlrpc.models.TlObjectWithLayer
+import org.tajgram.tlrpc.schema.TlSchemaJsonParser
+import org.tajgram.tlrpc.telegram.TelegramCodeParser
+import org.tajgram.tlrpc.telegram.TelegramTlClass
 import java.io.File
 
 abstract class GenerateSchemeTask : DefaultTask() {

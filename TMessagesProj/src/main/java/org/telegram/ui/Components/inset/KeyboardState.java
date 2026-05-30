@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.inset;
+package org.tajgram.ui.Components.inset;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
 
 class KeyboardState {
     public enum State {

@@ -6,13 +6,13 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.content.Context;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.ChatAttachAlertPhotoLayout;
 
 public class PhotoAttachCameraCell extends View {
     private int itemSize;

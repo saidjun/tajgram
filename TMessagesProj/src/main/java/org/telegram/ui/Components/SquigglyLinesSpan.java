@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -14,8 +14,8 @@ import android.text.style.LineBackgroundSpan;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Stories.recorder.HintView2;
 
 public class SquigglyLinesSpan extends CharacterStyle {
 

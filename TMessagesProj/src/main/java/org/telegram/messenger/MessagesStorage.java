@@ -6,13 +6,13 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import static org.telegram.messenger.MessagesController.LOAD_AROUND_DATE;
-import static org.telegram.messenger.MessagesController.LOAD_AROUND_MESSAGE;
-import static org.telegram.messenger.MessagesController.LOAD_BACKWARD;
-import static org.telegram.messenger.MessagesController.LOAD_FORWARD;
-import static org.telegram.messenger.MessagesController.LOAD_FROM_UNREAD;
+import static org.tajgram.messenger.MessagesController.LOAD_AROUND_DATE;
+import static org.tajgram.messenger.MessagesController.LOAD_AROUND_MESSAGE;
+import static org.tajgram.messenger.MessagesController.LOAD_BACKWARD;
+import static org.tajgram.messenger.MessagesController.LOAD_FORWARD;
+import static org.tajgram.messenger.MessagesController.LOAD_FROM_UNREAD;
 
 import android.appwidget.AppWidgetManager;
 import android.content.SharedPreferences;
@@ -29,30 +29,30 @@ import android.util.SparseIntArray;
 import androidx.annotation.UiThread;
 import androidx.collection.LongSparseArray;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.DialogsSearchAdapter;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.Reactions.ReactionsUtils;
-import org.telegram.ui.Components.VideoPlayer;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.EditWidgetActivity;
-import org.telegram.ui.Stories.StoriesController;
+import org.tajgram.PhoneFormat.PhoneFormat;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLiteDatabase;
+import org.tajgram.SQLite.SQLiteException;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.messenger.support.LongSparseIntArray;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.RequestDelegate;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.tgnet.tl.TL_bots;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Adapters.DialogsSearchAdapter;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.ui.Components.Reactions.ReactionsUtils;
+import org.tajgram.ui.Components.VideoPlayer;
+import org.tajgram.ui.DialogsActivity;
+import org.tajgram.ui.EditWidgetActivity;
+import org.tajgram.ui.Stories.StoriesController;
 
 import java.io.File;
 import java.util.ArrayList;

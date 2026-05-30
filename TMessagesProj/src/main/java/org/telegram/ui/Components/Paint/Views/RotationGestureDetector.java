@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
 import android.view.MotionEvent;
 

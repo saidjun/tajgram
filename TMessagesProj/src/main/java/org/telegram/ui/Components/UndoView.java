@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.LocaleController.formatSpannable;
+import static org.tajgram.messenger.LocaleController.formatSpannable;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -40,28 +40,28 @@ import android.widget.TextView;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Keep;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository;
-import org.telegram.ui.PaymentFormActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SavedMessagesController;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.Premium.boosts.BoostRepository;
+import org.tajgram.ui.PaymentFormActivity;
 
 import java.util.ArrayList;
 

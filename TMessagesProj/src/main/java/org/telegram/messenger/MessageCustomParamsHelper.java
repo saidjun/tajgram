@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
 
 public class MessageCustomParamsHelper {
 

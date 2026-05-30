@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -36,19 +36,19 @@ import androidx.annotation.RequiresApi;
 import com.google.android.exoplayer2.ExoPlayer;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BringAppForegroundService;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.PhotoViewer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.BringAppForegroundService;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.PhotoViewer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

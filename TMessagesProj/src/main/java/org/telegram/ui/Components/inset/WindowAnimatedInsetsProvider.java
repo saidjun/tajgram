@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.inset;
+package org.tajgram.ui.Components.inset;
 
 import android.graphics.PointF;
 import android.graphics.Rect;
@@ -12,8 +12,8 @@ import androidx.core.view.WindowInsetsAnimationCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import org.jspecify.annotations.Nullable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.chat.ViewPositionWatcher;
 
 import java.util.List;
 

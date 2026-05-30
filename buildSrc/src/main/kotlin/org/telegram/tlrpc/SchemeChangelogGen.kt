@@ -1,6 +1,6 @@
-package org.telegram.tlrpc
+package org.tajgram.tlrpc
 
-import org.telegram.tlrpc.models.*
+import org.tajgram.tlrpc.models.*
 
 object SchemeChangelogGen {
     fun getChangelog(old: TlSchemeWithMeta, new: TlSchemeWithMeta): TlSchemeChangelog {

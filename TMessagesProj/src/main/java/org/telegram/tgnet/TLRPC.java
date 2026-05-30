@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.tgnet;
+package org.tajgram.tgnet;
 
 import android.graphics.Bitmap;
 import android.graphics.Path;
@@ -18,32 +18,32 @@ import android.util.SparseArray;
 import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.json.TLJsonBuilder;
-import org.telegram.tgnet.json.TLJsonParser;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.legacy.TL_legacy_message;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.poll.PollAttachedMediaPack;
-import org.telegram.ui.Stories.MessageMediaStoryFull;
-import org.telegram.ui.Stories.MessageMediaStoryFull_old;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.messenger.TranslateController;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.json.TLJsonBuilder;
+import org.tajgram.tgnet.json.TLJsonParser;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.tgnet.tl.TL_aicompose;
+import org.tajgram.tgnet.tl.TL_bots;
+import org.tajgram.tgnet.tl.legacy.TL_legacy_message;
+import org.tajgram.tgnet.tl.TL_payments;
+import org.tajgram.tgnet.tl.TL_phone;
+import org.tajgram.tgnet.tl.TL_stars;
+import org.tajgram.tgnet.tl.TL_stats;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.Components.poll.PollAttachedMediaPack;
+import org.tajgram.ui.Stories.MessageMediaStoryFull;
+import org.tajgram.ui.Stories.MessageMediaStoryFull_old;
 
 import java.io.File;
 import java.util.ArrayList;

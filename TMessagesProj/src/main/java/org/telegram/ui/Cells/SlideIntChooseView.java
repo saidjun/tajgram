@@ -1,8 +1,8 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -22,17 +22,17 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
 import org.checkerframework.checker.units.qual.A;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChannelMonetizationLayout;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SeekBarView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChannelMonetizationLayout;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.SeekBarView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

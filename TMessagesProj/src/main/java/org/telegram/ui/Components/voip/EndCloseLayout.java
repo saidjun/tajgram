@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -27,12 +27,12 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
 
 public class EndCloseLayout extends FrameLayout {
     private final EndCloseView endCloseView;

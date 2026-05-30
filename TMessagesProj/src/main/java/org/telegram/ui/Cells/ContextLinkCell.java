@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -27,35 +27,35 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LetterDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.MediaActionDrawable;
-import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.PhotoViewer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DocumentObject;
+import org.tajgram.messenger.DownloadController;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.WebFile;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.AnimationProperties;
+import org.tajgram.ui.Components.ButtonBounce;
+import org.tajgram.ui.Components.CheckBox2;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LetterDrawable;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.MediaActionDrawable;
+import org.tajgram.ui.Components.RadialProgress2;
+import org.tajgram.ui.PhotoViewer;
 
 import java.io.File;
 import java.util.ArrayList;

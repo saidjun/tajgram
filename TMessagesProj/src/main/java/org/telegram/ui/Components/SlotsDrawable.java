@@ -1,17 +1,17 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.ChatMessageCell;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DownloadController;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Cells.ChatMessageCell;
 
 import java.io.File;
 

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -26,13 +26,13 @@ import android.util.SparseIntArray;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.PermissionRequest;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.Components.PermissionRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;

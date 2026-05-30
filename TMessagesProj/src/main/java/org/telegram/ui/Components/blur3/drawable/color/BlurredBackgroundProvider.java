@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3.drawable.color;
+package org.tajgram.ui.Components.blur3.drawable.color;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.Px;

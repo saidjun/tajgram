@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip.activity;
+package org.tajgram.messenger.pip.activity;
 
 public interface IPipActivityListener {
     default void onStartEnterToPip() {}

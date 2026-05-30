@@ -1,14 +1,14 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.SystemClock;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.FloatingDebug;
+package org.tajgram.ui.Components.FloatingDebug;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Canvas;
 import android.graphics.CornerPathEffect;
@@ -19,10 +19,10 @@ import android.view.ViewParent;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 

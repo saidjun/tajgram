@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Adapters;
+package org.tajgram.ui.Adapters;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.removeSpans;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.removeSpans;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -21,30 +21,30 @@ import android.view.ViewGroup;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.ProfileSearchCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.ForegroundColorSpanThemable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.ContactsActivity;
+import org.tajgram.PhoneFormat.PhoneFormat;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.GraySectionCell;
+import org.tajgram.ui.Cells.ProfileSearchCell;
+import org.tajgram.ui.Cells.TextCell;
+import org.tajgram.ui.Cells.UserCell;
+import org.tajgram.ui.Components.FlickerLoadingView;
+import org.tajgram.ui.Components.ForegroundColorSpanThemable;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.ContactsActivity;
 
 import java.util.ArrayList;
 import java.util.Timer;

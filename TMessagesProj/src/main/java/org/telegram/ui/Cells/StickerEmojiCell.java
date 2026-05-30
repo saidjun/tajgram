@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -27,26 +27,26 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ListView.RecyclerListViewWithOverlayDraw;
-import org.telegram.ui.Components.Premium.PremiumLockIconView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DocumentObject;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SendMessagesHelper;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.ListView.RecyclerListViewWithOverlayDraw;
+import org.tajgram.ui.Components.Premium.PremiumLockIconView;
 
 public class StickerEmojiCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, RecyclerListViewWithOverlayDraw.OverlayView {
 

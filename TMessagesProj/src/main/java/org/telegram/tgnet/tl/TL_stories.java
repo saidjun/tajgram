@@ -1,18 +1,18 @@
-package org.telegram.tgnet.tl;
+package org.tajgram.tgnet.tl;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_stats.TL_statsPercentValue;
-import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.TLMethod;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLParseException;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.tgnet.tl.TL_stats.TL_statsPercentValue;
+import org.tajgram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
 import java.util.ArrayList;
 

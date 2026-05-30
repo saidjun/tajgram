@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -22,20 +22,20 @@ import androidx.annotation.NonNull;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.EmuDetector;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.ChatActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.EmuDetector;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Cells.BaseCell;
+import org.tajgram.ui.Cells.ChatActionCell;
+import org.tajgram.ui.Cells.ChatMessageCell;
+import org.tajgram.ui.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;

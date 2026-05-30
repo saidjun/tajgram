@@ -1,4 +1,4 @@
-package org.telegram.messenger.voip;
+package org.tajgram.messenger.voip;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
@@ -7,17 +7,17 @@ import android.util.SparseIntArray;
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_phone;
 
 import java.util.ArrayList;
 import java.util.Arrays;

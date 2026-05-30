@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.Premium.boosts;
+package org.tajgram.ui.Components.Premium.boosts;
 
 import android.app.Activity;
 
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
-import org.telegram.ui.WrappedResourceProvider;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Stories.DarkThemeResourceProvider;
+import org.tajgram.ui.WrappedResourceProvider;
 
 public class DarkFragmentWrapper extends BaseFragment {
 

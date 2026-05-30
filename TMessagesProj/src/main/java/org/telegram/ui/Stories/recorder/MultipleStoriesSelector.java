@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -27,25 +27,25 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.BlurringShader;
+import org.tajgram.ui.Components.ButtonBounce;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.Components.Text;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Components.UniversalRecyclerView;
 
 import java.util.ArrayList;
 

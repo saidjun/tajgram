@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -16,19 +16,19 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.Consumer;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.util.LongSparseArray;
@@ -14,20 +14,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.FeaturedStickerSetCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.StickersAlert;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Cells.FeaturedStickerSetCell;
+import org.tajgram.ui.Cells.TextInfoPrivacyCell;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.StickersAlert;
 
 import java.util.ArrayList;
 

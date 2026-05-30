@@ -1,4 +1,4 @@
-package org.telegram.tlrpc.telegram
+package org.tajgram.tlrpc.telegram
 
 import com.github.javaparser.JavaParser
 import com.github.javaparser.ast.CompilationUnit

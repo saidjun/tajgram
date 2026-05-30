@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger.camera;
+package org.tajgram.messenger.camera;
 
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -24,19 +24,19 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.Bitmaps;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.SendMessagesHelper;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.SerializedData;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;

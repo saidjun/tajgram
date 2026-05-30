@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,11 +15,11 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.PeerColorActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.PeerColorActivity;
 
 import java.util.ArrayList;
 

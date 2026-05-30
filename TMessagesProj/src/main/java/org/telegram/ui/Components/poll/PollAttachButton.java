@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.poll;
+package org.tajgram.ui.Components.poll;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,9 +12,9 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 import me.vkryl.android.animator.BoolAnimator;
 

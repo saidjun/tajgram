@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,10 +12,10 @@ import androidx.core.util.Consumer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.Paint.PaintTypeface;
-import org.telegram.ui.Components.RecyclerListView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.ui.Components.Paint.PaintTypeface;
+import org.tajgram.ui.Components.RecyclerListView;
 
 public class PaintTypefaceListView extends RecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private Path mask = new Path();

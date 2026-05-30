@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -27,9 +27,9 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 public class VoIPFloatingLayout extends FrameLayout {
 

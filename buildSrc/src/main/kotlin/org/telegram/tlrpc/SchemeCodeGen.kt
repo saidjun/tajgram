@@ -1,4 +1,4 @@
-package org.telegram.tlrpc
+package org.tajgram.tlrpc
 
 import com.squareup.kotlinpoet.ClassName
 import com.squareup.kotlinpoet.FunSpec
@@ -8,12 +8,12 @@ import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.PropertySpec
 import com.squareup.kotlinpoet.TypeName
 import com.squareup.kotlinpoet.TypeSpec
-import org.telegram.tlrpc.models.TlObjectWithLayer
-import org.telegram.tlrpc.models.TlParam
-import org.telegram.tlrpc.models.TlParamOptionalKey
-import org.telegram.tlrpc.schema.TlSchemaParamType
-import org.telegram.tlrpc.models.TlParams
-import org.telegram.tlrpc.schema.TlSchemaPrimitiveType
+import org.tajgram.tlrpc.models.TlObjectWithLayer
+import org.tajgram.tlrpc.models.TlParam
+import org.tajgram.tlrpc.models.TlParamOptionalKey
+import org.tajgram.tlrpc.schema.TlSchemaParamType
+import org.tajgram.tlrpc.models.TlParams
+import org.tajgram.tlrpc.schema.TlSchemaPrimitiveType
 
 object SchemeCodeGen {
     private val CLASS_OUTPUT = ClassName("org.telegram.tgnet", "OutputSerializedData")

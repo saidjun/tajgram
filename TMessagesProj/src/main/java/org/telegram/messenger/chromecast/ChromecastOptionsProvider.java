@@ -1,4 +1,4 @@
-package org.telegram.messenger.chromecast;
+package org.tajgram.messenger.chromecast;
 
 import android.content.Context;
 

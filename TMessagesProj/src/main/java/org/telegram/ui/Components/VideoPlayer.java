@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -78,23 +78,23 @@ import com.google.android.exoplayer2.video.SurfaceNotValidException;
 import com.google.android.exoplayer2.video.VideoListener;
 import com.google.android.exoplayer2.video.VideoSize;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FourierTransform;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.chromecast.ChromecastMedia;
-import org.telegram.messenger.chromecast.ChromecastMediaVariations;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.FourierTransform;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.chromecast.ChromecastMedia;
+import org.tajgram.messenger.chromecast.ChromecastMediaVariations;
+import org.tajgram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,13 +11,13 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SeekBarView;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.BottomSheet;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.SeekBarView;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
 
 public class BlurSettingsBottomSheet extends BottomSheet {
 

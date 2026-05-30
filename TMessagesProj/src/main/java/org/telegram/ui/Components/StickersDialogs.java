@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,27 +16,27 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.FileRefController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ContentPreviewViewer;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
-import org.telegram.ui.Stories.recorder.EmojiBottomSheet;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BotWebViewVibrationEffect;
+import org.tajgram.messenger.FileRefController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.ContentPreviewViewer;
+import org.tajgram.ui.Stories.DarkThemeResourceProvider;
+import org.tajgram.ui.Stories.recorder.EmojiBottomSheet;
 
 import java.util.ArrayList;
 

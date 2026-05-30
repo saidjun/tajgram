@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -39,8 +39,8 @@ import androidx.core.graphics.ColorUtils;
 
 import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.C;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts;
+package org.tajgram.ui.Components.Premium.boosts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,10 +14,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 @SuppressLint("ViewConstructor")
 public class BoostCounterView extends View {

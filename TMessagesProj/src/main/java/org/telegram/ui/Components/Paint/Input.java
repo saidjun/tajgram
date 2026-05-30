@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint;
+package org.tajgram.ui.Components.Paint;
 
 import static com.google.zxing.common.detector.MathUtils.distance;
 
@@ -11,10 +11,10 @@ import android.view.ViewConfiguration;
 
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Size;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BotWebViewVibrationEffect;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.Size;
 
 import java.util.Vector;
 

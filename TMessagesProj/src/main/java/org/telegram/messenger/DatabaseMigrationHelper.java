@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLiteDatabase;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLRPC;
 
 import java.io.File;
 import java.io.IOException;

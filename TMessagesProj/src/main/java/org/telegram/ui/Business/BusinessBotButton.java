@@ -1,6 +1,6 @@
-package org.telegram.ui.Business;
+package org.tajgram.ui.Business;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,25 +11,25 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.ClickableAnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.ClickableAnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.ItemOptions;
+import org.tajgram.ui.Components.LayoutHelper;
 
 public class BusinessBotButton extends FrameLayout {
 

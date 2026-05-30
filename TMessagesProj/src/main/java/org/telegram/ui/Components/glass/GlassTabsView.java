@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.glass;
+package org.tajgram.ui.Components.glass;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -16,14 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.LiteMode;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 
 public class GlassTabsView extends FrameLayout {
     //private final @Nullable BlurredBackgroundSourceRenderNode lensBackgroundSourceNode;

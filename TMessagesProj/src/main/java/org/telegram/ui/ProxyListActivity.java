@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -39,34 +39,34 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.ProxyRotationController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCheckCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SlideChooseView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DownloadController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.ProxyRotationController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.ActionBarMenu;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BackDrawable;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Cells.HeaderCell;
+import org.tajgram.ui.Cells.ShadowSectionCell;
+import org.tajgram.ui.Cells.TextCheckCell;
+import org.tajgram.ui.Cells.TextInfoPrivacyCell;
+import org.tajgram.ui.Cells.TextSettingsCell;
+import org.tajgram.ui.Components.CheckBox2;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.NumberTextView;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.SlideChooseView;
 
 import java.util.ArrayList;
 import java.util.Collections;

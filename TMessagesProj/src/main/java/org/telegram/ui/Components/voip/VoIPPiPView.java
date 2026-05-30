@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,23 +31,23 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.pip.source.IPipSourceDelegate;
-import org.telegram.messenger.pip.utils.PipPermissions;
-import org.telegram.messenger.pip.PipSource;
-import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.messenger.voip.Instance;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.VoIPFragment;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.pip.source.IPipSourceDelegate;
+import org.tajgram.messenger.pip.utils.PipPermissions;
+import org.tajgram.messenger.pip.PipSource;
+import org.tajgram.messenger.pip.utils.PipUtils;
+import org.tajgram.messenger.voip.Instance;
+import org.tajgram.messenger.voip.VideoCapturerDevice;
+import org.tajgram.messenger.voip.VoIPService;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.VoIPFragment;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 

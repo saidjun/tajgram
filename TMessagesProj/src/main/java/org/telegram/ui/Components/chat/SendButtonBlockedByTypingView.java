@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.chat;
+package org.tajgram.ui.Components.chat;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,9 +13,9 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.TypingDotsDrawable;
+import org.tajgram.messenger.utils.DrawableUtils;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.TypingDotsDrawable;
 
 @SuppressLint("ViewConstructor")
 public class SendButtonBlockedByTypingView extends View {

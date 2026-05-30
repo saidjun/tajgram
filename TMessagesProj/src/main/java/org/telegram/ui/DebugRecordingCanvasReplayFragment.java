@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,12 +12,12 @@ import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.utils.DebugRecordingCanvas;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SeekBarView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.utils.DebugRecordingCanvas;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.SeekBarView;
 
 public class DebugRecordingCanvasReplayFragment extends BaseFragment {
     private final DebugRecordingCanvas debugRecordingCanvas;

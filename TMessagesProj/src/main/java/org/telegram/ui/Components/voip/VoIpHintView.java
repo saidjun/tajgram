@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.tajgram.ui.Stories.recorder.HintView2;
 
 @SuppressLint("ViewConstructor")
 public class VoIpHintView extends HintView2 {

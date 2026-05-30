@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -18,9 +18,9 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

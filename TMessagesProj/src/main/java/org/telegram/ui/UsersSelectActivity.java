@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -45,39 +45,39 @@ import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Adapters.SearchAdapterHelper;
-import org.telegram.ui.Business.BusinessRecipientsHelper;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.GroupCreateUserCell;
-import org.telegram.ui.Components.AnimatedAvatarContainer;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.FragmentFloatingButton;
-import org.telegram.ui.Components.GroupCreateSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.StickerEmptyView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Adapters.SearchAdapterHelper;
+import org.tajgram.ui.Business.BusinessRecipientsHelper;
+import org.tajgram.ui.Cells.GraySectionCell;
+import org.tajgram.ui.Cells.GroupCreateUserCell;
+import org.tajgram.ui.Components.AnimatedAvatarContainer;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.FlickerLoadingView;
+import org.tajgram.ui.Components.FragmentFloatingButton;
+import org.tajgram.ui.Components.GroupCreateSpan;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Premium.LimitReachedBottomSheet;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.StickerEmptyView;
 
 import java.util.ArrayList;
 

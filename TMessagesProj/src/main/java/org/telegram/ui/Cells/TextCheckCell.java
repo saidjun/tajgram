@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -30,15 +30,15 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.AvatarSpan;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.Switch;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.AvatarSpan;
+import org.tajgram.ui.Components.AnimationProperties;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RLottieImageView;
+import org.tajgram.ui.Components.Switch;
 
 import java.util.ArrayList;
 import java.util.Locale;

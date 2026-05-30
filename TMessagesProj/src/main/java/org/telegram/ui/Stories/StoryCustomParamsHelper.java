@@ -1,12 +1,12 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
-import org.telegram.tgnet.AbstractSerializedData;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.tajgram.tgnet.AbstractSerializedData;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_stories;
 
 public class StoryCustomParamsHelper {
 

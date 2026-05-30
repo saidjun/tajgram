@@ -1,6 +1,6 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -10,10 +10,10 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AvatarDrawable;
 
 public class ImageReceiverSpan extends ReplacementSpan {
 

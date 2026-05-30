@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.app.PendingIntent;
 import android.app.Service;
@@ -13,9 +13,9 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.ServiceCompat;
 
-import org.telegram.messenger.web.R;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.web.R;
+import org.tajgram.tgnet.TL_smsjobs;
+import org.tajgram.ui.LaunchActivity;
 
 public class SMSJobsNotification extends Service {
 

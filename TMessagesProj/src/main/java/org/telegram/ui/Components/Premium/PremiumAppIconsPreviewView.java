@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.tajgram.ui.Components.Premium;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,14 +8,14 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.AppIconsSelectorCell;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LauncherIconController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.AppIconsSelectorCell;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.LauncherIconController;
 
 import java.util.ArrayList;
 import java.util.List;

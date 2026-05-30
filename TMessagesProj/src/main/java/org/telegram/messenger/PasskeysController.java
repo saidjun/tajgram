@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.Context;
 import android.os.Build;
@@ -28,13 +28,13 @@ import androidx.credentials.exceptions.NoCredentialException;
 
 import org.json.JSONObject;
 import org.json.JSONStringer;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.Arrays;
 import java.util.concurrent.Executors;

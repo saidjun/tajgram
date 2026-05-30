@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.LocaleController.formatPluralString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.LocaleController.formatPluralString;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -22,10 +22,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.QuickRepliesActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Business.QuickRepliesActivity;
 
 public class ButtonSpan extends ReplacementSpan {
 

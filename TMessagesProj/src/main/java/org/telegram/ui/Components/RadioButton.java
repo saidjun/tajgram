@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -23,10 +23,10 @@ import androidx.core.graphics.ColorUtils;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class RadioButton extends View {
 

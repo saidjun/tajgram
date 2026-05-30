@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger.secretmedia;
+package org.tajgram.messenger.secretmedia;
 
 import android.content.Context;
 import android.net.Uri;

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,15 +16,15 @@ import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.view.View;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.DialogsActivity;
+import org.tajgram.messenger.AccountInstance;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.DialogsActivity;
 
 import java.util.ArrayList;
 import java.util.Locale;

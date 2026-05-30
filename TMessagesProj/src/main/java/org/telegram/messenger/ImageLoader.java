@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
@@ -42,21 +42,21 @@ import androidx.core.graphics.ColorUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.DispatchQueuePriority;
-import org.telegram.messenger.secretmedia.EncryptedFileInputStream;
-import org.telegram.messenger.utils.BitmapsCache;
-import org.telegram.messenger.wallpaper.WallpaperGiftBitmapDrawable;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.SlotsDrawable;
-import org.telegram.ui.Components.ThemePreviewDrawable;
-import org.telegram.ui.web.WebInstantView;
+import org.tajgram.DispatchQueuePriority;
+import org.tajgram.messenger.secretmedia.EncryptedFileInputStream;
+import org.tajgram.messenger.utils.BitmapsCache;
+import org.tajgram.messenger.wallpaper.WallpaperGiftBitmapDrawable;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Cells.ChatMessageCell;
+import org.tajgram.ui.Components.AnimatedFileDrawable;
+import org.tajgram.ui.Components.BackgroundGradientDrawable;
+import org.tajgram.ui.Components.MotionBackgroundDrawable;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.SlotsDrawable;
+import org.tajgram.ui.Components.ThemePreviewDrawable;
+import org.tajgram.ui.web.WebInstantView;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

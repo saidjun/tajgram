@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -16,18 +16,18 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CircularProgressDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.blur3.StrokeDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.CircularProgressDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.Components.blur3.StrokeDrawable;
+import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 public class MuteButton extends FrameLayout {
 

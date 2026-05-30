@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -20,26 +20,26 @@ import android.view.ViewGroup;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.SearchAdapterHelper;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.ManageChatTextCell;
-import org.telegram.ui.Cells.ManageChatUserCell;
-import org.telegram.ui.ChatUsersActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Adapters.SearchAdapterHelper;
+import org.tajgram.ui.Cells.GraySectionCell;
+import org.tajgram.ui.Cells.ManageChatTextCell;
+import org.tajgram.ui.Cells.ManageChatUserCell;
+import org.tajgram.ui.ChatUsersActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,7 +1,7 @@
-package org.telegram.tlrpc
+package org.tajgram.tlrpc
 
-import org.telegram.tlrpc.models.*
-import org.telegram.tlrpc.schema.TlSchemaParamType
+import org.tajgram.tlrpc.models.*
+import org.tajgram.tlrpc.schema.TlSchemaParamType
 
 object SchemeTlValidator {
     fun validate(scheme: TlScheme): TlSchemeWithMeta {

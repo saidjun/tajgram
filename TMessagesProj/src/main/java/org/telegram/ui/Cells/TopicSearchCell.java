@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,13 +10,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.LayoutHelper;
 
 public class TopicSearchCell extends FrameLayout {
 

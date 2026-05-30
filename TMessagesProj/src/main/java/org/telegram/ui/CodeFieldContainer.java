@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,10 +15,10 @@ import android.widget.LinearLayout;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.PhoneFormat.PhoneFormat;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.LayoutHelper;
 
 public class CodeFieldContainer extends LinearLayout {
     public final static int TYPE_PASSCODE = 10;

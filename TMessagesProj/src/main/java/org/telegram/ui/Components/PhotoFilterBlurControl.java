@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,8 +17,8 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.BubbleActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.BubbleActivity;
 
 public class PhotoFilterBlurControl extends FrameLayout {
 

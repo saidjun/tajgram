@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -23,16 +23,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.SharingLiveLocationCell;
-import org.telegram.ui.ContentPreviewViewer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.LocationController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.ui.ActionBar.BottomSheet;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.SharingLiveLocationCell;
+import org.tajgram.ui.ContentPreviewViewer;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;

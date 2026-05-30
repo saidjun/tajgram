@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.allGlobalViews;
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.allGlobalViews;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -73,20 +73,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.view.menu.MenuItemImpl;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.GradientProtectionDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BotWebViewVibrationEffect;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.TranslateController;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.utils.GradientProtectionDrawable;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.tajgram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 
 import java.util.ArrayList;
 import java.util.Arrays;

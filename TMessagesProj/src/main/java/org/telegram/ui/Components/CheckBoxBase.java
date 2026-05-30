@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -23,10 +23,10 @@ import android.view.View;
 import androidx.annotation.Keep;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.GenericProvider;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class CheckBoxBase {
 

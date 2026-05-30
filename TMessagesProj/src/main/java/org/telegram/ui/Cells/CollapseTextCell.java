@@ -1,6 +1,6 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,12 +11,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class CollapseTextCell extends FrameLayout {

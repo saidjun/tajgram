@@ -1,9 +1,9 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.BaseFragment;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.BaseFragment;
 
 public class URLSpanCopyToClipboard extends URLSpanNoUnderline {
     private BaseFragment fragment;

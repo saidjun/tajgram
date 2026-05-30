@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,9 +6,9 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import org.json.JSONObject;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.web.HttpGetFileTask;
-import org.telegram.ui.web.HttpGetTask;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.web.HttpGetFileTask;
+import org.tajgram.ui.web.HttpGetTask;
 
 import java.io.File;
 
@@ -107,7 +107,7 @@ public class BetaUpdaterController {
             return;
         }
 
-        final String url = org.telegram.messenger.BuildConfig.BETA_URL;
+        final String url = org.tajgram.messenger.BuildConfig.BETA_URL;
         checkingForUpdate = true;
         firstCheck = false;
         new HttpGetTask(str -> AndroidUtilities.runOnUIThread(() -> {

@@ -1,6 +1,6 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -28,24 +28,24 @@ import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.FillLastLinearLayoutManager;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.NestedSizeNotifierLayout;
-import org.telegram.ui.Components.Premium.PremiumGradient;
-import org.telegram.ui.Components.Premium.StarParticlesView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SimpleThemeDescription;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.FillLastLinearLayoutManager;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.NestedSizeNotifierLayout;
+import org.tajgram.ui.Components.Premium.PremiumGradient;
+import org.tajgram.ui.Components.Premium.StarParticlesView;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.SimpleThemeDescription;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
 

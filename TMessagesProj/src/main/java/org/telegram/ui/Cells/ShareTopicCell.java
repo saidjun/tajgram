@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,23 +18,23 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.Forum.ForumBubbleDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LetterDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.CombinedDrawable;
+import org.tajgram.ui.Components.Forum.ForumBubbleDrawable;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LetterDrawable;
 
 @SuppressLint("ViewConstructor")
 public class ShareTopicCell extends FrameLayout {

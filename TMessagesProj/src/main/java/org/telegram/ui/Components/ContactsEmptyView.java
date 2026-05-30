@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,13 +21,13 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
 
 public class ContactsEmptyView extends LinearLayout {
 

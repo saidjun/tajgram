@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -60,25 +60,25 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Adapters.FiltersView;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CloseProgressDrawable2;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AnimationNotificationsLocker;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Adapters.FiltersView;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.CloseProgressDrawable2;
+import org.tajgram.ui.Components.CombinedDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.RLottieImageView;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,17 +1,17 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.content.Context;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BadWayToMakeButtonRound;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.SimpleTextView;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.BadWayToMakeButtonRound;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class LocationDirectionCell extends FrameLayout {

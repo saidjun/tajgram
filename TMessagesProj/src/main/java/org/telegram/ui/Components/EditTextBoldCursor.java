@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.getWallpaperRotation;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.getWallpaperRotation;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -60,17 +60,17 @@ import android.widget.TextView;
 
 import com.google.common.primitives.Chars;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.XiaomiUtilities;
-import org.telegram.ui.ActionBar.FloatingActionMode;
-import org.telegram.ui.ActionBar.FloatingToolbar;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.XiaomiUtilities;
+import org.tajgram.ui.ActionBar.FloatingActionMode;
+import org.tajgram.ui.ActionBar.FloatingToolbar;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

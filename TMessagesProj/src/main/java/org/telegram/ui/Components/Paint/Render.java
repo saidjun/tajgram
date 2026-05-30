@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint;
+package org.tajgram.ui.Components.Paint;
 
 import android.graphics.Matrix;
 import android.graphics.PointF;

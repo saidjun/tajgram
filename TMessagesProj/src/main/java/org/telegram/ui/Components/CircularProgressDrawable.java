@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 public class CircularProgressDrawable extends Drawable {
 

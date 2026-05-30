@@ -1,8 +1,8 @@
-package org.telegram.messenger.voip;
+package org.tajgram.messenger.voip;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 import java.util.ArrayList;
 

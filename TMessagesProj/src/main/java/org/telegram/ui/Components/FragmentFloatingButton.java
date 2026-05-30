@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,12 +18,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 
 import java.util.ArrayList;
 

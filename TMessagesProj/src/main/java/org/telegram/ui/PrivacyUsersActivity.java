@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -18,30 +18,30 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.ManageChatTextCell;
-import org.telegram.ui.Cells.ManageChatUserCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.EmptyTextProgressView;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
+import org.tajgram.PhoneFormat.PhoneFormat;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Cells.HeaderCell;
+import org.tajgram.ui.Cells.ManageChatTextCell;
+import org.tajgram.ui.Cells.ManageChatUserCell;
+import org.tajgram.ui.Cells.ShadowSectionCell;
+import org.tajgram.ui.Cells.TextCell;
+import org.tajgram.ui.Cells.TextInfoPrivacyCell;
+import org.tajgram.ui.Components.AlertsCreator;
+import org.tajgram.ui.Components.EmptyTextProgressView;
+import org.tajgram.ui.Components.ItemOptions;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 

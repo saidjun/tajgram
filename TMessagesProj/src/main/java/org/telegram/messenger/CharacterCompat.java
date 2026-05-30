@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 public class CharacterCompat {
     public static final char MIN_HIGH_SURROGATE = '\uD800';

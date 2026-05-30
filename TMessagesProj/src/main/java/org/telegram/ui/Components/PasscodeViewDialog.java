@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -17,14 +17,14 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.DrawerLayoutContainer;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.MessageSendPreview;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.ui.ActionBar.DrawerLayoutContainer;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.MessageSendPreview;
 
 public class PasscodeViewDialog extends Dialog {
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -11,7 +11,7 @@ import android.view.Gravity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 public class SpeedIconDrawable extends Drawable {
 

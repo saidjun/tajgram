@@ -1,13 +1,13 @@
-package org.telegram.tgnet.model.generated
+package org.tajgram.tgnet.model.generated
 
 import kotlin.Int
 import kotlin.Long
 import kotlin.String
 import kotlin.UInt
 import kotlin.collections.List
-import org.telegram.tgnet.OutputSerializedData
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
+import org.tajgram.tgnet.OutputSerializedData
+import org.tajgram.tgnet.model.TlGen_Object
+import org.tajgram.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_StarGiftAuctionState : TlGen_Object {
   public data object TL_starGiftAuctionStateNotModified : TlGen_StarGiftAuctionState() {

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -20,13 +20,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieImageView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RLottieImageView;
 
 @SuppressLint("ViewConstructor")
 public class RateCallLayout extends FrameLayout {

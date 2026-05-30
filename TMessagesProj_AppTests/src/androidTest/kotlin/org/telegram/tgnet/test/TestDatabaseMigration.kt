@@ -1,11 +1,11 @@
-package org.telegram.tgnet.test
+package org.tajgram.tgnet.test
 
 import org.junit.Test
-import org.telegram.SQLite.SQLiteCursor
-import org.telegram.SQLite.SQLiteDatabase
-import org.telegram.messenger.ApplicationLoader
-import org.telegram.messenger.DatabaseMigrationHelper
-import org.telegram.messenger.MessagesStorage
+import org.tajgram.SQLite.SQLiteCursor
+import org.tajgram.SQLite.SQLiteDatabase
+import org.tajgram.messenger.ApplicationLoader
+import org.tajgram.messenger.DatabaseMigrationHelper
+import org.tajgram.messenger.MessagesStorage
 import java.io.File
 
 class TestDatabaseMigration {

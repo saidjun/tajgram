@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -21,12 +21,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.LayoutHelper;
 
 public class PhotoPickerAlbumsCell extends FrameLayout {
 

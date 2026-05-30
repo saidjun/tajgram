@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.TLRPC;
 
 import java.util.HashMap;
 import java.util.Locale;

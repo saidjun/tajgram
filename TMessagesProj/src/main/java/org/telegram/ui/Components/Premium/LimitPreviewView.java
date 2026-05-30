@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.Premium;
+package org.tajgram.ui.Components.Premium;
 
 import static android.graphics.Canvas.ALL_SAVE_FLAG;
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -36,21 +36,21 @@ import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EllipsizeSpanAnimator;
-import org.telegram.ui.Components.EmptyStubSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.tl.TL_stars;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EllipsizeSpanAnimator;
+import org.tajgram.ui.Components.EmptyStubSpan;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
 

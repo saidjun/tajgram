@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.poll;
+package org.tajgram.ui.Components.poll;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,26 +16,26 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ClipRoundedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.MediaActionDrawable;
-import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.SeekBar;
-import org.telegram.ui.Components.Text;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DocumentObject;
+import org.tajgram.messenger.DownloadController;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.messenger.WebFile;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.ClipRoundedDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.MediaActionDrawable;
+import org.tajgram.ui.Components.RadialProgress2;
+import org.tajgram.ui.Components.SeekBar;
+import org.tajgram.ui.Components.Text;
 
 import java.util.Locale;
 

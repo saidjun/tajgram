@@ -1,15 +1,15 @@
-package org.telegram.ui.Charts;
+package org.tajgram.ui.Charts;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Charts.data.ChartData;
-import org.telegram.ui.Charts.data.DoubleLinearChartData;
-import org.telegram.ui.Charts.view_data.ChartHorizontalLinesData;
-import org.telegram.ui.Charts.view_data.LineViewData;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Charts.data.ChartData;
+import org.tajgram.ui.Charts.data.DoubleLinearChartData;
+import org.tajgram.ui.Charts.view_data.ChartHorizontalLinesData;
+import org.tajgram.ui.Charts.view_data.LineViewData;
 
 public class DoubleLinearChartView extends BaseChartView<DoubleLinearChartData, LineViewData> {
 

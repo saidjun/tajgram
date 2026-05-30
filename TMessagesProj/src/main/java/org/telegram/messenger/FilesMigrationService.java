@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.Manifest;
 import android.app.Activity;
@@ -22,11 +22,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.StickerImageView;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.BottomSheet;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.StickerImageView;
 
 import java.io.File;
 import java.nio.file.Files;

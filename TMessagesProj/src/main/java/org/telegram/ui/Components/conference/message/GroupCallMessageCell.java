@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.conference.message;
+package org.tajgram.ui.Components.conference.message;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -29,25 +29,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.voip.GroupCallMessage;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.ui.Components.TypefaceSpan;
+import org.tajgram.ui.Components.spoilers.SpoilersTextView;
+import org.tajgram.ui.Components.voip.CellFlickerDrawable;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;

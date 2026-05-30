@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 public class SizeNotifierFrameLayoutPhoto extends SizeNotifierFrameLayout {
 

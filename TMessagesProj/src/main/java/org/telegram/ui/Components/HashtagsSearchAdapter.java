@@ -1,17 +1,17 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.MessagesSearchAdapter;
-import org.telegram.ui.Stories.StoriesController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Adapters.MessagesSearchAdapter;
+import org.tajgram.ui.Stories.StoriesController;
 
 import java.util.ArrayList;
 

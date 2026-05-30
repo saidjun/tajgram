@@ -1,4 +1,4 @@
-package org.telegram.tgnet;
+package org.tajgram.tgnet;
 
 public enum TLDataSourceType {
     UNKNOWN, // from database or locally created  todo: split

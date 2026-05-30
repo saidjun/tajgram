@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -16,13 +16,13 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.ButtonBounce;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
 public class StoryPrivacyButton extends View {
 

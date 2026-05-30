@@ -1,21 +1,21 @@
-package org.telegram.ui.Components.poll;
+package org.tajgram.ui.Components.poll;
 
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.BulletinFactory;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.BulletinFactory;
 
 import java.util.ArrayList;
 import java.util.List;

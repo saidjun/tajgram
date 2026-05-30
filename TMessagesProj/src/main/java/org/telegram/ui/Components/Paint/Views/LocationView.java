@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,11 +10,11 @@ import android.graphics.PorterDuffXfermode;
 import android.view.Gravity;
 import android.view.ViewGroup;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RectOld;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RectOld;
 
 public class LocationView extends EntityView {
 

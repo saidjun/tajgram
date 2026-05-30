@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.blur3.drawable;
+package org.tajgram.ui.Components.blur3.drawable;
 
 import android.graphics.Canvas;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
+import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
 
 public class BlurredBackgroundDrawableSource extends BlurredBackgroundDrawable {
     private final BlurredBackgroundSource source;

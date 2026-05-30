@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColorPicker;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.telegram.ui.Components.SeekBarView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.ui.ActionBar.BottomSheet;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.ColorPicker;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.tajgram.ui.Components.SeekBarView;
 
 public class GLIconSettingsView extends LinearLayout {
 

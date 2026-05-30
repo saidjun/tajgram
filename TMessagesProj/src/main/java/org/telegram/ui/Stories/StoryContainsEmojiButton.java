@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -21,24 +21,24 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.FileRefController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmojiPacksAlert;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.TypefaceSpan;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BotWebViewVibrationEffect;
+import org.tajgram.messenger.FileRefController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.RequestDelegate;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EmojiPacksAlert;
+import org.tajgram.ui.Components.LoadingDrawable;
+import org.tajgram.ui.Components.TypefaceSpan;
 
 import java.util.ArrayList;
 

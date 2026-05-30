@@ -6,15 +6,15 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.tgnet.TLRPC;
 
 public class IdenticonDrawable extends Drawable {
 

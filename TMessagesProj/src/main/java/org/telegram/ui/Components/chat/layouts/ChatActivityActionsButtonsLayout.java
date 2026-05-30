@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.chat.layouts;
+package org.tajgram.ui.Components.chat.layouts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,16 +17,16 @@ import android.widget.TextView;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.Components.chat.buttons.ChatActivityBlurredRoundButton;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.tajgram.ui.Components.chat.buttons.ChatActivityBlurredRoundButton;
 
 import me.vkryl.android.AnimatorUtils;
 import me.vkryl.android.animator.BoolAnimator;

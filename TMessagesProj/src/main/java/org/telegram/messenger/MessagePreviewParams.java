@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.net.Uri;
 import android.text.Spannable;
@@ -12,10 +12,10 @@ import android.text.util.Linkify;
 import android.util.LongSparseArray;
 import android.util.SparseBooleanArray;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.MessagePreviewView;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.MessagePreviewView;
 
 import java.util.ArrayList;
 

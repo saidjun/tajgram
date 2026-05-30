@@ -1,8 +1,8 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -19,12 +19,12 @@ import android.view.ViewConfiguration;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Text;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.Text;
 
 public class PhotoVideoSwitcherView extends View implements FlashViews.Invertable {
 

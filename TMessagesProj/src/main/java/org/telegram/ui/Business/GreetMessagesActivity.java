@@ -1,6 +1,6 @@
-package org.telegram.ui.Business;
+package org.tajgram.ui.Business;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -10,26 +10,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CircularProgressDrawable;
-import org.telegram.ui.Components.CrossfadeDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BotWebViewVibrationEffect;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.CircularProgressDrawable;
+import org.tajgram.ui.Components.CrossfadeDrawable;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Components.UniversalRecyclerView;
 
 import java.util.ArrayList;
 

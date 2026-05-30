@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,20 +19,20 @@ import android.view.animation.OvershootInterpolator;
 
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.CacheControlActivity;
-import org.telegram.ui.Storage.CacheModel;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.CacheControlActivity;
+import org.tajgram.ui.Storage.CacheModel;
 
 public class StorageDiagramView extends View implements NotificationCenter.NotificationCenterDelegate {
 

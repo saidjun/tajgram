@@ -1,4 +1,4 @@
-package org.telegram.ui.Charts;
+package org.tajgram.ui.Charts;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -7,12 +7,12 @@ import android.graphics.Paint;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.SegmentTree;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Charts.data.ChartData;
-import org.telegram.ui.Charts.data.StackBarChartData;
-import org.telegram.ui.Charts.view_data.LineViewData;
-import org.telegram.ui.Charts.view_data.StackBarViewData;
+import org.tajgram.messenger.SegmentTree;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Charts.data.ChartData;
+import org.tajgram.ui.Charts.data.StackBarChartData;
+import org.tajgram.ui.Charts.view_data.LineViewData;
+import org.tajgram.ui.Charts.view_data.StackBarViewData;
 
 public class StackBarChartView extends BaseChartView<StackBarChartData, StackBarViewData> {
 

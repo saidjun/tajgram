@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,10 +10,10 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Premium.PremiumGradient;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.Premium.PremiumGradient;
 
 public class AvatarsImageView extends View {
 

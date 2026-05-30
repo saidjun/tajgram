@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -32,9 +32,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import androidx.annotation.Keep;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BaseCell;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.BaseCell;
 
 import me.vkryl.android.animator.BoolAnimator;
 

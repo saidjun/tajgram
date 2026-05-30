@@ -1,14 +1,14 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Paint.RenderView;
-import org.telegram.ui.PhotoViewer;
+import org.tajgram.messenger.VideoEditedInfo;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.Paint.RenderView;
+import org.tajgram.ui.PhotoViewer;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.tajgram.ui.Components.Premium;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,12 +14,12 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.voip.CellFlickerDrawable;
 
 public class PremiumLockIconView extends ImageView {
 

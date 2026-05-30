@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.formatPluralString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.view.View;
@@ -9,19 +9,19 @@ import android.widget.FrameLayout;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BackDrawable;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.INavigationLayout;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Business.QuickRepliesController;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.DialogsActivity;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -12,8 +12,8 @@ import android.os.SystemClock;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
 
 public class ProxyDrawable extends Drawable {
 

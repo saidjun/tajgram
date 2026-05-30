@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -7,8 +7,8 @@ import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 public class UploadingDotsSpannable extends ReplacementSpan {
     private final String text = "…";

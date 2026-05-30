@@ -1,4 +1,4 @@
-package org.telegram.messenger.chromecast;
+package org.tajgram.messenger.chromecast;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,9 +16,9 @@ import com.google.android.gms.cast.framework.SessionManager;
 import com.google.android.gms.cast.framework.SessionManagerListener;
 import com.google.android.gms.cast.framework.media.RemoteMediaClient;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.CastSync;
-import org.telegram.ui.PhotoViewer;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.ui.CastSync;
+import org.tajgram.ui.PhotoViewer;
 
 import java.io.File;
 import java.util.Objects;

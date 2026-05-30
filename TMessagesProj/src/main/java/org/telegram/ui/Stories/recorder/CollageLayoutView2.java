@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -38,20 +38,20 @@ import androidx.annotation.Nullable;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.camera.CameraView;
+import org.tajgram.messenger.video.VideoPlayerHolderBase;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.BlurringShader;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.ItemOptions;
+import org.tajgram.ui.Components.LayoutHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;

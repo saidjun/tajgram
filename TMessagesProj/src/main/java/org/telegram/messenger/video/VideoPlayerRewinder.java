@@ -1,17 +1,17 @@
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.util.Log;
 
 import com.google.android.exoplayer2.C;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.PhotoViewerWebView;
-import org.telegram.ui.Components.SeekSpeedDrawable;
-import org.telegram.ui.Components.VideoForwardDrawable;
-import org.telegram.ui.Components.VideoPlayer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Components.PhotoViewerWebView;
+import org.tajgram.ui.Components.SeekSpeedDrawable;
+import org.tajgram.ui.Components.VideoForwardDrawable;
+import org.tajgram.ui.Components.VideoPlayer;
 
 public class VideoPlayerRewinder {
 

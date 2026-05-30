@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.blur3.drawable.color;
+package org.tajgram.ui.Components.blur3.drawable.color;
 
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
 
 import androidx.annotation.ColorInt;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Stories.DarkThemeResourceProvider;
 
 public class BlurredBackgroundProviderBuilder implements BlurredBackgroundProvider {
     private final Theme.ResourcesProvider resourcesProvider;

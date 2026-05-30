@@ -1,11 +1,11 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.isInAirplaneMode;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.isInAirplaneMode;
+import static org.tajgram.messenger.LocaleController.formatPluralString;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.content.Context;
@@ -43,37 +43,37 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SMSJobController;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.web.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.LanguageCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.LocationController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.SMSJobController;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.messenger.web.R;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.TL_smsjobs;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.HeaderCell;
+import org.tajgram.ui.Cells.LanguageCell;
+import org.tajgram.ui.Cells.TextCell;
+import org.tajgram.ui.Cells.TextInfoPrivacyCell;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.BottomSheetWithRecyclerListView;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.CombinedDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.ListView.AdapterWithDiffUtils;
+import org.tajgram.ui.Components.Premium.LimitPreviewView;
+import org.tajgram.ui.Components.Premium.boosts.GiftInfoBottomSheet;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -163,7 +163,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                 default:
                 case VIEW_TYPE_SHADOW:
                     view = new TextInfoPrivacyCell(getContext());
-                    Drawable shadowDrawable = Theme.getThemedDrawable(getContext(), org.telegram.messenger.R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, resourceProvider));
+                    Drawable shadowDrawable = Theme.getThemedDrawable(getContext(), org.tajgram.messenger.R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, resourceProvider));
                     Drawable background = new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray));
                     CombinedDrawable combinedDrawable = new CombinedDrawable(background, shadowDrawable, 0, 0);
                     combinedDrawable.setFullsize(true);
@@ -473,7 +473,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                             builder.getDismissRunnable().run();
                         });
                     }
-                    builder.setNegativeButton(LocaleController.getString("Cancel", org.telegram.messenger.R.string.Cancel), null);
+                    builder.setNegativeButton(LocaleController.getString("Cancel", org.tajgram.messenger.R.string.Cancel), null);
                     showDialog(builder.create());
                 } catch (Exception e) {
                     FileLog.e(e);

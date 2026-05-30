@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.graphics.CornerPathEffect;
 import android.graphics.Path;
@@ -16,8 +16,8 @@ import android.text.Layout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LiteMode;
 
 public class LinkPath extends CornerPath {
 

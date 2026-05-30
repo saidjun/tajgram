@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger.camera;
+package org.tajgram.messenger.camera;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -59,26 +59,26 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.video.MP4Builder;
-import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.video.Mp4Movie;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.InstantCameraView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Stories.LivePlayer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.video.MP4Builder;
+import org.tajgram.messenger.video.MediaCodecVideoConvertor;
+import org.tajgram.messenger.video.Mp4Movie;
+import org.tajgram.messenger.voip.VoIPService;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.InstantCameraView;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Stories.LivePlayer;
 
 import java.io.File;
 import java.io.IOException;
@@ -733,7 +733,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
         float size4to3 = 4.0f / 3.0f;
         float size16to9 = 16.0f / 9.0f;
         float screenSize = (float) Math.max(AndroidUtilities.displaySize.x, AndroidUtilities.displaySize.y) / Math.min(AndroidUtilities.displaySize.x, AndroidUtilities.displaySize.y);
-        org.telegram.messenger.camera.Size aspectRatio;
+        org.tajgram.messenger.camera.Size aspectRatio;
         int wantedWidth;
         int wantedHeight;
 

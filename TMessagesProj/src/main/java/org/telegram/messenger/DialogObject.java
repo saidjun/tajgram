@@ -6,18 +6,18 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.tgnet.tl.TL_bots;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.BackupImageView;
 
 import java.util.ArrayList;
 

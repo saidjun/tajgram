@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -43,19 +43,19 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Cells.PhotoEditRadioCell;
-import org.telegram.ui.Cells.PhotoEditToolCell;
-import org.telegram.ui.Stories.recorder.StoryRecorder;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.BubbleActivity;
+import org.tajgram.ui.Cells.PhotoEditRadioCell;
+import org.tajgram.ui.Cells.PhotoEditToolCell;
+import org.tajgram.ui.Stories.recorder.StoryRecorder;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

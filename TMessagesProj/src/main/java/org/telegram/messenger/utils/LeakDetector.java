@@ -27,13 +27,13 @@
  *     caused by objects that are reachable but already eligible for collection.
  */
 
-package org.telegram.messenger.utils;
+package org.tajgram.messenger.utils;
 
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.NotificationCenter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

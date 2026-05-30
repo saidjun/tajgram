@@ -1,10 +1,10 @@
-package org.telegram.ui.Components.Paint;
+package org.tajgram.ui.Components.Paint;
 
 import android.graphics.Color;
 import android.opengl.GLES20;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLog;
 
 import java.util.HashMap;
 import java.util.Map;

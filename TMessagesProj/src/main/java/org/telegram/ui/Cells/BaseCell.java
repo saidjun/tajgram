@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -21,8 +21,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
 
 public abstract class BaseCell extends ViewGroup implements SizeNotifierFrameLayout.IViewWithInvalidateCallback {
 

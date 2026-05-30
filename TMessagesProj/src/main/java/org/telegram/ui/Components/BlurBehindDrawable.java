@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import static android.graphics.Canvas.ALL_SAVE_FLAG;
 
@@ -10,12 +10,12 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
 
 public class BlurBehindDrawable {
 

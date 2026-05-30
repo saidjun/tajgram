@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,8 +18,8 @@ import android.net.Uri;
 
 import com.carrotsearch.randomizedtesting.Xoroshiro128PlusRandom;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
 
 import java.io.File;
 import java.io.FileInputStream;

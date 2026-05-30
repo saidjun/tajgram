@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -38,14 +38,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.Cells.DialogCell;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.EmptyStubSpan;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.ui.Cells.DialogCell;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.EmptyStubSpan;
+import org.tajgram.ui.Components.StaticLayoutEx;
+import org.tajgram.ui.Components.spoilers.SpoilerEffect;
 
 import java.util.ArrayList;
 import java.util.List;

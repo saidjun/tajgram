@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,16 +15,16 @@ import android.view.MotionEvent;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.Forum.ForumBubbleDrawable;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.Forum.MessageTopicButton;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.ChatMessageCell;
+import org.tajgram.ui.Components.Forum.ForumBubbleDrawable;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.Forum.MessageTopicButton;
 
 public class TopicButton {
 

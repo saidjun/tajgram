@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.poll.attached;
+package org.tajgram.ui.Components.poll.attached;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -12,18 +12,18 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ClipRoundedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DocumentObject;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.messenger.WebFile;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.ClipRoundedDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.poll.PollAttachedMedia;
 
 public class PollAttachedMediaLocation extends PollAttachedMedia {
     public final TLRPC.MessageMedia media;

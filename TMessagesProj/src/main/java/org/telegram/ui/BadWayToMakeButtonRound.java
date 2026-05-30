@@ -1,8 +1,8 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.view.View;
 
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
+import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
 
 public class BadWayToMakeButtonRound {
     public static void round(View view) {

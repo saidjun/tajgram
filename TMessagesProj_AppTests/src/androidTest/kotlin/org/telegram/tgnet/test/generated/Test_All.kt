@@ -1,12 +1,12 @@
-package org.telegram.tgnet.test.generated
+package org.tajgram.tgnet.test.generated
 
 import org.junit.Assume.assumeTrue
 import org.junit.Test
 import org.junit.experimental.runners.Enclosed
 import org.junit.runner.RunWith
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
-import org.telegram.tgnet.test.BaseSchemeTest
+import org.tajgram.tgnet.model.TlGen_Object
+import org.tajgram.tgnet.model.TlGen_Vector
+import org.tajgram.tgnet.test.BaseSchemeTest
 
 @RunWith(Enclosed::class)
 public class Test_All {

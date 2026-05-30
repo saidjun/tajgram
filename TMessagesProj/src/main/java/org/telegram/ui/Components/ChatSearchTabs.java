@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -12,8 +12,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class ChatSearchTabs extends BlurredFrameLayout {
 

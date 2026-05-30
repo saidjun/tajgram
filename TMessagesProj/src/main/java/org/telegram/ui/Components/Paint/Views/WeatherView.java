@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,10 +10,10 @@ import android.graphics.PorterDuffXfermode;
 import android.view.Gravity;
 import android.view.ViewGroup;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RectOld;
-import org.telegram.ui.Stories.recorder.Weather;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RectOld;
+import org.tajgram.ui.Stories.recorder.Weather;
 
 public class WeatherView extends EntityView {
 

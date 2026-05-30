@@ -1,9 +1,9 @@
-package org.telegram.tgnet.tl;
+package org.tajgram.tgnet.tl;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLParseException;
 
 public class TL_fragment {
 

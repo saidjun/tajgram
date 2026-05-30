@@ -22,12 +22,12 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-package org.telegram.PhoneFormat;
+package org.tajgram.PhoneFormat;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.FileLog;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

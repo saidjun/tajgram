@@ -1,10 +1,10 @@
-package org.telegram.ui.ActionBar.theme;
+package org.tajgram.ui.ActionBar.theme;
 
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.TLRPC;
 
 public class ThemeKey {
     public final String emoticon;

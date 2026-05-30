@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -22,18 +22,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Paint.PaintTypeface;
-import org.telegram.ui.Components.Paint.Swatch;
-import org.telegram.ui.Components.RectOld;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Paint.PaintTypeface;
+import org.tajgram.ui.Components.Paint.Swatch;
+import org.tajgram.ui.Components.RectOld;
 
 public class TextPaintView extends EntityView {
 

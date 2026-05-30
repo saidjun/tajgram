@@ -6,13 +6,13 @@
  * Copyright Grishka, 2013-2016.
  */
 
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.graphics.*;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 import androidx.annotation.Keep;
 

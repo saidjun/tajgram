@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -17,17 +17,17 @@ import androidx.core.view.ViewCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.LayoutHelper;
 
 import java.util.ArrayList;
 

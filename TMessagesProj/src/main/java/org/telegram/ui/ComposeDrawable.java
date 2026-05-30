@@ -1,6 +1,6 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -11,8 +11,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -12,12 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.PremiumButtonView;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Premium.PremiumButtonView;
 
 public class UnlockPremiumView extends FrameLayout {
 

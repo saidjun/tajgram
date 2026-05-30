@@ -1,4 +1,4 @@
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -12,14 +12,14 @@ import android.view.TextureView;
 
 import com.google.android.exoplayer2.ExoPlayer;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FileStreamLoadOperation;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.VideoPlayer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.FileStreamLoadOperation;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.VideoPlayer;
 
 //used for player in background thread
 public class VideoPlayerHolderBase {

@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip.utils;
+package org.tajgram.messenger.pip.utils;
 
 import android.view.View;
 import android.view.ViewTreeObserver;

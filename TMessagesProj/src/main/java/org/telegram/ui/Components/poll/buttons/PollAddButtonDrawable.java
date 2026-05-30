@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.poll.buttons;
+package org.tajgram.ui.Components.poll.buttons;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,11 +18,11 @@ import android.view.Gravity;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.R;
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.utils.DrawableUtils;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.poll.PollAttachedMedia;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;

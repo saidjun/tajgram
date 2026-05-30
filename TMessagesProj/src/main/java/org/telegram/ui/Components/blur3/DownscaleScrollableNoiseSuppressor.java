@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.blur3;
+package org.tajgram.ui.Components.blur3;
 
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
@@ -14,11 +14,11 @@ import android.os.Build;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.utils.RenderNodeEffects;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.utils.RenderNodeEffects;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.blur3.capture.IBlur3Capture;
 
 import java.util.ArrayList;
 import java.util.List;

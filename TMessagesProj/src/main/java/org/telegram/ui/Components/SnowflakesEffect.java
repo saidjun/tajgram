@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -18,10 +18,10 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Charts.data;
+package org.tajgram.ui.Charts.data;
 
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -8,9 +8,9 @@ import androidx.core.graphics.ColorUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.SegmentTree;
-import org.telegram.ui.ActionBar.ThemeColors;
-import org.telegram.ui.Stars.StarsController;
+import org.tajgram.messenger.SegmentTree;
+import org.tajgram.ui.ActionBar.ThemeColors;
+import org.tajgram.ui.Stars.StarsController;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

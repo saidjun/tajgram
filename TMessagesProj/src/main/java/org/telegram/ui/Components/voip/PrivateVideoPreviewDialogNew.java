@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -33,21 +33,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BitmapShaderTools;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.voip.VideoCapturerDevice;
+import org.tajgram.messenger.voip.VoIPService;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BackDrawable;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.BitmapShaderTools;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.MotionBackgroundDrawable;
+import org.tajgram.ui.LaunchActivity;
 import org.webrtc.RendererCommon;
 
 import java.io.File;

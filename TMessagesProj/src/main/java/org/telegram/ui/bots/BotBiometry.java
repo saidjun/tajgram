@@ -1,4 +1,4 @@
-package org.telegram.ui.bots;
+package org.tajgram.ui.bots;
 
 import android.app.Activity;
 import android.content.Context;
@@ -26,20 +26,20 @@ import androidx.lifecycle.LifecycleRegistry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SRPHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SRPHelper;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.Text;
+import org.tajgram.ui.LaunchActivity;
 
 import java.nio.charset.StandardCharsets;
 import java.security.KeyPairGenerator;

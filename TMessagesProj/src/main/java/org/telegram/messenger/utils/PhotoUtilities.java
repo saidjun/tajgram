@@ -1,24 +1,24 @@
-package org.telegram.messenger.utils;
+package org.tajgram.messenger.utils;
 
 import android.os.Bundle;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ImageUpdater;
-import org.telegram.ui.ProfileActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.INavigationLayout;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.ImageUpdater;
+import org.tajgram.ui.ProfileActivity;
 
 import java.io.File;
 import java.util.ArrayList;

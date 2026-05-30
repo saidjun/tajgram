@@ -1,15 +1,15 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.SharedPreferences;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.SerializedData;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLParseException;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
 
 import java.util.ArrayList;
 import java.util.Calendar;

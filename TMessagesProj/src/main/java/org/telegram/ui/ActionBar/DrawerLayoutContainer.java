@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -24,9 +24,9 @@ import androidx.core.view.DisplayCutoutCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLog;
 
 public class DrawerLayoutContainer extends FrameLayout {
 

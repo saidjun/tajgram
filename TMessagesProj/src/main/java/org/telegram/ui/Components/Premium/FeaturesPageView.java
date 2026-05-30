@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium;
+package org.tajgram.ui.Components.Premium;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -24,23 +24,23 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.FixedHeightEmptyCell;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.GradientTools;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.telegram.ui.Components.Premium.GLIcon.Icon3D;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.FixedHeightEmptyCell;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.BackupImageView;
+import org.tajgram.ui.Components.GradientTools;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.tajgram.ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.tajgram.ui.Components.Premium.GLIcon.Icon3D;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.PremiumPreviewFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;

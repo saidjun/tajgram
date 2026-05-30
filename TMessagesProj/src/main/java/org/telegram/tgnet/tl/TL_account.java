@@ -1,14 +1,14 @@
-package org.telegram.tgnet.tl;
+package org.tajgram.tgnet.tl;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.TLMethod;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLParseException;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
 
 import java.util.ArrayList;
 

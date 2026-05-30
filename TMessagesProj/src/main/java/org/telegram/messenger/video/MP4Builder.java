@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
@@ -39,7 +39,7 @@ import com.coremedia.iso.boxes.TrackHeaderBox;
 import com.googlecode.mp4parser.DataSource;
 import com.googlecode.mp4parser.util.Matrix;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 import java.io.File;
 import java.io.FileOutputStream;

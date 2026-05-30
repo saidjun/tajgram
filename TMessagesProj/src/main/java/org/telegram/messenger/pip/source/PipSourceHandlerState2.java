@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip.source;
+package org.tajgram.messenger.pip.source;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -10,16 +10,16 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.pip.PipSource;
-import org.telegram.messenger.pip.PipSourceContentView;
-import org.telegram.messenger.pip.activity.IPipActivityAnimationListener;
-import org.telegram.messenger.pip.activity.IPipActivityListener;
-import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.messenger.pip.utils.Trigger;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.pip.PipSource;
+import org.tajgram.messenger.pip.PipSourceContentView;
+import org.tajgram.messenger.pip.activity.IPipActivityAnimationListener;
+import org.tajgram.messenger.pip.activity.IPipActivityListener;
+import org.tajgram.messenger.pip.utils.PipUtils;
+import org.tajgram.messenger.pip.utils.Trigger;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivityAnimationListener {
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -11,9 +11,9 @@ import android.text.StaticLayout;
 import android.view.View;
 import android.graphics.Rect;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class ForwardBackground {
 

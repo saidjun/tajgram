@@ -1,7 +1,7 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,27 +29,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.AlertDialogDecor;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedColor;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextCaption;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLiteDatabase;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.AlertDialogDecor;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedColor;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EditTextCaption;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.ui.Components.TypefaceSpan;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

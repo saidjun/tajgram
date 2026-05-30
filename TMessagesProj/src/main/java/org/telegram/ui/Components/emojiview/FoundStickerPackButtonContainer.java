@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.emojiview;
+package org.tajgram.ui.Components.emojiview;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.utils.GradientProtectionDrawable;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.utils.GradientProtectionDrawable;
+import org.tajgram.ui.ActionBar.Theme;
 
 @SuppressLint("ViewConstructor")
 public class FoundStickerPackButtonContainer extends FrameLayout {

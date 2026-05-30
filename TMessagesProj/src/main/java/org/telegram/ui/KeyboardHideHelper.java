@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,11 +21,11 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManagerFixed;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RecyclerListView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.tajgram.ui.Components.ChatActivityEnterView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.RecyclerListView;
 
 public class KeyboardHideHelper {
 

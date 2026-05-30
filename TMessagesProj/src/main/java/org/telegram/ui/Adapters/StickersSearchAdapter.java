@@ -1,4 +1,4 @@
-package org.telegram.ui.Adapters;
+package org.tajgram.ui.Adapters;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -19,22 +19,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.EmptyCell;
-import org.telegram.ui.Cells.FeaturedStickerSetInfoCell;
-import org.telegram.ui.Cells.StickerEmojiCell;
-import org.telegram.ui.Cells.StickerSetNameCell;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Cells.EmptyCell;
+import org.tajgram.ui.Cells.FeaturedStickerSetInfoCell;
+import org.tajgram.ui.Cells.StickerEmojiCell;
+import org.tajgram.ui.Cells.StickerSetNameCell;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

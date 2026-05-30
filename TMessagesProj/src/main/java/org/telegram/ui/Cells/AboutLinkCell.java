@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -45,24 +45,24 @@ import android.widget.TextView;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.Components.URLSpanNoUnderline;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.BottomSheet;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AlertsCreator;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LinkPath;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.LoadingDrawable;
+import org.tajgram.ui.Components.StaticLayoutEx;
+import org.tajgram.ui.Components.URLSpanNoUnderline;
 
 import java.util.concurrent.atomic.AtomicReference;
 

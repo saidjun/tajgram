@@ -1,4 +1,4 @@
-package org.telegram.ui.Stars;
+package org.tajgram.ui.Stars;
 
 import androidx.annotation.Nullable;
 

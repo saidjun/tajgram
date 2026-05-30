@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,10 +9,10 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.R;
+import org.tajgram.messenger.R;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
 
 @SuppressLint("ViewConstructor")
 public class HideEmojiTextView extends TextView {

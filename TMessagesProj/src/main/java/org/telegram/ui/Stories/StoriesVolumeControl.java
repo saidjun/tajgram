@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,8 +9,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.AnimatedFloat;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.AnimatedFloat;
 
 public class StoriesVolumeControl extends View {
 

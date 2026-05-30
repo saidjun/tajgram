@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -16,8 +16,8 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class FolderDrawable extends Drawable {
 

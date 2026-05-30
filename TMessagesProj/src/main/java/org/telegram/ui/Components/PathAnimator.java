@@ -6,14 +6,14 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
 
 import java.util.ArrayList;
 

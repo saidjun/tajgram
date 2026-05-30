@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -29,10 +29,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.ColoredImageSpan;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.ColoredImageSpan;
 
 import java.io.InputStream;
 import java.nio.ByteBuffer;

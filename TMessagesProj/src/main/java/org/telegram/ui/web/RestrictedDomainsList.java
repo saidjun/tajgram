@@ -1,12 +1,12 @@
-package org.telegram.ui.web;
+package org.tajgram.ui.web;
 
 import android.content.SharedPreferences;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MessagesController;
 
 import java.util.ArrayList;
 import java.util.HashMap;

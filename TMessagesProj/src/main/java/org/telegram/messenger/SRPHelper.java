@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.TLRPC;
 
 import java.math.BigInteger;
 

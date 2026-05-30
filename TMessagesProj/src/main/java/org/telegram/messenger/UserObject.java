@@ -6,15 +6,15 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.tajgram.PhoneFormat.PhoneFormat;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
 
 public class UserObject {
 

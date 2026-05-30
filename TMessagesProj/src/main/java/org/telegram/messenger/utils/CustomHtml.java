@@ -1,14 +1,14 @@
-package org.telegram.messenger.utils;
+package org.tajgram.messenger.utils;
 
 import android.text.Spanned;
 import android.text.TextUtils;
 
-import org.telegram.messenger.CodeHighlighting;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.URLSpanMono;
-import org.telegram.ui.Components.URLSpanReplacement;
+import org.tajgram.messenger.CodeHighlighting;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.QuoteSpan;
+import org.tajgram.ui.Components.TextStyleSpan;
+import org.tajgram.ui.Components.URLSpanMono;
+import org.tajgram.ui.Components.URLSpanReplacement;
 
 public class CustomHtml {
 

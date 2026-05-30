@@ -1,4 +1,4 @@
-package org.telegram.ui.Charts.view_data;
+package org.tajgram.ui.Charts.view_data;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 

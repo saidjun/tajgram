@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,9 +9,9 @@ import android.widget.ImageView;
 
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
 
 public class CloseFriendsBadge extends ImageView {
 

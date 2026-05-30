@@ -1,10 +1,10 @@
-package org.telegram.ui.Gifts;
+package org.tajgram.ui.Gifts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.formatDurationNoHours;
-import static org.telegram.messenger.LocaleController.formatNumber;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.formatDurationNoHours;
+import static org.tajgram.messenger.LocaleController.formatNumber;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -19,22 +19,22 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.utils.CountdownTimer;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.GiftAuctionController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.utils.CountdownTimer;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.BottomSheetWithRecyclerListView;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RLottieImageView;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Stars.StarsIntroActivity;
+import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,7 +6,7 @@
  * Copyright Grishka, 2013-2016.
  */
 
-package org.telegram.messenger.voip;
+package org.tajgram.messenger.voip;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;
@@ -18,7 +18,7 @@ import android.media.audiofx.NoiseSuppressor;
 import android.os.Build;
 import android.text.TextUtils;
 
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.FileLog;
 
 import java.nio.ByteBuffer;
 import java.util.regex.Pattern;

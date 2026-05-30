@@ -1,12 +1,12 @@
-package org.telegram.ui.Components.FloatingDebug;
+package org.tajgram.ui.Components.FloatingDebug;
 
 import android.annotation.SuppressLint;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.ui.Components.AnimationProperties;
+import org.tajgram.ui.LaunchActivity;
 
 public class FloatingDebugController {
     private static FloatingDebugView debugView;

@@ -1,7 +1,7 @@
-package org.telegram.tlrpc
+package org.tajgram.tlrpc
 
 import com.example.GenerateSchemeTask
-import org.telegram.tlrpc.models.*
+import org.tajgram.tlrpc.models.*
 import java.io.File
 import java.nio.charset.Charset
 

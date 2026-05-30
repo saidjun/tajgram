@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -13,9 +13,9 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
-import org.telegram.ui.Adapters.DialogsAdapter;
-import org.telegram.ui.Cells.DialogCell;
-import org.telegram.ui.Cells.DialogsEmptyCell;
+import org.tajgram.ui.Adapters.DialogsAdapter;
+import org.tajgram.ui.Cells.DialogCell;
+import org.tajgram.ui.Cells.DialogsEmptyCell;
 
 import java.util.ArrayList;
 import java.util.List;

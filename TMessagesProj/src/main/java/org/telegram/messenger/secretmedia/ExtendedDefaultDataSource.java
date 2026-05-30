@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger.secretmedia;
+package org.tajgram.messenger.secretmedia;
 
 import android.content.Context;
 import android.net.Uri;
@@ -31,7 +31,7 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.Util;
 
-import org.telegram.messenger.FileStreamLoadOperation;
+import org.tajgram.messenger.FileStreamLoadOperation;
 
 import java.io.File;
 import java.io.IOException;

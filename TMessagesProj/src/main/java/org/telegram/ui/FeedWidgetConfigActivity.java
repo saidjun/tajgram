@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
@@ -7,9 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FeedWidgetProvider;
+import org.tajgram.messenger.AccountInstance;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FeedWidgetProvider;
 
 public class FeedWidgetConfigActivity extends ExternalActionActivity {
 

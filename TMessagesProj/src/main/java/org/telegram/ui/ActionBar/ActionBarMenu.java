@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -18,10 +18,10 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Adapters.FiltersView;
-import org.telegram.ui.Components.RLottieDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Adapters.FiltersView;
+import org.tajgram.ui.Components.RLottieDrawable;
 
 import java.util.ArrayList;
 

@@ -1,19 +1,19 @@
-package org.telegram.ui.Components.poll.attached;
+package org.tajgram.ui.Components.poll.attached;
 
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.EmojiView;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
+import org.tajgram.messenger.DocumentObject;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.EmojiView;
+import org.tajgram.ui.Components.poll.PollAttachedMedia;
 
 public class PollAttachedMediaSticker extends PollAttachedMedia {
     public final TLRPC.Document sticker;

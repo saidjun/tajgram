@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -23,14 +23,14 @@ import android.view.inspector.WindowInspector;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Stories.recorder.StoryRecorder;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Stories.recorder.StoryRecorder;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

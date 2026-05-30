@@ -1,4 +1,4 @@
-package org.telegram.tlrpc.schema
+package org.tajgram.tlrpc.schema
 
 sealed class TlSchemaParamType {
 

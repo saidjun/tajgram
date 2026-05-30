@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -16,23 +16,23 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.TopicsFragment;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.INavigationLayout;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.DialogsActivity;
+import org.tajgram.ui.ProfileActivity;
+import org.tajgram.ui.TopicsFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;

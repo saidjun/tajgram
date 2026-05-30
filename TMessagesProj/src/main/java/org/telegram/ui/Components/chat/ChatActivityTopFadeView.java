@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.chat;
+package org.tajgram.ui.Components.chat;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -18,8 +18,8 @@ import android.view.animation.DecelerateInterpolator;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Utilities;
 
 public class BackDrawable extends Drawable {
 

@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.readRes;
+import static org.tajgram.messenger.AndroidUtilities.readRes;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -28,18 +28,18 @@ import android.util.JsonReader;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.DispatchQueuePool;
-import org.telegram.messenger.DispatchQueuePoolBackground;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.BitmapsCache;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.DispatchQueuePool;
+import org.tajgram.messenger.DispatchQueuePoolBackground;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.utils.BitmapsCache;
+import org.tajgram.ui.BubbleActivity;
+import org.tajgram.ui.LaunchActivity;
 
 import java.io.File;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -8,8 +8,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.tgnet.TLRPC;
 
 import java.util.ArrayList;
 

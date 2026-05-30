@@ -1,8 +1,8 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,25 +46,25 @@ import android.view.ViewConfiguration;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.TypefaceSpan;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.BaseCell;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.ButtonBounce;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LinkPath;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.TypefaceSpan;
 
 public class HintView2 extends View {
 

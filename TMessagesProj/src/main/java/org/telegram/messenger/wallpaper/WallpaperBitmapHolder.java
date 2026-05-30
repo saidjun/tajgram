@@ -1,4 +1,4 @@
-package org.telegram.messenger.wallpaper;
+package org.tajgram.messenger.wallpaper;
 
 import android.graphics.Bitmap;
 

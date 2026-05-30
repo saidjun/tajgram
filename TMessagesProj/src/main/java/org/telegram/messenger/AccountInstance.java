@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.SharedPreferences;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.Paint.PersistColorPalette;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.ui.Components.Paint.PersistColorPalette;
 
 public class AccountInstance {
 

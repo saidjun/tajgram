@@ -1,8 +1,8 @@
-package org.telegram.ui.Stories.recorder;
+package org.tajgram.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 import static org.telegram.ui.ActionBar.Theme.RIPPLE_MASK_CIRCLE_20DP;
 
 import android.content.Context;
@@ -27,27 +27,27 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BlobDrawable;
-import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.WaveDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.BlobDrawable;
+import org.tajgram.ui.Components.BlurringShader;
+import org.tajgram.ui.Components.ButtonBounce;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.ItemOptions;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.ui.Components.Text;
+import org.tajgram.ui.Components.WaveDrawable;
 
 public class CaptionStory extends CaptionContainerView {
 

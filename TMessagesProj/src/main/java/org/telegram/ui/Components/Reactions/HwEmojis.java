@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.Reactions;
+package org.tajgram.ui.Components.Reactions;
 
-import static org.telegram.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH;
-import static org.telegram.messenger.SharedConfig.getDevicePerformanceClass;
+import static org.tajgram.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH;
+import static org.tajgram.messenger.SharedConfig.getDevicePerformanceClass;
 
 import android.view.View;
 
-import org.telegram.messenger.ImageLoader;
+import org.tajgram.messenger.ImageLoader;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -25,20 +25,20 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
 import org.checkerframework.checker.units.qual.A;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.MessagesSearchAdapter;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivityContainer;
-import org.telegram.ui.Stories.StoriesController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.HashtagSearchController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Adapters.MessagesSearchAdapter;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.ChatActivityContainer;
+import org.tajgram.ui.Stories.StoriesController;
 
 public class HashtagActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
 

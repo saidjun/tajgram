@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3.utils;
+package org.tajgram.ui.Components.blur3.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

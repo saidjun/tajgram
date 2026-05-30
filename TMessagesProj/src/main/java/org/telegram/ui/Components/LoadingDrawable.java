@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 
 import android.graphics.Canvas;
@@ -22,8 +22,8 @@ import androidx.annotation.Nullable;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class LoadingDrawable extends Drawable {
 

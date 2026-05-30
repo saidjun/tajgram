@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -18,22 +18,22 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Paint.Brush;
-import org.telegram.ui.Components.Paint.Painting;
-import org.telegram.ui.Components.Paint.PersistColorPalette;
-import org.telegram.ui.Components.Paint.RenderView;
-import org.telegram.ui.Components.Paint.UndoStore;
-import org.telegram.ui.Components.Size;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DispatchQueue;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.BubbleActivity;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Paint.Brush;
+import org.tajgram.ui.Components.Paint.Painting;
+import org.tajgram.ui.Components.Paint.PersistColorPalette;
+import org.tajgram.ui.Components.Paint.RenderView;
+import org.tajgram.ui.Components.Paint.UndoStore;
+import org.tajgram.ui.Components.Size;
 
 import java.util.ArrayList;
 

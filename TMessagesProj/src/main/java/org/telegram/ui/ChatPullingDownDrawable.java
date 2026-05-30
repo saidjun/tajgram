@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,26 +21,26 @@ import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CounterView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.LetterDrawable;
-import org.telegram.ui.Components.StaticLayoutEx;
+import org.tajgram.messenger.AccountInstance;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.ImageLocation;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.CombinedDrawable;
+import org.tajgram.ui.Components.CounterView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.LetterDrawable;
+import org.tajgram.ui.Components.StaticLayoutEx;
 
 import java.util.ArrayList;
 

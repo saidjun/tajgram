@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -33,14 +33,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.FiltersView;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AnimationNotificationsLocker;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Adapters.FiltersView;
+import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 
 import java.util.ArrayList;
 

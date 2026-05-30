@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
 import android.graphics.SurfaceTexture;
 import android.opengl.EGL14;
@@ -18,10 +18,10 @@ import android.opengl.GLES20;
 import android.os.Handler;
 import android.view.Surface;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.VideoEditedInfo;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -40,16 +40,16 @@ import android.widget.ImageView;
 
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.Bitmaps;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 

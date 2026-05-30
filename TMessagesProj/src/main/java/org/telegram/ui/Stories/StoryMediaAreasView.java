@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -33,31 +33,31 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Paint.Views.LocationMarker;
-import org.telegram.ui.Components.Paint.Views.WeatherView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.EmojiAnimationsOverlay;
-import org.telegram.ui.LocationActivity;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.Stories.recorder.StoryEntry;
-import org.telegram.ui.Stories.recorder.Weather;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.ButtonBounce;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Paint.Views.LocationMarker;
+import org.tajgram.ui.Components.Paint.Views.WeatherView;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.EmojiAnimationsOverlay;
+import org.tajgram.ui.LocationActivity;
+import org.tajgram.ui.Stories.recorder.HintView2;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.ui.Stories.recorder.Weather;
 
 import java.util.ArrayList;
 

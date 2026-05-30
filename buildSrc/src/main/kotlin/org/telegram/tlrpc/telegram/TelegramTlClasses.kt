@@ -1,4 +1,4 @@
-package org.telegram.tlrpc.telegram
+package org.tajgram.tlrpc.telegram
 
 data class TelegramTlClasses(
     val classes: Set<TelegramTlClass>

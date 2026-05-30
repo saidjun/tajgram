@@ -1,7 +1,7 @@
-package org.telegram.ui.web;
+package org.tajgram.ui.web;
 
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.formatPluralString;
+import static org.tajgram.messenger.LocaleController.getString;
 import static org.telegram.ui.web.AddressBarList.getLink;
 
 import android.content.Context;
@@ -15,31 +15,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.exoplayer2.util.Util;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.StickerEmptyView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalFragment;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.ActionBarMenu;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.ActionBarMenuSubItem;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.FlickerLoadingView;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.NumberTextView;
+import org.tajgram.ui.Components.StickerEmptyView;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Components.UniversalFragment;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

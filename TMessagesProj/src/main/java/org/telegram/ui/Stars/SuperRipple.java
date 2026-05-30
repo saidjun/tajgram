@@ -1,4 +1,4 @@
-package org.telegram.ui.Stars;
+package org.tajgram.ui.Stars;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,9 +14,9 @@ import androidx.annotation.RequiresApi;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
 
 import java.util.ArrayList;
 

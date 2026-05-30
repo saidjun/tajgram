@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.text.TextUtils;
 
@@ -6,24 +6,24 @@ import androidx.collection.LongSparseArray;
 
 import com.google.android.exoplayer2.util.Consumer;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Timer;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLiteDatabase;
+import org.tajgram.SQLite.SQLiteException;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.Timer;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.support.LongSparseIntArray;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_stories;
 
 import java.util.ArrayList;
 import java.util.Collections;

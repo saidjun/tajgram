@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.poll;
+package org.tajgram.ui.Components.poll;
 
 import android.text.TextUtils;
 
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.TLRPC;
 
 import java.util.ArrayList;
 

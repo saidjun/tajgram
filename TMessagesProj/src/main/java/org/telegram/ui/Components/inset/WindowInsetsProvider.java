@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.inset;
+package org.tajgram.ui.Components.inset;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;

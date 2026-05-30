@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.tajgram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -12,9 +12,9 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.palette.graphics.Palette;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.Utilities;
 
 public class VoIPOverlayBackground extends ImageView {
 

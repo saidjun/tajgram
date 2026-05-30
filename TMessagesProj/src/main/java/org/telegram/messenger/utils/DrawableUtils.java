@@ -1,4 +1,4 @@
-package org.telegram.messenger.utils;
+package org.tajgram.messenger.utils;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;

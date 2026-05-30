@@ -1,17 +1,17 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.os.SystemClock;
 import android.util.Pair;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.StoriesController;
+import org.tajgram.tgnet.RequestDelegate;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.tgnet.tl.TL_bots;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Stories.StoriesController;
 
 import java.util.ArrayList;
 import java.util.Arrays;

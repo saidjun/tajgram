@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.tajgram.ui.Components.Premium.boosts.cells;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,12 +9,12 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CombinedDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.SimpleTextView;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.CombinedDrawable;
 
 @SuppressLint("ViewConstructor")
 public class AddChannelCell extends FrameLayout {

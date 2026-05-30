@@ -6,16 +6,16 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.SQLite;
+package org.tajgram.SQLite;
 
 import android.os.SystemClock;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLObject;
 
 import java.nio.ByteBuffer;
 

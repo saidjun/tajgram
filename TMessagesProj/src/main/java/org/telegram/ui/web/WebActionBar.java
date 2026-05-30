@@ -1,9 +1,9 @@
-package org.telegram.ui.web;
+package org.tajgram.ui.web;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.LocaleController.formatString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -40,26 +40,26 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.OKLCH;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ArticleViewer;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LineProgressView;
-import org.telegram.ui.GradientClip;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBarMenuSubItem;
+import org.tajgram.ui.ActionBar.BackDrawable;
+import org.tajgram.ui.ActionBar.OKLCH;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ArticleViewer;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.ItemOptions;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LineProgressView;
+import org.tajgram.ui.GradientClip;
 
 public class WebActionBar extends FrameLayout {
 

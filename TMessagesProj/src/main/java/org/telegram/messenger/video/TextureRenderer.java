@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
@@ -41,32 +41,32 @@ import android.view.inputmethod.EditorInfo;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextEffects;
-import org.telegram.ui.Components.FilterShaders;
-import org.telegram.ui.Components.Paint.Views.EditTextOutline;
-import org.telegram.ui.Components.Paint.Views.LinkPreview;
-import org.telegram.ui.Components.Paint.Views.LocationMarker;
-import org.telegram.ui.Components.Paint.Views.PaintTextOptionsView;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Stories.recorder.PreviewView;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.Bitmaps;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.VideoEditedInfo;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.AnimatedFileDrawable;
+import org.tajgram.ui.Components.BlurringShader;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EditTextEffects;
+import org.tajgram.ui.Components.FilterShaders;
+import org.tajgram.ui.Components.Paint.Views.EditTextOutline;
+import org.tajgram.ui.Components.Paint.Views.LinkPreview;
+import org.tajgram.ui.Components.Paint.Views.LocationMarker;
+import org.tajgram.ui.Components.Paint.Views.PaintTextOptionsView;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Stories.recorder.PreviewView;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.nio.ByteBuffer;

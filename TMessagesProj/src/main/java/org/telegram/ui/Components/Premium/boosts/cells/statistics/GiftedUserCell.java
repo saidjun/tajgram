@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.boosts.cells.statistics;
+package org.tajgram.ui.Components.Premium.boosts.cells.statistics;
 
 import static org.telegram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
 
@@ -12,14 +12,14 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.UserCell;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.LayoutHelper;
 
 import java.util.Date;
 

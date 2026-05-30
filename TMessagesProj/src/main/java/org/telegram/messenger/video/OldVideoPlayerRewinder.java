@@ -1,11 +1,11 @@
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
 import com.google.android.exoplayer2.C;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.PhotoViewerWebView;
-import org.telegram.ui.Components.VideoForwardDrawable;
-import org.telegram.ui.Components.VideoPlayer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.PhotoViewerWebView;
+import org.tajgram.ui.Components.VideoForwardDrawable;
+import org.tajgram.ui.Components.VideoPlayer;
 
 public class OldVideoPlayerRewinder {
 

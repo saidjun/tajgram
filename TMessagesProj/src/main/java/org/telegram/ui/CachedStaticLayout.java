@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -12,8 +12,8 @@ import android.util.Log;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class CachedStaticLayout {
 

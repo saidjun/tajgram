@@ -1,9 +1,9 @@
-package org.telegram.tgnet.model.generated
+package org.tajgram.tgnet.model.generated
 
 import kotlin.UInt
-import org.telegram.tgnet.OutputSerializedData
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
+import org.tajgram.tgnet.OutputSerializedData
+import org.tajgram.tgnet.model.TlGen_Object
+import org.tajgram.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_auth_CodeType : TlGen_Object {
   public data object TL_auth_codeTypeSms : TlGen_auth_CodeType() {

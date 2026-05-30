@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.telegram.ui.Components.ProfileMetaballView.profileBlurQueue;
 
 import android.content.Context;
@@ -25,11 +25,11 @@ import android.view.View;
 import androidx.annotation.RequiresApi;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ProfileActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ProfileActivity;
 
 public class ProfileGalleryBlurView extends View {
 

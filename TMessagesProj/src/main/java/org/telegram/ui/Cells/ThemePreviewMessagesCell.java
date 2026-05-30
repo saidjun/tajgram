@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,29 +19,29 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatBackgroundDrawable;
-import org.telegram.ui.Components.AnimatedColor;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.Reactions.ReactionsEffectOverlay;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.INavigationLayout;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.ChatBackgroundDrawable;
+import org.tajgram.ui.Components.AnimatedColor;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.BackgroundGradientDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.MotionBackgroundDrawable;
+import org.tajgram.ui.Components.Reactions.ReactionsEffectOverlay;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 public class ThemePreviewMessagesCell extends LinearLayout {
 

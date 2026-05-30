@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,33 +46,33 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.exoplayer2.ExoPlayer;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AudioVisualizerDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EarListener;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.SeekBarWaveform;
-import org.telegram.ui.Components.ThanosEffect;
-import org.telegram.ui.Components.TimerParticles;
-import org.telegram.ui.Components.VideoPlayer;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.ChatMessageCell;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AudioVisualizerDrawable;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.EarListener;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.Components.SeekBarWaveform;
+import org.tajgram.ui.Components.ThanosEffect;
+import org.tajgram.ui.Components.TimerParticles;
+import org.tajgram.ui.Components.VideoPlayer;
+import org.tajgram.ui.Stories.recorder.HintView2;
 
 import java.io.File;
 

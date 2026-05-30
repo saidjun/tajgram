@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
@@ -22,10 +22,10 @@ import androidx.collection.LongSparseArray;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.EditWidgetActivity;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.EditWidgetActivity;
 
 import java.io.File;
 import java.util.ArrayList;

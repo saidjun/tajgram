@@ -1,9 +1,9 @@
-package org.telegram.ui.Storage;
+package org.tajgram.ui.Storage;
 
 import android.util.LongSparseArray;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.CacheControlActivity;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.ui.CacheControlActivity;
 
 import java.io.File;
 import java.util.ArrayList;

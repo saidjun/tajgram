@@ -6,11 +6,11 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.text.SpannableString;
 
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.FileLog;
 
 import java.lang.reflect.Field;
 

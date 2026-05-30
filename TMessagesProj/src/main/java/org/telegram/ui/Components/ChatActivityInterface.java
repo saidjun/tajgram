@@ -1,9 +1,9 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.Theme;
 
 public interface ChatActivityInterface {
 

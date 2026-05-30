@@ -1,7 +1,7 @@
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,20 +37,20 @@ import android.widget.FrameLayout;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.FloatSeekBarAccessibilityDelegate;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.SeekBarAccessibilityDelegate;
-import org.telegram.ui.Components.SpeedIconDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.FloatSeekBarAccessibilityDelegate;
+import org.tajgram.ui.Components.MotionBackgroundDrawable;
+import org.tajgram.ui.Components.SeekBarAccessibilityDelegate;
+import org.tajgram.ui.Components.SpeedIconDrawable;
 
 public class ActionBarMenuSlider extends FrameLayout {
 

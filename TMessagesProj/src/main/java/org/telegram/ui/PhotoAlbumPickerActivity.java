@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -41,34 +41,34 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.PhotoPickerAlbumsCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EditTextEmoji;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MediaController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SendMessagesHelper;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.ActionBarMenu;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.ActionBarMenuSubItem;
+import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.ThemeDescription;
+import org.tajgram.ui.Cells.PhotoPickerAlbumsCell;
+import org.tajgram.ui.Components.AlertsCreator;
+import org.tajgram.ui.Components.CombinedDrawable;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.EditTextEmoji;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RadialProgressView;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.formatWholeNumber;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.formatWholeNumber;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -33,14 +33,14 @@ import android.util.Xml;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 
-import org.telegram.messenger.time.FastDateFormat;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.RestrictedLanguagesSelectActivity;
+import org.tajgram.messenger.time.FastDateFormat;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.ui.Components.TypefaceSpan;
+import org.tajgram.ui.Stars.StarsController;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.RestrictedLanguagesSelectActivity;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedWriter;

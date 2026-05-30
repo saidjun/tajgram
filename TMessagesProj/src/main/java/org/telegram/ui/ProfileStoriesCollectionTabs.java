@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -13,19 +13,19 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BlurredFrameLayout;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SharedMediaLayout;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.ViewPagerFixed;
-import org.telegram.ui.Stories.StoriesController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.BlurredFrameLayout;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.SharedMediaLayout;
+import org.tajgram.ui.Components.SizeNotifierFrameLayout;
+import org.tajgram.ui.Components.ViewPagerFixed;
+import org.tajgram.ui.Stories.StoriesController;
 
 import java.util.ArrayList;
 

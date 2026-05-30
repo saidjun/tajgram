@@ -1,4 +1,4 @@
-package org.telegram.messenger.chromecast;
+package org.tajgram.messenger.chromecast;
 
 import android.content.Context;
 import android.net.Uri;
@@ -16,9 +16,9 @@ import com.google.android.exoplayer2.upstream.FileDataSource;
 import com.google.android.gms.cast.MediaMetadata;
 import com.google.android.gms.common.images.WebImage;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;

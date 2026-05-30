@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.Manifest;
 import android.app.Activity;
@@ -9,19 +9,19 @@ import android.net.Uri;
 import androidx.annotation.RawRes;
 import androidx.fragment.app.FragmentActivity;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AlertsCreator;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.camera.CameraController;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.AlertsCreator;
 
 public class BasePermissionsActivity extends FragmentActivity {
     public final static int REQUEST_CODE_GEOLOCATION = 2,

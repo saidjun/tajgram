@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,10 +14,10 @@ import android.os.SystemClock;
 import android.util.Base64;
 import android.util.LongSparseArray;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.SerializedData;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
 
 import java.util.Arrays;
 

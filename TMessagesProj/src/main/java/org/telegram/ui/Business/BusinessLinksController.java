@@ -1,24 +1,24 @@
-package org.telegram.ui.Business;
+package org.tajgram.ui.Business;
 
 import android.text.TextUtils;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.BulletinFactory;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLiteDatabase;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.Components.BulletinFactory;
 
 import java.util.ArrayList;
 

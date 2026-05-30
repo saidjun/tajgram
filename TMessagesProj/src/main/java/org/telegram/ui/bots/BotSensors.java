@@ -1,4 +1,4 @@
-package org.telegram.ui.bots;
+package org.tajgram.ui.bots;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -8,8 +8,8 @@ import android.hardware.SensorManager;
 import android.util.Log;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.web.BotWebViewContainer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.web.BotWebViewContainer;
 
 public class BotSensors {
 

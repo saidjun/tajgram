@@ -1,4 +1,4 @@
-package org.telegram.messenger.utils;
+package org.tajgram.messenger.utils;
 
 import android.app.Activity;
 import android.os.Build;
@@ -15,9 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.FileLog;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildConfig;
+import org.tajgram.messenger.FileLog;
 
 import java.util.Locale;
 

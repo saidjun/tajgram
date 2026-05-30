@@ -6,17 +6,17 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import org.telegram.messenger.utils.ImmutableByteArrayOutputStream;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Storage.CacheModel;
+import org.tajgram.messenger.utils.ImmutableByteArrayOutputStream;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.Storage.CacheModel;
 
 import java.io.File;
 import java.io.FileInputStream;

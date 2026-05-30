@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,7 +9,7 @@ import android.view.TextureView;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 public class VideoEditTextureView extends TextureView implements TextureView.SurfaceTextureListener {
 

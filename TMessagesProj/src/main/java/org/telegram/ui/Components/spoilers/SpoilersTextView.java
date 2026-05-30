@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.spoilers;
+package org.tajgram.ui.Components.spoilers;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -22,16 +22,16 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingDrawable;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.TextSelectionHelper;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.LinkPath;
+import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.tajgram.ui.Components.LoadingDrawable;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -66,20 +66,20 @@ import androidx.core.graphics.drawable.IconCompat;
 
 import com.google.common.collect.Lists;
 
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PopupNotificationActivity;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.messenger.support.LongSparseIntArray;
+import org.tajgram.messenger.utils.tlutils.TlUtils;
+import org.tajgram.messenger.voip.VoIPGroupNotification;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.tl.TL_account;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.BubbleActivity;
+import org.tajgram.ui.Components.AvatarDrawable;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.spoilers.SpoilerEffect;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.PopupNotificationActivity;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -5468,7 +5468,7 @@ public class NotificationsController extends BaseController {
             }
             Intent msgHeardIntent = new Intent(ApplicationLoader.applicationContext, AutoMessageHeardReceiver.class);
             msgHeardIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
-            msgHeardIntent.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+            msgHeardIntent.setAction("org.tajgram.messenger.ACTION_MESSAGE_HEARD");
             msgHeardIntent.putExtra("dialog_id", dialogId);
             msgHeardIntent.putExtra("max_id", maxId);
             msgHeardIntent.putExtra("currentAccount", currentAccount);
@@ -5562,7 +5562,7 @@ public class NotificationsController extends BaseController {
             if (copybutton != null) {
                 Intent copyIntent = new Intent(ApplicationLoader.applicationContext, CopyCodeReceiver.class);
                 copyIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
-                copyIntent.setAction("org.telegram.messenger.ACTION_COPY_CODE");
+                copyIntent.setAction("org.tajgram.messenger.ACTION_COPY_CODE");
                 copyIntent.putExtra("text", copybutton.copy_text);
                 PendingIntent copyPendingIntent = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, internalId, copyIntent, PendingIntent.FLAG_MUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
                 NotificationCompat.Action copyAction = new NotificationCompat.Action.Builder(R.drawable.msg_copy, copybutton.text, copyPendingIntent)

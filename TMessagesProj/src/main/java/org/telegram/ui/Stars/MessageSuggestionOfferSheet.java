@@ -1,7 +1,7 @@
-package org.telegram.ui.Stars;
+package org.tajgram.ui.Stars;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -22,31 +22,31 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.tlutils.AmountUtils;
-import org.telegram.ui.AccountFrozenAlert;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.HorizontalRoundTabsLayout;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.OutlineTextContainerView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.TON.TONIntroActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AppGlobalConfig;
+import org.tajgram.messenger.BillingController;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageSuggestionParams;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.utils.tlutils.AmountUtils;
+import org.tajgram.ui.AccountFrozenAlert;
+import org.tajgram.ui.ActionBar.BottomSheet;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.AlertsCreator;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.Forum.ForumUtilities;
+import org.tajgram.ui.Components.HorizontalRoundTabsLayout;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.OutlineTextContainerView;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
+import org.tajgram.ui.TON.TONIntroActivity;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package org.telegram.messenger.video;
+package org.tajgram.messenger.video;
 
 public class AudioConversions {
 

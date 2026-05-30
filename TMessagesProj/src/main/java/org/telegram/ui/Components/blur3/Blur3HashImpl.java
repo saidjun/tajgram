@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.blur3;
+package org.tajgram.ui.Components.blur3;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
+import org.tajgram.messenger.MediaDataController;
+import org.tajgram.ui.Components.blur3.capture.IBlur3Hash;
 
 public class Blur3HashImpl implements IBlur3Hash {
     private long hash;

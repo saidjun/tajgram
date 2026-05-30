@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -45,14 +45,14 @@ import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.PopupSwipeBackLayout;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AnimationNotificationsLocker;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.PopupSwipeBackLayout;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

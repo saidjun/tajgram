@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.telegram.messenger.audioinfo;
+package org.tajgram.messenger.audioinfo;
 
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
 
-import org.telegram.messenger.audioinfo.m4a.M4AInfo;
-import org.telegram.messenger.audioinfo.mp3.MP3Info;
+import org.tajgram.messenger.audioinfo.m4a.M4AInfo;
+import org.tajgram.messenger.audioinfo.mp3.MP3Info;
 
 import java.io.BufferedInputStream;
 import java.io.File;

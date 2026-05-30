@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,14 +14,14 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.IUpdateLayout;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.ImageLoader;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.IUpdateLayout;
 
 import java.io.File;
 

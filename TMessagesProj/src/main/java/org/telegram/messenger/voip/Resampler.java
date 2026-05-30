@@ -1,4 +1,4 @@
-package org.telegram.messenger.voip;
+package org.tajgram.messenger.voip;
 
 import java.nio.ByteBuffer;
 

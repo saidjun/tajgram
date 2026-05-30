@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,15 +14,15 @@ import android.widget.FrameLayout;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.DrawerLayoutContainer;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BackButtonMenu;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.DrawerLayoutContainer;
+import org.tajgram.ui.ActionBar.INavigationLayout;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.BackButtonMenu;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
 
 import java.util.List;
 

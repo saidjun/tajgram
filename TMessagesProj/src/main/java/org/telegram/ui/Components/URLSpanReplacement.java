@@ -6,15 +6,15 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.net.Uri;
 import android.text.TextPaint;
 import android.text.style.URLSpan;
 import android.view.View;
 
-import org.telegram.messenger.browser.Browser;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.ui.LaunchActivity;
 
 public class URLSpanReplacement extends URLSpan {
 

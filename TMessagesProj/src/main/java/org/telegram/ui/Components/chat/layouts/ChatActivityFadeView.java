@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.chat.layouts;
+package org.tajgram.ui.Components.chat.layouts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,8 +8,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
+import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.tajgram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
 
 public class ChatActivityFadeView extends View {
     private BlurredBackgroundWithFadeDrawable fadeDrawableTop;

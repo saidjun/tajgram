@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.poll;
+package org.tajgram.ui.Components.poll;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.formatWholeNumber;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpf2;
+import static org.tajgram.messenger.AndroidUtilities.formatWholeNumber;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,25 +19,25 @@ import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.CallLogActivity;
-import org.telegram.ui.Components.AvatarsListDrawable;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.MessageSeenView;
-import org.telegram.ui.ProfileActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.DialogObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.CallLogActivity;
+import org.tajgram.ui.Components.AvatarsListDrawable;
+import org.tajgram.ui.Components.FlickerLoadingView;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Components.UniversalRecyclerView;
+import org.tajgram.ui.MessageSeenView;
+import org.tajgram.ui.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -23,20 +23,20 @@ import androidx.annotation.Nullable;
 //import com.google.mlkit.nl.translate.Translator;
 //import com.google.mlkit.nl.translate.TranslatorOptions;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.TranslateAlert2;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.RestrictedLanguagesSelectActivity;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.tgnet.Vector;
+import org.tajgram.tgnet.tl.TL_stories;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.Components.Bulletin;
+import org.tajgram.ui.Components.BulletinFactory;
+import org.tajgram.ui.Components.TranslateAlert2;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.PremiumPreviewFragment;
+import org.tajgram.ui.RestrictedLanguagesSelectActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

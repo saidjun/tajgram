@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.tajgram.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -56,32 +56,32 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AttachableDrawable;
-import org.telegram.ui.Components.EffectsTextView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LineProgressView;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stars.BalanceCloud;
-import org.telegram.ui.Stars.StarsIntroActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LiteMode;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AttachableDrawable;
+import org.tajgram.ui.Components.EffectsTextView;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.LineProgressView;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.RLottieImageView;
+import org.tajgram.ui.Components.RadialProgressView;
+import org.tajgram.ui.Components.ScaleStateListAnimator;
+import org.tajgram.ui.Components.spoilers.SpoilersTextView;
+import org.tajgram.ui.LaunchActivity;
+import org.tajgram.ui.Stars.BalanceCloud;
+import org.tajgram.ui.Stars.StarsIntroActivity;
 
 import java.util.ArrayList;
 import java.util.Map;

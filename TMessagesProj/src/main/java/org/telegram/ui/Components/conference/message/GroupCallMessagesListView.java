@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.conference.message;
+package org.tajgram.ui.Components.conference.message;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -20,10 +20,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.messenger.voip.GroupCallMessage;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 public class GroupCallMessagesListView extends RecyclerView {
     private static final int FADE_HEIGHT = 16;

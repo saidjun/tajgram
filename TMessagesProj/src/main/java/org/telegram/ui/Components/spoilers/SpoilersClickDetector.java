@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.spoilers;
+package org.tajgram.ui.Components.spoilers;
 
 import android.view.GestureDetector;
 import android.view.MotionEvent;

@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -6,8 +6,8 @@ import android.util.LongSparseArray;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.tgnet.RequestDelegate;
+import org.tajgram.tgnet.TLRPC;
 
 public class MemberRequestsController extends BaseController {
 

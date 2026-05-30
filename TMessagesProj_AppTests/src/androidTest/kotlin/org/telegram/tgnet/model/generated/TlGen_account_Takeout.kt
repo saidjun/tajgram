@@ -1,6 +1,6 @@
-package org.telegram.tgnet.model.generated
+package org.tajgram.tgnet.model.generated
 
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
+import org.tajgram.tgnet.model.TlGen_Object
+import org.tajgram.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_account_Takeout : TlGen_Object

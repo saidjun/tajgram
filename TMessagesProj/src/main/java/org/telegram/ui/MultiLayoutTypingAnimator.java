@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -16,7 +16,7 @@ import android.view.View;
 
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.MessageObject;
+import org.tajgram.messenger.MessageObject;
 
 import java.util.ArrayList;
 

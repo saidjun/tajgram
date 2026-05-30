@@ -6,29 +6,29 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Adapters;
+package org.tajgram.ui.Adapters;
 
 import android.util.Pair;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ChatUsersActivity;
-import org.telegram.ui.Components.ShareAlert;
+import org.tajgram.PhoneFormat.PhoneFormat;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.MessagesStorage;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.RequestDelegate;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ChatUsersActivity;
+import org.tajgram.ui.Components.ShareAlert;
 
 import java.util.ArrayList;
 import java.util.Collections;

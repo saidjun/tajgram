@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.spoilers;
+package org.tajgram.ui.Components.spoilers;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -17,11 +17,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.animation.Animator;
 import android.content.Context;
@@ -18,11 +18,11 @@ import android.view.Gravity;
 import android.view.inputmethod.EditorInfo;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.LayoutHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.tajgram.ui.Components.LayoutHelper;
 
 import java.util.ArrayList;
 

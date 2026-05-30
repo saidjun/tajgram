@@ -1,4 +1,4 @@
-package org.telegram.ui.web;
+package org.tajgram.ui.web;
 
 
 import android.content.ContentResolver;
@@ -11,11 +11,11 @@ import androidx.annotation.Keep;
 
 import com.google.android.exoplayer2.util.MimeTypes;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.Stories.recorder.StoryEntry;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -1,6 +1,6 @@
 package androidx.recyclerview.widget;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -18,25 +18,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BotHelpCell;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.UserInfoCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.ChatGreetingsView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ThanosEffect;
-import org.telegram.ui.TextMessageEnterTransition;
-import org.telegram.ui.VoiceMessageEnterTransition;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BuildVars;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.ImageReceiver;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.BotHelpCell;
+import org.tajgram.ui.Cells.ChatActionCell;
+import org.tajgram.ui.Cells.ChatMessageCell;
+import org.tajgram.ui.Cells.UserInfoCell;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.ChatGreetingsView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.ThanosEffect;
+import org.tajgram.ui.TextMessageEnterTransition;
+import org.tajgram.ui.VoiceMessageEnterTransition;
 
 import java.util.ArrayList;
 import java.util.Collections;

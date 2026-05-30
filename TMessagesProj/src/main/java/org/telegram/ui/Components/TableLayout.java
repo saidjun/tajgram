@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -18,10 +18,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.customview.widget.ExploreByTouchHelper;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ArticleViewer;
-import org.telegram.ui.Cells.TextSelectionHelper;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ArticleViewer;
+import org.tajgram.ui.Cells.TextSelectionHelper;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

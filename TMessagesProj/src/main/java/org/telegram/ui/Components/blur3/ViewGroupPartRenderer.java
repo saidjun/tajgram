@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3;
+package org.tajgram.ui.Components.blur3;
 
 import android.graphics.Canvas;
 import android.graphics.PointF;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
-import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.tajgram.ui.Components.blur3.capture.IBlur3Capture;
+import org.tajgram.ui.Components.blur3.capture.IBlur3Hash;
+import org.tajgram.ui.Components.chat.ViewPositionWatcher;
 
 public class ViewGroupPartRenderer implements IBlur3Capture {
 

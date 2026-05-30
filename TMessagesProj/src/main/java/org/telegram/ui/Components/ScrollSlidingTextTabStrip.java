@@ -6,11 +6,11 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpr;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dpr;
+import static org.tajgram.messenger.AndroidUtilities.lerp;
 
 import android.animation.LayoutTransition;
 import android.animation.ValueAnimator;
@@ -42,13 +42,13 @@ import android.widget.TextView;
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.tajgram.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
 

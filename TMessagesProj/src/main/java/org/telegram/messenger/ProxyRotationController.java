@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.ConnectionsManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;

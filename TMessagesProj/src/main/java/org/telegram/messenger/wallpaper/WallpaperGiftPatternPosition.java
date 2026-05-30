@@ -1,14 +1,14 @@
-package org.telegram.messenger.wallpaper;
+package org.tajgram.messenger.wallpaper;
 
 import android.graphics.Matrix;
 import android.graphics.RectF;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.SvgHelper;
+import org.tajgram.tgnet.InputSerializedData;
+import org.tajgram.tgnet.OutputSerializedData;
 import org.xml.sax.Attributes;
 
 public class WallpaperGiftPatternPosition {

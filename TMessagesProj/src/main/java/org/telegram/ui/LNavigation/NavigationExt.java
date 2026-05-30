@@ -1,7 +1,7 @@
-package org.telegram.ui.LNavigation;
+package org.tajgram.ui.LNavigation;
 
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.INavigationLayout;
 
 import java.util.ArrayList;
 import java.util.List;

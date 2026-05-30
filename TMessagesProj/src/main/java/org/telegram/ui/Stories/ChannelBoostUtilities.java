@@ -1,10 +1,10 @@
-package org.telegram.ui.Stories;
+package org.tajgram.ui.Stories;
 
 import android.text.TextUtils;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.messenger.ChatObject;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.tgnet.TLRPC;
 
 public class ChannelBoostUtilities {
     public static String createLink(int currentAccount, long dialogId) {

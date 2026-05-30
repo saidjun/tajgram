@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.SharedConfig;
 
 @SuppressLint("ViewConstructor")
 public class BlurredLinearLayout extends LinearLayout {

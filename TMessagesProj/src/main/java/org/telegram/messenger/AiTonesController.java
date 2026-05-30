@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import com.google.android.exoplayer2.util.Util;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.tl.TL_aicompose;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.SerializedData;
+import org.tajgram.tgnet.tl.TL_aicompose;
 
 import java.util.ArrayList;
 import java.util.Base64;

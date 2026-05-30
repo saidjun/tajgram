@@ -1,7 +1,7 @@
-package org.telegram.ui.bots;
+package org.tajgram.ui.bots;
 
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.LocaleController.formatPluralString;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -11,20 +11,20 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import org.checkerframework.checker.guieffect.qual.UI;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.AvatarSpan;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BackDrawable;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.AvatarSpan;
+import org.tajgram.ui.Business.QuickRepliesController;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.UItem;
+import org.tajgram.ui.Components.UniversalAdapter;
+import org.tajgram.ui.Components.UniversalRecyclerView;
 
 import java.util.ArrayList;
 import java.util.HashMap;

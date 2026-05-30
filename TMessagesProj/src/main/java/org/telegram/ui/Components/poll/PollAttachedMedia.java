@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.poll;
+package org.tajgram.ui.Components.poll;
 
 import android.graphics.Canvas;
 import android.view.View;
 
 import androidx.annotation.CallSuper;
 
-import org.telegram.messenger.ImageReceiver;
+import org.tajgram.messenger.ImageReceiver;
 
 public abstract class PollAttachedMedia {
     protected final ImageReceiver imageReceiver = new ImageReceiver();

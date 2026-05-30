@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,25 +11,25 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
-import org.telegram.ui.Components.RecyclerListView;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.CacheByChatsController;
+import org.tajgram.messenger.ContactsController;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBar;
+import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
+import org.tajgram.ui.ActionBar.AlertDialog;
+import org.tajgram.ui.ActionBar.BackDrawable;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.ShadowSectionCell;
+import org.tajgram.ui.Cells.TextCell;
+import org.tajgram.ui.Cells.UserCell;
+import org.tajgram.ui.Components.AlertsCreator;
+import org.tajgram.ui.Components.ListView.AdapterWithDiffUtils;
+import org.tajgram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 

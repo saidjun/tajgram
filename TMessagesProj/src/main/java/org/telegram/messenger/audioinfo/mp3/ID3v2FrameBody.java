@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.telegram.messenger.audioinfo.mp3;
+package org.tajgram.messenger.audioinfo.mp3;
 
-import org.telegram.messenger.audioinfo.util.RangeInputStream;
+import org.tajgram.messenger.audioinfo.util.RangeInputStream;
 
 import java.io.IOException;
 import java.io.InputStream;

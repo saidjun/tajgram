@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.Premium.boosts;
+package org.tajgram.ui.Components.Premium.boosts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.replaceTags;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.replaceTags;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,22 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.GiftPremiumBottomSheet;
-import org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet;
-import org.telegram.ui.Components.Premium.boosts.cells.ActionBtnCell;
-import org.telegram.ui.Components.Premium.boosts.cells.LinkCell;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SendMessagesHelper;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.messenger.browser.Browser;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.Bulletin;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Premium.GiftPremiumBottomSheet;
+import org.tajgram.ui.Components.Premium.PremiumPreviewBottomSheet;
+import org.tajgram.ui.Components.Premium.boosts.cells.ActionBtnCell;
+import org.tajgram.ui.Components.Premium.boosts.cells.LinkCell;
+import org.tajgram.ui.DialogsActivity;
+import org.tajgram.ui.LaunchActivity;
 
 public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet {
     private static final int BOTTOM_HEIGHT_DP = 68;

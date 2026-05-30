@@ -1,11 +1,11 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.find;
+import static org.tajgram.messenger.AndroidUtilities.find;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 import org.commonmark.Extension;
 import org.commonmark.ext.gfm.strikethrough.Strikethrough;
@@ -46,13 +46,13 @@ import io.noties.markwon.html.MarkwonHtmlParser;
 import io.noties.markwon.html.MarkwonHtmlParserImpl;
 import ru.noties.jlatexmath.JLatexMathDrawable;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.tajgram.messenger.FileLoader;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.tgnet.TLObject;
+import org.tajgram.tgnet.TLRPC;
 
 import java.io.File;
 import java.io.FileInputStream;

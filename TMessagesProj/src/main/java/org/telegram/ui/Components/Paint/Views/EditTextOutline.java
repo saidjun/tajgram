@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.tajgram.ui.Components.Paint.Views;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,9 +17,9 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.CornerPath;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.Components.CornerPath;
+import org.tajgram.ui.Components.EditTextBoldCursor;
 
 public class EditTextOutline extends EditTextBoldCursor {
 

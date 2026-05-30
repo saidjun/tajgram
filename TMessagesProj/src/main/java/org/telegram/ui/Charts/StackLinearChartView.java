@@ -1,4 +1,4 @@
-package org.telegram.ui.Charts;
+package org.tajgram.ui.Charts;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,13 +6,13 @@ import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.RectF;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Charts.data.ChartData;
-import org.telegram.ui.Charts.data.StackLinearChartData;
-import org.telegram.ui.Charts.view_data.LineViewData;
-import org.telegram.ui.Charts.view_data.StackLinearViewData;
-import org.telegram.ui.Charts.view_data.TransitionParams;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Charts.data.ChartData;
+import org.tajgram.ui.Charts.data.StackLinearChartData;
+import org.tajgram.ui.Charts.view_data.LineViewData;
+import org.tajgram.ui.Charts.view_data.StackLinearViewData;
+import org.tajgram.ui.Charts.view_data.TransitionParams;
 
 public class StackLinearChartView<T extends StackLinearViewData> extends BaseChartView<StackLinearChartData, T> {
 

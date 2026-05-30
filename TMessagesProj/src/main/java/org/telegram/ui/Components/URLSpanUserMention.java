@@ -6,12 +6,12 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.text.TextPaint;
 import android.view.View;
 
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.Theme;
 
 public class URLSpanUserMention extends URLSpanNoUnderline {
 

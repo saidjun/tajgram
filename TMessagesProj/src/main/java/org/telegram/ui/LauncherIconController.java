@@ -1,11 +1,11 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.R;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.R;
 
 public class LauncherIconController {
     public static void tryFixLauncherIconIfNeeded() {
@@ -51,7 +51,7 @@ public class LauncherIconController {
 
         public ComponentName getComponentName(Context ctx) {
             if (componentName == null) {
-                componentName = new ComponentName(ctx.getPackageName(), "org.telegram.messenger." + key);
+                componentName = new ComponentName(ctx.getPackageName(), "org.tajgram.messenger." + key);
             }
             return componentName;
         }

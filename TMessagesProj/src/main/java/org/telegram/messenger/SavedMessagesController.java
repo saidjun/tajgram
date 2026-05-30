@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -6,16 +6,16 @@ import android.util.Log;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.SQLite.SQLiteCursor;
+import org.tajgram.SQLite.SQLiteDatabase;
+import org.tajgram.SQLite.SQLitePreparedStatement;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.NativeByteBuffer;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.GLIcon;
+package org.tajgram.ui.Components.Premium.GLIcon;
 
 import static org.telegram.ui.Components.Premium.GLIcon.Icon3D.TYPE_DIAMOND;
 
@@ -10,7 +10,7 @@ import android.opengl.Matrix;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.ui.ActionBar.Theme;
+import org.tajgram.ui.ActionBar.Theme;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;

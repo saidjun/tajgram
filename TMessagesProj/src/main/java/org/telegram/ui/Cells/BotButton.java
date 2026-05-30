@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -8,13 +8,13 @@ import android.view.animation.OvershootInterpolator;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotInlineKeyboard;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.Text;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.BotInlineKeyboard;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.AnimatedEmojiDrawable;
+import org.tajgram.ui.Components.LoadingDrawable;
+import org.tajgram.ui.Components.Text;
 
 class BotButton {
     public final Runnable invalidateRunnable;

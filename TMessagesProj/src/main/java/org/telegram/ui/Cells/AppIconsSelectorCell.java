@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -27,22 +27,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.Easings;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.LauncherIconController;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.ui.ActionBar.BaseFragment;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.Bulletin;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.Easings;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.LauncherIconController;
+import org.tajgram.ui.PremiumPreviewFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Adapters;
+package org.tajgram.ui.Adapters;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -17,26 +17,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.LocationCell;
-import org.telegram.ui.Cells.LocationDirectionCell;
-import org.telegram.ui.Cells.LocationLoadingCell;
-import org.telegram.ui.Cells.LocationPoweredCell;
-import org.telegram.ui.Cells.SendLocationCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.SharingLiveLocationCell;
-import org.telegram.ui.Components.ChatAttachAlertLocationLayout;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SharedMediaLayout;
-import org.telegram.ui.LocationActivity;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.LocationController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.HeaderCell;
+import org.tajgram.ui.Cells.LocationCell;
+import org.tajgram.ui.Cells.LocationDirectionCell;
+import org.tajgram.ui.Cells.LocationLoadingCell;
+import org.tajgram.ui.Cells.LocationPoweredCell;
+import org.tajgram.ui.Cells.SendLocationCell;
+import org.tajgram.ui.Cells.ShadowSectionCell;
+import org.tajgram.ui.Cells.SharingLiveLocationCell;
+import org.tajgram.ui.Components.ChatAttachAlertLocationLayout;
+import org.tajgram.ui.Components.CombinedDrawable;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.Components.SharedMediaLayout;
+import org.tajgram.ui.LocationActivity;
 
 import java.util.ArrayList;
 import java.util.Locale;

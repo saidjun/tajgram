@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.annotation.SuppressLint;
 import android.view.Gravity;
@@ -18,8 +18,8 @@ import android.widget.ScrollView;
 
 import androidx.core.view.ViewCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
 
 @SuppressWarnings({"WeakerAccess"})
 public class LayoutHelper {

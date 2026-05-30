@@ -1,7 +1,7 @@
-package org.telegram.ui.Cells;
+package org.tajgram.ui.Cells;
 
 import static com.google.zxing.common.detector.MathUtils.distance;
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.telegram.ui.ActionBar.FloatingToolbar.STYLE_THEME;
 import static org.telegram.ui.ActionBar.Theme.key_chat_inTextSelectionHighlight;
 
@@ -42,26 +42,26 @@ import androidx.annotation.NonNull;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.FloatingActionMode;
-import org.telegram.ui.ActionBar.FloatingToolbar;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ArticleViewer;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.CornerPath;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.RestrictedLanguagesSelectActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.ApplicationLoader;
+import org.tajgram.messenger.Emoji;
+import org.tajgram.messenger.FileLog;
+import org.tajgram.messenger.LanguageDetector;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
+import org.tajgram.ui.ActionBar.FloatingActionMode;
+import org.tajgram.ui.ActionBar.FloatingToolbar;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.ArticleViewer;
+import org.tajgram.ui.Components.AnimatedEmojiSpan;
+import org.tajgram.ui.Components.CornerPath;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.RecyclerListView;
+import org.tajgram.ui.RestrictedLanguagesSelectActivity;
 
 import java.util.ArrayList;
 

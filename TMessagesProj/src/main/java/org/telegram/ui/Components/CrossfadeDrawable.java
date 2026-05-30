@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
@@ -10,7 +10,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 public class CrossfadeDrawable extends Drawable {
 

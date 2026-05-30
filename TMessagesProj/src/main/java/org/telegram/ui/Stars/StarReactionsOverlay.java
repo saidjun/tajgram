@@ -1,7 +1,7 @@
-package org.telegram.ui.Stars;
+package org.tajgram.ui.Stars;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.scaleRect;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.scaleRect;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -15,24 +15,24 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.GradientClip;
-import org.telegram.ui.LaunchActivity;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.UserObject;
+import org.tajgram.messenger.Utilities;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Cells.BaseCell;
+import org.tajgram.ui.Cells.ChatActionCell;
+import org.tajgram.ui.Cells.ChatMessageCell;
+import org.tajgram.ui.ChatActivity;
+import org.tajgram.ui.Components.AnimatedFloat;
+import org.tajgram.ui.Components.AnimatedTextView;
+import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.tajgram.ui.Components.RLottieDrawable;
+import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.tajgram.ui.GradientClip;
+import org.tajgram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 

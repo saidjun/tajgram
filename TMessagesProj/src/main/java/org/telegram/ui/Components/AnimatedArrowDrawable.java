@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.tajgram.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import androidx.annotation.Keep;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.tajgram.messenger.AndroidUtilities;
 
 public class AnimatedArrowDrawable extends Drawable {
 

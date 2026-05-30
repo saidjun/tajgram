@@ -1,17 +1,17 @@
-package org.telegram.messenger.voip;
+package org.tajgram.messenger.voip;
 
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.VoIPHelper;
+import org.tajgram.messenger.AccountInstance;
+import org.tajgram.messenger.MessagesController;
+import org.tajgram.messenger.NotificationCenter;
+import org.tajgram.messenger.UserConfig;
+import org.tajgram.tgnet.ConnectionsManager;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.Components.voip.VoIPHelper;
 
 public final class VoIPPendingCall {
 

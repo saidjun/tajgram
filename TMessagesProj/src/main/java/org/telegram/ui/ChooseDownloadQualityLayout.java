@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.tajgram.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.tajgram.messenger.AndroidUtilities.dp;
+import static org.tajgram.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.text.SpannableString;
@@ -14,20 +14,20 @@ import android.widget.LinearLayout;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.PopupSwipeBackLayout;
-import org.telegram.ui.Components.VideoPlayer;
+import org.tajgram.messenger.AndroidUtilities;
+import org.tajgram.messenger.LocaleController;
+import org.tajgram.messenger.MessageObject;
+import org.tajgram.messenger.R;
+import org.tajgram.messenger.SharedConfig;
+import org.tajgram.tgnet.TLRPC;
+import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.tajgram.ui.ActionBar.ActionBarMenuSubItem;
+import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
+import org.tajgram.ui.ActionBar.Theme;
+import org.tajgram.ui.Components.ColoredImageSpan;
+import org.tajgram.ui.Components.LayoutHelper;
+import org.tajgram.ui.Components.PopupSwipeBackLayout;
+import org.tajgram.ui.Components.VideoPlayer;
 
 import java.util.ArrayList;
 
