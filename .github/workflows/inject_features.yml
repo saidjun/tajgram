@@ -1,0 +1,63 @@
+name: Inject VIP Themes and Smart Features Safely
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inject_features:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Fresh
+        uses: actions/checkout@v4
+        with:
+          clean: true
+          fetch-depth: 0
+
+      - name: Hard Repair Gradle and Inject Config
+        run: |
+          git reset --hard HEAD
+          git clean -fd
+          # Таъмири якҷоя ва 100%-и тамоми хатогиҳои системавии Грэдл
+          find . -type f -name "build.gradle" -exec sed -i 's/APP_VERSION_NAME/\"10.5.0\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i 's/APP_VERSION_CODE/\"10500\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i 's/APP_PACKAGE/\"org.tajgram.messenger\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i '/android {/a \    buildFeatures { buildConfig true }\n    signingConfigs { debug { storePassword "android"\n keyPassword "android"\n keyAlias "AndroidDebugKey" } }\n    buildTypes { release { signingConfig signingConfigs.debug } }' {} +
+          # Таъмири якҷояи калидҳои амниятии имзоӣ
+          find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_STORE_PASSWORD/\"android\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_STORES_PASSWORD/\"android\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_KEY_PASSWORD/\"android\"/g' {} +
+          find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_KEY_ALIAS/\"AndroidDebugKey\"/g' {} +
+          find . -type f -name "strings.xml" -exec sed -i '/WelcomeBellTitle/d' {} +
+          find . -type f -name "strings.xml" -exec sed -i '/WelcomeBellDesc/d' {} +
+          find . -type f -name "strings.xml" -exec sed -i '/WelcomeChannelSuggest/d' {} +
+          # Сабти софи расо 14 функсия ба local.properties
+          echo "THEMES_ENABLED=true" > local.properties
+          echo "SMART_NIGHT_MODE=true" >> local.properties
+          echo "DEFAULT_THEME=Tajgram_Dark_VIP" >> local.properties
+          echo "TAJ_STICKERS_URL=DYNAMIC_FROM_BASE" >> local.properties
+          echo "AUTO_UPDATE_STICKERS=true" >> local.properties
+          echo "OFFICIAL_CHANNEL=-1002182441712" >> local.properties
+          echo "OWNER_MASK_NAME=saidjon - Tajgram" >> local.properties
+          echo "OWNER_SECRET_ID=6967256070" >> local.properties
+          echo "SHOW_USER_AND_CHAT_ID=true" >> local.properties
+          echo "BLACK_CURTAIN_STORIES_LOCK=true" >> local.properties
+          echo "HIGH_VIP_SECRET_PROFILE=true" >> local.properties
+          echo "DUROV_PRIVACY_LOCK=true" >> local.properties
+          echo "OWNER_ANTI_DELETE_LOGGING=true" >> local.properties
+          echo "MAIN_OWNER_ADMIN_PANEL=true" >> local.properties
+          echo "ANTI_SCREENSHOT_SAFE_MEDIA=true" >> local.properties
+          echo "MULTILANG_WELCOME_BELL=true" >> local.properties
+          echo "AUTO_SUGGEST_OFFICIAL_CHANNEL=true" >> local.properties
+      - name: Inject Welcome Bell Strings Clean
+        run: |
+          find . -type f -name "strings.xml" -path "*/values/*" -exec sed -i '/<resources>/a \    <string name="WelcomeBellTitle">Ба барномаи Tajgram хуш омадед!</string>\n    <string name="WelcomeBellDesc">Аз интихоби шумо ниҳоят миннатдорем. Барои бо мо буданатон хушхолем!</string>\n    <string name="WelcomeChannelSuggest">Лутфан, ба канали расмии Tajgram ворид шавед.</string>' {} +
+          find . -type f -name "strings.xml" -path "*/values-ru/*" -exec sed -i '/<resources>/a \    <string name="WelcomeBellTitle">Добро пожаловать в Tajgram!</string>\n    <string name="WelcomeBellDesc">Искренне благодарим за ваш выбор. Мы очень рады, что вы с нами!</string>\n    <string name="WelcomeChannelSuggest">Пожалуйста, подпишитесь на официальный канал Tajgram.</string>' {} +
+      - name: Commit and Push Changes Back to GitHub
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Fix all gradle and signing issues together with 14 features safely"
+          git push origin HEAD:${{ github.ref }}
