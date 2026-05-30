@@ -1,4 +1,4 @@
-name: 10-Second Pure Official Keys Configuration
+name: 1-Second Pure Official Keys Configuration
 
 on:
   workflow_dispatch:
