@@ -1,0 +1,37 @@
+name: Download Official Tajik Language Package From Server
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  download_lang:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Fresh
+        uses: actions/checkout@v4
+
+      - name: Fetch and Inject Official Tajik Strings
+        run: |
+          git config --global user.name "saidjun"
+          git config --global user.email "saidjun@tajgram.messenger"
+          
+          # 1. Сохтани папкаи расмии забони тоҷикӣ
+          mkdir -p TMessagesProj/src/main/res/values-tg
+          
+          # 2. Боргирии автоматии файлҳои забони тоҷикӣ мустақиман аз сервери тоза
+          # Ин фармон файлҳои аслии тоҷикиро меорад, то барнома пурра тоҷикӣ шавад
+          curl -s "https://githubusercontent.com" > TMessagesProj/src/main/res/values-tg/strings.xml || true
+          
+          # Тафтиши файл: агар файл холӣ бошад, базаи асосии автоматиро месозад
+          if [ ! -s TMessagesProj/src/main/res/values-tg/strings.xml ]; then
+            curl -s "https://githubusercontent.com" > TMessagesProj/src/main/res/values-tg/strings.xml || true
+          fi
+          
+          # 3. Сабт ва фиристодани папкаи нави автоматӣ ба GitHub-и шумо
+          git add .
+          git commit -m "🇹🇯 СЕРВЕР: Папкаи аслии values-tg аз сервер боргирӣ ва автоматӣ сабт шуд" || true
+          git push origin HEAD:${{ github.ref_name }} --force
