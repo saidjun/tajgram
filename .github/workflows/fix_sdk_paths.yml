@@ -1,0 +1,47 @@
+name: 2-Second Force Setup All SDK and System Environments
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix_paths:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Your Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Force Lock System Files and NDK Paths
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "saidjun@tajgram.messenger"
+          
+          # 1. ТАЪМИРИ ПАПКАИ buildSrc (ПРОЧ): Сохтани файл дар дохили он, ки хатогӣ дода буд
+          mkdir -p buildSrc
+          cat << 'EOF' > buildSrc/local.properties
+          sdk.dir=/usr/local/lib/android/sdk
+          ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653
+          EOF
+          
+          # 2. ТАЪМИРИ ПАПКАҲОИ ДОХИЛИИ ЛОИҲА
+          cat << 'EOF' > local.properties
+          sdk.dir=/usr/local/lib/android/sdk
+          ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653
+          EOF
+          
+          if [ -d "TMessagesProj" ]; then
+            cat << 'EOF' > TMessagesProj/local.properties
+            sdk.dir=/usr/local/lib/android/sdk
+            ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653
+            EOF
+          fi
+          
+          # 3. САБТИ ҚАТЪӢ ВА АВТОМАТӢ ДАР СAЙТ
+          git add .
+          git commit -m "⚙️ SYSTEM ENVIRONMENT FIXED: buildSrc and local properties for Android SDK successfully locked!" || exit 0
+          git push origin HEAD:${{ github.ref_name }} --force
