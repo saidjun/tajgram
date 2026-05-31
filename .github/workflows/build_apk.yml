@@ -3,50 +3,13 @@ name: Build and Package Tajgram VIP APK
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Free Disk Space
-        run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /usr/local/lib/android
-          sudo rm -rf /opt/ghc
-
-      - name: Checkout Your Code Fresh
+      - name: Checkout Repository Code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Android NDK Engine
-        id: setup-ndk
-        uses: nttld/setup-ndk@v1
-        with:
-          ndk-version: r25c
-          local-properties: true
-
-      - name: Inject Absolute Hardcoded Paths DIRECTLY AFTER CHECKOUT (НАҶОТИ ЛОИҲА)
-        run: |
-          # 1. Сохтани маҷбурии папкаҳо дақиқ баъди checkout
-          mkdir -p /home/runner/work/tajgram/tajgram/buildSrc
-          mkdir -p /home/runner/work/tajgram/tajgram/TMessagesProj
-          
-          # 2. Навиштани роҳи SDK маҳз дар ҳамон суроғае, ки хатогӣ талаб дорад!
-          echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/tajgram/tajgram/local.properties
-          echo "ndk.dir=${{ steps.setup-ndk.outputs.ndk-path }}" >> /home/runner/work/tajgram/tajgram/local.properties
-          
-          echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/tajgram/tajgram/buildSrc/local.properties
-          echo "ndk.dir=${{ steps.setup-ndk.outputs.ndk-path }}" >> /home/runner/work/tajgram/tajgram/buildSrc/local.properties
-          
-          echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/tajgram/tajgram/TMessagesProj/local.properties
-          echo "ndk.dir=${{ steps.setup-ndk.outputs.ndk-path }}" >> /home/runner/work/tajgram/tajgram/TMessagesProj/local.properties
-          
-          echo "✅ НАЗОРАТ: Роҳҳои мутлақ дар хотираи зиндаи сервер қулф шуданд!"
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -54,33 +17,13 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Check and Safe Load Lifetime Keystore
-        run: |
-          git config --global user.name "Saidjun Chief Developer"
-          git config --global user.email "saidjun@tajgram.messenger"
-          
-          if [ ! -f "tajgram_lifetime.keystore" ]; then
-            keytool -genkey -v -keystore tajgram_lifetime.keystore -storepass tajgram2026 -alias tajgram_key -keypass tajgram2026 -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Tajgram VIP,O=Saidjun,C=TJ" || true
-            git add tajgram_lifetime.keystore
-            git commit -m "🔑 KEY: Lifetime keystore secured" || true
-            git push origin HEAD:${{ github.ref_name }} --force || true
-          fi
-          
-          mkdir -p ~/.android
-          cp tajgram_lifetime.keystore ~/.android/debug.keystore
-
-      - name: Build Android APK Pure Engine
-        env:
-          ANDROID_HOME: /usr/local/lib/android/sdk
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-          # Маҳдуд кардани хотира, то сервер Crash нашавад
-          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.parallel=false -Dorg.gradle.workers.max=1"
+      - name: Build with Gradle Factory Command
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace -x test -x lint -x check
+          ./gradlew assembleDebug
           
       - name: Upload Finished APK Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Tajgram-VIP-Debug-APK
+          name: Tajgram-VIP-Finished-APK
           path: "TMessagesProj/build/outputs/apk/**/*.apk"
