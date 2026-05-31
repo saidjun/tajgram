@@ -1,0 +1,33 @@
+name: 4-Second Force Pull Original Factory buildSrc Folder
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pull_src:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Your Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch and Overwrite Pure buildSrc Folder From Durov Official
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "saidjun@tajgram.messenger"
+          
+          # 1. ТАНҲО ТОЗА КАРДАНИ ПАПКАИ buildSrc-И КӮҲНА
+          rm -rf buildSrc
+          
+          # 2. МУСТАҚИЛОНА НАВ КАРДАНИ ИН ПАПКА АЗ СЕРВЕРИ АСЛИИ ДУРОВ
+          git archive --remote=https://github.com/DrKLO/Telegram.git HEAD buildSrc | tar -xv
+          
+          # 3. САБТИ РАСМИИ ОН ДАР СAЙТ
+          git add buildSrc/
+          git commit -m "⚙️ SYSTEM: buildSrc folder 100% overwritten with original factory defaults from Durov!" || exit 0
+          git push origin HEAD:${{ github.ref_name }} --force
