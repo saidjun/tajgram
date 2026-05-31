@@ -1,4 +1,4 @@
-name: 2-Second Reset Only buildSrc To Original Factory State
+name: 4-Second Reset Only buildSrc To Original Factory State
 
 on:
   workflow_dispatch:
