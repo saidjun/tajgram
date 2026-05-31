@@ -1,8 +1,8 @@
-package org.tajgram.tlrpc.models
+package org.telegram.tlrpc.models
 
 import com.example.GenerateSchemeTask
-import org.tajgram.tlrpc.schema.TlSchemaParamType
-import org.tajgram.tlrpc.schema.TlSchemaJson
+import org.telegram.tlrpc.schema.TlSchemaParamType
+import org.telegram.tlrpc.schema.TlSchemaJson
 
 data class TlSchemeAllLayers(
     val schemes: List<TlSchemeWithMeta>,

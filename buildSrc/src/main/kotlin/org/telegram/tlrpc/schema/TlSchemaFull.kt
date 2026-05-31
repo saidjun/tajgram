@@ -1,7 +1,7 @@
-package org.tajgram.tlrpc.schema
+package org.telegram.tlrpc.schema
 
-import org.tajgram.tlrpc.SchemeTlValidator
-import org.tajgram.tlrpc.models.Rules
+import org.telegram.tlrpc.SchemeTlValidator
+import org.telegram.tlrpc.models.Rules
 
 data class TlSchemaFull(
     val schema: TlSchema,

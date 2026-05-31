@@ -1,4 +1,4 @@
-package org.tajgram.tlrpc.schema
+package org.telegram.tlrpc.schema
 
 data class TlSchemaObject(
     val magic: UInt,

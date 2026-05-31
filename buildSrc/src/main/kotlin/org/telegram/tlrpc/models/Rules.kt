@@ -1,4 +1,4 @@
-package org.tajgram.tlrpc.models
+package org.telegram.tlrpc.models
 
 object RULES {
     val rules = Rules(

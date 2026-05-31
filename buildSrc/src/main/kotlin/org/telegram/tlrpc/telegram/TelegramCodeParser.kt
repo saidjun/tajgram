@@ -1,4 +1,4 @@
-package org.tajgram.tlrpc.tajgram
+package org.telegram.tlrpc.telegram
 
 import com.github.javaparser.JavaParser
 import com.github.javaparser.ast.CompilationUnit
@@ -7,12 +7,12 @@ import com.github.javaparser.ast.body.MethodDeclaration
 import com.github.javaparser.ast.expr.ObjectCreationExpr
 import java.io.File
 
-object TajgramCodeParser {
-    fun parse(files: List<File>): TajgramTlClasses {
-        return TajgramTlClasses(files.map { findAllClasses(it) }.flatten().toSet())
+object TelegramCodeParser {
+    fun parse(files: List<File>): TelegramTlClasses {
+        return TelegramTlClasses(files.map { findAllClasses(it) }.flatten().toSet())
     }
 
-    private fun findAllClasses(javaFile: File): List<TajgramTlClass> {
+    private fun findAllClasses(javaFile: File): List<TelegramTlClass> {
         val parser = JavaParser()
         val result = parser.parse(javaFile)
 
@@ -26,7 +26,7 @@ object TajgramCodeParser {
             .orElse(null)
 
 
-        val matchingClassNames = mutableListOf<TajgramTlClass>()
+        val matchingClassNames = mutableListOf<TelegramTlClass>()
 
         val allClassLike = cu.findAll(ClassOrInterfaceDeclaration::class.java)
 
@@ -93,7 +93,7 @@ object TajgramCodeParser {
             }
 
             if (hasStaticIntConstructor || hasDeserializeMethod || hasSerializeToStream || hasReadParams || hasDeserializeResponse) {
-                matchingClassNames.add(TajgramTlClass(
+                matchingClassNames.add(TelegramTlClass(
                     constructor = constructorValue?.toUInt(),
 
                     packageName = packageName,

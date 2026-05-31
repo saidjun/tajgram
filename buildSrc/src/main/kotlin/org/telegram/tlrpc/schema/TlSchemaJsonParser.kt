@@ -1,4 +1,4 @@
-package org.tajgram.tlrpc.schema
+package org.telegram.tlrpc.schema
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
