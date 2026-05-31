@@ -14,21 +14,29 @@ jobs:
       - name: Checkout Your Code Fresh
         uses: actions/checkout@v4
 
-      - name: Force Lock System Files and NDK Paths (saidjun repo case)
+      - name: Force Lock System Files and NDK Paths (Absolute Multi-Case Fix)
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # 1. СОХТАНИ СУРОҒАҲОИ БЕРУНАИ МУТЛАҚ БО НОМИ ДАҚИҚИ РЕПОЗИТОРИЯИ ТУ
+          # 1. СОХТАНИ ПАПКАҲО ДАР ТАМОМИ СУРОҒАҲОИ ИМКОНПАЗИРӢ БО ФАРМОНИ UNIX
+          mkdir -p /home/runner/work/tajgram/tajgram/buildSrc
+          mkdir -p /home/runner/work/tajgram/tajgram/TMessagesProj
+          
           mkdir -p /home/runner/work/saidjun/tajgram/buildSrc
           mkdir -p /home/runner/work/saidjun/tajgram/TMessagesProj
           
-          # 2. НАВИШТАНИ СУРОҒАИ SDK
+          # 2. ВАРИАНТИ 1: МАҲЗ СУРОҒАИ СУРХШУДАРО (ТАЛАБИ ГРАДЛЕ) 100% МАҲКАМ МEКУНАД
+          echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/tajgram/tajgram/local.properties
+          echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/tajgram/tajgram/buildSrc/local.properties
+          echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/tajgram/tajgram/TMessagesProj/local.properties
+          
+          # 3. ВАРИАНТИ 2: СОХТАН БО ЛОГИНИ ШАХСИИ ТУ
           echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/saidjun/tajgram/local.properties
           echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/saidjun/tajgram/buildSrc/local.properties
           echo "sdk.dir=/usr/local/lib/android/sdk" > /home/runner/work/saidjun/tajgram/TMessagesProj/local.properties
           
-          # 3. САБТИ ҚАТЪӢ ДАР СAЙТ БЕ ХАТОГӢ
+          # 4. САБТИ ҚАТЪӢ ВА АВТОМАТӢ ДАР СAЙТ
           git add .
-          git commit -m "⚙️ SYSTEM ENVIRONMENT FIXED: Absolute SDK paths locked for saidjun repo case!" || exit 0
+          git commit -m "⚙️ SYSTEM ENVIRONMENT FIXED: Multi-case absolute SDK paths locked!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
