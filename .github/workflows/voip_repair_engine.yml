@@ -1,0 +1,39 @@
+name: 🛠️ TOTAL VOIP REPAIR - Restore Full Factory VOIP Engine
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore_voip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Your Code Fresh
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Pure Factory VOIP with ALL Internal Submodules
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "saidjun@tajgram.messenger"
+          
+          # 1. ПУРРА ТОЗА КАРДАНИ ПАПКАИ КӮҲНАИ ХАРОБШУДАИ VOIP
+          rm -rf TMessagesProj/jni/voip
+          
+          # 2. СКАЧАТ КАРДАНИ ПАПКАИ НАВИ СОФИ ЗАВОДӢ МУСТАҚИМ АЗ ДУРОВ БО КУЛЛИ ДОХИЛИАШ
+          git clone --depth=1 https://github.com/DrKLO/Telegram.git temp_repo
+          
+          # 3. КУЧОНИДАНИ ТАМОМИ ПАПКА БО КУЛЛИ ФАЙЛҲОИ АСЛИАШ БE ЯГOН КАМБУДӢ
+          cp -r temp_repo/TMessagesProj/jni/voip TMessagesProj/jni/voip
+          
+          # 4. ТОЗА КАРДАНИ ФАЙЛҲОИ МУВАҚҚАТӢ
+          rm -rf temp_repo
+          
+          # 5. САБТИ РАСМӢ ВА ҚАТЪӢ ДАР РЕПОЗИТОРИЯИ ТУ БЕ ДАХЛ БА БРЕНДИНГ
+          git add TMessagesProj/jni/voip/
+          git commit -m "🛠️ VOIP REPAIR: Entire VOIP folder with all source files restored to pure factory!" || exit 0
+          git push origin HEAD:${{ github.ref_name }} --force
