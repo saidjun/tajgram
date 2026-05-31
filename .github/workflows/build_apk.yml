@@ -36,28 +36,18 @@ jobs:
           ndk-version: r25c
           local-properties: true
 
-      - name: Check and Lock Lifetime SHA Passport Keys (НАЗОРАТИ ҚАТЪӢ)
+      - name: Check and Safe Load Lifetime Keystore
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # НАЗОРАТ: Агар калид аллакай бошад, онро АСЛО аз нав намесозад ва алиш намекунем!
           if [ ! -f "tajgram_lifetime.keystore" ]; then
-            echo "Калид ёфт нашуд. Сохтани Паспорти ҳамешагии умурбод..."
             keytool -genkey -v -keystore tajgram_lifetime.keystore -storepass tajgram2026 -alias tajgram_key -keypass tajgram2026 -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Tajgram VIP,O=Saidjun,C=TJ" || true
             git add tajgram_lifetime.keystore
-            git commit -m "🔑 КАЛИД: Паспорти ҳамешагӣ дар система қулф шуд" || true
+            git commit -m "🔑 KEY: Lifetime keystore secured" || true
             git push origin HEAD:${{ github.ref_name }} --force || true
-          else
-            echo "✅ НАЗОРАТ: Калиди умурбод аллакай ҳаст! Онро алиш намекунем."
           fi
           
-          # ҲАР БОР ДАР ЛОГҲО КАЛИДҲОИ ТУРО РАВШАН ЧОП МЕДЕҲАД (ТО ДИЛАТ ПУРРА ОРОМ БОШАД)
-          echo "--- ПАСПОРТИ БАРНОМАИ ТУ (SHA-1 ва SHA-256) ДАР ЗЕР АСТ ---"
-          keytool -list -v -keystore tajgram_lifetime.keystore -alias tajgram_key -storepass tajgram2026 | grep -E "SHA1:|SHA256:" || true
-          echo "--------------------------------------------------------"
-          
-          # Нусхабардории калид ба папкаи дохилии сервер барои сохтмони Gradle
           mkdir -p ~/.android
           cp tajgram_lifetime.keystore ~/.android/debug.keystore
 
@@ -65,10 +55,10 @@ jobs:
         env:
           ANDROID_HOME: /usr/local/lib/android/sdk
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx6g -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
+          # МАҲДУД КАРДАНИ ХОТИРА БАРОИ ОРОМ ПУХТАН БЕ АВАРИЯ
+          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.parallel=false -Dorg.gradle.workers.max=1"
         run: |
           chmod +x gradlew
-          # Пухтани барнома мустақиман аз рӯи файлҳои сохтаи худат
           ./gradlew assembleDebug --no-daemon --stacktrace -x test -x lint -x check
           
       - name: Upload Finished APK Artifacts
