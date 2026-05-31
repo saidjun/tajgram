@@ -4487,4 +4487,8 @@ public class LocaleController {
             return f.format(value, dir, unit);
         }
     }
+        public String getCurrentLanguageCode() {
+        return "tg";
+    }
+  }
 }
