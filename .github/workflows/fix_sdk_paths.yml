@@ -21,27 +21,22 @@ jobs:
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # 1. ТАЪМИРИ ПАПКАИ buildSrc (ПРОЧ): Сохтани файл дар дохили он, ки хатогӣ дода буд
+          # 1. ТАЪМИРИ buildSrc (ПРОЧ): СОХТАНИ ФАЙЛИ local.properties ТАВАССУТИ ECHO
           mkdir -p buildSrc
-          cat << 'EOF' > buildSrc/local.properties
-          sdk.dir=/usr/local/lib/android/sdk
-          ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653
-          EOF
+          echo "sdk.dir=/usr/local/lib/android/sdk" > buildSrc/local.properties
+          echo "ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653" >> buildSrc/local.properties
           
-          # 2. ТАЪМИРИ ПАПКАҲОИ ДОХИЛИИ ЛОИҲА
-          cat << 'EOF' > local.properties
-          sdk.dir=/usr/local/lib/android/sdk
-          ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653
-          EOF
+          # 2. ТАЪМИРИ ПАПКАИ АСОСИИ ЛОИҲА
+          echo "sdk.dir=/usr/local/lib/android/sdk" > local.properties
+          echo "ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653" >> local.properties
           
+          # 3. ТАЪМИРИ ПАПКАИ TMessagesProj
           if [ -d "TMessagesProj" ]; then
-            cat << 'EOF' > TMessagesProj/local.properties
-            sdk.dir=/usr/local/lib/android/sdk
-            ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653
-            EOF
+            echo "sdk.dir=/usr/local/lib/android/sdk" > TMessagesProj/local.properties
+            echo "ndk.dir=/usr/local/lib/android/sdk/ndk/25.2.9519653" >> TMessagesProj/local.properties
           fi
           
-          # 3. САБТИ ҚАТЪӢ ВА АВТОМАТӢ ДАР СAЙТ
+          # 4. САБТИ ҚАТЪӢ ВА АВТОМАТӢ ДАР СAЙТ БЕ ХАТОГӢ
           git add .
-          git commit -m "⚙️ SYSTEM ENVIRONMENT FIXED: buildSrc and local properties for Android SDK successfully locked!" || exit 0
+          git commit -m "⚙️ SYSTEM ENVIRONMENT FIXED: buildSrc and local properties for Android SDK locked with echo!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
