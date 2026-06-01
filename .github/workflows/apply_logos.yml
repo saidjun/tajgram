@@ -22,78 +22,58 @@ jobs:
       - name: Install High Quality Image Library
         run: pip install Pillow
 
-      - name: Process and Overwrite All Core and Dynamic Icons Safely
+      - name: Process and Overwrite Only 6 Samsung Icons in Standalone Safely
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
           python3 -c "
           import os
-          from PIL import Image, ImageDraw
+          from PIL import Image
           
-          res_dir = 'TMessagesProj/src/main/res'
+          # Расмҳоро аз папкаи марказии res-и кӯҳна мехонад, ки ҳамаашон он ҷо тайёранд
+          source_dir = 'TMessagesProj/src/main/res'
+          
+          # КОР ТАНҲО ДАР ИН 5 ПАПКАИ СКРИНШОТ МEРAВAД!
+          mod = 'TMessagesProj_AppStandalone'
           folders = ['mipmap-mdpi', 'mipmap-hdpi', 'mipmap-xhdpi', 'mipmap-xxhdpi', 'mipmap-xxxhdpi']
           base_sizes = {'mipmap-mdpi': 48, 'mipmap-hdpi': 72, 'mipmap-xhdpi': 96, 'mipmap-xxhdpi': 144, 'mipmap-xxxhdpi': 192}
           
+          mapping = {
+              1: 'ic_launcher.png',
+              2: 'icon_2_launcher.png',
+              3: 'icon_3_launcher.png',
+              4: 'icon_4_launcher.png',
+              5: 'icon_5_launcher.png',
+              6: 'icon_6_launcher.png'
+          }
+          
           for folder in folders:
               b_size = base_sizes[folder]
-              target_dir = f'{res_dir}/{folder}'
+              target_dir = f'{mod}/src/main/res/{folder}'
               os.makedirs(target_dir, exist_ok=True)
               
-              # 1. КОРКАРДИ 6 РАСМИ ТОЗАИ СУРАТ
+              # Робот фақат ва фақат ҳамин 6 файли аслии скриншотро алиш мекунад
               for i in range(1, 7):
-                  file_name = 'ic_launcher.png' if i == 1 else f'icon_{i}_launcher.png'
-                  source_path = f'{res_dir}/{file_name}'
+                  file_name = mapping[i]
+                  src_path = f'{source_dir}/{file_name}'
                   
-                  if not os.path.exists(source_path):
-                      print(f'⚠️ Файл ёфт нашуд: {source_path}')
+                  if not os.path.exists(src_path):
                       continue
                       
-                  img = Image.open(source_path).convert('RGBA')
-                  
-                  # Чоркунҷа
+                  img = Image.open(src_path).convert('RGBA')
                   icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
                   
-                  # Мудаввар
-                  mask = Image.new('L', (b_size, b_size), 0)
-                  draw = ImageDraw.Draw(mask)
-                  draw.ellipse((0, 0, b_size, b_size), fill=255)
-                  icon_round = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
-                  icon_round_final = Image.new('RGBA', (b_size, b_size), (0, 0, 0, 0))
-                  icon_round_final.paste(icon_round, (0, 0), mask=mask)
-                  
-                  # САБТИ КУЛЛИИ ФАЙЛҲОИ ДИНАМИКИВУ ЛАРЗОНАНДА
+                  # Сабти мустақим маҳз ба номҳои тозаи заводии дохили сурати ту (_sa.png)
                   if i == 1:
-                      icon_square.save(f'{target_dir}/ic_launcher.png', 'PNG', quality=100)
-                      icon_round_final.save(f'{target_dir}/ic_launcher_round.png', 'PNG', quality=100)
-                      icon_square.save(f'{target_dir}/icon_foreground.png', 'PNG', quality=100)
-                      icon_round_final.save(f'{target_dir}/icon_foreground_round.png', 'PNG', quality=100)
-                      icon_square.save(f'{target_dir}/icon_foreground_sa.png', 'PNG', quality=100)
+                      icon_square.save(f'{target_dir}/ic_launcher_sa.png', 'PNG', quality=100)
                   else:
-                      icon_square.save(f'{target_dir}/icon_{i}_launcher.png', 'PNG', quality=100)
-                      icon_round_final.save(f'{target_dir}/icon_{i}_launcher_round.png', 'PNG', quality=100)
-                      icon_square.save(f'{target_dir}/icon_{i}_foreground.png', 'PNG', quality=100)
-                      icon_round_final.save(f'{target_dir}/icon_{i}_foreground_round.png', 'PNG', quality=100)
-                      icon_square.save(f'{target_dir}/icon_{i}_foreground_sa.png', 'PNG', quality=100)
-                      if i == 2:
-                          icon_square.save(f'{target_dir}/icon_2_background_sa.png', 'PNG', quality=100)
-                          
-              # 2. ОРОИШИ КЛИПҲОИ ЗАМИНА АЗ РӮИ ЛОГОТИПИ 1
-              if os.path.exists(f'{res_dir}/ic_launcher.png'):
-                  img_main = Image.open(f'{res_dir}/ic_launcher.png').convert('RGBA')
-                  icon_main_square = img_main.resize((b_size, b_size), Image.Resampling.LANCZOS)
-                  icon_main_square.save(f'{target_dir}/icon_background_clip.png', 'PNG', quality=100)
-                  
-                  mask_m = Image.new('L', (b_size, b_size), 0)
-                  draw_m = ImageDraw.Draw(mask_m)
-                  draw_m.ellipse((0, 0, b_size, b_size), fill=255)
-                  icon_main_round = img_main.resize((b_size, b_size), Image.Resampling.LANCZOS)
-                  icon_main_round_final = Image.new('RGBA', (b_size, b_size), (0, 0, 0, 0))
-                  icon_main_round_final.paste(icon_main_round, (0, 0), mask=mask_m)
-                  icon_main_round_final.save(f'{target_dir}/icon_background_clip_round.png', 'PNG', quality=100)
+                      icon_square.save(f'{target_dir}/icon_{i}_launcher_sa.png', 'PNG', quality=100)
+                      
+          print('✅ ТАНҲО ҲАМИН 6 ФАЙЛИ МAХСУС ДАР 5 ПАПКА 100% ИСЛОҲ ШУДАНД!')
           "
           
-          # Сабти қатъӣ ба папкаҳои лоиҳаи аслиат
-          git add TMessagesProj/src/main/res/mipmap-*/
-          git commit -m "🎨 TOTAL BRANDING: All 6 clean factory icons and dynamic layouts overwritten successfully!" || exit 0
+          # Сабти автоматӣ танҳо ба ҳамин 5 папкаи модули Standalone
+          git add TMessagesProj_AppStandalone/src/main/res/mipmap-*/
+          git commit -m "🎨 BRANDING: Only 6 Samsung factory icons in Standalone folders overwritten successfully!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
