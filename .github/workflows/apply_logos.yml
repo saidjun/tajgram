@@ -1,0 +1,76 @@
+name: 🎨 AUTOMATIC MAIN REPO ICON OVERWRITER
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  overwrite_logos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Your Code Fresh
+        uses: actions/checkout@v4
+
+      - name: Set up Python with Image Engine
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install High Quality Image Library
+        run: pip install Pillow
+
+      - name: Process, Resize and Overwrite 10 Main Icons Safely
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "saidjun@tajgram.messenger"
+          
+          python3 -c "
+          import os
+          from PIL import Image, ImageDraw
+          
+          # Робот расмро мустақим аз папкаи res мехонад
+          source_img = 'TMessagesProj/src/main/res/tajgram_logo_source.png'
+          
+          if not os.path.exists(source_img):
+              print('❌ ФАЙЛИ РАСМИ АСЛӢ ДАР ПАПКАИ RES ЁФТ НАШУД! ЛУТФАН ОНРО БОР КУНEД!')
+              exit(1)
+              
+          img = Image.open(source_img).convert('RGBA')
+          
+          # 5 папкаи марказии заводии Телеграм бо андозаҳои дақиқ
+          sizes = {
+              'drawable-mdpi': (48, 48),
+              'drawable-hdpi': (72, 72),
+              'drawable-xhdpi': (96, 96),
+              'drawable-xxhdpi': (144, 144),
+              'drawable-xxxhdpi': (192, 192)
+          }
+          
+          for folder_name, size in sizes.items():
+              target_dir = f'TMessagesProj/src/main/res/{folder_name}'
+              os.makedirs(target_dir, exist_ok=True)
+              
+              # 1. ic_launcher.png (НОМИ ТOЗAИ ЗAВOДӢ ДАР ПАПКА)
+              icon_square = img.resize(size, Image.Resampling.LANCZOS)
+              icon_square.save(f'{target_dir}/ic_launcher.png', 'PNG', quality=100)
+              
+              # 2. ic_launcher_round.png (НОМИ ТOЗAИ ЗAВOДӢ ДАР ПАПКА)
+              mask = Image.new('L', size, 0)
+              draw = ImageDraw.Draw(mask)
+              draw.ellipse((0, 0) + size, fill=255)
+              
+              icon_round = img.resize(size, Image.Resampling.LANCZOS)
+              icon_round_final = Image.new('RGBA', size, (0, 0, 0, 0))
+              icon_round_final.paste(icon_round, (0, 0), mask=mask)
+              icon_round_final.save(f'{target_dir}/ic_launcher_round.png', 'PNG', quality=100)
+              
+              print(f'✅ Папкаи {folder_name} бо номҳои тозаи заводӣ 100% ислоҳ шуд!')
+          "
+          
+          # Сабти автоматӣ ва қатъӣ ба папкаҳои заводии лоиҳаи асосиат
+          git add TMessagesProj/src/main/res/drawable-*/ic_launcher*.png
+          git commit -m "🎨 BRANDING: 10 factory icons successfully overwritten with clean names!" || exit 0
+          git push origin HEAD:${{ github.ref_name }} --force
