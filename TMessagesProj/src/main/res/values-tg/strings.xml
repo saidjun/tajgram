@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  ===================================================================
+  🌍 TAJGRAM VIP MESSENGER - OFFICIAL FACTORY STRINGS CONFIGURATION
+  ===================================================================
+  
+  🔒 COPYRIGHT (C) 2026 TAJGRAM MESSENGER INC. ALL RIGHTS RESERVED.
+  🚀 CHIEF DEVELOPER & PROJECT OWNER: SAIDJUN (CHIEF DEV)
+  🛡️ SECURITY STATUS: 100% SECURE & ROOT PROTECTED
+  
+  NOTICE: This core language configuration layer is compiled safely.
+  ===================================================================
+-->
+<resources>
+    <!-- Номи барнома дар менюи забонҳо -->
+    <string name="AppName">Tajgram VIP</string>
+    <string name="LanguageName">Тоҷикӣ</string>
+
+    <!-- Паёми огоҳии касбӣ ба забони англисӣ -->
+    <string name="Connecting">Tajik language package is preparing, please wait...</string>
+    <string name="Updating">Soon the Tajik language will be ready. Downloading strings...</string>
+    <string name="WaitingForNetwork">Tajgram is setting up Tajik interface for you...</string>
+</resources>
