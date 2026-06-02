@@ -8,72 +8,33 @@ permissions:
 
 jobs:
   overwrite_logos:
-    runs-on: ubuntu-latest
+    runs-ok: ubuntu-latest
 
     steps:
       - name: Checkout Your Code Fresh
         uses: actions/checkout@v4
 
-      - name: Set up Python with Image Engine
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install High Quality Image Library
-        run: pip install Pillow
-
-      - name: Process and Overwrite Only 6 Samsung Icons in Standalone Safely
+      - name: Purge Only Duplicate Webp Icons Safely
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          python3 -c "
-          import os
-          from PIL import Image
+          # РОБОТ ТОКА ҲАМИН ФАЙЛҲОИ ТАҚРОРИРО АЗ РЕШАШ ТОЗА МЕКУНАД!
+          git rm -f TMessagesProj/src/main/res/drawable-mdpi/notification.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-mdpi/status_icon.webp || true
           
-          # Расмҳоро аз папкаи марказии res-и кӯҳна мехонад, ки ҳамаашон он ҷо тайёранд
-          source_dir = 'TMessagesProj/src/main/res'
+          git rm -f TMessagesProj/src/main/res/drawable-hdpi/notification.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-hdpi/status_icon.webp || true
           
-          # КОР ТАНҲО ДАР ИН 5 ПАПКАИ СКРИНШОТ МEРAВAД!
-          mod = 'TMessagesProj_AppStandalone'
-          folders = ['mipmap-mdpi', 'mipmap-hdpi', 'mipmap-xhdpi', 'mipmap-xxhdpi', 'mipmap-xxxhdpi']
-          base_sizes = {'mipmap-mdpi': 48, 'mipmap-hdpi': 72, 'mipmap-xhdpi': 96, 'mipmap-xxhdpi': 144, 'mipmap-xxxhdpi': 192}
+          git rm -f TMessagesProj/src/main/res/drawable-xhdpi/notification.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-xhdpi/status_icon.webp || true
           
-          mapping = {
-              1: 'ic_launcher.png',
-              2: 'icon_2_launcher.png',
-              3: 'icon_3_launcher.png',
-              4: 'icon_4_launcher.png',
-              5: 'icon_5_launcher.png',
-              6: 'icon_6_launcher.png'
-          }
+          git rm -f TMessagesProj/src/main/res/drawable-xxhdpi/notification.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-xxhdpi/status_icon.webp || true
           
-          for folder in folders:
-              b_size = base_sizes[folder]
-              target_dir = f'{mod}/src/main/res/{folder}'
-              os.makedirs(target_dir, exist_ok=True)
-              
-              # Робот фақат ва фақат ҳамин 6 файли аслии скриншотро алиш мекунад
-              for i in range(1, 7):
-                  file_name = mapping[i]
-                  src_path = f'{source_dir}/{file_name}'
-                  
-                  if not os.path.exists(src_path):
-                      continue
-                      
-                  img = Image.open(src_path).convert('RGBA')
-                  icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
-                  
-                  # Сабти мустақим маҳз ба номҳои тозаи заводии дохили сурати ту (_sa.png)
-                  if i == 1:
-                      icon_square.save(f'{target_dir}/ic_launcher_sa.png', 'PNG', quality=100)
-                  else:
-                      icon_square.save(f'{target_dir}/icon_{i}_launcher_sa.png', 'PNG', quality=100)
-                      
-          print('✅ ТАНҲО ҲАМИН 6 ФАЙЛИ МAХСУС ДАР 5 ПАПКА 100% ИСЛОҲ ШУДАНД!')
-          "
+          git rm -f TMessagesProj/src/main/res/drawable-xxxhdpi/notification.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-xxxhdpi/status_icon.webp || true
           
-          # Сабти автоматӣ танҳо ба ҳамин 5 папкаи модули Standalone
-          git add TMessagesProj_AppStandalone/src/main/res/mipmap-*/
-          git commit -m "🎨 BRANDING: Only 6 Samsung factory icons in Standalone folders overwritten successfully!" || exit 0
+          # Сабти автоматӣ ва қатъӣ ба лоиҳа
+          git commit -m "🎨 FIX: Only duplicate webp notification icons purged successfully!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
