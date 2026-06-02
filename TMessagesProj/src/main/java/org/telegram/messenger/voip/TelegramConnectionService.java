@@ -16,7 +16,7 @@ import org.tajgram.messenger.FileLog;
  */
 
 @TargetApi(Build.VERSION_CODES.O)
-public class TajgramConnectionService extends ConnectionService {
+public class T TelegramConnectionService extends ConnectionService {
 
 	@Override
 	public void onCreate() {
