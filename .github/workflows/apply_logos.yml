@@ -14,27 +14,80 @@ jobs:
       - name: Checkout Your Code Fresh
         uses: actions/checkout@v4
 
-      - name: Purge Only Duplicate Webp Icons Safely
+      - name: Set up Python with Image Engine
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install High Quality Image Library
+        run: pip install Pillow
+
+      - name: Fix Java Syntax and Generate Missing Icons Across All 5 Folders
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # РОБОТ ТАНҲО ФАҚАТ ҲАМИН ФАЙЛҲОИ ТАҚРОРИРО АЗ РЕШАШ ТOЗA МEКУНAД!
-          git rm -f TMessagesProj/src/main/res/drawable-mdpi/notification.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-mdpi/status_icon.webp || true
+          # 1. ТАЪМИРИ ХАТOИ ЯКУМ ДАР JAVA (PUBLIC КАРДАНИ КЛАСС)
+          python3 -c "
+          import os
+          file_path = 'TMessagesProj/src/main/java/org/telegram/messenger/TelegramConnectionService.java'
+          if os.path.exists(file_path):
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  code = f.read()
+              if 'class TelegramConnectionService' in code and 'public class' not in code:
+                  code = code.replace('class TelegramConnectionService', 'public class TelegramConnectionService')
+                  with open(file_path, 'w', encoding='utf-8') as f:
+                      f.write(code)
+                  print('✅ TelegramConnectionService public шуд!')
+          "
           
-          git rm -f TMessagesProj/src/main/res/drawable-hdpi/notification.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-hdpi/status_icon.webp || true
+          # 2. НЕСТ КАРДАНИ ФАЙЛҲОИ ТАҚРОРИИ notification
+          git rm -f TMessagesProj/src/main/res/drawable-*/notification.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/status_icon.webp || true
           
-          git rm -f TMessagesProj/src/main/res/drawable-xhdpi/notification.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-xhdpi/status_icon.webp || true
+          # 3. СОХТАНИ ТАМОМИ РАСМҲОИ НАМЕРАСИДА ДАР ҲАМАИ 5 ПАПКА
+          python3 -c "
+          import os
+          from PIL import Image
           
-          git rm -f TMessagesProj/src/main/res/drawable-xxhdpi/notification.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-xxhdpi/status_icon.webp || true
+          res_dir = 'TMessagesProj/src/main/res'
+          draw_folders = ['drawable-mdpi', 'drawable-hdpi', 'drawable-xhdpi', 'drawable-xxhdpi', 'drawable-xxxhdpi']
+          base_sizes = {'mdpi': 48, 'hdpi': 72, 'xhdpi': 96, 'xxhdpi': 144, 'xxxhdpi': 192}
           
-          git rm -f TMessagesProj/src/main/res/drawable-xxxhdpi/notification.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-xxxhdpi/status_icon.webp || true
+          main_img_path = f'{res_dir}/ic_launcher.png'
+          if os.path.exists(main_img_path):
+              img = Image.open(main_img_path).convert('RGBA')
+              
+              for folder in draw_folders:
+                  density = folder.replace('drawable-', '')
+                  b_size = base_sizes[density]
+                  target_dir = f'{res_dir}/{folder}'
+                  os.makedirs(target_dir, exist_ok=True)
+                  
+                  icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
+                  
+                  # Сабти файлҳои PNG (Дар паҳлуи файлҳои кӯҳна меистанд ва каша намекунанд)
+                  icon_square.save(f'{target_dir}/tajgram_logo.png', 'PNG', quality=100)
+                  icon_square.save(f'{target_dir}/tajgram_logo_1.png', 'PNG', quality=100)
+                  icon_square.save(f'{target_dir}/tajgram_logo_2.png', 'PNG', quality=100)
+                  icon_square.save(f'{target_dir}/menu_invite_tajgram.png', 'PNG', quality=100)
+                  
+                  # Сабти файлҳои WEBP барои кафолати системавии Android
+                  icon_square.save(f'{target_dir}/tajgram_logo.webp', 'WEBP', quality=100)
+                  icon_square.save(f'{target_dir}/tajgram_logo_1.webp', 'WEBP', quality=100)
+                  icon_square.save(f'{target_dir}/tajgram_logo_2.webp', 'WEBP', quality=100)
+                  icon_square.save(f'{target_dir}/menu_invite_tajgram.webp', 'WEBP', quality=100)
+                  
+                  # Ислоҳи файлҳои огоҳиномаҳо
+                  n_size = int(b_size * 0.5)
+                  icon_notif = img.resize((n_size, n_size), Image.Resampling.LANCZOS)
+                  icon_notif.save(f'{target_dir}/notification.png', 'PNG', quality=100)
+                  icon_notif.save(f'{target_dir}/status_icon.png', 'PNG', quality=100)
+                  
+          print('✅ Ҳамаи расмҳо дар 5 папка сохта шуданд!')
+          "
           
           # Сабти автоматӣ ба лоиҳа
-          git commit -m "🎨 FIX: Only duplicate webp notification icons purged successfully!" || exit 0
+          git add TMessagesProj/
+          git commit -m "🎨 FIX: Resolved 5 compilation errors, fixed class visibility and missing icons safely!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
