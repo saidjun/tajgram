@@ -22,34 +22,45 @@ jobs:
       - name: Install High Quality Image Library
         run: pip install Pillow
 
-      - name: Hard Purge All Webp Duplicates and Lock Single PNG Structure
+      - name: Pure Factory Code Sync and Target Asset Replacement
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # 1. ТАЪМИРИ ХАТOИ ЯКУМ ДАР JAVA (PUBLIC КАРДАНИ КЛАСС)
+          # 1. СИНХРОНИЗАЦИЯИ КOД: БAРГAРДOНИДAНИ НOМҲO БA ЗAВOДИИ АСЛӢ КИ БO РAСМҲO ЯКХEЛ ШAВAНД
           python3 -c "
           import os
-          file_path = 'TMessagesProj/src/main/java/org/telegram/messenger/TelegramConnectionService.java'
-          if os.path.exists(file_path):
-              with open(file_path, 'r', encoding='utf-8') as f:
-                  code = f.read()
-              if 'class TelegramConnectionService' in code and 'public class' not in code:
-                  code = code.replace('class TelegramConnectionService', 'public class TelegramConnectionService')
+          
+          def fix_file(file_path):
+              if os.path.exists(file_path):
+                  with open(file_path, 'r', encoding='utf-8') as f:
+                      code = f.read()
+                  
+                  # Номи кодро аниқ ба номи заводии расмҳо якхела мекунем!
+                  code = code.replace('menu_invite_tajgram', 'msg_invite')
+                  code = code.replace('tajgram_logo_1', 'home_logo')
+                  code = code.replace('tajgram_logo_2', 'msg_panel')
+                  code = code.replace('tajgram_logo', 'ic_launcher')
+                  
                   with open(file_path, 'w', encoding='utf-8') as f:
                       f.write(code)
-                  print('✅ TelegramConnectionService public шуд!')
+                  print(f'✅ Коди {file_path} бо расмҳо 100% якхелаи заводӣ шуд!')
+          
+          fix_file('TMessagesProj/src/main/java/org/telegram/ui/ChatActivity.java')
+          fix_file('TMessagesProj/src/main/java/org/telegram/ui/DialogsActivity.java')
+          fix_file('TMessagesProj/src/main/java/org/telegram/ui/VoipFeedbackActivity.java')
+          fix_file('TMessagesProj/src/main/java/org/telegram/ui/IntroActivity.java')
           "
           
-          # 2. ФАРМОНИ ҚАТЪӢ: НЕСТ КАРДАНИ ТАМОМИ ФАЙЛҲОИ ТАҚРОРИИ WEBP АЗ РЕШАШ
+          # 2. СУҒУРТА: ТOЗA КAРДAНИ ТAМOМИ ДУБЛИКAТҲOИ WEBP БАРОИ ПЕШГИРИИ ХАТOИ ГРАДЛЕ
           git rm -f TMessagesProj/src/main/res/drawable-*/notification.webp || true
           git rm -f TMessagesProj/src/main/res/drawable-*/status_icon.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo_1.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo_2.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/menu_invite_tajgram.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/msg_invite.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/msg_panel.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/home_logo.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/ic_launcher_inplace.webp || true
           
-          # 3. СОХТАНИ ТАНҲО ФOРМAТИ ТОЗАИ PNG БАРОИ ИНТЕРФЕЙС
+          # 3. ЗAМEНAИ МУТЛAҚ: СAБТИ РAСМИ ТAҶГРAМ БO НOМҲOИ ЗAВOДӢ ДАР ПАПКАҲО
           python3 -c "
           import os
           from PIL import Image
@@ -70,22 +81,22 @@ jobs:
                   
                   icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
                   
-                  # САБТИ ТАНҲО ФOРМAТИ PNG (ДИГАР ЯГОН WEBP ДУБЛИКАТ НАМЕШАВАД!)
-                  icon_square.save(f'{target_dir}/tajgram_logo.png', 'PNG', quality=100)
-                  icon_square.save(f'{target_dir}/tajgram_logo_1.png', 'PNG', quality=100)
-                  icon_square.save(f'{target_dir}/tajgram_logo_2.png', 'PNG', quality=100)
-                  icon_square.save(f'{target_dir}/menu_invite_tajgram.png', 'PNG', quality=100)
+                  # ФАРМОНИ ҚАТЪИИ ТУ: ОН РАСМҲОИ ЗАПАС ИСТОДААСТ, ТАНҲО ИН 4 ТАРО ЗАМЕНА МЕКУНЕМ!
+                  icon_square.save(f'{target_dir}/msg_invite.png', 'PNG', quality=100)
+                  icon_square.save(f'{target_dir}/home_logo.png', 'PNG', quality=100)
+                  icon_square.save(f'{target_dir}/ic_launcher_inplace.png', 'PNG', quality=100)
+                  icon_square.save(f'{target_dir}/msg_panel.png', 'PNG', quality=100)
                   
-                  # Ислоҳи файлҳои огоҳиномаҳо бо формати софи PNG
+                  # Сабти файлҳои хурди уведомление бо бренди ту
                   n_size = int(b_size * 0.5)
                   icon_notif = img.resize((n_size, n_size), Image.Resampling.LANCZOS)
                   icon_notif.save(f'{target_dir}/notification.png', 'PNG', quality=100)
                   icon_notif.save(f'{target_dir}/status_icon.png', 'PNG', quality=100)
                   
-          print('✅ ТАМОМИ ДУБЛИКАТҲОИ WEBP ТОЗА ШУДАНД ВА ТАНҲО PNG МОНД!')
+          print('✅ ЗАМЕНА ИҶРО ШУД: КОД ВА РАСМҲОИ ЗАВОДӢ 100% БО БРЕНДИ ТУ ЯКХЕЛА ШУДАНД!')
           "
           
-          # Сабти автоматӣ ба лоиҳа
+          # Сабти автоматӣ ва бехатар ба Гитҳуб
           git add TMessagesProj/
-          git commit -m "🎨 FIX: Purged all duplicate webp assets and locked clean single PNG format!" || exit 0
+          git commit -m "🎨 FIX: Synced factory names with images and completed target asset replacement successfully!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
