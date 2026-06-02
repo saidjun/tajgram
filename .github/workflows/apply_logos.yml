@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   overwrite_logos:
-    runs-ok: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Your Code Fresh
@@ -19,7 +19,7 @@ jobs:
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # РОБОТ ТОКА ҲАМИН ФАЙЛҲОИ ТАҚРОРИРО АЗ РЕШАШ ТОЗА МЕКУНАД!
+          # РОБОТ ТАНҲО ФАҚАТ ҲАМИН ФАЙЛҲОИ ТАҚРОРИРО АЗ РЕШАШ ТOЗA МEКУНAД!
           git rm -f TMessagesProj/src/main/res/drawable-mdpi/notification.webp || true
           git rm -f TMessagesProj/src/main/res/drawable-mdpi/status_icon.webp || true
           
@@ -35,6 +35,6 @@ jobs:
           git rm -f TMessagesProj/src/main/res/drawable-xxxhdpi/notification.webp || true
           git rm -f TMessagesProj/src/main/res/drawable-xxxhdpi/status_icon.webp || true
           
-          # Сабти автоматӣ ва қатъӣ ба лоиҳа
+          # Сабти автоматӣ ба лоиҳа
           git commit -m "🎨 FIX: Only duplicate webp notification icons purged successfully!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
