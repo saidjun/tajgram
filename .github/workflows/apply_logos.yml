@@ -22,7 +22,7 @@ jobs:
       - name: Install High Quality Image Library
         run: pip install Pillow
 
-      - name: Fix Java Syntax and Generate Missing Icons Across All 5 Folders
+      - name: Hard Purge All Webp Duplicates and Lock Single PNG Structure
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
@@ -41,11 +41,15 @@ jobs:
                   print('✅ TelegramConnectionService public шуд!')
           "
           
-          # 2. НЕСТ КАРДАНИ ФАЙЛҲОИ ТАҚРОРИИ notification
+          # 2. ФАРМОНИ ҚАТЪӢ: НЕСТ КАРДАНИ ТАМОМИ ФАЙЛҲОИ ТАҚРОРИИ WEBP АЗ РЕШАШ
           git rm -f TMessagesProj/src/main/res/drawable-*/notification.webp || true
           git rm -f TMessagesProj/src/main/res/drawable-*/status_icon.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo_1.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo_2.webp || true
+          git rm -f TMessagesProj/src/main/res/drawable-*/menu_invite_tajgram.webp || true
           
-          # 3. СОХТАНИ ТАМОМИ РАСМҲОИ НАМЕРАСИДА ДАР ҲАМАИ 5 ПАПКА
+          # 3. СОХТАНИ ТАНҲО ФOРМAТИ ТОЗАИ PNG БАРОИ ИНТЕРФЕЙС
           python3 -c "
           import os
           from PIL import Image
@@ -66,28 +70,22 @@ jobs:
                   
                   icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
                   
-                  # Сабти файлҳои PNG (Дар паҳлуи файлҳои кӯҳна меистанд ва каша намекунанд)
+                  # САБТИ ТАНҲО ФOРМAТИ PNG (ДИГАР ЯГОН WEBP ДУБЛИКАТ НАМЕШАВАД!)
                   icon_square.save(f'{target_dir}/tajgram_logo.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/tajgram_logo_1.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/tajgram_logo_2.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/menu_invite_tajgram.png', 'PNG', quality=100)
                   
-                  # Сабти файлҳои WEBP барои кафолати системавии Android
-                  icon_square.save(f'{target_dir}/tajgram_logo.webp', 'WEBP', quality=100)
-                  icon_square.save(f'{target_dir}/tajgram_logo_1.webp', 'WEBP', quality=100)
-                  icon_square.save(f'{target_dir}/tajgram_logo_2.webp', 'WEBP', quality=100)
-                  icon_square.save(f'{target_dir}/menu_invite_tajgram.webp', 'WEBP', quality=100)
-                  
-                  # Ислоҳи файлҳои огоҳиномаҳо
+                  # Ислоҳи файлҳои огоҳиномаҳо бо формати софи PNG
                   n_size = int(b_size * 0.5)
                   icon_notif = img.resize((n_size, n_size), Image.Resampling.LANCZOS)
                   icon_notif.save(f'{target_dir}/notification.png', 'PNG', quality=100)
                   icon_notif.save(f'{target_dir}/status_icon.png', 'PNG', quality=100)
                   
-          print('✅ Ҳамаи расмҳо дар 5 папка сохта шуданд!')
+          print('✅ ТАМОМИ ДУБЛИКАТҲОИ WEBP ТОЗА ШУДАНД ВА ТАНҲО PNG МОНД!')
           "
           
           # Сабти автоматӣ ба лоиҳа
           git add TMessagesProj/
-          git commit -m "🎨 FIX: Resolved 5 compilation errors, fixed class visibility and missing icons safely!" || exit 0
+          git commit -m "🎨 FIX: Purged all duplicate webp assets and locked clean single PNG format!" || exit 0
           git push origin HEAD:${{ github.ref_name }} --force
