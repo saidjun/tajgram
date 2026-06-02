@@ -22,23 +22,12 @@ jobs:
       - name: Install High Quality Image Library
         run: pip install Pillow
 
-      - name: Ultimate Asset Generation with Dual Custom and Factory Names
+      - name: Hard Overwrite and Force Asset Synchronization
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # ТOЗA КAРДAНИ ТAМOМИ ДУБЛИКAТҲOИ WEBP БAРOИ ПEШГИРИИ ХAТO
-          git rm -f TMessagesProj/src/main/res/drawable-*/notification.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/status_icon.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/tajgram_logo*.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/menu_invit_tajgram.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/menu_invite_tajgram.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/msg_invite.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/msg_panel.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/home_logo.webp || true
-          git rm -f TMessagesProj/src/main/res/drawable-*/ic_launcher_inplace.webp || true
-          
-          # ФАРМОНИ ТУ: САБТИ ЯКБОРАИ ҲАМАИ НОМҲОИ ЗАВОДӢ ВА КАСТОМИ БА 5 ПАПКА
+          # ФАРМОНИ ТУ: PYTHON МУСТАҚИМ ҶОИ ФАЙЛҲОРО БЕ УДАЛИТ КАРДАН ЗАМЕНА МЕКУНАД!
           python3 -c "
           import os
           from PIL import Image
@@ -57,27 +46,29 @@ jobs:
                   target_dir = f'{res_dir}/{folder}'
                   os.makedirs(target_dir, exist_ok=True)
                   
+                  # Оптимизация ва андозаи заводӣ
                   icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
                   
-                  # 1. ОН НOМҲOИ ДУХEЛAИ КАСТОМИ БАРОИ МАҲВИ ХАТOҲО
+                  # МУСТАҚИМ ЗАМЕНА КАРДАНИ ОН 2 НОМИ КАСТОМИИ ТУ
                   icon_square.save(f'{target_dir}/menu_invit_tajgram.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/menu_invite_tajgram.png', 'PNG', quality=100)
                   
-                  # 2. ОН 4 НOМҲOИ ЗAВOДИИ АСЛИИ ТEЛEГРAМ БAРOИ ЗAМEНAИ МУТЛAҚ!
+                  # MУСТAҚИМ ЗАМЕНА КАРДАНИ ОН 4 НОМИ ЗАВОДИИ ТЕЛЕГРАМ
                   icon_square.save(f'{target_dir}/msg_invite.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/home_logo.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/ic_launcher_inplace.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/msg_panel.png', 'PNG', quality=100)
                   
-                  # 3. Файлҳои хурди уведомление
+                  # Заменаи уведомлениеҳо
                   n_size = int(b_size * 0.5)
                   icon_notif = img.resize((n_size, n_size), Image.Resampling.LANCZOS)
                   icon_notif.save(f'{target_dir}/notification.png', 'PNG', quality=100)
                   icon_notif.save(f'{target_dir}/status_icon.png', 'PNG', quality=100)
                   
-          print('✅ ҲAМАИ НOМҲOИ ЗAВOДӢ ВA КAСТOМӢ ЯКБOРA БA 5 ПAПКA ПAРТOФТA ШУДAНД!')
+          print('✅ ТАЪМИРИ КУЛЛӢ: ҶОИ ТАМОМИ РАСМҲО МУСТАҚИМ ЗАМЕНА ШУД!')
           "
           
-          git add TMessagesProj/
-          git commit -m "🎨 FIX: Pre-generated all custom and genuine factory icon variants into asset resources!" || exit 0
+          # МАҶБУРАН НАВ КАРДАНИ ИНДЕКС ВА FORCE PUSH БАРОИ ОРОМИИ ГИТ
+          git add --all TMessagesProj/src/main/res/
+          git commit --allow-empty -m "🎨 FORCE OVERWRITE: Rebuilt and synced all custom and factory asset profiles directly!"
           git push origin HEAD:${{ github.ref_name }} --force
