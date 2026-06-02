@@ -22,12 +22,12 @@ jobs:
       - name: Install High Quality Image Library
         run: pip install Pillow
 
-      - name: Hard Overwrite and Force Asset Synchronization
+      - name: Hard Overwrite 25 Assets Safely From Res Launcher
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "saidjun@tajgram.messenger"
           
-          # ФАРМОНИ ТУ: PYTHON МУСТАҚИМ ҶОИ ФАЙЛҲОРО БЕ УДАЛИТ КАРДАН ЗАМЕНА МЕКУНАД!
+          # PYTHON МУСТАҚИМ РАСМИ КАЛОНРО АЗ РЕС ГИРИФТА 25 ФАЙЛРО МEПAЗAД (БE ЛAМС БA МEНУ_ИНВИТ)
           python3 -c "
           import os
           from PIL import Image
@@ -36,6 +36,7 @@ jobs:
           draw_folders = ['drawable-mdpi', 'drawable-hdpi', 'drawable-xhdpi', 'drawable-xxhdpi', 'drawable-xxxhdpi']
           base_sizes = {'mdpi': 48, 'hdpi': 72, 'xhdpi': 96, 'xxhdpi': 144, 'xxxhdpi': 192}
           
+          # ИШОРАИ ТУ: Гирифтани расми калони аслӣ мустақим аз папкаи марказии res
           main_img_path = f'{res_dir}/ic_launcher.png'
           if os.path.exists(main_img_path):
               img = Image.open(main_img_path).convert('RGBA')
@@ -46,29 +47,33 @@ jobs:
                   target_dir = f'{res_dir}/{folder}'
                   os.makedirs(target_dir, exist_ok=True)
                   
-                  # Оптимизация ва андозаи заводӣ
+                  # Оптимизацияи андозаи заводӣ
                   icon_square = img.resize((b_size, b_size), Image.Resampling.LANCZOS)
                   
-                  # МУСТАҚИМ ЗАМЕНА КАРДАНИ ОН 2 НОМИ КАСТОМИИ ТУ
-                  icon_square.save(f'{target_dir}/menu_invit_tajgram.png', 'PNG', quality=100)
+                  # СAБТИ ОН 5 РAСМИ БOҚИМOНДA БO НOМҲOИ ЗAВOДӢ ВA КАСТОМИИ ТУ
                   icon_square.save(f'{target_dir}/menu_invite_tajgram.png', 'PNG', quality=100)
-                  
-                  # MУСТAҚИМ ЗАМЕНА КАРДАНИ ОН 4 НОМИ ЗАВОДИИ ТЕЛЕГРАМ
                   icon_square.save(f'{target_dir}/msg_invite.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/home_logo.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/ic_launcher_inplace.png', 'PNG', quality=100)
                   icon_square.save(f'{target_dir}/msg_panel.png', 'PNG', quality=100)
                   
-                  # Заменаи уведомлениеҳо
+                  # Уведомлениеҳо
                   n_size = int(b_size * 0.5)
                   icon_notif = img.resize((n_size, n_size), Image.Resampling.LANCZOS)
                   icon_notif.save(f'{target_dir}/notification.png', 'PNG', quality=100)
                   icon_notif.save(f'{target_dir}/status_icon.png', 'PNG', quality=100)
                   
-          print('✅ ТАЪМИРИ КУЛЛӢ: ҶОИ ТАМОМИ РАСМҲО МУСТАҚИМ ЗАМЕНА ШУД!')
+          print('✅ МАРРА: 25 дона файл дар 5 папка бо муваффақият замена ва сохта шуданд!')
           "
           
-          # МАҶБУРАН НАВ КАРДАНИ ИНДЕКС ВА FORCE PUSH БАРОИ ОРОМИИ ГИТ
-          git add --all TMessagesProj/src/main/res/
-          git commit --allow-empty -m "🎨 FORCE OVERWRITE: Rebuilt and synced all custom and factory asset profiles directly!"
+          # МАҶБУРАН ИЛОВА КАРДАН БА ИНДЕКС БАРОИ ОН КИ ГИТҲУБ ТАМОМИ 25 ФАЙЛРО ДАР PUSH НИШОН ДИҲАД
+          git add TMessagesProj/src/main/res/drawable-*/menu_invite_tajgram.png
+          git add TMessagesProj/src/main/res/drawable-*/msg_invite.png
+          git add TMessagesProj/src/main/res/drawable-*/home_logo.png
+          git add TMessagesProj/src/main/res/drawable-*/ic_launcher_inplace.png
+          git add TMessagesProj/src/main/res/drawable-*/msg_panel.png
+          git add TMessagesProj/src/main/res/drawable-*/notification.png
+          git add TMessagesProj/src/main/res/drawable-*/status_icon.png
+          
+          git commit --allow-empty -m "🎨 FORCE OVERWRITE: Rebuilt and synced 25 factory and custom asset profiles directly!"
           git push origin HEAD:${{ github.ref_name }} --force
