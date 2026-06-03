@@ -17,22 +17,14 @@ configurations.all {
 dependencies {
     implementation project(':TMessagesProj')
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
-    implementation files('../TMessagesProj/libs/libgsaverification-client.aar')
+    implementation files('../TMessagesProj/libs/libgsaverification-client.ar')
 }
 
 android {
-    buildFeatures { buildConfig true }
-    signingConfigs { debug { storePassword "android"
- keyPassword "android"
- keyAlias "AndroidDebugKey" } }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.debug
-            minifyEnabled false
-            shrinkResources false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    buildFeatures {
+        buildConfig true
     }
+
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
 
@@ -43,13 +35,13 @@ android {
     lintOptions {
         disable 'MissingTranslation'
         disable 'ExtraTranslation'
-        disable 'BlockedPrivateApi'
+        disable 'BlocksPrivateIapi'
+        checkReleaseBuilds false
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-
         coreLibraryDesugaringEnabled true
     }
 
@@ -60,7 +52,6 @@ android {
             keyAlias "AndroidDebugKey"
             keyPassword "android"
         }
-
         release {
             storeFile file("../TMessagesProj/config/release.keystore")
             storePassword "android"
@@ -71,54 +62,25 @@ android {
 
     buildTypes {
         debug {
-            debuggable true
-            jniDebuggable true
             signingConfig signingConfigs.debug
-            applicationIdSuffix ".beta"
             minifyEnabled false
             shrinkResources false
-            multiDexEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../TMessagesProj/proguard-rules.pro', '../TMessagesProj/proguard-rules-beta.pro'
-            ndk.debugSymbolLevel = 'FULL'
         }
-
         standalone {
-            debuggable false
-            jniDebuggable false
             signingConfig signingConfigs.release
-            applicationIdSuffix ".web"
-            minifyEnabled true
+            minifyEnabled false
             shrinkResources false
-            multiDexEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../TMessagesProj/proguard-rules.pro'
-            ndk.debugSymbolLevel = 'FULL'
         }
-
         release {
-            debuggable false
-            jniDebuggable false
             signingConfig signingConfigs.release
-            minifyEnabled true
+            minifyEnabled false
             shrinkResources false
-            multiDexEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../TMessagesProj/proguard-rules.pro'
-            ndk.debugSymbolLevel = 'FULL'
         }
     }
 
     sourceSets.debug {
         manifest.srcFile '../TMessagesProj/config/debug/AndroidManifest.xml'
     }
-
-    sourceSets.standalone {
-        manifest.srcFile '../TMessagesProj/config/release/AndroidManifest.xml'
-    }
-
-    sourceSets.release {
-        manifest.srcFile '../TMessagesProj/config/release/AndroidManifest.xml'
-    }
-
-    flavorDimensions "minApi"
 
     productFlavors {
         bundleAfat {
@@ -195,19 +157,12 @@ android {
         externalNativeBuild {
             cmake {
                 version '3.10.2'
-                arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-21' // , '-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON'
+                arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-21'
             }
         }
     }
 
-    buildFeatures {
-        buildConfig = true
-    }
     namespace 'org.tajgram.messenger.regular'
-
-    lintOptions {
-        checkReleaseBuilds false
-    }
 }
 
 apply plugin: 'com.google.gms.google-services'
