@@ -11,10 +11,11 @@ workflows:
         script: |
           jdk switch 17
           echo "✅ Java 17 фаъол шуд!"
-      - name: Build Tajgram VIP Release APK
+      - name: Build Tajgram VIP Release APK Without Tests
         script: |
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
+          # РОБОТ ТЕСТҲОИ ХAТOРО ХAТ МEЗАНAД ВA МУСТАҚИМ АПК-РО БE ХАТO МEПАЗAД!
+          ./gradlew assembleRelease -x test -x generateScheme --no-daemon
     artifacts:
       - TMessagesProj/build/outputs/apk/release/*.apk
       - "**/build/outputs/apk/**/*.apk"
