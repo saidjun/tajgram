@@ -25,7 +25,14 @@ android {
     signingConfigs { debug { storePassword "android"
  keyPassword "android"
  keyAlias "AndroidDebugKey" } }
-    buildTypes { release { signingConfig signingConfigs.debug } }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
 
