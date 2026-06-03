@@ -19,25 +19,28 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Generate Factory Keystore Without Config Folder
+      - name: Link GitHub Secrets and Recreate Config Folder
+        env:
+          ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.KEY_PASSWORD }}
+          STORE_PASS: ${{ secrets.STORE_PASSWORD }}
         run: |
-          # РОБОТ КАЛИДРО РОСТ ДАР ПАПКАИ TMESSAGESPROJ МЕСOЗАД
-          mkdir -p TMessagesProj/
-          rm -f TMessagesProj/release.keystore || true
+          # 1. СOХТAНИ ПAПКAИ ЗАВОДИИ CONFIG АЗ НАВ
+          mkdir -p TMessagesProj/config/
+          rm -f TMessagesProj/config/release.keystore || true
           
-          # СОХТАНИ КАЛИДИ КОМИЛ КИ ПАСПОРТИ FIREBASE-РО УСТУВОР НИГОҲ МЕДОРАД
-          keytool -genkey -v -keystore TMessagesProj/release.keystore \
-            -alias AndroidDebugKey -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass android -keypass android -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
+          # 2. РОБОТ АВТОМАТӢ КАЛИДИ ОЗМОИШИРО ДАР ҶОИ АНИҚИ CONFIG МЕСОЗАД
+          keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
+            -alias "$ALIAS" -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass "$STORE_PASS" -keypass "$KEY_PASS" -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
           
-          # СОХТАНИ ТАНЗИМОТҲОИ ПАРОЛ ДАР ХУДИ ПАПКАИ АСОСӢ
-          cat <<EOF > TMessagesProj/keystore.properties
-          keyAlias=AndroidDebugKey
-          keyPassword=android
-          storePassword=android
+          # 3. САБТИ ФАЙЛИ ТАНЗИМОТИ ПАРОЛҲО
+          cat <<EOF > TMessagesProj/config/keystore.properties
+          keyAlias=$ALIAS
+          keyPassword=$KEY_PASS
+          storePassword=$STORE_PASS
           EOF
-          
-          echo "✅ Паспорти Firebase 100% бехатар ва заводи қулф шуд!"
+          echo "✅ Калиди расмии имзо бо Сейф 100% ҳамоҳанг шуд!"
 
       - name: Build with Gradle Factory Command
         run: |
