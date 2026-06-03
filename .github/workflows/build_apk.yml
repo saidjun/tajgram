@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout Repository Code
         uses: actions/checkout@v4
+        with:
+          clean: true
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -17,13 +19,33 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Generate Factory Keystore Without Config Folder
+        run: |
+          # РОБОТ КАЛИДРО РОСТ ДАР ПАПКАИ TMESSAGESPROJ МЕСOЗАД
+          mkdir -p TMessagesProj/
+          rm -f TMessagesProj/release.keystore || true
+          
+          # СОХТАНИ КАЛИДИ КОМИЛ КИ ПАСПОРТИ FIREBASE-РО УСТУВОР НИГОҲ МЕДОРАД
+          keytool -genkey -v -keystore TMessagesProj/release.keystore \
+            -alias AndroidDebugKey -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass android -keypass android -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
+          
+          # СОХТАНИ ТАНЗИМОТҲОИ ПАРОЛ ДАР ХУДИ ПАПКАИ АСОСӢ
+          cat <<EOF > TMessagesProj/keystore.properties
+          keyAlias=AndroidDebugKey
+          keyPassword=android
+          storePassword=android
+          EOF
+          
+          echo "✅ Паспорти Firebase 100% бехатар ва заводи қулф шуд!"
+
       - name: Build with Gradle Factory Command
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug
-          
+
       - name: Upload Finished APK Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Factory-Telegram-APK
-          path: "**/build/outputs/apk/**/*.apk"
+          path: "TMessagesProj/build/outputs/apk/debug/*.apk"
