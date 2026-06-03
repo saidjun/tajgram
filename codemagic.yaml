@@ -1,13 +1,24 @@
 workflows:
   android-workflow:
-    name: Android Build
-    instance_type: mac_mini_m1
+    name: Tajgram VIP Factory Build
+    instance_type: mac_mini_m2
     max_build_duration: 60
     environment:
-      java: 17
+      groups:
+        - android-signing
+      vars:
+        JAVA_VERSION: "17"
+      node: latest
+      xcode: latest
     scripts:
-      - name: Build APK
+      - name: Set up Java Development Kit
         script: |
+          jdk switch 17
+          echo "✅ Java 17 сони соф ва ба таври заводӣ фаъол шуд!"
+      - name: Build Tajgram VIP Release APK
+        script: |
+          chmod +x gradlew
           ./gradlew assembleRelease --no-daemon
     artifacts:
-      - TMessagesProj/build/outputs/apk/**/*.apk
+      - TMessagesProj/build/outputs/apk/release/*.apk
+      - "**/build/outputs/apk/**/*.apk"
