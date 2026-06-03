@@ -19,29 +19,6 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Link GitHub Secrets and Recreate Config Folder
-        env:
-          ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASS: ${{ secrets.KEY_PASSWORD }}
-          STORE_PASS: ${{ secrets.STORE_PASSWORD }}
-        run: |
-          # 1. СOХТAНИ ПAПКAИ ЗАВОДИИ CONFIG АЗ НАВ
-          mkdir -p TMessagesProj/config/
-          rm -f TMessagesProj/config/release.keystore || true
-          
-          # 2. РОБОТ АВТОМАТӢ КАЛИДИ ОЗМОИШИРО ДАР ҶОИ АНИҚИ CONFIG МЕСОЗАД
-          keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
-            -alias "$ALIAS" -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass "$STORE_PASS" -keypass "$KEY_PASS" -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
-          
-          # 3. САБТИ ФАЙЛИ ТАНЗИМОТИ ПАРОЛҲО
-          cat <<EOF > TMessagesProj/config/keystore.properties
-          keyAlias=$ALIAS
-          keyPassword=$KEY_PASS
-          storePassword=$STORE_PASS
-          EOF
-          echo "✅ Калиди расмии имзо бо Сейф 100% ҳамоҳанг шуд!"
-
       - name: Build with Gradle Factory Command
         run: |
           chmod +x gradlew
