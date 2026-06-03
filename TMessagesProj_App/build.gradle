@@ -151,6 +151,7 @@ android {
         targetSdkVersion 35
         versionName "10.5.0"
         ndkVersion "27.2.12479018"
+        flavorDimensions "version"
 
         multiDexEnabled true
 
