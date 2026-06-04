@@ -24,15 +24,19 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # Фармони дақиқ барои ҷамъоварии модули асосии Tajgram
+    # ФАРМОНИ ҲАҚИҚӢ: Пайваст кардани калидҳо аз Secrets барои сохтани версияи аслӣ
     - name: Build with Gradle Factory Command
+      env:
+        RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+        RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+        RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
       run: |
         chmod +x gradlew
-        ./gradlew :TMessagesProj_App:assembleDebug --stacktrace
+        ./gradlew :TMessagesProj_App:assembleRelease --stacktrace
 
-    # Боркунии барномаи тайёр пас аз сохтан
+    # Боркунии APK-и ҳақиқӣ (Аз папкаи release)
     - name: Upload Finished APK Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: Factory-Telegram-APK
-        path: TMessagesProj_App/build/outputs/apk/debug/*.apk
+        name: Tajgram-Official-APK
+        path: TMessagesProj_App/build/outputs/apk/release/*.apk
