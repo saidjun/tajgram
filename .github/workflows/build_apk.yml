@@ -22,15 +22,15 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # ИСЛОҲИ МУХОЛИФАТ: Иваз кардани автоматии паролҳои заводии даруни файл бо калидҳои махфии ту
+    # Синхронизатсияи автоматии паролҳо ва номи tajgram_key бо Secrets
     - name: Inject New Secrets into Gradle Properties
       run: |
         sed -i 's/RELEASE_KEY_ALIAS=.*/RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}/g' gradle.properties
         sed -i 's/RELEASE_KEY_PASSWORD=.*/RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}/g' gradle.properties
         sed -i 's/RELEASE_STORE_PASSWORD=.*/RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}/g' gradle.properties
-        echo "✅ Паролҳои заводии файл бо Secrets комилан сингхронӣ шуданд!"
+        echo "✅ Файли gradle.properties бо Secrets ҳамоҳанг шуд!"
 
-    # Сохтани автоматӣ мустақим аз рӯи Secrets
+    # Сохтани автоматии калид мустақим бо номи калиди шумо
     - name: Generate Release Keystore Automatically
       run: |
         mkdir -p TMessagesProj/config/
@@ -42,7 +42,7 @@ jobs:
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
-    # Намоиши SHA-1 ва SHA-256 дар логҳо бо чашми худ
+    # НАМОИШИ БЕХАТОИ SHA-1 ВА SHA-256 ДАР ЛОГҲОИ GITHUB
     - name: Check SHA Fingerprints with Eyes
       run: |
         echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
