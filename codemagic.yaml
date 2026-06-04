@@ -19,13 +19,10 @@ workflows:
       - name: Prepare Keystore Properties
         script: |
           mkdir -p TMessagesProj/config/
-          
-          # Сабти автоматӣ ба Properties барои Gradle
           echo "keyAlias=tajgram_key" > TMessagesProj/config/keystore.properties
           echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
           echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
           
-          # САНҶИШИ ПАСПОРТИ РАҚАМИИ ЯКУМРА (МУСТАҚИМ АЗ ПАПКАИ CONFIG)
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
