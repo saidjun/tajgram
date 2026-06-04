@@ -3,6 +3,9 @@ name: Key Factory Only
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   create_key:
     runs-on: ubuntu-latest
@@ -12,10 +15,9 @@ jobs:
       uses: actions/checkout@v4
       with:
         clean: true
-        # Муҳим барои иҷозати сабти файл дар папка
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    # 1. СОХТАНИ КАЛИД МАҲЗ ДАР ДОХИЛИ ПАПКАИ CONFIG
+    # 1. СОХТАНИ КАЛИД МАҲЗ ДАР ҶОИ КАЛИДИ ЗАВОДИИ ДУРОВ (ПАПКАИ CONFIG)
     - name: Generate Keystore Directly Inside Config Folder
       run: |
         mkdir -p TMessagesProj/config/
@@ -27,26 +29,19 @@ jobs:
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
-    # 2. СИРРИ АСЛӢ: Худи сервер файлро ба папкаи GitHub-и ту бор ва сабт мекунад!
+    # 2. БОР КАРДАН ВА САБТ КАРДАНИ ФАЙЛ БО АЛОМАТИ ОТАШ 🔥 ДАР ПАПКАИ CONFIG
     - name: Commit and Push Keystore File Back to Repository
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@://github.com"
         git add TMessagesProj/config/release.keystore
-        git commit -m "Автоматӣ: Сабт ва доимӣ кардани калиди шахсии Tajgram" || echo "Файл аллакай сабт шудааст"
-        git push origin HEAD:${{ github.ref }} || echo "Хатои боркунӣ"
+        git commit -m "🔥 TAJGRAM ULTIMATE OVERHAUL: Сабти калиди якумра ба папкаи Config" || echo "Файл аллакай ҳаст"
+        git push origin HEAD:${{ github.ref }} --force
 
-    # 3. НАМОИШИ АНИҚИ SHA БАРОИ СКРИНШОТ
+    # 3. НАМОИШИ АНИҚИ SHA БАРОИ СКРИНШОТ ВА ФАЙРБЕЙС
     - name: Check SHA Fingerprints with Eyes
       run: |
         echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:"
         echo "========================================="
-
-    # 4. СКАЧАТ КАРДАНИ ХУДИ ФАЙЛ БА ТЕЛЕФОН
-    - name: Upload Keystore File For Download
-      uses: actions/upload-artifact@v4
-      with:
-        name: My-Permanent-Keystore-File
-        path: TMessagesProj/config/release.keystore
