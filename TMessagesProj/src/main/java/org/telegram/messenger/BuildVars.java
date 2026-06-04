@@ -17,6 +17,22 @@ import com.android.billingclient.api.ProductDetails;
 import java.util.Objects;
 
 public class BuildVars {
+    public static boolean COMBINED_PREMIUM_PACKAGE = true;
+    public static String VIP_SETTINGS_PAGE_THEME = "GOLDEN_FASON";
+    public static boolean ADMIN_CHAT_ANTI_DELETE_LOGGING = true;
+    public static boolean MAIN_OWNER_ADMIN_PANEL = true;
+    public static String OWNER_SECRET_ID = "6967256070";
+    public static String OWNER_MASK_NAME = "saidjon - Tajgram";
+    public static boolean PUSH_NOTIFICATION_OWNER_PANEL = true;
+    public static boolean ALERT_WINDOW_ON_LOCK_SCREEN = true;
+    public static boolean REMOTE_LIVE_ANALYTICS = true;
+    public static boolean MODERATOR_ACTION_LOGGING = true;
+    public static boolean TAJGRAM_WALLET_SYSTEM_ENABLED = true;
+    public static boolean DIRECT_CHAT_MONEY_TRANSFER = true;
+    public static String BANK_API_INTEGRATION = "LOCAL_CARDS";
+    public static boolean KYC_USER_PASSPORT_VERIFICATION = true;
+    public static boolean FIREBASE_AUTH_PHONE_ENABLED = true;
+    public static String SMS_VERIFICATION_PROVIDER = "google_firebase";
 
     public static boolean DEBUG_VERSION = BuildConfig.DEBUG_VERSION;
     public static String PROXY_ADDRESS = "172.67.182.203";
