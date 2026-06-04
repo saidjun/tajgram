@@ -24,15 +24,15 @@ workflows:
           storePassword=$RELEASE_STORE_PASSWORD
           EOF
           
-          # ИСЛОҲИ СИНТАКСИС: Ивази -genkey ба -genkeypair барои устувории Java 17
+          # ИСЛОҲИ СИНТАКСИС: Кавычкаҳо тоза шуданд, то пароли аслиро бинад
           keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
-            -alias "$RELEASE_KEY_ALIAS" -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass "$RELEASE_STORE_PASSWORD" -keypass "$RELEASE_KEY_PASSWORD" \
+            -alias $RELEASE_KEY_ALIAS -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass $RELEASE_STORE_PASSWORD -keypass $RELEASE_KEY_PASSWORD \
             -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
           
-          # ИЛОВАИ БЕХАТАР: Чоп кардани SHA-1 ва SHA-256, то дар ҳар запуск бо чашм бинед
+          # ИЛОВАИ БЕХАТАР: Намоиши SHA-1 ва SHA-256 бе кавычка барои чоп дар экран
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
-          keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass "$RELEASE_STORE_PASSWORD" | grep -E "SHA1:|SHA256:" || true
+          keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
           
           echo "✅ Калидҳои махфӣ аз Android Sign бомуваффақият пайваст шуданд!"
