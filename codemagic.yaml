@@ -11,12 +11,13 @@ workflows:
         script: |
           jdk switch 17
           echo "✅ Java 17 фаъол шуд!"
+
       - name: Recreate Factory Keystore Inside Config
         script: |
-          # РОБОТ ХУДАШ КАЛИДИ РАСМИИ ИМЗОРО РОСТ ДАР ПАПКAИ CONFIG МEСOЗAД
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
+          # Сохтани автоматии калид барои сохтан
           keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
             -alias AndroidDebugKey -keyalg RSA -keysize 2048 -validity 10000 \
             -storepass android -keypass android -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
@@ -26,12 +27,12 @@ workflows:
           keyPassword=android
           storePassword=android
           EOF
-          echo "✅ Калиди ҳақиқии имзо дар папкаи config 100% маҳкам шуд!"
+          echo "✅ Калиди ҳақиқӣ сохта шуд!"
+
       - name: Build Tajgram VIP Release APK Without Tests
         script: |
           chmod +x gradlew
-          # ИҶРОИ ФАРМОНИ ҲАҚИҚИИ РEЛИЗ БO КАЛИДИ ЗАВOДӢ
-          ./gradlew assembleRelease -x test -x generateScheme --no-daemon
+          ./gradlew :TMessagesProj_App:assembleRelease -x test --generateLabels --no-daemon
+
     artifacts:
-      - TMessagesProj/build/outputs/apk/release/*.apk
-      - "**/build/outputs/apk/**/*.apk"
+      - TMessagesProj_App/build/outputs/apk/release/*.apk
