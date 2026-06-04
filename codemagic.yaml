@@ -4,7 +4,7 @@ workflows:
     instance_type: mac_mini_m2
     max_build_duration: 60
     environment:
-      # ИСЛОҲИ ТАЪРИХӢ: Пайваст кардани гурӯҳи аслии 'release' барои кушодани қуфли паролҳо
+      # Пайваст кардани гурӯҳи аслии 'release' аз сайт
       groups:
         - release
       vars:
@@ -22,20 +22,27 @@ workflows:
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # Сабти автоматӣ ба Properties мустақим аз рӯи гурӯҳи 'release'
+          # Сабти қатъии тағирёбандаҳо мустақим аз рӯи танзимоти нави сайт
           echo "keyAlias=$RELEASE_KEY_ALIAS" > TMessagesProj/config/keystore.properties
           echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
           echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
           
-          # Фармони устувор дар як сатри дароз (Маҳз ба мисли сохтори устувори GitHub)
-          keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore -alias $RELEASE_KEY_ALIAS -keyalg RSA -keysize 2048 -validity 10000 -storepass $RELEASE_STORE_PASSWORD -keypass $RELEASE_KEY_PASSWORD -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
+          # ФАРМОНИ СИНХРОНИИ ЗАВОДӢ БАРОИ ЯКХЕЛА КАРДАНИ SHA БО GITHUB
+          keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
+            -alias $RELEASE_KEY_ALIAS \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -storepass $RELEASE_STORE_PASSWORD \
+            -keypass $RELEASE_KEY_PASSWORD \
+            -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
           
-          # ЧОП КАРДАНИ SHA-1 ВА SHA-256 ДАР ЛОГҲОИ КИНЕМАТИК
+          # ЧОП КАРДАНИ SHA-1 ВА SHA-256
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
           
-          echo "✅ Калид бехато сохта шуд ва бо паспорти ҳақиқии GitHub 100% як хел аст!"
+          echo "✅ Синхронизатсияи калид бомуваффақият иҷро шуд!"
 
       - name: Build Tajgram VIP Release APK Without Tests
         script: |
