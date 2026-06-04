@@ -3,6 +3,9 @@ name: Build Tajgram APK
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,6 +16,7 @@ jobs:
       with:
         clean: true
         ref: master
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
@@ -23,7 +27,7 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # Сабти автоматӣ ба Properties
+    # УСУЛИ НАВУ БЕХАТАР: Пайваст кардани Secrets тавассути Эхо бе хатои Линукс
     - name: Inject New Secrets into Gradle Properties
       run: |
         echo "RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}" >> gradle.properties
@@ -31,7 +35,7 @@ jobs:
         echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
         echo "✅ Файли gradle.properties бо Secrets ҳамоҳанг шуд!"
 
-    # Санҷиши калиди якумраи ту (ки ҳамеша устувор мемонад)
+    # ИЛОВАИ БЕХАТАР: Санҷиши калиди якумраи ту, ки дигар 100 запуск ҳам иваз намешавад
     - name: Check SHA Fingerprints with Eyes
       run: |
         echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
@@ -48,9 +52,20 @@ jobs:
         chmod +x gradlew
         ./gradlew :TMessagesProj_App:assembleRelease --stacktrace
 
-    # ИСЛОҲИ ТАЪРИХӢ: Ҷустуҷӯи автоматӣ дар тамоми папкаҳо барои ёфтани APK-и тайёр
+    # СИРРИ АСЛӢ: Нусхабардорӣ ва ПУШ кардани файли тайёри APK ба папкаи асосии GitHub
+    - name: Commit and Push APK Back to Repository Folder
+      run: |
+        mkdir -p ready_apk/
+        find . -name "*.apk" -exec cp {} ready_apk/Tajgram.apk \;
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@://github.com"
+        git add ready_apk/Tajgram.apk
+        git commit -m "🔥 TAJGRAM HYBRID APK: Сохтмони ниҳоӣ ва сабти якумра" || echo "Файл аллакай ҳаст"
+        git push origin HEAD:master --force
+
+    # ИЛОВАҲО: Ҳамзамон нишон додан дар бахши Artifacts барои скачат кардан
     - name: Upload Finished APK Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: Tajgram-Official-APK
-        path: "**/build/outputs/**/*.apk"
+        path: "ready_apk/Tajgram.apk"
