@@ -22,19 +22,27 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # Ислоҳи автоматӣ: сохтани файли калид мустақим аз рӯи Secrets-и Firebase-и шумо
+    # ИСЛОҲИ МУХОЛИФАТ: Иваз кардани автоматии паролҳои заводии даруни файл бо калидҳои махфии ту
+    - name: Inject New Secrets into Gradle Properties
+      run: |
+        sed -i 's/RELEASE_KEY_ALIAS=.*/RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}/g' gradle.properties
+        sed -i 's/RELEASE_KEY_PASSWORD=.*/RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}/g' gradle.properties
+        sed -i 's/RELEASE_STORE_PASSWORD=.*/RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}/g' gradle.properties
+        echo "✅ Паролҳои заводии файл бо Secrets комилан сингхронӣ шуданд!"
+
+    # Сохтани автоматӣ мустақим аз рӯи Secrets
     - name: Generate Release Keystore Automatically
       run: |
         mkdir -p TMessagesProj/config/
         rm -f TMessagesProj/config/release.keystore || true
-        keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
+        keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
           -alias "${{ secrets.RELEASE_KEY_ALIAS }}" \
           -keyalg RSA -keysize 2048 -validity 10000 \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" \
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
-    # ИЛОВАИ БЕХАТАР: Намоиши SHA-1 ва SHA-256 дар логҳо, то дар ҳар запуск бо чашми худ бинед
+    # Намоиши SHA-1 ва SHA-256 дар логҳо бо чашми худ
     - name: Check SHA Fingerprints with Eyes
       run: |
         echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
