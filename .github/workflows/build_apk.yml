@@ -13,15 +13,18 @@ jobs:
       with:
         clean: true
 
+    # Танзими Java 17 (чунки Gradle 8.6.1 маҳз Java 17-ро талаб мекунад)
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
         java-version: '17'
 
+    # Насби автоматии Android SDK ва асбобҳои C++
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
+    # ФАРМОНИ ҲАҚИҚӢ: Пайваст кардани Secrets барои сохтани версияи аслӣ
     - name: Build with Gradle Factory Command
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
@@ -31,6 +34,7 @@ jobs:
         chmod +x gradlew
         ./gradlew :TMessagesProj_App:assembleRelease --stacktrace
 
+    # Боркунии APK-и ҳақиқии имзошуда
     - name: Upload Finished APK Artifacts
       uses: actions/upload-artifact@v4
       with:
