@@ -8,10 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Сохтани автоматии худи файли калид бо пароли аслии ту
-    - name: Generate Permanent Keystore File
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+      with:
+        clean: true
+
+    # СОХТАНИ КАЛИД МАҲЗ БА ҶОИ КАЛИДИ ДУРОВ ДАР ДОХИЛИ ПАПКАИ CONFIG
+    - name: Generate Keystore Directly Inside Config Folder
       run: |
         mkdir -p TMessagesProj/config/
+        rm -f TMessagesProj/config/release.keystore || true
         keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
           -alias "${{ secrets.RELEASE_KEY_ALIAS }}" \
           -keyalg RSA -keysize 2048 -validity 10000 \
@@ -19,7 +25,7 @@ jobs:
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
-    # 2. Намоиши кодҳои SHA бо чашми худ, то бо Firebase солиш кунӣ
+    # НАМОИШИ АНИҚИ SHA-1 ВА SHA-256 БАРОИ СКРИНШОТ ВА ФАЙРБЕЙС
     - name: Check SHA Fingerprints with Eyes
       run: |
         echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
@@ -27,7 +33,7 @@ jobs:
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:"
         echo "========================================="
 
-    # 3. ФАВРАН барои скачат кардан фиристодани худи файл
+    # СКАЧАТ КАРДАНИ ХУДИ ФАЙЛ МУСТАҚИМ АЗ ПАПКАИ CONFIG БА ТЕЛЕФОН
     - name: Upload Keystore File For Download
       uses: actions/upload-artifact@v4
       with:
