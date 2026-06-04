@@ -22,7 +22,7 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # Ислоҳи автоматӣ: сохтани файли калид барои пешгирӣ аз хатои парол
+    # Ислоҳи автоматӣ: сохтани файли калид мустақим аз рӯи Secrets-и Firebase-и шумо
     - name: Generate Release Keystore Automatically
       run: |
         mkdir -p TMessagesProj/config/
@@ -34,11 +34,13 @@ jobs:
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
-    # ИЛОВАИ БЕХАТАР: Намоиши SHA-1 ва SHA-256 мустақим дар логҳои сервер
+    # ИЛОВАИ БЕХАТАР: Намоиши SHA-1 ва SHA-256 дар логҳо, то дар ҳар запуск бо чашми худ бинед
     - name: Check SHA Fingerprints with Eyes
       run: |
+        echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:"
+        echo "========================================="
 
     - name: Build with Gradle Factory Command
       env:
