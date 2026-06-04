@@ -17,12 +17,10 @@ workflows:
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # Сабти автоматӣ ба Properties
-          cat <<EOF > TMessagesProj/config/keystore.properties
-          keyAlias=$RELEASE_KEY_ALIAS
-          keyPassword=$RELEASE_KEY_PASSWORD
-          storePassword=$RELEASE_STORE_PASSWORD
-          EOF
+          # УСУЛИ НАВ ВА БЕХАТАР: Пайваст кардани Secrets тавассути Эхо бе хато
+          echo "keyAlias=$RELEASE_KEY_ALIAS" > TMessagesProj/config/keystore.properties
+          echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
+          echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
           
           # Сохтани калид мустақим аз рӯи номи калиди шумо бе кавычка
           keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
