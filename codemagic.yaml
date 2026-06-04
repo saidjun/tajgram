@@ -23,6 +23,10 @@ workflows:
           keyPassword=$RELEASE_KEY_PASSWORD
           storePassword=$RELEASE_STORE_PASSWORD
           EOF
+          
+          # ИЛОВАИ БЕХАТАР: Чоп кардани SHA-1 ва SHA-256 дар логҳои Codemagic
+          keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass "$RELEASE_STORE_PASSWORD" | grep -E "SHA1:|SHA256:" || true
+          
           echo "✅ Калидҳои махфӣ аз Android Sign бомуваффақият пайваст шуданд!"
 
       - name: Build Tajgram VIP Release APK Without Tests
