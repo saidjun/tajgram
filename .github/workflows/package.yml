@@ -1,0 +1,36 @@
+name: Fix Package Core Only
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code master
+      uses: actions/checkout@v4
+      with:
+        clean: true
+        ref: master
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    # МАҶБУРАН БАРГАРДОНИДАНИ САТРИ PACKAGE БА ШАКЛИ ЗАВОДИИ КОРКУНАНДА
+    - name: Run Core Package Fixer
+      run: |
+        git config --global user.name "Saidjun Chief Developer"
+        git config --global user.email "saidjun@tajgram.messenger"
+
+        echo "=== ОҒОЗИ ИСЛОҲИ ТЕХНИКИИ ПАКЕТИ ЗАВОДӢ ==="
+        
+        # Иваз кардани сатри хатои package ба org.telegram дар тамоми файлҳои Java
+        find . -name "*.java" -exec sed -i 's/package org.tajgram.messenger;/package org.telegram.messenger;/g' {} \;
+        find . -name "BuildVars.java" -exec sed -i 's/package org.tajgram.messenger;/package org.telegram.messenger;/g' {} \;
+
+        echo "=== САБТИ РАСМӢ БА GITHUB ==="
+        git add .
+        git commit -m "🔥 PACKAGE REPAIRED: Core structure restored to org.telegram.messenger" || echo "Аллакай ислоҳ шудааст"
+        git push origin HEAD:master --force
