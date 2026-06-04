@@ -17,15 +17,23 @@ workflows:
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # Ин ҷо мо файлро аз тариқи тағирёбандаҳои махфии шумо месозем
+          # Сабти танзимот барои муҳити Gradle
           cat <<EOF > TMessagesProj/config/keystore.properties
           keyAlias=$RELEASE_KEY_ALIAS
           keyPassword=$RELEASE_KEY_PASSWORD
           storePassword=$RELEASE_STORE_PASSWORD
           EOF
           
-          # ИЛОВАИ БЕХАТАР: Чоп кардани SHA-1 ва SHA-256 дар логҳои Codemagic
+          # Сохтани автоматии калиди доимӣ мустақим аз рӯи паролҳои махфии шумо
+          keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
+            -alias "$RELEASE_KEY_ALIAS" -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass "$RELEASE_STORE_PASSWORD" -keypass "$RELEASE_KEY_PASSWORD" \
+            -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
+          
+          # ИЛОВАИ БЕХАТАР: Чоп кардани SHA-1 ва SHA-256, то дар ҳар запуск бо чашм бинед
+          echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass "$RELEASE_STORE_PASSWORD" | grep -E "SHA1:|SHA256:" || true
+          echo "========================================="
           
           echo "✅ Калидҳои махфӣ аз Android Sign бомуваффақият пайваст шуданд!"
 
