@@ -8,24 +8,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository Code
-        uses: actions/checkout@v4
-        with:
-          clean: true
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+      with:
+        clean: true
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'zulu'
-          java-version: '17'
+    # Ислоҳи Java ба версияи 8 (мувофиқи коди барномаи шумо)
+    - name: Set up JDK 8
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: '8'
 
-      - name: Build with Gradle Factory Command
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug
+    # Насби автоматии Android SDK барои ҷамъоварии коди C++
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3
 
-      - name: Upload Finished APK Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Factory-Telegram-APK
-          path: "TMessagesProj/build/outputs/apk/debug/*.apk"
+    # Ислоҳи фармон бо нишон додани модули дурусти TMessagesProj_App
+    - name: Build with Gradle Factory Command
+      run: |
+        chmod +x gradlew
+        ./gradlew :TMessagesProj_App:assembleDebug --stacktrace
+
+    # Ислоҳи нишонии папка барои нигоҳ доштани APK-и тайёр
+    - name: Upload Finished APK Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: Factory-Telegram-APK
+        path: TMessagesProj_App/build/outputs/apk/debug/*.apk
