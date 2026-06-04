@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.NotificationsController.TYPE_PRIVATE;
 import static org.tajgram.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;

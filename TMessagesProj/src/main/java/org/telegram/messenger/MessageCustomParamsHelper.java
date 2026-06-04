@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import org.tajgram.tgnet.InputSerializedData;
 import org.tajgram.tgnet.NativeByteBuffer;

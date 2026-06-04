@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 public interface FileLoadOperationStream {
     void newDataAvailable();

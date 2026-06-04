@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

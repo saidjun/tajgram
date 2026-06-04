@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 public abstract class FourierTransform {
     protected static final int LINAVG = 1;

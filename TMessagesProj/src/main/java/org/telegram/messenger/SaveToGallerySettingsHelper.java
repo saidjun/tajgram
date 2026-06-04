@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.SharedConfig.SAVE_TO_GALLERY_FLAG_CHANNELS;
 import static org.tajgram.messenger.SharedConfig.SAVE_TO_GALLERY_FLAG_GROUP;

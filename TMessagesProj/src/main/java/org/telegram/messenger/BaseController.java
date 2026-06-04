@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import org.tajgram.tgnet.ConnectionsManager;
 import org.tajgram.ui.Components.Paint.PersistColorPalette;

@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import org.tajgram.tgnet.TLRPC;
 import org.tajgram.tgnet.tl.TL_stories;

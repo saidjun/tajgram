@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.pm.PackageManager;
 import android.os.SystemClock;
