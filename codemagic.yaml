@@ -24,8 +24,8 @@ workflows:
           storePassword=$RELEASE_STORE_PASSWORD
           EOF
           
-          # Сохтани автоматии калиди доимӣ мустақим аз рӯи паролҳои махфии шумо
-          keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
+          # ИСЛОҲИ СИНТАКСИС: Ивази -genkey ба -genkeypair барои устувории Java 17
+          keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
             -alias "$RELEASE_KEY_ALIAS" -keyalg RSA -keysize 2048 -validity 10000 \
             -storepass "$RELEASE_STORE_PASSWORD" -keypass "$RELEASE_KEY_PASSWORD" \
             -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
