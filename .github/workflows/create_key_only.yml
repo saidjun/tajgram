@@ -12,8 +12,10 @@ jobs:
       uses: actions/checkout@v4
       with:
         clean: true
+        # Муҳим барои иҷозати сабти файл дар папка
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-    # СОХТАНИ КАЛИД МАҲЗ БА ҶОИ КАЛИДИ ДУРОВ ДАР ДОХИЛИ ПАПКАИ CONFIG
+    # 1. СОХТАНИ КАЛИД МАҲЗ ДАР ДОХИЛИ ПАПКАИ CONFIG
     - name: Generate Keystore Directly Inside Config Folder
       run: |
         mkdir -p TMessagesProj/config/
@@ -25,7 +27,16 @@ jobs:
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
-    # НАМОИШИ АНИҚИ SHA-1 ВА SHA-256 БАРОИ СКРИНШОТ ВА ФАЙРБЕЙС
+    # 2. СИРРИ АСЛӢ: Худи сервер файлро ба папкаи GitHub-и ту бор ва сабт мекунад!
+    - name: Commit and Push Keystore File Back to Repository
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@://github.com"
+        git add TMessagesProj/config/release.keystore
+        git commit -m "Автоматӣ: Сабт ва доимӣ кардани калиди шахсии Tajgram" || echo "Файл аллакай сабт шудааст"
+        git push origin HEAD:${{ github.ref }} || echo "Хатои боркунӣ"
+
+    # 3. НАМОИШИ АНИҚИ SHA БАРОИ СКРИНШОТ
     - name: Check SHA Fingerprints with Eyes
       run: |
         echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
@@ -33,7 +44,7 @@ jobs:
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:"
         echo "========================================="
 
-    # СКАЧАТ КАРДАНИ ХУДИ ФАЙЛ МУСТАҚИМ АЗ ПАПКАИ CONFIG БА ТЕЛЕФОН
+    # 4. СКАЧАТ КАРДАНИ ХУДИ ФАЙЛ БА ТЕЛЕФОН
     - name: Upload Keystore File For Download
       uses: actions/upload-artifact@v4
       with:
