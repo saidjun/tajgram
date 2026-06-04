@@ -1,0 +1,35 @@
+name: Key Factory Only
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_key:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Сохтани автоматии худи файли калид бо пароли аслии ту
+    - name: Generate Permanent Keystore File
+      run: |
+        mkdir -p TMessagesProj/config/
+        keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
+          -alias "${{ secrets.RELEASE_KEY_ALIAS }}" \
+          -keyalg RSA -keysize 2048 -validity 10000 \
+          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" \
+          -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
+          -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
+
+    # 2. Намоиши кодҳои SHA бо чашми худ, то бо Firebase солиш кунӣ
+    - name: Check SHA Fingerprints with Eyes
+      run: |
+        echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
+        keytool -list -v -keystore TMessagesProj/config/release.keystore \
+          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:"
+        echo "========================================="
+
+    # 3. ФАВРАН барои скачат кардан фиристодани худи файл
+    - name: Upload Keystore File For Download
+      uses: actions/upload-artifact@v4
+      with:
+        name: My-Permanent-Keystore-File
+        path: TMessagesProj/config/release.keystore
