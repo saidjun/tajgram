@@ -4,7 +4,6 @@ workflows:
     instance_type: mac_mini_m2
     max_build_duration: 60
     environment:
-      # Пайваст кардани гурӯҳи аслии 'release' аз сайт
       groups:
         - release
       vars:
@@ -17,32 +16,19 @@ workflows:
           java -version
           echo "✅ Java 17 бомуваффақият фаъол шуд!"
 
-      - name: Recreate Factory Keystore Inside Config
+      - name: Prepare Keystore Properties
         script: |
           mkdir -p TMessagesProj/config/
-          rm -f TMessagesProj/config/release.keystore || true
           
-          # Сабти қатъии тағирёбандаҳо мустақим аз рӯи танзимоти нави сайт
-          echo "keyAlias=$RELEASE_KEY_ALIAS" > TMessagesProj/config/keystore.properties
+          # Сабти автоматӣ ба Properties барои Gradle
+          echo "keyAlias=tajgram_key" > TMessagesProj/config/keystore.properties
           echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
           echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
           
-          # ФАРМОНИ СИНХРОНИИ ЗАВОДӢ БАРОИ ЯКХЕЛА КАРДАНИ SHA БО GITHUB
-          keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
-            -alias $RELEASE_KEY_ALIAS \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -storepass $RELEASE_STORE_PASSWORD \
-            -keypass $RELEASE_KEY_PASSWORD \
-            -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
-          
-          # ЧОП КАРДАНИ SHA-1 ВА SHA-256
+          # САНҶИШИ ПАСПОРТИ РАҚАМИИ ЯКУМРА (МУСТАҚИМ АЗ ПАПКАИ CONFIG)
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
-          
-          echo "✅ Синхронизатсияи калид бомуваффақият иҷро шуд!"
 
       - name: Build Tajgram VIP Release APK Without Tests
         script: |
@@ -50,4 +36,4 @@ workflows:
           ./gradlew :TMessagesProj_App:assembleRelease -x test --no-daemon
 
     artifacts:
-      - TMessagesProj_App/build/outputs/apk/release/*.apk
+      - TMessagesProj_App/build/outputs/**/*.apk
