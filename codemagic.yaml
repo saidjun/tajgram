@@ -17,25 +17,29 @@ workflows:
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # Сабти танзимот барои муҳити Gradle
+          # Сабти автоматӣ ба Properties
           cat <<EOF > TMessagesProj/config/keystore.properties
           keyAlias=$RELEASE_KEY_ALIAS
           keyPassword=$RELEASE_KEY_PASSWORD
           storePassword=$RELEASE_STORE_PASSWORD
           EOF
           
-          # ИСЛОҲИ СИНТАКСИС: Кавычкаҳо тоза шуданд, то пароли аслиро бинад
+          # Сохтани калид мустақим аз рӯи номи калиди шумо бе кавычка
           keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
-            -alias $RELEASE_KEY_ALIAS -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass $RELEASE_STORE_PASSWORD -keypass $RELEASE_KEY_PASSWORD \
+            -alias $RELEASE_KEY_ALIAS \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -storepass $RELEASE_STORE_PASSWORD \
+            -keypass $RELEASE_KEY_PASSWORD \
             -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
           
-          # ИЛОВАИ БЕХАТАР: Намоиши SHA-1 ва SHA-256 бе кавычка барои чоп дар экран
+          # ЧОП КАРДАНИ SHA-1 ВА SHA-256 ДАР ЛОГҲОИ CODEMAGIC
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
           
-          echo "✅ Калидҳои махфӣ аз Android Sign бомуваффақият пайваст шуданд!"
+          echo "✅ Калид бо номи tajgram_key бехато сохта шуд!"
 
       - name: Build Tajgram VIP Release APK Without Tests
         script: |
