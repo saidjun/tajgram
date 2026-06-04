@@ -34,6 +34,12 @@ jobs:
           -keypass "${{ secrets.RELEASE_KEY_PASSWORD }}" \
           -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
 
+    # ИЛОВАИ БЕХАТАР: Намоиши SHA-1 ва SHA-256 мустақим дар логҳои сервер
+    - name: Check SHA Fingerprints with Eyes
+      run: |
+        keytool -list -v -keystore TMessagesProj/config/release.keystore \
+          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:"
+
     - name: Build with Gradle Factory Command
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
