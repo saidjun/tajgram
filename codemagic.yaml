@@ -4,12 +4,14 @@ workflows:
     instance_type: mac_mini_m2
     max_build_duration: 60
     environment:
+      # ИСЛОҲИ ТАЪРИХӢ: Пайваст кардани гурӯҳи аслии 'release', ки дар скриншот аст
+      groups:
+        - release
       vars:
         JAVA_VERSION: "17"
     scripts:
       - name: Set up Java Development Kit
         script: |
-          # Танзими аслии Java 17 барои серверҳои нави Codemagic
           export JAVA_HOME=$JAVA_HOME_17
           export PATH=$JAVA_HOME/bin:$PATH
           java -version
@@ -20,15 +22,14 @@ workflows:
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # Сабти устувор тавассути Эхо
           echo "keyAlias=$RELEASE_KEY_ALIAS" > TMessagesProj/config/keystore.properties
           echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
           echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
           
-          # ФАРМОНИ ТАЪРИХӢ: Ҳамаи тағйирёбандаҳо дар як сатри узун бе хатои синтаксис
+          # Фармони заводии устувор мустақим бо паролҳои гурӯҳи 'release'
           keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore -alias $RELEASE_KEY_ALIAS -keyalg RSA -keysize 2048 -validity 10000 -storepass $RELEASE_STORE_PASSWORD -keypass $RELEASE_KEY_PASSWORD -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
           
-          # ЧОП КАРДАНИ SHA-1 ВА SHA-256 БО ЧАШМИ ХУД
+          # ЧОП КАРДАНИ SHA-1 ВА SHA-256 ДАР ЭКРАН БО ЧАШМИ ХУД
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
