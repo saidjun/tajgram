@@ -17,17 +17,13 @@ workflows:
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # Сохтани автоматии калид барои сохтан
-          keytool -genkey -v -keystore TMessagesProj/config/release.keystore \
-            -alias AndroidDebugKey -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass android -keypass android -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
-          
+          # Ин ҷо мо файлро аз тариқи тағирёбандаҳои махфии шумо месозем
           cat <<EOF > TMessagesProj/config/keystore.properties
-          keyAlias=AndroidDebugKey
-          keyPassword=android
-          storePassword=android
+          keyAlias=$RELEASE_KEY_ALIAS
+          keyPassword=$RELEASE_KEY_PASSWORD
+          storePassword=$RELEASE_STORE_PASSWORD
           EOF
-          echo "✅ Калиди ҳақиқӣ сохта шуд!"
+          echo "✅ Калидҳои махфӣ аз Android Sign бомуваффақият пайваст шуданд!"
 
       - name: Build Tajgram VIP Release APK Without Tests
         script: |
