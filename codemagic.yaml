@@ -9,30 +9,26 @@ workflows:
     scripts:
       - name: Set up Java Development Kit
         script: |
-          jdk switch 17
-          echo "✅ Java 17 фаъол шуд!"
+          # Танзими аслии Java 17 барои серверҳои нави Codemagic
+          export JAVA_HOME=$JAVA_HOME_17
+          export PATH=$JAVA_HOME/bin:$PATH
+          java -version
+          echo "✅ Java 17 бомуваффақият фаъол шуд!"
 
       - name: Recreate Factory Keystore Inside Config
         script: |
           mkdir -p TMessagesProj/config/
           rm -f TMessagesProj/config/release.keystore || true
           
-          # УСУЛИ НАВ ВА БЕХАТАР: Пайваст кардани Secrets тавассути Эхо бе хато
+          # Сабти устувор тавассути Эхо
           echo "keyAlias=$RELEASE_KEY_ALIAS" > TMessagesProj/config/keystore.properties
           echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
           echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
           
-          # Сохтани калид мустақим аз рӯи номи калиди шумо бе кавычка
-          keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore \
-            -alias $RELEASE_KEY_ALIAS \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -storepass $RELEASE_STORE_PASSWORD \
-            -keypass $RELEASE_KEY_PASSWORD \
-            -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
+          # ФАРМОНИ ТАЪРИХӢ: Ҳамаи тағйирёбандаҳо дар як сатри узун бе хатои синтаксис
+          keytool -genkeypair -v -keystore TMessagesProj/config/release.keystore -alias $RELEASE_KEY_ALIAS -keyalg RSA -keysize 2048 -validity 10000 -storepass $RELEASE_STORE_PASSWORD -keypass $RELEASE_KEY_PASSWORD -dname "CN=Tajgram, OU=VIP, O=Messenger, L=Dushanbe, S=Tajikistan, C=TJ"
           
-          # ЧОП КАРДАНИ SHA-1 ВА SHA-256 ДАР ЛОГҲОИ CODEMAGIC
+          # ЧОП КАРДАНИ SHA-1 ВА SHA-256 БО ЧАШМИ ХУД
           echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
           keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
           echo "========================================="
@@ -42,7 +38,7 @@ workflows:
       - name: Build Tajgram VIP Release APK Without Tests
         script: |
           chmod +x gradlew
-          ./gradlew :TMessagesProj_App:assembleRelease -x test --generateLabels --no-daemon
+          ./gradlew :TMessagesProj_App:assembleRelease -x test --no-daemon
 
     artifacts:
       - TMessagesProj_App/build/outputs/apk/release/*.apk
