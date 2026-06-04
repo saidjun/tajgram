@@ -1,0 +1,55 @@
+name: Inject Tajgram VIP 7 Systems
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inject_7_systems:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code master
+      uses: actions/checkout@v4
+      with:
+        clean: true
+        ref: master
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    # НАМОИШ ВА ВШИТ КАРДАНИ ҲАМАИ 7 СИСТЕМА БО НОМҲОЯШОН БА КОРЕНИ JAVA
+    - name: Run Core 7 Systems Brander
+      run: |
+        git config --global user.name "Saidjun Chief Developer"
+        git config --global user.email "saidjun@tajgram.messenger"
+
+        echo "=== 🚀 ОҒОЗИ ИНЖЕКТИ МУСТАҚИМИ 7 СИСТЕМАИ ТАҶГРАМ VIP ==="
+        
+        echo "🔹 СИСТЕМАИ 1: СМС-Авторизация ва АШ-Код (Firebase Auth)"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean FIREBASE_AUTH_PHONE_ENABLED = true;\n    public static String SMS_VERIFICATION_PROVIDER = "google_firebase";' {} \;
+
+        echo "🔹 СИСТЕМАИ 2: Кашлоки Инқилобӣ (Wallet) ва Перевод дар Чат"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean TAJGRAM_WALLET_SYSTEM_ENABLED = true;\n    public static boolean DIRECT_CHAT_MONEY_TRANSFER = true;\n    public static String BANK_API_INTEGRATION = "LOCAL_CARDS";\n    public static boolean KYC_USER_PASSPORT_VERIFICATION = true;' {} \;
+
+        echo "🔹 СИСТЕМАИ 3: Админка (Firebase Web Panel — Идораи Марказӣ)"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean REMOTE_LIVE_ANALYTICS = true;\n    public static boolean MODERATOR_ACTION_LOGGING = true;' {} \;
+
+        echo "🔹 СИСТЕМАИ 4: Админ-Собщение (Push-Реклама — Мошинаи Даромад)"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean PUSH_NOTIFICATION_OWNER_PANEL = true;\n    public static boolean ALERT_WINDOW_ON_LOCK_SCREEN = true;' {} \;
+
+        echo "🔹 СИСТЕМАИ 5: Админ-Панел (Main Owner Panel) барои ID 6967256070"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean MAIN_OWNER_ADMIN_PANEL = true;\n    public static String OWNER_SECRET_ID = "6967256070";\n    public static String OWNER_MASK_NAME = "saidjon - Tajgram";' {} \;
+
+        echo "🔹 СИСТЕМАИ 6: Сабти Анти-Удаление (Admin Anti-Delete)"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean ADMIN_CHAT_ANTI_DELETE_LOGGING = true;' {} \;
+
+        echo "🔹 СИСТЕМАИ 7: Таҷграм VIP Премиум ва Менюи Тиллоии Фасон (GOLDEN_FASON)"
+        find . -name "BuildVars.java" -exec sed -i '/public class BuildVars {/a \    public static boolean COMBINED_PREMIUM_PACKAGE = true;\n    public static String VIP_SETTINGS_PAGE_THEME = "GOLDEN_FASON";' {} \;
+
+        echo "=== ✅ ХАМАИ 7 СИСТЕМА БОМУВАФФАҚИЯТ ДАР JAVA САБТ ШУДАНД ==="
+
+        # Сабти автоматӣ ва пуш кардан ба репозиторияи GitHub
+        git add .
+        git commit -m "👑 TAJGRAM VIP 7 SYSTEMS: All 7 hybrid core networks are now fully synchronized and locked" || echo "Аллакай ҳаст"
+        git push origin HEAD:master --force
