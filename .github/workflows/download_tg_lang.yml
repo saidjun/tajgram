@@ -1,5 +1,4 @@
-name: Download Official Tajik Language Package From Server
-
+name: Tajgram Intelligent Language Auto-Translator
 on:
   workflow_dispatch:
 
@@ -7,31 +6,79 @@ permissions:
   contents: write
 
 jobs:
-  download_lang:
+  translate_lang:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code Fresh
-        uses: actions/checkout@v4
+    - name: Checkout Tajgram Repository
+      uses: actions/checkout@v4
+      with:
+        clean: false
+        ref: master
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Fetch and Inject Official Tajik Strings
-        run: |
-          git config --global user.name "saidjun"
-          git config --global user.email "saidjun@tajgram.messenger"
-          
-          # 1. Сохтани папкаи расмии забони тоҷикӣ
-          mkdir -p TMessagesProj/src/main/res/values-tg
-          
-          # 2. Боргирии автоматии файлҳои забони тоҷикӣ мустақиман аз сервери тоза
-          # Ин фармон файлҳои аслии тоҷикиро меорад, то барнома пурра тоҷикӣ шавад
-          curl -s "https://githubusercontent.com" > TMessagesProj/src/main/res/values-tg/strings.xml || true
-          
-          # Тафтиши файл: агар файл холӣ бошад, базаи асосии автоматиро месозад
-          if [ ! -s TMessagesProj/src/main/res/values-tg/strings.xml ]; then
-            curl -s "https://githubusercontent.com" > TMessagesProj/src/main/res/values-tg/strings.xml || true
-          fi
-          
-          # 3. Сабт ва фиристодани папкаи нави автоматӣ ба GitHub-и шумо
-          git add .
-          git commit -m "🇹🇯 СЕРВЕР: Папкаи аслии values-tg аз сервер боргирӣ ва автоматӣ сабт шуд" || true
-          git push origin HEAD:${{ github.ref_name }} --force
+    - name: Set up Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Translation Dependencies
+      run: |
+        pip install deep-translator lxml
+
+    - name: Run Russian Branded Translation Engine
+      run: |
+        import os
+        import xml.etree.ElementTree as ET
+        from deep_translator import GoogleTranslator
+
+        source_file = 'TMessagesProj/src/main/res/values-ru/strings.xml'
+        target_dir = 'TMessagesProj/src/main/res/values-tg'
+        target_file = os.path.join(target_dir, 'strings.xml')
+
+        if not os.path.exists(target_dir):
+            os.makedirs(target_dir)
+
+        # Хондани файли русии брендингшудаи ту
+        tree = ET.parse(source_file)
+        root = tree.getroot()
+
+        translator = GoogleTranslator(source='ru', target='tg')
+        
+        # Сохтани блоки нави XML
+        new_root = ET.Element('resources')
+
+        for string_elem in root.findall('string'):
+            name = string_elem.get('name')
+            text = string_elem.text
+            
+            if text:
+                try:
+                    # Тарҷумаи мустақим бе вайрон кардани брендинги ту
+                    translated_text = translator.translate(text)
+                    child = ET.SubElement(new_root, 'string', name=name)
+                    child.text = translated_text
+                except Exception:
+                    child = ET.SubElement(new_root, 'string', name=name)
+                    child.text = text
+
+        # Сабти файл бо форматкунии тоза
+        new_tree = ET.ElementTree(new_root)
+        ET.indent(new_tree, space="    ", level=0)
+        
+        # ҚАДАМИ МУҲИМ: Илова кардани коментарияи зебо дар аввали файл
+        header_comment = "<!-- 👑 TAJGRAM VIP OFFICIAL TAJIK LANGUAGE SYSTEM - DEVELOPED BY CHIEF DEVELOPER SAIDJUN (2025-2030) -->\n"
+        
+        with open(target_file, 'wb') as f:
+            f.write(header_comment.encode('utf-8'))
+            new_tree.write(f, encoding='utf-8', xml_declaration=False)
+            
+        print("✅ Clean translated strings.xml with Saidjun header comment successfully created!")
+      shell: python
+
+    - name: Commit and Secure Push Tajgram Language
+      run: |
+        git config --global user.name "Saidjun Chief Developer"
+        git config --global user.email "saidjun@tajgram.messenger"
+        git add TMessagesProj/src/main/res/values-tg/strings.xml
+        git commit -m "👑 TAJGRAM LANGUAGE Matrix: Generated hybrid Tajik translation from custom Russian branding with customized metadata header" || echo "No changes"
+        git push origin HEAD:master --force
