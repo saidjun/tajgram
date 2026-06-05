@@ -1,4 +1,4 @@
-name: Tajgram Intelligent Repository Lifetime Shield
+name: 1Tajgram Intelligent Repository Lifetime Shield
 on:
   push:
     branches:
