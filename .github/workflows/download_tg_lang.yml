@@ -58,17 +58,24 @@ jobs:
 
         print("=== 🤖 STARTING MASSIVE 15K TRANSLATION WITH AI CODE SHIELD ===")
         
-        # Парсери касбии XML барои он ки ба нохунакҳо ва тегҳои заводӣ зарар нарасад
         parser = etree.XMLParser(strip_cdata=False, recover=True, resolve_entities=False)
         tree = etree.parse(source_file, parser=parser)
         root = tree.getroot()
 
-        skip_names = ["LanguageCode", "LanguageName", "LanguageNameInEnglish"]
         count = 0
 
         for elem in root.findall('string'):
             attr_name = elem.get('name')
-            if attr_name in skip_names:
+            
+            # АВТОМАТИКӢ КАРДАНИ ЗАБОН АЗ РӮИ МИНТАҚА (Системавӣ)
+            if attr_name == "LanguageCode":
+                elem.text = "tg"
+                continue
+            if attr_name == "LanguageName":
+                elem.text = "Тоҷикӣ"
+                continue
+            if attr_name == "LanguageNameInEnglish":
+                elem.text = "Tajik"
                 continue
                 
             if elem.text and len(elem.text.strip()) > 0:
@@ -86,14 +93,16 @@ jobs:
                     continue
 
                 # СИПАРӢ АБРӢ: Пинҳон кардани кодҳои %1$s, \n, %d дар қуттии махсус
-                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\\'|\\\"|\*\*.*?\*\*)', original_text)
+                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\t|\\\'|\\\"|\*\*.*?\*\*)', original_text)
                 protected_text = original_text
                 for i, ph in enumerate(placeholders):
                     protected_text = protected_text.replace(ph, f" _PH_{i}_ ")
 
                 try:
-                    # Тарҷумаи 100% пурраи матн (дигар англисӣ намемонад)
+                    # Тарҷумаи 100% пурраи матн
                     translated = translator.translate(protected_text)
+                    if not translated:
+                        translated = protected_text
                     
                     # Барқарор кардани кодҳои заводӣ даруни нохунак бе хатогӣ
                     for i, ph in enumerate(placeholders):
@@ -101,23 +110,23 @@ jobs:
                         translated = translated.replace(f"_PH_{i}_", ph)
                         translated = translated.replace(f" _PH_{i}_ ", ph)
 
-                    # Иваз кардани номи брендҳо ба Tajgram
-                    if "Telegram" in translated: translated = translated.replace("Telegram", "Tajgram")
-                    if "Телеграм" in translated: translated = translated.replace("Телеграм", "Таҷграм")
+                    # БРЕНДИНГИ ЗИРЕҲПӮШ: Иваз кардани ҳамаи шаклҳои номи Telegram ба Tajgram
+                    translated = re.sub(r'Telegram(ma|ro|бо|хо)?', 'Tajgram', translated, flags=re.IGNORECASE)
+                    translated = re.sub(r'Телеграм(ма|ро|бо|хо)?', 'Таҷграм', translated, flags=re.IGNORECASE)
                     
-                    # Танзими нохунакҳо барои синтаксиси Android
+                    # Танзими ниҳонии нохунакҳо барои синтаксиси Android
                     translated = translated.replace("'", "\\'")
                     elem.text = translated
                     
                 except Exception:
-                    elem.text = original_text # Агар хато шавад, кодро намешиканад
+                    elem.text = original_text
                 
             count += 1
             if count % 500 == 0:
                 print(f"📦 Verified and Translated: {count} strings...")
                 time.sleep(0.1)
 
-        # Сабти файл бо замена (пурра тоза ва аз нав навиштан)
+        # Сабти файл бо заменаи комил
         header_comment = "<!-- 👑 TAJGRAM VIP OFFICIAL TAJIK LANGUAGE SYSTEM - DEVELOPED BY CHIEF DEVELOPER SAIDJUN (2025-2030) -->\n"
         with open(target_file, 'wb') as f:
             f.write(header_comment.encode('utf-8'))
