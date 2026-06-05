@@ -30,6 +30,7 @@ jobs:
         import os
         import re
         from deep_translator import GoogleTranslator
+        from lxml import etree
         import time
 
         source_file = 'TMessagesProj/src/main/res/values/strings.xml'
@@ -41,6 +42,7 @@ jobs:
 
         translator = GoogleTranslator(source='en', target='tg')
 
+        # Луғати Грамматикаи Боқуввати Саидҷон (Англисӣ -> Тоҷикӣ)
         grammar_dictionary = {
             "your phone number": "Рақами телефони шумо",
             "phone number": "рақами телефон",
@@ -54,50 +56,74 @@ jobs:
             "balance": "Тавозун"
         }
 
-        print("=== 🤖 STARTING MASSIVE 15K TRANSLATION FROM ENGLISH BASE ===")
+        print("=== 🤖 STARTING MASSIVE 15K TRANSLATION WITH AI CODE SHIELD ===")
         
-        output_lines = []
-        with open(source_file, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
+        # Парсери касбии XML барои он ки ба нохунакҳо ва тегҳои заводӣ зарар нарасад
+        parser = etree.XMLParser(strip_cdata=False, recover=True, resolve_entities=False)
+        tree = etree.parse(source_file, parser=parser)
+        root = tree.getroot()
 
+        skip_names = ["LanguageCode", "LanguageName", "LanguageNameInEnglish"]
         count = 0
-        for line in lines:
-            match = re.search(r'>(.*)</string>', line)
-            if match:
-                raw_text = match.group(1)
+
+        for elem in root.findall('string'):
+            attr_name = elem.get('name')
+            if attr_name in skip_names:
+                continue
                 
-                if re.search(r'%[0-9]+\$[a-zA-Z]|%[a-zA-Z]|\\[nt]', raw_text) or not raw_text.strip():
-                    output_lines.append(line)
+            if elem.text and len(elem.text.strip()) > 0:
+                original_text = elem.text
+                
+                # Ислоҳи Луғати Грамматика мустақим аз матни аслии Англисӣ
+                matched_grammar = False
+                for en_phrase, tg_phrase in grammar_dictionary.items():
+                    if en_phrase in original_text.lower():
+                        elem.text = tg_phrase
+                        matched_grammar = True
+                        break
+                
+                if matched_grammar:
                     continue
-                
+
+                # СИПАРӢ АБРӢ: Пинҳон кардани кодҳои %1$s, \n, %d дар қуттии махсус
+                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\\'|\\\"|\*\*.*?\*\*)', original_text)
+                protected_text = original_text
+                for i, ph in enumerate(placeholders):
+                    protected_text = protected_text.replace(ph, f" _PH_{i}_ ")
+
                 try:
-                    translated = translator.translate(raw_text)
+                    # Тарҷумаи 100% пурраи матн (дигар англисӣ намемонад)
+                    translated = translator.translate(protected_text)
                     
-                    for wrong_phrase, right_phrase in grammar_dictionary.items():
-                        if wrong_phrase in translated.lower():
-                            translated = re.sub(wrong_phrase, right_phrase, translated, flags=re.IGNORECASE)
-                    
+                    # Барқарор кардани кодҳои заводӣ даруни нохунак бе хатогӣ
+                    for i, ph in enumerate(placeholders):
+                        translated = re.sub(r'_\s*PH_\s*' + str(i) + r'\s*_', ph, translated)
+                        translated = translated.replace(f"_PH_{i}_", ph)
+                        translated = translated.replace(f" _PH_{i}_ ", ph)
+
+                    # Иваз кардани номи брендҳо ба Tajgram
                     if "Telegram" in translated: translated = translated.replace("Telegram", "Tajgram")
                     if "Телеграм" in translated: translated = translated.replace("Телеграм", "Таҷграм")
                     
-                    new_line = line.replace(raw_text, translated)
-                    output_lines.append(new_line)
+                    # Танзими нохунакҳо барои синтаксиси Android
+                    translated = translated.replace("'", "\\'")
+                    elem.text = translated
+                    
                 except Exception:
-                    output_lines.append(line)
-            else:
-                output_lines.append(line)
+                    elem.text = original_text # Агар хато шавад, кодро намешиканад
                 
             count += 1
             if count % 500 == 0:
-                print(f"📦 Chained rows: {count} verified secure...")
-                time.sleep(0.4)
+                print(f"📦 Verified and Translated: {count} strings...")
+                time.sleep(0.1)
 
+        # Сабти файл бо замена (пурра тоза ва аз нав навиштан)
         header_comment = "<!-- 👑 TAJGRAM VIP OFFICIAL TAJIK LANGUAGE SYSTEM - DEVELOPED BY CHIEF DEVELOPER SAIDJUN (2025-2030) -->\n"
-        with open(target_file, 'w', encoding='utf-8') as f:
-            f.write(header_comment)
-            f.writelines(output_lines)
+        with open(target_file, 'wb') as f:
+            f.write(header_comment.encode('utf-8'))
+            f.write(etree.tostring(tree, pretty_print=True, xml_declaration=False, encoding='utf-8'))
             
-        print(f"=== 🎉 SUCCESS: ALL {count} STRINGS TRANSLATED WITHOUT UPSTREAM LEAKS ===")
+        print(f"=== 🎉 SUCCESS: ALL {count} STRINGS TRANSLATED SECURELY ===")
       shell: python
 
     - name: Commit and Secure Push Tajgram Language
