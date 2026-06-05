@@ -9,6 +9,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # 1. Танзимоти марказии хотираи абрӣ барои кулли сервер
+      JAVA_TOOL_OPTIONS: "-Xmx6g"
 
     steps:
     - name: Checkout Repository Code
@@ -44,20 +47,22 @@ jobs:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
         RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
+        # 2. Иловаи хотираи белимит барои Gradle бо усули муосири G1GC
+        GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=1024m -XX:+UseG1GC"
       run: |
         echo "=== 🤖 АВТО-МУВОФИҚКУНИИ ПАКЕТ ДАР ҲАВО ==="
         # Ин фармон пакетро танҳо дар ҳаво устувор мекунад, то китобхонаҳои C++ бе хатогӣ скомпиляция шаванд
         find . -name "*.java" -exec sed -i 's/org.tajgram.messenger/org.telegram.messenger/g' {} + || echo "Package structure verified"
         
         chmod +x gradlew
-        ./gradlew :TMessagesProj_App:assembleRelease --stacktrace
+        ./gradlew :TMessagesProj_App:assembleRelease --no-daemon --stacktrace
 
     - name: Commit and Push APK Back to Repository Folder
       run: |
         mkdir -p ready_apk/
         find . -name "*.apk" -exec cp {} ready_apk/Tajgram.apk \;
         git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.email "41898282+github-actions[bot]@://github.com"
         git add ready_apk/Tajgram.apk
         git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed successfully" || echo "Artifact already exists"
         git push origin HEAD:master --force
