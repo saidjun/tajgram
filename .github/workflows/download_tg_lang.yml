@@ -1,4 +1,4 @@
-name: 03Tajgram Intelligent Language Auto-Translator
+name: Tajgram Intelligent Language Auto-Translator
 on:
   workflow_dispatch:
 
@@ -141,3 +141,4 @@ jobs:
         git config --global user.email "saidjun@tajgram.messenger"
         git add TMessagesProj/src/main/res/values-tg/strings.xml
         git commit -m "👑 TAJGRAM LANGUAGE: Created 100% full Tajik base from factory blueprint" || echo "No changes"
+        git push origin HEAD:master --force
