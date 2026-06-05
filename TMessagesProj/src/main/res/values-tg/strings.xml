@@ -1,4 +1,5 @@
 <!-- 👑 TAJGRAM VIP OFFICIAL TAJIK LANGUAGE SYSTEM - DEVELOPED BY CHIEF DEVELOPER SAIDJUN (2025-2030) -->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="WelcomeBellTitle">Хуш омадед ба Tajgram!</string>
     <string name="WelcomeBellDesc">Мо ба шумо барои интихобатон самимона миннатдорем. Мо хеле шодем, ки шумо бо мо ҳастед!</string>
@@ -10,6 +11,7 @@
     <string name="LanguageNameInEnglish">русӣ</string>
     <string name="LanguageCode">ру</string>
     <string name="ContinueOnThisLanguage">Бо забони русӣ идома диҳед</string>
+    <!--signin view-->
     <string name="YourPhone">Телефони шумо</string>
     <string name="StartText">Рамзи кишварро санҷед ва рақами телефони худро ворид кунед.</string>
     <string name="Country">кишвар</string>
@@ -32,6 +34,7 @@
     <string name="DidNotGetTheCodeInfo">Если Вы не получили звонок или SMS с кодом, проверьте настройки сотовой связи и указанный Вами номер:\n\n**%1$s**\n\nЕсли это не помогло, Вы можете указать другой номер телефона или связаться с командой поддержки Tajgram. Чтобы сообщить нам о проблеме и отправить техническую информацию для диагностики, нажмите **Помощь**.</string>
     <string name="DidNotGetTheCodeHelpButton">Кӯмак</string>
     <string name="DidNotGetTheCodeEditNumberButton">Рақами дигар</string>
+    <!--code enter view-->
     <string name="YourCode">Санҷиши телефон</string>
     <string name="SentSmsCode">Мы отправили SMS с кодом проверки на Ваш телефон **%1$s**.</string>
     <string name="SentAppCode">Мо кодро ба барномаи **Tajgram** дар дастгоҳи дигари шумо фиристодем.</string>
@@ -50,7 +53,7 @@
     <string name="WrongNumber">Рақами нодуруст?</string>
     <string name="WrongCode">Рамзи нодуруст. Як бори дигар санҷед.</string>
     <string name="DidNotGetTheCode">Оё кодро нагирифтаед?</string>
-    <string name="DidNotGetTheCodeSms">Отправить код через SMS</string>
+    <string name="DidNotGetTheCodeSms">Рамзро тавассути SMS фиристед</string>
     <string name="DidNotGetTheCodeFragment">Дар платформаи Fragment код гиред</string>
     <string name="CancelAccountReset">Бозсозии ҳисобро бекор кунед</string>
     <string name="CancelAccountResetInfo2">Кто-то с доступом к **%1$s** запросил удаление Вашего аккаунта Tajgram и сброс пароля двухэтапной аутентификации.\n\nЕсли это были не Вы, введите код из SMS, отправленного на Ваш номер. Вы также можете отменить удаление, *изменив номер телефона*.</string>
@@ -71,6 +74,7 @@
     <string name="RequestMissedCall">Зангро бо код қабул кунед</string>
     <string name="LoginAccessibilityCountryCode">Рамзи кишвар</string>
     <string name="SignInWithGoogle">Бо ҳисоби Google ворид шавед</string>
+    <!--signup view-->
     <string name="YourName">номи шумо</string>
     <string name="RegisterText2">Лутфан ном ва акси худро илова кунед.</string>
     <string name="FirstName">Ном (ҳатмӣ)</string>
@@ -79,6 +83,7 @@
     <string name="LastNameSmall">Фамилия</string>
     <string name="CancelRegistration">Бекор кардани бақайдгирӣ</string>
     <string name="RegistrationProfileInfo">Маълумот дар бораи худ</string>
+    <!--password view-->
     <string name="TwoStepVerification">Пароли абрӣ</string>
     <string name="TwoStepVerificationTitle">Пароли абрӣ</string>
     <string name="TwoStepVerificationPasswordSet">Маҷмӯи парол</string>
@@ -207,6 +212,7 @@
     <string name="CheckYourNewEmail">Почтаи нави худро санҷед</string>
     <string name="CheckYourNewEmailSubtitle">Введите код, который пришёл на указанный Вами адрес %1$s.</string>
     <string name="LoginOrSingInWithGoogle">ё</string>
+    <!--Intro view-->
     <string name="Page1Title">Tajgram</string>
     <string name="Page2Title">Тез</string>
     <string name="Page3Title">Озод</string>
@@ -220,6 +226,7 @@
     <string name="Page5Message">**Tajgram** не ограничивает размер\n Ваших медиафайлов и чатов.</string>
     <string name="Page6Message">Дар **Таҷграм** шумо метавонед аз ҳар миқдор дастгоҳ мукотиба кунед.</string>
     <string name="StartMessaging">Сӯҳбатро оғоз кунед</string>
+    <!--date formatters-->
     <string name="formatterBoostExpired">гг ММ ееее</string>
     <string name="formatterGiveawayCard">гг ММ ееее</string>
     <string name="formatterGiveawayMonthDay">ДД MMMM</string>
@@ -236,7 +243,7 @@
     <string name="formatterMonth">дд МММ</string>
     <string name="formatterYear">gg.MM.yy</string>
     <string name="formatterYearMax">gg.MM.yyyy</string>
-    <string name="chatDate">dMMMM</string>
+    <string name="chatDate">г ММММ</string>
     <string name="chatFullDate">г MMMM yyyy</string>
     <string name="formatterWeek">ЭЭЭ</string>
     <string name="formatterWeekLong">EEEE</string>
