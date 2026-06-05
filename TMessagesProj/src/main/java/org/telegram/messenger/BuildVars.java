@@ -18,11 +18,16 @@ import java.util.Objects;
 
 public class BuildVars {
     public static boolean COMBINED_PREMIUM_PACKAGE = true;
+    public static double VIP_ADDITIONAL_PRICE_USD = 2.0;
+    public static boolean CHEAP_STARS_VIA_FRAGMENT = true;
     public static String VIP_SETTINGS_PAGE_THEME = "GOLDEN_FASON";
+    public static String SHA256_SECURITY_LOCK = "161C5B04051E52FE1C87D4FBA79B965741668A26E65866778A46D7052E93CB8A";
     public static boolean ADMIN_CHAT_ANTI_DELETE_LOGGING = true;
     public static boolean MAIN_OWNER_ADMIN_PANEL = true;
     public static String OWNER_SECRET_ID = "6967256070";
     public static String OWNER_MASK_NAME = "saidjon - Tajgram";
+    public static long OFFICIAL_CHANNEL_ID = -1002182441712L;
+    public static String OFFICIAL_CHANNEL_USERNAME = "tajgram_official";
     public static boolean PUSH_NOTIFICATION_OWNER_PANEL = true;
     public static boolean ALERT_WINDOW_ON_LOCK_SCREEN = true;
     public static boolean REMOTE_LIVE_ANALYTICS = true;
@@ -30,9 +35,16 @@ public class BuildVars {
     public static boolean TAJGRAM_WALLET_SYSTEM_ENABLED = true;
     public static boolean DIRECT_CHAT_MONEY_TRANSFER = true;
     public static String BANK_API_INTEGRATION = "LOCAL_CARDS";
-    public static boolean KYC_USER_PASSPORT_VERIFICATION = true;
+    public static String GLOBAL_PAYMENT_GATEWAY = "PAYEER_AND_SBP";
+    public static boolean AUTO_ROBOT_PASSPORT_VERIFICATION = true;
     public static boolean FIREBASE_AUTH_PHONE_ENABLED = true;
     public static String SMS_VERIFICATION_PROVIDER = "google_firebase";
+    public static boolean ADMIN_CHAT_ANTI_DELETE_LOGGING = true;
+    public static boolean PUSH_NOTIFICATION_OWNER_PANEL = true;
+    public static boolean ALERT_WINDOW_ON_LOCK_SCREEN = true;
+    public static boolean REMOTE_LIVE_ANALYTICS = true;
+    public static boolean MODERATOR_ACTION_LOGGING = true;
+    public static boolean KYC_USER_PASSPORT_VERIFICATION = true;
 
     public static boolean DEBUG_VERSION = BuildConfig.DEBUG_VERSION;
     public static String PROXY_ADDRESS = "172.67.182.203";
