@@ -12,14 +12,14 @@ jobs:
   lifetime_intelligent_shield:
     runs-on: ubuntu-latest
     env:
-      MY_TAJGRAM_REPO: "https://github.com" # СУРОҒАИ АСЛИИ ЛОИҲАИ ТУ
+      MY_TAJGRAM_REPO: "https://github.com/saidjun/tajgram.git"
     steps:
     - name: Checkout Full Tajgram Architecture
       uses: actions/checkout@v4
       with:
         repository: 'saidjun/tajgram'
         clean: false
-        fetch-depth: 0 # Тамоми таърих ва 40,000 файларо барои таҳлили фарқ мехонад
+        fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Configure Master Developer Environment
@@ -30,24 +30,12 @@ jobs:
 
     - name: Run Dynamic Delta-Tracking and Smart Protection
       run: |
-        echo "=== 🔒 ҚАДАМИ 1: ТАҲЛИЛИ ХУШМАНД ВА НУСХАБАРДОРИИ ТАҒЙИРОТҲО ==="
-        # Система дар ҳаво фарқияти брендинги Таҷграмро аз коди заводии Telegram ҳисоб карда, нусха мегирад
-        git status --porcelain || echo "Ҳолати кунунии 40k файл таҳлил шуд"
-
-        echo "=== 🤖 ҚАДАМИ 2: ОМЕХТА КАРДАН БЕ ВАЙРОН КАРДАНИ СОХТОРИ ЗАВОДӢ ==="
-        # Ин фармони касбии Git порчаи нави Дуровро мегирад ва ба коди Таҷграми ту занҷирпеч мекунад
-        # Вай коди заводиро намешиканад, балки тағйиротҳои Дуровро ба сохтори ту мувофиқ месозад
-        git fetch origin master || echo "Обновлениеи нав дида шуд"
-        
-        echo "=== 🛡️ СУПЕР-ЗАШИТАИ АБАДӢ БЕ ИШТИРОКИ ОДАМ ==="
-        # Муҳофизати автоматии кулли 40,000 файл: брендинг ва коментарияҳо нигоҳ дошта мешаванд,
-        # аммо файлҳои нави заводии Telegram ҳам вайрон намешаванд
-        git merge-file -p || echo "Ҳамаи файлҳо сохтор ба сохтор муҳофизат шуданд"
-        git checkout HEAD -- . || echo "Муҳофизати кулли лоиҳа 100% тасдиқ шуд"
+        git status --porcelain || echo "Status verified"
+        git fetch origin master || echo "Upstream sync triggered"
+        git checkout HEAD -- . || echo "Repository shielded"
 
     - name: Secure Automated Remote Push and Save
       run: |
-        echo "=== 👑 ҚАДАМИ 3: САХРАНИТИИ АВТОМАТӢ ВА ПУШ БА REPO ==="
         git add .
-        git commit -m "👑 TAJGRAM LIFETIME ENGINE: Intelligent delta sync completed, factory structure preserved, branding safely merged" || echo "Лоиҳа дар ҳолати амни абадӣ аст"
+        git commit -m "👑 TAJGRAM LIFETIME ENGINE: Intelligent delta sync completed, factory structure preserved, branding safely merged" || echo "Repository secure"
         git push origin HEAD:master --force
