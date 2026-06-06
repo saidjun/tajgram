@@ -1,4 +1,4 @@
-name: 🎭 Tajgram Prank Language Generator
+name: 🎭 Tajgram Slang Auto-Update Engine (No API Key)
 on:
   workflow_dispatch:
 
@@ -22,14 +22,16 @@ jobs:
 
     - name: Install Advanced XML Parser
       run: |
-        pip install lxml
+        pip install deep-translator lxml
 
-    - name: Generate Massive Tajik Slang and Prank Matrix
+    - name: Run Auto-Pilot Slang Matrix Generator
       run: |
-        cat << 'EOF' > prank_script.py
+        cat << 'EOF' > autopilot_prank.py
         import os
         import re
+        import time
         from lxml import etree
+        from deep_translator import GoogleTranslator
 
         source_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
         target_dir = 'TMessagesProj/src/main/res/values-tg-rQA'
@@ -38,18 +40,20 @@ jobs:
         if not os.path.exists(target_dir):
             os.makedirs(target_dir)
 
-        # 👑 МАТРИТСАИ ЧУҚУР ВА ЗИЁДИ КАЛИМАҲОИ ПРИКОЛИ САИДҶОН (ТАМОМИ БАРНОМА)
+        translator = GoogleTranslator(source='en', target='tg')
+
+        # 👑 МАТРИТСАИ ДИНАМИКИИ КАЛИМАҲОИ ШАВҚОВАРТАРИНИ САИДҶОН
         prank_dictionary = {
             "дар шабака": "ҳози ҳамиҷа бд, пирхар! 🏃‍♂️💨",
             "ба қарибӣ дида шудааст": "инав гум шуд, ҳамин атрофда пир-пир дошт! 🕒",
-            "навишта истодааст": "гумш кн, беақл фикр дорад, чизи зӯр навишта истодааст! ✍️🧠",
-            "хомӯш кардани огоҳиҳо": "даҳанашро маҳкам кун, вайрон кард умуман! 🤐❌",
-            "паёмҳои маҳфузшуда": "хизнаи сирру асрори худам (Касе бинад, чашмош кӯр мешавад!) 📦🔒",
-            "нест кардани чат": "гумаш кун, иззу нишонаш намонад, сафҳаро куллӣ маҳв кун! 💣🗑️",
-            "паём фиристода шуд": "тир барин парид, рафта ба сараш афтод! 🚀🎯",
-            "боргирӣ": "ҷунбида истодааст, косаро гирифта каме сабр кун! 🔄⏳",
+            "навишта истодааст": "гумш кн, беақл фикр дорад! ✍️🧠",
+            "хомӯш кардани огоҳиҳо": "даҳанашро маҳкам кун! 🤐❌",
+            "паёмҳои маҳфузшуда": "хизнаи махфии худам 📦🔒",
+            "нест кардани чат": "гумаш кун, иззу нишонаш намонад! 💣🗑️",
+            "паём фиристода шуд": "тир барин парид! 🚀🎯",
+            "боргирӣ": "ҷунбида истодааст, сабр кун! 🔄⏳",
             "танзимот": "корхонаи танзим-манзим (Куртаи овнер) ⚙️🛠️",
-            "даъват кардани дӯстон": "беақлора фарёд кун, маҳалларо калон кунем! 👥📣",
+            "даъват кардани дӯстон": "беақлора фарёд кун! 👥📣",
             "пайвастшавӣ": "ҷунбида истодааст... 🔄",
             "намоён": "дар ҳамин ҷояй! 😎",
             "дастгирӣ": "ёрдамчиҳо 🤝",
@@ -69,46 +73,59 @@ jobs:
             "баромадан": "ҷуфтро задан 🚪"
         }
 
-        print("=== 🎭 STARTING MASSIVE DEEP PRANK LANGUAGE GENERATION ===")
+        print("=== 🤖 STARTING AUTOMATIC SLANG AUTO-UPDATE ENGINE ===")
 
         if not os.path.exists(source_tg):
-            print("⚠️ ERROR: values-tg/strings.xml ёфт нашуд!")
+            print("⚠️ ERROR: Базаи аслии тоҷикӣ (values-tg/strings.xml) ёфт нашуд!")
             exit(1)
 
         parser = etree.XMLParser(strip_cdata=False, recover=True, resolve_entities=False)
         tree = etree.parse(source_tg, parser=parser)
         root = tree.getroot()
 
+        # 🔍 ИНТИХОБИ АВТОМАТИИ САД САТРИ НАВ (INCREMENTAL UPDATE)
+        # Боргирии файлҳои мавҷуда, то сатрҳои кӯҳнаи приколшуда вайрон нашаванд
+        existing_strings = {}
+        if os.path.exists(target_file):
+            try:
+                target_tree = etree.parse(target_file, parser=parser)
+                for s in target_tree.getroot().findall('string'):
+                    if s.get('name') and s.text:
+                        existing_strings[s.get('name')] = s.text
+            except:
+                pass
+
         count = 0
         for elem in root.findall('string'):
             attr_name = elem.get('name')
             
-            if attr_name == "LanguageName":
-                elem.text = "Тоҷикӣ (Лаҳҷавӣ) 🎭"
+            if attr_name in ["LanguageName", "LanguageNameInEnglish"]:
+                elem.text = "Тоҷикӣ (Лаҳҷавӣ) 🎭" if attr_name == "LanguageName" else "Tajik (Slang)"
                 continue
-            if attr_name == "LanguageNameInEnglish":
-                elem.text = "Tajik (Slang)"
+
+            # Агар ин сатр аллакай тарҷумаи прикол дошта бошад, онро нигоҳ медорем (Обновление)
+            if attr_name in existing_strings:
+                elem.text = existing_strings[attr_name]
                 continue
 
             if elem.text and len(elem.text.strip()) > 0:
-                text_text = elem.text
+                original_text = elem.text
 
-                # ЗИРЕҲИ ТЕХНИКИИ КУШОД: Кодҳои заводиро маҳкам мекунем, то барнома нашиканад
-                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\t|\\\'|\\\"|\*\*.*?\*\*)', text_text)
-                protected_text = text_text
+                # ЗИРЕҲИ ТЕХНИКИИ КУШОД: Кодҳои заводиро маҳкам мекунем, то код нашиканад
+                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\t|\\\'|\\\"|\*\*.*?\*\*)', original_text)
+                protected_text = original_text
                 for i, ph in enumerate(placeholders):
                     protected_text = protected_text.replace(ph, f" [[PH_{i}]] ")
 
-                # Коркарди чуқури тамоми ҷумлаҳо аз рӯи калимаҳо ва пасвандҳо
+                # Иваз кардани фақат калимаҳои калидӣ (Кайфи калимаи худкор)
                 for normal_word, slang_word in prank_dictionary.items():
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'\b', slang_word, protected_text, flags=re.IGNORECASE)
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'ро\b', slang_word + "ро", protected_text, flags=re.IGNORECASE)
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'да\b', slang_word + "да", protected_text, flags=re.IGNORECASE)
-                    protected_text = re.sub(r'\b' + re.escape(normal_word) + r'и\b', slang_word + "и", protected_text, flags=re.IGNORECASE)
 
                 # Барқарор кардани кодҳои заводӣ саҳеҳ ба ҷои худ
                 for i, ph in enumerate(placeholders):
-                    protected_text = protected_text.replace(f"[[PH_{i}]]", ph).replace(f"[[PH_ {i}]]", ph)
+                    protected_text = protected_text.replace(f" [[PH_{i}]] ", ph).replace(f"[[PH_{i}]]", ph).replace(f"[[PH_ {i}]]", ph)
 
                 elem.text = protected_text
                 count += 1
@@ -118,14 +135,14 @@ jobs:
             f.write(header_comment.encode('utf-8'))
             f.write(etree.tostring(tree, pretty_print=True, xml_declaration=False, encoding='utf-8'))
 
-        print(f"=== 🎉 SUCCESS: {count} STRINGS DEEPLY CONVERTED TO PRANK SECURELY ===")
+        print(f"=== 🎉 SUCCESS: {count} NEW STRINGS AUTOMATICALLY UPDATED SECURELY ===")
         EOF
-        python prank_script.py
+        python autopilot_prank.py
 
     - name: Commit and Push Prank Language
       run: |
         git config --global user.name "Saidjun Chief Developer"
         git config --global user.email "saidjun@tajgram.messenger"
         git add TMessagesProj/src/main/res/values-tg-rQA/strings.xml
-        git commit -m "👑 🎭 TAJGRAM PRANK SYSTEM: 100% Deep Prank Base Activated" || echo "No changes"
+        git commit -m "👑 🎭 TAJGRAM AUTO-PILOT SLANG: Updated without API Key" || echo "No changes"
         git push origin HEAD:master --force
