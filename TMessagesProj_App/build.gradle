@@ -21,10 +21,6 @@ dependencies {
 }
 
 android {
-    buildFeatures {
-        buildConfig true
-    }
-
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
 
@@ -35,13 +31,13 @@ android {
     lintOptions {
         disable 'MissingTranslation'
         disable 'ExtraTranslation'
-        disable 'BlocksPrivateIapi'
-        checkReleaseBuilds false
+        disable 'BlockedPrivateApi'
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
         coreLibraryDesugaringEnabled true
     }
 
@@ -52,6 +48,7 @@ android {
             keyAlias RELEASE_KEY_ALIAS
             keyPassword RELEASE_KEY_PASSWORD
         }
+
         release {
             storeFile file("../TMessagesProj/config/release.keystore")
             storePassword RELEASE_STORE_PASSWORD
@@ -62,27 +59,54 @@ android {
 
     buildTypes {
         debug {
+            debuggable true
+            jniDebuggable true
             signingConfig signingConfigs.debug
+            applicationIdSuffix ".beta"
             minifyEnabled false
             shrinkResources false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../TMessagesProj/proguard-rules.pro', '../TMessagesProj/proguard-rules-beta.pro'
+            ndk.debugSymbolLevel = 'FULL'
         }
+
         standalone {
+            debuggable false
+            jniDebuggable false
             signingConfig signingConfigs.release
+            applicationIdSuffix ".web"
             minifyEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', '../TMessagesProj/proguard-rules.pro'
+            shrinkResources false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../TMessagesProj/proguard-rules.pro'
+            ndk.debugSymbolLevel = 'FULL'
         }
+
         release {
+            debuggable false
+            jniDebuggable false
             signingConfig signingConfigs.release
             minifyEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', '../TMessagesProj/proguard-rules.pro'
+            shrinkResources false
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../TMessagesProj/proguard-rules.pro'
+            ndk.debugSymbolLevel = 'FULL'
         }
     }
 
     sourceSets.debug {
         manifest.srcFile '../TMessagesProj/config/debug/AndroidManifest.xml'
     }
+
+    sourceSets.standalone {
+        manifest.srcFile '../TMessagesProj/config/release/AndroidManifest.xml'
+    }
+
+    sourceSets.release {
+        manifest.srcFile '../TMessagesProj/config/release/AndroidManifest.xml'
+    }
+
+    flavorDimensions "minApi"
 
     productFlavors {
         bundleAfat {
@@ -134,7 +158,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "Tajgram.apk"
+            outputFileName = "tajgram.apk"
             output.versionCodeOverride = defaultConfig.versionCode * 10 + variant.productFlavors.get(0).abiVersionCode
         }
     }
@@ -149,9 +173,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 35
-        versionName "10.5.0"
+        versionName APP_VERSION_NAME
         ndkVersion "27.2.12479018"
-        flavorDimensions "version"
 
         multiDexEnabled true
 
@@ -160,12 +183,19 @@ android {
         externalNativeBuild {
             cmake {
                 version '3.10.2'
-                arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-21'
+                arguments '-DANDROID_STL=c++_static', '-DANDROID_PLATFORM=android-21' // , '-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON'
             }
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
     namespace 'org.tajgram.messenger.regular'
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'
