@@ -24,25 +24,23 @@ jobs:
       run: |
         pip install lxml
 
-    - name: Generate Massive Tajik Slang and Prank Matrix
+    - name: Generate Massive特殊 Tajik Slang and Prank Matrix
       run: |
         cat << 'EOF' > prank_script.py
         import os
         import re
         from lxml import etree
 
-        # Мустақим ба даруни папкаи расмии values-tg занҷир мекунем, то 100% дар барнома брояд
         source_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
         target_file = source_tg
 
-        # 👑 МАТРИТСАИ «КАЙФИ КАЛИМАҲОИ КУТОҲ»-И САИДҶОН
         prank_dictionary = {
             "дар шабака": "ҳози ҳамиҷа бд, пирхар! 🏃‍♂️💨",
             "ба қарибӣ дида шудааст": "инав гум шуд, ҳамин атрофда пир-пир дошт! 🕒",
             "навишта истодааст": "гумш кн, беақл фикр дорад! ✍️🧠",
             "хомӯш кардани огоҳиҳо": "даҳанашро маҳкам кун! 🤐❌",
             "паёмҳои маҳфузшуда": "хизнаи махфии худам 📦🔒",
-            "нест кардани чат": "гумаш кун, иззу нишонаш намонад! 💣🗑️",
+            "нест кардани чат": "гумаш кун, izзу нишонаш намонад! 💣🗑️",
             "паём фиристода шуд": "тир барин парид! 🚀🎯",
             "боргирӣ": "ҷунбида истодааст, сабр кун! 🔄⏳",
             "танзимот": "корхонаи танзим-манзим (Куртаи овнер) ⚙️🛠️",
@@ -69,7 +67,7 @@ jobs:
         print("=== 🎭 STARTING DEEP WORD PRANK ENGINE IN VALUES-TG ===")
 
         if not os.path.exists(source_tg):
-            print("⚠️ ERROR: Базаи аслии тоҷикӣ ёфт нашуд!")
+            print("⚠️ ERROR: values-tg/strings.xml ёфт нашуд!")
             exit(1)
 
         parser = etree.XMLParser(strip_cdata=False, recover=True, resolve_entities=False)
@@ -80,7 +78,6 @@ jobs:
         for elem in root.findall('string'):
             attr_name = elem.get('name')
             
-            # Иваз кардани номи забон ба номи ҳаҷвии ту
             if attr_name == "LanguageName":
                 elem.text = "Тоҷикӣ (Лаҳҷавӣ) 🎭"
                 continue
@@ -115,9 +112,13 @@ jobs:
         python prank_script.py
 
     - name: Commit and Secure Push to Master Branch Direct
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name "Saidjun Chief Developer"
         git config --global user.email "saidjun@tajgram.messenger"
         git add TMessagesProj/src/main/res/values-tg/strings.xml
         git commit -m "👑 🎭 TAJGRAM PRANK: Integrated Slang inside official Tajik locale" || echo "No changes"
+        # Пайваст кардани Токени амниятӣ мустақим ба URL-и пуш барои сабти 100%-а
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@://github.com{{ github.repository }}.git
         git push origin HEAD:master --force
