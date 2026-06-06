@@ -32,7 +32,7 @@ android {
     buildFeatures { buildConfig true }
     signingConfigs { debug { storePassword "android"
  keyPassword "android"
- keyAlias "AndroidDebugKey" } }
+ keyAlias "tajgram_key" } }
     buildTypes { release { signingConfig signingConfigs.debug } }
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
@@ -58,14 +58,14 @@ android {
         debug {
             storeFile file("../TMessagesProj/config/release.keystore")
             storePassword "android"
-            keyAlias "AndroidDebugKey"
+            keyAlias "tajgram_key"
             keyPassword "android"
         }
 
         release {
             storeFile file("../TMessagesProj/config/release.keystore")
             storePassword "android"
-            keyAlias "AndroidDebugKey"
+            keyAlias "tajgram_key"
             keyPassword "android"
         }
     }
@@ -139,7 +139,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 35
-        versionName "10.5.0"
+        versionName APP_VERSION_NAME
         ndkVersion "27.2.12479018"
 
         multiDexEnabled true
