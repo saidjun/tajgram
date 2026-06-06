@@ -10,14 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Глобальная настройка памяти для сервера
-      JAVA_TOOL_OPTIONS: "-Xmx6g"
+      # Зиреҳи хотира ва гази протсессори сервер
+      JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
 
     steps:
     - name: Checkout Repository Code
       uses: actions/checkout@v4
       with:
-        clean: true
+        clean: false # Ба ҳеҷ чиз даст намезанад, файлҳоро нест намекунад
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -35,26 +35,21 @@ jobs:
         echo "RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}" >> gradle.properties
         echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
         echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
-        echo "gradle.properties synchronized with secrets"
-
-    - name: Check SHA Fingerprints with Eyes
-      run: |
-        keytool -list -v -keystore TMessagesProj/config/release.keystore \
-          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
     - name: Build with Gradle Factory Command
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
         RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
-        # Выделяем максимум RAM для компиляции тяжелых .so файлов Telegram
-        GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=1024m -XX:+UseG1GC"
+        # МАКСИМУМ ГАЗ ВА ЗИЁД КАРДАНИ ТОҚАТИ СЕРВЕР (MAX SPEED & TIMEOUT FIX)
+        GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
       run: |
-        echo "=== 🤖 АВТО-МУВОФИҚКУНИИ ПАКЕТ ДАР ҲАВО ==="
-        find . -name "*.java" -exec sed -i 's/org.tajgram.messenger/org.telegram.messenger/g' {} + || echo "Package structure verified"
+        echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
         
         chmod +x gradlew
-        ./gradlew :TMessagesProj_App:assembleRelease --no-daemon --stacktrace
+        
+        # Сборка бо тезкории максималии ядроҳо ва нигоҳдории кэш
+        ./gradlew :TMessagesProj_App:assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace
 
     - name: Commit and Push APK Back to Repository Folder
       run: |
@@ -63,7 +58,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@://github.com"
         git add ready_apk/Tajgram.apk
-        git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed successfully" || echo "Artifact already exists"
+        git commit -m "🔥 TAJGRAM HYBRID APK: Fast release build completed" || echo "No changes"
         git push origin HEAD:master --force
 
     - name: Upload Finished APK Artifacts
