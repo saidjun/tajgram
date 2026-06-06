@@ -1,4 +1,4 @@
-name: 🎭 Tajgram Slang Auto-Update Engine (No API Key)
+name: 🎭 Tajgram Prank Language Generator
 on:
   workflow_dispatch:
 
@@ -22,27 +22,20 @@ jobs:
 
     - name: Install Advanced XML Parser
       run: |
-        pip install deep-translator lxml
+        pip install lxml
 
-    - name: Run Auto-Pilot Slang Matrix Generator
+    - name: Generate Massive Tajik Slang and Prank Matrix
       run: |
-        cat << 'EOF' > autopilot_prank.py
+        cat << 'EOF' > prank_script.py
         import os
         import re
-        import time
         from lxml import etree
-        from deep_translator import GoogleTranslator
 
+        # Мустақим ба даруни папкаи расмии values-tg занҷир мекунем, то 100% дар барнома брояд
         source_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
-        target_dir = 'TMessagesProj/src/main/res/values-tg-rQA'
-        target_file = os.path.join(target_dir, 'strings.xml')
+        target_file = source_tg
 
-        if not os.path.exists(target_dir):
-            os.makedirs(target_dir)
-
-        translator = GoogleTranslator(source='en', target='tg')
-
-        # 👑 МАТРИТСАИ ДИНАМИКИИ КАЛИМАҲОИ ШАВҚОВАРТАРИНИ САИДҶОН
+        # 👑 МАТРИТСАИ «КАЙФИ КАЛИМАҲОИ КУТОҲ»-И САИДҶОН
         prank_dictionary = {
             "дар шабака": "ҳози ҳамиҷа бд, пирхар! 🏃‍♂️💨",
             "ба қарибӣ дида шудааст": "инав гум шуд, ҳамин атрофда пир-пир дошт! 🕒",
@@ -73,71 +66,58 @@ jobs:
             "баромадан": "ҷуфтро задан 🚪"
         }
 
-        print("=== 🤖 STARTING AUTOMATIC SLANG AUTO-UPDATE ENGINE ===")
+        print("=== 🎭 STARTING DEEP WORD PRANK ENGINE IN VALUES-TG ===")
 
         if not os.path.exists(source_tg):
-            print("⚠️ ERROR: Базаи аслии тоҷикӣ (values-tg/strings.xml) ёфт нашуд!")
+            print("⚠️ ERROR: Базаи аслии тоҷикӣ ёфт нашуд!")
             exit(1)
 
         parser = etree.XMLParser(strip_cdata=False, recover=True, resolve_entities=False)
         tree = etree.parse(source_tg, parser=parser)
         root = tree.getroot()
 
-        existing_strings = {}
-        if os.path.exists(target_file):
-            try:
-                target_tree = etree.parse(target_file, parser=parser)
-                for s in target_tree.getroot().findall('string'):
-                    if s.get('name') and s.text:
-                        existing_strings[s.get('name')] = s.text
-            except:
-                pass
-
         count = 0
         for elem in root.findall('string'):
             attr_name = elem.get('name')
             
-            if attr_name in ["LanguageName", "LanguageNameInEnglish"]:
-                elem.text = "Тоҷикӣ (Лаҳҷавӣ) 🎭" if attr_name == "LanguageName" else "Tajik (Slang)"
+            # Иваз кардани номи забон ба номи ҳаҷвии ту
+            if attr_name == "LanguageName":
+                elem.text = "Тоҷикӣ (Лаҳҷавӣ) 🎭"
                 continue
-
-            if attr_name in existing_strings:
-                elem.text = existing_strings[attr_name]
+            if attr_name == "LanguageNameInEnglish":
+                elem.text = "Tajik (Slang)"
                 continue
 
             if elem.text and len(elem.text.strip()) > 0:
-                original_text = elem.text
+                text_text = elem.text
 
-                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\t|\\\'|\\\"|\*\*.*?\*\*)', original_text)
-                protected_text = original_text
+                placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\t|\\\'|\\\"|\*\*.*?\*\*)', text_text)
+                protected_text = text_text
                 for i, ph in enumerate(placeholders):
                     protected_text = protected_text.replace(ph, f" [[PH_{i}]] ")
 
                 for normal_word, slang_word in prank_dictionary.items():
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'\b', slang_word, protected_text, flags=re.IGNORECASE)
-                    protected_text = re.sub(r'\b' + re.escape(normal_word) + r'ро\b', slang_word + "ро", protected_text, flags=re.IGNORECASE)
-                    protected_text = re.sub(r'\b' + re.escape(normal_word) + r'да\b', slang_word + "да", protected_text, flags=re.IGNORECASE)
 
                 for i, ph in enumerate(placeholders):
-                    protected_text = protected_text.replace(f" [[PH_{i}]] ", ph).replace(f"[[PH_{i}]]", ph).replace(f"[[PH_ {i}]]", ph)
+                    protected_text = protected_text.replace(f"[[PH_{i}]]", ph).replace(f"[[PH_ {i}]]", ph)
 
                 elem.text = protected_text
                 count += 1
 
-        header_comment = "<!-- 👑 TAJGRAM VIP OFFICIAL SLANG LANGUAGE SYSTEM - DEVELOPED BY CHIEF DEVELOPER SAIDJUN (2025-2030) -->\n"
+        header_comment = "<!-- 👑 TAJGRAM VIP OFFICIAL SLANG LANGUAGE SYSTEM -->\n"
         with open(target_file, 'wb') as f:
             f.write(header_comment.encode('utf-8'))
             f.write(etree.tostring(tree, pretty_print=True, xml_declaration=False, encoding='utf-8'))
 
-        print(f"=== 🎉 SUCCESS: {count} NEW STRINGS AUTOMATICALLY UPDATED SECURELY ===")
+        print(f"=== 🎉 SUCCESS: {count} STRINGS PRANKED INSIDE VALUES-TG ===")
         EOF
-        python autopilot_prank.py
+        python prank_script.py
 
     - name: Commit and Secure Push to Master Branch Direct
       run: |
         git config --global user.name "Saidjun Chief Developer"
         git config --global user.email "saidjun@tajgram.messenger"
-        git add TMessagesProj/src/main/res/values-tg-rQA/strings.xml
-        git commit -m "👑 🎭 TAJGRAM AUTO-PILOT SLANG: Forced Push to Master Branch" || echo "No changes"
-        # Маҷбуран Пуш кардан рост ба даруни бранчи МАСTЕР, то 100% сахранит шавад
+        git add TMessagesProj/src/main/res/values-tg/strings.xml
+        git commit -m "👑 🎭 TAJGRAM PRANK: Integrated Slang inside official Tajik locale" || echo "No changes"
         git push origin HEAD:master --force
