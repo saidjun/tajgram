@@ -83,8 +83,6 @@ jobs:
         tree = etree.parse(source_tg, parser=parser)
         root = tree.getroot()
 
-        # 🔍 ИНТИХОБИ АВТОМАТИИ САД САТРИ НАВ (INCREMENTAL UPDATE)
-        # Боргирии файлҳои мавҷуда, то сатрҳои кӯҳнаи приколшуда вайрон нашаванд
         existing_strings = {}
         if os.path.exists(target_file):
             try:
@@ -103,7 +101,6 @@ jobs:
                 elem.text = "Тоҷикӣ (Лаҳҷавӣ) 🎭" if attr_name == "LanguageName" else "Tajik (Slang)"
                 continue
 
-            # Агар ин сатр аллакай тарҷумаи прикол дошта бошад, онро нигоҳ медорем (Обновление)
             if attr_name in existing_strings:
                 elem.text = existing_strings[attr_name]
                 continue
@@ -111,19 +108,16 @@ jobs:
             if elem.text and len(elem.text.strip()) > 0:
                 original_text = elem.text
 
-                # ЗИРЕҲИ ТЕХНИКИИ КУШОД: Кодҳои заводиро маҳкам мекунем, то код нашиканад
                 placeholders = re.findall(r'(%[0-9]\$\s*[a-zA-Z]|%[d-s]|\n|\\n|\\t|\\\'|\\\"|\*\*.*?\*\*)', original_text)
                 protected_text = original_text
                 for i, ph in enumerate(placeholders):
                     protected_text = protected_text.replace(ph, f" [[PH_{i}]] ")
 
-                # Иваз кардани фақат калимаҳои калидӣ (Кайфи калимаи худкор)
                 for normal_word, slang_word in prank_dictionary.items():
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'\b', slang_word, protected_text, flags=re.IGNORECASE)
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'ро\b', slang_word + "ро", protected_text, flags=re.IGNORECASE)
                     protected_text = re.sub(r'\b' + re.escape(normal_word) + r'да\b', slang_word + "да", protected_text, flags=re.IGNORECASE)
 
-                # Барқарор кардани кодҳои заводӣ саҳеҳ ба ҷои худ
                 for i, ph in enumerate(placeholders):
                     protected_text = protected_text.replace(f" [[PH_{i}]] ", ph).replace(f"[[PH_{i}]]", ph).replace(f"[[PH_ {i}]]", ph)
 
@@ -139,10 +133,11 @@ jobs:
         EOF
         python autopilot_prank.py
 
-    - name: Commit and Push Prank Language
+    - name: Commit and Secure Push to Master Branch Direct
       run: |
         git config --global user.name "Saidjun Chief Developer"
         git config --global user.email "saidjun@tajgram.messenger"
         git add TMessagesProj/src/main/res/values-tg-rQA/strings.xml
-        git commit -m "👑 🎭 TAJGRAM AUTO-PILOT SLANG: Updated without API Key" || echo "No changes"
+        git commit -m "👑 🎭 TAJGRAM AUTO-PILOT SLANG: Forced Push to Master Branch" || echo "No changes"
+        # Маҷбуран Пуш кардан рост ба даруни бранчи МАСTЕР, то 100% сахранит шавад
         git push origin HEAD:master --force
