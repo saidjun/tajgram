@@ -57,28 +57,11 @@ jobs:
         
         GRADLE_FILE="TMessagesProj_App/build.gradle"
         if [ -f "$GRADLE_FILE" ]; then
-          echo "Танзими версияи устувори 12.7.3-Tajgram-v1.0 дар ҳаво..."
-          sed -i 's/versionName .*/versionName "12.7.3-Tajgram-v1.0"/' "$GRADLE_FILE"
+          echo "Танзими версияи устувори Tajgram-v1.0 дар ҳаво..."
+          sed -i 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
           echo "========================================================"
         fi
-
-        echo "📦 Ҷарроҳии лазерӣ: Табдили умумии пакетҳои заводии Telegram ба TAJGRAM..."
-        # Иваз кардани номи пакет дар тамоми кодҳои Java ва импортҳои статикӣ
-        find . -name "*.java" -exec sed -i 's/org.telegram.messenger/org.tajgram.messenger/g' {} +
-        # Иваз кардани номи пакет дар тамоми файлҳои XML ва Манифест
-        find . -name "*.xml" -exec sed -i 's/org.telegram.messenger/org.tajgram.messenger/g' {} +
-        # Иваз кардани номи пакет дар файлҳои танзимоти С++ (Китобхонаҳо)
-        find . -name "CMakeLists.txt" -exec sed -i 's/org.telegram.messenger/org.tajgram.messenger/g' {} +
-        find . -name "*.cpp" -exec sed -i 's/org.telegram.messenger/org.tajgram.messenger/g' {} +
-        find . -name "*.h" -exec sed -i 's/org.telegram.messenger/org.tajgram.messenger/g' {} +
-        echo "Синхронизатсияи умумии пакетҳо бомуваффақият 100% ба Tajgram гузашт!"
-
-    # 🔎 ТАФТИШИ КАСБИИ БРЕНД ПЕШ АЗ БИЛД
-    - name: Verify 100% Tajgram Package Integration
-      run: |
-        echo "=== 🔎 ТАФТИШИ БОФИТУРИИ БРЕНДИ ТАҶГРАМ ДАР КОД ==="
-        grep -r "package org.tajgram.messenger" TMessagesProj_App/src/main/java/ || echo "Синхронизатсия устувор аст!"
-
+       
     - name: Build with Gradle Factory Command
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
