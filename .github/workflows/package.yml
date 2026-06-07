@@ -1,4 +1,4 @@
-name: Fix Package Core Only
+name: Legal Core Restore and Independent Tajgram Brand
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 jobs:
-  repair:
+  legal_sync:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,19 +18,38 @@ jobs:
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    # МАҶБУРАН ТАБДИЛ ДОДАНИ САТРИ PACKAGE БА БРЕНДИ ШАХСИИ ТАҶГРАМ
-    - name: Run Core Package Fixer
+    - name: Execute Strict Core and Brand Separation
       run: |
         git config --global user.name "Saidjun Chief Developer"
         git config --global user.email "saidjun@tajgram.messenger"
 
-        echo "=== ОҒОЗИ ИСЛОҲИ ТЕХНИКИИ ПАКЕТИ ТАҶГРАМ ==="
+        echo "=== 1. ҚОНУНИ МАТОР: БАРҚАРОР КАРДАНИ ТАМОМИ ЯДРО БА ТЕЛЕГРАМ ==="
+        # Тамоми сохтори Java ва папкаҳои дохилӣ маҷбуран ба Telegram бармегарданд, то коди C++ устувор шавад
+        find . -name "*.java" -exec sed -i 's/package org.tajgram.messenger;/package org.telegram.messenger;/g' {} \;
+        find . -name "*.java" -exec sed -i 's/import org.tajgram.messenger./import org.telegram.messenger./g' {} \;
         
-        # Фармони ҳушманд: Табдили умумии пакетҳои заводии Telegram ба оргинал Бренди Tajgram
-        find . -name "*.java" -exec sed -i 's/package org.telegram.messenger;/package org.tajgram.messenger;/g' {} \;
-        find . -name "BuildVars.java" -exec sed -i 's/package org.telegram.messenger;/package org.tajgram.messenger;/g' {} \;
+        find . -name "*.java" -exec sed -i 's/package org.tajgram.tgnet;/package org.telegram.tgnet;/g' {} \;
+        find . -name "*.java" -exec sed -i 's/import org.tajgram.tgnet./import org.telegram.tgnet./g' {} \;
+        
+        find . -name "*.java" -exec sed -i 's/package org.tajgram.ui;/package org.telegram.ui;/g' {} \;
+        find . -name "*.java" -exec sed -i 's/import org.tajgram.ui./import org.telegram.ui./g' {} \;
 
-        echo "=== САБТИ РАСМӢ БА GITHUB ==="
+        # Ислоҳи Намспейс (Namespace) дар файлҳои Градл ва Манифест барои устувории Билд
+        find . -type f \( -name "build.gradle" -o -name "AndroidManifest.xml" -o -name "BuildVars.java" \) -exec sed -i 's/org.tajgram.tgnet/org.telegram.tgnet/g' {} \;
+        find . -type f \( -name "build.gradle" -o -name "AndroidManifest.xml" -o -name "BuildVars.java" \) -exec sed -i 's/org.tajgram.ui/org.telegram.ui/g' {} \;
+
+        echo "=== 2. ҚОНУНИ БРЕНД: МУСТАҚИЛИЯТ ВА БРЕНДИНГИ ТАҶГРАМ ==="
+        # Дар ин ҷо мо ба файли Градл фармон медиҳем, ки Идентификатори Беруна ПУРРА ТАҶГРАМ шавад (барои СМС ва RuStore)
+        if [ -f "TMessagesProj_App/build.gradle" ]; then
+          sed -i 's/applicationId "org.telegram.messenger"/applicationId "org.tajgram.messenger"/g' TMessagesProj_App/build.gradle
+          echo "ApplicationId бомуваффақият ба org.tajgram.messenger танзим шуд!"
+        fi
+
+        # Табдили номи намоён дар strings.xml (Танҳо чизе ки одам дар телефон мебинад)
+        find . -name "strings.xml" -exec sed -i 's/<string name="AppName">Telegram<\/string>/<string name="AppName">Tajgram VIP<\/string>/g' {} \;
+        find . -name "strings.xml" -exec sed -i 's/<string name="AppNameBeta">Telegram Beta<\/string>/<string name="AppNameBeta">Tajgram VIP Beta<\/string>/g' {} \;
+
+        echo "=== 3. САБТИ РАСМӢ ВА ПУШ БА GITHUB ==="
         git add .
-        git commit -m "🔥 PACKAGE REPAIRED: Core structure fully synced to org.tajgram.messenger" || echo "Аллакай ислоҳ шудааст"
+        git commit -m "⚙️ LEGAL SYNC: Core protected as Telegram, App Identity set to Tajgram Messenger" || echo "Ҳама чиз аллакай ҷо ба ҷо аст"
         git push origin HEAD:master --force
