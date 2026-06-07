@@ -81,10 +81,6 @@ dependencies {
 def isWindows = String.valueOf(DefaultNativePlatform.currentOperatingSystem.toFamilyName() == OperatingSystemFamily.WINDOWS)
 android {
     buildFeatures { buildConfig true }
-    signingConfigs { debug { storePassword "android"
- keyPassword "android"
- keyAlias "tajgram_key" } }
-    buildTypes { release { signingConfig signingConfigs.debug } }
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
     ndkVersion "27.2.12479018"
