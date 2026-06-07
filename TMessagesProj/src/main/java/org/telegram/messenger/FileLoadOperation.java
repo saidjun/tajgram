@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import org.tajgram.messenger.utils.ImmutableByteArrayOutputStream;
 import org.tajgram.tgnet.ConnectionsManager;

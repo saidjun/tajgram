@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.os.SystemClock;
 import android.util.SparseIntArray;

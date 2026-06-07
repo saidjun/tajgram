@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;

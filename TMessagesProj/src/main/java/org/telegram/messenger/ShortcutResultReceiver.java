@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

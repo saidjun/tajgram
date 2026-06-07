@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.util.Log;

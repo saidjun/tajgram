@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import static org.tajgram.messenger.MessagesController.findUpdates;
 import static org.tajgram.messenger.MessagesController.findUpdatesAndRemove;

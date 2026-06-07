@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import org.tajgram.SQLite.SQLiteCursor;
 import org.tajgram.SQLite.SQLiteDatabase;

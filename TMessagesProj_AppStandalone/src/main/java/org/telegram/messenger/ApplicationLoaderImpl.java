@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import static org.tajgram.messenger.AndroidUtilities.isInAirplaneMode;
 import static org.tajgram.ui.PremiumPreviewFragment.applyNewSpan;

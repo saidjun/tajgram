@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 import android.app.backup.BackupAgentHelper;
 import android.app.backup.BackupDataInput;

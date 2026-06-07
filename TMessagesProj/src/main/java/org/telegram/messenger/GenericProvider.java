@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.tajgram.messenger;
 
 public interface GenericProvider<F, T> {
     T provide(F obj);
