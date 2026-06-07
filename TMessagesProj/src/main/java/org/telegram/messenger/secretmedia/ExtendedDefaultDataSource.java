@@ -31,7 +31,7 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.Util;
 
-import org.tajgram.messenger.FileStreamLoadOperation;
+import org.telegram.messenger.FileStreamLoadOperation;
 
 import java.io.File;
 import java.io.IOException;

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,16 +16,16 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 
 import org.tajgram.SQLite.SQLiteCursor;
-import org.tajgram.messenger.support.LongSparseIntArray;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.InputSerializedData;
-import org.tajgram.tgnet.NativeByteBuffer;
-import org.tajgram.tgnet.OutputSerializedData;
-import org.tajgram.tgnet.TLClassStore;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.AccountFrozenAlert;
-import org.tajgram.ui.ActionBar.AlertDialog;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLClassStore;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.AccountFrozenAlert;
+import org.telegram.ui.ActionBar.AlertDialog;
 
 import java.io.File;
 import java.math.BigInteger;

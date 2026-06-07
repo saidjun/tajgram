@@ -42,18 +42,18 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DispatchQueue;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.tajgram.ui.ActionBar.INavigationLayout;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.BlurSettingsBottomSheet;
-import org.tajgram.ui.ChatBackgroundDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.telegram.ui.ActionBar.INavigationLayout;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.BlurSettingsBottomSheet;
+import org.telegram.ui.ChatBackgroundDrawable;
 
 import java.util.ArrayList;
 import java.util.HashSet;

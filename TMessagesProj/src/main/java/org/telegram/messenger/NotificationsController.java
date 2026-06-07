@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -66,20 +66,20 @@ import androidx.core.graphics.drawable.IconCompat;
 
 import com.google.common.collect.Lists;
 
-import org.tajgram.messenger.support.LongSparseIntArray;
-import org.tajgram.messenger.utils.tlutils.TlUtils;
-import org.tajgram.messenger.voip.VoIPGroupNotification;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.BubbleActivity;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.Forum.ForumUtilities;
-import org.tajgram.ui.Components.spoilers.SpoilerEffect;
-import org.tajgram.ui.LaunchActivity;
-import org.tajgram.ui.PopupNotificationActivity;
-import org.tajgram.ui.Stories.recorder.StoryEntry;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.utils.tlutils.TlUtils;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.Forum.ForumUtilities;
+import org.telegram.ui.Components.spoilers.SpoilerEffect;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PopupNotificationActivity;
+import org.telegram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.FileOutputStream;

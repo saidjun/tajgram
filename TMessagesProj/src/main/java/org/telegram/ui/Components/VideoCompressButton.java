@@ -14,7 +14,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class VideoCompressButton extends View {
 

@@ -6,12 +6,12 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.tajgram.messenger.utils.ImmutableByteArrayOutputStream;
+import org.telegram.messenger.utils.ImmutableByteArrayOutputStream;
 
 import java.io.File;
 import java.io.RandomAccessFile;

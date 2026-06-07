@@ -6,14 +6,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Premium.boosts.BoostRepository;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.boosts.BoostRepository;
 
 @SuppressLint("ViewConstructor")
 public class BoostTypeSingleCell extends BoostTypeCell {

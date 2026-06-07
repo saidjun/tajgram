@@ -1,11 +1,11 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.R;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
 
 public class LauncherIconController {
     public static void tryFixLauncherIconIfNeeded() {

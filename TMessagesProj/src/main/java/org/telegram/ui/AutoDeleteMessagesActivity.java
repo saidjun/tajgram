@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.transition.ChangeBounds;
@@ -10,27 +10,27 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.tgnet.RequestDelegate;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.HeaderCell;
-import org.tajgram.ui.Cells.RadioCell;
-import org.tajgram.ui.Cells.TextInfoPrivacyCell;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.BulletinFactory;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.SectionsScrollView;
-import org.tajgram.ui.Components.StickerImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.HeaderCell;
+import org.telegram.ui.Cells.RadioCell;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.BulletinFactory;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.SectionsScrollView;
+import org.telegram.ui.Components.StickerImageView;
 
 import java.util.ArrayList;
 

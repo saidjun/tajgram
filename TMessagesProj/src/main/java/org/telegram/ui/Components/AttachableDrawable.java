@@ -2,7 +2,7 @@ package org.tajgram.ui.Components;
 
 import android.view.View;
 
-import org.tajgram.messenger.ImageReceiver;
+import org.telegram.messenger.ImageReceiver;
 
 public interface AttachableDrawable {
     void onAttachedToWindow(ImageReceiver parent);

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 @SuppressLint("AppCompatCustomView")
 public class MarqueeTextView extends TextView {

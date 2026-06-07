@@ -39,7 +39,7 @@ import com.coremedia.iso.boxes.TrackHeaderBox;
 import com.googlecode.mp4parser.DataSource;
 import com.googlecode.mp4parser.util.Matrix;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.io.File;
 import java.io.FileOutputStream;

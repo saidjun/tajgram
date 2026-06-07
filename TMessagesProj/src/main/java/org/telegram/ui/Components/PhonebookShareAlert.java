@@ -39,20 +39,20 @@ import android.widget.Toast;
 
 import androidx.core.widget.NestedScrollView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.ContactsController;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.browser.Browser;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.BottomSheet;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ChatActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ChatActivity;
 
 import java.io.File;
 import java.util.ArrayList;

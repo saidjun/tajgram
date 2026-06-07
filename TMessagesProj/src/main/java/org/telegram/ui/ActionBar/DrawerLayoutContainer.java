@@ -24,9 +24,9 @@ import androidx.core.view.DisplayCutoutCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
 public class DrawerLayoutContainer extends FrameLayout {
 

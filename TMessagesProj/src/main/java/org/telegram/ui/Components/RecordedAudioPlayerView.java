@@ -19,8 +19,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
 
 import java.io.File;
 

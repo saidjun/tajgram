@@ -8,8 +8,8 @@
 
 package org.tajgram.messenger.secretmedia;
 
-import org.tajgram.messenger.SecureDocumentKey;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.SecureDocumentKey;
+import org.telegram.messenger.Utilities;
 
 import java.io.File;
 import java.io.FileInputStream;

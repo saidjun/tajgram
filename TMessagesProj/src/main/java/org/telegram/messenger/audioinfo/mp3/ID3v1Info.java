@@ -15,7 +15,7 @@
  */
 package org.tajgram.messenger.audioinfo.mp3;
 
-import org.tajgram.messenger.audioinfo.AudioInfo;
+import org.telegram.messenger.audioinfo.AudioInfo;
 
 import java.io.EOFException;
 import java.io.IOException;

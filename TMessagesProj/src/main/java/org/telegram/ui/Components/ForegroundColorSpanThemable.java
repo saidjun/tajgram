@@ -6,7 +6,7 @@ import android.text.style.UpdateAppearance;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public class ForegroundColorSpanThemable extends CharacterStyle implements UpdateAppearance {
 

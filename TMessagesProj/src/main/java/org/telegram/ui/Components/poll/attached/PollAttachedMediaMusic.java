@@ -6,14 +6,14 @@ import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.view.View;
 
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.MediaActionDrawable;
-import org.tajgram.ui.Components.RadialProgress2;
-import org.tajgram.ui.Components.poll.PollAttachedMedia;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.MediaActionDrawable;
+import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.ui.Components.poll.PollAttachedMedia;
 
 public class PollAttachedMediaMusic extends PollAttachedMedia {
     public final MessageObject messageObject;

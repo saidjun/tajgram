@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.RecyclerListView;
 
 /**
  * PaddedListAdapter wraps list adapter and adds transparent padding view at the start

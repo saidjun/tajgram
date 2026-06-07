@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 public class FastSpannableStringBuilder {
 }

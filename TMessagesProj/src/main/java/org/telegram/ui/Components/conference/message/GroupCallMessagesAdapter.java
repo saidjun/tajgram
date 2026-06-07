@@ -9,9 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.voip.GroupCallMessage;
-import org.tajgram.messenger.voip.GroupCallMessagesController;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.voip.GroupCallMessagesController;
+import org.telegram.tgnet.TLRPC;
 
 import java.util.ArrayList;
 import java.util.List;

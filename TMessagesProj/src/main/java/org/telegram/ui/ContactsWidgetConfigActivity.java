@@ -1,11 +1,11 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class ContactsWidgetConfigActivity extends ExternalActionActivity {
 

@@ -13,12 +13,12 @@ import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.DispatchQueue;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.ui.Components.BlurringShader;
-import org.tajgram.ui.Components.Size;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.BlurringShader;
+import org.telegram.ui.Components.Size;
 
 import java.util.concurrent.CountDownLatch;
 

@@ -27,12 +27,12 @@ import android.view.View;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SvgHelper;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.Premium.StarParticlesView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.Premium.StarParticlesView;
 
 import java.util.Arrays;
 

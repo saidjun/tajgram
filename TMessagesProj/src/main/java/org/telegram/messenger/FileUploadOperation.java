@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -15,10 +15,10 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.NativeByteBuffer;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
 import java.io.File;
 import java.io.FileDescriptor;

@@ -34,9 +34,9 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.google.zxing.qrcode.encoder.Encoder;
 import com.google.zxing.qrcode.encoder.QRCode;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SvgHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 
 import java.util.Arrays;
 import java.util.Map;

@@ -12,8 +12,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.ActionBar.Theme;
 
 public class ChatSearchTabs extends BlurredFrameLayout {
 

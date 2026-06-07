@@ -9,7 +9,7 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-import org.tajgram.ui.Components.BitmapShaderTools;
+import org.telegram.ui.Components.BitmapShaderTools;
 
 import java.util.ArrayList;
 import java.util.List;

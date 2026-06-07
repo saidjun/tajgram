@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class RoundVideoShadow extends Drawable {
 

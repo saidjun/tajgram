@@ -23,11 +23,11 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
 
 import java.util.ArrayList;
 

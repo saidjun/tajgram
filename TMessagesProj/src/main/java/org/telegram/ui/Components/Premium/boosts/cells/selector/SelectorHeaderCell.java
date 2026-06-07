@@ -13,11 +13,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.ActionBar.BackDrawable;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.BackDrawable;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class SelectorHeaderCell extends FrameLayout {

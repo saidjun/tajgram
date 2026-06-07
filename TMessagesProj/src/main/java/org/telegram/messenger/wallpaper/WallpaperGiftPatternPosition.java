@@ -5,10 +5,10 @@ import android.graphics.RectF;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.SvgHelper;
-import org.tajgram.tgnet.InputSerializedData;
-import org.tajgram.tgnet.OutputSerializedData;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.xml.sax.Attributes;
 
 public class WallpaperGiftPatternPosition {

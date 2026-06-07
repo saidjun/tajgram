@@ -11,18 +11,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.tajgram.PhoneFormat.PhoneFormat;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.LinkSpanDrawable;
-import org.tajgram.ui.Components.ScaleStateListAnimator;
-import org.tajgram.ui.Components.URLSpanNoUnderline;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
+import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.URLSpanNoUnderline;
 
 public class SettingsSuggestionCell extends LinearLayout {
 

@@ -6,9 +6,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.TextView;
 
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.CircularProgressDrawable;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.CircularProgressDrawable;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 public class TextViewWithLoading extends TextView {
 

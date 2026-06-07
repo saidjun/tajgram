@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.DrawableRes;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CounterView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.ScaleStateListAnimator;
-import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CounterView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 
 @SuppressLint("ViewConstructor")

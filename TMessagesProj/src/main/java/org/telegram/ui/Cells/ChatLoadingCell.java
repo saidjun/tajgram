@@ -19,10 +19,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.RadialProgressView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.RadialProgressView;
 
 public class ChatLoadingCell extends FrameLayout {
 

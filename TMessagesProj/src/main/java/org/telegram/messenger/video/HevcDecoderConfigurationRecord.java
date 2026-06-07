@@ -18,7 +18,7 @@ import com.googlecode.mp4parser.authoring.tracks.h265.H265TrackImpl;
 import com.googlecode.mp4parser.authoring.tracks.h265.NalUnitHeader;
 import com.googlecode.mp4parser.util.ByteBufferByteChannel;
 
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.Utilities;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

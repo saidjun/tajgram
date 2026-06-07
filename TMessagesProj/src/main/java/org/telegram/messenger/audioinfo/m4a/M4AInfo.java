@@ -18,8 +18,8 @@ package org.tajgram.messenger.audioinfo.m4a;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import org.tajgram.messenger.audioinfo.AudioInfo;
-import org.tajgram.messenger.audioinfo.mp3.ID3v1Genre;
+import org.telegram.messenger.audioinfo.AudioInfo;
+import org.telegram.messenger.audioinfo.mp3.ID3v1Genre;
 
 import java.io.IOException;
 import java.io.InputStream;

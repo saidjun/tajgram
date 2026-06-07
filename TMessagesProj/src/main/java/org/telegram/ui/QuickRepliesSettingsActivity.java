@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,19 +16,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Cells.EditTextSettingsCell;
-import org.tajgram.ui.Cells.TextCheckCell;
-import org.tajgram.ui.Cells.TextInfoPrivacyCell;
-import org.tajgram.ui.Cells.TextSettingsCell;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Cells.EditTextSettingsCell;
+import org.telegram.ui.Cells.TextCheckCell;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.ui.Cells.TextSettingsCell;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 

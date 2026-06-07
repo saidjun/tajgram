@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 
@@ -9,8 +9,8 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 
 public class SearchTabsAndFiltersLayout extends FrameLayout implements Theme.Colorable {
     private final Path clipPath = new Path();

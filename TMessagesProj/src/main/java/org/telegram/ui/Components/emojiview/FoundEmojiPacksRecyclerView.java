@@ -6,12 +6,12 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
-import org.tajgram.ui.Components.UniversalRecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 
 import java.util.ArrayList;
 

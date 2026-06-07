@@ -6,9 +6,9 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.FileLog;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
 public class WebViewRequestProps {
 

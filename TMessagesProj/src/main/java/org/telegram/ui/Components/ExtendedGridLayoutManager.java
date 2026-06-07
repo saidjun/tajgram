@@ -11,7 +11,7 @@ package org.tajgram.ui.Components;
 import android.content.Context;
 import android.util.SparseIntArray;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

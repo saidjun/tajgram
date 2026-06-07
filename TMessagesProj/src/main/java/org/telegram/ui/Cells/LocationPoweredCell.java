@@ -18,10 +18,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.LayoutHelper;
 
 public class LocationPoweredCell extends FrameLayout {
 

@@ -9,7 +9,7 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.view.View;
 
-import org.tajgram.ui.Components.Reactions.HwEmojis;
+import org.telegram.ui.Components.Reactions.HwEmojis;
 
 import java.util.ArrayList;
 

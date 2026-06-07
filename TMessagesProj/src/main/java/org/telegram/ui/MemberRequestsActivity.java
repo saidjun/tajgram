@@ -1,17 +1,17 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.ActionBarMenu;
-import org.tajgram.ui.ActionBar.ActionBarMenuItem;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.Delegates.MemberRequestsDelegate;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.ActionBarMenu;
+import org.telegram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.Delegates.MemberRequestsDelegate;
 
 public class MemberRequestsActivity extends BaseFragment {
 

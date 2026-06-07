@@ -7,22 +7,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DialogObject;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.browser.Browser;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ChatActivity;
-import org.tajgram.ui.Components.BottomSheetWithRecyclerListView;
-import org.tajgram.ui.Components.Bulletin;
-import org.tajgram.ui.Components.BulletinFactory;
-import org.tajgram.ui.Components.Premium.PremiumPreviewBottomSheet;
-import org.tajgram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
+import org.telegram.ui.Components.Bulletin;
+import org.telegram.ui.Components.BulletinFactory;
+import org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet;
+import org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.LaunchActivity;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

@@ -8,13 +8,13 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ChatActivity;
-import org.tajgram.ui.Delegates.MemberRequestsDelegate;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Delegates.MemberRequestsDelegate;
+import org.telegram.ui.LaunchActivity;
 
 public class MemberRequestsBottomSheet extends UsersAlertBase {
 

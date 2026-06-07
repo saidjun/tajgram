@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,12 +14,12 @@ import android.view.animation.LinearInterpolator;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.Components.ChatActivityEnterView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.RecyclerListView;
 
 public class VoiceMessageEnterTransition implements MessageEnterTransitionContainer.Transition {
 

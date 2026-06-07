@@ -20,16 +20,16 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DocumentObject;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MediaDataController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SvgHelper;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 public class ReactionTabHolderView extends FrameLayout {
     private Paint outlinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);

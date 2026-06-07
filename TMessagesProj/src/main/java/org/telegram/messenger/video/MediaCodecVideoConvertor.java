@@ -11,19 +11,19 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.messenger.VideoEditedInfo;
-import org.tajgram.messenger.video.audio_input.AudioInput;
-import org.tajgram.messenger.video.audio_input.BlankAudioInput;
-import org.tajgram.messenger.video.audio_input.GeneralAudioInput;
-import org.tajgram.ui.Stories.recorder.CollageLayout;
-import org.tajgram.ui.Stories.recorder.StoryEntry;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.video.audio_input.AudioInput;
+import org.telegram.messenger.video.audio_input.BlankAudioInput;
+import org.telegram.messenger.video.audio_input.GeneralAudioInput;
+import org.telegram.ui.Stories.recorder.CollageLayout;
+import org.telegram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.IOException;

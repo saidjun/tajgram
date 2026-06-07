@@ -6,7 +6,7 @@ import android.media.MediaMetadataRetriever;
 
 import com.google.android.exoplayer2.MetadataRetriever;
 
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.FileLog;
 
 import java.io.File;
 

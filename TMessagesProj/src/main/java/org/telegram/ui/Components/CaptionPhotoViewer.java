@@ -24,18 +24,18 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.tajgram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
-import org.tajgram.ui.Stories.DarkThemeResourceProvider;
-import org.tajgram.ui.Stories.recorder.CaptionContainerView;
-import org.tajgram.ui.Stories.recorder.HintView2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.telegram.ui.Stories.recorder.CaptionContainerView;
+import org.telegram.ui.Stories.recorder.HintView2;
 
 public class CaptionPhotoViewer extends CaptionContainerView {
 

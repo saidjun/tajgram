@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.ActionBar.BottomSheet;
 
 public class CraftGiftSheet extends BottomSheet {
 

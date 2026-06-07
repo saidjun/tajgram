@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 
@@ -46,42 +46,42 @@ import androidx.biometric.BiometricManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.ActionBarMenu;
-import org.tajgram.ui.ActionBar.ActionBarMenuItem;
-import org.tajgram.ui.ActionBar.ActionBarMenuSubItem;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Cells.HeaderCell;
-import org.tajgram.ui.Cells.TextCheckCell;
-import org.tajgram.ui.Cells.TextInfoPrivacyCell;
-import org.tajgram.ui.Cells.TextSettingsCell;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.CustomPhoneKeyboardView;
-import org.tajgram.ui.Components.Easings;
-import org.tajgram.ui.Components.EditTextBoldCursor;
-import org.tajgram.ui.Components.FragmentFloatingButton;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.NumberPicker;
-import org.tajgram.ui.Components.OutlineTextContainerView;
-import org.tajgram.ui.Components.RLottieImageView;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.SizeNotifierFrameLayout;
-import org.tajgram.ui.Components.TextViewSwitcher;
-import org.tajgram.ui.Components.TransformableLoginButtonView;
-import org.tajgram.ui.Components.VerticalPositionAutoAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.ActionBarMenu;
+import org.telegram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Cells.HeaderCell;
+import org.telegram.ui.Cells.TextCheckCell;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.ui.Cells.TextSettingsCell;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.CustomPhoneKeyboardView;
+import org.telegram.ui.Components.Easings;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.FragmentFloatingButton;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.NumberPicker;
+import org.telegram.ui.Components.OutlineTextContainerView;
+import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.ui.Components.TextViewSwitcher;
+import org.telegram.ui.Components.TransformableLoginButtonView;
+import org.telegram.ui.Components.VerticalPositionAutoAnimator;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

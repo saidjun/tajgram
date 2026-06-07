@@ -4,20 +4,20 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.MediaDataController;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.RLottieDrawable;
-import org.tajgram.ui.EmojiAnimationsOverlay;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.EmojiAnimationsOverlay;
 
 import java.util.ArrayList;
 

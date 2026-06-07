@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 
@@ -15,19 +15,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.SimpleTextView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
-import org.tajgram.ui.Components.UniversalRecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.SimpleTextView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 
 public class PremiumFeatureCell extends FrameLayout {
 

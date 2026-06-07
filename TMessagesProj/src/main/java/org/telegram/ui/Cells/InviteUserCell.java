@@ -19,17 +19,17 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ContactsController;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.SimpleTextView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CheckBox2;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.ProgressButton;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.SimpleTextView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CheckBox2;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.ProgressButton;
 
 @SuppressLint("ViewConstructor")
 public class InviteUserCell extends FrameLayout {

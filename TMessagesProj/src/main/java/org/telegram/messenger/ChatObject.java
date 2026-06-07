@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -19,13 +19,13 @@ import androidx.collection.LongSparseArray;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.messenger.utils.tlutils.TlUtils;
-import org.tajgram.messenger.voip.Instance;
-import org.tajgram.messenger.voip.VoIPService;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.tgnet.tl.TL_phone;
-import org.tajgram.ui.GroupCallActivity;
+import org.telegram.messenger.utils.tlutils.TlUtils;
+import org.telegram.messenger.voip.Instance;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.GroupCallActivity;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

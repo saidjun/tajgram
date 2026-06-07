@@ -11,8 +11,8 @@ package org.tajgram.ui.Cells;
 import android.content.Context;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
 public class PhotoAttachCameraCell extends View {
     private int itemSize;

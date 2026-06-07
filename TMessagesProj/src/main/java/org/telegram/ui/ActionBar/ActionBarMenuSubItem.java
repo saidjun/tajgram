@@ -20,14 +20,14 @@ import android.widget.TextView;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.Components.AnimatedEmojiSpan;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CheckBox2;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RLottieImageView;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.AnimatedEmojiSpan;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CheckBox2;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RLottieImageView;
 
 public class ActionBarMenuSubItem extends FrameLayout {
 

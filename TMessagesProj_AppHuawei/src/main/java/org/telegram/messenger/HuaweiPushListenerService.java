@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import com.huawei.hms.push.HmsMessageService;
 import com.huawei.hms.push.RemoteMessage;

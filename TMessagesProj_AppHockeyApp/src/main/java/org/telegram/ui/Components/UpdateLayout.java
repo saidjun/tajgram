@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.IUpdateLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.IUpdateLayout;
 
 import java.io.File;
 

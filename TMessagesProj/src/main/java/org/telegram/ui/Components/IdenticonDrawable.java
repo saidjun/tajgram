@@ -13,8 +13,8 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
 public class IdenticonDrawable extends Drawable {
 

@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

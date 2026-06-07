@@ -8,10 +8,10 @@ import android.os.Build;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;

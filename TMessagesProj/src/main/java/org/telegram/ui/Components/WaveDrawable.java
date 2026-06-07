@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.SharedConfig;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
 
 public class WaveDrawable {
 

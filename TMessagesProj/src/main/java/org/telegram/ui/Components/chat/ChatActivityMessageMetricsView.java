@@ -18,17 +18,17 @@ import androidx.core.math.MathUtils;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatActionCell;
-import org.tajgram.ui.Cells.ChatMessageCell;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatActionCell;
+import org.telegram.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 

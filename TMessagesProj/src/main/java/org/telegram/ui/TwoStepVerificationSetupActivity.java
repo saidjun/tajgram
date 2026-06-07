@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2017.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -48,40 +48,40 @@ import android.widget.Toast;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SRPHelper;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.RequestDelegate;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.ActionBarMenu;
-import org.tajgram.ui.ActionBar.ActionBarMenuItem;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.CustomPhoneKeyboardView;
-import org.tajgram.ui.Components.EditTextBoldCursor;
-import org.tajgram.ui.Components.FragmentFloatingButton;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.OutlineTextContainerView;
-import org.tajgram.ui.Components.RLottieDrawable;
-import org.tajgram.ui.Components.RLottieImageView;
-import org.tajgram.ui.Components.RadialProgressView;
-import org.tajgram.ui.Components.SizeNotifierFrameLayout;
-import org.tajgram.ui.Components.TextStyleSpan;
-import org.tajgram.ui.Components.TransformableLoginButtonView;
-import org.tajgram.ui.Components.VerticalPositionAutoAnimator;
-import org.tajgram.ui.Components.spoilers.SpoilersTextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SRPHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.ActionBarMenu;
+import org.telegram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.CustomPhoneKeyboardView;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.FragmentFloatingButton;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.OutlineTextContainerView;
+import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.ui.Components.TextStyleSpan;
+import org.telegram.ui.Components.TransformableLoginButtonView;
+import org.telegram.ui.Components.VerticalPositionAutoAnimator;
+import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
 import java.util.ArrayList;
 

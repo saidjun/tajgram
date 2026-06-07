@@ -7,13 +7,13 @@ import android.graphics.Color;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
-import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProviderBuilder;
 
 public class BlurredBackgroundProviderImpl {
     public static BlurredBackgroundProvider mainTabs(Theme.ResourcesProvider resourcesProvider) {

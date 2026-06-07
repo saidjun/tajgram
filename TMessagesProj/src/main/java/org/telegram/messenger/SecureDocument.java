@@ -1,7 +1,7 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
 public class SecureDocument extends TLObject {
 

@@ -24,22 +24,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DialogObject;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.PinchToZoomHelper;
-import org.tajgram.ui.ProfileActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.PinchToZoomHelper;
+import org.telegram.ui.ProfileActivity;
 
 import java.util.ArrayList;
 

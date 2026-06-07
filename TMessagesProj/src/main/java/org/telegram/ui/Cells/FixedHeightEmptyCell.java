@@ -3,7 +3,7 @@ package org.tajgram.ui.Cells;
 import android.content.Context;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class FixedHeightEmptyCell extends View {
 

@@ -1,8 +1,8 @@
 package org.tajgram.ui.Components.Premium.boosts.cells;
 
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.BotWebViewVibrationEffect;
-import org.tajgram.messenger.R;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,11 +19,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.EditTextCaption;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.EditTextCaption;
+import org.telegram.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class EnterPrizeCell extends LinearLayout {

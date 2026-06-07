@@ -11,16 +11,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.SimpleTextView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.SimpleTextView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.LayoutHelper;
 
 public class MemberRequestCell extends FrameLayout {
 

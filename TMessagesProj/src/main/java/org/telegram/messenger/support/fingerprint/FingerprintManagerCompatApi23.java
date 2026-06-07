@@ -21,7 +21,7 @@ import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Handler;
 
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.FileLog;
 
 import java.security.Signature;
 

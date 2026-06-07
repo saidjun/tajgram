@@ -21,14 +21,14 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import org.checkerframework.checker.units.qual.A;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.AnimatedTextView;
-import org.tajgram.ui.Components.ButtonBounce;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.RLottieDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.AnimatedTextView;
+import org.telegram.ui.Components.ButtonBounce;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.RLottieDrawable;
 
 public class TrashView extends View {
 

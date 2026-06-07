@@ -18,9 +18,9 @@ import android.view.ViewGroup;
 
 import androidx.core.util.Consumer;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 public class PipettePickerView extends View {
     private final static float PIXELS_OFFSET = 3.5f;

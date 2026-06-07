@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.backup.BackupAgentHelper;
 import android.app.backup.BackupDataInput;
@@ -11,7 +11,7 @@ import android.content.Context;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -18,9 +18,9 @@ import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.BaseCell;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.BaseCell;
 
 import java.util.ArrayList;
 

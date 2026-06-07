@@ -6,11 +6,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.voip.NativeInstance;
-import org.tajgram.messenger.voip.VideoCapturerDevice;
-import org.tajgram.messenger.voip.VoIPService;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.Components.LayoutHelper;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;

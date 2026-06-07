@@ -24,21 +24,21 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import org.checkerframework.checker.units.qual.A;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.HashtagSearchController;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ChatActivity;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.HashtagsSearchAdapter;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.SharedMediaLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.HashtagSearchController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.HashtagsSearchAdapter;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.SharedMediaLayout;
 
 import java.util.ArrayList;
 

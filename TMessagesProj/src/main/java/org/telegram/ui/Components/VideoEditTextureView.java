@@ -9,7 +9,7 @@ import android.view.TextureView;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.ui.Stories.recorder.StoryEntry;
+import org.telegram.ui.Stories.recorder.StoryEntry;
 
 public class VideoEditTextureView extends TextureView implements TextureView.SurfaceTextureListener {
 

@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class EntitiesContainerView extends FrameLayout {
 

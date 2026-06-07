@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.Manifest;
 import android.accounts.Account;
@@ -32,13 +32,13 @@ import androidx.annotation.NonNull;
 import androidx.collection.LongSparseArray;
 
 import org.tajgram.PhoneFormat.PhoneFormat;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.Vector;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.Components.Bulletin;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.Components.Bulletin;
 
 import java.text.CollationKey;
 import java.text.Collator;

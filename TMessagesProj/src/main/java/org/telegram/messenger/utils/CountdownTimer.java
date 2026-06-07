@@ -1,6 +1,6 @@
 package org.tajgram.messenger.utils;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class CountdownTimer {
     private final Callback callback;

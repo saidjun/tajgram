@@ -19,10 +19,10 @@ import android.view.ViewParent;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatMessageCell;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 

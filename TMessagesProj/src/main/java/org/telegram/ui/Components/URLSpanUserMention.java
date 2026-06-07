@@ -11,7 +11,7 @@ package org.tajgram.ui.Components;
 import android.text.TextPaint;
 import android.view.View;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public class URLSpanUserMention extends URLSpanNoUnderline {
 

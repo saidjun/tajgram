@@ -6,8 +6,8 @@ import android.opengl.GLUtils;
 import android.os.Build;
 import android.util.Log;
 
-import org.tajgram.messenger.FileLog;
-import org.tajgram.ui.Components.Size;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.Size;
 
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;

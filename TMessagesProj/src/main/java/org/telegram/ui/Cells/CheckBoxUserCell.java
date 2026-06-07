@@ -14,17 +14,17 @@ import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ContactsController;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.SimpleTextView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CombinedDrawable;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Switch;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.SimpleTextView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CombinedDrawable;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Switch;
 
 public class CheckBoxUserCell extends FrameLayout {
 

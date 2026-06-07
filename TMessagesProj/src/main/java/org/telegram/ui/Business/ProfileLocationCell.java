@@ -18,21 +18,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.WebFile;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.LoadingDrawable;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
-import org.tajgram.ui.Components.UniversalRecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.WebFile;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LoadingDrawable;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 
 import java.util.Locale;
 

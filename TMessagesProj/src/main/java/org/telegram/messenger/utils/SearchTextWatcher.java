@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-import org.tajgram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.ActionBarMenuItem;
 
 public class SearchTextWatcher implements TextWatcher {
     public final ActionBarMenuItem.ActionBarMenuItemSearchListener listener;

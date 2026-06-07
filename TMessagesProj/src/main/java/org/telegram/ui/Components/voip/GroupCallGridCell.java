@@ -8,11 +8,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AccountInstance;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ChatObject;
-import org.tajgram.ui.GroupCallActivity;
-import org.tajgram.ui.GroupCallTabletGridAdapter;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.ui.GroupCallActivity;
+import org.telegram.ui.GroupCallTabletGridAdapter;
 
 public class GroupCallGridCell extends FrameLayout {
 

@@ -9,7 +9,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class PaintCancelView extends View {
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);

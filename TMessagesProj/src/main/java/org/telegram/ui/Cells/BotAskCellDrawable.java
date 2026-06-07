@@ -18,14 +18,14 @@ import android.text.Layout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.Text;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.Text;
 
 public class BotAskCellDrawable extends Drawable {
     private static final int PADDING_TOP = 17;

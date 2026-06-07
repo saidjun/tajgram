@@ -15,8 +15,8 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
 
 public class WallpaperCheckBoxView extends View {
 

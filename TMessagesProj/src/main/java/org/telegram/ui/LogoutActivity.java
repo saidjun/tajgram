@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
 
@@ -23,27 +23,27 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DownloadController;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Cells.HeaderCell;
-import org.tajgram.ui.Cells.ShadowSectionCell;
-import org.tajgram.ui.Cells.TextDetailSettingsCell;
-import org.tajgram.ui.Cells.TextInfoPrivacyCell;
-import org.tajgram.ui.Cells.TextSettingsCell;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Cells.HeaderCell;
+import org.telegram.ui.Cells.ShadowSectionCell;
+import org.telegram.ui.Cells.TextDetailSettingsCell;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.ui.Cells.TextSettingsCell;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
+import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 

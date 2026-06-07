@@ -11,8 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.ui.ActionBar.BottomSheet;
-import org.tajgram.ui.CachedMediaLayout;
+import org.telegram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.CachedMediaLayout;
 
 public class NestedSizeNotifierLayout extends SizeNotifierFrameLayout implements NestedScrollingParent3, View.OnLayoutChangeListener {
     public NestedSizeNotifierLayout(Context context) {

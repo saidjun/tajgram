@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 
@@ -37,24 +37,24 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
 import org.tajgram.PhoneFormat.PhoneFormat;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.LocationController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RLottieImageView;
-import org.tajgram.ui.Components.ScaleStateListAnimator;
-import org.tajgram.ui.Components.URLSpanNoUnderline;
-import org.tajgram.ui.Components.voip.CellFlickerDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.URLSpanNoUnderline;
+import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

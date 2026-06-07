@@ -2,9 +2,9 @@ package org.tajgram.ui.Components.Paint;
 
 import android.graphics.RectF;
 
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.DispatchQueue;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

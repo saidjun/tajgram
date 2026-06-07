@@ -7,9 +7,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.AnimationNotificationsLocker;
-import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
 
 import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.android.animator.VariableFloat;

@@ -6,11 +6,11 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
 import android.util.SparseArray;
 
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.FileLog;
 
 public class TLClassStore {
     private SparseArray<Class> classStore;

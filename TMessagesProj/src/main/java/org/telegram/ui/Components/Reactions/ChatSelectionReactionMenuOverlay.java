@@ -15,17 +15,17 @@ import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.ChatActivity;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.FragmentContextView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.ReactionsContainerLayout;
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.ReactionsContainerLayout;
+import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.Collections;
 import java.util.List;

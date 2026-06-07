@@ -10,19 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.ui.ActionBar.BottomSheet;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.SizeNotifierFrameLayout;
-import org.tajgram.ui.Stories.DarkThemeResourceProvider;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.ui.Stories.DarkThemeResourceProvider;
 
 public class GallerySheet extends BottomSheet {
 

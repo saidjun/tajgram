@@ -7,17 +7,17 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.PhotoViewer;
-import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
-import org.tajgram.ui.Stories.recorder.GallerySheet;
-import org.tajgram.ui.Stories.recorder.TimelineView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.telegram.ui.Stories.recorder.GallerySheet;
+import org.telegram.ui.Stories.recorder.TimelineView;
 
 public class PhotoViewerCoverEditor extends FrameLayout {
 

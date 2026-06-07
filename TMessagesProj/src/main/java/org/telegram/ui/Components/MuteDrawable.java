@@ -18,7 +18,7 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.R;
+import org.telegram.messenger.R;
 
 public class MuteDrawable extends Drawable {
 

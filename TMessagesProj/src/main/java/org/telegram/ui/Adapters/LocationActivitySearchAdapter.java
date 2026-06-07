@@ -12,14 +12,14 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.GraySectionCell;
-import org.tajgram.ui.Cells.LocationCell;
-import org.tajgram.ui.Components.FlickerLoadingView;
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.GraySectionCell;
+import org.telegram.ui.Cells.LocationCell;
+import org.telegram.ui.Components.FlickerLoadingView;
+import org.telegram.ui.Components.RecyclerListView;
 
 import androidx.recyclerview.widget.RecyclerView;
 

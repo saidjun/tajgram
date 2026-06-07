@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
@@ -34,25 +34,25 @@ import android.view.animation.LinearInterpolator;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.ChatListItemAnimator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.AnimationNotificationsLocker;
-import org.tajgram.messenger.Emoji;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.SimpleTextView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.AnimatedEmojiSpan;
-import org.tajgram.ui.Components.ChatActivityEnterView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.EmptyStubSpan;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.ReplyMessageLine;
-import org.tajgram.ui.Components.chat.ViewPositionWatcher;
-import org.tajgram.ui.Components.spoilers.SpoilerEffect;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.SimpleTextView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.AnimatedEmojiSpan;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.EmptyStubSpan;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.ReplyMessageLine;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.telegram.ui.Components.spoilers.SpoilerEffect;
 
 public class TextMessageEnterTransition implements MessageEnterTransitionContainer.Transition {
     float fromRadius;

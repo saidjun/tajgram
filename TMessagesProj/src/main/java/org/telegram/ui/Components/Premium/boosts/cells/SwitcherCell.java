@@ -2,8 +2,8 @@ package org.tajgram.ui.Components.Premium.boosts.cells;
 
 import android.content.Context;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.TextCheckCell;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.TextCheckCell;
 
 public class SwitcherCell extends TextCheckCell {
     public static int TYPE_WINNERS = 0;

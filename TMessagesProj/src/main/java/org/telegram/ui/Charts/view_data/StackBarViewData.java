@@ -4,9 +4,9 @@ import android.graphics.Paint;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Charts.data.ChartData;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Charts.data.ChartData;
 
 public class StackBarViewData extends LineViewData {
 

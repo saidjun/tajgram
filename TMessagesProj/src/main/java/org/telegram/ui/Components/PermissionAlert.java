@@ -8,7 +8,7 @@
 
 package org.tajgram.ui.Components;
 
-import org.tajgram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.AlertDialog;
 
 public class PermissionAlert {
 

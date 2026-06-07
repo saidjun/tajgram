@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 
@@ -23,10 +23,10 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.tgnet.AbstractSerializedData;
-import org.tajgram.tgnet.SerializedData;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.TextStyleSpan;
+import org.telegram.tgnet.AbstractSerializedData;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.TextStyleSpan;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;

@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.NotificationsController.TYPE_PRIVATE;
 import static org.tajgram.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;
@@ -6,9 +6,9 @@ import static org.tajgram.messenger.NotificationsController.TYPE_REACTIONS_STORI
 
 import android.content.SharedPreferences;
 
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.NotificationsSoundActivity;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.NotificationsSoundActivity;
 
 public class NotificationsSettingsFacade {
 

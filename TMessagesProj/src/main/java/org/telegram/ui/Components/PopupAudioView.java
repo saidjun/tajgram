@@ -18,16 +18,16 @@ import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DownloadController;
-import org.tajgram.messenger.ImageLoader;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.BaseCell;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.BaseCell;
 
 import java.io.File;
 

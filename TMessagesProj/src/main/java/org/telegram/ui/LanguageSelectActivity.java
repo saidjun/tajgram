@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,35 +26,35 @@ import androidx.recyclerview.widget.RecyclerView;
 //import com.google.mlkit.common.model.RemoteModelManager;
 //import com.google.mlkit.nl.translate.TranslateRemoteModel;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.TranslateController;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.ActionBarMenu;
-import org.tajgram.ui.ActionBar.ActionBarMenuItem;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Cells.HeaderCell;
-import org.tajgram.ui.Cells.LanguageCell;
-import org.tajgram.ui.Cells.ShadowSectionCell;
-import org.tajgram.ui.Cells.TextCheckCell;
-import org.tajgram.ui.Cells.TextInfoPrivacyCell;
-import org.tajgram.ui.Cells.TextRadioCell;
-import org.tajgram.ui.Cells.TextSettingsCell;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.EmptyTextProgressView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.TranslateAlert2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.ActionBarMenu;
+import org.telegram.ui.ActionBar.ActionBarMenuItem;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Cells.HeaderCell;
+import org.telegram.ui.Cells.LanguageCell;
+import org.telegram.ui.Cells.ShadowSectionCell;
+import org.telegram.ui.Cells.TextCheckCell;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.ui.Cells.TextRadioCell;
+import org.telegram.ui.Cells.TextSettingsCell;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.EmptyTextProgressView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.TranslateAlert2;
 
 import java.util.ArrayList;
 import java.util.Collections;

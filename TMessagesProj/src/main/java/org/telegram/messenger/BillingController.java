@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.MessagesController.findUpdates;
 import static org.tajgram.messenger.MessagesController.findUpdatesAndRemove;
@@ -29,15 +29,15 @@ import com.android.billingclient.api.QueryProductDetailsParams;
 import com.android.billingclient.api.QueryPurchasesParams;
 
 import org.checkerframework.checker.units.qual.A;
-import org.tajgram.messenger.utils.BillingUtilities;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.LaunchActivity;
-import org.tajgram.ui.LoginActivity;
-import org.tajgram.ui.PremiumPreviewFragment;
-import org.tajgram.ui.Stars.StarsController;
+import org.telegram.messenger.utils.BillingUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.LoginActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.Stars.StarsController;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

@@ -4,11 +4,11 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.SendMessagesHelper;
-import org.tajgram.ui.Components.poll.PollAttachedMedia;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.Components.poll.PollAttachedMedia;
 
 public class PollAttachedMediaGallery extends PollAttachedMedia {
     public final MediaController.PhotoEntry photoEntry;

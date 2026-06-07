@@ -11,7 +11,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.R;
+import org.telegram.messenger.R;
 
 public class SummaryIcon extends Drawable {
 

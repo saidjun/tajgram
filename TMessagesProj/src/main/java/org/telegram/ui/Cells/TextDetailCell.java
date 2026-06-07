@@ -26,16 +26,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.tajgram.messenger.Emoji;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.LinkSpanDrawable;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
-import org.tajgram.ui.Components.UniversalRecyclerView;
-import org.tajgram.ui.Components.spoilers.SpoilersTextView;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
 public class TextDetailCell extends FrameLayout {
 

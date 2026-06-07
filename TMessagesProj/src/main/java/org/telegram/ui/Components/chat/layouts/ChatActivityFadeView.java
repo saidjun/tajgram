@@ -8,8 +8,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.tajgram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
 
 public class ChatActivityFadeView extends View {
     private BlurredBackgroundWithFadeDrawable fadeDrawableTop;

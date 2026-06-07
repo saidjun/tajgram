@@ -4,8 +4,8 @@ import android.content.Context;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.Theme;
 
 public class DoubleLimitsPageView extends BaseListPageView {
 

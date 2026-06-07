@@ -28,9 +28,9 @@ import android.os.ParcelFileDescriptor;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
 
 import java.io.File;
 import java.util.ArrayList;

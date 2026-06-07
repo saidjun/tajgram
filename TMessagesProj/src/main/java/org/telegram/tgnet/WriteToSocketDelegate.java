@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
 public interface WriteToSocketDelegate {
     void run();

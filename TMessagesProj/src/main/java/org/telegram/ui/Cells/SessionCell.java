@@ -33,23 +33,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CombinedDrawable;
-import org.tajgram.ui.Components.DotDividerSpan;
-import org.tajgram.ui.Components.FlickerLoadingView;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CombinedDrawable;
+import org.telegram.ui.Components.DotDividerSpan;
+import org.telegram.ui.Components.FlickerLoadingView;
+import org.telegram.ui.Components.LayoutHelper;
 
 public class SessionCell extends FrameLayout {
 

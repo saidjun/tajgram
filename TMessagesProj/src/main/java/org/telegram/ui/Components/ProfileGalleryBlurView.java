@@ -25,11 +25,11 @@ import android.view.View;
 import androidx.annotation.RequiresApi;
 import androidx.viewpager.widget.ViewPager;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ProfileActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ProfileActivity;
 
 public class ProfileGalleryBlurView extends View {
 

@@ -5,21 +5,21 @@ import static org.tajgram.messenger.LocaleController.getString;
 
 import android.text.TextUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BotWebViewVibrationEffect;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
-import org.tajgram.ui.Components.UniversalRecyclerView;
-import org.tajgram.ui.UsersSelectActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.UsersSelectActivity;
 
 import java.util.ArrayList;
 

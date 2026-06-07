@@ -9,23 +9,23 @@ import android.graphics.Region;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatActionCell;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.Cells.DialogCell;
-import org.tajgram.ui.Cells.ManageChatUserCell;
-import org.tajgram.ui.Cells.ProfileChannelCell;
-import org.tajgram.ui.Cells.ProfileSearchCell;
-import org.tajgram.ui.Cells.ReactedUserHolderView;
-import org.tajgram.ui.Cells.SharedPhotoVideoCell2;
-import org.tajgram.ui.Cells.StatisticPostInfoCell;
-import org.tajgram.ui.Cells.UserCell;
-import org.tajgram.ui.Components.BlurredRecyclerView;
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatActionCell;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Cells.DialogCell;
+import org.telegram.ui.Cells.ManageChatUserCell;
+import org.telegram.ui.Cells.ProfileChannelCell;
+import org.telegram.ui.Cells.ProfileSearchCell;
+import org.telegram.ui.Cells.ReactedUserHolderView;
+import org.telegram.ui.Cells.SharedPhotoVideoCell2;
+import org.telegram.ui.Cells.StatisticPostInfoCell;
+import org.telegram.ui.Cells.UserCell;
+import org.telegram.ui.Components.BlurredRecyclerView;
+import org.telegram.ui.Components.RecyclerListView;
 
 public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
 

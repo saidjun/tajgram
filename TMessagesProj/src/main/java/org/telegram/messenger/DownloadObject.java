@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
-import org.tajgram.tgnet.TLObject;
+import org.telegram.tgnet.TLObject;
 
 public class DownloadObject {
     public TLObject object;

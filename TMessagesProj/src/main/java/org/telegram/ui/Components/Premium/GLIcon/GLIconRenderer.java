@@ -10,7 +10,7 @@ import android.opengl.Matrix;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;

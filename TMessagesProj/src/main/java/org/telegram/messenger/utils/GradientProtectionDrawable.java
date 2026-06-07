@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public class GradientProtectionDrawable extends Drawable {
     private final Interpolator mInterpolator;

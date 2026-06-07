@@ -21,8 +21,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.FileLog;
-import org.tajgram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
 
 public abstract class BaseCell extends ViewGroup implements SizeNotifierFrameLayout.IViewWithInvalidateCallback {
 

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,27 +25,27 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.DrawerLayoutContainer;
-import org.tajgram.ui.ActionBar.INavigationLayout;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.PasscodeView;
-import org.tajgram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.DrawerLayoutContainer;
+import org.telegram.ui.ActionBar.INavigationLayout;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.PasscodeView;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
 
 import java.util.ArrayList;
 

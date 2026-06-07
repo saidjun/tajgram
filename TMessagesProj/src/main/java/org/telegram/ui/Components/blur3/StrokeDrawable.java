@@ -13,9 +13,9 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.tajgram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 public class StrokeDrawable extends Drawable {
 

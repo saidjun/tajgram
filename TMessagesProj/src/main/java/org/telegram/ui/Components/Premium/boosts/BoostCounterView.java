@@ -14,10 +14,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedTextView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedTextView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 @SuppressLint("ViewConstructor")
 public class BoostCounterView extends View {

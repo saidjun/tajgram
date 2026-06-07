@@ -4,11 +4,11 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.tgnet.TLObject;
+import org.telegram.tgnet.TLObject;
 
-import org.tajgram.messenger.MediaDataController;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_stars;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

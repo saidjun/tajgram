@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,22 +19,22 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AccountInstance;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.DrawerLayoutContainer;
-import org.tajgram.ui.ActionBar.INavigationLayout;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.PasscodeView;
-import org.tajgram.ui.Components.ThemeEditorView;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.DrawerLayoutContainer;
+import org.telegram.ui.ActionBar.INavigationLayout;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.PasscodeView;
+import org.telegram.ui.Components.ThemeEditorView;
 
 import java.util.ArrayList;
 

@@ -18,9 +18,9 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

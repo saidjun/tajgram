@@ -15,7 +15,7 @@
  */
 package org.tajgram.messenger.audioinfo.mp3;
 
-import org.tajgram.messenger.audioinfo.util.RangeInputStream;
+import org.telegram.messenger.audioinfo.util.RangeInputStream;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

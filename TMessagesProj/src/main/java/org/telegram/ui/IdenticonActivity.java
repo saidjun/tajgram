@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -32,24 +32,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Emoji;
-import org.tajgram.messenger.EmojiData;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.ThemeDescription;
-import org.tajgram.ui.Components.IdenticonDrawable;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.URLSpanReplacement;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.EmojiData;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Components.IdenticonDrawable;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.URLSpanReplacement;
 
 import java.util.ArrayList;
 

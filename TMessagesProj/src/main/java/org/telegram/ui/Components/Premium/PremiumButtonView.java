@@ -19,21 +19,21 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.BadWayToMakeButtonRound;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.AnimatedTextView;
-import org.tajgram.ui.Components.CircularProgressDrawable;
-import org.tajgram.ui.Components.CounterView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Loadable;
-import org.tajgram.ui.Components.RLottieImageView;
-import org.tajgram.ui.Components.ScaleStateListAnimator;
-import org.tajgram.ui.Components.voip.CellFlickerDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.BadWayToMakeButtonRound;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.AnimatedTextView;
+import org.telegram.ui.Components.CircularProgressDrawable;
+import org.telegram.ui.Components.CounterView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Loadable;
+import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
 public class PremiumButtonView extends FrameLayout implements Loadable {
 

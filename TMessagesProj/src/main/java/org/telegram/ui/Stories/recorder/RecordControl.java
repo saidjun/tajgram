@@ -34,19 +34,19 @@ import androidx.customview.widget.ExploreByTouchHelper;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.ButtonBounce;
-import org.tajgram.ui.Components.CircularProgressDrawable;
-import org.tajgram.ui.Components.CombinedDrawable;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.ButtonBounce;
+import org.telegram.ui.Components.CircularProgressDrawable;
+import org.telegram.ui.Components.CombinedDrawable;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import java.util.ArrayList;
 import java.util.List;

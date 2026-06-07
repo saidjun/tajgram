@@ -1,4 +1,4 @@
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
 public class TL_smsjobs {
 

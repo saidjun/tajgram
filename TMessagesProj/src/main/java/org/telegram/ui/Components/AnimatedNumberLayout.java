@@ -10,7 +10,7 @@ import android.text.TextPaint;
 import android.util.Property;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.util.ArrayList;
 import java.util.Locale;

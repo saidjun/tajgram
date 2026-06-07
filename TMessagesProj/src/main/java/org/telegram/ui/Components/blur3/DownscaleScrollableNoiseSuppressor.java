@@ -14,11 +14,11 @@ import android.os.Build;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.MediaDataController;
-import org.tajgram.messenger.utils.RenderNodeEffects;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.utils.RenderNodeEffects;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 
 import java.util.ArrayList;
 import java.util.List;

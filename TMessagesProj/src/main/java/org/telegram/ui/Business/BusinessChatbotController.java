@@ -1,11 +1,11 @@
 package org.tajgram.ui.Business;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.tl.TL_account;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
 import java.util.ArrayList;
 

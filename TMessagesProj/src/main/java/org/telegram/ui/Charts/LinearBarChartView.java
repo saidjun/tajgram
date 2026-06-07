@@ -5,8 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.Log;
 
-import org.tajgram.ui.Charts.data.ChartData;
-import org.tajgram.ui.Charts.view_data.LineViewData;
+import org.telegram.ui.Charts.data.ChartData;
+import org.telegram.ui.Charts.view_data.LineViewData;
 
 public class LinearBarChartView extends BaseChartView<ChartData, LineViewData> {
     public LinearBarChartView(Context context) {

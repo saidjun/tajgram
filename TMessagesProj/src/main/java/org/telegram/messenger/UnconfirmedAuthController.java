@@ -1,16 +1,16 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import org.tajgram.SQLite.SQLiteCursor;
 import org.tajgram.SQLite.SQLiteDatabase;
 import org.tajgram.SQLite.SQLitePreparedStatement;
-import org.tajgram.tgnet.AbstractSerializedData;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.NativeByteBuffer;
-import org.tajgram.tgnet.OutputSerializedData;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLParseException;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_account;
+import org.telegram.tgnet.AbstractSerializedData;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLParseException;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
 import java.util.ArrayList;
 import java.util.HashSet;

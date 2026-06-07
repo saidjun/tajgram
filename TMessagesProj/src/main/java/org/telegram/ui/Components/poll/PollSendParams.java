@@ -2,7 +2,7 @@ package org.tajgram.ui.Components.poll;
 
 import android.text.TextUtils;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 import java.util.ArrayList;
 

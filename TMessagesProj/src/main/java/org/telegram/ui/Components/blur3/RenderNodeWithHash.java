@@ -7,7 +7,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import org.tajgram.ui.Components.blur3.capture.IBlur3Hash;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 
 @RequiresApi(api = Build.VERSION_CODES.Q)
 public class RenderNodeWithHash {

@@ -30,11 +30,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.Theme;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

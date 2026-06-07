@@ -10,8 +10,8 @@ import android.os.Build;
 import android.util.TypedValue;
 import android.widget.Button;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
 
 public class ProgressButton extends Button {
 

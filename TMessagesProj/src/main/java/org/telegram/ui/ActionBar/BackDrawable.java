@@ -18,8 +18,8 @@ import android.view.animation.DecelerateInterpolator;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
 public class BackDrawable extends Drawable {
 

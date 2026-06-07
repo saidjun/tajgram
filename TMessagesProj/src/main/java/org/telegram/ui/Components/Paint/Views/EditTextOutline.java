@@ -17,9 +17,9 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.Components.CornerPath;
-import org.tajgram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.CornerPath;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
 public class EditTextOutline extends EditTextBoldCursor {
 

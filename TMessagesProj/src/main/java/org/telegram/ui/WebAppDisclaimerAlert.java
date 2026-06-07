@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,17 +12,17 @@ import android.widget.TextView;
 
 import com.google.android.exoplayer2.util.Consumer;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.messenger.browser.Browser;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.CheckBoxCell;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.CheckBoxCell;
+import org.telegram.ui.Components.LayoutHelper;
 
 public class WebAppDisclaimerAlert {
 

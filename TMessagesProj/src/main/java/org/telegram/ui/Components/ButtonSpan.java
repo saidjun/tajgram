@@ -22,10 +22,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Business.QuickRepliesActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Business.QuickRepliesActivity;
 
 public class ButtonSpan extends ReplacementSpan {
 

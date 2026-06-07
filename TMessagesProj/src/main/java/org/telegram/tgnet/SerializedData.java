@@ -6,10 +6,10 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

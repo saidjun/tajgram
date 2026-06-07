@@ -3,7 +3,7 @@ package org.tajgram.messenger.pip.utils;
 import android.os.Handler;
 import android.os.Looper;
 
-import org.tajgram.messenger.ApplicationLoader;
+import org.telegram.messenger.ApplicationLoader;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

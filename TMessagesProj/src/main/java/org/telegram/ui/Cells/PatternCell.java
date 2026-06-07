@@ -17,19 +17,19 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DownloadController;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.ImageLoader;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.BackgroundGradientDrawable;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.MediaActionDrawable;
-import org.tajgram.ui.Components.MotionBackgroundDrawable;
-import org.tajgram.ui.Components.RadialProgress2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.BackgroundGradientDrawable;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.MediaActionDrawable;
+import org.telegram.ui.Components.MotionBackgroundDrawable;
+import org.telegram.ui.Components.RadialProgress2;
 
 import java.io.File;
 

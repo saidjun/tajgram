@@ -15,9 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildConfig;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.messenger.FileLog;
 
 import java.util.Locale;
 

@@ -5,9 +5,9 @@ import android.media.MediaFormat;
 import android.os.Build;
 import android.util.Log;
 
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.video.audio_input.AudioInput;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.video.audio_input.AudioInput;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

@@ -6,13 +6,13 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 public class AutoMessageHeardReceiver extends BroadcastReceiver {
 

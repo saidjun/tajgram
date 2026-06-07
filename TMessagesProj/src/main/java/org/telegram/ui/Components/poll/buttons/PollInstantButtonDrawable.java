@@ -10,12 +10,12 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.utils.DrawableUtils;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedTextView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.RadialProgress;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.utils.DrawableUtils;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedTextView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.RadialProgress;
 
 import me.vkryl.android.animator.BoolAnimator;
 

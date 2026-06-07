@@ -33,14 +33,14 @@ import androidx.core.graphics.ColorUtils;
 
 import com.google.android.gms.vision.Frame;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 

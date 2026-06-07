@@ -26,14 +26,14 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.BubbleActivity;
-import org.tajgram.ui.Components.Crop.CropRotationWheel;
-import org.tajgram.ui.Components.Crop.CropTransform;
-import org.tajgram.ui.Components.Crop.CropView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.Components.Crop.CropRotationWheel;
+import org.telegram.ui.Components.Crop.CropTransform;
+import org.telegram.ui.Components.Crop.CropView;
 
 public class PhotoCropView extends FrameLayout {
 

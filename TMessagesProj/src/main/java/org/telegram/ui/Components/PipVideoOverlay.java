@@ -45,18 +45,18 @@ import androidx.dynamicanimation.animation.SpringForce;
 
 import com.google.android.exoplayer2.C;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.pip.source.IPipSourceDelegate;
-import org.tajgram.messenger.pip.utils.PipPermissions;
-import org.tajgram.messenger.pip.PipSource;
-import org.tajgram.messenger.pip.utils.PipUtils;
-import org.tajgram.messenger.utils.ViewOutlineProviderImpl;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.LaunchActivity;
-import org.tajgram.ui.PhotoViewer;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.pip.source.IPipSourceDelegate;
+import org.telegram.messenger.pip.utils.PipPermissions;
+import org.telegram.messenger.pip.PipSource;
+import org.telegram.messenger.pip.utils.PipUtils;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
 import java.util.ArrayList;
 import java.util.List;

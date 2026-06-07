@@ -35,14 +35,14 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.Components.AnimationProperties;
-import org.tajgram.ui.Components.Bulletin;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Components.AnimationProperties;
+import org.telegram.ui.Components.Bulletin;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import java.util.List;
 

@@ -18,12 +18,12 @@ import android.view.View;
 import androidx.core.math.MathUtils;
 import androidx.core.view.GestureDetectorCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.Paint.RenderView;
-import org.tajgram.ui.Components.Paint.Swatch;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.Paint.RenderView;
+import org.telegram.ui.Components.Paint.Swatch;
 
 public class PaintWeightChooserView extends View {
     private Paint backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

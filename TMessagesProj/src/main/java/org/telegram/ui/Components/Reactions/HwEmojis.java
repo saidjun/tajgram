@@ -5,7 +5,7 @@ import static org.tajgram.messenger.SharedConfig.getDevicePerformanceClass;
 
 import android.view.View;
 
-import org.tajgram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLoader;
 
 import java.util.Arrays;
 import java.util.HashSet;

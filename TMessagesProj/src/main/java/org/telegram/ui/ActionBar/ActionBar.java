@@ -49,21 +49,21 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.ui.Adapters.FiltersView;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.EllipsizeSpanAnimator;
-import org.tajgram.ui.Components.FireworksEffect;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.SectionsScrollView;
-import org.tajgram.ui.Components.SizeNotifierFrameLayout;
-import org.tajgram.ui.Components.SnowflakesEffect;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Adapters.FiltersView;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.EllipsizeSpanAnimator;
+import org.telegram.ui.Components.FireworksEffect;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.SectionsScrollView;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.telegram.ui.Components.SnowflakesEffect;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.dpf2;
@@ -27,12 +27,12 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.ButtonBounce;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.Text;
-import org.tajgram.ui.GradientClip;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.ButtonBounce;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.Text;
+import org.telegram.ui.GradientClip;
 
 public class BotFullscreenButtons extends View {
 

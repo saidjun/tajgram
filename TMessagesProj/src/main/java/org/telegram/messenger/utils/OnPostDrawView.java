@@ -10,7 +10,7 @@ import android.view.ViewTreeObserver;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class OnPostDrawView extends View implements ViewTreeObserver.OnPreDrawListener {

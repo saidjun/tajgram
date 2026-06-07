@@ -8,9 +8,9 @@ import android.view.MotionEvent;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.Components.Size;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.Size;
 
 import java.util.ArrayList;
 

@@ -6,8 +6,8 @@ import android.util.SparseArray;
 
 import androidx.annotation.DrawableRes;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.ColoredImageSpan;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.ColoredImageSpan;
 
 public class DialogMediaIconsHelper {
     private static final SparseArray<ColoredImageSpan> spans = new SparseArray<>(6);

@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.ui.Stars.StarsController.findAttribute;
 
@@ -9,12 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_payments;
-import org.tajgram.tgnet.tl.TL_stars;
-import org.tajgram.ui.Gifts.AuctionBidSheet;
-import org.tajgram.ui.Stars.StarsController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Gifts.AuctionBidSheet;
+import org.telegram.ui.Stars.StarsController;
 
 import java.util.ArrayList;
 import java.util.Collections;

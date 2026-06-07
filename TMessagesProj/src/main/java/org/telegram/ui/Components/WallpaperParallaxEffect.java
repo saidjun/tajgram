@@ -16,7 +16,7 @@ import android.hardware.SensorManager;
 import android.view.Surface;
 import android.view.WindowManager;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class WallpaperParallaxEffect implements SensorEventListener {
 

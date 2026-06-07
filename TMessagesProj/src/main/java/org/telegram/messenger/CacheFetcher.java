@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.SharedPreferences;
 import android.os.Looper;

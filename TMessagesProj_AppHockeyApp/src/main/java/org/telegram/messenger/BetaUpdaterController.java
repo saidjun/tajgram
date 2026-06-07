@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,9 +6,9 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import org.json.JSONObject;
-import org.tajgram.ui.LaunchActivity;
-import org.tajgram.ui.web.HttpGetFileTask;
-import org.tajgram.ui.web.HttpGetTask;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.web.HttpGetFileTask;
+import org.telegram.ui.web.HttpGetTask;
 
 import java.io.File;
 

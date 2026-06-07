@@ -1,9 +1,9 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 import java.io.File;
 import java.nio.ByteBuffer;

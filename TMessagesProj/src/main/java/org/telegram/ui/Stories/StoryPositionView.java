@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Cells.DialogCell;
-import org.tajgram.ui.Components.AnimatedTextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Cells.DialogCell;
+import org.telegram.ui.Components.AnimatedTextView;
 
 public class StoryPositionView {
 

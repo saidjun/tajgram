@@ -6,11 +6,11 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.Intent;
 
-import org.tajgram.messenger.support.JobIntentService;
+import org.telegram.messenger.support.JobIntentService;
 
 import java.util.concurrent.CountDownLatch;
 

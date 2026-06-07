@@ -11,14 +11,14 @@ import android.os.Build;
 import android.text.TextPaint;
 import android.view.HapticFeedbackConstants;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.Charts.data.ChartData;
-import org.tajgram.ui.Charts.data.StackLinearChartData;
-import org.tajgram.ui.Charts.view_data.ChartHorizontalLinesData;
-import org.tajgram.ui.Charts.view_data.LegendSignatureView;
-import org.tajgram.ui.Charts.view_data.LineViewData;
-import org.tajgram.ui.Charts.view_data.PieLegendView;
-import org.tajgram.ui.Charts.view_data.TransitionParams;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Charts.data.ChartData;
+import org.telegram.ui.Charts.data.StackLinearChartData;
+import org.telegram.ui.Charts.view_data.ChartHorizontalLinesData;
+import org.telegram.ui.Charts.view_data.LegendSignatureView;
+import org.telegram.ui.Charts.view_data.LineViewData;
+import org.telegram.ui.Charts.view_data.PieLegendView;
+import org.telegram.ui.Charts.view_data.TransitionParams;
 
 
 public class PieChartView extends StackLinearChartView<PieChartViewData> {

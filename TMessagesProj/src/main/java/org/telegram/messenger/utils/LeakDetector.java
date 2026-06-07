@@ -32,8 +32,8 @@ package org.tajgram.messenger.utils;
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

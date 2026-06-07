@@ -16,9 +16,9 @@ import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.Theme;
 
 public class SearchCounterView extends View {
 

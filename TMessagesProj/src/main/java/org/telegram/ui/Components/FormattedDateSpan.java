@@ -8,8 +8,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
 
 import java.util.ArrayList;
 

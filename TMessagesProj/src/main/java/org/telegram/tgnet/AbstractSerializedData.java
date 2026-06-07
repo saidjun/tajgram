@@ -1,4 +1,4 @@
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
 public abstract class AbstractSerializedData implements InputSerializedData, OutputSerializedData {
     private TLDataSourceType dataSourceType = TLDataSourceType.UNKNOWN;

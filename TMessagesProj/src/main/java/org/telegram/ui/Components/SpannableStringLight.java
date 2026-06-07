@@ -10,7 +10,7 @@ package org.tajgram.ui.Components;
 
 import android.text.SpannableString;
 
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.FileLog;
 
 import java.lang.reflect.Field;
 

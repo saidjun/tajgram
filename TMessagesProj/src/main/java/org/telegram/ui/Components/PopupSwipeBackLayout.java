@@ -22,12 +22,12 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.core.view.GestureDetectorCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.AnimationNotificationsLocker;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.ActionBar.ActionBarMenuSlider;
-import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.ActionBarMenuSlider;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow;
+import org.telegram.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 

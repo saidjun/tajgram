@@ -17,11 +17,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.tajgram.ui.Components.inset.InAppKeyboardInsetView;
-import org.tajgram.ui.Components.inset.WindowInsetsProvider;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.inset.InAppKeyboardInsetView;
+import org.telegram.ui.Components.inset.WindowInsetsProvider;
 
 public class ChatInputViewsContainer extends FrameLayout {
     public static final int INPUT_BUBBLE_RADIUS = 22;

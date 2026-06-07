@@ -15,7 +15,7 @@ import android.graphics.Rect;
 import android.text.TextPaint;
 import android.util.TypedValue;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public class HintEditText extends EditTextBoldCursor {
     protected TextPaint hintPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);

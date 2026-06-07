@@ -23,18 +23,18 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AccountInstance;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ChatObject;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.voip.GroupCallMiniTextureView;
-import org.tajgram.ui.Components.voip.GroupCallRenderersContainer;
-import org.tajgram.ui.Components.voip.GroupCallStatusIcon;
-import org.tajgram.ui.GroupCallActivity;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.voip.GroupCallMiniTextureView;
+import org.telegram.ui.Components.voip.GroupCallRenderersContainer;
+import org.telegram.ui.Components.voip.GroupCallStatusIcon;
+import org.telegram.ui.GroupCallActivity;
 
 import java.util.ArrayList;
 

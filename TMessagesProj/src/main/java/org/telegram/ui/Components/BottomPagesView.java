@@ -9,9 +9,9 @@ import android.view.animation.DecelerateInterpolator;
 
 import androidx.viewpager.widget.ViewPager;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.ActionBar.ThemeColors;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.ThemeColors;
 
 public class BottomPagesView extends View {
 

@@ -1,11 +1,11 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.SparseIntArray;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public class WrappedResourceProvider implements Theme.ResourcesProvider {
 

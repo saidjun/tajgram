@@ -13,7 +13,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.Components.PlayPauseDrawable;
+import org.telegram.ui.Components.PlayPauseDrawable;
 
 public class PlayPauseButton extends View {
 

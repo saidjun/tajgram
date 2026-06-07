@@ -9,10 +9,10 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.TextView;
-import org.tajgram.messenger.R;
+import org.telegram.messenger.R;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
 @SuppressLint("ViewConstructor")
 public class HideEmojiTextView extends TextView {

@@ -2,8 +2,8 @@ package org.tajgram.ui.Components;
 
 import android.content.SharedPreferences;
 
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
 public class HintsController {
     private HintsController() {

@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.ActionBar.INavigationLayout;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.ActionBar.INavigationLayout;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;

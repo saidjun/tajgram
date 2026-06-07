@@ -2,9 +2,9 @@ package org.tajgram.ui.Components.blur3.drawable.color;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.ActionBar.Theme;
 
 public class BlurredBackgroundColorProviderThemed implements BlurredBackgroundColorProvider {
 

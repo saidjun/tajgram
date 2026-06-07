@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,12 +22,12 @@ import androidx.collection.LongSparseArray;
 
 import org.tajgram.SQLite.SQLiteCursor;
 import org.tajgram.SQLite.SQLitePreparedStatement;
-import org.tajgram.tgnet.NativeByteBuffer;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_account;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.Components.Bulletin;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.Bulletin;
+import org.telegram.ui.LaunchActivity;
 
 import java.io.File;
 import java.lang.ref.WeakReference;

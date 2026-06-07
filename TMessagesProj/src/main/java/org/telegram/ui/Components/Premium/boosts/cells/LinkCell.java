@@ -17,16 +17,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.EffectsTextView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.TextStyleSpan;
-import org.tajgram.ui.Components.spoilers.SpoilerEffect2;
-import org.tajgram.ui.Components.spoilers.SpoilersTextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.EffectsTextView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.TextStyleSpan;
+import org.telegram.ui.Components.spoilers.SpoilerEffect2;
+import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
 @SuppressLint("ViewConstructor")
 public class LinkCell extends FrameLayout {

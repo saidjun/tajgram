@@ -2,15 +2,15 @@ package org.tajgram.ui.web;
 
 import android.util.LongSparseArray;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.tgnet.AbstractSerializedData;
-import org.tajgram.tgnet.InputSerializedData;
-import org.tajgram.tgnet.OutputSerializedData;
-import org.tajgram.tgnet.SerializedData;
-import org.tajgram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.AbstractSerializedData;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
 
 import java.io.File;
 import java.io.FileOutputStream;

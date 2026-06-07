@@ -16,22 +16,22 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.BottomSheetWithRecyclerListView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.LinkSpanDrawable;
-import org.tajgram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.tajgram.ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.tajgram.ui.Components.Premium.GLIcon.Icon3D;
-import org.tajgram.ui.Components.Premium.StarParticlesView;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.StarAppsSheet;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
-import org.tajgram.ui.Components.UniversalRecyclerView;
-import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
+import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.telegram.ui.Components.Premium.GLIcon.Icon3D;
+import org.telegram.ui.Components.Premium.StarParticlesView;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.StarAppsSheet;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 

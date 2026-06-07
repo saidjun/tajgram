@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.recyclerview.widget.DiffUtil;
 
-import org.tajgram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 

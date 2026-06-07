@@ -6,7 +6,7 @@ import android.graphics.RenderNode;
 import android.os.Build;
 import android.view.View;
 
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.Utilities;
 
 class PipSourceSnapshot {
     private final Picture picture;

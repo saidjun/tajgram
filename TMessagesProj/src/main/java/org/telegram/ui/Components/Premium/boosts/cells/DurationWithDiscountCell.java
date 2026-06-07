@@ -6,14 +6,14 @@ import android.text.SpannableStringBuilder;
 import android.view.Gravity;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BillingController;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CheckBox2;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Premium.boosts.DiscountSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CheckBox2;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Premium.boosts.DiscountSpan;
 
 @SuppressLint("ViewConstructor")
 public class DurationWithDiscountCell extends DurationCell {

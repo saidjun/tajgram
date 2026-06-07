@@ -6,7 +6,7 @@ import android.graphics.PointF;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.Landmark;
 
-import org.tajgram.ui.Components.Size;
+import org.telegram.ui.Components.Size;
 
 import java.util.List;
 

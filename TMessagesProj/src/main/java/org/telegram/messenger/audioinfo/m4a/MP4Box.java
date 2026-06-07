@@ -15,8 +15,8 @@
  */
 package org.tajgram.messenger.audioinfo.m4a;
 
-import org.tajgram.messenger.audioinfo.util.PositionInputStream;
-import org.tajgram.messenger.audioinfo.util.RangeInputStream;
+import org.telegram.messenger.audioinfo.util.PositionInputStream;
+import org.telegram.messenger.audioinfo.util.RangeInputStream;
 
 import java.io.DataInput;
 import java.io.DataInputStream;

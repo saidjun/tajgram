@@ -1,9 +1,9 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.ChatActivity;
-import org.tajgram.ui.Stories.StoriesStorage;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Stories.StoriesStorage;
 
 import java.util.ArrayList;
 

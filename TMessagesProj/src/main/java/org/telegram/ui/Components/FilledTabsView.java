@@ -11,8 +11,8 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
 public class FilledTabsView extends View {
 

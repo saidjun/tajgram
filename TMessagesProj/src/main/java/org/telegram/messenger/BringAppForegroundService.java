@@ -6,12 +6,12 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.IntentService;
 import android.content.Intent;
 
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.ui.LaunchActivity;
 
 public class BringAppForegroundService extends IntentService {
 

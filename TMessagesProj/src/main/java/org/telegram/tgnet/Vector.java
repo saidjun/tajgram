@@ -1,6 +1,6 @@
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.Utilities;
 
 import java.util.ArrayList;
 

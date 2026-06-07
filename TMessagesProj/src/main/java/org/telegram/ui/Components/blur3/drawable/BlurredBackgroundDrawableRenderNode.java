@@ -14,9 +14,9 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.blur3.LiquidGlassEffect;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.LiquidGlassEffect;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
 
 @RequiresApi(api = Build.VERSION_CODES.Q)
 public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawable {

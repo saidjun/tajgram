@@ -15,14 +15,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Paint.Brush;
-import org.tajgram.ui.Components.Paint.PersistColorPalette;
-import org.tajgram.ui.Components.RLottieDrawable;
-import org.tajgram.ui.Components.RLottieImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Paint.Brush;
+import org.telegram.ui.Components.Paint.PersistColorPalette;
+import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.Components.RLottieImageView;
 
 public class PaintToolsView extends LinearLayout {
     private RLottieImageView[] buttons = new RLottieImageView[Brush.BRUSHES_LIST.size() + 2];

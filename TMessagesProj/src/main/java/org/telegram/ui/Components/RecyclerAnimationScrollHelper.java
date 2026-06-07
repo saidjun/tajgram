@@ -9,9 +9,9 @@ import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.ui.Cells.ChatMessageCell;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 import java.util.HashMap;

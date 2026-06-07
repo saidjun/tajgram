@@ -8,9 +8,9 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
 
 /**
  * Created by grishka on 10.02.17.

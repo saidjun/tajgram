@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.TextSettingsCell;
-import org.tajgram.ui.Components.voip.CellFlickerDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.TextSettingsCell;
+import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
 public class StorageUsageView extends FrameLayout {
 

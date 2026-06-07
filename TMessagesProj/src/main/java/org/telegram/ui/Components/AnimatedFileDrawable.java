@@ -27,17 +27,17 @@ import android.view.View;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.AnimatedFileDrawableStream;
-import org.tajgram.messenger.DispatchQueue;
-import org.tajgram.messenger.DispatchQueuePoolBackground;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.utils.BitmapsCache;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimatedFileDrawableStream;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.DispatchQueuePoolBackground;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.utils.BitmapsCache;
+import org.telegram.tgnet.TLRPC;
 
 import java.io.File;
 import java.util.ArrayList;

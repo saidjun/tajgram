@@ -9,8 +9,8 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.pip.activity.IPipActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.pip.activity.IPipActivity;
 
 @SuppressLint("ViewConstructor")
 class PipActivityContentLayout extends FrameLayout {

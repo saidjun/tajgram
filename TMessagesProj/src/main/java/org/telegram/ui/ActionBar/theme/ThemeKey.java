@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 public class ThemeKey {
     public final String emoticon;

@@ -9,7 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class StickerMakerBackgroundView extends View {
     private final Paint backgroundPaint = new Paint();

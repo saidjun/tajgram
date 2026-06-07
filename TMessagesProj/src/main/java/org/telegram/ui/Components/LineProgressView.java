@@ -16,8 +16,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.Components.voip.CellFlickerDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
 public class LineProgressView extends View {
 

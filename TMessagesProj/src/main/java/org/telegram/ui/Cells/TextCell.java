@@ -30,22 +30,22 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.SimpleTextView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.AnimatedTextView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.RLottieDrawable;
-import org.tajgram.ui.Components.RLottieImageView;
-import org.tajgram.ui.Components.Switch;
-import org.tajgram.ui.FilterCreateActivity;
-import org.tajgram.ui.PeerColorActivity;
-import org.tajgram.ui.SettingsActivity;
-import org.tajgram.ui.Stories.recorder.HintView2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.SimpleTextView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.AnimatedTextView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.Switch;
+import org.telegram.ui.FilterCreateActivity;
+import org.telegram.ui.PeerColorActivity;
+import org.telegram.ui.SettingsActivity;
+import org.telegram.ui.Stories.recorder.HintView2;
 
 public class TextCell extends FrameLayout {
 

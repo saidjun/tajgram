@@ -1,10 +1,10 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 import java.util.ArrayList;
 

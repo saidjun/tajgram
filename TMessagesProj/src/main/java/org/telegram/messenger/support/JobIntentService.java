@@ -34,7 +34,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import android.util.Log;
 
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.FileLog;
 
 import java.util.ArrayList;
 import java.util.HashMap;

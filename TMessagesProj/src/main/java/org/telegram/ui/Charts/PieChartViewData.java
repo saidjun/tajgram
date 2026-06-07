@@ -2,8 +2,8 @@ package org.tajgram.ui.Charts;
 
 import android.animation.Animator;
 
-import org.tajgram.ui.Charts.data.ChartData;
-import org.tajgram.ui.Charts.view_data.StackLinearViewData;
+import org.telegram.ui.Charts.data.ChartData;
+import org.telegram.ui.Charts.view_data.StackLinearViewData;
 
 public class PieChartViewData extends StackLinearViewData {
 

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.ui.PhotoViewer.getTempFileAbsolutePath;
 
@@ -82,35 +82,35 @@ import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import com.google.android.gms.cast.MediaMetadata;
 import com.google.android.gms.common.images.WebImage;
 
-import org.tajgram.messenger.audioinfo.AudioInfo;
-import org.tajgram.messenger.chromecast.ChromecastController;
-import org.tajgram.messenger.chromecast.ChromecastFileServer;
-import org.tajgram.messenger.chromecast.ChromecastMedia;
-import org.tajgram.messenger.chromecast.ChromecastMediaVariations;
-import org.tajgram.messenger.video.MediaCodecVideoConvertor;
-import org.tajgram.messenger.voip.VoIPService;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.InputSerializedData;
-import org.tajgram.tgnet.OutputSerializedData;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Adapters.FiltersView;
-import org.tajgram.ui.CastSync;
-import org.tajgram.ui.ChatActivity;
-import org.tajgram.ui.Components.EmbedBottomSheet;
-import org.tajgram.ui.Components.PermissionRequest;
-import org.tajgram.ui.Components.PhotoFilterView;
-import org.tajgram.ui.Components.PipRoundVideoView;
-import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.tajgram.ui.Components.VideoPlayer;
-import org.tajgram.ui.LaunchActivity;
-import org.tajgram.ui.PhotoViewer;
-import org.tajgram.ui.Stories.DarkThemeResourceProvider;
-import org.tajgram.ui.Stories.recorder.StoryEntry;
+import org.telegram.messenger.audioinfo.AudioInfo;
+import org.telegram.messenger.chromecast.ChromecastController;
+import org.telegram.messenger.chromecast.ChromecastFileServer;
+import org.telegram.messenger.chromecast.ChromecastMedia;
+import org.telegram.messenger.chromecast.ChromecastMediaVariations;
+import org.telegram.messenger.video.MediaCodecVideoConvertor;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Adapters.FiltersView;
+import org.telegram.ui.CastSync;
+import org.telegram.ui.ChatActivity;
+import org.telegram.ui.Components.EmbedBottomSheet;
+import org.telegram.ui.Components.PermissionRequest;
+import org.telegram.ui.Components.PhotoFilterView;
+import org.telegram.ui.Components.PipRoundVideoView;
+import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.ui.Components.VideoPlayer;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.telegram.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.FileDescriptor;

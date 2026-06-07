@@ -15,7 +15,7 @@
  */
 package org.tajgram.messenger.audioinfo.m4a;
 
-import org.tajgram.messenger.audioinfo.util.RangeInputStream;
+import org.telegram.messenger.audioinfo.util.RangeInputStream;
 
 import java.io.EOFException;
 import java.io.IOException;

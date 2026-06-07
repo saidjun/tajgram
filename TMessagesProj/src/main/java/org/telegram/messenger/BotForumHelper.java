@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 
@@ -17,14 +17,14 @@ import android.util.SparseIntArray;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.utils.tlutils.TlUtils;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_forum;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.ColoredImageSpan;
-import org.tajgram.ui.Components.TypingDotsDrawable;
-import org.tajgram.ui.MultiLayoutTypingAnimator;
+import org.telegram.messenger.utils.tlutils.TlUtils;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_forum;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.ColoredImageSpan;
+import org.telegram.ui.Components.TypingDotsDrawable;
+import org.telegram.ui.MultiLayoutTypingAnimator;
 
 import java.util.ArrayList;
 import java.util.Collections;

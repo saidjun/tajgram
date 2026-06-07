@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.database.ContentObserver;
@@ -18,12 +18,12 @@ import com.google.android.gms.cast.framework.Session;
 import com.google.android.gms.cast.framework.SessionManagerListener;
 import com.google.android.gms.cast.framework.media.RemoteMediaClient;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.BaseFragment;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.BaseFragment;
 
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;

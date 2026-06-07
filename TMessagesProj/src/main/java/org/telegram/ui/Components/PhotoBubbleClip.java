@@ -2,7 +2,7 @@ package org.tajgram.ui.Components;
 
 import android.graphics.Path;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class PhotoBubbleClip extends Path {
 

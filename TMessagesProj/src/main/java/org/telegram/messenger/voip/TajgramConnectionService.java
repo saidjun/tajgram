@@ -8,8 +8,8 @@ import android.telecom.ConnectionRequest;
 import android.telecom.ConnectionService;
 import android.telecom.PhoneAccountHandle;
 
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
 /**
  * Created by grishka on 09.01.2018.

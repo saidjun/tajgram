@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.AndroidUtilities.lerp;
@@ -16,7 +16,7 @@ import android.view.View;
 
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.MessageObject;
+import org.telegram.messenger.MessageObject;
 
 import java.util.ArrayList;
 

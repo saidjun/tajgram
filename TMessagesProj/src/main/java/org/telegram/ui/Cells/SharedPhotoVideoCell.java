@@ -27,22 +27,22 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.DownloadController;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CheckBox2;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.PhotoViewer;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CheckBox2;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.PhotoViewer;
 
 public class SharedPhotoVideoCell extends FrameLayout {
 

@@ -10,7 +10,7 @@ import android.media.MediaFormat;
 import android.net.Uri;
 import android.os.Build;
 
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.FileLog;
 
 import java.io.File;
 import java.io.FileDescriptor;

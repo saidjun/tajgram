@@ -17,8 +17,8 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.BubbleActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.BubbleActivity;
 
 public class PhotoFilterBlurControl extends FrameLayout {
 

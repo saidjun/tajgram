@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.tgnet;
+package org.telegram.tgnet;
 
 import me.vkryl.core.BitwiseUtils;
 

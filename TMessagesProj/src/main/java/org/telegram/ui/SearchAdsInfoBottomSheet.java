@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import static org.tajgram.messenger.AndroidUtilities.dp;
 import static org.tajgram.messenger.LocaleController.getString;
@@ -26,25 +26,25 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.messenger.browser.Browser;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.BottomSheet;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.BottomSheetWithRecyclerListView;
-import org.tajgram.ui.Components.ColoredImageSpan;
-import org.tajgram.ui.Components.ItemOptions;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.LinkSpanDrawable;
-import org.tajgram.ui.Components.RLottieImageView;
-import org.tajgram.ui.Components.RecyclerListView;
-import org.tajgram.ui.Components.UItem;
-import org.tajgram.ui.Components.UniversalAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.browser.Browser;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
+import org.telegram.ui.Components.ColoredImageSpan;
+import org.telegram.ui.Components.ItemOptions;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
+import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
 
 import java.util.ArrayList;
 

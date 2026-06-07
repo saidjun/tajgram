@@ -14,12 +14,12 @@ import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.EmuDetector;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.Premium.StarParticlesView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.EmuDetector;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.Premium.StarParticlesView;
 
 import java.util.ArrayList;
 import java.util.Collections;

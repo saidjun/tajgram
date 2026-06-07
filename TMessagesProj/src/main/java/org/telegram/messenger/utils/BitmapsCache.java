@@ -8,14 +8,14 @@ import android.os.SystemClock;
 import com.google.android.exoplayer2.util.Log;
 import com.google.common.util.concurrent.AtomicDouble;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.DispatchQueuePoolBackground;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.SharedConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Components.RLottieDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DispatchQueuePoolBackground;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.RLottieDrawable;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -9,8 +9,8 @@ import android.graphics.Shader;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawableSource;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableSource;
 
 public class BlurredBackgroundSourceBitmap implements BlurredBackgroundSource {
     private final Paint bitmapPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);

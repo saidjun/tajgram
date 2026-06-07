@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.os.Looper;
 import android.util.LongSparseArray;
@@ -7,7 +7,7 @@ import org.tajgram.SQLite.SQLiteCursor;
 import org.tajgram.SQLite.SQLiteDatabase;
 import org.tajgram.SQLite.SQLiteException;
 import org.tajgram.SQLite.SQLitePreparedStatement;
-import org.tajgram.ui.Storage.CacheModel;
+import org.telegram.ui.Storage.CacheModel;
 
 import java.io.File;
 import java.io.IOException;

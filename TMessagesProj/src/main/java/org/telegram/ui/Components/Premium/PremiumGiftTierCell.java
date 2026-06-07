@@ -18,16 +18,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.BillingController;
-import org.tajgram.messenger.BuildVars;
-import org.tajgram.messenger.GenericProvider;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CheckBox2;
-import org.tajgram.ui.Components.CheckBoxBase;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CheckBox2;
+import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.ui.Components.LayoutHelper;
 
 public class PremiumGiftTierCell extends ViewGroup {
     private CheckBox2 checkBox;

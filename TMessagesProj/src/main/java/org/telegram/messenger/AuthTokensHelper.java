@@ -1,12 +1,12 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.tgnet.SerializedData;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

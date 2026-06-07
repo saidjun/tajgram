@@ -28,19 +28,19 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SvgHelper;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CheckBox;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.MotionBackgroundDrawable;
-import org.tajgram.ui.WallpapersListActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CheckBox;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.MotionBackgroundDrawable;
+import org.telegram.ui.WallpapersListActivity;
 
 public class WallpaperCell extends FrameLayout {
 

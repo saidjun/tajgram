@@ -5,8 +5,8 @@ import androidx.annotation.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.tajgram.messenger.BuildConfig;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.messenger.FileLog;
 
 import java.util.List;
 

@@ -10,10 +10,10 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import org.tajgram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
-import org.tajgram.ui.Components.blur3.RenderNodeWithHash;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
+import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
+import org.telegram.ui.Components.blur3.RenderNodeWithHash;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
 
 import java.util.List;
 

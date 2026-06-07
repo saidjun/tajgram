@@ -8,16 +8,16 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.ChatObject;
-import org.tajgram.messenger.DialogObject;
-import org.tajgram.messenger.MediaDataController;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.UserObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.Components.Bulletin;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Components.Bulletin;
 
 import java.util.ArrayList;
 import java.util.HashMap;

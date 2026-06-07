@@ -16,8 +16,8 @@ import android.text.Layout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
 
 public class LinkPath extends CornerPath {
 

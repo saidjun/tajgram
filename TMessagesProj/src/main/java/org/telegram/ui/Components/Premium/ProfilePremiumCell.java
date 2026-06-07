@@ -5,12 +5,12 @@ import static org.tajgram.messenger.AndroidUtilities.dp;
 import android.content.Context;
 import android.graphics.Canvas;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.messenger.utils.FrameTickScheduler;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.TextCell;
-import org.tajgram.ui.Stars.StarsReactionsSheet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.utils.FrameTickScheduler;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.TextCell;
+import org.telegram.ui.Stars.StarsReactionsSheet;
 
 public class ProfilePremiumCell extends TextCell {
 

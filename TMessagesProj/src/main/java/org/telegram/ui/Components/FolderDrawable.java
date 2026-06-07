@@ -16,8 +16,8 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
 
 public class FolderDrawable extends Drawable {
 

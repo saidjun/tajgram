@@ -1,7 +1,7 @@
 package org.tajgram.messenger.voip;
 
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
 import java.util.ArrayList;
 

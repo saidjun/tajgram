@@ -16,8 +16,8 @@ package org.tajgram.messenger.support.customtabsclient.shared;
 
 import android.content.ComponentName;
 
-import org.tajgram.messenger.support.customtabs.CustomTabsClient;
-import org.tajgram.messenger.support.customtabs.CustomTabsServiceConnection;
+import org.telegram.messenger.support.customtabs.CustomTabsClient;
+import org.telegram.messenger.support.customtabs.CustomTabsServiceConnection;
 
 import java.lang.ref.WeakReference;
 

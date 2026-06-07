@@ -26,16 +26,16 @@ import android.view.ViewConfiguration;
 
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Charts.data.ChartData;
-import org.tajgram.ui.Charts.view_data.ChartBottomSignatureData;
-import org.tajgram.ui.Charts.view_data.ChartHeaderView;
-import org.tajgram.ui.Charts.view_data.ChartHorizontalLinesData;
-import org.tajgram.ui.Charts.view_data.LegendSignatureView;
-import org.tajgram.ui.Charts.view_data.LineViewData;
-import org.tajgram.ui.Charts.view_data.TransitionParams;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Charts.data.ChartData;
+import org.telegram.ui.Charts.view_data.ChartBottomSignatureData;
+import org.telegram.ui.Charts.view_data.ChartHeaderView;
+import org.telegram.ui.Charts.view_data.ChartHorizontalLinesData;
+import org.telegram.ui.Charts.view_data.LegendSignatureView;
+import org.telegram.ui.Charts.view_data.LineViewData;
+import org.telegram.ui.Charts.view_data.TransitionParams;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import java.util.ArrayList;
 import java.util.Arrays;

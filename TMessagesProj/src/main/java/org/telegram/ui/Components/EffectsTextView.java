@@ -9,10 +9,10 @@ import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Emoji;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.spoilers.SpoilersTextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.spoilers.SpoilersTextView;
 
 // TextView with both Spoilers, Links and Emojis (not animated though)
 public class EffectsTextView extends SpoilersTextView {

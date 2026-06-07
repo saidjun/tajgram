@@ -19,16 +19,16 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.ChatActivityEnterViewAnimatedIconView;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Paint.PaintTypeface;
-import org.tajgram.ui.Components.RLottieDrawable;
-import org.tajgram.ui.Components.RLottieImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.ChatActivityEnterViewAnimatedIconView;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Paint.PaintTypeface;
+import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.Components.RLottieImageView;
 
 import java.util.Arrays;
 import java.util.List;

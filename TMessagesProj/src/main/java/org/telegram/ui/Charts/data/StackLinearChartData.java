@@ -2,7 +2,7 @@ package org.tajgram.ui.Charts.data;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.tajgram.messenger.SegmentTree;
+import org.telegram.messenger.SegmentTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;

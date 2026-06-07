@@ -50,15 +50,15 @@ import androidx.customview.widget.ExploreByTouchHelper;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.ButtonBounce;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.Text;
-import org.tajgram.ui.GradientClip;
-import org.tajgram.ui.bots.BotWebViewSheet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.ButtonBounce;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.Text;
+import org.telegram.ui.GradientClip;
+import org.telegram.ui.bots.BotWebViewSheet;
 
 import java.util.ArrayList;
 import java.util.HashSet;

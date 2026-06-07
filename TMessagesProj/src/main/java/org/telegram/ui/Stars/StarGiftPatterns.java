@@ -15,10 +15,10 @@ import com.google.zxing.common.detector.MathUtils;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.BatchParticlesDrawHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.BatchParticlesDrawHelper;
 
 public class StarGiftPatterns {
 

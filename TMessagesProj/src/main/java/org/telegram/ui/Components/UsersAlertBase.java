@@ -33,15 +33,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.tajgram.ui.ActionBar.BottomSheet;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.GraySectionCell;
-import org.tajgram.ui.Cells.GroupCallTextCell;
-import org.tajgram.ui.Cells.GroupCallUserCell;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.telegram.ui.ActionBar.BottomSheet;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.GraySectionCell;
+import org.telegram.ui.Cells.GroupCallTextCell;
+import org.telegram.ui.Cells.GroupCallUserCell;
 
 public class UsersAlertBase extends BottomSheet {
 

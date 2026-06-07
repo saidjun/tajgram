@@ -2,10 +2,10 @@ package org.tajgram.tgnet.tl.legacy;
 
 import android.text.TextUtils;
 
-import org.tajgram.tgnet.InputSerializedData;
-import org.tajgram.tgnet.OutputSerializedData;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.Vector;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
 public class TL_legacy_message {
     private TL_legacy_message() {

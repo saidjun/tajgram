@@ -25,7 +25,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.tajgram.messenger.ApplicationLoader;
+import org.telegram.messenger.ApplicationLoader;
 
 import java.util.ArrayList;
 import java.util.List;

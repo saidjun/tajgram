@@ -6,7 +6,7 @@ import android.os.SystemClock;
 
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.ApplicationLoader;
+import org.telegram.messenger.ApplicationLoader;
 
 public class PipDuration {
     private final SharedPreferences mPrefs;

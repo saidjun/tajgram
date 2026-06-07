@@ -5,8 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 
-import org.tajgram.messenger.SvgHelper;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

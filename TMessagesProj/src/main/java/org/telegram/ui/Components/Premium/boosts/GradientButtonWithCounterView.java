@@ -7,10 +7,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.Premium.PremiumGradient;
-import org.tajgram.ui.Components.voip.CellFlickerDrawable;
-import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.Premium.PremiumGradient;
+import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 @SuppressLint("ViewConstructor")
 public class GradientButtonWithCounterView extends ButtonWithCounterView {

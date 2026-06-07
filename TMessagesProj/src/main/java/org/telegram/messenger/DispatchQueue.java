@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.os.Handler;
 import android.os.Looper;

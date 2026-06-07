@@ -10,12 +10,12 @@ import androidx.annotation.Nullable;
 
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.pip.activity.IPipActivityActionListener;
-import org.tajgram.messenger.pip.activity.IPipActivityAnimationListener;
-import org.tajgram.messenger.pip.activity.IPipActivityHandler;
-import org.tajgram.messenger.pip.activity.IPipActivityListener;
-import org.tajgram.messenger.pip.utils.PipUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.pip.activity.IPipActivityActionListener;
+import org.telegram.messenger.pip.activity.IPipActivityAnimationListener;
+import org.telegram.messenger.pip.activity.IPipActivityHandler;
+import org.telegram.messenger.pip.activity.IPipActivityListener;
+import org.telegram.messenger.pip.utils.PipUtils;
 
 import java.util.HashMap;
 

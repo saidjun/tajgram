@@ -26,11 +26,11 @@ import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.tajgram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSource;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 
 public class BlurredBackgroundWithFadeDrawable extends Drawable {
     private final Paint maskFadeGradientPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

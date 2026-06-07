@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.Activity;
 
@@ -7,8 +7,8 @@ import com.google.android.recaptcha.Recaptcha;
 import com.google.android.recaptcha.RecaptchaAction;
 import com.google.android.recaptcha.RecaptchaTasksClient;
 
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

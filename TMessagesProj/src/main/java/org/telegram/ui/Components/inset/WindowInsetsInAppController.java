@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.inset;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public interface WindowInsetsInAppController {
 

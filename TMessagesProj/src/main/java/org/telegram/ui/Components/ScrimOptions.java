@@ -46,18 +46,18 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Cells.ChatMessageCell;
-import org.tajgram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.tajgram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.tajgram.ui.Components.blur3.utils.Blur3Utils;
-import org.tajgram.ui.Components.chat.ViewPositionWatcher;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.blur3.utils.Blur3Utils;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 
 import java.util.ArrayList;
 

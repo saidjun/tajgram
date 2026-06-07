@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -27,12 +27,12 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
-import org.tajgram.messenger.time.FastDateFormat;
-import org.tajgram.messenger.video.MediaCodecVideoConvertor;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.AnimatedFileDrawable;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.messenger.time.FastDateFormat;
+import org.telegram.messenger.video.MediaCodecVideoConvertor;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.AnimatedFileDrawable;
+import org.telegram.ui.LaunchActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;

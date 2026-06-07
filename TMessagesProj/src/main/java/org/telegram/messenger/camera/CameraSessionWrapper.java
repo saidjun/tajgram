@@ -4,7 +4,7 @@ import android.hardware.Camera;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.util.concurrent.CountDownLatch;
 

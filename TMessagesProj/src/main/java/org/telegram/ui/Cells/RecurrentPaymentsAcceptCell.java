@@ -8,11 +8,11 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CheckBoxSquare;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.LinkSpanDrawable;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CheckBoxSquare;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.LinkSpanDrawable;
 
 public class RecurrentPaymentsAcceptCell extends FrameLayout {
     private LinkSpanDrawable.LinkCollector links;

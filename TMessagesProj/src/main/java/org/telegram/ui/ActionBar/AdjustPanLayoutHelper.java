@@ -25,10 +25,10 @@ import androidx.recyclerview.widget.ChatListItemAnimator;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.AnimationNotificationsLocker;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.List;

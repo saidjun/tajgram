@@ -10,7 +10,7 @@ package org.tajgram.ui.Components;
 
 import android.text.TextPaint;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public class URLSpanBotCommand extends URLSpanNoUnderline {
 

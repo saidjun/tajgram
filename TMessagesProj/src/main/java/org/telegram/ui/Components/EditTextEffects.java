@@ -18,11 +18,11 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.spoilers.SpoilerEffect;
-import org.tajgram.ui.Components.spoilers.SpoilersClickDetector;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.spoilers.SpoilerEffect;
+import org.telegram.ui.Components.spoilers.SpoilersClickDetector;
 
 import java.util.ArrayList;
 import java.util.List;

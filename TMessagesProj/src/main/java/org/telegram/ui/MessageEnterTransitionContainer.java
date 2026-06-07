@@ -1,11 +1,11 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.tajgram.messenger.NotificationCenter;
+import org.telegram.messenger.NotificationCenter;
 
 import java.util.ArrayList;
 

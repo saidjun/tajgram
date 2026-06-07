@@ -20,20 +20,20 @@ import android.view.animation.LinearInterpolator;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.MessagesController;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.messenger.browser.Browser;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_stars;
-import org.tajgram.ui.ActionBar.ActionBar;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.ButtonBounce;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.ProfileActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.browser.Browser;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.ButtonBounce;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.HashSet;

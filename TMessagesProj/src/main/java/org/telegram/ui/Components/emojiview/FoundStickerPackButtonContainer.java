@@ -11,8 +11,8 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.tajgram.messenger.utils.GradientProtectionDrawable;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.utils.GradientProtectionDrawable;
+import org.telegram.ui.ActionBar.Theme;
 
 @SuppressLint("ViewConstructor")
 public class FoundStickerPackButtonContainer extends FrameLayout {

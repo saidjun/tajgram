@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -20,15 +20,15 @@ import androidx.core.graphics.ColorUtils;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageLoader;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.EmojiThemes;
-import org.tajgram.ui.Components.BackgroundGradientDrawable;
-import org.tajgram.ui.Components.MotionBackgroundDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.EmojiThemes;
+import org.telegram.ui.Components.BackgroundGradientDrawable;
+import org.telegram.ui.Components.MotionBackgroundDrawable;
 
 import java.util.ArrayList;
 import java.util.Objects;

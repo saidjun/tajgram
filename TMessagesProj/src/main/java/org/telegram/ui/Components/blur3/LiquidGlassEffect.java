@@ -7,8 +7,8 @@ import android.graphics.RuntimeShader;
 
 import androidx.annotation.RequiresApi;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
 @RequiresApi(api = 33)
 public class LiquidGlassEffect {

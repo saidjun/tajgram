@@ -1,6 +1,6 @@
 package org.tajgram.ui.ActionBar.theme;
 
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.tgnet.TLRPC;
 
 public interface ITheme {
     long getThemeId();

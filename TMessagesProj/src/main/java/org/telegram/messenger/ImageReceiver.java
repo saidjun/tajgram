@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.ImageLoader.getHttpUrlExtension;
 
@@ -35,19 +35,19 @@ import androidx.annotation.Keep;
 
 import com.google.android.exoplayer2.util.Log;
 
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.AnimatedEmojiDrawable;
-import org.tajgram.ui.Components.AnimatedEmojiSpan;
-import org.tajgram.ui.Components.AnimatedFileDrawable;
-import org.tajgram.ui.Components.AttachableDrawable;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.ClipRoundedDrawable;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LoadingStickerDrawable;
-import org.tajgram.ui.Components.RLottieDrawable;
-import org.tajgram.ui.Components.RecyclableDrawable;
-import org.tajgram.ui.Components.VectorAvatarThumbDrawable;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.AnimatedEmojiSpan;
+import org.telegram.ui.Components.AnimatedFileDrawable;
+import org.telegram.ui.Components.AttachableDrawable;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.ClipRoundedDrawable;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LoadingStickerDrawable;
+import org.telegram.ui.Components.RLottieDrawable;
+import org.telegram.ui.Components.RecyclableDrawable;
+import org.telegram.ui.Components.VectorAvatarThumbDrawable;
 
 import java.io.File;
 import java.util.ArrayList;

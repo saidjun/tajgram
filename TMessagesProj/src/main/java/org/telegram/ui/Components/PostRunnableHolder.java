@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.util.HashMap;
 import java.util.Map;

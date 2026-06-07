@@ -5,11 +5,11 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.ImageLoader;
-import org.tajgram.messenger.MessageObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.Text;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.Text;
 
 import java.io.File;
 

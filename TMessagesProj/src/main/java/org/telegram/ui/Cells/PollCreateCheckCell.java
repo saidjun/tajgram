@@ -24,13 +24,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.IconBackgroundColors;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Switch;
-import org.tajgram.ui.SettingsActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.IconBackgroundColors;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Switch;
+import org.telegram.ui.SettingsActivity;
 
 @SuppressLint("ViewConstructor")
 public class PollCreateCheckCell extends FrameLayout {

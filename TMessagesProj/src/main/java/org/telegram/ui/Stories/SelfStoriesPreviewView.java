@@ -21,13 +21,13 @@ import android.widget.Scroller;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.R;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.Components.ColoredImageSpan;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.StaticLayoutEx;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.ColoredImageSpan;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.StaticLayoutEx;
 
 import java.util.ArrayList;
 

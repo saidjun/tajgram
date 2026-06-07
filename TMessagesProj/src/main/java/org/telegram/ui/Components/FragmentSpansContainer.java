@@ -16,8 +16,8 @@ import android.widget.ScrollView;
 
 import androidx.collection.LongSparseArray;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
 import java.util.ArrayList;
 

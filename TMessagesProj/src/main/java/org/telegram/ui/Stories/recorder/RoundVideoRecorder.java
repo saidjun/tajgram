@@ -15,15 +15,15 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ViewAnimator;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.messenger.camera.CameraController;
-import org.tajgram.messenger.camera.CameraView;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Paint.Views.RoundView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.CameraView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Paint.Views.RoundView;
 
 import java.io.File;
 

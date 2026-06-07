@@ -14,9 +14,9 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 public class BottomSheetLayouted extends BottomSheetWithRecyclerListView {
 

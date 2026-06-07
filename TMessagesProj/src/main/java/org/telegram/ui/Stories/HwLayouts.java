@@ -10,13 +10,13 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.ImageReceiver;
+import org.telegram.messenger.ImageReceiver;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;
 
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AvatarsImageView;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AvatarsImageView;
 
 import java.util.HashSet;
 import java.util.Set;

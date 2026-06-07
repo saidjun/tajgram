@@ -33,10 +33,10 @@ import android.view.WindowManager;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 
-import org.tajgram.messenger.AccountInstance;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.NotificationCenter;
-import org.tajgram.messenger.UserConfig;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
 import java.util.Arrays;
 

@@ -6,9 +6,9 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
-import org.tajgram.tgnet.SerializedData;
+import org.telegram.tgnet.SerializedData;
 
 public class MessageKeyData {
 

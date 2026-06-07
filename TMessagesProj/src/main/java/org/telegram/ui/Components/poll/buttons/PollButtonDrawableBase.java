@@ -10,7 +10,7 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 public abstract class PollButtonDrawableBase extends Drawable {
     protected final Theme.ResourcesProvider resourcesProvider;

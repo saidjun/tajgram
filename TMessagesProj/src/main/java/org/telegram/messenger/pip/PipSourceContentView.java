@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.pip.source.PipSourceHandlerState2;
+import org.telegram.messenger.pip.source.PipSourceHandlerState2;
 
 @SuppressLint("ViewConstructor")
 public class PipSourceContentView extends ViewGroup {

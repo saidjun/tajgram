@@ -22,8 +22,8 @@ import androidx.mediarouter.app.MediaRouteDialogFactory;
 import androidx.mediarouter.app.MediaRouteDynamicChooserDialog;
 import androidx.mediarouter.media.MediaRouteSelector;
 
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
 
 public class CastMediaRouteButton extends MediaRouteButton {
 

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -36,14 +36,14 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import org.json.JSONObject;
-import org.tajgram.messenger.voip.VideoCapturerDevice;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.Components.ForegroundDetector;
-import org.tajgram.ui.Components.ItemOptions;
-import org.tajgram.ui.IUpdateLayout;
-import org.tajgram.ui.LauncherIconController;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.Components.ForegroundDetector;
+import org.telegram.ui.Components.ItemOptions;
+import org.telegram.ui.IUpdateLayout;
+import org.telegram.ui.LauncherIconController;
 
 import java.io.File;
 import java.util.Locale;

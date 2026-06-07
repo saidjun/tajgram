@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -6,10 +6,10 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.ChatActivity;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

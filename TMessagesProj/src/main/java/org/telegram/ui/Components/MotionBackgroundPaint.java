@@ -19,11 +19,11 @@ import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.messenger.utils.ColorShader;
-import org.tajgram.ui.Components.blur3.utils.BitmapMemoizedMetadata;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.ColorShader;
+import org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;

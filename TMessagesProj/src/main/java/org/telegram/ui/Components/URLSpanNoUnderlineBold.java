@@ -10,7 +10,7 @@ package org.tajgram.ui.Components;
 
 import android.text.TextPaint;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class URLSpanNoUnderlineBold extends URLSpanNoUnderline {
 

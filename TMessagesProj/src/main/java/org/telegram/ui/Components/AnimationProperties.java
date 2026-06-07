@@ -7,9 +7,9 @@ import android.graphics.drawable.ShapeDrawable;
 import android.util.Property;
 import android.view.animation.OvershootInterpolator;
 
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.ui.Cells.DialogCell;
-import org.tajgram.ui.PhotoViewer;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Cells.DialogCell;
+import org.telegram.ui.PhotoViewer;
 
 public class AnimationProperties {
 

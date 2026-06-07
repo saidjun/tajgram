@@ -23,9 +23,9 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.ui.Components.MotionBackgroundDrawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.MotionBackgroundDrawable;
 
 @SuppressLint("ViewConstructor")
 public class VoIpGradientLayout extends FrameLayout {

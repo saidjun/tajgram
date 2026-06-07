@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -16,23 +16,23 @@ import android.graphics.SurfaceTexture;
 import android.text.TextUtils;
 import android.view.View;
 
-import org.tajgram.messenger.video.MediaCodecPlayer;
-import org.tajgram.messenger.video.MediaCodecVideoConvertor;
-import org.tajgram.tgnet.AbstractSerializedData;
-import org.tajgram.tgnet.InputSerializedData;
-import org.tajgram.tgnet.OutputSerializedData;
-import org.tajgram.tgnet.SerializedData;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.Components.AnimatedFileDrawable;
-import org.tajgram.ui.Components.Paint.PaintTypeface;
-import org.tajgram.ui.Components.Paint.Views.LinkPreview;
-import org.tajgram.ui.Components.PhotoFilterView;
-import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.tajgram.ui.Stories.recorder.CollageLayout;
-import org.tajgram.ui.Stories.recorder.StoryEntry;
-import org.tajgram.ui.Stories.recorder.Weather;
+import org.telegram.messenger.video.MediaCodecPlayer;
+import org.telegram.messenger.video.MediaCodecVideoConvertor;
+import org.telegram.tgnet.AbstractSerializedData;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.AnimatedFileDrawable;
+import org.telegram.ui.Components.Paint.PaintTypeface;
+import org.telegram.ui.Components.Paint.Views.LinkPreview;
+import org.telegram.ui.Components.PhotoFilterView;
+import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.ui.Stories.recorder.CollageLayout;
+import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.telegram.ui.Stories.recorder.Weather;
 
 import java.io.File;
 import java.nio.FloatBuffer;

@@ -17,13 +17,13 @@ import android.graphics.PorterDuffColorFilter;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLoader;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.R;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.web.WebInstantView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.web.WebInstantView;
 
 import java.util.Locale;
 

@@ -20,19 +20,19 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.MediaController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.BubbleActivity;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.Crop.CropRotationWheel;
-import org.tajgram.ui.Components.Crop.CropTransform;
-import org.tajgram.ui.Components.Crop.CropView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
-import org.tajgram.ui.Components.Paint.Views.PhotoView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.Crop.CropRotationWheel;
+import org.telegram.ui.Components.Crop.CropTransform;
+import org.telegram.ui.Components.Crop.CropView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.Paint.Views.PhotoView;
 
 public class CropInlineEditor extends FrameLayout {
 

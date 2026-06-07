@@ -1,6 +1,6 @@
 package org.tajgram.ui.Components.Paint;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.util.ArrayList;
 import java.util.HashMap;

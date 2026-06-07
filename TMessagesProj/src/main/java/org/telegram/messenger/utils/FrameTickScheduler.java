@@ -2,7 +2,7 @@ package org.tajgram.messenger.utils;
 
 import android.view.Choreographer;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 import java.util.Map;
 import java.util.WeakHashMap;

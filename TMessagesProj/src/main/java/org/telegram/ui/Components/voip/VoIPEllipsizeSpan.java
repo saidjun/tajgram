@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

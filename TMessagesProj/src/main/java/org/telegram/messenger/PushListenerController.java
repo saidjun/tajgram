@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import static org.tajgram.messenger.LocaleController.getString;
 
@@ -19,11 +19,11 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.tajgram.messenger.voip.VoIPGroupNotification;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.NativeByteBuffer;
-import org.tajgram.tgnet.SerializedData;
-import org.tajgram.tgnet.TLRPC;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -6,10 +6,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow;
+import org.telegram.ui.ActionBar.Theme;
 
 public abstract class CustomPopupMenu {
 

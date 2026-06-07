@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.math.MathUtils;
 
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.Utilities;
 
 public class BlurVisibilityDrawable extends Drawable {
 

@@ -19,7 +19,7 @@ import android.view.animation.DecelerateInterpolator;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class CloseProgressDrawable2 extends Drawable {
 

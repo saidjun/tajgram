@@ -1,11 +1,11 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.os.SystemClock;
 import android.util.SparseIntArray;
 
 import androidx.annotation.UiThread;
 
-import org.tajgram.ui.Components.Reactions.HwEmojis;
+import org.telegram.ui.Components.Reactions.HwEmojis;
 
 import java.util.ArrayList;
 

@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.Utilities;
 
 import java.io.File;
 

@@ -6,15 +6,15 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.Components.Paint.Views.LocationMarker;
-import org.tajgram.ui.Components.Reactions.ReactionImageHolder;
-import org.tajgram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.tajgram.ui.Stories.recorder.Weather;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.Paint.Views.LocationMarker;
+import org.telegram.ui.Components.Reactions.ReactionImageHolder;
+import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.ui.Stories.recorder.Weather;
 
 import java.util.ArrayList;
 

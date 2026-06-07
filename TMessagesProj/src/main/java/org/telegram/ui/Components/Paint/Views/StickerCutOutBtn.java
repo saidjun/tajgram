@@ -11,13 +11,13 @@ import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
-import org.tajgram.messenger.R;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.BlurringShader;
-import org.tajgram.ui.Components.ColoredImageSpan;
-import org.tajgram.ui.Stories.recorder.ButtonWithCounterView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.BlurringShader;
+import org.telegram.ui.Components.ColoredImageSpan;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 @SuppressLint("ViewConstructor")
 public class StickerCutOutBtn extends ButtonWithCounterView {

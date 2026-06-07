@@ -1,4 +1,4 @@
-package org.tajgram.ui;
+package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,13 +8,13 @@ import android.view.View;
 
 import androidx.core.content.ContextCompat;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageReceiver;
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.tgnet.TLObject;
-import org.tajgram.ui.Components.AvatarDrawable;
-import org.tajgram.ui.Components.PhotoCropView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.PhotoCropView;
 
 public class SuggestUserPhotoView extends View {
 

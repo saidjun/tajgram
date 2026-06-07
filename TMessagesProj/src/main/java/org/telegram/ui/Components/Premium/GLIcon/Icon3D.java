@@ -12,10 +12,10 @@ import android.graphics.Shader;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 
-import org.tajgram.messenger.R;
-import org.tajgram.messenger.SvgHelper;
-import org.tajgram.messenger.Utilities;
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.Theme;
 
 import java.io.BufferedReader;
 import java.io.IOException;

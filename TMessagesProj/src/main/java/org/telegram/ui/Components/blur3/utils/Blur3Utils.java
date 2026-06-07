@@ -17,9 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.drawable.WrappedDrawable;
 
 import org.jspecify.annotations.Nullable;
-import org.tajgram.ui.Components.blur3.capture.IBlur3Capture;
-import org.tajgram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.tajgram.ui.Components.chat.ViewPositionWatcher;
+import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 
 public class Blur3Utils {
     private Blur3Utils() {

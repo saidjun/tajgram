@@ -7,9 +7,9 @@ import android.opengl.GLUtils;
 
 import androidx.annotation.RawRes;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.FileLog;
-import org.tajgram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

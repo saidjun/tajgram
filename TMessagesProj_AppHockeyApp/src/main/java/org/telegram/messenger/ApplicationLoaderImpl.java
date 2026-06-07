@@ -1,4 +1,4 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,13 +18,13 @@ import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.distribute.Distribute;
 
-import org.tajgram.messenger.regular.BuildConfig;
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.UpdateAppAlertDialog;
-import org.tajgram.ui.Components.UpdateLayout;
-import org.tajgram.ui.IUpdateLayout;
+import org.telegram.messenger.regular.BuildConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.UpdateAppAlertDialog;
+import org.telegram.ui.Components.UpdateLayout;
+import org.telegram.ui.IUpdateLayout;
 
 import java.io.File;
 

@@ -8,7 +8,7 @@ import android.os.ParcelFileDescriptor;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.tajgram.messenger.ApplicationLoader;
+import org.telegram.messenger.ApplicationLoader;
 
 import java.io.FileNotFoundException;
 

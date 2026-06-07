@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.voip.VoIPToggleButton;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.voip.VoIPToggleButton;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

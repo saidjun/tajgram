@@ -26,8 +26,8 @@ package org.tajgram.PhoneFormat;
 
 import androidx.annotation.NonNull;
 
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.FileLog;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

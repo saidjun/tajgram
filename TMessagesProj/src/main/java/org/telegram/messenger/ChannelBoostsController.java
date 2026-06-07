@@ -1,17 +1,17 @@
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import com.google.android.exoplayer2.util.Consumer;
 
-import org.tajgram.tgnet.ConnectionsManager;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.tgnet.tl.TL_stories;
-import org.tajgram.ui.ActionBar.AlertDialog;
-import org.tajgram.ui.ActionBar.BaseFragment;
-import org.tajgram.ui.ActionBar.Theme;
-import org.tajgram.ui.Components.AlertsCreator;
-import org.tajgram.ui.Components.BulletinFactory;
-import org.tajgram.ui.Components.Premium.boosts.BoostRepository;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.BulletinFactory;
+import org.telegram.ui.Components.Premium.boosts.BoostRepository;
+import org.telegram.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

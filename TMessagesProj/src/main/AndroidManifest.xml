@@ -102,7 +102,7 @@
         android:hardwareAccelerated="true"
         android:largeHeap="true"
         android:theme="@style/Theme.TMessages.Start"
-        android:manageSpaceActivity="org.tajgram.ui.ExternalActionActivity"
+        android:manageSpaceActivity="org.telegram.ui.ExternalActionActivity"
         android:supportsRtl="false"
         android:requestLegacyExternalStorage="true"
         android:preserveLegacyExternalStorage="true"
@@ -116,7 +116,7 @@
         <activity-alias
             android:enabled="true"
             android:name="org.tajgram.messenger.DefaultIcon"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:exported="true">
 
             <intent-filter>
@@ -130,7 +130,7 @@
         <activity-alias
             android:enabled="false"
             android:name="org.tajgram.messenger.VintageIcon"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:icon="@mipmap/icon_6_launcher"
             android:roundIcon="@mipmap/icon_6_launcher_round"
             android:exported="true">
@@ -146,7 +146,7 @@
         <activity-alias
             android:enabled="false"
             android:name="org.tajgram.messenger.AquaIcon"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:icon="@mipmap/icon_4_launcher"
             android:roundIcon="@mipmap/icon_4_launcher_round"
             android:exported="true">
@@ -162,7 +162,7 @@
         <activity-alias
             android:enabled="false"
             android:name="org.tajgram.messenger.PremiumIcon"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:icon="@mipmap/icon_3_launcher"
             android:roundIcon="@mipmap/icon_3_launcher_round"
             android:exported="true">
@@ -178,7 +178,7 @@
         <activity-alias
             android:enabled="false"
             android:name="org.tajgram.messenger.TurboIcon"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:icon="@mipmap/icon_5_launcher"
             android:roundIcon="@mipmap/icon_5_launcher_round"
             android:exported="true">
@@ -194,7 +194,7 @@
         <activity-alias
             android:enabled="false"
             android:name="org.tajgram.messenger.NoxIcon"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:icon="@mipmap/icon_2_launcher"
             android:roundIcon="@mipmap/icon_2_launcher_round"
             android:exported="true">
@@ -208,7 +208,7 @@
         </activity-alias>
 
         <activity
-            android:name="org.tajgram.ui.LaunchActivity"
+            android:name="org.telegram.ui.LaunchActivity"
             android:theme="@style/Theme.TMessages.Start"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode|smallestScreenSize|screenLayout"
             android:supportsPictureInPicture="true"
@@ -289,8 +289,8 @@
                 android:value="subject_segment" />
         </activity>
         <activity-alias
-            android:name="org.tajgram.ui.CallsActivity"
-            android:targetActivity="org.tajgram.ui.LaunchActivity"
+            android:name="org.telegram.ui.CallsActivity"
+            android:targetActivity="org.telegram.ui.LaunchActivity"
             android:permission="android.permission.CALL_PHONE"
             android:exported="true">
             <intent-filter>
@@ -301,7 +301,7 @@
             </intent-filter>
         </activity-alias>
         <activity
-            android:name="org.tajgram.ui.BubbleActivity"
+            android:name="org.telegram.ui.BubbleActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
@@ -309,7 +309,7 @@
             android:documentLaunchMode="always"
             android:resizeableActivity="true"/>
         <activity
-            android:name="org.tajgram.ui.ShareActivity"
+            android:name="org.telegram.ui.ShareActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
@@ -325,7 +325,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.tajgram.ui.ExternalActionActivity"
+            android:name="org.telegram.ui.ExternalActionActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
@@ -336,7 +336,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.tajgram.ui.ChatsWidgetConfigActivity"
+            android:name="org.telegram.ui.ChatsWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
@@ -346,7 +346,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.tajgram.ui.ContactsWidgetConfigActivity"
+            android:name="org.telegram.ui.ContactsWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
@@ -356,7 +356,7 @@
             </intent-filter>
         </activity>
 <!--        <activity-->
-<!--            android:name="org.tajgram.ui.FeedWidgetConfigActivity"-->
+<!--            android:name="org.telegram.ui.FeedWidgetConfigActivity"-->
 <!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"-->
 <!--            android:hardwareAccelerated="true"-->
 <!--            android:windowSoftInputMode="adjustPan">-->
@@ -375,7 +375,7 @@
             android:exported="true">
         </activity>
         <activity
-            android:name="org.tajgram.ui.PopupNotificationActivity"
+            android:name="org.telegram.ui.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
@@ -384,12 +384,12 @@
             android:resizeableActivity="false"
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
-        <activity android:name="org.tajgram.ui.VoIPPermissionActivity"
+        <activity android:name="org.telegram.ui.VoIPPermissionActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
                   android:taskAffinity="${applicationId}.voip"
                   android:excludeFromRecents="true"
                 android:theme="@style/Theme.TMessages.Transparent"/>
-        <activity android:name="org.tajgram.ui.VoIPFeedbackActivity"
+        <activity android:name="org.telegram.ui.VoIPFeedbackActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
 				  android:taskAffinity="${applicationId}.voip_feedback"
                   android:excludeFromRecents="true"
@@ -497,7 +497,7 @@
             android:foregroundServiceType="dataSync"
         />
         <service
-            android:name="org.tajgram.ui.Stories.recorder.StoryUploadingService"
+            android:name="org.telegram.ui.Stories.recorder.StoryUploadingService"
             android:enabled="true"
             android:exported="true"
             android:foregroundServiceType="dataSync"

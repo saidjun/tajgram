@@ -11,12 +11,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.ImageLocation;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.ui.Components.BackupImageView;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
-import org.tajgram.ui.Components.LayoutHelper;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.BackupImageView;
+import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.LayoutHelper;
 
 public class ImageWithWavesView extends FrameLayout {
     private final AvatarWavesDrawable avatarWavesDrawable;

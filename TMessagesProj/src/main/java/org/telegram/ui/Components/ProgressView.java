@@ -11,7 +11,7 @@ package org.tajgram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 public class ProgressView {
     

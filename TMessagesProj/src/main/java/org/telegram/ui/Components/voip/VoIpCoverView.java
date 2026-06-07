@@ -12,10 +12,10 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LiteMode;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 @SuppressLint("ViewConstructor")
 public class VoIpCoverView extends View {

@@ -2,7 +2,7 @@ package org.tajgram.ui.Components;
 
 import android.animation.TimeAnimator;
 
-import org.tajgram.messenger.AndroidUtilities;
+import org.telegram.messenger.AndroidUtilities;
 
 /**
  * Good for animations with a jank at the beginning.

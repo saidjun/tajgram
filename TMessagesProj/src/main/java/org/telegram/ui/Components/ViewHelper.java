@@ -2,8 +2,8 @@ package org.tajgram.ui.Components;
 
 import android.view.View;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.LocaleController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
 public final class ViewHelper {
 

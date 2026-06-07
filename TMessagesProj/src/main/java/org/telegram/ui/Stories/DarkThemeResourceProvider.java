@@ -10,7 +10,7 @@ import android.util.SparseIntArray;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.tajgram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.Theme;
 
 import java.util.HashSet;
 import java.util.Objects;

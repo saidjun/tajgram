@@ -3,9 +3,9 @@ package org.tajgram.ui.Components.Paint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.tajgram.messenger.ApplicationLoader;
-import org.tajgram.messenger.UserConfig;
-import org.tajgram.ui.Components.Paint.Views.PaintTextOptionsView;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.Paint.Views.PaintTextOptionsView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

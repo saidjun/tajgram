@@ -15,10 +15,10 @@ import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
 import org.checkerframework.checker.units.qual.A;
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.ui.ActionBar.ActionBarPopupWindow;
-import org.tajgram.ui.Components.AnimatedFloat;
-import org.tajgram.ui.Components.CubicBezierInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow;
+import org.telegram.ui.Components.AnimatedFloat;
+import org.telegram.ui.Components.CubicBezierInterpolator;
 
 public class StoryReactionWidgetBackground extends Drawable {
 

@@ -6,7 +6,7 @@
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.tajgram.messenger;
+package org.telegram.messenger;
 
 import android.annotation.TargetApi;
 import android.app.PendingIntent;
@@ -40,10 +40,10 @@ import android.widget.Toast;
 import androidx.collection.LongSparseArray;
 
 import org.tajgram.SQLite.SQLiteCursor;
-import org.tajgram.messenger.audioinfo.AudioInfo;
-import org.tajgram.tgnet.NativeByteBuffer;
-import org.tajgram.tgnet.TLRPC;
-import org.tajgram.ui.LaunchActivity;
+import org.telegram.messenger.audioinfo.AudioInfo;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
 import java.io.File;
 import java.lang.ref.WeakReference;

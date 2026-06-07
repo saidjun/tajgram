@@ -2,8 +2,8 @@ package org.tajgram.ui.Stories.recorder;
 
 import androidx.annotation.Keep;
 
-import org.tajgram.messenger.AndroidUtilities;
-import org.tajgram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
 @Keep
 public class FfmpegAudioWaveformLoader {
