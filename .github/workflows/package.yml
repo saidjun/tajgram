@@ -18,19 +18,19 @@ jobs:
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    # МАҶБУРАН БАРГАРДОНИДАНИ САТРИ PACKAGE БА ШАКЛИ ЗАВОДИИ КОРКУНАНДА
+    # МАҶБУРАН ТАБДИЛ ДОДАНИ САТРИ PACKAGE БА БРЕНДИ ШАХСИИ ТАҶГРАМ
     - name: Run Core Package Fixer
       run: |
         git config --global user.name "Saidjun Chief Developer"
         git config --global user.email "saidjun@tajgram.messenger"
 
-        echo "=== ОҒОЗИ ИСЛОҲИ ТЕХНИКИИ ПАКЕТИ ЗАВОДӢ ==="
+        echo "=== ОҒОЗИ ИСЛОҲИ ТЕХНИКИИ ПАКЕТИ ТАҶГРАМ ==="
         
-        # Иваз кардани сатри хатои package ба org.telegram дар тамоми файлҳои Java
-        find . -name "*.java" -exec sed -i 's/package org.tajgram.messenger;/package org.telegram.messenger;/g' {} \;
-        find . -name "BuildVars.java" -exec sed -i 's/package org.tajgram.messenger;/package org.telegram.messenger;/g' {} \;
+        # Фармони ҳушманд: Табдили умумии пакетҳои заводии Telegram ба оргинал Бренди Tajgram
+        find . -name "*.java" -exec sed -i 's/package org.telegram.messenger;/package org.tajgram.messenger;/g' {} \;
+        find . -name "BuildVars.java" -exec sed -i 's/package org.telegram.messenger;/package org.tajgram.messenger;/g' {} \;
 
         echo "=== САБТИ РАСМӢ БА GITHUB ==="
         git add .
-        git commit -m "🔥 PACKAGE REPAIRED: Core structure restored to org.telegram.messenger" || echo "Аллакай ислоҳ шудааст"
+        git commit -m "🔥 PACKAGE REPAIRED: Core structure fully synced to org.tajgram.messenger" || echo "Аллакай ислоҳ шудааст"
         git push origin HEAD:master --force
