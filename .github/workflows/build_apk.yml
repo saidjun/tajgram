@@ -17,7 +17,7 @@ jobs:
     - name: Checkout Repository Code
       uses: actions/checkout@v4
       with:
-        clean: false
+        clean: true
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -42,23 +42,30 @@ jobs:
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
-    # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН, ВЕРСИЯ ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
+    # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
     - name: Auto-Fix Tajik Language Syntax & Version
       run: |
-        LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
+        if [ ! -f "$LANG_FILE" ]; then
+          LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        fi
+        
         if [ -f "$LANG_FILE" ]; then
           echo "========================================================"
-          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва синтаксиси тоҷикӣ..."
-          # Иваз кардани фоизҳои хатарнок ба %% барои гузаштани AAPT2 Градл
+          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва сиктаксиси тоҷикӣ..."
           sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
           sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
           echo "Синтаксиси забон 100% муҳофизат шуд!"
         fi
         
-        GRADLE_FILE="TMessagesProj_App/build.gradle"
+        GRADLE_FILE="TMessagesProj/build.gradle"
+        if [ ! -f "$GRADLE_FILE" ]; then
+          GRADLE_FILE="TMessagesProj_App/build.gradle"
+        fi
+        
         if [ -f "$GRADLE_FILE" ]; then
-          echo "Танзими версияи устувори Tajgram-v1.0 дар ҳаво..."
-          sed -i 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
+          echo "Танзими версияи устувори Tajgram дар ҳаво..."
+          sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
           echo "========================================================"
         fi
        
@@ -74,8 +81,8 @@ jobs:
         
         chmod +x gradlew
         
-        # Сборкаи ниҳоӣ бо суръати баланд ва нигоҳдории сохтор
-        ./gradlew :TMessagesProj_App:assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace
+        # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бебаҳона
+        ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace
 
     - name: Commit and Push APK Back to Repository Folder
       run: |
