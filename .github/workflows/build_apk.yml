@@ -42,6 +42,26 @@ jobs:
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
+    # 🛠 ИСЛОҲИ ҲУШМАНДИ СИНТАКСИСИ ЗАБОН ВА ВЕРСИЯ ДАР ҲАВО (БЕ ТАҒЙИР ПАДАРУ МОДАР)
+    - name: Auto-Fix Tajik Language Syntax & Version
+      run: |
+        LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        if [ -f "$LANG_FILE" ]; then
+          echo "========================================================"
+          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва синтаксиси тоҷикӣ..."
+          # Иваз кардани фоизҳои хатарнок ба %% барои гузаштани AAPT2 Градл
+          sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
+          sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
+          echo "Синтаксиси забон 100% муҳофизат шуд!"
+        fi
+        
+        GRADLE_FILE="TMessagesProj_App/build.gradle"
+        if [ -f "$GRADLE_FILE" ]; then
+          echo "Танзими версияи устувори 12.7.3-Tajgram-v1.0 дар ҳаво..."
+          sed -i 's/versionName .*/versionName "12.7.3-Tajgram-v1.0"/' "$GRADLE_FILE"
+          echo "========================================================"
+        fi
+
     - name: Build with Gradle Factory Command
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
@@ -62,7 +82,7 @@ jobs:
         mkdir -p ready_apk/
         find . -name "*.apk" -exec cp {} ready_apk/Tajgram.apk \;
         git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@://github.com"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add ready_apk/Tajgram.apk
         git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed" || echo "No changes"
         git push origin HEAD:master --force
