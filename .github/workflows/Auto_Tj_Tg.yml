@@ -17,34 +17,43 @@ jobs:
         run: |
           python3 -c "
 import re
+import sys
+
 path = 'TMessagesProj/src/main/res/values-tg/strings.xml'
-with open(path, 'r', encoding='utf-8') as f:
-    data = f.read()
+try:
+    with open(path, 'r', encoding='utf-8') as f:
+        data = f.read()
 
-def sanitize(match):
-    tag = match.group(1)
-    content = match.group(2)
-    closing = match.group(3)
-    
-    # 1. Ислоҳи аломатҳои махсус (бе ивазшавии такрорӣ)
-    content = re.sub(r'&(?!(amp|lt|gt|quot|apos);)', '&amp;', content)
-    content = content.replace('<', '&lt;').replace('>', '&gt;')
-    content = content.replace('\"', '&quot;').replace('\'', '&apos;')
-    
-    # 2. Ислоҳи фоизҳо: Ҳамаи % -> %% , ба ғайр аз форматҳои %1$s, %2$d
-    content = re.sub(r'%(?![0-9]\$[ds])', '%%', content)
-    
-    return tag + content + closing
+    def sanitize(match):
+        tag = match.group(1)
+        content = match.group(2)
+        closing = match.group(3)
+        # Аломатҳоро ислоҳ мекунем
+        content = re.sub(r'&(?!(amp|lt|gt|quot|apos);)', '&amp;', content)
+        content = content.replace('<', '&lt;').replace('>', '&gt;').replace('\"', '&quot;').replace('\'', '&apos;')
+        # Фоизҳоро ислоҳ мекунем
+        content = re.sub(r'%(?![0-9]\$[ds])', '%%', content)
+        return tag + content + closing
 
-# 3. Фарогирии тамоми тегҳо: string, plurals, item
-res = re.sub(r'(<(?:string|plurals|item)[^>]*>)(.*?)(</(?:string|plurals|item)>)', sanitize, data, flags=re.DOTALL)
-with open(path, 'w', encoding='utf-8') as f:
-    f.write(res)
+    res = re.sub(r'(<(?:string|plurals|item)[^>]*>)(.*?)(</(?:string|plurals|item)>)', sanitize, data, flags=re.DOTALL)
+    
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(res)
+    print('✅ Файл бомуваффақият ислоҳ шуд.')
+except Exception as e:
+    print(f'❌ Хатогӣ: {e}')
+    sys.exit(1)
 "
       - name: Push
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m '🤖 Factory Sanitized' || exit 0
-          git push
+          # Санҷиш: оё тағйирот ҳаст?
+          if [[ -n $(git status --porcelain) ]]; then
+            git add .
+            git commit -m '🤖 Factory Sanitized'
+            git push
+            echo '✅ Тағйирот фиристода шуд.'
+          else
+            echo '✅ Файл аллакай дар ҳолати идеалӣ аст.'
+          fi
