@@ -1,7 +1,7 @@
 import re, os
 
-# Ин ҷо роҳи файлро ба `strings.xml`-и худ иваз кун, агар папкааш дигар бошад
-path = 'app/src/main/res/values-tg/strings.xml'
+# Ин ҷо роҳи файлро ба `'TMessagesProj/src/main/res/values-tg/strings.xml'`-и худ иваз кун, агар папкааш дигар бошад
+path = 'TMessagesProj/src/main/res/values-tg/strings.xml'
 
 def shield_xml():
     if not os.path.exists(path):
