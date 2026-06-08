@@ -22,13 +22,15 @@ workflows:
           LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
           [ ! -f "$LANG_FILE" ] && LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
           if [ -f "$LANG_FILE" ]; then
-            sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
-            sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
+            # Ислоҳи синтаксиси sed барои macOS (mac_mini_m2)
+            sed -i '' -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
+            sed -i '' -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
           fi
           GRADLE_FILE="TMessagesProj/build.gradle"
           [ ! -f "$GRADLE_FILE" ] && GRADLE_FILE="TMessagesProj_App/build.gradle"
           if [ -f "$GRADLE_FILE" ]; then
-            sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
+            # Ислоҳи синтаксиси sed барои macOS
+            sed -i '' 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
           fi
        
       - name: Build with Gradle Factory Command
