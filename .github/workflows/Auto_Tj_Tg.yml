@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run Shield
-        run: python3 xml_shield.py
+        run: python3 .github/workflows/xml_shield.py
       - name: Push Changes
         run: |
           git config user.name 'Saidjon-Bot'
