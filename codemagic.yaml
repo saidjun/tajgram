@@ -5,8 +5,16 @@ workflows:
     max_build_duration: 60
     environment:
       groups:
-        - release # Ин се калидро дар CodeMagic дар Environment variables илова кун
+        - release
     scripts:
+      - name: Checkout Code
+        script: git clone https://github.com/tajgram/tajgram.git .
+      
+      - name: Setup Java
+        script: |
+          export JAVA_HOME=$JAVA_HOME_17
+          java -version
+
       - name: Check SHA Fingerprints
         script: |
           keytool -list -v -keystore TMessagesProj/config/release.keystore \
@@ -20,17 +28,18 @@ workflows:
             sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
             sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
           fi
-          
           GRADLE_FILE="TMessagesProj/build.gradle"
           [ ! -f "$GRADLE_FILE" ] && GRADLE_FILE="TMessagesProj_App/build.gradle"
           if [ -f "$GRADLE_FILE" ]; then
             sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
           fi
-
-      - name: Build Tajgram APK
+       
+      - name: Build with Gradle Factory Command
         script: |
+          echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
           chmod +x gradlew
-          ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace \
+          # Иловаи -x test барои тезтар кардани билд (санҷишҳо гузаронида намешаванд)
+          ./gradlew clean assembleRelease -x test --no-daemon --parallel --configure-on-demand --stacktrace \
             -Pandroid.injected.signing.store.file=$(pwd)/TMessagesProj/config/release.keystore \
             -Pandroid.injected.signing.store.password=$RELEASE_STORE_PASSWORD \
             -Pandroid.injected.signing.key.password=$RELEASE_KEY_PASSWORD \
