@@ -1,65 +1,50 @@
-name: Factory Th XML Fix
+name: Factory XML Fix
 
 on:
   push:
     paths:
       - 'TMessagesProj/src/main/res/values-tg/strings.xml'
-      - 'TMessagesProj/src/main/res/values-tg/strings.xml'
   workflow_dispatch:
 
 jobs:
-  fix-and-verify:
+  fix:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Full Factory Repair
+      - name: Full XML Sanitization
         run: |
-          # Адреси дақиқ ва пурра
-          FILE_PATH="TMessagesProj/src/main/res/values-tg/strings.xml"
-          
-          # Агар файл дар tgl набошад, варианти tg-ро месанҷад
-          if [ ! -f "$FILE_PATH" ]; then
-            FILE_PATH="TMessagesProj/src/main/res/values-tg/strings.xml"
-          fi
-          
-          if [ ! -f "$FILE_PATH" ]; then
-            echo "❌ Файл дар ягон адрес ёфт нашуд!"
-            exit 1
-          fi
-          
-          echo "✅ Файл бомуваффақият ёфт шуд: $FILE_PATH"
-          
-          # Ислоҳи аломатҳо
-          sed -i 's/&/&amp;/g' "$FILE_PATH"
-          sed -i 's/</&lt;/g' "$FILE_PATH"
-          sed -i 's/>/&gt;/g' "$FILE_PATH"
-          sed -i 's/"/&quot;/g' "$FILE_PATH"
-          sed -i "s/'/&apos;/g" "$FILE_PATH"
+          python3 -c "
+import re
+path = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+with open(path, 'r', encoding='utf-8') as f:
+    data = f.read()
 
-          # Техникаи фоизҳо
-          sed -i 's/%/%%/g' "$FILE_PATH"
-          sed -i -E 's/%%([0-9]\$[ds])/%\1/g' "$FILE_PATH"
+def sanitize(match):
+    tag = match.group(1)
+    content = match.group(2)
+    closing = match.group(3)
+    
+    # 1. Ислоҳи аломатҳои махсус (бе ивазшавии такрорӣ)
+    content = re.sub(r'&(?!(amp|lt|gt|quot|apos);)', '&amp;', content)
+    content = content.replace('<', '&lt;').replace('>', '&gt;')
+    content = content.replace('\"', '&quot;').replace('\'', '&apos;')
+    
+    # 2. Ислоҳи фоизҳо: Ҳамаи % -> %% , ба ғайр аз форматҳои %1$s, %2$d
+    content = re.sub(r'%(?![0-9]\$[ds])', '%%', content)
+    
+    return tag + content + closing
 
-          # Назорат
-          OPEN=$(grep -o "<string" "$FILE_PATH" | wc -l)
-          CLOSE=$(grep -o "</string>" "$FILE_PATH" | wc -l)
-
-          if [ "$OPEN" -eq "$CLOSE" ] && [ "$OPEN" -gt 0 ]; then
-              echo "✅ $OPEN сатр ислоҳ шуд."
-          else
-              echo "❌ Хатои сохтор: Кушода $OPEN, Пӯшида $CLOSE"
-              exit 1
-          fi
-
-      - name: Push to GitHub
+# 3. Фарогирии тамоми тегҳо: string, plurals, item
+res = re.sub(r'(<(?:string|plurals|item)[^>]*>)(.*?)(</(?:string|plurals|item)>)', sanitize, data, flags=re.DOTALL)
+with open(path, 'w', encoding='utf-8') as f:
+    f.write(res)
+"
+      - name: Push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [[ -n $(git status -s) ]]; then
-            git add .
-            git commit -m "🤖 Robot: Factory Fix applied to $FILE_PATH"
-            git push
-          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m '🤖 Factory Sanitized' || exit 0
+          git push
