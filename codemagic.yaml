@@ -17,30 +17,42 @@ workflows:
           keytool -list -v -keystore TMessagesProj/config/release.keystore \
             -storepass "$RELEASE_STORE_PASSWORD" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
-      - name: Auto-Fix Tajik Language Syntax & Version
+      - name: Auto-Fix and Commit Tajik Language Syntax
         script: |
-          LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
-          [ ! -f "$LANG_FILE" ] && LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
-          if [ -f "$LANG_FILE" ]; then
-            # 1. Ислоҳи аломати % (ба %% иваз кардан)
-            sed -i '' -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
-            sed -i '' -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
-            
-            # 2. Ислоҳи дигар аломатҳои махсус барои AAPT2
-            # & -> &amp;
-            sed -i '' 's/&/&amp;/g' "$LANG_FILE"
-            # < -> &lt;
-            sed -i '' 's/</&lt;/g' "$LANG_FILE"
-            # > -> &gt;
-            sed -i '' 's/>/&gt;/g' "$LANG_FILE"
-            
-            echo "✅ Ҳамаи аломатҳои махсус ислоҳ шуданд."
-          fi
+          echo "🤖 Робот оғоз шуд: Ислоҳи пурра ва тафтиши ҳамаҷониба..."
           
-          GRADLE_FILE="TMessagesProj/build.gradle"
-          [ ! -f "$GRADLE_FILE" ] && GRADLE_FILE="TMessagesProj_App/build.gradle"
-          if [ -f "$GRADLE_FILE" ]; then
-            sed -i '' 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
+          find . -name "strings.xml" | grep "values-tg" | while read LANG_FILE; do
+            echo "🔎 Санҷиши файл: $LANG_FILE"
+            
+            # 1. Ислоҳи аломатҳои XML (тамоми символҳоро ба коди амн табдил медиҳад)
+            sed -i '' 's/&/&amp;/g' "$LANG_FILE"
+            sed -i '' 's/</&lt;/g' "$LANG_FILE"
+            sed -i '' 's/>/&gt;/g' "$LANG_FILE"
+            sed -i '' 's/"/&quot;/g' "$LANG_FILE"
+            sed -i '' "s/'/&apos;/g" "$LANG_FILE"
+            
+            # 2. Ислоҳи фоизҳо (бо нигоҳ доштани %1$s, %2$d ва ғайра)
+            # Аввал ҳамаи %-ҳоро ба %% мебарем
+            sed -i '' 's/%/%%/g' "$LANG_FILE"
+            # Баъд %1$s, %2$d ва ғайраро барқарор мекунем
+            sed -i '' -E 's/%%([0-9]\$[ds])/%\1/g' "$LANG_FILE"
+            # Баъд %%-ҳои воқеиро (ки ду фоиз буданд) барқарор мекунем (агар лозим бошад)
+          done
+          
+          # 3. Ислоҳи версия
+          GRADLE_FILE=$(find . -name "build.gradle" | grep "TMessagesProj" | head -n 1)
+          [ -f "$GRADLE_FILE" ] && sed -i '' 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
+          
+          # 4. Push ба GitHub
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n $(git status -s) ]]; then
+            git add .
+            git commit -m "🤖 Robot: Fully sanitized strings.xml syntax"
+            git push origin HEAD:master
+            echo "✅ Ислоҳот Push шуд."
+          else
+            echo "✨ Ҳамаи файлҳо аллакай дурустанд."
           fi
        
       - name: Build with Gradle Factory Command
