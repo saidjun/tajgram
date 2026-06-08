@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'TMessagesProj/src/main/res/values-tgl/strings.xml'
+  workflow_dispatch:  # ҲАМИН ТУГМАРО ИЛОВА КАРДАМ (Барои дастӣ запуск кардан)
 
 jobs:
   fix-and-verify:
@@ -17,7 +18,7 @@ jobs:
         run: |
           FILE_PATH="TMessagesProj/src/main/res/values-tgl/strings.xml"
           
-          # 1. Ислоҳи аломатҳои XML (Тартиби бехатар)
+          # 1. Ислоҳи аломатҳои XML
           sed -i 's/&/&amp;/g' "$FILE_PATH"
           sed -i 's/</&lt;/g' "$FILE_PATH"
           sed -i 's/>/&gt;/g' "$FILE_PATH"
@@ -28,7 +29,7 @@ jobs:
           sed -i 's/%/%%/g' "$FILE_PATH"
           sed -i -E 's/%%([0-9]\$[ds])/%\1/g' "$FILE_PATH"
 
-          # 3. Назорати ниҳоӣ (Техникӣ)
+          # 3. Назорати ниҳоӣ
           OPEN=$(grep -o "<string" "$FILE_PATH" | wc -l)
           CLOSE=$(grep -o "</string>" "$FILE_PATH" | wc -l)
 
