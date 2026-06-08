@@ -1,4 +1,4 @@
-name: 97Build Tajgram Independent (Full Auto)
+name: Build Tajgram Independent (Full Auto)
 
 on:
   workflow_dispatch:
@@ -17,24 +17,19 @@ jobs:
 
     - name: 1. Independent Branding (Tajgram-ize)
       run: |
-        # Мустақил кардани ID ва Namespace
         find . -name "build.gradle" -exec sed -i 's/applicationId "org.telegram.messenger"/applicationId "org.tajgram.messenger"/g' {} \;
         find . -name "build.gradle" -exec sed -i 's/namespace "org.telegram.messenger"/namespace "org.tajgram.messenger"/g' {} \;
-        
-        # Иваз кардани ҳамаи номҳо дар XML
         find . -name "strings.xml" -exec sed -i 's/Telegram/Tajgram/g' {} \;
         find . -name "strings.xml" -exec sed -i 's/Telegram Beta/Tajgram Beta/g' {} \;
 
     - name: 2. Core Protection (Telegram Integrity)
       run: |
-        # Ҳимояи муҳаррик: Ҳар ҷое ки код ба "org.tajgram" иваз шуда бошад ва боиси краш гардад, ба Telegram бармегардонем
-        find . -name "*.java" -o -name "*.kt" | xargs sed -i 's/org.tajgram.ui/org.telegram.ui/g'
-        find . -name "*.java" -o -name "*.kt" | xargs sed -i 's/org.tajgram.messenger.ApplicationLoader/org.telegram.messenger.ApplicationLoader/g'
+        find . -name "*.java" -o -name "*.kt" | xargs -r sed -i 's/org.tajgram.ui/org.telegram.ui/g'
+        find . -name "*.java" -o -name "*.kt" | xargs -r sed -i 's/org.tajgram.messenger.ApplicationLoader/org.telegram.messenger.ApplicationLoader/g'
         echo "✅ Ядрои барнома (Core) барои субот ба Telegram баргардонида шуд."
 
     - name: 3. Tajik Language Syntax Protection
       run: |
-        # Ислоҳи синтаксис (Фоиз ва &), ки мо якҷоя кардем
         find . -name "strings.xml" | while read file; do
           sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$file"
           sed -i 's/&/&amp;/g' "$file"
@@ -50,6 +45,8 @@ jobs:
       run: |
         mkdir -p ready_apk/
         find . -name "*release.apk" -exec cp {} ready_apk/Tajgram.apk \;
+        git config --global user.name "Tajgram Bot"
+        git config --global user.email "bot@tajgram.messenger"
         git add ready_apk/Tajgram.apk
         git commit -m "🚀 FINAL BUILD: Tajgram branding applied, Core stabilized" || echo "No changes"
         git push origin HEAD:master --force
