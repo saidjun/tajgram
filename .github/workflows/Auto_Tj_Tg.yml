@@ -14,6 +14,6 @@ jobs:
         run: |
           git config user.name 'Saidjon-Bot'
           git config user.email 'saidjontube@gmail.com'
-          git add app/src/main/res/values-tg/strings.xml
+          git add 'TMessagesProj/src/main/res/values-tg/strings.xml'
           git commit -m '🔧 XML Manual Fix' || echo 'No changes'
           git push
