@@ -1,59 +1,34 @@
-name: Factory XML Fix
-
-on:
-  push:
-    paths:
-      - 'TMessagesProj/src/main/res/values-tg/strings.xml'
-  workflow_dispatch:
-
-jobs:
-  fix:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v3
-      - name: Full XML Sanitization
+      - name: 🛡️ ULTIMATE XML DEEP-SCANNER & FACTORY RESET
         run: |
           python3 -c "
-import re
-import sys
+          import re, os
+          path = 'app/src/main/res/values-tg/strings.xml'
+          if os.path.exists(path):
+              with open(path, 'r', encoding='utf-8') as f: c = f.read()
+              
+              # 1. Ҳимояи мутлақ: Рамзҳои техникӣ (Telegram Placeholders)
+              # Инҳоро мегирем ва дар 'сейф' мемонем
+              ph = {}
+              def save_ph(m):
+                  k = f'___ID{len(ph)}___'
+                  ph[k] = m.group(0)
+                  return k
+              c = re.sub(r'%[0-9]*\$?[sdf]|\\n|\\t|&amp;|&#\d+;', save_ph, c)
 
-path = 'TMessagesProj/src/main/res/values-tg/strings.xml'
-try:
-    with open(path, 'r', encoding='utf-8') as f:
-        data = f.read()
+              # 2. Ислоҳи "Кунҷу канор": Аломатҳои хатарнок (ҳамаи & < > " ' ки дар ҷои нодурустанд)
+              c = c.replace('&', '&amp;').replace('&amp;amp;', '&amp;') # Ислоҳи дубликатҳо
+              c = c.replace('<', '&lt;').replace('>', '&gt;')
+              c = c.replace('\"', '&quot;').replace(\"'\", \"&apos;\")
 
-    def sanitize(match):
-        tag = match.group(1)
-        content = match.group(2)
-        closing = match.group(3)
-        # Аломатҳоро ислоҳ мекунем
-        content = re.sub(r'&(?!(amp|lt|gt|quot|apos);)', '&amp;', content)
-        content = content.replace('<', '&lt;').replace('>', '&gt;').replace('\"', '&quot;').replace('\'', '&apos;')
-        # Фоизҳоро ислоҳ мекунем
-        content = re.sub(r'%(?![0-9]\$[ds])', '%%', content)
-        return tag + content + closing
-
-    res = re.sub(r'(<(?:string|plurals|item)[^>]*>)(.*?)(</(?:string|plurals|item)>)', sanitize, data, flags=re.DOTALL)
-    
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(res)
-    print('✅ Файл бомуваффақият ислоҳ шуд.')
-except Exception as e:
-    print(f'❌ Хатогӣ: {e}')
-    sys.exit(1)
-"
-      - name: Push
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          # Санҷиш: оё тағйирот ҳаст?
-          if [[ -n $(git status --porcelain) ]]; then
-            git add .
-            git commit -m '🤖 Factory Sanitized'
-            git push
-            echo '✅ Тағйирот фиристода шуд.'
-          else
-            echo '✅ Файл аллакай дар ҳолати идеалӣ аст.'
-          fi
+              # 3. Барқарорсозӣ: Рамзҳои техникӣ ба ҷои худ бармегарданд
+              for k, v in ph.items(): c = c.replace(k, v)
+              
+              with open(path, 'w', encoding='utf-8') as f: f.write(c)
+              print('✅ XML DEEP-SCANNER: 100% CLEANED & PROTECTED')
+          "
+          # 4. Git Push
+          git config user.name 'Saidjon-Bot'
+          git config user.email 'saidjontube@gmail.com'
+          git add app/src/main/res/values-tg/strings.xml
+          git commit -m '🤖 Ultimate XML Deep-Scanner: Factory Hardened' || echo 'No changes'
+          git push
