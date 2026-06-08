@@ -1,36 +1,89 @@
-workflows:
-  android-workflow:
-    name: Tajgram VIP Factory Build
-    instance_type: mac_mini_m2
-    max_build_duration: 60
-    environment:
-      groups:
-        - release
-      vars:
-        JAVA_VERSION: "17"
-    scripts:
-      - name: Set up Java Development Kit
-        script: |
-          export JAVA_HOME=$JAVA_HOME_17
-          export PATH=$JAVA_HOME/bin:$PATH
-          java -version
-          echo "✅ Java 17 бомуваффақият фаъол шуд!"
+name: Build Tajgram APK
 
-      - name: Prepare Keystore Properties
-        script: |
-          mkdir -p TMessagesProj/config/
-          echo "keyAlias=tajgram_key" > TMessagesProj/config/keystore.properties
-          echo "keyPassword=$RELEASE_KEY_PASSWORD" >> TMessagesProj/config/keystore.properties
-          echo "storePassword=$RELEASE_STORE_PASSWORD" >> TMessagesProj/config/keystore.properties
-          
-          echo "=== САНҶИШИ ПАСПОРТИ РАҚАМИИ БАРНОМА ==="
-          keytool -list -v -keystore TMessagesProj/config/release.keystore -storepass $RELEASE_STORE_PASSWORD | grep -E "SHA1:|SHA256:" || true
-          echo "========================================="
+on:
+  workflow_dispatch:
 
-      - name: Build Tajgram VIP Release APK Without Tests
-        script: |
-          chmod +x gradlew
-          ./gradlew :TMessagesProj_App:assembleRelease -x test --no-daemon
+permissions:
+  contents: write
 
-    artifacts:
-      - TMessagesProj_App/build/outputs/**/*.apk
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
+
+    steps:
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+      with:
+        clean: true
+        ref: master
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Check SHA Fingerprints with Eyes
+      run: |
+        keytool -list -v -keystore TMessagesProj/config/release.keystore \
+          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
+
+    - name: Auto-Fix Tajik Language Syntax & Version
+      run: |
+        LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
+        if [ ! -f "$LANG_FILE" ]; then
+          LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        fi
+        
+        if [ -f "$LANG_FILE" ]; then
+          echo "========================================================"
+          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва сиктаксиси тоҷикӣ..."
+          sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
+          sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
+          echo "Синтаксиси забон 100% муҳофизат шуд!"
+        fi
+        
+        GRADLE_FILE="TMessagesProj/build.gradle"
+        if [ ! -f "$GRADLE_FILE" ]; then
+          GRADLE_FILE="TMessagesProj_App/build.gradle"
+        fi
+        
+        if [ -f "$GRADLE_FILE" ]; then
+          echo "Танзими версияи устувори Tajgram дар ҳаво..."
+          sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
+          echo "========================================================"
+        fi
+       
+    - name: Build with Gradle Factory Command
+      env:
+        GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
+      run: |
+        echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
+        chmod +x gradlew
+        ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace \
+          -Pandroid.injected.signing.store.file=$(pwd)/TMessagesProj/config/release.keystore \
+          -Pandroid.injected.signing.store.password="${{ secrets.RELEASE_STORE_PASSWORD }}" \
+          -Pandroid.injected.signing.key.password="${{ secrets.RELEASE_KEY_PASSWORD }}" \
+          -Pandroid.injected.signing.key.alias="${{ secrets.RELEASE_KEY_ALIAS }}"
+
+    - name: Commit and Push APK Back to Repository Folder
+      run: |
+        mkdir -p ready_apk/
+        find . -name "*.apk" -exec cp {} ready_apk/Tajgram.apk \;
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add ready_apk/Tajgram.apk
+        git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed" || echo "No changes"
+        git push origin HEAD:master --force
+
+    - name: Upload Finished APK Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: Tajgram-Official-APK
+        path: ready_apk/Tajgram.apk
