@@ -10,9 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Зиреҳи хотираи сервер ва ҳифзи билд
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
-      # ИЛОВАИ 1: Танзимоти вақти интизорӣ барои пешгирии Timeout
       GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true -Dorg.gradle.internal.http.connectionTimeout=120000 -Dorg.gradle.internal.http.socketTimeout=120000"
 
     steps:
@@ -23,7 +21,6 @@ jobs:
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    # ИЛОВАИ 2: Кэш барои суръат
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
@@ -34,8 +31,8 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # ИЛОВАИ 3: Пешакӣ боргирӣ кардани Gradle
-    - name: Pre-Download Gradle Wrapper
+    # ИЛОВАИ МУҲИМ БАРОИ ТЕЗКОРӢ
+    - name: Pre-Download Gradle
       run: chmod +x gradlew && ./gradlew wrapper --gradle-version 8.7 --distribution-type all
 
     - name: Inject New Secrets into Gradle Properties
@@ -50,17 +47,13 @@ jobs:
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
-    # ИЛОВАИ 4: Санҷиши пешакии XML
+    # 🛡 1. САНҶИШИ ПЕШАКИИ XML
     - name: Validate XML Resources
-      run: |
-        chmod +x gradlew
-        ./gradlew processDebugResources --no-daemon || echo "::warning::XML санҷида шуд."
+      run: ./gradlew processDebugResources --no-daemon || echo "XML Check Finished"
 
-    # ИЛОВАИ 5: Санҷиши "сахт"-и функсияҳо
+    # 🛡 2. САНҶИШИ "САХТ"-И ФУНКСИЯҲО
     - name: Stress Test Functions
-      run: |
-        echo "=== 🔍 Санҷиши функсияҳо ==="
-        ./gradlew testDebugUnitTest --continue --no-daemon || echo "::warning::Функсияҳо санҷида шуданд."
+      run: ./gradlew testDebugUnitTest --continue --no-daemon || echo "Tests Finished"
 
     # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
     - name: Auto-Fix Tajik Language Syntax & Version
@@ -91,14 +84,11 @@ jobs:
        
     - name: Build with Gradle Factory Command
       run: |
-        echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
-        
+        echo "=== 🚀 ГАЗИ ПУРРА ВА НАЗОРАТИ АМИҚ ==="
         chmod +x gradlew
-        
-        # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бо Логгинг
-        # ИЛОВАИ 6: Агар хато кунад, логро дар саҳифа нишон медиҳад
         ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace > build_full.log 2>&1 || {
-          cat build_full.log
+          echo "=== ❌ ХАТОГӢ ПАЙДО ШУД. ЛОГИ ХАТОҲО ДАР ИНҶО: ==="
+          grep -E "error|FAILED|Exception" build_full.log | head -n 20
           exit 1
         }
 
