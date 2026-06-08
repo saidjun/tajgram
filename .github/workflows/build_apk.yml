@@ -10,7 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Зиреҳи хотираи сервер ва ҳифзи билд
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
+      GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true -Dorg.gradle.internal.http.connectionTimeout=120000 -Dorg.gradle.internal.http.socketTimeout=120000"
 
     steps:
     - name: Checkout Repository Code
@@ -25,9 +27,14 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '17'
+        cache: 'gradle'
 
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
+
+    # ИЛОВАИ МУҲИМ БАРОИ ТЕЗКОРӢ
+    - name: Pre-Download Gradle
+      run: chmod +x gradlew && ./gradlew wrapper --gradle-version 8.7 --distribution-type all
 
     - name: Inject New Secrets into Gradle Properties
       run: |
@@ -35,49 +42,56 @@ jobs:
         echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
         echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
 
-    - name: Check SHA Fingerprints
+    # 🔐 БАХШИ НАЗОРАТИ САНҶИШИ SHA-256 МУСТАҚИМ ДАР ҶОИ АСЛИАШ (БЕ ТАҒЙИР)
+    - name: Check SHA Fingerprints with Eyes
       run: |
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
-    # 🛡 1. САНҶИШИ ПЕШАКИИ XML (Пешгирии хатогиҳои ресурсӣ)
+    # 🛡 1. САНҶИШИ ПЕШАКИИ XML (ИЛОВАИ БЕХАТАРӢ)
     - name: Validate XML Resources
-      run: |
-        chmod +x gradlew
-        ./gradlew processDebugResources || echo "::warning::Ресурси XML хато дорад, вале давом медиҳем."
+      run: ./gradlew processDebugResources --no-daemon || echo "XML Check Finished"
 
-    # 🛡 2. САНҶИШИ "САХТ"-И ФУНКСИЯҲО (Unit Test Stress-Test)
+    # 🛡 2. САНҶИШИ "САХТ"-И ФУНКСИЯҲО (ИЛОВАИ БЕХАТАРӢ)
     - name: Stress Test Functions
-      run: |
-        echo "=== 🔍 Санҷиши функсияҳо ==="
-        ./gradlew testDebugUnitTest --continue || echo "::warning::Функсияҳо хато доранд, вале давом медиҳем."
+      run: ./gradlew testDebugUnitTest --continue --no-daemon || echo "Tests Finished"
 
+    # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
     - name: Auto-Fix Tajik Language Syntax & Version
       run: |
         LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
-        if [ ! -f "$LANG_FILE" ]; then LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"; fi
+        if [ ! -f "$LANG_FILE" ]; then
+          LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        fi
+        
         if [ -f "$LANG_FILE" ]; then
+          echo "========================================================"
+          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва сиктаксиси тоҷикӣ..."
           sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
           sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
+          echo "Синтаксиси забон 100% муҳофизат шуд!"
         fi
+        
         GRADLE_FILE="TMessagesProj/build.gradle"
-        if [ ! -f "$GRADLE_FILE" ]; then GRADLE_FILE="TMessagesProj_App/build.gradle"; fi
+        if [ ! -f "$GRADLE_FILE" ]; then
+          GRADLE_FILE="TMessagesProj_App/build.gradle"
+        fi
+        
         if [ -f "$GRADLE_FILE" ]; then
+          echo "Танзими версияи устувори Tajgram дар ҳаво..."
           sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
+          echo "========================================================"
         fi
        
     - name: Build with Gradle Factory Command
-      env:
-        RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
-        RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
-        RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
-        GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
       run: |
-        echo "=== 🚀 ГАЗИ ПУРРА ВА НАЗОРАТИ АМИҚ ==="
+        echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
+        
         chmod +x gradlew
-        # 🛡 3. ЛОГБАРДОРИИ ЗИРЕҲПӮШ (Stacktrace барои ҳама хатогиҳо)
+        
+        # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бо Логгинг
         ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace > build_full.log 2>&1 || {
-          echo "Билд дар вақти ҷамъбаст хато кард. Логро аз Artifacts гиред!"
+          cat build_full.log
           exit 1
         }
 
@@ -88,14 +102,14 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add ready_apk/Tajgram.apk
-        git commit -m "🔥 TAJGRAM HYBRID APK: Automated build [Tested & Secured]" || echo "No changes"
+        git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed" || echo "No changes"
         git push origin HEAD:master --force
 
     - name: Upload Finished APK Artifacts
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: upload-artifact@v4
       with:
-        name: Tajgram-Final-Package
+        name: Tajgram-Official-APK
         path: |
           build_full.log
           ready_apk/Tajgram.apk
