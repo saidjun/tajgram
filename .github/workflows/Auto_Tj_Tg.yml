@@ -1,34 +1,19 @@
-      - name: 🛡️ ULTIMATE XML DEEP-SCANNER & FACTORY RESET
+name: Manual XML Fixer
+
+on:
+  workflow_dispatch: # Ин тугмаи "Run"-ро дар бахши Actions барои ин файл фаъол мекунад
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Shield
+        run: python3 xml_shield.py
+      - name: Push Changes
         run: |
-          python3 -c "
-          import re, os
-          path = 'app/src/main/res/values-tg/strings.xml'
-          if os.path.exists(path):
-              with open(path, 'r', encoding='utf-8') as f: c = f.read()
-              
-              # 1. Ҳимояи мутлақ: Рамзҳои техникӣ (Telegram Placeholders)
-              # Инҳоро мегирем ва дар 'сейф' мемонем
-              ph = {}
-              def save_ph(m):
-                  k = f'___ID{len(ph)}___'
-                  ph[k] = m.group(0)
-                  return k
-              c = re.sub(r'%[0-9]*\$?[sdf]|\\n|\\t|&amp;|&#\d+;', save_ph, c)
-
-              # 2. Ислоҳи "Кунҷу канор": Аломатҳои хатарнок (ҳамаи & < > " ' ки дар ҷои нодурустанд)
-              c = c.replace('&', '&amp;').replace('&amp;amp;', '&amp;') # Ислоҳи дубликатҳо
-              c = c.replace('<', '&lt;').replace('>', '&gt;')
-              c = c.replace('\"', '&quot;').replace(\"'\", \"&apos;\")
-
-              # 3. Барқарорсозӣ: Рамзҳои техникӣ ба ҷои худ бармегарданд
-              for k, v in ph.items(): c = c.replace(k, v)
-              
-              with open(path, 'w', encoding='utf-8') as f: f.write(c)
-              print('✅ XML DEEP-SCANNER: 100% CLEANED & PROTECTED')
-          "
-          # 4. Git Push
           git config user.name 'Saidjon-Bot'
           git config user.email 'saidjontube@gmail.com'
           git add app/src/main/res/values-tg/strings.xml
-          git commit -m '🤖 Ultimate XML Deep-Scanner: Factory Hardened' || echo 'No changes'
+          git commit -m '🔧 XML Manual Fix' || echo 'No changes'
           git push
