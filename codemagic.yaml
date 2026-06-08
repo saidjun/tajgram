@@ -7,9 +7,6 @@ workflows:
       groups:
         - release
     scripts:
-      - name: Checkout Code
-        script: git clone https://github.com/tajgram/tajgram.git .
-      
       - name: Setup Java
         script: |
           export JAVA_HOME=$JAVA_HOME_17
@@ -38,7 +35,6 @@ workflows:
         script: |
           echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
           chmod +x gradlew
-          # Иловаи -x test барои тезтар кардани билд (санҷишҳо гузаронида намешаванд)
           ./gradlew clean assembleRelease -x test --no-daemon --parallel --configure-on-demand --stacktrace \
             -Pandroid.injected.signing.store.file=$(pwd)/TMessagesProj/config/release.keystore \
             -Pandroid.injected.signing.store.password=$RELEASE_STORE_PASSWORD \
