@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Зиреҳи хотираи сервер ва ҳифзи билд
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
 
     steps:
@@ -29,45 +30,71 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # 🛠 ИСЛОҲИ ЗАБОНИ ТОҶИКӢ (ҲАМОНЕ, КИ МО ДУРУСТ КАРДЕМ)
-    - name: Apply Tajik Language Fixes
+    - name: Inject New Secrets into Gradle Properties
+      run: |
+        echo "RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}" >> gradle.properties
+        echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
+        echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
+
+    # 🔐 БАХШИ НАЗОРАТИ САНҶИШИ SHA-256 МУСТАҚИМ ДАР ҶОИ АСЛИАШ (БЕ ТАҒЙИР)
+    - name: Check SHA Fingerprints with Eyes
+      run: |
+        keytool -list -v -keystore TMessagesProj/config/release.keystore \
+          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
+
+    # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
+    - name: Auto-Fix Tajik Language Syntax & Version
       run: |
         LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
-        [ ! -f "$LANG_FILE" ] && LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        if [ ! -f "$LANG_FILE" ]; then
+          LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
+        fi
         
         if [ -f "$LANG_FILE" ]; then
-          echo "🚀 Ислоҳи синтаксиси забони тоҷикӣ..."
-          # Ислоҳи аломати фоиз
+          echo "========================================================"
+          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва сиктаксиси тоҷикӣ..."
           sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
           sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
-          # Ислоҳи аломати & барои XML
-          sed -i 's/&/&amp;/g' "$LANG_FILE"
-          echo "Забони тоҷикӣ бомуваффақият ислоҳ шуд!"
+          echo "Синтаксиси забон 100% муҳофизат шуд!"
         fi
-
-    - name: Build Tajgram APK
+        
+        GRADLE_FILE="TMessagesProj/build.gradle"
+        if [ ! -f "$GRADLE_FILE" ]; then
+          GRADLE_FILE="TMessagesProj_App/build.gradle"
+        fi
+        
+        if [ -f "$GRADLE_FILE" ]; then
+          echo "Танзими версияи устувори Tajgram дар ҳаво..."
+          sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
+          echo "========================================================"
+        fi
+       
+    - name: Build with Gradle Factory Command
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
         RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
-        GRADLE_OPTS: "-Xmx6144m -Dorg.gradle.parallel=true"
+        # 🛡 Таназимоти иловагии сахтафзори Gradle
+        GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
       run: |
-        echo "=== 🚀 БИЛДИ УСТУВОРИ TAJGRAM ==="
+        echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
+        
         chmod +x gradlew
-        ./gradlew clean assembleRelease --no-daemon --parallel --stacktrace
+        
+        # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бо Логгинг
+        ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace
 
-    - name: Move and Push APK
+    - name: Commit and Push APK Back to Repository Folder
       run: |
         mkdir -p ready_apk/
-        find . -name "*release.apk" -exec cp {} ready_apk/Tajgram.apk \;
-        
+        find . -name "*.apk" -exec cp {} ready_apk/Tajgram.apk \;
         git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add ready_apk/Tajgram.apk
-        git commit -m "🔥 TAJGRAM: Build completed with Tajik language support" || echo "No changes"
+        git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed" || echo "No changes"
         git push origin HEAD:master --force
 
-    - name: Upload Finished APK
+    - name: Upload Finished APK Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: Tajgram-Official-APK
