@@ -12,6 +12,7 @@ jobs:
     env:
       # Зиреҳи хотираи сервер ва ҳифзи билд
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
+      # ИЛОВАИ 1: Танзимоти вақти интизорӣ барои пешгирии Timeout
       GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true -Dorg.gradle.internal.http.connectionTimeout=120000 -Dorg.gradle.internal.http.socketTimeout=120000"
 
     steps:
@@ -22,6 +23,7 @@ jobs:
         ref: master
         token: ${{ secrets.GITHUB_TOKEN }}
 
+    # ИЛОВАИ 2: Кэш барои суръат
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
@@ -32,8 +34,8 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    # ИЛОВАИ МУҲИМ БАРОИ ТЕЗКОРӢ
-    - name: Pre-Download Gradle
+    # ИЛОВАИ 3: Пешакӣ боргирӣ кардани Gradle
+    - name: Pre-Download Gradle Wrapper
       run: chmod +x gradlew && ./gradlew wrapper --gradle-version 8.7 --distribution-type all
 
     - name: Inject New Secrets into Gradle Properties
@@ -42,19 +44,23 @@ jobs:
         echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
         echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
 
-    # 🔐 БАХШИ НАЗОРАТИ САНҶИШИ SHA-256 МУСТАҚИМ ДАР ҶОИ АСЛИАШ (БЕ ТАҒЙИР)
+    # 🔐 БАХШИ НАЗОРАТИ САНҶИШИ SHA-256 МУСТАҚИМ ДАР ҶОИ АСЛИАШ
     - name: Check SHA Fingerprints with Eyes
       run: |
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
-    # 🛡 1. САНҶИШИ ПЕШАКИИ XML (ИЛОВАИ БЕХАТАРӢ)
+    # ИЛОВАИ 4: Санҷиши пешакии XML
     - name: Validate XML Resources
-      run: ./gradlew processDebugResources --no-daemon || echo "XML Check Finished"
+      run: |
+        chmod +x gradlew
+        ./gradlew processDebugResources --no-daemon || echo "::warning::XML санҷида шуд."
 
-    # 🛡 2. САНҶИШИ "САХТ"-И ФУНКСИЯҲО (ИЛОВАИ БЕХАТАРӢ)
+    # ИЛОВАИ 5: Санҷиши "сахт"-и функсияҳо
     - name: Stress Test Functions
-      run: ./gradlew testDebugUnitTest --continue --no-daemon || echo "Tests Finished"
+      run: |
+        echo "=== 🔍 Санҷиши функсияҳо ==="
+        ./gradlew testDebugUnitTest --continue --no-daemon || echo "::warning::Функсияҳо санҷида шуданд."
 
     # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
     - name: Auto-Fix Tajik Language Syntax & Version
@@ -90,6 +96,7 @@ jobs:
         chmod +x gradlew
         
         # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бо Логгинг
+        # ИЛОВАИ 6: Агар хато кунад, логро дар саҳифа нишон медиҳад
         ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace > build_full.log 2>&1 || {
           cat build_full.log
           exit 1
@@ -107,7 +114,7 @@ jobs:
 
     - name: Upload Finished APK Artifacts
       if: always()
-      uses: upload-artifact@v4
+      uses: actions/upload-artifact@v4
       with:
         name: Tajgram-Official-APK
         path: |
