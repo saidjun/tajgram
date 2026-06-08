@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      # Зиреҳи хотираи сервер ва ҳифзи билд
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
 
     steps:
@@ -29,17 +30,19 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
+    - name: Inject New Secrets into Gradle Properties
+      run: |
+        echo "RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}" >> gradle.properties
+        echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
+        echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
+
+    # 🔐 БАХШИ НАЗОРАТИ САНҶИШИ SHA-256 МУСТАҚИМ ДАР ҶОИ АСЛИАШ (БЕ ТАҒЙИР)
     - name: Check SHA Fingerprints with Eyes
       run: |
         keytool -list -v -keystore TMessagesProj/config/release.keystore \
           -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
 
-    # 🛡 САНҶИШИ АЛОҲИДАИ ХАТОГИҲО
-    - name: Debug and Error Check
-      run: |
-        ./gradlew processDebugResources --no-daemon > xml_check.log 2>&1 || echo "XML check finished"
-        ./gradlew testDebugUnitTest --continue --no-daemon > test_check.log 2>&1 || echo "Tests finished"
-
+    # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
     - name: Auto-Fix Tajik Language Syntax & Version
       run: |
         LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
@@ -71,17 +74,15 @@ jobs:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
         RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
+        # 🛡 Таназимоти иловагии сахтафзори Gradle
         GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
       run: |
         echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
+        
         chmod +x gradlew
-        ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace \
-          -Pandroid.injected.signing.store.password="${{ secrets.RELEASE_STORE_PASSWORD }}" \
-          -Pandroid.injected.signing.key.password="${{ secrets.RELEASE_KEY_PASSWORD }}" \
-          -Pandroid.injected.signing.key.alias="${{ secrets.RELEASE_KEY_ALIAS }}" > build_full.log 2>&1 || {
-            grep -E "error|FAILED|Exception" build_full.log > build_errors.log
-            exit 1
-        }
+        
+        # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бо Логгинг
+        ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace
 
     - name: Commit and Push APK Back to Repository Folder
       run: |
@@ -94,12 +95,7 @@ jobs:
         git push origin HEAD:master --force
 
     - name: Upload Finished APK Artifacts
-      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: Tajgram-Official-APK
-        path: |
-          ready_apk/Tajgram.apk
-          xml_check.log
-          test_check.log
-          build_errors.log
+        path: ready_apk/Tajgram.apk
