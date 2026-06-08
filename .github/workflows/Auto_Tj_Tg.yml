@@ -1,0 +1,50 @@
+name: Factory XML Fix
+
+on:
+  push:
+    paths:
+      - 'TMessagesProj/src/main/res/values-tgl/strings.xml'
+
+jobs:
+  fix-and-verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Full Factory Repair
+        run: |
+          FILE_PATH="TMessagesProj/src/main/res/values-tgl/strings.xml"
+          
+          # 1. Ислоҳи аломатҳои XML (Тартиби бехатар)
+          sed -i 's/&/&amp;/g' "$FILE_PATH"
+          sed -i 's/</&lt;/g' "$FILE_PATH"
+          sed -i 's/>/&gt;/g' "$FILE_PATH"
+          sed -i 's/"/&quot;/g' "$FILE_PATH"
+          sed -i "s/'/&apos;/g" "$FILE_PATH"
+
+          # 2. Техникаи фоизҳо
+          sed -i 's/%/%%/g' "$FILE_PATH"
+          sed -i -E 's/%%([0-9]\$[ds])/%\1/g' "$FILE_PATH"
+
+          # 3. Назорати ниҳоӣ (Техникӣ)
+          OPEN=$(grep -o "<string" "$FILE_PATH" | wc -l)
+          CLOSE=$(grep -o "</string>" "$FILE_PATH" | wc -l)
+
+          if [ "$OPEN" -eq "$CLOSE" ] && [ "$OPEN" -gt 0 ]; then
+              echo "✅ Файл бомуваффақият ислоҳ шуд: $OPEN сатр."
+          else
+              echo "❌ ХАТАР: Сохтор вайрон аст! (Кушода: $OPEN, Пӯшида: $CLOSE)"
+              exit 1
+          fi
+
+      - name: Push to GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ -n $(git status -s) ]]; then
+            git add .
+            git commit -m "🤖 Robot: Factory Fix applied successfully"
+            git push
+          fi
