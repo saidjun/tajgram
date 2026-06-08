@@ -1,10 +1,11 @@
-name: Factory XML Fix
+name: Factory Th XML Fix
 
 on:
   push:
     paths:
-      - 'TMessagesProj/src/main/res/values-tgl/strings.xml'
-  workflow_dispatch:  # ҲАМИН ТУГМАРО ИЛОВА КАРДАМ (Барои дастӣ запуск кардан)
+      - 'TMessagesProj/src/main/res/values-tg/strings.xml'
+      - 'TMessagesProj/src/main/res/values-tg/strings.xml'
+  workflow_dispatch:
 
 jobs:
   fix-and-verify:
@@ -16,27 +17,40 @@ jobs:
       
       - name: Full Factory Repair
         run: |
-          FILE_PATH="TMessagesProj/src/main/res/values-tgl/strings.xml"
+          # Адреси дақиқ ва пурра
+          FILE_PATH="TMessagesProj/src/main/res/values-tg/strings.xml"
           
-          # 1. Ислоҳи аломатҳои XML
+          # Агар файл дар tgl набошад, варианти tg-ро месанҷад
+          if [ ! -f "$FILE_PATH" ]; then
+            FILE_PATH="TMessagesProj/src/main/res/values-tg/strings.xml"
+          fi
+          
+          if [ ! -f "$FILE_PATH" ]; then
+            echo "❌ Файл дар ягон адрес ёфт нашуд!"
+            exit 1
+          fi
+          
+          echo "✅ Файл бомуваффақият ёфт шуд: $FILE_PATH"
+          
+          # Ислоҳи аломатҳо
           sed -i 's/&/&amp;/g' "$FILE_PATH"
           sed -i 's/</&lt;/g' "$FILE_PATH"
           sed -i 's/>/&gt;/g' "$FILE_PATH"
           sed -i 's/"/&quot;/g' "$FILE_PATH"
           sed -i "s/'/&apos;/g" "$FILE_PATH"
 
-          # 2. Техникаи фоизҳо
+          # Техникаи фоизҳо
           sed -i 's/%/%%/g' "$FILE_PATH"
           sed -i -E 's/%%([0-9]\$[ds])/%\1/g' "$FILE_PATH"
 
-          # 3. Назорати ниҳоӣ
+          # Назорат
           OPEN=$(grep -o "<string" "$FILE_PATH" | wc -l)
           CLOSE=$(grep -o "</string>" "$FILE_PATH" | wc -l)
 
           if [ "$OPEN" -eq "$CLOSE" ] && [ "$OPEN" -gt 0 ]; then
-              echo "✅ Файл бомуваффақият ислоҳ шуд: $OPEN сатр."
+              echo "✅ $OPEN сатр ислоҳ шуд."
           else
-              echo "❌ ХАТАР: Сохтор вайрон аст! (Кушода: $OPEN, Пӯшида: $CLOSE)"
+              echo "❌ Хатои сохтор: Кушода $OPEN, Пӯшида $CLOSE"
               exit 1
           fi
 
@@ -46,6 +60,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [[ -n $(git status -s) ]]; then
             git add .
-            git commit -m "🤖 Robot: Factory Fix applied successfully"
+            git commit -m "🤖 Robot: Factory Fix applied to $FILE_PATH"
             git push
           fi
