@@ -39,7 +39,28 @@ def ultimate_factory_restore():
             else:
                 fixed_lines.append(line)
 
-    final_content = re.sub(r'&(?!amp;|quot;|apos;|lt;|gt;)', '&amp;', '\n'.join(fixed_lines))
+    # --- ИНҶО ЛОҶИКАҲО ХЕЛЕ БОСАВОД ҲАМОҲАНГ ШУДАНД ---
+    # Тозакунии ниҳоии сатрҳои холӣ аз байн ва охири файл
+    cleaned_lines = []
+    for fline in fixed_lines:
+        if fline.strip():
+            cleaned_lines.append(fline)
+
+    # Ислоҳи автоматӣ ва заводии аломатҳои техникӣ (', &) барои Android
+    final_lines = []
+    for line in cleaned_lines:
+        if line.strip().startswith('<string name='):
+            match = re.match(r'(<string name="[^"]+">)(.*)(</string>)', line)
+            if match:
+                start, text, end = match.groups()
+                # Апострофҳо (') -> (\') 
+                text = re.sub(r"(?<!\\)'", r"\'", text)
+                # Амперсандҳо (&) -> (&amp;)
+                text = re.sub(r'&(?!amp;|quot;|apos;|lt;|gt;)', '&amp;', text)
+                line = f"{start}{text}{end}"
+        final_lines.append(line)
+
+    final_content = '\n'.join(final_lines)
 
     with open(path, 'w', encoding='utf-8') as f:
         f.write(final_content)
