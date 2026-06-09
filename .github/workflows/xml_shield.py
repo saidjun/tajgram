@@ -1,67 +1,60 @@
-import re
+import base64
 import os
 
-# Масири файлҳои тоҷикӣ ва англисӣ (Заводӣ)
-path_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
-path_en = 'TMessagesProj/src/main/res/values/strings.xml' if os.path.exists('TMessagesProj/src/main/res/values/strings.xml') else 'TMessagesProj/src/main/res/values/strings.xml'
+# Коди аслии ту ба шакли рамзшуда (Base64)
+encoded_code = """
+aW1wb3J0IHJlCmltcG9ydCBvcwoKcGF0aF90ZyA9ICdUTWVzc2FnZXNQcm9qL3NyYy9tYWluL3Jl
+cy92YWx1ZXMtdGcvc3RyaW5ncy54bWwnCnBhdGhfZW4gPSAnVE1lc3NhZ2VzUHJvai9zcmMvbWFp
+bi9yZXMvdmFsdWVzL3N0cmluZ3MueG1sJwoKZGVmIHVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgp
+OgogICAgaWYgbm90IG9zLnBhdGguZXhpc3RzKHBhdGhfdGcpOiByZXR1cm4KICAgIHdpdGggb3Bl
+bihwYXRoX3RnLCAnUicsIGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6IGNvbnRlbnRfdGcgPSBmLnJl
+YWQoKQogICAgY29udGVudF90ZyA9IGNvbnRlbnRfdGcucmVwbGFjZSgnbmFtZT0mZXVvdDsnLCAn
+bmFtZT0iJykKICAgIGNvbnRlbnRfdGcgPSByZS5zdWIociddKCZxdW90Oz58JnF1b3Q7XHMqPikn
+LCAnIj4nLCBjb250ZW50X3RnKQogICAgY29udGVudF90ZyA9IGNvbnRlbnRfdGcucmVwbGFjZSgn
+JnF1b3Q7Ly4nLCAnIi8+JykKICAgIGxpbmVzX3RnID0gY29udGVudF90Zy5zcGxpdCgnXG4nKQog
+ICAgZml4ZWRfbGluZXNfdGcgPSBbXQogICAgZm9yIGxpbmUgaW4gbGluZXNfdGc6CiAgICAgICAg
+c3RyaXBwZWQgPSBsaW5lLnN0cmlwKCkKICAgICAgICBpZiBub3Qgc3RyaXBwZWQ6IGNvbnRpbnVl
+CiAgICAgICAgaWYgJzxzdHJpbmcgbmFtZT0nIGluIGxpbmUgb3IgJzwvc3RyaW5nPicgaW4gbGlu
+ZSBvciAnPHJlc291cmNlcz4nIGluIGxpbmUgb3IgJzwvcmVzb3VyY2VzPicgaW4gbGluZToKICAg
+ICAgICAgICAgZml4ZWRfbGluZXNfdGcuYXBwZW5kKGxpbmUpCiAgICAgICAgZWxzZToKICAgICAg
+ICAgICAgaWYgZml4ZWRfbGluZXNfdGc6CiAgICAgICAgICAgICAgICBpZHggPSBsZW4oZml4ZWRf
+bGluZXNfdGcpIC0gMQogICAgICAgICAgICAgICAgd2hpbGUgaWR4ID49IDAgYW5kIG5vdCBmaXhl
+ZF9saW5lc190Z1tpZHhdLnN0cmlwKCk6IGlkeCAtPSAxCiAgICAgICAgICAgICAgICBpZiBpZHgg
+Pj0gMCBhbmQgJzwvc3RyaW5nPicgaW4gZml4ZWRfbGluZXNfdGdpW2lkeF06CiAgICAgICAgICAg
+ICAgICAgICAgZml4ZWRfbGluZXNfdGdpW2lkeF0gPSBmaXhlZF9saW5lc190Z1tpZHhdLnJlcGxh
+Y2UoJzwvc3RyaW5nPicsIGYnIHtzdHJpcHBlZH08L3N0cmluZz4nKQogICAgICAgICAgICAgICAg
+ZWxzZTogZml4ZWRfbGluZXNfdGcuYXBwZW5kKGxpbmUpCiAgICAgICAgICAgIGVsc2U6IGZpeGVk
+X2xpbmVzX3RnLmFwcGVuZChsaW5lKQogICAgdGdfdHJhbnNsYXRpb25zID0ge30KICAgIGZvciBs
+aW5lIGluIGZpeGVkX2xpbmVzX3RnOgogICAgICAgIG1hdGNoID0gcmUuc2VhcmNoKHInPHN0cmlu
+ZyBuYW1lPSIoW14iXSspIj4oW148XSopPC9zdHJpbmc+JywgbGluZSkKICAgICAgICBpZiBtYXRj
+aDoKICAgICAgICAgICAga2V5LCB0ZXh0ID0gbWF0Y2guZ3JvdXBzKCkKICAgICAgICAgICAgdGdf
+dHJhbnNsYXRpb25zW2tleV0gPSB0ZXh0CiAgICAgICAgZWxpZiByZS5zZWFyY2gocic8c3RyaW5n
+IG5hbWU9IihbXiJdKykiLz4nLCBsaW5lKToKICAgICAgICAgICAga2V5ID0gcmUuc2VhcmNoKHIn
+PHN0cmluZyBuYW1lPSIoW14iXSspIi8+JywgbGluZSkuZ3JvdXAoMSkKICAgICAgICAgICAgdGdf
+dHJhbnNsYXRpb25zW2tleV0gPSAiIgogICAgaWYgb3MucGF0aC5leGlzdHMocGF0aF9lbik6CiAg
+ICAgICAgd2l0aCBvcGVuKHBhdGhfZW4sICdIJywgZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjoKICAg
+ICAgICAgICAgbGluZXNfZW4gPSBmLnJlYWRsaW5lcygpCiAgICAgICAgZmluYWxfbGluZXMgPSBb
+XQogICAgICAgIGZvciBsaW5lX2VuIGluIGxpbmVzX2VuOgogICAgICAgICAgICBzX2VuID0gbGlu
+ZV9lbi5zdHJpcCgpCiAgICAgICAgICAgIGlmIChzX2VuLnN0YXJ0c3dpdGgoJzw/eG1sJykgb3Ig
+c19lbi5zdGFydHN3aXRoKCc8cmVzb3VyY2VzJykgb3Igc19lbi5zdGFydHN3aXRoKCc8L3Jlc291
+cmNlcz4nKSBvciBzX2VuLnN0YXJ0c3dpdGgoJzwhLS0nKSk6CiAgICAgICAgICAgICAgICBmaW5h
+bF9saW5lcy5hcHBlbmQobGluZV9lbi5yc3RyaXAoKSkKICAgICAgICAgICAgICAgIGNvbnRpbnVl
+CiAgICAgICAgICAgIG1hdGNoX2VuID0gcmUuc2VhcmNoKHInPHN0cmluZyBuYW1lPSIoW14iXSsp
+Ij4nLCBsaW5lX2VuKQogICAgICAgICAgICBpZiBtYXRjaF9lbiwgdGdfdHJhbnNsYXRpb25zOgog
+ICAgICAgICAgICAgICAga2V5ID0gbWF0Y2hfZW4uZ3JvdXAoMSkKICAgICAgICAgICAgICAgIGlm
+IGtleSBpbiB0Z190cmFuc2xhdGlvbnM6CiAgICAgICAgICAgICAgICAgICAgdGV4dF90ZyA9IHRn
+X3RyYW5zbGF0aW9uc1trZXldCiAgICAgICAgICAgICAgICAgICAgdGV4dF90ZyA9IHJlLnN1Yihy
+IlxcKyZhcG9zOyIsICInIiwgdGV4dF90ZykKICAgICAgICAgICAgICAgICAgICB0ZXh0X3RnID0g
+cmUuc3ViKHIoPzwhXFwpJyIsIHIiXCciLCB0ZXh0X3RnKQogICAgICAgICAgICAgICAgICAgIHRl
+eHRfdGcgPSByZS5zdWIocicmKCFhbXB8JnF1b3R8JmFwb3N8Jmx0fCZndDspJywgJyZhbXA7Jywg
+dGV4dF90ZykKICAgICAgICAgICAgICAgICAgICBmaW5hbF9saW5lcy5hcHBlbmQoZicgICAgPHN0
+cmluZyBuYW1lPSJ7a2V5fSI+e3RleHRfdGd9PC9zdHJpbmc+JykKICAgICAgICAgICAgICAgIGVs
+c2U6IGZpbmFsX2xpbmVzLmFwcGVuZChsaW5lX2VuLnJzdHJpcCgpKQogICAgICAgIHdpdGggb3Bl
+bihwYXRoX3RnLCAndycsIGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6CiAgICAgICAgICAgIGYud3Jp
+dGUoJ1xuJy5qb2luKGZpbmFsX2xpbmVzKSkKCnVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgpCg=="""
 
-def ultimate_factory_restore():
-    if not os.path.exists(path_tg):
-        print(f"❌ Файли тоҷикӣ ёфт нашуд: {path_tg}")
-        return
+exec(base64.b64decode(encoded_code))
+"""
 
-    # 1. Хондани файли тоҷикии мавҷуда
-    with open(path_tg, 'r', encoding='utf-8') as f:
-        content_tg = f.read()
-
-    print("🚀 Оғози ҷарроҳии техникӣ: Танзими 11,100 сатр аз рӯи сохтори заводии Англисӣ...")
-
-    # Ислоҳи аввалияи name ва кавычкаҳо (Лоҷикаи Чиф Девелопер Саидҷон)
-    content_tg = content_tg.replace('name=&quot;', 'name="')
-    content_tg = re.sub(r'(&quot;>|&quot;\s*>)', '">', content_tg)
-    content_tg = content_tg.replace('&quot;/>', '"/>')
-
-    lines_tg = content_tg.split('\n')
-    fixed_lines_tg = []
-    
-    for line in lines_tg:
-        stripped = line.strip()
-        if not stripped:
-            continue
-            
-        if '<string name=' in line or '</string>' in line or '<resources>' in line or '</resources>' in line:
-            fixed_lines_tg.append(line)
-        else:
-            if fixed_lines_tg:
-                idx = len(fixed_lines_tg) - 1
-                while idx >= 0 and not fixed_lines_tg[idx].strip(): idx -= 1
-                if idx >= 0 and '</string>' in fixed_lines_tg[idx]:
-                    fixed_lines_tg[idx] = fixed_lines_tg[idx].replace('</string>', f' {stripped}</string>')
-                else:
-                    fixed_lines_tg.append(line)
-            else:
-                fixed_lines_tg.append(line)
-
-    # Сабти тарҷумаҳои тоҷикӣ ба харита (Калид -> Матн)
-    tg_translations = {}
-    for line in fixed_lines_tg:
-        match = re.search(r'<string name="([^"]+)">([^<]*)</string>', line)
-        if match:
-            key, text = match.groups()
-            tg_translations[key] = text
-        elif re.search(r'<string name="([^"]+)"/>', line):
-            key = re.search(r'<string name="([^"]+)"/>', line).group(1)
-            tg_translations[key] = ""
-
-    # 2. Агар файли англисӣ (Шаблон) мавҷуд бошад, сохтори заводиро ҷорӣ мекунем
-    if os.path.exists(path_en):
-        print("📦 Қолаби заводии Англисӣ пайваст шуд. Интиқоли матнҳои тоҷикӣ...")
-        with open(path_en, 'r', encoding='utf-8') as f:
-            lines_en = f.readlines()
-        
-        final_lines = []
-        for line_en in lines_en:
-            stripped_en = line_en.strip()
-            
-            # ИСЛОҲИ ТАЪҶИЛИИ САТРИ 67: Шарти XML пурра ва бехато маҳкам шуд
-            if stripped_en.startswith('<?xml') or stripped_en.startswith('<resources') or stripped_en.startswith('</resources>') or stripped_en.startswith('
+# Иҷро кардани код
+exec(base64.b64decode(encoded_code))
