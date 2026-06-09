@@ -6950,7 +6950,9 @@
     <string name="SortByReposts">Аввалан репостҳо</string>
     <string name="SortByTime">Навтарин Аввал</string>
     <string name="StoryViewsSortDescription">Тартиби рӯйхати тамошобинонро интихоб кунед.</string>
+list of viewers.</string>
     <string name="StoryReactionsSortDescription">Тартиби рӯйхати аксуламалҳоро интихоб кунед.</string>
+list of reactions.</string>
     <string name="NoContactsViewed">Ҳеҷ яке аз мухотибони шумо ин ҳикояро надидааст.</string>
     <string name="Viewers">Тамошобинон</string>
     <string name="StealthModeConfirmTitle">Шумо ҳоло дар режими пинҳонӣ ҳастед</string>
