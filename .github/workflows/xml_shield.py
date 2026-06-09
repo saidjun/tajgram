@@ -1,1 +1,44 @@
-import base64; exec(base64.b64decode("aW1wb3J0IHJlLCBvczt0ZywnVE1lc3NhZ2VzUHJvai9zcmMvbWFpbi9yZXMvdmFsdWVzLXRnL3N0cmluZ3MueG1sJztlbj0nVE1lc3NhZ2VzUHJvai9zcmMvbWFpbi9yZXMvdmFsdWVzL3N0cmluZ3MueG1sJztkZWYgZih0LGUpOmlmIG5vdCBvcy5wYXRoLmV4aXN0cyh0KSBvciBub3Qgb3MucGF0aC5leGlzdHMoZSk6cmV0dXJuCgogICAgd2l0aCBvcGVuKHQsICdyJywgZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjpjPWYucmVhZCgpLnJlcGxhY2UoJ25hbWU9JmFtcDtxdW90OycsICduYW1lPSInKS5yZXBsYWNlKCcmYW1wO3F1b3Q7PicsICciPicpLnJlcGxhY2UoJyZhbXA7cXVvdDsvPicsICciLz4nKQoKICAgIGRiPXttLmdyb3VwKDEpOm0uZ3JvdXAoMikgZm9yIG0gaW4gcmUuZmluZGl0ZXIocic8c3RyaW5nIG5hbWU9IihbXiJdKykiPihbXjxdKik8L3N0cmluZz4nLCBjKX0KCiAgICB3aXRoIG9wZW4oZSwgJ3InLCBlbmNvZGluZz0ndXRmLTgnKSBhcyBmOiBsPWYucmVhZGxpbmVzKCkKCiAgICBvPVtdCmZvciBsIGluIGw6CgkgIG0gPSByZS5zZWFyY2gocic8c3RyaW5nIG5hbWU9IihbXiJdKykiPicsIGwpCgkgIGlmIG06IGs9bS5ncm91cCgxKTsgdj1kYi5nZXQoaywgJycuc2Vqb2luKG0uZ3JvdXAoMCkuc3BsaXQoJz4nKVsxXS5zcGxpdCgnPC8nKVs6LTFdKSk7IG8uYXBwZW5kKGYnICAgIDxzdHJpbmcgbmFtZT0ie2t9Ij57dn08L3N0cmluZz5cbicpCgkgIGVsc2U6IG8uYXBwZW5kKGwpCgogICAgd2l0aCBvcGVuKHQsICd3JywgZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjogZi53cml0ZWxpbmVzKG8pCgogICAgcHJpbnQoIuKggSDQvtC70YLRjuC8wCDQstC+0LzGCgpmKHRnLGVuKQ=="))
+import re
+import os
+
+path_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+path_en = 'TMessagesProj/src/main/res/values/strings.xml'
+
+def ultimate_factory_restore():
+    if not os.path.exists(path_tg) or not os.path.exists(path_en):
+        return
+
+    # 1. Хондани тарҷумаҳои тоҷикӣ ва ислоҳи аломатҳо
+    with open(path_tg, 'r', encoding='utf-8') as f:
+        content = f.read().replace('name=&quot;', 'name="').replace('&quot;>', '">').replace('&quot;/>', '"/>')
+    
+    # Ҷамъоварӣ дар луғат (Key -> Value)
+    tg_dict = {}
+    for m in re.finditer(r'<string name="([^"]+)">([^<]*)</string>', content):
+        tg_dict[m.group(1)] = m.group(2)
+
+    # 2. Бозсозӣ аз рӯи шаблони англисӣ (айнан мисли "завод")
+    with open(path_en, 'r', encoding='utf-8') as f:
+        en_lines = f.readlines()
+
+    final_lines = []
+    for line in en_lines:
+        m = re.search(r'<string name="([^"]+)">', line)
+        if m:
+            key = m.group(1)
+            val = tg_dict.get(key, None)
+            if val is not None:
+                final_lines.append(f'    <string name="{key}">{val}</string>\n')
+            else:
+                final_lines.append(line)
+        else:
+            final_lines.append(line)
+
+    # 3. Сабти файл бо сохтори комил
+    with open(path_tg, 'w', encoding='utf-8') as f:
+        f.writelines(final_lines)
+    
+    print("✅ Заводи сохтор: Файли тоҷикӣ айнан мисли англисӣ навсозӣ шуд.")
+
+if __name__ == "__main__":
+    ultimate_factory_restore()
