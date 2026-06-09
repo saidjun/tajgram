@@ -4,65 +4,64 @@ import os
 path_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
 path_en = 'TMessagesProj/src/main/res/values/strings.xml'
 
-def ultimate_factory_restore():
+def total_factory_reset():
     if not os.path.exists(path_tg) or not os.path.exists(path_en):
         print("❌ Файлҳо ёфт нашуданд!")
         return
 
-    # 1. Хондани файли тоҷикӣ ва тозакунии аввалияи нохунакҳо
+    # 1. Хондани файли вайроншудаи тоҷикӣ
     with open(path_tg, 'r', encoding='utf-8') as f:
-        content_tg = f.read()
+        bad_content = f.read()
+
+    # Тозакунии аввалияи аломатҳои кова
+    bad_content = bad_content.replace('name=&quot;', 'name="').replace('&quot;>', '">').replace('&quot;/>', '"/>')
+    bad_content = bad_content.replace('name=&amp;quot;', 'name="').replace('&amp;quot;>', '">')
+
+    # 2. Ҷамъоварии ҳамаи тарҷумаҳои зиндамонда ба луғат
+    tg_strings = {}
     
-    content_tg = content_tg.replace('name=&quot;', 'name="')
-    content_tg = re.sub(r'(&quot;>|&quot;\s*>)', '">', content_tg)
-    content_tg = content_tg.replace('&quot;/>', '"/>')
+    # Пайдо кардани тегҳои солим ва бисёрсатра
+    full_pattern = r'<string\s+name="([^"]+)">([\s\S]*?)</string>'
+    for match in re.finditer(full_pattern, bad_content):
+        tg_strings[match.group(1)] = match.group(2)
 
-    # 2. Ҷамъоварии ҳамаи тарҷумаҳои тоҷикӣ ба луғат (ҳатто бисёрсатраҳо)
-    tg_dict = {}
-    
-    # Пайдо кардани тегҳои пурра <string name="...">матн</string>
-    for match in re.finditer(r'<string\s+name="([^"]+)">([\s\S]*?)</string>', content_tg):
-        tg_dict[match.group(1)] = match.group(2)
+    # Пайдо кардани тегҳои холӣ
+    empty_pattern = r'<string\s+name="([^"]+)"/>'
+    for match in re.finditer(empty_pattern, bad_content):
+        tg_strings[match.group(1)] = ""
 
-    # Пайдо кардани тегҳои холӣ <string name="..."/>
-    for match in re.finditer(r'<string\s+name="([^"]+)"/>', content_tg):
-        tg_dict[match.group(1)] = ""
-
-    # 3. Хондани файли англисӣ (Шаблон)
+    # 3. Хондани шаблони заводии Англисӣ
     with open(path_en, 'r', encoding='utf-8') as f:
         en_content = f.read()
 
     en_lines = en_content.splitlines()
-    final_lines = []
-    
-    # 4. Бозсозии сохтор айнан мисли шаблон
+    clean_lines = []
+
+    # 4. Сохтани файли нав дақиқ "как англисӣ"
     for line in en_lines:
-        # Ҷустуҷӯи калид дар сатри англисӣ
         match_key = re.search(r'name="([^"]+)"', line)
         
         if match_key:
             key = match_key.group(1)
             
-            # Агар тарҷумаи тоҷикӣ мавҷуд бошад, онро мечаспӯнем
-            if key in tg_dict:
-                # Агар дар шаблон сатри холӣ бошад
-                if '/>' in line and tg_dict[key] == "":
-                    final_lines.append(f'    <string name="{key}"/>')
+            # Агар тарҷумаи тоҷикӣ дошта бошем, онро мечаспӯнем
+            if key in tg_strings:
+                if '/>' in line and tg_strings[key] == "":
+                    clean_lines.append(f'    <string name="{key}"/>')
                 else:
-                    final_lines.append(f'    <string name="{key}">{tg_dict[key]}</string>')
+                    clean_lines.append(f'    <string name="{key}">{tg_strings[key]}</string>')
             else:
-                # АГАР ТАРҶУМА НАБОШАД: Матни англисиро умуман нест намекунем!
-                # Сатри англисиро айнан мемонем, то калима бурида ё гум нашавад
-                final_lines.append(line)
+                # Агар тарҷума вайрон ё нест шуда бошад, матни англисиро мемонем (кафолати бехатарӣ)
+                clean_lines.append(line)
         else:
-            # Нигоҳ доштани сатрҳои техникӣ, шарҳҳо ва тегҳои оғозу анҷом (resources)
-            final_lines.append(line)
+            # Сатрҳои техникӣ (xml, resources, шарҳҳо)
+            clean_lines.append(line)
 
-    # 5. Сабти ниҳоӣ ба файли тоҷикӣ
+    # 5. Сабти файли тозаву соз
     with open(path_tg, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(final_lines) + '\n')
-        
-    print("✅ Заводи мутлақ: Сохтор барқарор шуд, ҳеҷ калимае гум нашуд!")
+        f.write('\n'.join(clean_lines) + '\n')
+
+    print("🚀 ✅ Заводи Мутлақ: Файли тоҷикӣ пурра табобат шуд ва сохтораш айнан мисли англисӣ шуд!")
 
 if __name__ == "__main__":
-    ultimate_factory_restore()
+    total_factory_reset()
