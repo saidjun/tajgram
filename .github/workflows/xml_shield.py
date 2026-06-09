@@ -1,7 +1,7 @@
 import re
 import os
 
-path = 'TMessagesProj_App/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj_App/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
+path = 'TMessagesProj/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
 
 def ultimate_factory_restore():
     if not os.path.exists(path):
