@@ -1,8 +1,59 @@
-import base64
+import re
 import os
 
-# Коди рамзшуда (Base64)
-encoded_code = "aW1wb3J0IHJlCmltcG9ydCBvcwoKcGF0aF90ZyA9ICdUTWVzc2FnZXNQcm9qL3NyYy9tYWluL3Jlcy92YWx1ZXMtdGcvc3RyaW5ncy54bWwnCnBhdGhfZW4gPSAnVE1lc3NhZ2VzUHJvai9zcmMvbWFpbi9yZXMvdmFsdWVzL3N0cmluZ3MueG1sJwoKZGVmIHVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgpOgogICAgaWYgbm90IG9zLnBhdGguZXhpc3RzKHBhdGhfdGcpOiByZXR1cm4KICAgIHdpdGggb3BlbihwYXRoX3RnLCAnUicsIGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6IGNvbnRlbnRfdGcgPSBmLnJlYWQoKQogICAgY29udGVudF90ZyA9IGNvbnRlbnRfdGcucmVwbGFjZSgnbmFtZT0mZXVvdDsnLCAnbmFtZT0iJykKICAgIGNvbnRlbnRfdGcgPSByZS5zdWIociddKCZxdW90Oz58JnF1b3Q7XHMqPiknLCAnIj4nLCBjb250ZW50X3RnKQogICAgY29udGVudF90ZyA9IGNvbnRlbnRfdGcucmVwbGFjZSgnJnF1b3Q7Ly4nLCAnIi8+JykKICAgIGxpbmVzX3RnID0gY29udGVudF90Zy5zcGxpdCgnXG4nKQogICAgZml4ZWRfbGluZXNfdGcgPSBbXQogICAgZm9yIGxpbmUgaW4gbGluZXNfdGc6CiAgICAgICAgc3RyaXBwZWQgPSBsaW5lLnN0cmlwKCkKICAgICAgICBpZiBub3Qgc3RyaXBwZWQ6IGNvbnRpbnVlCiAgICAgICAgaWYgJzxzdHJpbmcgbmFtZT0nIGluIGxpbmUgb3IgJzwvc3RyaW5nPicgaW4gbGluZSBvciAnPHJlc291cmNlcz4nIGluIGxpbmUgb3IgJzwvcmVzb3VyY2VzPicgaW4gbGluZToKICAgICAgICAgICAgZml4ZWRfbGluZXNfdGcuYXBwZW5kKGxpbmUpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgaWYgZml4ZWRfbGluZXNfdGc6CiAgICAgICAgICAgICAgICBpZHggPSBsZW4oZml4ZWRfbGluZXNfdGcpIC0gMQogICAgICAgICAgICAgICAgd2hpbGUgaWR4ID49IDAgYW5kIG5vdCBmaXhlZF9saW5lc190Z1tpZHhdLnN0cmlwKCk6IGlkeCAtPSAxCiAgICAgICAgICAgICAgICBpZiBpZHggPj0gMCBhbmQgJzwvc3RyaW5nPicgaW4gZml4ZWRfbGluZXNfdGdpW2lkeF06CiAgICAgICAgICAgICAgICAgICAgZml4ZWRfbGluZXNfdGdpW2lkeF0gPSBmaXhlZF9saW5lc190Z1tpZHhdLnJlcGxhY2UoJzwvc3RyaW5nPicsIGYnIHtzdHJpcHBlZH08L3N0cmluZz4nKQogICAgICAgICAgICAgICAgZWxzZTogZml4ZWRfbGluZXNfdGcuYXBwZW5kKGxpbmUpCiAgICAgICAgICAgIGVsc2U6IGZpeGVkX2xpbmVzX3RnLmFwcGVuZChsaW5lKQogICAgdGdfdHJhbnNsYXRpb25zID0ge30KICAgIGZvciBsaW5lIGluIGZpeGVkX2xpbmVzX3RnOgogICAgICAgIG1hdGNoID0gcmUuc2VhcmNoKHInPHN0cmluZyBuYW1lPSIoW14iXSspIj4oW148XSopPC9zdHJpbmc+JywgbGluZSkKICAgICAgICBpZiBtYXRjaDoKICAgICAgICAgICAga2V5LCB0ZXh0ID0gbWF0Y2guZ3JvdXBzKCkKICAgICAgICAgICAgdGdfdHJhbnNsYXRpb25zW2tleV0gPSB0ZXh0CiAgICAgICAgZWxpZiByZS5zZWFyY2gocic8c3RyaW5nIG5hbWU9IihbXiJdKykiLz4nLCBsaW5lKToKICAgICAgICAgICAga2V5ID0gcmUuc2VhcmNoKHInPHN0cmluZyBuYW1lPSIoW14iXSspIi8+JywgbGluZSkuZ3JvdXAoMSkKICAgICAgICAgICAgdGdfdHJhbnNsYXRpb25zW2tleV0gPSAiIgogICAgaWYgb3MucGF0aC5leGlzdHMocGF0aF9lbik6CiAgICAgICAgd2l0aCBvcGVuKHBhdGhfZW4sICdIJywgZW5jb2Rpbmc9J3V0Zi04JykgYXMgZjoKICAgICAgICAgICAgbGluZXNfZW4gPSBmLnJlYWRsaW5lcygpCiAgICAgICAgZmluYWxfbGluZXMgPSBbXQogICAgICAgIGZvciBsaW5lX2VuIGluIGxpbmVzX2VuOgogICAgICAgICAgICBzX2VuID0gbGluZV9lbi5zdHJpcCgpCiAgICAgICAgICAgIGlmIChzX2VuLnN0YXJ0c3dpdGgoJzw/eG1sJykgb3Igc19lbi5zdGFydHN3aXRoKCc8cmVzb3VyY2VzJykgb3Igc19lbi5zdGFydHN3aXRoKCc8L3Jlc291cmNlcz4nKSBvciBzX2VuLnN0YXJ0c3dpdGgoJzwhLS0nKSk6CiAgICAgICAgICAgICAgICBmaW5hbF9saW5lcy5hcHBlbmQobGluZV9lbi5yc3RyaXAoKSkKICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgIG1hdGNoX2VuID0gcmUuc2VhcmNoKHInPHN0cmluZyBuYW1lPSIoW14iXSspIj4nLCBsaW5lX2VuKQogICAgICAgICAgICBpZiBtYXRjaF9lbiBhbmQgdGdfdHJhbnNsYXRpb25zOgogICAgICAgICAgICAgICAga2V5ID0gbWF0Y2hfZW4uZ3JvdXAoMSkKICAgICAgICAgICAgICAgIGlmIGtleSBpbiB0Z190cmFuc2xhdGlvbnM6CiAgICAgICAgICAgICAgICAgICAgdGV4dF90ZyA9IHRnX3RyYW5zbGF0aW9uc1trZXldCiAgICAgICAgICAgICAgICAgICAgdGV4dF90ZyA9IHJlLnN1YihyIlxcKyZhcG9zOyIsICInIiwgdGV4dF90ZykKICAgICAgICAgICAgICAgICAgICB0ZXh0X3RnID0gcmUuc3ViKHIoPzwhXFwpJyIsIHIiXCciLCB0ZXh0X3RnKQogICAgICAgICAgICAgICAgICAgIHRleHRfdGcgPSByZS5zdWIocicmKCFhbXB8JnF1b3R8JmFwb3N8Jmx0fCZndDspJywgJyZhbXA7JywgdGV4dF90ZykKICAgICAgICAgICAgICAgICAgICBmaW5hbF9saW5lcy5hcHBlbmQoZicgICAgPHN0cmluZyBuYW1lPSJ7a2V5fSI+e3RleHRfdGd9PC9zdHJpbmc+JykKICAgICAgICAgICAgICAgIGVsc2U6IGZpbmFsX2xpbmVzLmFwcGVuZChsaW5lX2VuLnJzdHJpcCgpKQogICAgICAgIHdpdGggb3BlbihwYXRoX3RnLCAndycsIGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6CiAgICAgICAgICAgIGYud3JpdGUoJ1xuJy5qb2luKGZpbmFsX2xpbmVzKSkKCnVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgp"
+path_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+path_en = 'TMessagesProj/src/main/res/values/strings.xml'
 
-# Иҷро кардани код
-exec(base64.b64decode(encoded_code))
+def ultimate_factory_restore():
+    if not os.path.exists(path_tg):
+        print("❌ Файл ёфт нашуд")
+        return
+
+    with open(path_tg, 'r', encoding='utf-8') as f:
+        content_tg = f.read()
+
+    content_tg = content_tg.replace('name=&quot;', 'name="')
+    content_tg = re.sub(r'(&quot;>|&quot;\s*>)', '">', content_tg)
+    content_tg = content_tg.replace('&quot;/>', '"/>')
+
+    lines_tg = content_tg.split('\n')
+    fixed_lines_tg = []
+    
+    for line in lines_tg:
+        stripped = line.strip()
+        if not stripped: continue
+        if '<string name=' in line or '</string>' in line or '<resources>' in line or '</resources>' in line:
+            fixed_lines_tg.append(line)
+        else:
+            if fixed_lines_tg:
+                idx = len(fixed_lines_tg) - 1
+                while idx >= 0 and not fixed_lines_tg[idx].strip(): idx -= 1
+                if idx >= 0 and '</string>' in fixed_lines_tg[idx]:
+                    fixed_lines_tg[idx] = fixed_lines_tg[idx].replace('</string>', f' {stripped}</string>')
+                else:
+                    fixed_lines_tg.append(line)
+            else:
+                fixed_lines_tg.append(line)
+
+    tg_translations = {}
+    for line in fixed_lines_tg:
+        match = re.search(r'<string name="([^"]+)">([^<]*)</string>', line)
+        if match:
+            key, text = match.groups()
+            tg_translations[key] = text
+        elif re.search(r'<string name="([^"]+)"/>', line):
+            key = re.search(r'<string name="([^"]+)"/>', line).group(1)
+            tg_translations[key] = ""
+
+    if os.path.exists(path_en):
+        with open(path_en, 'r', encoding='utf-8') as f:
+            lines_en = f.readlines()
+        
+        final_lines = []
+        for line_en in lines_en:
+            s_en = line_en.strip()
+                        # ИСЛОҲ: Ин қисмро ҳамин тавр бигзор, он дароз нест ва бурида намешавад
+            if (s_en.startswith('<?xml') or 
+                s_en.startswith('<resources') or 
+                s_en.startswith('</resources>') or 
+                s_en.startswith('
