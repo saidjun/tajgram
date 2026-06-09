@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - main
+    master  - main
   workflow_dispatch: # 👈 ИН ТУГМАИ "RUN"-РО ДАСТӢ ПАЙДО МЕКУНАД!
 
 jobs:
