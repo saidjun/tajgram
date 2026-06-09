@@ -1,30 +1,25 @@
-name: Super Fix and Build
+name: Deep Repository Audit
 
 on:
   workflow_dispatch:
 
 jobs:
-  fix-and-build:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Hard Fix XML Quotes and Syntax
+      - name: Comprehensive Code Audit
         run: |
-          echo "--- Оғози санҷиш ва ислоҳи файлҳо ---"
-          find . -name "strings.xml" | while read file; do
-            # Тафтиш мекунем, ки оё дар файл аломати & ё хатои % ҳаст
-            if grep -q "&" "$file" || grep -q "%" "$file"; then
-              echo "🛠 Тағйирот дар файли: $file"
-              # Ислоҳ мекунем ва тағйиротро нишон медиҳем
-              sed -i 's/&/&amp;/g' "$file"
-              sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$file"
-              echo "✅ Файли $file бомуваффақият ислоҳ шуд."
-            fi
-          done
-          echo "--- Ислоҳот ба поён расид ---"
-
-      - name: Build APK
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon
+          echo "🔎 Оғози кофтани репозитория (А то Я)..."
+          # 1. Ҷустуҷӯи ҳамаи хатогиҳои XML
+          echo "--- XML ERRORS ---"
+          find . -name "*.xml" -exec xmllint --noout {} \; 2>&1 | grep "error" || echo "XML тоза аст."
+          
+          # 2. Ҷустуҷӯи калимаҳои Telegram, ки бояд Tajgram шаванд
+          echo "--- BRANDING MAPPINGS ---"
+          grep -rn "Telegram" . | grep -v ".git" | head -n 20
+          
+          # 3. Санҷиши файлҳои нодуруст ё вайроншуда
+          echo "--- INTEGRITY CHECK ---"
+          find . -type f -size 0
+          echo "✅ Аудит ба поён расид."
