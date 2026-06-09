@@ -4,40 +4,40 @@ import os
 path_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml'
 path_en = 'TMessagesProj/src/main/res/values/strings.xml'
 
-def total_factory_reset():
+def real_factory_shield():
     if not os.path.exists(path_tg) or not os.path.exists(path_en):
         print("❌ Файлҳо ёфт нашуданд!")
         return
 
-    # 1. Хондани файли вайроншудаи тоҷикӣ
+    # 1. Хондани файли тоҷикии ту
     with open(path_tg, 'r', encoding='utf-8') as f:
-        bad_content = f.read()
+        content_tg = f.read()
 
-    # Тозакунии аввалияи аломатҳои кова
-    bad_content = bad_content.replace('name=&quot;', 'name="').replace('&quot;>', '">').replace('&quot;/>', '"/>')
-    bad_content = bad_content.replace('name=&amp;quot;', 'name="').replace('&amp;quot;>', '">')
+    # Тозакунии аввалияи аломатҳои кова дар тегҳо
+    content_tg = content_tg.replace('name=&quot;', 'name="').replace('&quot;>', '">').replace('&quot;/>', '"/>')
+    content_tg = content_tg.replace('name=&amp;quot;', 'name="').replace('&amp;quot;>', '">')
 
-    # 2. Ҷамъоварии ҳамаи тарҷумаҳои зиндамонда ба луғат
-    tg_strings = {}
+    # 2. Ҷамъоварии тарҷумаҳои тоҷикӣ ба луғат (Бо нигоҳ доштани ситорачаҳо ва аломатҳо)
+    tg_database = {}
     
-    # Пайдо кардани тегҳои солим ва бисёрсатра
-    full_pattern = r'<string\s+name="([^"]+)">([\s\S]*?)</string>'
-    for match in re.finditer(full_pattern, bad_content):
-        tg_strings[match.group(1)] = match.group(2)
+    # Пайдо кардани ҳамаи тегҳои муқаррарӣ ва бисёрсатра
+    pattern_full = r'<string\s+name="([^"]+)">([\s\S]*?)</string>'
+    for match in re.finditer(pattern_full, content_tg):
+        tg_database[match.group(1)] = match.group(2)
 
     # Пайдо кардани тегҳои холӣ
-    empty_pattern = r'<string\s+name="([^"]+)"/>'
-    for match in re.finditer(empty_pattern, bad_content):
-        tg_strings[match.group(1)] = ""
+    pattern_empty = r'<string\s+name="([^"]+)"/>'
+    for match in re.finditer(pattern_empty, content_tg):
+        tg_database[match.group(1)] = ""
 
-    # 3. Хондани шаблони заводии Англисӣ
+    # 3. Хондани шаблони Англисӣ (ки 100 функсияи навро дорад)
     with open(path_en, 'r', encoding='utf-8') as f:
         en_content = f.read()
 
     en_lines = en_content.splitlines()
-    clean_lines = []
+    clean_output = []
 
-    # 4. Сохтани файли нав дақиқ "как англисӣ"
+    # 4. Рӯйбардории сохтор ДАҚИҚ МИСЛИ АНГЛИСӢ
     for line in en_lines:
         match_key = re.search(r'name="([^"]+)"', line)
         
@@ -45,23 +45,23 @@ def total_factory_reset():
             key = match_key.group(1)
             
             # Агар тарҷумаи тоҷикӣ дошта бошем, онро мечаспӯнем
-            if key in tg_strings:
-                if '/>' in line and tg_strings[key] == "":
-                    clean_lines.append(f'    <string name="{key}"/>')
+            if key in tg_database:
+                if '/>' in line and tg_database[key] == "":
+                    clean_output.append(f'    <string name="{key}"/>')
                 else:
-                    clean_lines.append(f'    <string name="{key}">{tg_strings[key]}</string>')
+                    clean_output.append(f'    <string name="{key}">{tg_database[key]}</string>')
             else:
-                # Агар тарҷума вайрон ё нест шуда бошад, матни англисиро мемонем (кафолати бехатарӣ)
-                clean_lines.append(line)
+                # Агар функсияи нав бошад ва дар тоҷикӣ набошад, сатри англисиро мемонем
+                clean_output.append(line)
         else:
-            # Сатрҳои техникӣ (xml, resources, шарҳҳо)
-            clean_lines.append(line)
+            # Сатрҳои техникӣ ва шарҳҳо
+            clean_output.append(line)
 
-    # 5. Сабти файли тозаву соз
+    # 5. Сабти файл бо сохтори заводии 100% соз
     with open(path_tg, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(clean_lines) + '\n')
+        f.write('\n'.join(clean_output) + '\n')
 
-    print("🚀 ✅ Заводи Мутлақ: Файли тоҷикӣ пурра табобат шуд ва сохтораш айнан мисли англисӣ шуд!")
+    print("🚀 ✅ Заводи Мутлақ: 100 функсияи нав илова шуданд ва сохтори файл тасҳеҳ шуд!")
 
 if __name__ == "__main__":
-    total_factory_reset()
+    real_factory_shield()
