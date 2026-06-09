@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch: # 👈 ИН ТУГМАИ "RUN"-РО ДАСТӢ ПАЙДО МЕКУНАД!
 
 jobs:
   clean_xml:
@@ -20,13 +21,13 @@ jobs:
         run: |
           FILE_PATH="TMessagesProj/src/main/res/values-tg/strings.xml"
           if [ -f "$FILE_PATH" ]; then
-            echo "🚀 Оғози тозакунии заводии файл бо фармонҳои қатъии Linux..."
+            echo "🚀 Оғози тозакунии заводии файл бо фармонҳои Linux..."
             
-            # 1. Иваз кардани нохунакҳои хатои 'name=&quot;' ба нохунаки дуруст
+            # 1. Иваз кардани нохунакҳо дар name
             sed -i 's/name=&quot;/name="/g' "$FILE_PATH"
             sed -i 's/name=&amp;quot;/name="/g' "$FILE_PATH"
             
-            # 2. Иваз кардани тегҳои хатои маҳкамшавӣ ва коваҳо
+            # 2. Иваз кардани тегҳо ва коваҳо
             sed -i 's/&quot;>/">/g' "$FILE_PATH"
             sed -i 's/&amp;quot;>/">/g' "$FILE_PATH"
             sed -i 's/&quot;\/>/"\/>/g' "$FILE_PATH"
