@@ -2,8 +2,7 @@ import base64
 import os
 
 # Коди аслии ту ба шакли рамзшуда (Base64)
-encoded_code = """
-aW1wb3J0IHJlCmltcG9ydCBvcwoKcGF0aF90ZyA9ICdUTWVzc2FnZXNQcm9qL3NyYy9tYWluL3Jl
+encoded_code = "aW1wb3J0IHJlCmltcG9ydCBvcwoKcGF0aF90ZyA9ICdUTWVzc2FnZXNQcm9qL3NyYy9tYWluL3Jl
 cy92YWx1ZXMtdGcvc3RyaW5ncy54bWwnCnBhdGhfZW4gPSAnVE1lc3NhZ2VzUHJvai9zcmMvbWFp
 bi9yZXMvdmFsdWVzL3N0cmluZ3MueG1sJwoKZGVmIHVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgp
 OgogICAgaWYgbm90IG9zLnBhdGguZXhpc3RzKHBhdGhfdGcpOiByZXR1cm4KICAgIHdpdGggb3Bl
@@ -51,10 +50,9 @@ dGV4dF90ZykKICAgICAgICAgICAgICAgICAgICBmaW5hbF9saW5lcy5hcHBlbmQoZicgICAgPHN0
 cmluZyBuYW1lPSJ7a2V5fSI+e3RleHRfdGd9PC9zdHJpbmc+JykKICAgICAgICAgICAgICAgIGVs
 c2U6IGZpbmFsX2xpbmVzLmFwcGVuZChsaW5lX2VuLnJzdHJpcCgpKQogICAgICAgIHdpdGggb3Bl
 bihwYXRoX3RnLCAndycsIGVuY29kaW5nPSd1dGYtOCcpIGFzIGY6CiAgICAgICAgICAgIGYud3Jp
-dGUoJ1xuJy5qb2luKGZpbmFsX2xpbmVzKSkKCnVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgpCg=="""
+dGUoJ1xuJy5qb2luKGZpbmFsX2xpbmVzKSkKCnVsdGltYXRlX2ZhY3RvcnlfcmVzdG9yZSgpCg=="
 
 exec(base64.b64decode(encoded_code))
-"""
 
 # Иҷро кардани код
 exec(base64.b64decode(encoded_code))
