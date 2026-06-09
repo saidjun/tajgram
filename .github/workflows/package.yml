@@ -46,8 +46,8 @@ jobs:
         fi
 
         # Табдили номи намоён дар strings.xml (Танҳо чизе ки одам дар телефон мебинад)
-        find . -name "strings.xml" -exec sed -i 's/<string name="AppName">Telegram<\/string>/<string name="AppName">Tajgram VIP<\/string>/g' {} \;
-        find . -name "strings.xml" -exec sed -i 's/<string name="AppNameBeta">Telegram Beta<\/string>/<string name="AppNameBeta">Tajgram VIP Beta<\/string>/g' {} \;
+        find . -name "strings.xml" -exec sed -i 's/<string name="AppName">Telegram<\/string>/<string name="AppName">Tajgram<\/string>/g' {} \;
+        find . -name "strings.xml" -exec sed -i 's/<string name="AppNameBeta">Telegram Beta<\/string>/<string name="AppNameBeta">Tajgram Beta<\/string>/g' {} \;
 
         echo "=== 3. САБТИ РАСМӢ ВА ПУШ БА GITHUB ==="
         git add .
