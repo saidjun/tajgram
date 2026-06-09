@@ -2,8 +2,8 @@ import re
 import os
 
 # Масири файлҳои тоҷикӣ ва англисӣ (Заводӣ)
-path_tg = 'TMessagesProj_App/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj_App/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
-path_en = 'TMessagesProj_App/src/main/res/values/strings.xml' if os.path.exists('TMessagesProj_App/src/main/res/values/strings.xml') else 'TMessagesProj/src/main/res/values/strings.xml'
+path_tg = 'TMessagesProj/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
+path_en = 'TMessagesProj/src/main/res/values/strings.xml' if os.path.exists('TMessagesProj/src/main/res/values/strings.xml') else 'TMessagesProj/src/main/res/values/strings.xml'
 
 def ultimate_factory_restore():
     if not os.path.exists(path_tg):
