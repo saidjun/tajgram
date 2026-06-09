@@ -31,4 +31,5 @@ def ultimate_factory_restore():
             continue
             
         # Агар сатр сохтори заводии XML-ро дошта бошад, бетағйир мемонад
-        if '<string name=' in line or '</string>' in line or '<resources>' in line or '</resources>' in line or '
+                if '<string name=' in line or '</string>' in line or '<resources>' in line or '</resources>' in line or '
+
