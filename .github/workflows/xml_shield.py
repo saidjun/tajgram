@@ -6,39 +6,66 @@ path_en = 'TMessagesProj/src/main/res/values/strings.xml'
 
 def ultimate_factory_restore():
     if not os.path.exists(path_tg) or not os.path.exists(path_en):
+        print("❌ Файлҳо ёфт нашуданд!")
         return
 
-    # 1. Хондани тарҷумаҳои тоҷикӣ ва ислоҳи аломатҳо
+    # 1. Хондани файли тоҷикӣ ва тозакунии аввалияи нохунакҳо
     with open(path_tg, 'r', encoding='utf-8') as f:
-        content = f.read().replace('name=&quot;', 'name="').replace('&quot;>', '">').replace('&quot;/>', '"/>')
+        content_tg = f.read()
     
-    # Ҷамъоварӣ дар луғат (Key -> Value)
+    content_tg = content_tg.replace('name=&quot;', 'name="')
+    content_tg = re.sub(r'(&quot;>|&quot;\s*>)', '">', content_tg)
+    content_tg = content_tg.replace('&quot;/>', '"/>')
+
+    # 2. Ҷамъоварии тарҷумаҳо бо Regex-и калон (ҳатто матнҳои бисёрсатраро мегирад)
     tg_dict = {}
-    for m in re.finditer(r'<string name="([^"]+)">([^<]*)</string>', content):
-        tg_dict[m.group(1)] = m.group(2)
+    
+    # Ҷустуҷӯи тегҳои муқаррарӣ ва бисёрсатра <string name="...">матн</string>
+    pattern_full = r'<string\s+name="([^"]+)">([\s\S]*?)</string>'
+    for match in re.finditer(pattern_full, content_tg):
+        key = match.group(1)
+        value = match.group(2)
+        tg_dict[key] = value
 
-    # 2. Бозсозӣ аз рӯи шаблони англисӣ (айнан мисли "завод")
+    # Ҷустуҷӯи тегҳои холӣ <string name="..."/>
+    pattern_empty = r'<string\s+name="([^"]+)"/>'
+    for match in re.finditer(pattern_empty, content_tg):
+        key = match.group(1)
+        tg_dict[key] = ""
+
+    # 3. Бозсозии сохтор дар асоси шаблони англисӣ (Айнан мисли заводӣ)
     with open(path_en, 'r', encoding='utf-8') as f:
-        en_lines = f.readlines()
+        en_content = f.read()
 
+    # Мо файли англисиро хат ба хат коркард мекунем
+    en_lines = en_content.splitlines()
     final_lines = []
+    
     for line in en_lines:
-        m = re.search(r'<string name="([^"]+)">', line)
-        if m:
-            key = m.group(1)
-            val = tg_dict.get(key, None)
-            if val is not None:
-                final_lines.append(f'    <string name="{key}">{val}</string>\n')
+        # Пайдо кардани калид дар сатри англисӣ
+        match_key = re.search(r'<string\s+name="([^"]+)"', line)
+        
+        if match_key:
+            key = match_key.group(1)
+            # Агар тарҷумаи тоҷикӣ дошта бошем, онро мегузорем (бо нигоҳ доштани сохтори бисёрсатра)
+            if key in tg_dict:
+                # Агар сатри англисӣ холӣ маҳкам шуда бошад ва тарҷумаи мо ҳам холӣ бошад
+                if '/>' in line and tg_dict[key] == "":
+                    final_lines.append(f'    <string name="{key}"/>')
+                else:
+                    final_lines.append(f'    <string name="{key}">{tg_dict[key]}</string>')
             else:
+                # Агар тарҷума набошад, худи сатри англисиро мегузорем
                 final_lines.append(line)
         else:
+            # Сатрҳое, ки тег надоранд (масалан <?xml>, <resources>, шарҳҳо ва ғайра)
             final_lines.append(line)
 
-    # 3. Сабти файл бо сохтори комил
+    # 4. Сабти ниҳоӣ ба файли тоҷикӣ
     with open(path_tg, 'w', encoding='utf-8') as f:
-        f.writelines(final_lines)
-    
-    print("✅ Заводи сохтор: Файли тоҷикӣ айнан мисли англисӣ навсозӣ шуд.")
+        f.write('\n'.join(final_lines) + '\n')
+        
+    print("✅ Заводи комил: Ҳамаи калимаҳо ва калидҳо 100% ҷобаҷо шуданд!")
 
 if __name__ == "__main__":
     ultimate_factory_restore()
