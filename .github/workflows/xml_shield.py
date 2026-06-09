@@ -1,71 +1,67 @@
 import re
 import os
 
-path = 'TMessagesProj/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
+# Масири файлҳои тоҷикӣ ва англисӣ (Заводӣ)
+path_tg = 'TMessagesProj_App/src/main/res/values-tg/strings.xml' if os.path.exists('TMessagesProj_App/src/main/res/values-tg/strings.xml') else 'TMessagesProj/src/main/res/values-tg/strings.xml'
+path_en = 'TMessagesProj_App/src/main/res/values/strings.xml' if os.path.exists('TMessagesProj_App/src/main/res/values/strings.xml') else 'TMessagesProj/src/main/res/values/strings.xml'
 
 def ultimate_factory_restore():
-    if not os.path.exists(path):
-        print(f"❌ Файл ёфт нашуд: {path}")
+    if not os.path.exists(path_tg):
+        print(f"❌ Файли тоҷикӣ ёфт нашуд: {path_tg}")
         return
 
-    with open(path, 'r', encoding='utf-8') as f:
-        content = f.read()
+    # 1. Хондани файли тоҷикии мавҷуда
+    with open(path_tg, 'r', encoding='utf-8') as f:
+        content_tg = f.read()
 
-    print("🚀 Оғози ҷарроҳии техникӣ: Баргардонидани 11,100 сатр ба формати заводӣ...")
+    print("🚀 Оғози ҷарроҳии техникӣ: Танзими 11,100 сатр аз рӯи сохтори заводии Англисӣ...")
 
-    content = content.replace('name=&quot;', 'name="')
-    content = re.sub(r'(&quot;>|&quot;\s*>)', '">', content)
-    content = content.replace('&quot;/>', '"/>')
+    # Ислоҳи аввалияи name ва кавычкаҳо (Лоҷикаи Чиф Девелопер Саидҷон)
+    content_tg = content_tg.replace('name=&quot;', 'name="')
+    content_tg = re.sub(r'(&quot;>|&quot;\s*>)', '">', content_tg)
+    content_tg = content_tg.replace('&quot;/>', '"/>')
 
-    lines = content.split('\n')
-    fixed_lines = []
+    lines_tg = content_tg.split('\n')
+    fixed_lines_tg = []
     
-    for line in lines:
+    for line in lines_tg:
         stripped = line.strip()
         if not stripped:
-            fixed_lines.append(line)
             continue
             
         if '<string name=' in line or '</string>' in line or '<resources>' in line or '</resources>' in line:
-            fixed_lines.append(line)
+            fixed_lines_tg.append(line)
         else:
-            if fixed_lines:
-                idx = len(fixed_lines) - 1
-                while idx >= 0 and not fixed_lines[idx].strip(): idx -= 1
-                if idx >= 0 and '</string>' in fixed_lines[idx]:
-                    fixed_lines[idx] = fixed_lines[idx].replace('</string>', f' {stripped}</string>')
+            if fixed_lines_tg:
+                idx = len(fixed_lines_tg) - 1
+                while idx >= 0 and not fixed_lines_tg[idx].strip(): idx -= 1
+                if idx >= 0 and '</string>' in fixed_lines_tg[idx]:
+                    fixed_lines_tg[idx] = fixed_lines_tg[idx].replace('</string>', f' {stripped}</string>')
                 else:
-                    fixed_lines.append(line)
+                    fixed_lines_tg.append(line)
             else:
-                fixed_lines.append(line)
+                fixed_lines_tg.append(line)
 
-    # --- ИНҶО ЛОҶИКАҲО ХЕЛЕ БОСАВОД ҲАМОҲАНГ ШУДАНД ---
-    # Тозакунии ниҳоии сатрҳои холӣ аз байн ва охири файл
-    cleaned_lines = []
-    for fline in fixed_lines:
-        if fline.strip():
-            cleaned_lines.append(fline)
+    # Сабти тарҷумаҳои тоҷикӣ ба харита (Калид -> Матн)
+    tg_translations = {}
+    for line in fixed_lines_tg:
+        match = re.search(r'<string name="([^"]+)">([^<]*)</string>', line)
+        if match:
+            key, text = match.groups()
+            tg_translations[key] = text
+        elif re.search(r'<string name="([^"]+)"/>', line):
+            key = re.search(r'<string name="([^"]+)"/>', line).group(1)
+            tg_translations[key] = ""
 
-    # Ислоҳи автоматӣ ва заводии аломатҳои техникӣ (', &) барои Android
-    final_lines = []
-    for line in cleaned_lines:
-        if line.strip().startswith('<string name='):
-            match = re.match(r'(<string name="[^"]+">)(.*)(</string>)', line)
-            if match:
-                start, text, end = match.groups()
-                # Апострофҳо (') -> (\') 
-                text = re.sub(r"(?<!\\)'", r"\'", text)
-                # Амперсандҳо (&) -> (&amp;)
-                text = re.sub(r'&(?!amp;|quot;|apos;|lt;|gt;)', '&amp;', text)
-                line = f"{start}{text}{end}"
-        final_lines.append(line)
-
-    final_content = '\n'.join(final_lines)
-
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(final_content)
+    # 2. Агар файли англисӣ (Шаблон) мавҷуд бошад, сохтори заводиро ҷорӣ мекунем
+    if os.path.exists(path_en):
+        print("📦 Қолаби заводии Англисӣ пайваст шуд. Интиқоли матнҳои тоҷикӣ...")
+        with open(path_en, 'r', encoding='utf-8') as f:
+            lines_en = f.readlines()
         
-    print("✅ 11100 сатр 100% заводи шуд!")
-
-if __name__ == "__main__":
-    ultimate_factory_restore()
+        final_lines = []
+        for line_en in lines_en:
+            stripped_en = line_en.strip()
+            
+            # Агар сатри сохтории XML бошад, худашро нигоҳ медорем
+            if stripped_en.startswith('<?xml') or stripped_en.startswith('<resources') or stripped_en.startswith('</resources>') or stripped_en.startswith('
