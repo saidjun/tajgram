@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Зиреҳи хотираи сервер ва ҳифзи билд
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
 
     steps:
@@ -30,61 +29,48 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Inject New Secrets into Gradle Properties
+    - name: Inject Secrets into Gradle Properties
       run: |
         echo "RELEASE_KEY_ALIAS=${{ secrets.RELEASE_KEY_ALIAS }}" >> gradle.properties
         echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
         echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
 
-    # 🔐 БАХШИ НАЗОРАТИ САНҶИШИ SHA-256 МУСТАҚИМ ДАР ҶОИ АСЛИАШ (БЕ ТАҒЙИР)
-    - name: Check SHA Fingerprints with Eyes
+    # 🔐 САНҶИШИ KEASTORE (Боварӣ ҳосил кун, ки файл дар TMessagesProj/config/ мавҷуд аст)
+    - name: Check SHA Fingerprints
       run: |
-        keytool -list -v -keystore TMessagesProj/config/release.keystore \
-          -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
+        if [ -f "TMessagesProj/config/release.keystore" ]; then
+          keytool -list -v -keystore TMessagesProj/config/release.keystore \
+            -storepass "${{ secrets.RELEASE_STORE_PASSWORD }}" | grep -E "SHA1:|SHA256:" || echo "Keystore check complete"
+        else
+          echo "Огоҳӣ: Keystore дар TMessagesProj/config/ ёфт нашуд, аммо билд идома меёбад."
+        fi
 
-    # 🛠 ИСЛОҲИ МАРКАЗИИ ЗАБОН ВА СИНХРОНИЗАТСИЯИ ЛАЗЕРИИ ПАКЕТҲОИ ТАҶГРАМ
+    # 🛠 ИСЛОҲИ СИНТАКСИС ВА ВЕРСИЯ
     - name: Auto-Fix Tajik Language Syntax & Version
       run: |
-        LANG_FILE="TMessagesProj/src/main/res/values-tg/strings.xml"
-        if [ ! -f "$LANG_FILE" ]; then
-          LANG_FILE="TMessagesProj_App/src/main/res/values-tg/strings.xml"
-        fi
-        
+        LANG_FILE=$(find . -name "strings.xml" | grep "values-tg" | head -n 1)
         if [ -f "$LANG_FILE" ]; then
-          echo "========================================================"
-          echo "🚀 Ислоҳи автоматии аломатҳои фоиз (%) ва сиктаксиси тоҷикӣ..."
           sed -i -E 's/([^%])%([^0-9a-zA-Z%])/\1%%\2/g' "$LANG_FILE"
           sed -i -E 's/([^%])%$/\1%%/g' "$LANG_FILE"
-          echo "Синтаксиси забон 100% муҳофизат шуд!"
         fi
         
-        GRADLE_FILE="TMessagesProj/build.gradle"
-        if [ ! -f "$GRADLE_FILE" ]; then
-          GRADLE_FILE="TMessagesProj_App/build.gradle"
-        fi
-        
+        GRADLE_FILE=$(find . -name "build.gradle" | grep "TMessagesProj" | head -n 1)
         if [ -f "$GRADLE_FILE" ]; then
-          echo "Танзими версияи устувори Tajgram дар ҳаво..."
-          sed -i 's/versionName .*/versionName "1.0"/ ' "$GRADLE_FILE"
-          echo "========================================================"
+          # Ислоҳи хатогии фосила дар sed
+          sed -i 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
         fi
        
-    - name: Build with Gradle Factory Command
+    - name: Build with Gradle
       env:
         RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
         RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
-        # 🛡 Таназимоти иловагии сахтафзори Gradle
         GRADLE_OPTS: "-Xmx6144m -XX:MaxMetaspaceSize=2048m -XX:+UseG1GC -Dorg.gradle.parallel=true -Dorg.gradle.configureondemand=true"
       run: |
-        echo "=== 🚀 ГАЗИ ПУРРА: БИЛДИ ТЕЗКОР ВА БОҚУВВАТИ ТАҶГРАМ ==="
-        
         chmod +x gradlew
-        
-        # Тозакунии маҷбурии кэш ва Билди устувори заводӣ бо Логгинг
         ./gradlew clean assembleRelease --no-daemon --parallel --configure-on-demand --stacktrace
 
-    - name: Commit and Push APK Back to Repository Folder
+    - name: Commit and Push APK
       run: |
         mkdir -p ready_apk/
         find . -name "*.apk" -exec cp {} ready_apk/Tajgram.apk \;
@@ -94,7 +80,7 @@ jobs:
         git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed" || echo "No changes"
         git push origin HEAD:master --force
 
-    - name: Upload Finished APK Artifacts
+    - name: Upload Finished APK
       uses: actions/upload-artifact@v4
       with:
         name: Tajgram-Official-APK
