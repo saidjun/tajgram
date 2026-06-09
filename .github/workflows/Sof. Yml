@@ -3,10 +3,10 @@ name: Tajgram XML Shield
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-    master  - main
+    master
   workflow_dispatch: # 👈 ИН ТУГМАИ "RUN"-РО ДАСТӢ ПАЙДО МЕКУНАД!
 
 jobs:
