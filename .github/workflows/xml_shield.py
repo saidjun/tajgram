@@ -63,5 +63,5 @@ def ultimate_factory_restore():
         for line_en in lines_en:
             stripped_en = line_en.strip()
             
-            # Агар сатри сохтории XML бошад, худашро нигоҳ медорем
+            # Агар сатри сохтории XML бошад, худашро нигоҳ медорем (САТРИ 67 ПУРРА МАҲКАМ ШУД!)
             if stripped_en.startswith('<?xml') or stripped_en.startswith('<resources') or stripped_en.startswith('</resources>') or stripped_en.startswith('
