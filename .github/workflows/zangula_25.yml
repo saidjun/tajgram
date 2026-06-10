@@ -1,0 +1,75 @@
+name: Inject Themes and Smart Features Safely
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inject_features:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code Fresh
+        uses: actions/checkout@v4
+        with:
+          clean: true
+          fetch-depth: 0
+
+      - name: Clean and Inject Configs (Strict Factory Properties)
+        run: |
+          # 1. Тозакунии 100% пеш аз запуск (Муҳофизати ядро аз хатогиҳо)
+          git reset --hard HEAD
+          git clean -fd
+          
+          # 2. Пайваст кардани Клучҳои ҳақиқии заводии Android Debug ба build.gradle
+          find . -type f -name "build.gradle" -exec sed -i '/android {/a \    buildFeatures { buildConfig true }\n    signingConfigs { debug { storeFile file(System.getProperty("user.home") + "/.android/debug.keystore")\n        storePassword "android"\n        keyAlias "androiddebugkey"\n        keyPassword "android" } }\n    buildTypes { release { signingConfig signingConfigs.debug } }' {} +
+          
+          # 3. Сабти опсияҳои системавӣ ба local.properties (Муҳофизати ядро)
+          echo "BELL_ISOLATED_MODULE=true" > local.properties
+          echo "BELL_NATIVE_TTS_ONLY=true" >> local.properties
+          echo "TAJGRAM_VIP_MENU_ENABLED=true" >> local.properties
+          echo "SUPPORT_BOT_USERNAME=tajgram_support_bot" >> local.properties
+          echo "TAJGRAM_FOLK_MODE_SUPPORT=true" >> local.properties
+          echo "TAJGRAM_ONLINE_CURRENCY=true" >> local.properties
+          echo "MIDNIGHT_CACHE_WIPE=true" >> local.properties
+
+      - name: Global Universal Language Fallback (Strict English Factory Base)
+        run: |
+          find . -type f -name "strings.xml" | while read -r file; do
+            # Тозакунии калитҳои кӯҳна барои пешгирии дубликат
+            sed -i '/WelcomeBellTitle/d' "$file"
+            sed -i '/WelcomeBellDesc/d' "$file"
+            sed -i '/WelcomeChannelSuggest/d' "$file"
+            sed -i '/WelcomeBellTitle_Reentry/d' "$file"
+            sed -i '/WelcomeBellDesc_Reentry/d' "$file"
+            sed -i '/ExitDialogTitle/d' "$file"
+            sed -i '/ExitDialogDesc/d' "$file"
+            sed -i '/TajgramBellCurrencyTitle/d' "$file"
+            sed -i '/TajgramBellCurrencyStatus/d' "$file"
+            sed -i '/VipSettingsMenuTitle/d' "$file"
+            sed -i '/SecretSupportButtonLabel/d' "$file"
+            sed -i '/AskAQuestion/d' "$file"
+            sed -i '/AskAQuestion_Owner/d' "$file"
+            sed -i '/TajgramFolkModeSwitch/d' "$file"
+            sed -i '/TajgramFolkModeDesc/d' "$file"
+            sed -i '/Folk_Settings/d' "$file"
+            sed -i '/Folk_Security/d' "$file"
+            sed -i '/Folk_InviteFriends/d' "$file"
+          done
+
+          # Папкаи values - ТАНҲО Англисии соф (БЕ КАЛИМАИ VIP)
+          find . -type f -name "strings.xml" -path "*/values/*" -exec sed -i '/<resources>/a \    <string name="WelcomeBellTitle">Welcome to Tajgram!</string>\n    <string name="WelcomeBellDesc">Thank you for choosing us.</string>\n    <string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>\n    <string name="WelcomeBellTitle_Reentry">Welcome Back!</string>\n    <string name="WelcomeBellDesc_Reentry">Your space is ready.</string>\n    <string name="ExitDialogTitle">Are you sure you want to leave?</string>\n    <string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>\n    <string name="TajgramBellCurrencyTitle">Live Currency Rates</string>\n    <string name="TajgramBellCurrencyStatus">Updating rates online...</string>\n    <string name="VipSettingsMenuTitle">Tajgram Settings</string>\n    <string name="SecretSupportButtonLabel">Tajgram Secret Support</string>\n    <string name="AskAQuestion">Technical Support</string>\n    <string name="AskAQuestion_Owner">Contact Owner (Complaints)</string>\n    <string name="TajgramFolkModeSwitch">Folk Mode (Funny)</string>\n    <string name="TajgramFolkModeDesc">Switch menus to funny local dialect</string>\n    <string name="Folk_Settings">App Repair</string>\n    <string name="Folk_Security">Anti-Spy</string>\n    <string name="Folk_InviteFriends">Gather the Lads</string>' {} +
+
+      - name: Premium Native Overwrite (Pure Tajik and Russian Localization)
+        run: |
+          # 1. ЗАБОНИ ТОҶИКИИ СОФ (Танҳо ба values-tg - БЕ КАЛИМАИ VIP)
+          find . -type f -name "strings.xml" -path "*/values-tg/*" -exec sed -i '/<resources>/a \    <string name="WelcomeBellTitle">Хуш омадед ба Tajgram!</string>\n    <string name="WelcomeBellDesc">Ташаккур ки моро интихоб кардед.</string>\n    <string name="WelcomeChannelSuggest">Лутфан ба канали расмӣ обуна шавед.</string>\n    <string name="WelcomeBellTitle_Reentry">Хуш омадед боз ҳам!</string>\n    <string name="WelcomeBellDesc_Reentry">Фосилаи шумо омода аст.</string>\n    <string name="ExitDialogTitle">Шумо аниқ баромадан мехоҳед?</string>\n    <string name="ExitDialogDesc">Мо мунтазири бозгашти зуди шумо хоҳем буд! ✨</string>\n    <string name="TajgramBellCurrencyTitle">📈 Курби Асъор (Онлайн)</string>\n    <string name="TajgramBellCurrencyStatus">Навсозии курби асъор аз сервер...</string>\n    <string name="VipSettingsMenuTitle">Танзимоти Tajgram</string>\n    <string name="SecretSupportButtonLabel">Дастгирии Махфии Tajgram</string>\n    <string name="AskAQuestion">Дастгирии техникӣ</string>\n    <string name="AskAQuestion_Owner">Алоқа бо Овнер (Арзу шикоят)</string>\n    <string name="TajgramFolkModeSwitch">Реҷаи Халқӣ (Приколӣ)</string>\n    <string name="TajgramFolkModeDesc">Менюҳои асосиро ба лаҳҷаи халқиву шавқовар алиш мекунад</string>\n    <string name="Folk_Settings">Ремонти барнома</string>\n    <string name="Folk_Security">Анти-Шпион</string>\n    <string name="Folk_InviteFriends">Ҷӯраҳора ҷамъ кардан</string>' {} +
+
+          # 2. ЗАБОНИ РУСИИ СОФ (Танҳо ба values-ru - БЕ КАЛИМАИ VIP)
+          find . -type f -name "strings.xml" -path "*/values-ru/*" -exec sed -i '/<resources>/a \    <string name="WelcomeBellTitle">Добро пожаловать в Tajgram!</string>\n    <string name="WelcomeBellDesc">Спасибо, что выбрали нас.</string>\n    <string name="WelcomeChannelSuggest">Пожалуйста, подпишитесь на официальный канал.</string>\n    <string name="WelcomeBellTitle_Reentry">С возвращением!</string>\n    <string name="WelcomeBellDesc_Reentry">Ваше пространство готово.</string>\n    <string name="ExitDialogTitle">Вы уверены, что хотите выйти?</string>\n    <string name="ExitDialogDesc">Мы будем ждать вашего быстрого возвращения! ✨</string>\n    <string name="TajgramBellCurrencyTitle">📈 Текущий Курс Валют</string>\n    <string name="TajgramBellCurrencyStatus">Обновление курсов в реальном времени...</string>\n    <string name="VipSettingsMenuTitle">Настройки Tajgram</string>\n    <string name="SecretSupportButtonLabel">Секретная Поддержка Tajgram</string>\n    <string name="AskAQuestion">Техническая поддержка</string>\n    <string name="AskAQuestion_Owner">Связаться с Овнером (Жалобы)</string>\n    <string name="TajgramFolkModeSwitch">Народный Режим (Юмор)</string>\n    <string name="TajgramFolkModeDesc">Переключает меню на забавный местный диалект</string>\n    <string name="Folk_Settings">Ремонт приложения</string>\n    <string name="Folk_Security">Анти-Шпион</string>\n    <string name="Folk_InviteFriends">Собрать Братьев</string>' {} +
+
+      - name: Commit and Push Changes Back to GitHub
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Cleaned VIP namings to factory standard and verified localized strings."
+          git push origin HEAD:${{ github.ref }}
