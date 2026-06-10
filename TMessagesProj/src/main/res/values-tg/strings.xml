@@ -6386,8 +6386,7 @@
     <string name="BackgroundColorSinglePreviewLine3">Обои девориро дар ин чат татбиқ кунед</string>
     <string name="ChannelBackgroundMessageReplyName">Канали Ду Рове \\'</string>
     <string name="ChannelBackgroundMessageReplyText">Хабарҳои фаврӣ</string>
-    <string name="ChannelBackgroundMessagePreview">Тафсилотро ба зудӣ пайгирӣ кунед. 
- Бохабар бошед!</string>
+    <string name="ChannelBackgroundMessagePreview">Тафсилотро ба зудӣ пайгирӣ кунед. Бохабар бошед!</string>
     <string name="ChatBackgroundHint">%s метавонад ин деворро татбиқ кунад</string>
     <string name="ChannelBackgroundHint">Ҳамаи муштариён ин деворро хоҳанд дид</string>
     <string name="RestToDefaultBackground">Обои обои хориҷ кунед</string>
@@ -6760,8 +6759,7 @@
     <string name="StealthModeButton">Пинҳон кардани назари ман</string>
     <string name="StealthModeTitle">Ҳолати пинҳонӣ</string>
     <string name="StealthModePremiumHint">Ба Tajgram Premium обуна шавед, то ки шумо ҳикояҳои одамонро аз онҳо дидаед.</string>
-    <string name="ViewAnonymously">Дидани 
- беном</string>
+    <string name="ViewAnonymously">Дидани беном</string>
     <string name="HideRecentViews">Намоишҳои охиринро пинҳон кунед</string>
     <string name="HideRecentViewsDescription">Назарҳои маро дар 5 дақиқаи охир пинҳон кунед.</string>
     <string name="HideNextViews">Намоишҳои ояндаро пинҳон кунед</string>
@@ -6797,12 +6795,8 @@
     <string name="MaximumReactionsInfo">Миқдори аксуламалҳои гуногунро, ки метавонанд ба паём илова карда шаванд, аз ҷумла аксҳои аллакай нашршударо маҳдуд кунед.</string>
     <string name="ReactionReachLvlForReactionShort_one">Канали шумо бояд ба сатҳи **%2$d** расад, то **%1$d** эмодзии фармоиширо ҳамчун аксуламал илова кунад.</string>
     <string name="ReactionReachLvlForReactionShort_other">Канали шумо бояд ба сатҳи **%2$d** расад, то **%1$d** эмодзии фармоиширо ҳамчун аксуламал илова кунад.</string>
-    <string name="ReactionReachLvlForReaction_one">Канали шумо бояд ба сатҳи **%2$d** расад, то **%1$d** эмодзии фармоиширо ҳамчун аксуламал илова кунад. 
- 
- Аз **Premium** муштариёни худ хоҳиш кунед, ки канали шуморо бо ин истиноди пурқувват кунанд:</string>
-    <string name="ReactionReachLvlForReaction_other">Канали шумо бояд ба сатҳи **%2$d** расад, то **%1$d** эмодзии фармоиширо ҳамчун аксуламал илова кунад. 
- 
- Аз **Premium** муштариёни худ хоҳиш кунед, ки канали шуморо бо ин истиноди пурқувват кунанд:</string>
+    <string name="ReactionReachLvlForReaction_one">Канали шумо бояд ба сатҳи **%2$d** расад, то **%1$d** эмодзии фармоиширо ҳамчун аксуламал илова кунад.  Аз **Premium** муштариёни худ хоҳиш кунед, ки канали шуморо бо ин истиноди пурқувват кунанд:</string>
+    <string name="ReactionReachLvlForReaction_other">Канали шумо бояд ба сатҳи **%2$d** расад, то **%1$d** эмодзии фармоиширо ҳамчун аксуламал илова кунад. Аз **Premium** муштариёни худ хоҳиш кунед, ки канали шуморо бо ин истиноди пурқувват кунанд:</string>
     <string name="ReactionCustomReactions">Реаксияҳои фармоишӣ</string>
     <string name="ReactionApplyChangesDialog">Шумо рӯйхати аксуламалҳоро тағир додед. Тағиротро татбиқ кунед?</string>
     <string name="ReactionMaxCountError_one">Шумо метавонед ҳадди аксар %1$d аксуламалро интихоб кунед.</string>
@@ -6837,11 +6831,9 @@
     <string name="LimitReachedStoriesCount2Second_other">Ба **Tajgram Premium** обуна шавед, то ин маҳдудиятро то **%d** зиёд кунед.</string>
     <string name="LimitReachedStoriesCount2Premium_one">Бубахшед, шумо наметавонед бештар аз **%d** ҳикояро дар **24** соат интишор кунед.</string>
     <string name="LimitReachedStoriesCount2Premium_other">Бубахшед, шумо наметавонед бештар аз **%d** ҳикояро дар **24** соат интишор кунед.</string>
-    <string name="LimitReachedStoriesWeekly">Шумо метавонед **%1$d** ҳикояҳоро дар як ҳафта нашр кунед. 
- Ба **Tajgram Premium** обуна шавед, то ин маҳдудият то **%2$d** зиёд шавад.</string>
+    <string name="LimitReachedStoriesWeekly">Шумо метавонед **%1$d** ҳикояҳоро дар як ҳафта нашр кунед. Ба **Tajgram Premium** обуна шавед, то ин маҳдудият то **%2$d** зиёд шавад.</string>
     <string name="LimitReachedStoriesWeeklyPremium">Бубахшед, шумо наметавонед бештар аз **%1$d** ҳикояро дар як ҳафта интишор кунед.</string>
-    <string name="LimitReachedStoriesMonthly">Шумо метавонед **%1$d** ҳикояҳоро дар як моҳ нашр кунед. 
- Ба **Tajgram Premium** обуна шавед, то ин маҳдудият то **%2$d** зиёд шавад.</string>
+    <string name="LimitReachedStoriesMonthly">Шумо метавонед **%1$d** ҳикояҳоро дар як моҳ нашр кунед. Ба **Tajgram Premium** обуна шавед, то ин маҳдудият то **%2$d** зиёд шавад.</string>
     <string name="LimitReachedStoriesMonthlyPremium">Бубахшед, шумо наметавонед бештар аз **%1$d** ҳикояро дар як моҳ интишор кунед.</string>
     <string name="UsersDeselectAll">Интихоби Ҳама</string>
     <string name="StoryWidgetLocation">Ҷойгиршавӣ</string>
@@ -6895,13 +6887,11 @@
     <string name="BoostingGiveawayShortStatusNotParticipating">Шумо метавонед \\' дар ин тӯҳфа иштирок накунед.</string>
     <string name="BoostingGiveawayShortStatusEnded">Тӯҳфа ба охир расид.</string>
     <string name="BoostingCongratulations">Табрик мекунем!</string>
-    <string name="BoostingReceivedGiftFrom">Шумо \\' аз **%s** тӯҳфаи 
- гирифтед.</string>
+    <string name="BoostingReceivedGiftFrom">Шумо \\' аз **%s** тӯҳфаи гирифтед.</string>
     <string name="BoostingReceivedGiftNoName">Шумо \\' тӯҳфа гирифтед.</string>
     <string name="BoostingReceivedStars_one">Шумо \\' ҷоизаи %1$d ситораро аз %2$s гирифтед!</string>
     <string name="BoostingReceivedStars_other">Шумо \\' ҷоизаи %1$d Ситораҳоро аз %2$s гирифтед!</string>
-    <string name="BoostingReceivedGiftDuration">Тӯҳфаи шумо як **Tajgram Premium** 
- обуна барои %s мебошад.</string>
+    <string name="BoostingReceivedGiftDuration">Тӯҳфаи шумо як **Tajgram Premium** обуна барои %s мебошад.</string>
     <string name="BoostingUnclaimedPrize">Мукофоти талабнашуда</string>
     <string name="BoostingYouHaveUnclaimedPrize">Шумо аз тӯҳфаи аз ҷониби **%s** гирифтанашуда мукофот доред.</string>
     <string name="BoostingUnclaimedPrizeDuration">Ин мукофот як **Tajgram Premium** обуна барои %s мебошад.</string>
@@ -6916,9 +6906,7 @@
     <string name="BoostingStarsGiveawayJustStartedGroup_one">%2$s навакак тӯҳфаи %1$d Star ба аъзои он оғоз кард.</string>
     <string name="BoostingStarsGiveawayJustStartedGroup_other">%2$s навакак тӯҳфаи %1$d Ситораҳоро ба аъзоёни худ оғоз кард.</string>
     <string name="BoostingGiveawayDeleteMsgTitle">Эълонро нест кунед</string>
-    <string name="BoostingGiveawayDeleteMsgText">Ҳазфи ин паём \\' бурд мекунад ва тӯҳфаро бекор мекунад - ғолибон то ҳол дар **%s** интихоб карда мешаванд. 
- 
- Пас аз нест карда шудан, Эълони Giveaway барқарор карда намешавад.</string>
+    <string name="BoostingGiveawayDeleteMsgText">Ҳазфи ин паём \\' бурд мекунад ва тӯҳфаро бекор мекунад - ғолибон то ҳол дар **%s** интихоб карда мешаванд. Пас аз нест карда шудан, Эълони Giveaway барқарор карда намешавад.</string>
     <string name="BoostingGiveawayServiceWinnersSelected_one">%d ғолиби тӯҳфа тавассути Tajgram ба таври тасодуфӣ интихоб карда шуд ва бо рамзи тӯҳфа паёми хусусӣ гирифт.</string>
     <string name="BoostingGiveawayServiceWinnersSelected_other">%d ғолибони тӯҳфа тавассути Tajgram ба таври тасодуфӣ интихоб карда шуданд ва паёмҳои хусусӣ бо рамзҳои тӯҳфаҳо гирифтанд.</string>
     <string name="BoostingStarsGiveawayServiceWinnersSelected_one">%1$d ғолиби тӯҳфа тавассути Tajgram ба таври тасодуфӣ интихоб карда шуд.</string>
@@ -7004,13 +6992,10 @@
     <string name="BoostingGetMoreBoostByGifting">Барои баланд бардоштани **%1$s**, тавассути тӯҳфа кардани **Tajgram Premium** ба дӯсти худ, афзоиши бештар ба даст оред.</string>
     <string name="BoostingGetMoreBoostByGiftingCount_one">Барои баланд бардоштани **%2$s**, бо тӯҳфа кардани **Tajgram Premium** ба дӯсти худ **%1$d** афзояндаи бештар гиред.</string>
     <string name="BoostingGetMoreBoostByGiftingCount_other">Барои баланд бардоштани **%2$s**, тавассути тӯҳфа кардани **Tajgram Premium** ба дӯсти худ **%1$d** афзоиши бештар гиред.</string>
-    <string name="BoostingLinkUsed">Ин пайванд барои фаъол кардани 
- обунаи **Tajgram Premium** истифода шудааст.</string>
-    <string name="BoostingLinkAllows">Ин пайванд ба шумо имкон медиҳад, ки обунаи 
- **Tajgram Premium**-ро фаъол созед.</string>
+    <string name="BoostingLinkUsed">Ин пайванд барои фаъол кардани обунаи **Tajgram Premium** истифода шудааст.</string>
+    <string name="BoostingLinkAllows">Ин пайванд ба шумо имкон медиҳад, ки обунаи **Tajgram Premium**-ро фаъол созед.</string>
     <string name="BoostingLinkAllowsToUser">Ин пайванд ба **%1$s** имкон медиҳад, ки обунаи **Tajgram Premium**-ро фаъол созад.</string>
-    <string name="BoostingLinkAllowsAnyone">Ин пайванд ба ҳар кас имкон медиҳад, ки обунаи 
- як **Tajgram Premium**-ро фаъол созад.</string>
+    <string name="BoostingLinkAllowsAnyone">Ин пайванд ба ҳар кас имкон медиҳад, ки обунаи як **Tajgram Premium**-ро фаъол созад.</string>
     <string name="BoostingLinkNotActivated">Ин пайванд то ҳол \\' фаъол нашудааст.</string>
     <string name="BoostingAllSubscribers">Хамаи обуначиён</string>
     <string name="BoostingNewSubscribers">Танҳо муштариёни нав</string>
