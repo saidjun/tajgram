@@ -3106,9 +3106,7 @@
     <!--passcode view-->
     <string name="Passcode">Қулфи рамз</string>
     <string name="ChangePasscode">Рамзро иваз кунед</string>
-    <string name="ChangePasscodeInfo">Вақте ки шумо рамзи иловагиро насб мекунед, дар саҳифаи чатҳо нишонаи қулф пайдо мешавад. Барои қулф кардан ва кушодани барномаи Tajgram-и худ онро клик кунед. 
- 
- Эзоҳ: агар шумо рамзро фаромӯш кунед, ба шумо \\' лозим меояд, ки барномаро нест кунед ва аз нав насб кунед. Ҳама чатҳои махфӣ гум мешаванд.</string>
+    <string name="ChangePasscodeInfo">Вақте ки шумо рамзи иловагиро насб мекунед, дар саҳифаи чатҳо нишонаи қулф пайдо мешавад. Барои қулф кардан ва кушодани барномаи Tajgram-и худ онро клик кунед. Эзоҳ: агар шумо рамзро фаромӯш кунед, ба шумо \\' лозим меояд, ки барномаро нест кунед ва аз нав насб кунед. Ҳама чатҳои махфӣ гум мешаванд.</string>
     <string name="ChangePasscodeInfoShort">Вақте ки шумо рамзро насб мекунед, дар саҳифаи чатҳо нишонаи қулф пайдо мешавад. Барои қулф кардан ва кушодани барнома онро клик кунед.</string>
     <string name="EnablePasscode">Рамзи гузаришро фаъол созед</string>
     <string name="ConfirmCreatePasscode">Рамзи худро дубора ворид кунед</string>
@@ -3118,9 +3116,7 @@
     <string name="EnterYourPasscode">Рамзи худро ворид кунед</string>
     <string name="EnterYourPasscodeInfo">Лутфан гузарвожаи ҷории Tajgram-и худро ворид кунед, то ин интихобро идора кунед.</string>
     <string name="ForgotPasscode">Рамзро фаромӯш кардед?</string>
-    <string name="ForgotPasscodeInfo">Агар шумо гузарвожаи худро фаромӯш карда бошед, ба шумо \\' лозим меояд, ки барномаро нест кунед ва аз нав насб кунед. 
- 
- Ҳама чатҳои махфӣ гум мешаванд.</string>
+    <string name="ForgotPasscodeInfo">Агар шумо гузарвожаи худро фаромӯш карда бошед, ба шумо \\' лозим меояд, ки барномаро нест кунед ва аз нав насб кунед. Ҳама чатҳои махфӣ гум мешаванд.</string>
     <string name="PasscodeScreenHint">Барои қулф кардан ва кушодани барнома дар саҳифаи сӯҳбатҳо тасвири қулфро клик кунед.</string>
     <string name="DisablePasscode">Рамзи паролро хомӯш кунед</string>
     <string name="DisablePasscodeConfirmMessage">Шумо мутмаин ҳастед, ки рамзро хомӯш кардан мехоҳед?</string>
@@ -3136,11 +3132,8 @@
     <string name="ScreenCaptureHeader">Мундариҷаи барнома дар ивазкунандаи вазифа</string>
     <string name="ScreenCaptureShowContent">Намоиши мундариҷа</string>
     <string name="ScreenCaptureInfo">Агар ғайрифаъол карда шавад, шумо \\' ба даст оварда наметавонед, ки дар барнома скриншотҳоро гирифта наметавонед, аммо мундариҷаи чат дар ивазкунандаи вазифа пинҳон хоҳад шуд.</string>
-    <string name="ScreenCaptureAlert">Ин мундариҷаи чатҳо ё рӯйхати чатҳои шуморо аз ивазкунандаи вазифа пинҳон мекунад, аммо шумо наметавонед дар Tajgram скриншот гиред. 
- 
- Барои эътибор пайдо кардани ин барнома ба шумо лозим меояд, ки барномаро бозоғоз намоед.</string>
-    <string name="TooManyTries">Кӯшишҳои аз ҳад зиёд. 
- Лутфан дар %1$s бори дигар кӯшиш кунед.</string>
+    <string name="ScreenCaptureAlert">Ин мундариҷаи чатҳо ё рӯйхати чатҳои шуморо аз ивазкунандаи вазифа пинҳон мекунад, аммо шумо наметавонед дар Tajgram скриншот гиред. Барои эътибор пайдо кардани ин барнома ба шумо лозим меояд, ки барномаро бозоғоз намоед.</string>
+    <string name="TooManyTries">Кӯшишҳои аз ҳад зиёд. Лутфан дар %1$s бори дигар кӯшиш кунед.</string>
     <!--media view-->
     <string name="January">январ</string>
     <string name="February">феврал</string>
@@ -3424,8 +3417,7 @@
     <string name="SetAdditionalPasswordInfo">Шумо метавонед гузарвожаеро таъин кунед, ки ҳангоми ворид шудан ба дастгоҳи нав ба ғайр аз коде, ки шумо дар SMS мегиред, талаб карда мешавад.</string>
     <string name="YourPassword">Рамзи шумо</string>
     <string name="YourPasswordHeader">Рамзи шумо</string>
-    <string name="YourPasswordRemember">Ҳисоби шумо тавассути санҷиши 2-қадам ҳифз карда мешавад. 
- Оё шумо то ҳол пароли худро дар хотир доред?</string>
+    <string name="YourPasswordRemember">Ҳисоби шумо тавассути санҷиши 2-қадам ҳифз карда мешавад. Оё шумо то ҳол пароли худро дар хотир доред?</string>
     <string name="YourPasswordRememberYes">Ҳа, бешубҳа</string>
     <string name="YourPasswordRememberNo">Бовар накардан</string>
     <string name="PasswordOn">Дар</string>
@@ -3456,9 +3448,7 @@
     <string name="YourEmailInfo">Лутфан почтаи электронии дурусти худро илова кунед. Ин ягона роҳи барқарор кардани пароли фаромӯшшуда аст.</string>
     <string name="YourEmailSkip">Гузаштан</string>
     <string name="YourEmailSkipWarning">Огоҳӣ</string>
-    <string name="YourEmailSkipWarningText">Не, ҷиддӣ. 
- 
- Агар шумо гузарвожаи худро фаромӯш кунед, шумо дастрасӣ ба ҳисоби Tajgram-и худро аз даст медиҳед. Ҳеҷ гуна роҳи барқарор кардани он вуҷуд надорад.</string>
+    <string name="YourEmailSkipWarningText">Не, ҷиддӣ. Агар шумо гузарвожаи худро фаромӯш кунед, шумо дастрасӣ ба ҳисоби Tajgram-и худро аз даст медиҳед. Ҳеҷ гуна роҳи барқарор кардани он вуҷуд надорад.</string>
     <string name="YourEmailAlmostThere">Қариб он ҷо!</string>
     <string name="YourEmailAlmostThereText">Лутфан почтаи электронии худро санҷед (\\' папкаи спамро фаромӯш накунед) барои ба итмом расонидани танзими санҷиши дуқадам.</string>
     <string name="YourPasswordSuccess">Муваффақият!</string>
@@ -3504,9 +3494,7 @@
     <string name="RestorePasswordResetIn">Шумо метавонед пароли худро дар %1$s аз нав танзим кунед</string>
     <string name="ResetPassword">Паролро аз нав барқарор кунед</string>
     <string name="RestoreEmailSentTitle">Рамзи барқарорсозӣ</string>
-    <string name="RestoreEmailSent">Мо ба суроғаи почтаи электронии шумо рамзи барқарорсозӣ фиристодем: 
- 
- %1$s</string>
+    <string name="RestoreEmailSent">Мо ба суроғаи почтаи электронии шумо рамзи барқарорсозӣ фиристодем: %1$s</string>
     <string name="RestoreEmailSentInfo">Лутфан почтаи электронии худро санҷед ва рамзи 6-рақамаи ба шумо фиристодашударо ворид кунед.</string>
     <string name="RestoreEmailTrouble">Дар дастрасӣ ба почтаи электронии шумо %1$s мушкилӣ доред?</string>
     <string name="RestoreEmailTroubleNoEmail">Дар дастрасӣ ба почтаи электронии шумо мушкилӣ доред?</string>
@@ -3516,9 +3504,7 @@
     <string name="ResetPasswordWait">Шумо ба наздикӣ барқароркунии паролро дархост кардаед, ки бекор карда шуд. Лутфан пеш аз дархости нав %1$s интизор шавед.</string>
     <string name="ResetMyAccount">Ҳисоби маро аз нав танзим кунед</string>
     <string name="ResetMyAccountWarning">Огоҳӣ</string>
-    <string name="ResetMyAccountWarningText">Ин амалро \\' бекор кардан мумкин нест. 
- 
- Агар шумо ҳисоби худро аз нав танзим кунед, ҳама паёмҳо ва чатҳои шумо нест карда мешаванд.</string>
+    <string name="ResetMyAccountWarningText">Ин амалро \\' бекор кардан мумкин нест. Агар шумо ҳисоби худро аз нав танзим кунед, ҳама паёмҳо ва чатҳои шумо нест карда мешаванд.</string>
     <string name="ResetMyAccountWarningReset">Ҳисобро барқарор кунед</string>
     <string name="LoginPassword">Рамз</string>
     <string name="LoginPasswordText">Шумо Санҷиши дуқадамро фаъол кардаед, бинобар ин ҳисоби шумо бо пароли иловагӣ ҳифз карда мешавад.</string>
@@ -3531,8 +3517,7 @@
     <string name="VerificationCode">Коди тасдиқ</string>
     <string name="EnterCode">Кодро ворид кунед</string>
     <string name="ResendCodeInfo">Коди тасдиқ</string>
-    <string name="EnabledPasswordText">Шумо тафтиши дуқадамро фаъол кардед. 
- Шумо \\' барои ворид шудан ба ҳисоби Tajgram-и худ паролеро, ки дар ин ҷо насб кардаед, лозим аст.</string>
+    <string name="EnabledPasswordText">Шумо тафтиши дуқадамро фаъол кардед. Шумо \\' барои ворид шудан ба ҳисоби Tajgram-и худ паролеро, ки дар ин ҷо насб кардаед, лозим аст.</string>
     <string name="AddEmailTitle">Иловаи почтаи электронӣ</string>
     <string name="AddEmailSubtitle">Лутфан суроғаи почтаи электронии дурусти худро ворид кунед, то ҳисоби худро муҳофизат кунед.</string>
     <string name="EnterNewEmail">Почтаи нави электрониро ворид кунед</string>
@@ -3593,9 +3578,7 @@
     <string name="PrivacyLastSeen">Охирин дидашуда ва онлайн</string>
     <string name="PrivacyMessagesContactsAndPremium">Тамосҳои ман ва корбарони Premium</string>
     <string name="PrivacyMessages">Паёмҳо</string>
-    <string name="PrivacyMessagesInfo">Шумо метавонед паёмҳои воридотӣ танҳо ба мухотибон ва корбарони Premium маҳдуд кунед. 
- 
- **What is Tajgram Premium?**</string>
+    <string name="PrivacyMessagesInfo">Шумо метавонед паёмҳои воридотӣ танҳо ба мухотибон ва корбарони Premium маҳдуд кунед. **What is Tajgram Premium?**</string>
     <string name="PrivacyVoiceMessages">Паёмҳои овозӣ</string>
     <string name="PrivacyMessagesTitle">Кӣ метавонад ба ман паём фиристад?</string>
     <string name="PrivacyVoiceMessagesTitle">Кӣ метавонад ба ман паёмҳои овозӣ фиристад?</string>
@@ -3712,9 +3695,7 @@
     <string name="PrivacyExceptions">Истисноҳо</string>
     <string name="BlockedEmpty">Ҳеҷ</string>
     <string name="SyncContactsDeleteTitle">Мухотибонро нест кунед</string>
-    <string name="SyncContactsDeleteText">Ин алоқаҳои шуморо аз серверҳои Tajgram хориҷ мекунад. 
- 
- Агар \\' **Sync Contacts** \\' фаъол бошад, мухотибон аз нав ҳамоҳанг карда мешаванд.</string>
+    <string name="SyncContactsDeleteText">Ин алоқаҳои шуморо аз серверҳои Tajgram хориҷ мекунад. Агар \\' **Sync Contacts** \\' фаъол бошад, мухотибон аз нав ҳамоҳанг карда мешаванд.</string>
     <!--edit video view-->
     <string name="SendingVideo">Фиристодани видео...</string>
     <string name="ConvertingVideo">Табдил додани видео...</string>
@@ -3973,11 +3954,7 @@
     <string name="SendMessagesToText">Оё шумо мехоҳед ин паёмро ба **%1$s** фиристед?</string>
     <string name="SendGameToText">Оё шумо мехоҳед ин бозиро ба **%1$s** мубодила кунед?</string>
     <string name="SendContactToText">Оё шумо мехоҳед ин мухотибро ба **%1$s** фиристед?</string>
-    <string name="AreYouSureLogout">Шумо мутмаин ҳастед, ки мехоҳед аз система хориҷ шавед? 
- 
- Дар хотир доред, ки шумо метавонед Tajgram-ро дар ҳама дастгоҳҳои худ якбора истифода баред. 
- 
- Дар хотир доред, ки баромадан аз система ҳамаи чатҳои махфии шуморо мекушад.</string>
+    <string name="AreYouSureLogout">Шумо мутмаин ҳастед, ки мехоҳед аз система хориҷ шавед? Дар хотир доред, ки шумо метавонед Tajgram-ро дар ҳама дастгоҳҳои худ якбора истифода баред. Дар хотир доред, ки баромадан аз система ҳамаи чатҳои махфии шуморо мекушад.</string>
     <string name="DeleteFewChatsTitle">Нобуд кардани %1$s</string>
     <string name="ClearFewChatsTitle">Тоза %1$s</string>
     <string name="ClearCacheFewChatsTitle">Кэши холӣ барои %1$s</string>
