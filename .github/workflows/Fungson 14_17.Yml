@@ -17,18 +17,32 @@ jobs:
 
       - name: Hard Repair Gradle and Inject Config
         run: |
+          # 1. Тозакунии 100% пеш аз запуск (Муҳофизати ядро аз хатогиҳо)
           git reset --hard HEAD
           git clean -fd
-          # Таъмири якҷоя ва 100%-и тамоми хатогиҳои системавии Грэдл
+          
+          # 2. ТОЗАКУНИИ ТАКРОРИҲО (Пешгирӣ аз дубликат шудани блоки имзо)
+          find . -type f -name "build.gradle" | while read -r gradle_file; do
+            sed -i '/buildFeatures {/d' "$gradle_file"
+            sed -i '/buildConfig true/d' "$gradle_file"
+            sed -i '/signingConfigs {/d' "$gradle_file"
+            sed -i '/tajgram_key/d' "$gradle_file"
+            sed -i '/signingConfig signingConfigs.debug/d' "$gradle_file"
+          done
+
+          # 3. Таъмири Системавии Грэдл ва Ивазкунии Тағйирёбандаҳо
           find . -type f -name "build.gradle" -exec sed -i 's/APP_VERSION_NAME/\"APP_VERSION_NAME\"/g' {} +
-          find . -type f -name "build.gradle" -exec sed -i 's/6750/\"6750\"/g' {} +
           find . -type f -name "build.gradle" -exec sed -i 's/APP_PACKAGE/\"org.tajgram.messenger\"/g' {} +
-          find . -type f -name "build.gradle" -exec sed -i '/android {/a \    buildFeatures { buildConfig true }\n    signingConfigs { debug { storePassword "android"\n keyPassword "android"\n keyAlias "tajgram_key" } }\n    buildTypes { release { signingConfig signingConfigs.debug } }' {} +
-          # Таъмири якҷояи калидҳои амниятии имзоӣ
+          
+          # Сӯзандору кардани Блоки тоза ва заводии имзо мустақим ба даруни "android {" (Бо синтаксиси бехатари bash)
+          find . -type f -name "build.gradle" -exec sed -i '/android {/a \    buildFeatures { buildConfig true }\n    signingConfigs {\n        debug {\n            storePassword "android"\n            keyPassword "android"\n            keyAlias "tajgram_key"\n        }\n    }\n    buildTypes {\n        release {\n            signingConfig signingConfigs.debug\n        }\n    }' {} +
+          
+          # Таъмири калидҳои амниятии имзои лоиҳа
           find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_STORE_PASSWORD/\"android\"/g' {} +
           find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_KEY_PASSWORD/\"android\"/g' {} +
           find . -type f -name "build.gradle" -exec sed -i 's/RELEASE_KEY_ALIAS/\"tajgram_key\"/g' {} +
-          # Сабти софи расо 14 функсия ба local.properties
+          
+          # 4. Сабти софи расо 17 функсияи асосии VIP ба local.properties
           echo "THEMES_ENABLED=true" > local.properties
           echo "SMART_NIGHT_MODE=true" >> local.properties
           echo "DEFAULT_THEME=Tajgram_Dark_VIP" >> local.properties
@@ -46,10 +60,11 @@ jobs:
           echo "ANTI_SCREENSHOT_SAFE_MEDIA=true" >> local.properties
           echo "MULTILANG_WELCOME_BELL=true" >> local.properties
           echo "AUTO_SUGGEST_OFFICIAL_CHANNEL=true" >> local.properties
-       - name: Commit and Push Changes Back to GitHub
+
+      - name: Commit and Push Changes Back to GitHub
         run: |
-          git config --global user.name "GitHub Actions"
+          git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "actions@github.com"
           git add .
-          git diff-index --quiet HEAD || git commit -m "Fix all gradle and signing issues together with 14 features safely"
+          git diff-index --quiet HEAD || git commit -m "Fix all gradle and signing issues together with 17 features safely without duplicates"
           git push origin HEAD:${{ github.ref }}
