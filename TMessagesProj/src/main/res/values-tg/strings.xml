@@ -6232,17 +6232,14 @@
     <string name="ProxyBottomSheetCheckWarning">Огоҳӣ</string>
     <string name="ProxyBottomSheetCheckWarningText">Ин суроғаи IP-и шуморо ба маъмури сервери прокси фош мекунад.</string>
     <string name="LoginCantAccessThisEmail">Оё \\' ба ин почтаи электронӣ дастрасӣ надорад?</string>
-    <string name="LoginEmailResetInTime">Почтаи электронӣ дар %1$s аз нав танзим карда мешавад. 
- *Ҳозир тавассути SMS аз нав танзим кунед*</string>
+    <string name="LoginEmailResetInTime">Почтаи электронӣ дар %1$s аз нав танзим карда мешавад. *Ҳозир тавассути SMS аз нав танзим кунед*</string>
     <string name="LoginEmailResetInSinglePattern">%1$s</string>
     <string name="LoginEmailResetInDoublePattern">%1$s ва %2$s</string>
     <string name="LoginEmailResetTitle">Почтаи электрониро барқарор кунед</string>
     <string name="LoginEmailResetMessage">Агар шумо аз дастгоҳи дигар ба Tajgram ворид шуда бошед, шумо метавонед почтаи электронии худро тағир диҳед. Дар акси ҳол, агар шумо \\' ба почтаи электронии %1$s дастрасӣ надошта бошед, шумо метавонед ин почтаи электрониро бо рамзи **SMS** дар **%2$s** аз нав танзим кунед.</string>
     <string name="LoginEmailResetButton">E-mail-ро аз нав танзим кунед</string>
     <string name="LoginEmailResetPremiumRequiredTitle">Tajgram Premium талаб карда мешавад</string>
-    <string name="LoginEmailResetPremiumRequiredMessage">Аз сабаби арзиши баланди SMS дар кишвари шумо, ба шумо ҳисоби **Tajgram Premium** лозим аст, то ин почтаи электрониро фавран тавассути рамзи SMS аз нав танзим кунед. 
- 
- Шумо метавонед аз дӯстатон хоҳиш кунед, ки барои ҳисоби шумо обунаи Premium тӯҳфа кунад **%1$s**</string>
+    <string name="LoginEmailResetPremiumRequiredMessage">Аз сабаби арзиши баланди SMS дар кишвари шумо, ба шумо ҳисоби **Tajgram Premium** лозим аст, то ин почтаи электрониро фавран тавассути рамзи SMS аз нав танзим кунед. Шумо метавонед аз дӯстатон хоҳиш кунед, ки барои ҳисоби шумо обунаи Premium тӯҳфа кунад **%1$s**</string>
     <string name="LoginEmailResetPleaseWait">Почтаи электронӣ барқарор карда мешавад, лутфан интизор шавед...</string>
     <string name="DeleteAndBlock">Нест кардан ва Блок кардан</string>
     <string name="BlockBot">Блоки бот</string>
@@ -6294,12 +6291,10 @@
     <string name="FilterInviteErrorTypesExcluded">Шумо метавонед танҳо ҷузвдонҳоро бидуни намудҳои чат ва чатҳои хориҷшуда мубодила кунед.</string>
     <string name="UnsavedChanges">Тағйироти захиранашуда</string>
     <string name="UnsavedChangesMessage">Танзимот</string>
-    <string name="LimitReachedFolderLinks">Шумо танҳо метавонед истинодҳои даъвати %1$d эҷод кунед. 
- Ба **Tajgram Premium** навсозӣ кунед, то ин маҳдудиятро то **%2$d** зиёд кунед.</string>
+    <string name="LimitReachedFolderLinks">Шумо танҳо метавонед истинодҳои даъвати %1$d эҷод кунед. Ба **Tajgram Premium** навсозӣ кунед, то ин маҳдудиятро то **%2$d** зиёд кунед.</string>
     <string name="LimitReachedFolderLinksPremium">Шумо танҳо метавонед истинодҳои даъвати %1$d эҷод кунед. Кӯшиш кунед, ки баъзе истинодҳои даъвати ҷузвдонҳоро нест кунед.</string>
     <string name="LimitReachedFolderLinksLocked">Шумо танҳо метавонед истинодҳои даъвати %1$d эҷод кунед. Мо кӯшиш карда истодаем, ки ба шумо имкон диҳед, ки ин маҳдудиятро дар оянда зиёд кунед.</string>
-    <string name="LimitReachedSharedFolders">Шумо метавонед танҳо %1$d ҷузвдонҳои муштарак дошта бошед. 
- Ба **Tajgram Premium** навсозӣ кунед, то ин маҳдудиятро то **%2$d** зиёд кунед.</string>
+    <string name="LimitReachedSharedFolders">Шумо метавонед танҳо %1$d ҷузвдонҳои муштарак дошта бошед. Ба **Tajgram Premium** навсозӣ кунед, то ин маҳдудиятро то **%2$d** зиёд кунед.</string>
     <string name="LimitReachedSharedFoldersPremium">Шумо метавонед танҳо %1$d ҷузвдонҳои муштарак дошта бошед. Кӯшиш кунед, ки баъзе ҷузвдони мубодилашавандаро нест кунед.</string>
     <string name="LimitReachedSharedFoldersLocked">Шумо метавонед танҳо %1$d ҷузвдонҳои муштарак дошта бошед. Мо кӯшиш карда истодаем, ки ба шумо имкон диҳед, ки ин маҳдудиятро дар оянда зиёд кунед.</string>
     <string name="ActionSettingWallpaper">Танзими обои нав…</string>
