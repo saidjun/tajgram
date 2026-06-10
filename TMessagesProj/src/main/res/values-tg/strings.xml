@@ -2050,17 +2050,14 @@
     <string name="UsernameAlso">инчунин %1$s</string>
     <string name="UsernameLinkPlaceholder">номи корбар</string>
     <string name="UsernameInUse">Бубахшед, ин номи корбарӣ аллакай гирифта шудааст.</string>
-    <string name="UsernameInUsePurchase">Ин пайванд аллакай гирифта шудааст. 
- Аммо, он дар айни замон барои харид дастрас аст.  **Learn more…**</string>
+    <string name="UsernameInUsePurchase">Ин пайванд аллакай гирифта шудааст. Аммо, он дар айни замон барои харид дастрас аст.  **Learn more…**</string>
     <string name="UsernameInvalid">Бубахшед, ин номи корбарӣ нодуруст аст.</string>
     <string name="UsernameInvalidShort">Номи корбар бояд на камтар аз 5 аломат дошта бошад.</string>
-    <string name="UsernameInvalidShortPurchase">Номи корбар бояд на камтар аз 5 аломат дошта бошад. 
- Аммо, он дар айни замон барои харид дастрас аст.  **Learn more…**</string>
+    <string name="UsernameInvalidShortPurchase">Номи корбар бояд на камтар аз 5 аломат дошта бошад. Аммо, он дар айни замон барои харид дастрас аст.  **Learn more…**</string>
     <string name="UsernameInvalidLong">Номи корбар набояд аз 32 аломат зиёд бошад.</string>
     <string name="UsernameInvalidStartNumber">Мутаасифона, номи корбар наметавонад \\' бо рақам оғоз шавад.</string>
     <string name="UsernameHelp">Рақами телефони шумо</string>
-    <string name="UsernameHelpLink">Ин пайванд сӯҳбатро бо шумо мекушояд: 
- %1$s</string>
+    <string name="UsernameHelpLink">Ин пайванд сӯҳбатро бо шумо мекушояд: %1$s</string>
     <string name="UsernameChecking">Санҷиши номи корбар...</string>
     <string name="UsernameAvailable">%1$s дастрас аст.</string>
     <string name="UsernameEmpty">Ҳеҷ</string>
@@ -2181,12 +2178,9 @@
     <string name="ArchivedEmojiPacks">Бастаҳои эмодзи бойгонӣ</string>
     <string name="ArchivedStickersEmpty">Ягон стикерҳои бойгонӣ</string>
     <string name="ArchivedMasksEmpty">Бе ниқобҳои бойгонӣ</string>
-    <string name="ArchivedStickersInfo">Шумо метавонед то 200 маҷмӯи стикер илова кунед. 
- Маҷмӯаҳои истифоданашуда ҳангоми илова кардани шумо бойгонӣ мешаванд.</string>
-    <string name="ArchivedEmojiInfo">Шумо метавонед то 200 бастаи эмодзи илова кунед. 
- Бастаҳои истифоданашуда ҳангоми илова кардани шумо бойгонӣ мешаванд.</string>
-    <string name="ArchivedMasksInfo">Шумо метавонед то 200 маҷмӯи ниқоб дошта бошед. 
- Маҷмӯаҳои истифоданашуда ҳангоми илова кардани шумо бойгонӣ мешаванд.</string>
+    <string name="ArchivedStickersInfo">Шумо метавонед то 200 маҷмӯи стикер илова кунед. Маҷмӯаҳои истифоданашуда ҳангоми илова кардани шумо бойгонӣ мешаванд.</string>
+    <string name="ArchivedEmojiInfo">Шумо метавонед то 200 бастаи эмодзи илова кунед. Бастаҳои истифоданашуда ҳангоми илова кардани шумо бойгонӣ мешаванд.</string>
+    <string name="ArchivedMasksInfo">Шумо метавонед то 200 маҷмӯи ниқоб дошта бошед. Маҷмӯаҳои истифоданашуда ҳангоми илова кардани шумо бойгонӣ мешаванд.</string>
     <string name="SendSticker">СТИКЕР фиристед</string>
     <string name="ArchivedStickersAlertTitle">Стикерҳои бойгонӣ</string>
     <string name="ArchivedStickersAlertInfo">Танзимот</string>
@@ -2223,10 +2217,7 @@
     <string name="AutoNightSystemDefault">Системаи пешфарз</string>
     <string name="AutoNightLocation">Офтоб ва тулӯи офтобро истифода баред</string>
     <string name="AutoNightUpdateLocation">Навсозии ҷойгиршавӣ</string>
-    <string name="AutoNightUpdateLocationInfo">Ҳисоб кардани вақти ғуруби офтоб ва тулӯи офтоб санҷиши якдафъаинаи макони тахминии шуморо талаб мекунад. Дар хотир доред, ки ин макон танҳо дар дастгоҳи шумо ба таври маҳаллӣ нигоҳ дошта мешавад. 
- 
- ғуруби офтоб: %1$s 
- тулӯи офтоб: %2$s</string>
+    <string name="AutoNightUpdateLocationInfo">Ҳисоб кардани вақти ғуруби офтоб ва тулӯи офтоб санҷиши якдафъаинаи макони тахминии шуморо талаб мекунад. Дар хотир доред, ки ин макон танҳо дар дастгоҳи шумо ба таври маҳаллӣ нигоҳ дошта мешавад. ғуруби офтоб: %1$s тулӯи офтоб: %2$s</string>
     <string name="AutoNightFrom">Аз</string>
     <string name="AutoNightTo">Ба</string>
     <string name="AutoNightPreferred">Мавзӯи шаби бартарӣ</string>
@@ -2240,9 +2231,7 @@
     <string name="DeleteThemeTitle">Мавзӯъро нест кунед</string>
     <string name="DeleteThemeAlert">Шумо мутмаин ҳастед, ки мехоҳед ин мавзӯъро нест кунед?</string>
     <string name="IncorrectTheme">Файли мавзӯъ нодуруст</string>
-    <string name="EnterThemeNameEdit">Агар шумо хоҳед, ки мавзӯи худро бо дигарон мубодила кунед ё ҳар як рангро дастӣ танзим кунед, **Create**-ро клик кунед. 
- 
- Лутфан номи мавзӯъро ворид кунед:</string>
+    <string name="EnterThemeNameEdit">Агар шумо хоҳед, ки мавзӯи худро бо дигарон мубодила кунед ё ҳар як рангро дастӣ танзим кунед, **Create**-ро клик кунед. Лутфан номи мавзӯъро ворид кунед:</string>
     <string name="EnterThemeName">Номи мавзӯъро ворид кунед</string>
     <string name="CloseEditor">РЕДАКЦИЯРО ПУШАНД</string>
     <string name="SaveTheme">МАВЗУЪРО ЗАХИРЕД</string>
@@ -2267,19 +2256,11 @@
     <string name="NewThemeTitle">Мавзӯи нав</string>
     <string name="EditThemeTitle">Таҳрири мавзӯъ</string>
     <string name="CreateNewThemeHelp">Барои дидани рӯйхати элементҳо дар ҳар як экран тасвири палитраро клик кунед ва онҳоро таҳрир кунед.</string>
-    <string name="CreateNewThemeAlert">Шумо метавонед бо тағир додани рангҳо дар дохили барнома мавзӯи шахсии худро эҷод кунед. 
- 
- Шумо ҳамеша метавонед дар ин ҷо ба мавзӯи пешфарзи Tajgram баргардед.</string>
-    <string name="ThemeSetUrlHelp">Шумо метавонед a-z, 0-9 ва зерхатро истифода баред. 
- Дарозии ҳадди ақал 5 аломат аст.</string>
-    <string name="ThemeHelpLink">Мавзӯи шумо ҳар дафъае, ки шумо онро тағир медиҳед, барои ҳамаи корбарон нав карда мешавад. Ҳар касе метавонад онро бо истифода аз ин пайванд насб кунад: 
- %1$s</string>
-    <string name="ThemeCreateHelp">Ҳар касе метавонад мавзӯи шуморо бо истифода аз ин пайванд насб кунад. Вақте ки шумо мавзӯъро тағир медиҳед, он барои ҳамаи корбароне, ки онро насб кардаанд, нав карда мешавад. 
- 
- Мавзӯъ ба мавзӯъ ва обои ҳозираи интихобшудаи шумо асос меёбад.</string>
-    <string name="ThemeCreateHelp2">Шумо метавонед истиноди мавзӯи худро тағир диҳед. 
- 
- Истинодҳои мавзӯъ бояд аз 5 аломат дарозтар бошанд ва метавонанд a-z, 0-9 ва зерхатро истифода баранд.</string>
+    <string name="CreateNewThemeAlert">Шумо метавонед бо тағир додани рангҳо дар дохили барнома мавзӯи шахсии худро эҷод кунед. Шумо ҳамеша метавонед дар ин ҷо ба мавзӯи пешфарзи Tajgram баргардед.</string>
+    <string name="ThemeSetUrlHelp">Шумо метавонед a-z, 0-9 ва зерхатро истифода баред. Дарозии ҳадди ақал 5 аломат аст.</string>
+    <string name="ThemeHelpLink">Мавзӯи шумо ҳар дафъае, ки шумо онро тағир медиҳед, барои ҳамаи корбарон нав карда мешавад. Ҳар касе метавонад онро бо истифода аз ин пайванд насб кунад: %1$s</string>
+    <string name="ThemeCreateHelp">Ҳар касе метавонад мавзӯи шуморо бо истифода аз ин пайванд насб кунад. Вақте ки шумо мавзӯъро тағир медиҳед, он барои ҳамаи корбароне, ки онро насб кардаанд, нав карда мешавад. Мавзӯъ ба мавзӯъ ва обои ҳозираи интихобшудаи шумо асос меёбад.</string>
+    <string name="ThemeCreateHelp2">Шумо метавонед истиноди мавзӯи худро тағир диҳед. Истинодҳои мавзӯъ бояд аз 5 аломат дарозтар бошанд ва метавонанд a-z, 0-9 ва зерхатро истифода баранд.</string>
     <string name="ThemeNameInvalid">Бубахшед, номи мавзӯъ нодуруст аст.</string>
     <string name="SetUrlInvalid">Бубахшед, ин пайванд нодуруст аст.</string>
     <string name="SetUrlInvalidShort">Истинод бояд на камтар аз 5 аломат дошта бошад.</string>
@@ -2491,8 +2472,7 @@
     <string name="TajgramFaqUrl">https://Tajgram.org/faq</string>
     <string name="PrivacyPolicy">Сиёсати Корбурди Маълумоти Шахсӣ</string>
     <string name="TermsOfService">Шартҳои хизматрасонӣ</string>
-    <string name="TermsOfServiceLogin">Бо ворид шудан, 
- шумо ба *Шартҳои хидмат* розӣ мешавед.</string>
+    <string name="TermsOfServiceLogin">Бо ворид шудан, шумо ба *Шартҳои хидмат* розӣ мешавед.</string>
     <string name="PrivacyPolicyUrl">https://Tajgram.org/privacy</string>
     <string name="TermsOfServiceUrl">https://Tajgram.org/tos</string>
     <string name="WebAppDisclaimerUrl">https://Tajgram.org/tos/mini-apps</string>
@@ -2713,8 +2693,7 @@
     <string name="AutodownloadSizeLimitUpTo">то %1$s</string>
     <string name="Streaming">Ҷараён</string>
     <string name="EnableStreaming">Ҷараёни видеоҳо ва файлҳои аудиоӣ</string>
-    <string name="EnableAllStreamingInfo">Баъзе видеоҳоро \\' пахш кардан мумкин нест - масалан, ҳама видеоҳое, ки аз Android бо истифода аз Tajgram 4.7 ва версияҳои қаблӣ фиристода шудаанд. 
-</string>
+    <string name="EnableAllStreamingInfo">Баъзе видеоҳоро \\' пахш кардан мумкин нест - масалан, ҳама видеоҳое, ки аз Android бо истифода аз Tajgram 4.7 ва версияҳои қаблӣ фиристода шудаанд. </string>
     <string name="TapToChangePhone">рақами телефон</string>
     <string name="ShowNotificationsFor">Нишон додани огоҳиҳо барои</string>
     <string name="AllAccounts">Ҳама ҳисобҳо</string>
@@ -2777,9 +2756,7 @@
     <string name="AppUpdateNow">Ҳоло навсозӣ кунед</string>
     <string name="AppUpdateDownloadNow">Ҳоло зеркашӣ кунед</string>
     <string name="AppUpdateRemindMeLater">Баъдтар ба ман хотиррасон кунед</string>
-    <string name="AppUpdateChangelogEmpty">**What\\'s new?** 
- 
- • Ислоҳи хатогиҳо ва такмилҳо.</string>
+    <string name="AppUpdateChangelogEmpty">**What\\'s new?** • Ислоҳи хатогиҳо ва такмилҳо.</string>
     <string name="Permanent">Доимӣ</string>
     <string name="LinkHashExpired">Пайванд дигар фаъол нест</string>
     <string name="CancelForwardPrivate">Шумо бо %1$s аз сӯҳбати худ бо **%2$s** чӣ кор кардан мехоҳед?</string>
@@ -2818,12 +2795,8 @@
     <string name="LocalDatabase">Пойгоҳи додаҳои маҳаллӣ</string>
     <string name="LocalDatabaseClearTextTitle">Тоза кардани пойгоҳи додаҳои маҳаллӣ</string>
     <string name="LocalDatabaseClearText">Оё мутмаин ҳастед, ки мехоҳед паёмҳои матнии кэшшударо тоза кунед?</string>
-    <string name="LocalDatabaseClearText2">Ин амалиёт метавонад чанд дақиқа ба анҷом расад. 
- 
- Андозаи базаи маҳаллӣ: **%s**</string>
-    <string name="LocalDatabaseInfo">Тоза кардани пойгоҳи додаҳои маҳаллӣ матнҳои паёмҳои кэшшударо нест мекунад ва пойгоҳи додаҳоро барои сарфаи фазои дохилии диск фишурда мекунад. Барои кор кардан ба Tajgram баъзе маълумот лозим аст, аз ин рӯ андозаи пойгоҳи додаҳо ба сифр намерасад. 
- 
- Барои анҷом додани ин амалиёт метавонад чанд дақиқа тӯл кашад.</string>
+    <string name="LocalDatabaseClearText2">Ин амалиёт метавонад чанд дақиқа ба анҷом расад. Андозаи базаи маҳаллӣ: **%s**</string>
+    <string name="LocalDatabaseInfo">Тоза кардани пойгоҳи додаҳои маҳаллӣ матнҳои паёмҳои кэшшударо нест мекунад ва пойгоҳи додаҳоро барои сарфаи фазои дохилии диск фишурда мекунад. Барои кор кардан ба Tajgram баъзе маълумот лозим аст, аз ин рӯ андозаи пойгоҳи додаҳо ба сифр намерасад. Барои анҷом додани ин амалиёт метавонад чанд дақиқа тӯл кашад.</string>
     <string name="ClearMediaCache">Тоза кардани кэш</string>
     <string name="CacheClear">Тоза</string>
     <string name="CalculatingSize">Ҳисоб карда мешавад...</string>
@@ -2846,15 +2819,9 @@
     <string name="PassportRequestedInformation">Маълумоти дархостшуда</string>
     <string name="PassportProvidedInformation">Маълумоти пешниҳодшуда</string>
     <string name="PassportInfoTitle">Passport Tajgram чист?</string>
-    <string name="PassportInfo2">Бо Tajgram Passport шумо метавонед ба осонӣ ба вебсайтҳо ва хидматҳое, ки тасдиқи шахсиятро талаб мекунанд, сабти ном кунед. 
- 
- Маълумот, маълумоти шахсӣ ва ҳуҷҷатҳои шумо бо рамзгузории охири ба охир ҳифз карда мешаванд. Ҳеҷ кас, аз ҷумла Tajgram, бе иҷозати шумо ба онҳо дастрасӣ пайдо карда наметавонад. 
- 
- Шумо метавонед барои гирифтани маълумоти бештар ба *FAQ*-и мо ташриф оред.</string>
+    <string name="PassportInfo2">Бо Tajgram Passport шумо метавонед ба осонӣ ба вебсайтҳо ва хидматҳое, ки тасдиқи шахсиятро талаб мекунанд, сабти ном кунед. Маълумот, маълумоти шахсӣ ва ҳуҷҷатҳои шумо бо рамзгузории охири ба охир ҳифз карда мешаванд. Ҳеҷ кас, аз ҷумла Tajgram, бе иҷозати шумо ба онҳо дастрасӣ пайдо карда наметавонад. Шумо метавонед барои гирифтани маълумоти бештар ба *FAQ*-и мо ташриф оред.</string>
     <string name="PassportInfoUrl">https://Tajgram.org/faq#passport</string>
-    <string name="TajgramPassportCreatePasswordInfo">Лутфан парол эҷод кунед, то маълумоти шахсии худро бо рамзгузории охири ба охир муҳофизат кунед. 
- 
- Ин парол инчунин ҳангоми ворид шудан ба Tajgram аз дастгоҳи нав талаб карда мешавад.</string>
+    <string name="TajgramPassportCreatePasswordInfo">Лутфан парол эҷод кунед, то маълумоти шахсии худро бо рамзгузории охири ба охир муҳофизат кунед. Ин парол инчунин ҳангоми ворид шудан ба Tajgram аз дастгоҳи нав талаб карда мешавад.</string>
     <string name="TajgramPassportCreatePassword">КАЛИДВОЖА СОЗЕД</string>
     <string name="TajgramPassportDelete">Паспорти Tajgram-ро нест кунед</string>
     <string name="TajgramPassportDeleteTitle">Шиносномаи Tajgram-ро нест кунед</string>
@@ -2986,9 +2953,7 @@
     <string name="PassportNativeHeader">Номи шумо</string>
     <string name="PassportNativeHeaderLang">Номи шумо дар %1$s</string>
     <string name="PassportNativeInfo">Номи шумо ба забони кишвари истиқомати шумо ( %1$s ).</string>
-    <string name="PassportNameCheckAlert">Лутфан дурустии ин номро санҷед: 
- 
- %1$s %2$s %3$s</string>
+    <string name="PassportNameCheckAlert">Лутфан дурустии ин номро санҷед: %1$s %2$s %3$s</string>
     <string name="PassportLanguage_AR">арабӣ</string>
     <string name="PassportLanguage_AZ">озарбойҷонӣ</string>
     <string name="PassportLanguage_BG">булгорӣ</string>
