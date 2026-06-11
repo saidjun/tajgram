@@ -1,0 +1,50 @@
+name: Inject Tajgram Walkthrough Module
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inject_onboarding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Precision Injection (No Collateral Damage)
+        run: |
+          # Танҳо ID-ҳои ҳамин модул
+          IDS="onboarding_title_1 onboarding_desc_1 onboarding_title_2 onboarding_desc_2 onboarding_title_3 onboarding_desc_3 onboarding_title_4 onboarding_desc_4 onboarding_title_5 onboarding_desc_5 skip_button start_button"
+          
+          # Файли матни тоза барои илова
+          cat <<EOF > walkthrough_strings.xml
+              <string name="onboarding_title_1">Welcome! 🌍</string>
+              <string name="onboarding_desc_1">Speed and security.</string>
+              <string name="onboarding_title_2">Shine with Stars! ⭐</string>
+              <string name="onboarding_desc_2">Premium features & translation.</string>
+              <string name="onboarding_title_3">Personal Bell 🔊</string>
+              <string name="onboarding_desc_3">Select voices and manage alerts.</string>
+              <string name="onboarding_title_4">100% Security 🛡️</string>
+              <string name="onboarding_desc_4">Proxy and anti-spy protection.</string>
+              <string name="onboarding_title_5">Let's Go! ✨</string>
+              <string name="onboarding_desc_5">Switch to Folk Mode and enjoy!</string>
+              <string name="skip_button">Skip (X)</string>
+              <string name="start_button">Start</string>
+          EOF
+
+          # Инъексияи дақиқ: Фақат ID-ҳои ҳамин рӯйхат тоза мешаванд, дигараш бехатар мемонад
+          find . -type f -name "strings.xml" | while read -r file; do
+            # 1. Танҳо ID-ҳои ҳамин рӯйхатро нест мекунад
+            for id in $IDS; do sed -i "/name=\"$id\"/d" "$file"; done
+            
+            # 2. Иловаи навҳо
+            sed -i '/<resources>/r walkthrough_strings.xml' "$file"
+          done
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || (git commit -m "Onboarding: Precision update." && git push)
