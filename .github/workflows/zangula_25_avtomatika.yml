@@ -1,0 +1,72 @@
+name: Ultimate Global Tajgram Engine
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inject_engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Inject Full Features & Intelligence
+        run: |
+          # 1. Танзимоти асосӣ
+          cat <<EOF > local.properties
+          BELL_ISOLATED_MODULE=true
+          VOICE_GENDER_SUPPORT=true
+          VOICE_ICON_ENABLED=true
+          FEEDBACK_LIKE_DISLIKE=true
+          LOCALE_AUTO_DETECT=true
+          INTELLIGENT_BELL_MEMORY=enabled
+          TAJGRAM_VIP_MENU_ENABLED=true
+          SUPPORT_BOT_USERNAME=tajgram_support_bot
+          EOF
+          
+          # 2. Рӯйхати 25 функсия
+          IDS="WelcomeBellTitle WelcomeBellDesc WelcomeChannelSuggest WelcomeBellTitle_Reentry WelcomeBellDesc_Reentry ExitDialogTitle ExitDialogDesc TajgramBellCurrencyTitle TajgramBellCurrencyStatus VipSettingsMenuTitle SecretSupportButtonLabel AskAQuestion AskAQuestion_Owner TajgramFolkModeSwitch TajgramFolkModeDesc Folk_Settings Folk_Security Folk_InviteFriends VipSettingsTitle VipSupportBot LikeButton DislikeButton VoiceSelection VoiceIcon_Girl VoiceIcon_Boy"
+          
+          # 3. Файли муваққатии матн барои илова кардан (БАРОИ БЕХАТАРИИ СИНТАКСИС)
+          cat <<EOF > new_strings.xml
+              <string name="VipSettingsTitle">Tajgram VIP Settings</string>
+              <string name="VipSupportBot">Tajgram Direct Support</string>
+              <string name="LikeButton">👍 Like</string>
+              <string name="DislikeButton">👎 Dislike</string>
+              <string name="VoiceSelection">Select Voice Style 🔊</string>
+              <string name="VoiceIcon_Girl">👩 Girl Voice</string>
+              <string name="VoiceIcon_Boy">👨 Boy Voice</string>
+              <string name="WelcomeBellTitle">Welcome to Tajgram!</string>
+              <string name="WelcomeBellDesc">Thank you for choosing us.</string>
+              <string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>
+              <string name="WelcomeBellTitle_Reentry">Welcome Back!</string>
+              <string name="WelcomeBellDesc_Reentry">Your space is ready.</string>
+              <string name="ExitDialogTitle">Are you sure you want to leave?</string>
+              <string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>
+              <string name="TajgramBellCurrencyTitle">Live Currency Rates</string>
+              <string name="TajgramBellCurrencyStatus">Updating rates online...</string>
+              <string name="VipSettingsMenuTitle">Tajgram Settings</string>
+              <string name="SecretSupportButtonLabel">Tajgram Secret Support</string>
+              <string name="AskAQuestion">Technical Support</string>
+              <string name="AskAQuestion_Owner">Contact Owner (Complaints)</string>
+              <string name="TajgramFolkModeSwitch">Folk Mode (Funny)</string>
+              <string name="TajgramFolkModeDesc">Switch menus to funny local dialect</string>
+              <string name="Folk_Settings">App Repair</string>
+              <string name="Folk_Security">Anti-Spy</string>
+              <string name="Folk_InviteFriends">Gather the Lads</string>
+          EOF
+
+          # 4. Илова ба ҳамаи файлҳо
+          find . -type f -name "strings.xml" | while read -r file; do
+            for id in $IDS; do sed -i "/$id/d" "$file"; done
+            sed -i '/<resources>/r new_strings.xml' "$file"
+          done
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Saidjun Chief Developer"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || (git commit -m "Ultimate Engine: 25 Features Secured." && git push)
