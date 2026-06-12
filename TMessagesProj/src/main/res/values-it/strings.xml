@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="VipSettingsTitle">Tajgram VIP Settings</string>
+    <string name="VipSupportBot">Tajgram Direct Support</string>
+    <string name="LikeButton">👍 Like</string>
+    <string name="DislikeButton">👎 Dislike</string>
+    <string name="VoiceSelection">Select Voice Style 🔊</string>
+    <string name="VoiceIcon_Girl">👩 Girl Voice</string>
+    <string name="VoiceIcon_Boy">👨 Boy Voice</string>
+    <string name="WelcomeBellTitle">Welcome to Tajgram!</string>
+    <string name="WelcomeBellDesc">Thank you for choosing us.</string>
+    <string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>
+    <string name="WelcomeBellTitle_Reentry">Welcome Back!</string>
+    <string name="WelcomeBellDesc_Reentry">Your space is ready.</string>
+    <string name="ExitDialogTitle">Are you sure you want to leave?</string>
+    <string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>
+    <string name="TajgramBellCurrencyTitle">Live Currency Rates</string>
+    <string name="TajgramBellCurrencyStatus">Updating rates online...</string>
+    <string name="VipSettingsMenuTitle">Tajgram Settings</string>
+    <string name="SecretSupportButtonLabel">Tajgram Secret Support</string>
+    <string name="AskAQuestion">Technical Support</string>
+    <string name="AskAQuestion_Owner">Contact Owner (Complaints)</string>
+    <string name="TajgramFolkModeSwitch">Folk Mode (Funny)</string>
+    <string name="TajgramFolkModeDesc">Switch menus to funny local dialect</string>
+    <string name="Folk_Settings">App Repair</string>
+    <string name="Folk_Security">Anti-Spy</string>
+    <string name="Folk_InviteFriends">Gather the Lads</string>
     <string name="AppName">Tajgram</string>
     <string name="AppNameBeta">Tajgram Beta</string>
     <string name="LanguageName">Italiano</string>
@@ -308,7 +333,6 @@
     <string name="ResetCustomNotificationsAlertTitle">Ripristina notifiche</string>
     <string name="ResetCustomNotificationsAlert">Vuoi davvero ripristinare le impostazioni di notifica sui valori predefiniti?</string>
     <string name="TextSizeHeader">Dimensione testo messaggio</string>
-    <string name="AskAQuestion">Fai una domanda</string>
     <string name="AddAnExplanation">Aggiungi una spiegazione</string>
     <string name="AddAnExplanationInfo">Gli utenti vedranno questo testo dopo aver scelto l\'opzione sbagliata, utile per scopi didattici.</string>
     <string name="EnableAnimations">Attiva animazioni</string>
@@ -437,7 +461,6 @@
     <string name="LanguageUnsupportedError">Lingua non trovata.</string>
     <string name="LanguageSame">Stai già usando questa lingua (**%1$s**). Puoi cambiare la tua lingua in qualsiasi momento nelle Impostazioni.</string>
     <string name="LanguageUnknownCustomAlert">Sfortunatamente, questa lingua personalizzata (**%1$s**) non contiene dati per Tajgram Android.</string>
-    <string name="AskAQuestionInfo">Per favore ricorda che il supporto di Tajgram è gestito da volontari. Proviamo a rispondere quanto prima, ma potrebbe volerci del tempo.\n\nDai un\'occhiata alle <![CDATA[<a href=\"https://Tajgram.org/faq/it#domande-generali\">FAQ di Tajgram</a>]]>: contengono risposte a quasi tutte le domande e suggerimenti importanti per <![CDATA[<a href=\"https://Tajgram.org/faq/it#risoluzione-dei-problemi\">risolvere i problemi</a>]]>.</string>
     <string name="AskButton">Chiedi ai volontari</string>
     <string name="TajgramFAQ">FAQ Tajgram</string>
     <string name="TajgramFaq">FAQ Tajgram</string>

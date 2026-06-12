@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="VipSettingsTitle">Tajgram VIP Settings</string>
+    <string name="VipSupportBot">Tajgram Direct Support</string>
+    <string name="LikeButton">👍 Like</string>
+    <string name="DislikeButton">👎 Dislike</string>
+    <string name="VoiceSelection">Select Voice Style 🔊</string>
+    <string name="VoiceIcon_Girl">👩 Girl Voice</string>
+    <string name="VoiceIcon_Boy">👨 Boy Voice</string>
     <string name="WelcomeBellTitle">Welcome to Tajgram!</string>
-    <string name="WelcomeBellDesc">Thank you for choosing us. We are glad to have you here!</string>
-    <string name="WelcomeChannelSuggest">Please subscribe to our official channel.</string>
+    <string name="WelcomeBellDesc">Thank you for choosing us.</string>
+    <string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>
+    <string name="WelcomeBellTitle_Reentry">Welcome Back!</string>
+    <string name="WelcomeBellDesc_Reentry">Your space is ready.</string>
+    <string name="ExitDialogTitle">Are you sure you want to leave?</string>
+    <string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>
+    <string name="TajgramBellCurrencyTitle">Live Currency Rates</string>
+    <string name="TajgramBellCurrencyStatus">Updating rates online...</string>
+    <string name="VipSettingsMenuTitle">Tajgram Settings</string>
+    <string name="SecretSupportButtonLabel">Tajgram Secret Support</string>
+    <string name="AskAQuestion">Technical Support</string>
+    <string name="AskAQuestion_Owner">Contact Owner (Complaints)</string>
+    <string name="TajgramFolkModeSwitch">Folk Mode (Funny)</string>
+    <string name="TajgramFolkModeDesc">Switch menus to funny local dialect</string>
+    <string name="Folk_Settings">App Repair</string>
+    <string name="Folk_Security">Anti-Spy</string>
+    <string name="Folk_InviteFriends">Gather the Lads</string>
     <string name="AppName">Tajgram</string>
     <string name="AppNameBeta">Tajgram Beta</string>
     <string name="LanguageName">English</string>
@@ -2329,7 +2351,6 @@
     <string name="ResetCustomNotificationsAlertTitle">Reset notifications</string>
     <string name="ResetCustomNotificationsAlert">Are you sure you want to reset notification settings to default?</string>
     <string name="TextSizeHeader">Message text size</string>
-    <string name="AskAQuestion">Ask a Question</string>
     <string name="QuizExplanationTitle">Explanation</string>
     <string name="AddAnExplanationHeader">Explanation</string>
     <string name="AddAnExplanation">Add an explanation</string>
@@ -2463,7 +2484,6 @@
     <string name="LanguageUnsupportedError">There is no such language.</string>
     <string name="LanguageSame">You are already using this language pack (**%1$s**). You can change your language at any time in Settings.</string>
     <string name="LanguageUnknownCustomAlert">Unfortunately, this custom language pack (**%1$s**) doesn\'t contain data for Tajgram Android.</string>
-    <string name="AskAQuestionInfo">Please note that Tajgram Support is done by volunteers. We try to respond as quickly as possible, but it may take a while.\n\nPlease take a look at the <![CDATA[<a href=\"https://Tajgram.org/faq#general-questions\">Tajgram FAQ</a>]]>: it has answers to most questions and important tips for <![CDATA[<a href=\"https://Tajgram.org/faq#troubleshooting\">troubleshooting</a>]]>.</string>
     <string name="AskButton">Ask a volunteer</string>
     <string name="TajgramFAQ">Tajgram FAQ</string>
     <string name="TajgramFaq">Tajgram FAQ</string>

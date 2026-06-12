@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="WelcomeBellTitle">Хуш омадед ба Tajgram!</string>
-    <string name="WelcomeBellDesc">Ташаккур барои интихоб кардани мо. Мо хурсандем, ки шумо дар ин ҷо ҳастед!</string>
-    <string name="WelcomeChannelSuggest">Лутфан ба канали расмии мо обуна шавед.</string>
+    <string name="VipSettingsTitle">Tajgram VIP Settings</string>
+    <string name="VipSupportBot">Tajgram Direct Support</string>
+    <string name="LikeButton">👍 Like</string>
+    <string name="DislikeButton">👎 Dislike</string>
+    <string name="VoiceSelection">Select Voice Style 🔊</string>
+    <string name="VoiceIcon_Girl">👩 Girl Voice</string>
+    <string name="VoiceIcon_Boy">👨 Boy Voice</string>
+    <string name="WelcomeBellTitle">Welcome to Tajgram!</string>
+    <string name="WelcomeBellDesc">Thank you for choosing us.</string>
+    <string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>
+    <string name="WelcomeBellTitle_Reentry">Welcome Back!</string>
+    <string name="WelcomeBellDesc_Reentry">Your space is ready.</string>
+    <string name="ExitDialogTitle">Are you sure you want to leave?</string>
+    <string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>
+    <string name="TajgramBellCurrencyTitle">Live Currency Rates</string>
+    <string name="TajgramBellCurrencyStatus">Updating rates online...</string>
+    <string name="VipSettingsMenuTitle">Tajgram Settings</string>
+    <string name="SecretSupportButtonLabel">Tajgram Secret Support</string>
+    <string name="AskAQuestion">Technical Support</string>
+    <string name="AskAQuestion_Owner">Contact Owner (Complaints)</string>
+    <string name="TajgramFolkModeSwitch">Folk Mode (Funny)</string>
+    <string name="TajgramFolkModeDesc">Switch menus to funny local dialect</string>
+    <string name="Folk_Settings">App Repair</string>
+    <string name="Folk_Security">Anti-Spy</string>
+    <string name="Folk_InviteFriends">Gather the Lads</string>
     <string name="AppName">Tajgram</string>
     <string name="AppNameBeta">Tajgram Beta</string>
     <string name="LanguageName">Тоҷикӣ</string>
@@ -2325,7 +2347,6 @@
     <string name="ResetCustomNotificationsAlertTitle">Огоҳиҳоро аз нав танзим кунед</string>
     <string name="ResetCustomNotificationsAlert">Танзимот</string>
     <string name="TextSizeHeader">Андозаи матни паём</string>
-    <string name="AskAQuestion">Савол диҳед</string>
     <string name="QuizExplanationTitle">Шарҳ</string>
     <string name="AddAnExplanationHeader">Шарҳ</string>
     <string name="AddAnExplanation">Илова кардани шарҳ</string>
@@ -2459,7 +2480,6 @@
     <string name="LanguageUnsupportedError">Чунин забон вуҷуд надорад.</string>
     <string name="LanguageSame">Танзимот</string>
     <string name="LanguageUnknownCustomAlert">Мутаассифона, ин бастаи забони фармоишӣ ( **%1$s** ) \\' маълумотро барои Tajgram Android дарбар намегирад.</string>
-    <string name="AskAQuestionInfo">Дастгирӣ</string>
     <string name="AskButton">Аз волонтёр пурсед</string>
     <string name="TajgramFAQ">Саволҳои FAQ Tajgram</string>
     <string name="TajgramFaq">Саволҳои FAQ Tajgram</string>
