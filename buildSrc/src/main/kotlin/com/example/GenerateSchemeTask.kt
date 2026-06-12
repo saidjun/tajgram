@@ -64,7 +64,7 @@ abstract class GenerateSchemeTask : DefaultTask() {
 
         val telegramClasses = TelegramCodeParser.parse(files)
         val tlSchemaFull = TlSchemaJsonParser.parse(resourcesDir, LAYER)
-        val tlSchemaFilter = tlSchemaFull.applyRules(RULES.rules)
+        val tlSchemaFilter = tlSchemaFull.applyRules(Rules.rules)
 
         val undefinedTelegramClasses = telegramClasses.groupedByConstructorAll.filterKeys {
             it !in tlSchemaFull.magicsAll
@@ -77,7 +77,7 @@ abstract class GenerateSchemeTask : DefaultTask() {
         val classesByUniqueIds = telegramClasses.groupedByConstructorUnique
         val schema = SchemeAllLayersParser.parseAllLayers(resourcesDir)
 
-        val dep = RULES.rules.databaseTypes
+        val dep = Rules.rules.databaseTypes
         val legacyConstrKeys = schema.schemes.map { s ->
             val types = dep
                 .mapNotNull { s.dependenciesTransitive[it] }
