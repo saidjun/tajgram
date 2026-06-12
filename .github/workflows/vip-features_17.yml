@@ -16,19 +16,18 @@ jobs:
 
       - name: Safe Injection of 50+ VIP Features
         run: |
-          # 1. ТАЪМИРИ build.gradle БЕ ХАТАР (Тозакунии танҳо қисми VIP)
+          # 1. ТАЪМИРИ build.gradle (Бо санҷиши ҳушманд)
           find . -type f -name "build.gradle" | while read -r gradle_file; do
-            # Агар конфигҳои кӯҳна бошанд, пок мекунем (эҳтиёткорона)
-            sed -i '/tajgram_key/d' "$gradle_file"
-            
-            # Агар 'buildFeatures' набошад, илова мекунем
-            if ! grep -q "buildFeatures" "$gradle_file"; then
+            if grep -q "tajgram_key" "$gradle_file"; then
+              echo "✅ Конфиги VIP дар $gradle_file аллакай мавҷуд аст. Тағйирот лозим нест."
+            else
+              echo "⚙️ Илова кардани конфиг ба $gradle_file..."
               sed -i '/android {/a \    buildFeatures { buildConfig true }\n    signingConfigs {\n        debug {\n            storePassword "android"\n            keyPassword "android"\n            keyAlias "tajgram_key"\n        }\n    }\n    buildTypes {\n        release {\n            signingConfig signingConfigs.debug\n        }\n    }' "$gradle_file"
             fi
           done
 
-          # 2. САБТИ VIP-СИСТЕМА (Худтозакунӣ ва Навсозӣ)
-          # Ин қисм ҳар дафъа local.properties-ро бо версияи охирин "нав" мекунад
+          # 2. САБТИ VIP-СИСТЕМА
+          echo "📝 Навсозии танзимоти local.properties..."
           cat <<EOF > local.properties
           THEMES_ENABLED=true
           SMART_NIGHT_MODE=true
@@ -48,11 +47,20 @@ jobs:
           MULTILANG_WELCOME_BELL=true
           AUTO_SUGGEST_OFFICIAL_CHANNEL=true
           EOF
+          echo "✅ Танзимот сабт шуд."
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "actions@github.com"
-          git add build.gradle local.properties
-          # Танҳо агар тағйирот бошад, сабт мекунем
-          git diff-index --quiet HEAD || (git commit -m "VIP Update: Features and Configs updated safely" && git push)
+          # -f истифода бурдем, то хатогиҳои .gitignore набароянд
+          git add -f build.gradle local.properties
+          
+          # Санҷиш: оё тағйирот ҳаст ё не?
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "ℹ️ Ҳеҷ тағйироти нав нест. Action бомуваффақият анҷом ёфт."
+          else
+            git commit -m "VIP Update: Features and Configs updated safely"
+            git push
+            echo "🚀 Тағйирот ба GitHub фиристода шуд!"
+          fi
