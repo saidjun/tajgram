@@ -34,7 +34,7 @@ jobs:
               <string name="VipSettingsMenuTitle">Танзимоти Tajgram</string>
               <string name="SecretSupportButtonLabel">Дастгирии махфӣ</string>
               <string name="AskAQuestion">Дастгирии техникӣ</string>
-              <string name="AskAQuestion_Owner">Тамос бо соҳиб</string>
+              <string name="AskAQuestion_Owner">Тамос bo соҳиб</string>
               <string name="TajgramFolkModeSwitch">Ҳолати мардумӣ</string>
               <string name="TajgramFolkModeDesc">Иваз кардани услуби сухан</string>
               <string name="Folk_Settings">Таъмири барнома</string>
@@ -83,7 +83,7 @@ jobs:
               <string name="ExitDialogDesc">نحن بانتظار عودتك! ✨</string>
               <string name="TajgramBellCurrencyTitle">أسعار العملات</string>
               <string name="TajgramBellCurrencyStatus">جارٍ التحديث...</string>
-              <string name="VipSettingsMenuTitle">إعدادات تاج·گرام</string>
+              <string name="VipSettingsMenuTitle">إعدادات  تاج·گرام</string>
               <string name="SecretSupportButtonLabel">دعم سري</string>
               <string name="AskAQuestion">الدعم الفني</string>
               <string name="AskAQuestion_Owner">اتصل بالمالك</string>
@@ -145,42 +145,45 @@ jobs:
               <string name="Folk_Security">Anti-Spy</string>
               <string name="Folk_InviteFriends">Invite Friends</string>'
 
-          # Сохтани файлҳои техникӣ аз тағйирёбандаҳо
           echo "$TG_DATA" > tg.xml
           echo "$FA_DATA" > fa.xml
           echo "$AR_DATA" > ar.xml
           echo "$RU_DATA" > ru.xml
           echo "$EN_DATA" > en.xml
 
-          # 2. Формулаи калидӣ: Рӯйхати умумии ID-ҳо барои тозакунии фаврӣ ва 100% боэътимод (аз ҷумла onboarding-ҳо)
-          DEL_REGEX="name=\"(onboarding_title_1|onboarding_desc_1|onboarding_title_2|onboarding_desc_2|onboarding_title_3|onboarding_desc_3|onboarding_title_4|onboarding_desc_4|onboarding_title_5|onboarding_desc_5|WelcomeBellTitle|WelcomeBellDesc|WelcomeChannelSuggest|WelcomeBellTitle_Reentry|WelcomeBellDesc_Reentry|ExitDialogTitle|ExitDialogDesc|TajgramBellCurrencyTitle|TajgramBellCurrencyStatus|VipSettingsMenuTitle|SecretSupportButtonLabel|AskAQuestion|AskAQuestion_Owner|TajgramFolkModeSwitch|TajgramFolkModeDesc|Folk_Settings|Folk_Security|Folk_InviteFriends|VipSettingsTitle|VipSupportBot|LikeButton|DislikeButton|VoiceSelection|VoiceIcon_Girl|VoiceIcon_Boy)\""
+          # 2. Тоза кардани дупликатҳои зангула (БЕ РАСИДАН БА ONBOARDING КӮҲНА)
+          DEL_REGEX="name=\"(WelcomeBellTitle|WelcomeBellDesc|WelcomeChannelSuggest|WelcomeBellTitle_Reentry|WelcomeBellDesc_Reentry|ExitDialogTitle|ExitDialogDesc|TajgramBellCurrencyTitle|TajgramBellCurrencyStatus|VipSettingsMenuTitle|SecretSupportButtonLabel|AskAQuestion|AskAQuestion_Owner|TajgramFolkModeSwitch|TajgramFolkModeDesc|Folk_Settings|Folk_Security|Folk_InviteFriends|VipSettingsTitle|VipSupportBot|LikeButton|DislikeButton|VoiceSelection|VoiceIcon_Girl|VoiceIcon_Boy)\""
 
-          # 3. Коркарди фаврӣ ва сӯзандору мувофиқи минтақаҳои ҷаҳон
           find . -type f -name "strings.xml" | grep "values" | while read -r file; do
             lang=$(basename "$(dirname "$file")")
             
             echo "Strictly Processing: $file"
             
-            # Фармони асосӣ: Тоза кардани ҳамаи унсурҳои кӯҳна ва onboarding-ҳо бо як проход
+            # Тоза кардани танҳо калидҳои сохташуда аз тамоми файл
             sed -i -E "/$DEL_REGEX/d" "$file"
             
-            # Ҷойгиркунии Оқилона: Барои 5 забони асосӣ ва тақсимоти СССР/Европа
+            # Интихоби файли тарҷума вобаста ба папка
+            TARGET_INJECT="en.xml"
             if [ "$lang" = "values-tg" ]; then
-              sed -i "/<resources>/r tg.xml" "$file"
+              TARGET_INJECT="tg.xml"
             elif [ "$lang" = "values-fa" ]; then
-              sed -i "/<resources>/r fa.xml" "$file"
+              TARGET_INJECT="fa.xml"
             elif [ "$lang" = "values-ar" ]; then
-              sed -i "/<resources>/r ar.xml" "$file"
+              TARGET_INJECT="ar.xml"
             elif [[ "$lang" =~ ^values-(ru|uk|be|kk|uz|az|hy|ky|tk|mo)$ ]]; then
-              # Минтақаи ССР (ИДМ): Тарҷумаи русиро мегиранд, то холӣ намонанд
-              sed -i "/<resources>/r ru.xml" "$file"
-            else
-              # Тарафи ЕВРО ва боқимондаи ҷаҳон (аз ҷумла папкаи асосии values): Тарҷумаи англисиро мегиранд
-              sed -i "/<resources>/r en.xml" "$file"
+              TARGET_INJECT="ru.xml"
             fi
+            
+            # 3. СӮЗАНДОРУИ БЕХАТАР ДАР ОХИРИ ФАЙЛ (ПЕШ АЗ </resources>) БО АВТОМАТИКАИ AWK
+            awk '
+              NR==FNR { inject_content = inject_content $0 "\n"; next }
+              /<\/resources>/ { printf "%s%s\n", inject_content, $0; found=1; next }
+              { print }
+              END { if (!found) print "</resources>" }
+            ' "$TARGET_INJECT" "$file" > temp.xml && mv temp.xml "$file"
+
           done
 
-          # Нест кардани файлҳои вақтии сохташуда
           rm -f tg.xml fa.xml ar.xml ru.xml en.xml
 
       - name: Commit and Push changes
@@ -188,4 +191,4 @@ jobs:
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "actions@github.com"
           git add .
-          git diff-index --quiet HEAD || (git commit -m "Engine: High Performance Cleanup & Fixed Bell Globally" && git push origin master)
+          git diff-index --quiet HEAD || (git commit -m "Engine: High Performance Bottom Cleanup & Fixed Bell Globally" && git push origin master)
