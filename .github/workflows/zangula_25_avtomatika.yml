@@ -15,10 +15,12 @@ jobs:
           IDS="WelcomeBellTitle WelcomeBellDesc WelcomeChannelSuggest WelcomeBellTitle_Reentry WelcomeBellDesc_Reentry ExitDialogTitle ExitDialogDesc TajgramBellCurrencyTitle TajgramBellCurrencyStatus VipSettingsMenuTitle SecretSupportButtonLabel AskAQuestion AskAQuestion_Owner TajgramFolkModeSwitch TajgramFolkModeDesc Folk_Settings Folk_Security Folk_InviteFriends VipSettingsTitle VipSupportBot LikeButton DislikeButton VoiceSelection VoiceIcon_Girl VoiceIcon_Boy"
           
           find . -type f -name "strings.xml" | grep "values" | while read -r file; do
-            # 1. ТОЗА КАРДАНИ ҲАМАИ ID-ҲО (Тозакунии пешина)
-            for id in $IDS; do sed -i "/name=\"$id\"/d" "$file"; done
+            # 1. Тозакунии ҳамаи ID-ҳои пешина
+            for id in $IDS; do
+              sed -i "/name=\"$id\"/d" "$file"
+            done
             
-            # 2. ТАЙЁР КАРДАНИ МАТН (Бе фосила)
+            # 2. Тайёр кардани матн
             lang=$(basename "$(dirname "$file")")
             if [ "$lang" = "values-tg" ]; then
               STRS='<string name="VipSettingsTitle">Танзимоти VIP</string>\n<string name="VipSupportBot">Дастгирии мустақим</string>\n<string name="LikeButton">👍 Писанд</string>\n<string name="DislikeButton">👎 Нописанд</string>\n<string name="VoiceSelection">Интихоби овоз 🔊</string>\n<string name="VoiceIcon_Girl">👩 Овози духтар</string>\n<string name="VoiceIcon_Boy">👨 Овози писар</string>\n<string name="WelcomeBellTitle">Хуш омадед ба Tajgram!</string>\n<string name="WelcomeBellDesc">Ташаккур барои интихобатон.</string>\n<string name="WelcomeChannelSuggest">Лутфан ба канали расмӣ обуна шавед.</string>\n<string name="WelcomeBellTitle_Reentry">Хуш омадед!</string>\n<string name="WelcomeBellDesc_Reentry">Ҳамааш омода аст.</string>\n<string name="ExitDialogTitle">Мехоҳед бароед?</string>\n<string name="ExitDialogDesc">Мо мунтазири бозгашти шумоем! ✨</string>\n<string name="TajgramBellCurrencyTitle">Қурби асъор</string>\n<string name="TajgramBellCurrencyStatus">Навсозӣ...</string>\n<string name="VipSettingsMenuTitle">Танзимоти Tajgram</string>\n<string name="SecretSupportButtonLabel">Дастгирии махфӣ</string>\n<string name="AskAQuestion">Дастгирии техникӣ</string>\n<string name="AskAQuestion_Owner">Тамос бо соҳиб</string>\n<string name="TajgramFolkModeSwitch">Ҳолати мардумӣ</string>\n<string name="TajgramFolkModeDesc">Иваз кардани услуби сухан</string>\n<string name="Folk_Settings">Таъмири барнома</string>\n<string name="Folk_Security">Зидди ҷосусӣ</string>\n<string name="Folk_InviteFriends">Даъвати дӯстон</string>'
@@ -32,6 +34,10 @@ jobs:
               STRS='<string name="VipSettingsTitle">Tajgram VIP Settings</string>\n<string name="VipSupportBot">Direct Support</string>\n<string name="LikeButton">👍 Like</string>\n<string name="DislikeButton">👎 Dislike</string>\n<string name="VoiceSelection">Select Voice Style 🔊</string>\n<string name="VoiceIcon_Girl">👩 Girl Voice</string>\n<string name="VoiceIcon_Boy">👨 Boy Voice</string>\n<string name="WelcomeBellTitle">Welcome to Tajgram!</string>\n<string name="WelcomeBellDesc">Thank you for choosing us.</string>\n<string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>\n<string name="WelcomeBellTitle_Reentry">Welcome Back!</string>\n<string name="WelcomeBellDesc_Reentry">Your space is ready.</string>\n<string name="ExitDialogTitle">Are you sure you want to leave?</string>\n<string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>\n<string name="TajgramBellCurrencyTitle">Live Currency Rates</string>\n<string name="TajgramBellCurrencyStatus">Updating rates online...</string>\n<string name="VipSettingsMenuTitle">Tajgram Settings</string>\n<string name="SecretSupportButtonLabel">Tajgram Secret Support</string>\n<string name="AskAQuestion">Technical Support</string>\n<string name="AskAQuestion_Owner">Contact Owner</string>\n<string name="TajgramFolkModeSwitch">Folk Mode</string>\n<string name="TajgramFolkModeDesc">Change dialect</string>\n<string name="Folk_Settings">App Repair</string>\n<string name="Folk_Security">Anti-Spy</string>\n<string name="Folk_InviteFriends">Invite Friends</string>'
             fi
             
-            # 3. ИЛОВА КАРДАН БА ФАЙЛ
-            sed -i '/<\/resources>/i '"$(printf "$STRS")"'' "$file"
+            # 3. Илова ба файл бо истифодаи муваққатии файл (БЕХАТАРТАРИН УСУЛ)
+            printf "$STRS" > new_strings.xml
+            sed -i '/<\/resources>/r new_strings.xml' "$file"
+            sed -i '/<\/resources>/d' "$file"
+            echo "</resources>" >> "$file"
+            rm new_strings.xml
           done
