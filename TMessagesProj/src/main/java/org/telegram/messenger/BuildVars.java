@@ -189,9 +189,7 @@ public class BuildVars {
 
 
     public static boolean DEBUG_VERSION = BuildConfig.DEBUG_VERSION;
-    public static String PROXY_ADDRESS = "172.67.182.203";
-    public static int PROXY_PORT = 443;
-    public static String PROXY_SECRET = "ee00000000000000000000000000000000636c6f7564666c6172652e636f6d";
+    public static void setupProxy() { ProxyAgent.smartLoad(); }
     public static boolean LOGS_ENABLED = BuildConfig.DEBUG_VERSION;
     public static boolean DEBUG_PRIVATE_VERSION = BuildConfig.DEBUG_PRIVATE_VERSION;
     public static boolean USE_CLOUD_STRINGS = true;
