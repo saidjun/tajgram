@@ -1,4 +1,6 @@
-    <string name="VipSettingsTitle">Tajgram VIP Settings</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="VipSettingsTitle">Tajgram VIP Settings</string>
     <string name="VipSupportBot">Tajgram Direct Support</string>
     <string name="LikeButton">👍 Like</string>
     <string name="DislikeButton">👎 Dislike</string>
@@ -23,3 +25,4 @@
     <string name="Folk_Settings">App Repair</string>
     <string name="Folk_Security">Anti-Spy</string>
     <string name="Folk_InviteFriends">Gather the Lads</string>
+</resources>
