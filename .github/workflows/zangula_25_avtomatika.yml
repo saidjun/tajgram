@@ -7,44 +7,185 @@ jobs:
   inject-features:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Иҷозат барои Push кардан
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Inject Full Features
+      - name: Inject Bell Features Only
         run: |
-          IDS="WelcomeBellTitle WelcomeBellDesc WelcomeChannelSuggest WelcomeBellTitle_Reentry WelcomeBellDesc_Reentry ExitDialogTitle ExitDialogDesc TajgramBellCurrencyTitle TajgramBellCurrencyStatus VipSettingsMenuTitle SecretSupportButtonLabel AskAQuestion AskAQuestion_Owner TajgramFolkModeSwitch TajgramFolkModeDesc Folk_Settings Folk_Security Folk_InviteFriends VipSettingsTitle VipSupportBot LikeButton DislikeButton VoiceSelection VoiceIcon_Girl VoiceIcon_Boy"
-          
+          # 1. Сабти матнҳои зангула ва VIP дар тағйирёбандаҳо (КОМИЛАН БЕ EOF)
+          TG_DATA='    <string name="VipSettingsTitle">Танзимоти VIP</string>
+              <string name="VipSupportBot">Дастгирии мустақим</string>
+              <string name="LikeButton">👍 Писанд</string>
+              <string name="DislikeButton">👎 Нописанд</string>
+              <string name="VoiceSelection">Интихоби овоз 🔊</string>
+              <string name="VoiceIcon_Girl">👩 Овози духтар</string>
+              <string name="VoiceIcon_Boy">👨 Овози писар</string>
+              <string name="WelcomeBellTitle">Хуш омадед ба Tajgram!</string>
+              <string name="WelcomeBellDesc">Ташаккур барои интихобатон.</string>
+              <string name="WelcomeChannelSuggest">Лутфан ба канали расмӣ обуна шавед.</string>
+              <string name="WelcomeBellTitle_Reentry">Хуш омадед!</string>
+              <string name="WelcomeBellDesc_Reentry">Ҳамааш омода аст.</string>
+              <string name="ExitDialogTitle">Мехоҳед бароед?</string>
+              <string name="ExitDialogDesc">Мо мунтазири бозгашти шумоем! ✨</string>
+              <string name="TajgramBellCurrencyTitle">Қурби асъор</string>
+              <string name="TajgramBellCurrencyStatus">Навсозӣ...</string>
+              <string name="VipSettingsMenuTitle">Танзимоти Tajgram</string>
+              <string name="SecretSupportButtonLabel">Дастгирии махфӣ</string>
+              <string name="AskAQuestion">Дастгирии техникӣ</string>
+              <string name="AskAQuestion_Owner">Тамос бо соҳиб</string>
+              <string name="TajgramFolkModeSwitch">Ҳолати мардумӣ</string>
+              <string name="TajgramFolkModeDesc">Иваз кардани услуби сухан</string>
+              <string name="Folk_Settings">Таъмири барнома</string>
+              <string name="Folk_Security">Зидди ҷосусӣ</string>
+              <string name="Folk_InviteFriends">Даъвати дӯстон</string>'
+
+          FA_DATA='    <string name="VipSettingsTitle">تنظیمات VIP</string>
+              <string name="VipSupportBot">پشتیبانی مستقیم</string>
+              <string name="LikeButton">👍 لایک</string>
+              <string name="DislikeButton">👎 دیسلایک</string>
+              <string name="VoiceSelection">انتخاب صدا 🔊</string>
+              <string name="VoiceIcon_Girl">👩 صدای دختر</string>
+              <string name="VoiceIcon_Boy">👨 صدای پسر</string>
+              <string name="WelcomeBellTitle">به تاج‌گرام خوش آمدید!</string>
+              <string name="WelcomeBellDesc">از انتخاب شما سپاسگزاریم.</string>
+              <string name="WelcomeChannelSuggest">لطفاً در کانال رسمی عضو شوید.</string>
+              <string name="WelcomeBellTitle_Reentry">خوش آمدید!</string>
+              <string name="WelcomeBellDesc_Reentry">همه چیز آماده است.</string>
+              <string name="ExitDialogTitle">آیا می‌خواهید خارج شوید؟</string>
+              <string name="ExitDialogDesc">منتظر بازگشت شما هستیم! ✨</string>
+              <string name="TajgramBellCurrencyTitle">نرخ ارز</string>
+              <string name="TajgramBellCurrencyStatus">در حال بروزرسانی...</string>
+              <string name="VipSettingsMenuTitle">تنظیمات تاج‌گرام</string>
+              <string name="SecretSupportButtonLabel">پشتیبانی مخفی</string>
+              <string name="AskAQuestion">پشتیبانی فنی</string>
+              <string name="AskAQuestion_Owner">تماس با مالک</string>
+              <string name="TajgramFolkModeSwitch">حالت محلی</string>
+              <string name="TajgramFolkModeDesc">تغيير سبک گفتار</string>
+              <string name="Folk_Settings">تعمیر برنامه</string>
+              <string name="Folk_Security">ضد جاسوسی</string>
+              <string name="Folk_InviteFriends">دعوت از دوستان</string>'
+
+          AR_DATA='    <string name="VipSettingsTitle">إعدادات VIP</string>
+              <string name="VipSupportBot">دعم مباشر</string>
+              <string name="LikeButton">👍 إعجاب</string>
+              <string name="DislikeButton">👎 غير معجب</string>
+              <string name="VoiceSelection">اختيار الصوت 🔊</string>
+              <string name="VoiceIcon_Girl">👩 صوت فتاة</string>
+              <string name="VoiceIcon_Boy">👨 صوت ولد</string>
+              <string name="WelcomeBellTitle">مرحباً بك في تاج·گرام!</string>
+              <string name="WelcomeBellDesc">شكراً لاختيارك لنا.</string>
+              <string name="WelcomeChannelSuggest">يرجى الاشتراك في القناة الرسمية.</string>
+              <string name="WelcomeBellTitle_Reentry">أهلاً بعودتك!</string>
+              <string name="WelcomeBellDesc_Reentry">كل شيء جاهز.</string>
+              <string name="ExitDialogTitle">هل تريد الخروج؟</string>
+              <string name="ExitDialogDesc">نحن بانتظار عودتك! ✨</string>
+              <string name="TajgramBellCurrencyTitle">أسعار العملات</string>
+              <string name="TajgramBellCurrencyStatus">جارٍ التحديث...</string>
+              <string name="VipSettingsMenuTitle">إعدادات تاج·گرام</string>
+              <string name="SecretSupportButtonLabel">دعم سري</string>
+              <string name="AskAQuestion">الدعم الفني</string>
+              <string name="AskAQuestion_Owner">اتصل بالمالك</string>
+              <string name="TajgramFolkModeSwitch">الوضع الشعبي</string>
+              <string name="TajgramFolkModeDesc">تغيير نمط الكلام</string>
+              <string name="Folk_Settings">إصلاح التطبيق</string>
+              <string name="Folk_Security">مضاد التجسس</string>
+              <string name="Folk_InviteFriends">دعوة الأصدقاء</string>'
+
+          RU_DATA='    <string name="VipSettingsTitle">VIP настройки</string>
+              <string name="VipSupportBot">Прямая поддержка</string>
+              <string name="LikeButton">👍 Нравится</string>
+              <string name="DislikeButton">👎 Не нравится</string>
+              <string name="VoiceSelection">Выбор голоса 🔊</string>
+              <string name="VoiceIcon_Girl">👩 Голос девушки</string>
+              <string name="VoiceIcon_Boy">👨 Голос парня</string>
+              <string name="WelcomeBellTitle">Добро пожаловать!</string>
+              <string name="WelcomeBellDesc">Спасибо что выбрали нас.</string>
+              <string name="WelcomeChannelSuggest">Пожалуйста, подпишитесь на канал.</string>
+              <string name="WelcomeBellTitle_Reentry">С возвращением!</string>
+              <string name="WelcomeBellDesc_Reentry">Ваше место готово.</string>
+              <string name="ExitDialogTitle">Вы уверены?</string>
+              <string name="ExitDialogDesc">Ждем вашего возвращения! ✨</string>
+              <string name="TajgramBellCurrencyTitle">Курс валют</string>
+              <string name="TajgramBellCurrencyStatus">Обновление...</string>
+              <string name="VipSettingsMenuTitle">Настройки Tajgram</string>
+              <string name="SecretSupportButtonLabel">Секретная поддержка</string>
+              <string name="AskAQuestion">Техподдержка</string>
+              <string name="AskAQuestion_Owner">Связаться с владельцем</string>
+              <string name="TajgramFolkModeSwitch">Народный режим</string>
+              <string name="TajgramFolkModeDesc">Смена стиля общения</string>
+              <string name="Folk_Settings">Починка приложения</string>
+              <string name="Folk_Security">Анти-шпион</string>
+              <string name="Folk_InviteFriends">Пригласить друзей</string>'
+
+          EN_DATA='    <string name="VipSettingsTitle">Tajgram VIP Settings</string>
+              <string name="VipSupportBot">Direct Support</string>
+              <string name="LikeButton">👍 Like</string>
+              <string name="DislikeButton">👎 Dislike</string>
+              <string name="VoiceSelection">Select Voice Style 🔊</string>
+              <string name="VoiceIcon_Girl">👩 Girl Voice</string>
+              <string name="VoiceIcon_Boy">👨 Boy Voice</string>
+              <string name="WelcomeBellTitle">Welcome to Tajgram!</string>
+              <string name="WelcomeBellDesc">Thank you for choosing us.</string>
+              <string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>
+              <string name="WelcomeBellTitle_Reentry">Welcome Back!</string>
+              <string name="WelcomeBellDesc_Reentry">Your space is ready.</string>
+              <string name="ExitDialogTitle">Are you sure you want to leave?</string>
+              <string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>
+              <string name="TajgramBellCurrencyTitle">Live Currency Rates</string>
+              <string name="TajgramBellCurrencyStatus">Updating rates online...</string>
+              <string name="VipSettingsMenuTitle">Tajgram Settings</string>
+              <string name="SecretSupportButtonLabel">Tajgram Secret Support</string>
+              <string name="AskAQuestion">Technical Support</string>
+              <string name="AskAQuestion_Owner">Contact Owner</string>
+              <string name="TajgramFolkModeSwitch">Folk Mode</string>
+              <string name="TajgramFolkModeDesc">Change dialect</string>
+              <string name="Folk_Settings">App Repair</string>
+              <string name="Folk_Security">Anti-Spy</string>
+              <string name="Folk_InviteFriends">Invite Friends</string>'
+
+          # Сохтани файлҳои техникӣ аз тағйирёбандаҳо
+          echo "$TG_DATA" > tg.xml
+          echo "$FA_DATA" > fa.xml
+          echo "$AR_DATA" > ar.xml
+          echo "$RU_DATA" > ru.xml
+          echo "$EN_DATA" > en.xml
+
+          # 2. Формулаи калидӣ: Рӯйхати умумии ID-ҳо барои тозакунии фаврӣ ва 100% боэътимод (аз ҷумла onboarding-ҳо)
+          DEL_REGEX="name=\"(onboarding_title_1|onboarding_desc_1|onboarding_title_2|onboarding_desc_2|onboarding_title_3|onboarding_desc_3|onboarding_title_4|onboarding_desc_4|onboarding_title_5|onboarding_desc_5|WelcomeBellTitle|WelcomeBellDesc|WelcomeChannelSuggest|WelcomeBellTitle_Reentry|WelcomeBellDesc_Reentry|ExitDialogTitle|ExitDialogDesc|TajgramBellCurrencyTitle|TajgramBellCurrencyStatus|VipSettingsMenuTitle|SecretSupportButtonLabel|AskAQuestion|AskAQuestion_Owner|TajgramFolkModeSwitch|TajgramFolkModeDesc|Folk_Settings|Folk_Security|Folk_InviteFriends|VipSettingsTitle|VipSupportBot|LikeButton|DislikeButton|VoiceSelection|VoiceIcon_Girl|VoiceIcon_Boy)\""
+
+          # 3. Коркарди фаврӣ ва сӯзандору мувофиқи минтақаҳои ҷаҳон
           find . -type f -name "strings.xml" | grep "values" | while read -r file; do
-            echo "Processing: $file"
-            
-            # 1. Муҳофизат аз дубликат (ID-ҳои кӯҳнаро аз дилхоҳ ҷои файл тоза мекунад)
-            for id in $IDS; do
-              sed -i "/name=\"$id\"/d" "$file"
-            done
-            
-            # 2. Интихоби матни тарҷума ва Сортировкаи Саюзҳо
             lang=$(basename "$(dirname "$file")")
-            if [ "$lang" = "values-tg" ]; then
-              STRS='<string name="VipSettingsTitle">Танзимоти VIP</string>\n<string name="VipSupportBot">Дастгирии мустақим</string>\n<string name="LikeButton">👍 Писанд</string>\n<string name="DislikeButton">👎 Нописанд</string>\n<string name="VoiceSelection">Интихоби овоз 🔊</string>\n<string name="VoiceIcon_Girl">👩 Овози духтар</string>\n<string name="VoiceIcon_Boy">👨 Овози писар</string>\n<string name="WelcomeBellTitle">Хуш омадед ба Tajgram!</string>\n<string name="WelcomeBellDesc">Ташаккур барои интихобатон.</string>\n<string name="WelcomeChannelSuggest">Лутфан ба канали расмӣ обуна шавед.</string>\n<string name="WelcomeBellTitle_Reentry">Хуш омадед!</string>\n<string name="WelcomeBellDesc_Reentry">Ҳамааш омода аст.</string>\n<string name="ExitDialogTitle">Мехоҳед бароед?</string>\n<string name="ExitDialogDesc">Мо мунтазири бозгашти шумоем! ✨</string>\n<string name="TajgramBellCurrencyTitle">Қурби асъор</string>\n<string name="TajgramBellCurrencyStatus">Навсозӣ...</string>\n<string name="VipSettingsMenuTitle">Танзимоти Tajgram</string>\n<string name="SecretSupportButtonLabel">Дастгирии махфӣ</string>\n<string name="AskAQuestion">Дастгирии техникӣ</string>\n<string name="AskAQuestion_Owner">Тамос бо соҳиб</string>\n<string name="TajgramFolkModeSwitch">Ҳолати мардумӣ</string>\n<string name="TajgramFolkModeDesc">Иваз кардани услуби сухан</string>\n<string name="Folk_Settings">Таъмири барнома</string>\n<string name="Folk_Security">Зидди ҷосусӣ</string>\n<string name="Folk_InviteFriends">Даъвати дӯстон</string>'
-            elif [ "$lang" = "values-fa" ]; then
-              STRS='<string name="VipSettingsTitle">تنظیمات VIP</string>\n<string name="VipSupportBot">پشتیبانی مستقیم</string>\n<string name="LikeButton">👍 لایک</string>\n<string name="DislikeButton">👎 دیسلایک</string>\n<string name="VoiceSelection">انتخاب صدا 🔊</string>\n<string name="VoiceIcon_Girl">👩 صدای دختر</string>\n<string name="VoiceIcon_Boy">👨 صدای پسر</string>\n<string name="WelcomeBellTitle">به تاج‌گرام خوش آمدید!</string>\n<string name="WelcomeBellDesc">از انتخاب شما سپاسگزاریم.</string>\n<string name="WelcomeChannelSuggest">لطفاً در کانال رسمی عضو شوید.</string>\n<string name="WelcomeBellTitle_Reentry">خوش آمدید!</string>\n<string name="WelcomeBellDesc_Reentry">همه چیز آماده است.</string>\n<string name="ExitDialogTitle">آیا می‌خواهید خارج شوید؟</string>\n<string name="ExitDialogDesc">منتظر بازگشت شما هستیم! ✨</string>\n<string name="TajgramBellCurrencyTitle">نرخ ارز</string>\n<string name="TajgramBellCurrencyStatus">در حال بروزرسانی...</string>\n<string name="VipSettingsMenuTitle">تنظیمات تاج‌گرام</string>\n<string name="SecretSupportButtonLabel">پشتیبانی مخفی</string>\n<string name="AskAQuestion">پشتیبانی فنی</string>\n<string name="AskAQuestion_Owner">تماس با مالک</string>\n<string name="TajgramFolkModeSwitch">حالت محلی</string>\n<string name="TajgramFolkModeDesc">تغییر سبک گفتار</string>\n<string name="Folk_Settings">تعمیر برنامه</string>\n<string name="Folk_Security">ضد جاسوسی</string>\n<string name="Folk_InviteFriends">دعوت از دوستان</string>'
-            elif [ "$lang" = "values-ar" ]; then
-              STRS='<string name="VipSettingsTitle">إعدادات VIP</string>\n<string name="VipSupportBot">دعم مباشر</string>\n<string name="LikeButton">👍 إعجاب</string>\n<string name="DislikeButton">👎 غير معجب</string>\n<string name="VoiceSelection">اختيار الصوت 🔊</string>\n<string name="VoiceIcon_Girl">👩 صوت فتاة</string>\n<string name="VoiceIcon_Boy">👨 صوت ولد</string>\n<string name="WelcomeBellTitle">مرحباً بك في تاج·گرام!</string>\n<string name="WelcomeBellDesc">شكراً لاختيارك لنا.</string>\n<string name="WelcomeChannelSuggest">يرجى الاشتراك في القناة الرسمية.</string>\n<string name="WelcomeBellTitle_Reentry">أهلاً بعودتك!</string>\n<string name="WelcomeBellDesc_Reentry">كل شيء جاهز.</string>\n<string name="ExitDialogTitle">هل تريد الخروج؟</string>\n<string name="ExitDialogDesc">نحن بانتظار عودتك! ✨</string>\n<string name="TajgramBellCurrencyTitle">أسعار العملات</string>\n<string name="TajgramBellCurrencyStatus">جارٍ التحديث...</string>\n<string name="VipSettingsMenuTitle">إعدادات تاج·گرام</string>\n<string name="SecretSupportButtonLabel">دعم سري</string>\n<string name="AskAQuestion">الدعم الفني</string>\n<string name="AskAQuestion_Owner">اتصل بالمالك</string>\n<string name="TajgramFolkModeSwitch">الوضع الشعبي</string>\n<string name="TajgramFolkModeDesc">تغيير نمط الكلام</string>\n<string name="Folk_Settings">إصلاح التطبيق</string>\n<string name="Folk_Security">مضاد التجسس</string>\n<string name="Folk_InviteFriends">دعوة الأصدقاء</string>'
-            elif [[ "$lang" =~ ^values-(ru|uk|be|kk|uz|az|hy|ky|tk|mo) ]]; then
-              STRS='<string name="VipSettingsTitle">VIP настройки</string>\n<string name="VipSupportBot">Прямая поддержка</string>\n<string name="LikeButton">👍 Нравится</string>\n<string name="DislikeButton">👎 Не нравится</string>\n<string name="VoiceSelection">Выбор голоса 🔊</string>\n<string name="VoiceIcon_Girl">👩 Голос девушки</string>\n<string name="VoiceIcon_Boy">👨 Голос парня</string>\n<string name="WelcomeBellTitle">Добро пожаловать!</string>\n<string name="WelcomeBellDesc">Спасибо что выбрали нас.</string>\n<string name="WelcomeChannelSuggest">Пожалуйста, подпишитесь на канал.</string>\n<string name="WelcomeBellTitle_Reentry">С возвращением!</string>\n<string name="WelcomeBellDesc_Reentry">Ваше место готово.</string>\n<string name="ExitDialogTitle">Вы уверены?</string>\n<string name="ExitDialogDesc">Ждем вашего возвращения! ✨</string>\n<string name="TajgramBellCurrencyTitle">Курс валют</string>\n<string name="TajgramBellCurrencyStatus">Обновление...</string>\n<string name="VipSettingsMenuTitle">Настройки Tajgram</string>\n<string name="SecretSupportButtonLabel">Секретная поддержка</string>\n<string name="AskAQuestion">Техподдержка</string>\n<string name="AskAQuestion_Owner">Связаться с владельцем</string>\n<string name="TajgramFolkModeSwitch">Народный режим</string>\n<string name="TajgramFolkModeDesc">Смена стиля общения</string>\n<string name="Folk_Settings">Починка приложения</string>\n<string name="Folk_Security">Анти-шпион</string>\n<string name="Folk_InviteFriends">Пригласить друзей</string>'
-            else
-              STRS='<string name="VipSettingsTitle">Tajgram VIP Settings</string>\n<string name="VipSupportBot">Direct Support</string>\n<string name="LikeButton">👍 Like</string>\n<string name="DislikeButton">👎 Dislike</string>\n<string name="VoiceSelection">Select Voice Style 🔊</string>\n<string name="VoiceIcon_Girl">👩 Girl Voice</string>\n<string name="VoiceIcon_Boy">👨 Boy Voice</string>\n<string name="WelcomeBellTitle">Welcome to Tajgram!</string>\n<string name="WelcomeBellDesc">Thank you for choosing us.</string>\n<string name="WelcomeChannelSuggest">Please subscribe to the official channel.</string>\n<string name="WelcomeBellTitle_Reentry">Welcome Back!</string>\n<string name="WelcomeBellDesc_Reentry">Your space is ready.</string>\n<string name="ExitDialogTitle">Are you sure you want to leave?</string>\n<string name="ExitDialogDesc">We will be waiting for your quick return! ✨</string>\n<string name="TajgramBellCurrencyTitle">Live Currency Rates</string>\n<string name="TajgramBellCurrencyStatus">Updating rates online...</string>\n<string name="VipSettingsMenuTitle">Tajgram Settings</string>\n<string name="SecretSupportButtonLabel">Tajgram Secret Support</string>\n<string name="AskAQuestion">Technical Support</string>\n<string name="AskAQuestion_Owner">Contact Owner</string>\n<string name="TajgramFolkModeSwitch">Folk Mode</string>\n<string name="TajgramFolkModeDesc">Change dialect</string>\n<string name="Folk_Settings">App Repair</string>\n<string name="Folk_Security">Anti-Spy</string>\n<string name="Folk_InviteFriends">Invite Friends</string>'
-            fi
             
-            # 3. Илова кардан мустақим ба АВВАЛИ файл (рост баъди теги <resources>)
-            sed -i "s|<resources>|<resources>\n$STRS|" "$file"
+            echo "Strictly Processing: $file"
+            
+            # Фармони асосӣ: Тоза кардани ҳамаи унсурҳои кӯҳна ва onboarding-ҳо бо як проход
+            sed -i -E "/$DEL_REGEX/d" "$file"
+            
+            # Ҷойгиркунии Оқилона: Барои 5 забони асосӣ ва тақсимоти СССР/Европа
+            if [ "$lang" = "values-tg" ]; then
+              sed -i "/<resources>/r tg.xml" "$file"
+            elif [ "$lang" = "values-fa" ]; then
+              sed -i "/<resources>/r fa.xml" "$file"
+            elif [ "$lang" = "values-ar" ]; then
+              sed -i "/<resources>/r ar.xml" "$file"
+            elif [[ "$lang" =~ ^values-(ru|uk|be|kk|uz|az|hy|ky|tk|mo)$ ]]; then
+              # Минтақаи ССР (ИДМ): Тарҷумаи русиро мегиранд, то холӣ намонанд
+              sed -i "/<resources>/r ru.xml" "$file"
+            else
+              # Тарафи ЕВРО ва боқимондаи ҷаҳон (аз ҷумла папкаи асосии values): Тарҷумаи англисиро мегиранд
+              sed -i "/<resources>/r en.xml" "$file"
+            fi
           done
+
+          # Нест кардани файлҳои вақтии сохташуда
+          rm -f tg.xml fa.xml ar.xml ru.xml en.xml
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "actions@github.com"
           git add .
-          git diff-index --quiet HEAD || (git commit -m "Engine: Features Injected Safely at Top" && git push origin master)
+          git diff-index --quiet HEAD || (git commit -m "Engine: High Performance Cleanup & Fixed Bell Globally" && git push origin master)
