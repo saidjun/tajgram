@@ -3,18 +3,16 @@
           IDS="WelcomeBellTitle WelcomeBellDesc WelcomeChannelSuggest WelcomeBellTitle_Reentry WelcomeBellDesc_Reentry ExitDialogTitle ExitDialogDesc TajgramBellCurrencyTitle TajgramBellCurrencyStatus VipSettingsMenuTitle SecretSupportButtonLabel AskAQuestion AskAQuestion_Owner TajgramFolkModeSwitch TajgramFolkModeDesc Folk_Settings Folk_Security Folk_InviteFriends VipSettingsTitle VipSupportBot LikeButton DislikeButton VoiceSelection VoiceIcon_Girl VoiceIcon_Boy"
           
           find . -type f -name "strings.xml" | grep "values" | while read -r file; do
-            # 1. ТОЗА КАРДАНИ ПУРРА
+            # 1. Тоза кардани сатрҳои кӯҳна
             for id in $IDS; do
-              sed -i "/name=\"$id\"/,/<\/string>/d" "$file"
+              sed -i "/name=\"$id\"/d" "$file"
             done
-            sed -i '/^$/d' "$file"
             
+            # 2. Тайёр кардани матн дар файл
             lang_dir=$(basename "$(dirname "$file")")
-            
-            # 2. МАНТИҚИ ҲУШМАНДИ МИНТАҚАВӢ
             case "$lang_dir" in
-              "values-tg") # Тоҷикистон
-                cat <<EOF > temp_local.xml
+              "values-tg")
+                cat <<EOF > temp_inject.xml
     <string name="VipSettingsTitle">Танзимоти VIP</string>
     <string name="VipSupportBot">Дастгирии мустақим</string>
     <string name="LikeButton">👍 Писанд</string>
@@ -42,8 +40,8 @@
     <string name="Folk_InviteFriends">Даъвати дӯстон</string>
 EOF
                 ;;
-              "values-fa") # Эронӣ / Форсӣ
-                cat <<EOF > temp_local.xml
+              "values-fa")
+                cat <<EOF > temp_inject.xml
     <string name="VipSettingsTitle">تنظیمات VIP</string>
     <string name="VipSupportBot">پشتیبانی مستقیم</string>
     <string name="LikeButton">👍 لایک</string>
@@ -71,8 +69,8 @@ EOF
     <string name="Folk_InviteFriends">دعوت از دوستان</string>
 EOF
                 ;;
-              "values-ar") # Арабӣ
-                cat <<EOF > temp_local.xml
+              "values-ar")
+                cat <<EOF > temp_inject.xml
     <string name="VipSettingsTitle">إعدادات VIP</string>
     <string name="VipSupportBot">دعم مباشر</string>
     <string name="LikeButton">👍 إعجاب</string>
@@ -100,8 +98,8 @@ EOF
     <string name="Folk_InviteFriends">دعوة الأصدقاء</string>
 EOF
                 ;;
-              "values-ru"|"values-uk"|"values-be"|"values-kk") # СССР ва Русия
-                cat <<EOF > temp_local.xml
+              "values-ru"|"values-uk"|"values-be"|"values-kk")
+                cat <<EOF > temp_inject.xml
     <string name="VipSettingsTitle">VIP настройки</string>
     <string name="VipSupportBot">Прямая поддержка</string>
     <string name="LikeButton">👍 Нравится</string>
@@ -129,8 +127,8 @@ EOF
     <string name="Folk_InviteFriends">Пригласить друзей</string>
 EOF
                 ;;
-              *) # Европа ва дигарҳо -> Англисӣ
-                cat <<EOF > temp_local.xml
+              *)
+                cat <<EOF > temp_inject.xml
     <string name="VipSettingsTitle">Tajgram VIP Settings</string>
     <string name="VipSupportBot">Direct Support</string>
     <string name="LikeButton">👍 Like</string>
@@ -160,8 +158,9 @@ EOF
                 ;;
             esac
 
-            # 3. Сабти ниҳоӣ
-            sed -i 's/&/&amp;/g' temp_local.xml
-            sed -i '/<\/resources>/i '"$(cat temp_local.xml)"'' "$file"
-            rm temp_local.xml
+            # 3. Ислоҳи аломатҳои махсус ва ворид кардан
+            sed -i 's/&/&amp;/g' temp_inject.xml
+            # Илова пеш аз охири файл </resources>
+            sed -i '/<\/resources>/i '"$(cat temp_inject.xml)"'' "$file"
+            rm temp_inject.xml
           done
