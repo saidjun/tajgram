@@ -1,4 +1,4 @@
-name: Build Tajgram APK
+Name: Build Tajgram APK
 
 on:
   workflow_dispatch:
@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JAVA_TOOL_OPTIONS: "-Xmx6g -XX:+UseG1GC"
+      # Инҷо рақами версияро иваз мекунӣ ва тамом:
+      MY_APP_VERSION: "1.0.0"
 
     steps:
     - name: Checkout Repository Code
@@ -35,7 +37,6 @@ jobs:
         echo "RELEASE_KEY_PASSWORD=${{ secrets.RELEASE_KEY_PASSWORD }}" >> gradle.properties
         echo "RELEASE_STORE_PASSWORD=${{ secrets.RELEASE_STORE_PASSWORD }}" >> gradle.properties
 
-    # 🔐 САНҶИШИ KEASTORE (Боварӣ ҳосил кун, ки файл дар TMessagesProj/config/ мавҷуд аст)
     - name: Check SHA Fingerprints
       run: |
         if [ -f "TMessagesProj/config/release.keystore" ]; then
@@ -45,13 +46,13 @@ jobs:
           echo "Огоҳӣ: Keystore дар TMessagesProj/config/ ёфт нашуд, аммо билд идома меёбад."
         fi
 
-    # 🛠 ИСЛОҲИ ВЕРСИЯИ GRADLE (Ислоҳи забони тоҷикӣ ПУРРА НЕСТ ШУД)
-    - name: Auto-Fix Version
+    # Ислоҳи муҳофизатӣ: Танҳо versionName-ро иваз мекунад, ба дигар қисми Gradle даст намезанад
+    - name: Apply Version
       run: |
         GRADLE_FILE=$(find . -name "build.gradle" | grep "TMessagesProj" | head -n 1)
         if [ -f "$GRADLE_FILE" ]; then
-          # Ислоҳи хатогии фосила дар sed
-          sed -i 's/versionName .*/versionName "1.0"/' "$GRADLE_FILE"
+          sed -i "s/versionName \".*\"/versionName \"$MY_APP_VERSION\"/" "$GRADLE_FILE"
+          echo "🚀 Версияи насбшуда: $MY_APP_VERSION"
         fi
        
     - name: Build with Gradle
@@ -71,7 +72,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add ready_apk/Tajgram.apk
-        git commit -m "🔥 TAJGRAM HYBRID APK: Automated release build completed" || echo "No changes"
+        git commit -m "🔥 TAJGRAM HYBRID APK: Version $MY_APP_VERSION released" || echo "No changes"
         git push origin HEAD:master --force
 
     - name: Upload Finished APK
