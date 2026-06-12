@@ -1,7 +1,7 @@
 package org.tajgram.tgnet.model
 
-import org.tajgram.messenger.Utilities
-import org.tajgram.tgnet.OutputSerializedData
+import org.telegram.messenger.Utilities
+import org.telegram.tgnet.OutputSerializedData
 
 
 public object TlGen_Vector {

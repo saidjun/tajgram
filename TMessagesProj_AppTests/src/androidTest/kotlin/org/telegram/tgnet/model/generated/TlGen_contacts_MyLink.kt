@@ -2,9 +2,9 @@ package org.tajgram.tgnet.model.generated
 
 import kotlin.Boolean
 import kotlin.UInt
-import org.tajgram.tgnet.OutputSerializedData
-import org.tajgram.tgnet.model.TlGen_Object
-import org.tajgram.tgnet.model.TlGen_Vector
+import org.telegram.tgnet.OutputSerializedData
+import org.telegram.tgnet.model.TlGen_Object
+import org.telegram.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_contacts_MyLink : TlGen_Object {
   public data object TL_contacts_myLinkEmpty_layer23 : TlGen_contacts_MyLink() {

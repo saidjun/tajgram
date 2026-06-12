@@ -2,11 +2,11 @@ package org.tajgram.tgnet.test
 
 import com.appmattus.kotlinfixture.config.ConfigurationBuilder
 import org.junit.Test
-import org.tajgram.tgnet.ConnectionsManager
-import org.tajgram.tgnet.model.generated.TlGen_EmojiStatus
-import org.tajgram.tgnet.model.generated.TlGen_MessageEntity
-import org.tajgram.tgnet.model.generated.TlGen_PeerColor
-import org.tajgram.tgnet.model.generated.TlGen_auth_Authorization
+import org.telegram.tgnet.ConnectionsManager
+import org.telegram.tgnet.model.generated.TlGen_EmojiStatus
+import org.telegram.tgnet.model.generated.TlGen_MessageEntity
+import org.telegram.tgnet.model.generated.TlGen_PeerColor
+import org.telegram.tgnet.model.generated.TlGen_auth_Authorization
 
 class NativeSchemeTest : BaseSchemeTest() {
     @Test

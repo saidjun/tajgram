@@ -4,9 +4,9 @@ import kotlin.Int
 import kotlin.Long
 import kotlin.UInt
 import kotlin.collections.List
-import org.tajgram.tgnet.OutputSerializedData
-import org.tajgram.tgnet.model.TlGen_Object
-import org.tajgram.tgnet.model.TlGen_Vector
+import org.telegram.tgnet.OutputSerializedData
+import org.telegram.tgnet.model.TlGen_Object
+import org.telegram.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_messages_PreparedInlineMessage : TlGen_Object {
   public data class TL_messages_preparedInlineMessage(

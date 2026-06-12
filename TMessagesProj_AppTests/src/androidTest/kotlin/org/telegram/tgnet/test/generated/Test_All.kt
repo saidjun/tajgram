@@ -4,9 +4,9 @@ import org.junit.Assume.assumeTrue
 import org.junit.Test
 import org.junit.experimental.runners.Enclosed
 import org.junit.runner.RunWith
-import org.tajgram.tgnet.model.TlGen_Object
-import org.tajgram.tgnet.model.TlGen_Vector
-import org.tajgram.tgnet.test.BaseSchemeTest
+import org.telegram.tgnet.model.TlGen_Object
+import org.telegram.tgnet.model.TlGen_Vector
+import org.telegram.tgnet.test.BaseSchemeTest
 
 @RunWith(Enclosed::class)
 public class Test_All {

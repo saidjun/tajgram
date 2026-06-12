@@ -3,9 +3,9 @@ package org.tajgram.tgnet.model.generated
 import kotlin.Boolean
 import kotlin.Int
 import kotlin.UInt
-import org.tajgram.tgnet.OutputSerializedData
-import org.tajgram.tgnet.model.TlGen_Object
-import org.tajgram.tgnet.model.TlGen_Vector
+import org.telegram.tgnet.OutputSerializedData
+import org.telegram.tgnet.model.TlGen_Object
+import org.telegram.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_UserStatus : TlGen_Object {
   public data object TL_userStatusEmpty : TlGen_UserStatus() {

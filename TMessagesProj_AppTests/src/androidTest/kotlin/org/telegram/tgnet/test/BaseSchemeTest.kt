@@ -11,11 +11,11 @@ import com.appmattus.kotlinfixture.decorator.nullability.nullabilityStrategy
 import com.appmattus.kotlinfixture.decorator.recursion.RecursionStrategy
 import com.appmattus.kotlinfixture.decorator.recursion.recursionStrategy
 import org.junit.BeforeClass
-import org.tajgram.tgnet.ConnectionsManager
-import org.tajgram.tgnet.InputSerializedData
-import org.tajgram.tgnet.NativeByteBuffer
-import org.tajgram.tgnet.TLObject
-import org.tajgram.tgnet.model.TlGen_Object
+import org.telegram.tgnet.ConnectionsManager
+import org.telegram.tgnet.InputSerializedData
+import org.telegram.tgnet.NativeByteBuffer
+import org.telegram.tgnet.TLObject
+import org.telegram.tgnet.model.TlGen_Object
 import kotlin.reflect.KClass
 import kotlin.reflect.KType
 import kotlin.reflect.full.memberProperties

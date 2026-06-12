@@ -1079,7 +1079,7 @@ extern "C" JNIEXPORT jint JNICALL Java_org_tajgram_ui_Components_AnimatedFileDra
 extern "C" jint videoOnJNILoad(JavaVM *vm, JNIEnv *env) {
     //av_log_set_callback(custom_log);
     DEBUG_REF("gifvideo.cpp AnimatedFileDrawableStream ref");
-    jclass_AnimatedFileDrawableStream = (jclass) env->NewGlobalRef(env->FindClass("org/tajgram/messenger/AnimatedFileDrawableStream"));
+    jclass_AnimatedFileDrawableStream = (jclass) env->NewGlobalRef(env->FindClass("org/telegram/messenger/AnimatedFileDrawableStream"));
     if (jclass_AnimatedFileDrawableStream == 0) {
         return JNI_FALSE;
     }
