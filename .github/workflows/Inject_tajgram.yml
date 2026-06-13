@@ -35,14 +35,15 @@ jobs:
             elif [[ "$lang" =~ ^values-(ru|uk|be|kk|uz|az|hy|ky|tk|mo) ]]; then
               STRS='<string name="onboarding_title_1">Добро пожаловать! 🌍</string>\n<string name="onboarding_desc_1">Скорость и безопасность.</string>\n<string name="onboarding_title_2">Сияйте со Звездами! ⭐</string>\n<string name="onboarding_desc_2">Премиум функции и перевод.</string>\n<string name="onboarding_title_3">Личный Звонок 🔊</string>\n<string name="onboarding_desc_3">Выбирайте голоса и управляйте уведомлениями.</string>\n<string name="onboarding_title_4">100% Безопасность 🛡️</string>\n<string name="onboarding_desc_4">Прокси и антишпионская защита.</string>\n<string name="onboarding_title_5">Поехали! ✨</string>\n<string name="onboarding_desc_5">Переключитесь на Народный режим и наслаждайтесь!</string>\n<string name="skip_button">Пропустить (X)</string>\n<string name="start_button">Старт</string>'
             else
-              STRS='<string name="onboarding_title_1">Welcome! 🌍</string>\n<string name="onboarding_desc_1">Speed and security.</string>\n<string name="onboarding_title_2">Shine with Stars! ⭐</string>\n<string name="onboarding_desc_2">Premium features & translation.</string>\n<string name="onboarding_title_3">Personal Bell 🔊</string>\n<string name="onboarding_desc_3">Select voices and manage alerts.</string>\n<string name="onboarding_title_4">100% Security 🛡️</string>\n<string name="onboarding_desc_4">Proxy and anti-spy protection.</string>\n<string name="onboarding_title_5">Let’s Go! ✨</string>\n<string name="onboarding_desc_5">Switch to Folk Mode and enjoy!</string>\n<string name="skip_button">Skip (X)</string>\n<string name="start_button">Start</string>'
+              # Ислоҳ шуд: & ба &amp; иваз шуд, то Android хато накунад
+              STRS='<string name="onboarding_title_1">Welcome! 🌍</string>\n<string name="onboarding_desc_1">Speed and security.</string>\n<string name="onboarding_title_2">Shine with Stars! ⭐</string>\n<string name="onboarding_desc_2">Premium features &amp; translation.</string>\n<string name="onboarding_title_3">Personal Bell 🔊</string>\n<string name="onboarding_desc_3">Select voices and manage alerts.</string>\n<string name="onboarding_title_4">100% Security 🛡️</string>\n<string name="onboarding_desc_4">Proxy and anti-spy protection.</string>\n<string name="onboarding_title_5">Let’s Go! ✨</string>\n<string name="onboarding_desc_5">Switch to Folk Mode and enjoy!</string>\n<string name="skip_button">Skip (X)</string>\n<string name="start_button">Start</string>'
             fi
             
             # 3. БЕХАТАР ИЛОВА КАРДАН (Append after tag)
-            sed -i "/<resources>/a $STRS" "$file"
+            # Ислоҳ шуд: Барои кор кардани \n дар системаи Linux, ба ҷойи худи аломати мақоми & рӯйпӯш (escape) илова карда шуд
+            sed -i "/<resources>/a $(echo -e "${STRS//&/\\&}")" "$file"
             
             # 4. НАЗОРАТИ БЕХАТАРӢ (Health Check)
-            # Агар теги пӯшида набошад, худаш илова мекунад
             if ! grep -q "</resources>" "$file"; then
               echo "</resources>" >> "$file"
             fi
