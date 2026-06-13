@@ -1,0 +1,52 @@
+import xml.etree.ElementTree as ET
+import time
+
+def deep_factory_fix(input_path, output_path):
+    print(f"🚀 Саршавии Ҷарроҳии Амиқ... (Вақт: {time.ctime()})")
+    
+    # 1. Parsing бо истифода аз муҳити бехатар
+    tree = ET.parse(input_path)
+    root = tree.getroot()
+    
+    count = 0
+    total = len(root.findall('string'))
+    
+    print(f"📋 Ҷамъи сатрҳо барои коркард: {total}")
+    
+    for elem in root.findall('string'):
+        if elem.text:
+            text = elem.text
+            original = text
+            
+            # --- Рӯйхати ислоҳоти маҷбурӣ ---
+            # Ислоҳи /n/ ва дигар хатоҳои сатр
+            text = text.replace('/n/', '\n').replace('/n', '\n')
+            
+            # Экранизатсияи нохунакҳо (Escaping)
+            # Барои Android муҳим аст: ' -> \' ва " -> \"
+            text = text.replace("\\'", "'").replace('\\"', '"') # Тозакунии кӯҳна
+            text = text.replace("'", "\\'").replace('"', '\\"') # Гузоштани стандарти нав
+            
+            # Аломати & (Ampersand) - дар Android бояд &amp; бошад
+            # Аммо агар аллакай &amp; бошад, онро вайрон намекунем
+            if '&' in text and '&amp;' not in text:
+                text = text.replace('&', '&amp;')
+                
+            elem.text = text
+            
+            if original != text:
+                count += 1
+        
+        # Ин таъхир (sleep) барои он аст, ки скрипт "оҳиста ва бодиққат" кор кунад
+        # Вақти иловагӣ барои санҷиши ҳар як сатр
+        time.sleep(0.005) 
+
+    # 2. Сабти файл бо стандарти комили Android
+    tree.write(output_path, encoding='utf-8', xml_declaration=True)
+    
+    print(f"✅ Ҷарроҳӣ ба поён расид!")
+    print(f"📊 Тағйиротҳо ворид карда шуданд: {count} сатр")
+    print(f"💾 Файли заводӣ омода аст: {output_path}")
+
+if __name__ == '__main__':
+    deep_factory_fix('TMessagesProj/src/main/res/values-tg/strings.xml', 'strings_fixed_master.xml')
