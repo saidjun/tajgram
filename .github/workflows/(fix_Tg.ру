@@ -1,52 +1,58 @@
-import xml.etree.ElementTree as ET
-import time
+name: Tajgram Factory Fixer
 
-def deep_factory_fix(input_path, output_path):
-    print(f"🚀 Саршавии Ҷарроҳии Амиқ... (Вақт: {time.ctime()})")
-    
-    # 1. Parsing бо истифода аз муҳити бехатар
-    tree = ET.parse(input_path)
-    root = tree.getroot()
-    
-    count = 0
-    total = len(root.findall('string'))
-    
-    print(f"📋 Ҷамъи сатрҳо барои коркард: {total}")
-    
-    for elem in root.findall('string'):
-        if elem.text:
-            text = elem.text
-            original = text
-            
-            # --- Рӯйхати ислоҳоти маҷбурӣ ---
-            # Ислоҳи /n/ ва дигар хатоҳои сатр
-            text = text.replace('/n/', '\n').replace('/n', '\n')
-            
-            # Экранизатсияи нохунакҳо (Escaping)
-            # Барои Android муҳим аст: ' -> \' ва " -> \"
-            text = text.replace("\\'", "'").replace('\\"', '"') # Тозакунии кӯҳна
-            text = text.replace("'", "\\'").replace('"', '\\"') # Гузоштани стандарти нав
-            
-            # Аломати & (Ampersand) - дар Android бояд &amp; бошад
-            # Аммо агар аллакай &amp; бошад, онро вайрон намекунем
-            if '&' in text and '&amp;' not in text:
-                text = text.replace('&', '&amp;')
-                
-            elem.text = text
-            
-            if original != text:
-                count += 1
-        
-        # Ин таъхир (sleep) барои он аст, ки скрипт "оҳиста ва бодиққат" кор кунад
-        # Вақти иловагӣ барои санҷиши ҳар як сатр
-        time.sleep(0.005) 
+on:
+  workflow_dispatch: # Барои дастӣ иҷро кардан
 
-    # 2. Сабти файл бо стандарти комили Android
-    tree.write(output_path, encoding='utf-8', xml_declaration=True)
-    
-    print(f"✅ Ҷарроҳӣ ба поён расид!")
-    print(f"📊 Тағйиротҳо ворид карда шуданд: {count} сатр")
-    print(f"💾 Файли заводӣ омода аст: {output_path}")
+permissions:
+  contents: write
 
-if __name__ == '__main__':
-    deep_factory_fix('TMessagesProj/src/main/res/values-tg/strings.xml', 'strings_fixed_master.xml')
+jobs:
+  factory-fixer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Гирифтани код
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Иҷрои Ҷарроҳии Амиқ
+        run: |
+          python3 -c "
+          import xml.etree.ElementTree as ET
+          import os
+
+          # Суроғаи дақиқ
+          input_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+          output_file = 'strings_fixed_master.xml'
+          
+          if not os.path.exists(input_file):
+              print('❌ Файл ёфт нашуд!')
+              exit(1)
+
+          tree = ET.parse(input_file)
+          root = tree.getroot()
+          
+          # Ҷарроҳии амиқ барои ҳар як сатр
+          for elem in root.findall('string'):
+              if elem.text:
+                  text = elem.text
+                  # Ислоҳи заводӣ: /n/ -> \n, ' -> \', " -> \"
+                  text = text.replace('/n/', '\n').replace('/n', '\n')
+                  text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
+                  text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
+                  
+                  # Ислоҳи амперсанд
+                  if '&' in text and '&amp;' not in text:
+                      text = text.replace('&', '&amp;')
+                      
+                  elem.text = text
+          
+          tree.write(output_file, encoding='utf-8', xml_declaration=True)
+          print('✅ Файли заводӣ омода шуд!')
+          "
+
+      - name: 🚀 Сабт дар папкаи асосӣ (Главный)
+        run: |
+          git config --global user.name "Tajgram Factory Bot"
+          git config --global user.email "bot@tajgram.com"
+          git add strings_fixed_master.xml
+          git commit -m "Автоматики: Файли strings_fixed_master.xml ислоҳ шуд"
+          git push origin HEAD:${{ github.ref_name }} --force
