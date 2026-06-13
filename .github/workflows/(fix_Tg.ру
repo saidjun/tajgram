@@ -1,58 +1,55 @@
-name: Tajgram Factory Fixer
+name: Tajgram Final Fixer
 
 on:
-  workflow_dispatch: # Барои дастӣ иҷро кардан
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  factory-fixer:
+  ultimate-fixer:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Гирифтани код
-        uses: actions/checkout@v4
-
-      - name: 🛠️ Иҷрои Ҷарроҳии Амиқ
+      - uses: actions/checkout@v4
+      - name: 🛠️ Ҷарроҳии Амиқ ва Тозакунӣ
         run: |
           python3 -c "
           import xml.etree.ElementTree as ET
           import os
-
-          # Суроғаи дақиқ
+          
+          # Файли аслӣ ва файл барои санҷиш
           input_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           output_file = 'strings_fixed_master.xml'
           
-          if not os.path.exists(input_file):
-              print('❌ Файл ёфт нашуд!')
-              exit(1)
-
+          # Парс кардани XML бо ислоҳи хатоҳо
           tree = ET.parse(input_file)
           root = tree.getroot()
           
-          # Ҷарроҳии амиқ барои ҳар як сатр
           for elem in root.findall('string'):
               if elem.text:
                   text = elem.text
-                  # Ислоҳи заводӣ: /n/ -> \n, ' -> \', " -> \"
-                  text = text.replace('/n/', '\n').replace('/n', '\n')
+                  
+                  # 1. Тоза кардани ҳамаи аломатҳои хато
+                  text = text.replace('/n/', '\\n').replace('/n', '\\n')
                   text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
+                  
+                  # 2. Экранизатсияи қатъии заводӣ
                   text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
                   
-                  # Ислоҳи амперсанд
-                  if '&' in text and '&amp;' not in text:
+                  # 3. Агар аломатҳои махсус бошад, онро ислоҳ мекунем
+                  if '&' in text and not text.startswith('&amp;'):
                       text = text.replace('&', '&amp;')
-                      
+                  
                   elem.text = text
           
+          # Сабти файл
           tree.write(output_file, encoding='utf-8', xml_declaration=True)
-          print('✅ Файли заводӣ омода шуд!')
+          print('✅ Файл бо муваффақият тоза шуд!')
           "
-
-      - name: 🚀 Сабт дар папкаи асосӣ (Главный)
+      - name: 🚀 Сабти маҷбурӣ
         run: |
-          git config --global user.name "Tajgram Factory Bot"
-          git config --global user.email "bot@tajgram.com"
+          git config --global user.name "Tajgram Fixer"
+          git config --global user.email "fixer@tajgram.com"
           git add strings_fixed_master.xml
-          git commit -m "Автоматики: Файли strings_fixed_master.xml ислоҳ шуд"
+          git commit -m "Исправление всех ошибок кнопок и текста" || echo "No changes"
           git push origin HEAD:${{ github.ref_name }} --force
