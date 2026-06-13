@@ -1,4 +1,4 @@
-name: Tajgram Final Fixer
+name: Tajgram Ultimate Fixer
 
 on:
   workflow_dispatch:
@@ -11,45 +11,56 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 🛠️ Ҷарроҳии Амиқ ва Тозакунӣ
+
+      - name: 🛠️ Ҷарроҳии Амиқ ва Санҷиши Заводӣ
         run: |
           python3 -c "
           import xml.etree.ElementTree as ET
-          import os
-          
-          # Файли аслӣ ва файл барои санҷиш
+          import os, sys
+
           input_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           output_file = 'strings_fixed_master.xml'
           
-          # Парс кардани XML бо ислоҳи хатоҳо
+          # Санҷиши мавҷудияти файл
+          if not os.path.exists(input_file):
+              print(f'❌ ХАТО: Файл дар {input_file} нест!')
+              sys.exit(1)
+
           tree = ET.parse(input_file)
           root = tree.getroot()
           
+          # Санҷиш ва ислоҳи ҳар як сатр
           for elem in root.findall('string'):
               if elem.text:
                   text = elem.text
-                  
-                  # 1. Тоза кардани ҳамаи аломатҳои хато
+                  # Ислоҳи /n/ -> \n
                   text = text.replace('/n/', '\\n').replace('/n', '\\n')
+                  # Ислоҳи нохунакҳо
                   text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
-                  
-                  # 2. Экранизатсияи қатъии заводӣ
                   text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
-                  
-                  # 3. Агар аломатҳои махсус бошад, онро ислоҳ мекунем
+                  # Ислоҳи &
                   if '&' in text and not text.startswith('&amp;'):
                       text = text.replace('&', '&amp;')
-                  
                   elem.text = text
           
           # Сабти файл
           tree.write(output_file, encoding='utf-8', xml_declaration=True)
-          print('✅ Файл бо муваффақият тоза шуд!')
+          
+          # ТАФТИШ: Оё файл сохта шуд ва холӣ нест?
+          if os.path.getsize(output_file) > 0:
+              print(f'✅ Файли {output_file} бомуваффақият омода шуд!')
+          else:
+              print('❌ ХАТО: Файл холӣ сохта шуд!')
+              sys.exit(1)
           "
-      - name: 🚀 Сабти маҷбурӣ
+
+      - name: 💾 Сабт ва фиристодан ба папкаи асосӣ
         run: |
           git config --global user.name "Tajgram Fixer"
-          git config --global user.email "fixer@tajgram.com"
+          git config --global user.email "bot@tajgram.com"
+          # Файлро илова мекунем
           git add strings_fixed_master.xml
-          git commit -m "Исправление всех ошибок кнопок и текста" || echo "No changes"
+          # Commit-ро ҳатман иҷро мекунем
+          git commit -m "Автоматики: Файли заводӣ сохта шуд" || echo "Тағйирот нест"
+          # Маҷбуран Push мекунем
           git push origin HEAD:${{ github.ref_name }} --force
