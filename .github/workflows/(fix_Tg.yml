@@ -1,0 +1,75 @@
+name: XML Factory Fixer (Tajik)
+
+# Кай ба кор медарояд?
+on:
+  push:
+    paths:
+      # Скрипт фақат ҳамон вақт кор мекунад, ки агар файли тоҷикӣ иваз шавад
+      - 'TMessagesProj/src/main/res/values-tg/strings.xml'
+  workflow_dispatch: # Барои пахш кардани тугмаи дастӣ дар GitHub
+
+jobs:
+  fix-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Гирифтани коди лоиҳа аз GitHub
+        uses: actions/checkout@v4
+
+      - name: 🐍 Омода кардани муҳити Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 🛠️ Иҷрои скрипти ҷарроҳии заводӣ (Inline Python)
+        # Мо скрипти Python-ро мустақиман дар ин ҷо менависем
+        run: |
+          python -c "
+          import xml.etree.ElementTree as ET
+          import os
+          import sys
+
+          INPUT_FILE = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+          OUTPUT_FILE = 'strings_fixed_master.xml'
+
+          print('🔄 Оғози коркард...')
+          
+          if not os.path.exists(INPUT_FILE):
+              print(f'❌ ХАТОИ КРИТИКӢ: Файли {INPUT_FILE} вуҷуд надорад!')
+              sys.exit(1)
+
+          try:
+              tree = ET.parse(INPUT_FILE)
+              root = tree.getroot()
+
+              for elem in root.findall('string'):
+                  if elem.text:
+                      text = elem.text
+                      
+                      # 1. Ислоҳи қатъии /n/ ба \n
+                      text = text.replace('/n/', '\\n').replace('/n', '\\n')
+                      
+                      # 2. Тоза кардани экранизатсияи кӯҳна
+                      text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
+                      
+                      # 3. Экранизатсияи заводии AAPT
+                      text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
+                      
+                      elem.text = text
+
+              # Сабти файл бо стандарти заводӣ
+              tree.write(OUTPUT_FILE, encoding='utf-8', xml_declaration=True)
+              print(f'✅ МУВАФФАҚИЯТ: Файли тозашуда дар {OUTPUT_FILE} омода аст.')
+              
+          except Exception as e:
+              print(f'❌ ХАТОИ СИСТЕМАВӢ: {e}')
+              sys.exit(1)
+          "
+
+      - name: 📦 Бор кардани натиҷа барои тафтиш (Artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Fixed-Master-XML
+          # Ҳамон файлеро, ки Python сохт, барои зеркашӣ ба шумо медиҳад
+          path: strings_fixed_master.xml
+          retention-days: 5
