@@ -10,7 +10,10 @@ jobs:
   ultimate-fixer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 📥 Гирифтани код
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ҳамаи таърихи лоиҳаро мегирад
 
       - name: 🛠️ Ҷарроҳии Амиқ ва Санҷиши Заводӣ
         run: |
@@ -21,7 +24,6 @@ jobs:
           input_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           output_file = 'strings_fixed_master.xml'
           
-          # Санҷиши мавҷудияти файл
           if not os.path.exists(input_file):
               print(f'❌ ХАТО: Файл дар {input_file} нест!')
               sys.exit(1)
@@ -29,38 +31,33 @@ jobs:
           tree = ET.parse(input_file)
           root = tree.getroot()
           
-          # Санҷиш ва ислоҳи ҳар як сатр
           for elem in root.findall('string'):
               if elem.text:
                   text = elem.text
-                  # Ислоҳи /n/ -> \n
                   text = text.replace('/n/', '\\n').replace('/n', '\\n')
-                  # Ислоҳи нохунакҳо
                   text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
                   text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
-                  # Ислоҳи &
                   if '&' in text and not text.startswith('&amp;'):
                       text = text.replace('&', '&amp;')
                   elem.text = text
           
-          # Сабти файл
           tree.write(output_file, encoding='utf-8', xml_declaration=True)
-          
-          # ТАФТИШ: Оё файл сохта шуд ва холӣ нест?
           if os.path.getsize(output_file) > 0:
-              print(f'✅ Файли {output_file} бомуваффақият омода шуд!')
+              print(f'✅ Файли {output_file} омода шуд!')
           else:
-              print('❌ ХАТО: Файл холӣ сохта шуд!')
               sys.exit(1)
           "
 
-      - name: 💾 Сабт ва фиристодан ба папкаи асосӣ
+      - name: 💾 Сабти доимӣ ба Master
         run: |
           git config --global user.name "Tajgram Fixer"
           git config --global user.email "bot@tajgram.com"
+          
           # Файлро илова мекунем
           git add strings_fixed_master.xml
-          # Commit-ро ҳатман иҷро мекунем
-          git commit -m "Автоматики: Файли заводӣ сохта шуд" || echo "Тағйирот нест"
-          # Маҷбуран Push мекунем
-          git push origin HEAD:${{ github.ref_name }} --force
+          
+          # Commit мекунем (Агар тағйирот набошад, хато намедиҳад)
+          git commit -m "Auto-fix: Фабрикаи заводии strings_fixed_master.xml" || echo "Тағйироти нав нест"
+          
+          # Push бо танзимоти амиқ
+          git push origin HEAD:master --force
