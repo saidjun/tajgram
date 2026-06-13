@@ -1,17 +1,20 @@
 name: XML Factory Fixer (Tajik)
 
 on:
-  workflow_dispatch: # Танҳо бо пахши тугмаи дастӣ кор мекунад
+  workflow_dispatch: # Фақат бо пахши тугма кор мекунад
 
 permissions:
-  contents: write # Иҷозати расмии сабт кардан
+  contents: write # Иҷозати расмии сабт кардан (Ҳатмӣ!)
 
 jobs:
-  fix-and-commit:
+  fix-and-force-push:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Гирифтани коди лоиҳа
         uses: actions/checkout@v4
+        with:
+          # Маҷбуран ҳамон шохаеро (branch) мегирад, ки ту дар он ҳастӣ
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: 🐍 Омода кардани Python
         uses: actions/setup-python@v5
@@ -27,7 +30,6 @@ jobs:
           INPUT = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           OUTPUT = 'strings_fixed_master.xml'
           
-          print('⏳ Оғози тозакунии 11000+ сатр...')
           if os.path.exists(INPUT):
               tree = ET.parse(INPUT)
               root = tree.getroot()
@@ -44,18 +46,19 @@ jobs:
               print('❌ Файли аслӣ ёфт нашуд!')
           "
 
-      - name: 💾 Сабти ҳатмӣ ба папкаи асосӣ (Главный)
+      - name: 🚀 САБТИ ҚАТЪӢ ВА МАҶБУРӢ (Force Push)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Калиди махфии GitHub барои сабт
         run: |
-          # 1. Худро муаррифӣ мекунем
-          git config --global user.name "GitHub Actions"
+          # 1. Номи ботро муайян мекунем
+          git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           
-          # 2. Файли навро ба рӯйхати сабт илова мекунем
+          # 2. Файли навро ба рӯйхат мегирем
           git add strings_fixed_master.xml
           
-          # 3. Вазъиятро нишон медиҳем (барои логҳо)
-          git status
+          # 3. Сабт мекунем (Commit)
+          git commit -m "🚀 Файли заводии strings_fixed_master.xml илова шуд" || echo "Тағйирот аллакай сабт шудааст"
           
-          # 4. Сабт мекунем ва ба GitHub мефиристем (Push)
-          git commit -m "Автоматики: Файли тозашудаи strings_fixed_master.xml илова шуд" || echo "Файл аллакай тоза аст ва тағйироте нест"
-          git push || echo "Хатогӣ ҳангоми фиристодан (Push) ба GitHub"
+          # 4. ФАРМОНИ ҚАТЪӢ: Файлро маҷбуран ба лоиҳа мепартоем (Push)
+          git push origin HEAD:${{ github.ref_name }} --force
