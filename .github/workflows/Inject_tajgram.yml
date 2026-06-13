@@ -2,7 +2,7 @@ name: Inject Tajgram Walkthrough Module
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # Ҳар рӯз соати 00:00 худаш санҷиш мекунад
+  - cron: '0 0 1,15 * *'
 permissions:
   contents: write
 jobs:
