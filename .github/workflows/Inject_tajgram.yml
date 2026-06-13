@@ -10,20 +10,23 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Precision Injection (Modular & Clean)
+      - name: Modular Precision Injection
         run: |
           IDS="onboarding_title_1 onboarding_desc_1 onboarding_title_2 onboarding_desc_2 onboarding_title_3 onboarding_desc_3 onboarding_title_4 onboarding_desc_4 onboarding_title_5 onboarding_desc_5 skip_button start_button"
           
+          # 1. Тоза кардани ҳамаи ID-ҳо аз ҳамаи strings.xml (Тозакунии ҳамаҷониба)
           find . -type f -name "strings.xml" | grep "values" | while read -r file; do
-            echo "Processing: $file"
-            
-            # 1. ТОЗА КАРДАНИ ID-ҲОИ КӮҲНА АЗ strings.xml (Тозакунии комил)
+            echo "Cleaning: $file"
             for id in $IDS; do
               sed -i "/name=\"$id\"/d" "$file"
             done
+          done
+          
+          # 2. Сохтани файли алоҳида дар ҳар як папкаи values
+          find . -type d -name "values*" | while read -r dir; do
+            lang=$(basename "$dir")
+            echo "Generating module in: $dir"
             
-            # 2. Интихоби матн (Мантиқи шумо тағйир наёфт)
-            lang=$(basename "$(dirname "$file")")
             if [ "$lang" = "values-tg" ]; then
               STRS='<string name="onboarding_title_1">Хуш омадед! 🌍</string>\n<string name="onboarding_desc_1">Суръат ва бехатарӣ.</string>\n<string name="onboarding_title_2">Бо Ситораҳо дурахшед! ⭐</string>\n<string name="onboarding_desc_2">Имкониятҳои VIP ва тарҷума.</string>\n<string name="onboarding_title_3">Зангулаи шахсӣ 🔊</string>\n<string name="onboarding_desc_3">Интихоби овозҳо ва танзими огоҳиҳо.</string>\n<string name="onboarding_title_4">100% Бехатарӣ 🛡️</string>\n<string name="onboarding_desc_4">Ҳимояи прокси ва зидди ҷосусӣ.</string>\n<string name="onboarding_title_5">Куҷо рафтем! ✨</string>\n<string name="onboarding_desc_5">Ба Ҳолати мардумӣ гузаред ва лаззат баред!</string>\n<string name="skip_button">Гузаштан (X)</string>\n<string name="start_button">Оғоз</string>'
             elif [ "$lang" = "values-fa" ]; then
@@ -36,8 +39,8 @@ jobs:
               STRS='<string name="onboarding_title_1">Welcome! 🌍</string>\n<string name="onboarding_desc_1">Speed and security.</string>\n<string name="onboarding_title_2">Shine with Stars! ⭐</string>\n<string name="onboarding_desc_2">Premium features & translation.</string>\n<string name="onboarding_title_3">Personal Bell 🔊</string>\n<string name="onboarding_desc_3">Select voices and manage alerts.</string>\n<string name="onboarding_title_4">100% Security 🛡️</string>\n<string name="onboarding_desc_4">Proxy and anti-spy protection.</string>\n<string name="onboarding_title_5">Let’s Go! ✨</string>\n<string name="onboarding_desc_5">Switch to Folk Mode and enjoy!</string>\n<string name="skip_button">Skip (X)</string>\n<string name="start_button">Start</string>'
             fi
             
-            # 3. ЭҶОДИ ФАЙЛИ АЛОҲИДА (tajgram_onboarding.xml) дар ҳамон папка
-            echo -e "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n$STRS\n</resources>" > "$(dirname "$file")/tajgram_onboarding.xml"
+            # 3. Сабти файл бо тегҳои дурусти XML
+            echo -e "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n$STRS\n</resources>" > "$dir/tajgram_onboarding.xml"
           done
 
       - name: Commit and Push
@@ -45,4 +48,4 @@ jobs:
           git config --global user.name "Saidjun Chief Developer"
           git config --global user.email "actions@github.com"
           git add .
-          git diff-index --quiet HEAD || (git commit -m "Onboarding: Isolated to tajgram_onboarding.xml [skip ci]" && git push origin master)
+          git diff-index --quiet HEAD || (git commit -m "Onboarding: Isolated module creation [skip ci]" && git push origin master)
