@@ -1,39 +1,36 @@
 name: XML Factory Fixer (Tajik)
 
 on:
-  push:
-    paths:
-      - 'TMessagesProj/src/main/res/values-tg/strings.xml'
-  workflow_dispatch:
+  workflow_dispatch: # Танҳо бо пахши тугмаи дастӣ кор мекунад
+
+permissions:
+  contents: write # Иҷозати расмии сабт кардан
 
 jobs:
   fix-and-commit:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Иҷозат барои сабт кардани файл дар папка
-
     steps:
-      - name: 📥 Гирифтани коди лоиҳа аз GitHub
+      - name: 📥 Гирифтани коди лоиҳа
         uses: actions/checkout@v4
 
-      - name: 🐍 Омода кардани муҳити Python
+      - name: 🐍 Омода кардани Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: 🛠️ Иҷрои скрипти ҷарроҳии заводӣ
+      - name: 🛠️ Ҷарроҳии заводӣ (Тозакунӣ)
         run: |
           python -c "
           import xml.etree.ElementTree as ET
           import os
 
-          INPUT_FILE = 'TMessagesProj/src/main/res/values-tg/strings.xml'
-          OUTPUT_FILE = 'strings_fixed_master.xml'
+          INPUT = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+          OUTPUT = 'strings_fixed_master.xml'
           
-          if os.path.exists(INPUT_FILE):
-              tree = ET.parse(INPUT_FILE)
+          print('⏳ Оғози тозакунии 11000+ сатр...')
+          if os.path.exists(INPUT):
+              tree = ET.parse(INPUT)
               root = tree.getroot()
-
               for elem in root.findall('string'):
                   if elem.text:
                       text = elem.text
@@ -41,15 +38,24 @@ jobs:
                       text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
                       text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
                       elem.text = text
-
-              tree.write(OUTPUT_FILE, encoding='utf-8', xml_declaration=True)
-              print('✅ Файл тайёр шуд!')
+              tree.write(OUTPUT, encoding='utf-8', xml_declaration=True)
+              print('✅ Файл 100% заводии тоза шуд!')
+          else:
+              print('❌ Файли аслӣ ёфт нашуд!')
           "
 
-      - name: 💾 Сабт кардани файл рост дар папкаи асосӣ (Бе ZIP)
+      - name: 💾 Сабти ҳатмӣ ба папкаи асосӣ (Главный)
         run: |
-          git config --global user.name "GitHub Actions Bot"
+          # 1. Худро муаррифӣ мекунем
+          git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          
+          # 2. Файли навро ба рӯйхати сабт илова мекунем
           git add strings_fixed_master.xml
-          # Агар файл нав шуда бошад, онро сабт мекунад
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Тозакунии заводии XML" && git push)
+          
+          # 3. Вазъиятро нишон медиҳем (барои логҳо)
+          git status
+          
+          # 4. Сабт мекунем ва ба GitHub мефиристем (Push)
+          git commit -m "Автоматики: Файли тозашудаи strings_fixed_master.xml илова шуд" || echo "Файл аллакай тоза аст ва тағйироте нест"
+          git push || echo "Хатогӣ ҳангоми фиристодан (Push) ба GitHub"
