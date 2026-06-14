@@ -2724,7 +2724,7 @@
 <string name="AutodownloadSizeLimitUpTo">то %1$s</string>
 <string name="Streaming">Ҷараён</string>
 <string name="EnableStreaming">Ҷараёни видеоҳо ва файлҳои аудиоӣ</string>
-<string name="EnableAllStreamingInfo">Баъзе видеоҳоро \' пахш кардан мумкин нест - масалан, ҳама видеоҳое, ки аз Android бо истифода аз Tajgram 4.7 ва версияҳои қаблӣ фиристода шудаанд. </string>
+<string name="EnableAllStreamingInfo">Баъзе видеоҳоро \' пахш кардан мумкин нест - масалан, ҳама видеоҳое, ки аз Android бо истифода аз Tajgram 4.7 ва версияҳои қаблӣ фиристода шудаанд.</string>
 <string name="TapToChangePhone">рақами телефон</string>
 <string name="ShowNotificationsFor">Нишон додани огоҳиҳо барои</string>
 <string name="AllAccounts">Ҳама ҳисобҳо</string>
