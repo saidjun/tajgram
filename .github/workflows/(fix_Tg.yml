@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🛠️ Ислоҳи заводии аломатҳо бе тағйири тартиб
+      - name: 🧠 Роботи Умнӣ — Ислоҳи Сатр ба Сатр бо Сохтори Англисӣ
         run: |
           python3 -c "
           import re, os
@@ -24,73 +24,89 @@ jobs:
           output_file = 'tajgram_factory_clean.xml'
 
           if not os.path.exists(english_file) or not os.path.exists(tajik_file):
-              print('❌ Файлҳо ёфт нашуданд!')
+              print('❌ Файлҳои аслӣ ёфт нашуданд!')
               exit(1)
 
-          # Луғати англисиро барои муқоиса месозем
+          # 1. Скан ва захираи базаи заводии Англисӣ
           eng_dict = {}
           with open(english_file, 'r', encoding='utf-8') as f:
               eng_content = f.read()
-          for m in re.finditer(r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>', eng_content, flags=re.DOTALL):
+          
+          pattern = r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>'
+          for m in re.finditer(pattern, eng_content, flags=re.DOTALL):
               eng_dict[m.group(1)] = m.group(2)
 
-          # Файли тоҷикиро мехонем
+          # 2. Хониши файли Тоҷикӣ сатр ба сатр
           with open(tajik_file, 'r', encoding='utf-8') as f:
               tg_lines = f.readlines()
 
           fixed_lines = []
 
+          # Функцияи интеллектуалии робот барои барқарории аломатҳо
+          def smart_reconstruct(name, eng_text, tg_text):
+              # Аломатҳои техникии нодурустро аввал тоза ва заводи мекунем
+              tg_text = tg_text.replace('/n/', '\\n').replace('/n', '\\n')
+              tg_text = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', tg_text)
+              tg_text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', tg_text)
+              tg_text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', tg_text)
+              tg_text = re.sub(r'%\s*d', '%d', tg_text)
+              tg_text = re.sub(r'%\s*s', '%s', tg_text)
+
+              # Таҳлили калимаҳо ва аломатҳо аз нусхаи англисӣ
+              # Ёфтани ҳамаи аломатҳои махсуси техникӣ дар англисӣ (**, \n, %1$s, тегҳо)
+              tokens = re.findall(r'(\*\*|\\n|%\d+\$[sd]|%[sd]|<[^>]+>)', eng_text)
+              
+              for token in tokens:
+                  if token not in tg_text:
+                      # Робот интеллектуалӣ аломатро вобаста ба ҷояш ба тоҷикӣ илова мекунад
+                      if token == '\\n' or token == '\\n\\n':
+                          if '%1$s' in tg_text and '\\n' not in tg_text:
+                              tg_text = tg_text.replace('%1$s', f'{token}%1$s')
+                          else:
+                              tg_text = tg_text + token
+                      elif token == '**':
+                          # Агар ситорачаҳо барои ғафскунӣ гум шуда бошанд
+                          if '%1$s' in tg_text and '**%1$s**' not in tg_text:
+                              tg_text = tg_text.replace('%1$s', '**%1$s**')
+                          if '%2$s' in tg_text and '**%2$s**' not in tg_text:
+                              tg_text = tg_text.replace('%2$s', '**%2$s**')
+
+              # Экранизатсияи қатъии синтаксиси Array ва XML
+              tg_text = tg_text.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
+              tg_text = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', tg_text)
+              
+              return tg_text.strip()
+
+          # Раванди коркарди сатр ба сатр
           for line in tg_lines:
-              # Ёфтани теги string дар сатри ҷорӣ
               match = re.search(r'(<string[^>]*name=\"([^\"]+)\"[^>]*>)(.*?)(</string>)', line, flags=re.DOTALL)
               
               if match:
                   tag_open, name, tg_text, tag_close = match.groups()
                   
-                  # 1. Ивази маҷбурии /n ба \n
-                  tg_text = tg_text.replace('/n/', '\\n').replace('/n', '\\n')
-                  
-                  # 2. Тоза кардани фосилаҳои хато дар %1$s
-                  tg_text = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', tg_text)
-                  tg_text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', tg_text)
-                  tg_text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', tg_text)
-                  tg_text = re.sub(r'%\s*d', '%d', tg_text)
-                  tg_text = re.sub(r'%\s*s', '%s', tg_text)
-
-                  # 3. Агар дар англисӣ ситорачаҳо (**) бошанд, вале дар тоҷикӣ гум шуда бошанд
                   if name in eng_dict:
-                      eng_text = eng_dict[name]
-                      # Агар дар англисӣ ситорача бошаду дар тоҷикӣ не, ва матн %1$s дошта бошад
-                      if '**' in eng_text and '**' not in tg_text:
-                          tg_text = tg_text.replace('%1$s', '**%1$s**').replace('%2$s', '**%2$s**')
-                      
-                      # Агар дар англисӣ сатри нав бошаду дар тоҷикӣ афтода бошад
-                      if '\\n' in eng_text and '\\n' not in tg_text:
-                          # Скрипт кӯшиш мекунад сохторро заводи кунад
-                          pass
-
-                  # 4. Экранизатсияи стандартӣ
-                  tg_text = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', tg_text)
-                  tg_text = tg_text.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
-                  
-                  fixed_lines.append(f'{tag_open}{tg_text}{tag_close}\n')
+                      # Робот бо диққат матнро таҳлил ва ислоҳ мекунад
+                      clean_tg_text = smart_reconstruct(name, eng_dict[name], tg_text)
+                      fixed_lines.append(f'{tag_open}{clean_tg_text}{tag_close}\n')
+                  else:
+                      fixed_lines.append(line)
               else:
-                  # Сатрҳое, ки тег надоранд (масалан <resources> ё сатри холӣ) бетағйир мемонанд
                   fixed_lines.append(line)
 
+          # 3. Сабти файл
           with open(output_file, 'w', encoding='utf-8') as f:
               f.writelines(fixed_lines)
-          print('✅ Файли нав бе тағйири тартиби сатрҳо сохта шуд!')
+          print('✅ Робот файли супер-босифатро омода кард!')
           "
 
-      - name: 💾 Сабти файл бо усули маҷбурӣ (Force Push)
+      - name: 💾 Сабти файл ба Мастер
         run: |
           git config user.name "Tajgram Fixer Bot"
           git config user.email "fixer@bot.internal"
           
           if [ -f "tajgram_factory_clean.xml" ]; then
             git add tajgram_factory_clean.xml
-            git commit -m "Fix syntax exactly keeping original row order [skip ci]" || echo "Татбиқи нав нест"
+            git commit -m "🧠 AI Intelligence factory string fix [skip ci]" || echo "Татбиқи нав нест"
             git push origin HEAD:master --force
           else
             echo "❌ Хатогӣ: файл сохта нашуд!"
