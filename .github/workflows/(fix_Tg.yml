@@ -1,6 +1,7 @@
 name: Tajgram Final Factory
 on:
   workflow_dispatch:
+
 permissions:
   contents: write
 
@@ -8,8 +9,11 @@ jobs:
   fix-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: 🛠️ Нусхабардории тарҷума ва ислоҳи заводии синтаксис
         run: |
           python3 -c "
@@ -25,7 +29,8 @@ jobs:
           with open(original_file, 'r', encoding='utf-8') as f:
               data = f.read()
 
-          # 1. Ислоҳи фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s, %d ва ғ.) то заводии тоза шудан
+          # 1. Ислоҳи фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s, %d ва ғ.)
+          data = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', data)
           data = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', data)
           data = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', data)
           data = re.sub(r'%\s*d', '%d', data)
@@ -40,33 +45,31 @@ jobs:
               content = match.group(2)
               tag_close = match.group(3)
               
-              # Тоза кардани сатрҳои холӣ ё фосилаҳо дар аввал ва охири матни тарҷума
               content = content.strip()
-              
-              # Ислоҳи амперсанд (&), агар хато монда бошад
               content = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', content)
-              
-              # Экранизатсияи дурусти апострофҳо (аломати ') бе вайрон кардани сохтор
               content = content.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
               
               return f'{tag_open}{content}{tag_close}'
 
-          # Ислоҳро танҳо ба матни дохили тегҳои <string> равона мекунем
           data = re.sub(r'(<string[^>]*>)(.*?)(</string>)', fix_content, data, flags=re.DOTALL)
 
-          # 4. Сабти натиҷаи тоза ба файли нав дар корен
           with open(output_file, 'w', encoding='utf-8') as f:
               f.write(data)
           print('✅ Нусхаи тоҷикӣ бо синтаксиси заводии англисӣ дар strings_fixed.xml сабт шуд!')
           "
 
-      - name: 💾 Сабти файли нав ба главни (Мастер)
+      - name: 💾 Сабти файл бо усули маҷбурӣ (Force Push)
         run: |
           git config user.name "Tajgram Fixer Bot"
           git config user.email "fixer@bot.internal"
           
-          # Танҳо файли навро илова мекунем, файли аслӣ бетағйир мемонад
-          git add strings_fixed.xml
-          
-          git commit -m "Add fixed localization as separate strings_fixed.xml" || echo "No changes"
-          git push origin HEAD:master --force
+          # Тафтиши мавҷудияти файл
+          if [ -f "strings_fixed.xml" ]; then
+            echo "Файл мавҷуд аст, ба репозитория илова мекунем..."
+            git add -A
+            git commit -m "Add fixed localization as separate strings_fixed.xml [skip ci]" || echo "Татбиқи нав нест"
+            git push origin HEAD:master --force
+          else
+            echo "❌ Хатогӣ: strings_fixed.xml сохта нашуд!"
+            exit 1
+          fi
