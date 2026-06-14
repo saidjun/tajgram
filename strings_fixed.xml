@@ -63,7 +63,7 @@
     <string name="SyncContactsAdded">Тамосҳо аз ин дастгоҳ ба ҳисоби шумо илова карда шуданд.</string>
     <string name="ConfirmCorrectNumber">Оё ин рақам дуруст аст?</string>
     <string name="WrongNumberFormat">Формат нодуруст</string>
-    <string name="ShortNumberInfo">Рақами пешниҳодкардаи шумо барои **%1$s** хеле кӯтоҳ аст: **%2$s** Лутфан рақами дурустро, аз ҷумла рамзи кишвари худро ворид кунед.</string>
+    <string name="ShortNumberInfo">Рақами пешниҳодкардаи шумо барои **%1$s** хеле кӯтоҳ аст:\n\n**%2$s**\n\nЛутфан рақами дурустро, аз ҷумла рамзи кишвари худро ворид кунед.</string>
     <string name="EditNumber">Рақамро таҳрир кунед</string>
     <string name="DidNotGetTheCodeInfo">рақами телефон</string>
     <string name="DidNotGetTheCodeHelpButton">Кӯмак</string>
