@@ -1,4 +1,5 @@
-name: Tajgram Final Factory
+env:
+  name: Tajgram Final Factory
 on:
   workflow_dispatch:
 
@@ -14,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🧠 Роботи Ҳушманд — Коркарди Дақиқи Контекстӣ Сатр ба Сатр
+      - name: 🛠️ Пӯшонидани Оммавии Матнҳо бо CDATA аз рӯи Шаблон
         run: |
           python3 -c "
           import re, os
@@ -27,68 +28,60 @@ jobs:
               print('❌ Файлҳои аслӣ ёфт нашуданд!')
               exit(1)
 
-          # 1. Скан кардани Шаблони Англисӣ
-          eng_dict = {}
-          with open(english_file, 'r', encoding='utf-8') as f:
-              eng_content = f.read()
-          
-          pattern = r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>'
-          for m in re.finditer(pattern, eng_content, flags=re.DOTALL):
-              eng_dict[m.group(1)] = m.group(2)
-
-          # 2. Хондани файли Тоҷикӣ
+          # 1. Танҳо матнҳои тоҷикиро аз тегҳо ҷудо карда мегирем
+          tg_dict = {}
           with open(tajik_file, 'r', encoding='utf-8') as f:
               tg_content = f.read()
 
-          # Ивази аввалияи хатогиҳои маъмури /n
+          # Ивази аввалияи хатогиҳои маъмули сатри нав (/n)
           tg_content = tg_content.replace('/n/', '\\n').replace('/n', '\\n')
 
-          # Алгоритми интеллектуалии ҷойгиркунии аломатҳо дар контекст
-          def advanced_context_fix(name, eng_text, tg_text):
-              # Тоза кардани фосилаҳои хато дар тағирёбандаҳо
-              tg_text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', tg_text)
-              tg_text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', tg_text)
-              tg_text = re.sub(r'%\s*d', '%d', tg_text)
-              tg_text = re.sub(r'%\s*s', '%s', tg_text)
-
-              # Ислоҳи аломатҳои сатри нав (\n) аз рӯи мавқеи англисӣ
-              if '\\n\\n' in eng_text and '\\n\\n' not in tg_text:
-                  if '%1$s' in tg_text:
-                      tg_text = tg_text.replace('%1$s', '\\n\\n%1$s\\n\\n')
-                  elif '%s' in tg_text:
-                      tg_text = tg_text.replace('%s', '\\n\\n%s\\n\\n')
-
-              # Барқарор кардани ситорачаҳо (**) дар атрофи тағирёбандаҳо, агар гум шуда бошанд
-              for var in ['%1$s', '%2$s', '%3$s', '%d', '%s']:
-                  if f'**{var}**' in eng_text and f'**{var}**' not in tg_text:
-                      tg_text = tg_text.replace(var, f'**{var}**')
-
-              # Экранизатсияи дақиқи синтаксиси заводии XML
-              tg_text = tg_text.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
-              tg_text = tg_text.replace('\\\"', '\"').replace('\"', '\\\"')
-              tg_text = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', tg_text)
+          tg_pattern = r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>'
+          for m in re.finditer(tg_pattern, tg_content, flags=re.DOTALL):
+              name = m.group(1)
+              text = m.group(2).strip()
               
-              return tg_text.strip()
+              # Ислоҳи фосилаҳои хатои тағирёбандаҳо пеш аз бандубаст
+              text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', text)
+              text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', text)
+              text = re.sub(r'%\s*d', '%d', text)
+              text = re.sub(r'%\s*s', '%s', text)
+              
+              tg_dict[name] = text
 
-          def process_xml_tags(match):
+          # 2. Хониши Шаблони заводии англисӣ
+          with open(english_file, 'r', encoding='utf-8') as f:
+              eng_content = f.read()
+
+          def inject_with_cdata(match):
+              full_tag = match.group(0)
               tag_open = match.group(1)
               name = match.group(2)
               tag_close = match.group(3)
-              tg_text = match.group(4)
+              eng_text = match.group(4)
 
-              if name in eng_dict and tg_text:
-                  fixed_text = advanced_context_fix(name, eng_dict[name], tg_text)
-                  return f'{tag_open}{name}{tag_close}{fixed_text}</string>'
-              return match.group(0)
+              if name in tg_dict and tg_dict[name]:
+                  tg_text = tg_dict[name]
 
-          # Коркарди дақиқи ҳамаи 11 000 сатр бо мантиқи контекстӣ
+                  # Агар дар матни тоҷикӣ аллакай CDATA набошад, онро ба дохили CDATA мегирем
+                  if not tg_text.startswith('<![CDATA['):
+                      # Муҳофизати 100% заводии матни тоҷикӣ аз шикастани XML
+                      tg_text = f'<![CDATA[{tg_text}]]>'
+
+                  return f'{tag_open}{name}{tag_close}{tg_text}</string>'
+              
+              # Агар тарҷума набошад, худи англисиаш мемонад, то барнома ҳангоми сохтан хато накунад
+              if not eng_text.startswith('<![CDATA['):
+                  eng_text = f'<![CDATA[{eng_text}]]>'
+              return f'{tag_open}{name}{tag_close}{eng_text}</string>'
+
+          # Ивазкунии оммавӣ ва бехатар дар тамоми 11 000 сатр
           search_pattern = r'(<string[^>]*name=\")([^\"]+)(\"[^>]*>)(.*?)</string>'
-          final_xml = re.sub(search_pattern, process_xml_tags, tg_content, flags=re.DOTALL)
+          final_xml = re.sub(search_pattern, inject_with_cdata, eng_content, flags=re.DOTALL)
 
-          # Сабти файл
           with open(output_file, 'w', encoding='utf-8') as f:
               f.write(final_xml)
-          print('✅ Файли заводии тоза бо мантиқи ҳушманд сохта шуд!')
+          print('✅ Файли 100% заводию муҳофизатшуда сохта шуд!')
           "
 
       - name: 💾 Сабти файл ба Мастер
@@ -98,7 +91,7 @@ jobs:
           
           if [ -f "tajgram_factory_clean.xml" ]; then
             git add tajgram_factory_clean.xml
-            git commit -m "🧠 Advanced human-like context localization fix [skip ci]" || echo "Татбиқи нав нест"
+            git commit -m "📦 Protected mass production via CDATA block [skip ci]" || echo "Татбиқи нав нест"
             git push origin HEAD:master --force
           else
             echo "❌ Хатогӣ: файл сохта нашуд!"
