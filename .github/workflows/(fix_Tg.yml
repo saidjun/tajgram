@@ -14,55 +14,94 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🛠️ Ислоҳи Маҷбурии Синтаксиси Файли Тоҷикӣ
+      - name: 🧠 Роботи Ҷарроҳ — Гузоштани аломатҳои заводии англисӣ
         run: |
           python3 -c "
           import re, os
 
+          english_file = 'TMessagesProj/src/main/res/values/strings.xml'
           tajik_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           output_file = 'tajgram_factory_clean.xml'
 
-          if not os.path.exists(tajik_file):
-              print('❌ Файли тоҷикӣ ёфт нашуд!')
+          if not os.path.exists(english_file) or not os.path.exists(tajik_file):
+              print('❌ Файлҳо ёфт нашуданд!')
               exit(1)
 
+          # 1. Боркунии сохтори заводии Англисӣ
+          eng_dict = {}
+          with open(english_file, 'r', encoding='utf-8') as f:
+              eng_content = f.read()
+          
+          pattern = r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>'
+          for m in re.finditer(pattern, eng_content, flags=re.DOTALL):
+              eng_dict[m.group(1)] = m.group(2)
+
+          # 2. Хондани файли Тоҷикӣ сатр ба сатр (барои ҳифзи тартиб)
           with open(tajik_file, 'r', encoding='utf-8') as f:
-              data = f.read()
+              tg_lines = f.readlines()
 
-          # 1. Ивази ҳамаи /n-ҳои хато ба \n-и техникӣ
-          data = data.replace('/n/', '\\n').replace('/n', '\\n')
+          fixed_lines = []
 
-          # 2. Тезкор тоза кардани фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s)
-          data = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', data)
-          data = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', data)
-          data = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', data)
-          data = re.sub(r'%\s*d', '%d', data)
-          data = re.sub(r'%\s*s', '%s', data)
+          # Функцияи ҷарроҳии дақиқ дар атрофи тағирёбандаҳо
+          def precise_anatomy_fix(name, eng_text, tg_text):
+              # Тоза кардани хатогиҳои маъмури /n ва фосилаҳо
+              tg_text = tg_text.replace('/n/', '\\n').replace('/n', '\\n')
+              tg_text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', tg_text)
+              tg_text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', tg_text)
+              tg_text = re.sub(r'%\s*d', '%d', tg_text)
+              tg_text = re.sub(r'%\s*s', '%s', tg_text)
 
-          # 3. Ислоҳи қатъии апострофҳо ва нохунакҳо, ки XML-ро мешикананд
-          # Аввал ҳамаи заводиҳоро оддӣ мекунем, баъд аз нав экранизатсия мекунем
-          def clean_syntax(match):
-              tag_open = match.group(1)
-              name = match.group(2)
-              tag_close = match.group(3)
-              content = match.group(4)
+              # Ёфтани тағирёбандаҳои ягона дар коди англисӣ
+              vars_in_eng = re.findall(r'%\d+\$[sd]|%[sd]', eng_text)
+              unique_vars = []
+              for v in vars_in_eng:
+                  if v not in unique_vars:
+                      unique_vars.append(v)
 
-              # Тоза кардани CDATA-ҳои хатои пешина, агар монда бошанд
-              content = content.replace('<![CDATA[', '').replace(']]>', '')
+              for v in unique_vars:
+                  if v in tg_text:
+                      v_esc = re.escape(v)
+                      # Нусхабардории ситорачаҳо ва сатрҳои нав аз англисӣ
+                      m_eng = re.search(r'((?:\\n|\*)*)' + v_esc + r'((?:\\n|\*)*)', eng_text)
+                      if m_eng:
+                          pref_eng, suff_eng = m_eng.groups()
 
-              # Экранизатсияи техникӣ
-              content = content.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
-              content = content.replace('\\\"', '\"').replace('\"', '\\\"')
-              content = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', content)
+                          # Тоза кардани аломатҳои хатои пешинаи тоҷикӣ дар канори тағирёбанда
+                          tg_text = re.sub(r'(?:\\n|\*)*' + v_esc + r'(?:\\n|\*)*', v, tg_text)
 
-              return f'{tag_open}{name}{tag_close}{content}</string>'
+                          # Гузоштани аломатҳои чисто заводии англисӣ
+                          tg_text = tg_text.replace(v, f'{pref_eng}{v}{suff_eng}')
 
-          pattern = r'(<string[^>]*name=\")([^\"]+)(\"[^>]*>)(.*?)</string>'
-          final_data = re.sub(pattern, clean_syntax, data, flags=re.DOTALL)
+              # Экранизатсияи қатъии синтаксиси XML барои Android
+              tg_text = tg_text.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
+              tg_text = tg_text.replace('\\\"', '\"').replace('\"', '\\\"')
+              
+              # Иваз кардани аломати & ба &amp;
+              tg_text = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', tg_text)
+              
+              return tg_text.strip()
 
+          # Коркарди сатр ба сатр
+          for line in tg_lines:
+              match = re.search(r'(<string[^>]*name=\"([^\"]+)\"[^>]*>)(.*?)(</string>)', line, flags=re.DOTALL)
+              
+              if match:
+                  tag_open, name, tg_text, tag_close = match.groups()
+                  
+                  if name in eng_dict and tg_text.strip():
+                      # Иҷрои ҷарроҳии аломатҳо
+                      clean_text = precise_anatomy_fix(name, eng_dict[name], tg_text)
+                      fixed_lines.append(f'{tag_open}{clean_text}{tag_close}\n')
+                  else:
+                      fixed_lines.append(line)
+              else:
+                  # Сатрҳои холӣ ё ресурсҳо бетағйир мемонанд
+                  fixed_lines.append(line)
+
+          # 3. Сабти файл
           with open(output_file, 'w', encoding='utf-8') as f:
-              f.write(final_data)
-          print('✅ Файли тоҷикӣ аз нигоҳи синтаксис солим шуд!')
+              f.writelines(fixed_lines)
+          print('✅ Файли tajgram_factory_clean.xml бо сифати 100% сохта шуд!')
           "
 
       - name: 💾 Сабти файл ба Мастер
@@ -72,7 +111,7 @@ jobs:
           
           if [ -f "tajgram_factory_clean.xml" ]; then
             git add tajgram_factory_clean.xml
-            git commit -m "🛠️ Clean XML syntax and error fixing [skip ci]" || echo "Татбиқи нав нест"
+            git commit -m "🧠 Surgical precision factory layout fix [skip ci]" || echo "Татбиқи нав нест"
             git push origin HEAD:master --force
           else
             echo "❌ Хатогӣ: файл сохта нашуд!"
