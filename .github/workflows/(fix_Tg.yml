@@ -1,63 +1,72 @@
-name: Tajgram Ultimate Fixer
-
+name: Tajgram Final Factory
 on:
   workflow_dispatch:
-
 permissions:
   contents: write
 
 jobs:
-  ultimate-fixer:
+  fix-job:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Гирифтани код
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Ҳамаи таърихи лоиҳаро мегирад
-
-      - name: 🛠️ Ҷарроҳии Амиқ ва Санҷиши Заводӣ
+      - uses: actions/checkout@v4
+      
+      - name: 🛠️ Нусхабардории тарҷума ва ислоҳи заводии синтаксис
         run: |
           python3 -c "
-          import xml.etree.ElementTree as ET
-          import os, sys
+          import re, os
 
-          input_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
-          output_file = 'strings_fixed_master.xml'
+          original_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
+          output_file = 'strings_fixed.xml'
           
-          if not os.path.exists(input_file):
-              print(f'❌ ХАТО: Файл дар {input_file} нест!')
-              sys.exit(1)
+          if not os.path.exists(original_file):
+              print('❌ Файли аслии тоҷикӣ ёфт нашуд!')
+              exit(1)
+              
+          with open(original_file, 'r', encoding='utf-8') as f:
+              data = f.read()
 
-          tree = ET.parse(input_file)
-          root = tree.getroot()
-          
-          for elem in root.findall('string'):
-              if elem.text:
-                  text = elem.text
-                  text = text.replace('/n/', '\\n').replace('/n', '\\n')
-                  text = text.replace(\"\\\\'\", \"'\").replace('\\\\\"', '\"')
-                  text = text.replace(\"'\", \"\\\\'\").replace('\"', '\\\\\"')
-                  if '&' in text and not text.startswith('&amp;'):
-                      text = text.replace('&', '&amp;')
-                  elem.text = text
-          
-          tree.write(output_file, encoding='utf-8', xml_declaration=True)
-          if os.path.getsize(output_file) > 0:
-              print(f'✅ Файли {output_file} омода шуд!')
-          else:
-              sys.exit(1)
+          # 1. Ислоҳи фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s, %d ва ғ.) то заводии тоза шудан
+          data = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', data)
+          data = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', data)
+          data = re.sub(r'%\s*d', '%d', data)
+          data = re.sub(r'%\s*s', '%s', data)
+
+          # 2. Иваз кардани аломати сатри нави хато (/n) ба \n-и заводии техникӣ
+          data = data.replace('/n/', '\\n').replace('/n', '\\n')
+
+          # 3. Ислоҳи дохили тегҳо (тоза кардани сатрҳои холиву фосилаҳои зиёдатӣ)
+          def fix_content(match):
+              tag_open = match.group(1)
+              content = match.group(2)
+              tag_close = match.group(3)
+              
+              # Тоза кардани сатрҳои холӣ ё фосилаҳо дар аввал ва охири матни тарҷума
+              content = content.strip()
+              
+              # Ислоҳи амперсанд (&), агар хато монда бошад
+              content = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', content)
+              
+              # Экранизатсияи дурусти апострофҳо (аломати ') бе вайрон кардани сохтор
+              content = content.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
+              
+              return f'{tag_open}{content}{tag_close}'
+
+          # Ислоҳро танҳо ба матни дохили тегҳои <string> равона мекунем
+          data = re.sub(r'(<string[^>]*>)(.*?)(</string>)', fix_content, data, flags=re.DOTALL)
+
+          # 4. Сабти натиҷаи тоза ба файли нав дар корен
+          with open(output_file, 'w', encoding='utf-8') as f:
+              f.write(data)
+          print('✅ Нусхаи тоҷикӣ бо синтаксиси заводии англисӣ дар strings_fixed.xml сабт шуд!')
           "
 
-      - name: 💾 Сабти доимӣ ба Master
+      - name: 💾 Сабти файли нав ба главни (Мастер)
         run: |
-          git config --global user.name "Tajgram Fixer"
-          git config --global user.email "bot@tajgram.com"
+          git config user.name "Tajgram Fixer Bot"
+          git config user.email "fixer@bot.internal"
           
-          # Файлро илова мекунем
-          git add strings_fixed_master.xml
+          # Танҳо файли навро илова мекунем, файли аслӣ бетағйир мемонад
+          git add strings_fixed.xml
           
-          # Commit мекунем (Агар тағйирот набошад, хато намедиҳад)
-          git commit -m "Auto-fix: Фабрикаи заводии strings_fixed.xml" || echo "Тағйироти нав нест"
-          
-          # Push бо танзимоти амиқ
+          git commit -m "Add fixed localization as separate strings_fixed.xml" || echo "No changes"
           git push origin HEAD:master --force
