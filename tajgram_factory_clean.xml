@@ -5517,8 +5517,7 @@
     <string name="BotCantAddToAttachMenu">Ин ботро \' ба менюи замима илова кардан мумкин нест.</string>
     <string name="BotAlreadyAddedToAttachMenu">Ин бот аллакай дар менюи замимаи шумост.</string>
     <string name="BotRemoveFromMenu">Ин **%1$s** миёнабурҳоро аз ҳама менюҳо нест мекунад.</string>
-    <string name="BotRemoveInlineFromMenu">**%1$s**-ро аз пешниҳодҳо хориҷ кунед?</string>
-    <string name="BotWebViewRequestGeolocationPermission">Ба **%1$s** иҷозат диҳед, ки ба макони шумо дастрасӣ пайдо кунад? Таҳиягари **%1$s** ҳангоми кушода будани ин веб-барнома метавонад ба макони шумо дастрасӣ пайдо кунад.</string>
+    <string name="BotRemoveInlineFromMenu">**%1$s**-ро аз пешниҳодҳо хориҷ кунед?</string>    <string name="BotWebViewRequestGeolocationPermission">Ба **%1$s** иҷозат диҳед, ки ба макони шумо дастрасӣ пайдо кунад? Таҳиягари **%1$s** ҳангоми кушода будани ин веб-барнома метавонад ба макони шумо дастрасӣ пайдо кунад.</string>
     <string name="BotWebViewRequestGeolocationPermissionWithHint">Танзимот</string>
     <string name="WebViewRequestGeolocationPermission">Ба **%1$s** иҷозат диҳед, ки ба макони шумо дастрасӣ пайдо кунад? **%1$s** ҳангоми кушода будани ин вебсайт метавонад ба макони шумо дастрасӣ пайдо кунад.</string>
     <string name="WebViewRequestGeolocationPermissionWithHint">Танзимот</string>
