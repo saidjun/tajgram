@@ -14,48 +14,73 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🛠️ Нусхабардории тарҷума ва ислоҳи заводии синтаксис
+      - name: 🛠️ Муқоисаи заводии Англисӣ ва Тоҷикӣ
         run: |
           python3 -c "
           import re, os
 
-          original_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
-          output_file = 'strings_fixed.xml'
+          # Роҳи файлҳои аслӣ
+          english_file = 'TMessagesProj/src/main/res/values/strings.xml'
+          tajik_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           
-          if not os.path.exists(original_file):
-              print('❌ Файли аслии тоҷикӣ ёфт нашуд!')
+          # Номи файли нави тоза (барои тафтиши ту)
+          output_file = 'tajgram_factory_clean.xml'
+
+          if not os.path.exists(english_file) or not os.path.exists(tajik_file):
+              print('❌ Яке аз файлҳо ёфт нашуд!')
               exit(1)
+
+          # Хониши файлҳо
+          def parse_strings(file_path):
+              strings_dict = {}
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              matches = re.findall(r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>', content, flags=re.DOTALL)
+              for name, text in matches:
+                  strings_dict[name] = text
+              return strings_dict
+
+          eng_data = parse_strings(english_file)
+          tg_data = parse_strings(tajik_file)
+
+          output_content = '<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n'
+
+          with open(english_file, 'r', encoding='utf-8') as f:
+              orig_eng_lines = f.read()
+
+          matches = re.finditer(r'<string([^>]*)name=\"([^\"]+)\"([^>]*)>(.*?)</string>', orig_eng_lines, flags=re.DOTALL)
+          
+          for match in matches:
+              attrs1, name, attrs2, eng_text = match.groups()
               
-          with open(original_file, 'r', encoding='utf-8') as f:
-              data = f.read()
+              if name in tg_data:
+                  tg_text = tg_data[name].strip()
+                  
+                  # 1. Ивази ҳамаи /n ба \n
+                  tg_text = tg_text.replace('/n/', '\\n').replace('/n', '\\n')
+                  
+                  # 2. Ислоҳи фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s, %d)
+                  tg_text = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', tg_text)
+                  tg_text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', tg_text)
+                  tg_text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', tg_text)
+                  tg_text = re.sub(r'%\s*d', '%d', tg_text)
+                  tg_text = re.sub(r'%\s*s', '%s', tg_text)
 
-          # 1. Ислоҳи фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s, %d ва ғ.)
-          data = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', data)
-          data = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', data)
-          data = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', data)
-          data = re.sub(r'%\s*d', '%d', data)
-          data = re.sub(r'%\s*s', '%s', data)
+                  # 3. Тоза кардани фосилаҳо ва сабти дурусти амперсанду апострофҳо
+                  tg_text = tg_text.strip()
+                  tg_text = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', tg_text)
+                  tg_text = tg_text.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
 
-          # 2. Иваз кардани аломати сатри нави хато (/n) ба \n-и заводии техникӣ
-          data = data.replace('/n/', '\\n').replace('/n', '\\n')
+                  output_content += f'    <string{attrs1}name=\"{name}\"{attrs2}>{tg_text}</string>\n'
+              else:
+                  # Агар ягон сатр дар тоҷикӣ тарҷума نشده бошад, нусхаи англисиро мегузорад, то барнома хато накунад
+                  output_content += f'    <string{attrs1}name=\"{name}\"{attrs2}>{eng_text}</string>\n'
 
-          # 3. Ислоҳи дохили тегҳо (тоза кардани сатрҳои холиву фосилаҳои зиёдатӣ)
-          def fix_content(match):
-              tag_open = match.group(1)
-              content = match.group(2)
-              tag_close = match.group(3)
-              
-              content = content.strip()
-              content = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', content)
-              content = content.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
-              
-              return f'{tag_open}{content}{tag_close}'
-
-          data = re.sub(r'(<string[^>]*>)(.*?)(</string>)', fix_content, data, flags=re.DOTALL)
+          output_content += '</resources>'
 
           with open(output_file, 'w', encoding='utf-8') as f:
-              f.write(data)
-          print('✅ Нусхаи тоҷикӣ бо синтаксиси заводии англисӣ дар strings_fixed.xml сабт шуд!')
+              f.write(output_content)
+          print('✅ Файли нави тоза сохта шуд!')
           "
 
       - name: 💾 Сабти файл бо усули маҷбурӣ (Force Push)
@@ -63,13 +88,11 @@ jobs:
           git config user.name "Tajgram Fixer Bot"
           git config user.email "fixer@bot.internal"
           
-          # Тафтиши мавҷудияти файл
-          if [ -f "strings_fixed.xml" ]; then
-            echo "Файл мавҷуд аст, ба репозитория илова мекунем..."
-            git add -A
-            git commit -m "Add fixed localization as separate strings_fixed.xml [skip ci]" || echo "Татбиқи нав нест"
+          if [ -f "tajgram_factory_clean.xml" ]; then
+            git add tajgram_factory_clean.xml
+            git commit -m "Add factory clean localization as separate file [skip ci]" || echo "Татбиқи нав нест"
             git push origin HEAD:master --force
           else
-            echo "❌ Хатогӣ: strings_fixed.xml сохта нашуд!"
+            echo "❌ Хатогӣ: файл сохта нашуд!"
             exit 1
           fi
