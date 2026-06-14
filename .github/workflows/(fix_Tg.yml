@@ -1,5 +1,4 @@
-env:
-  name: Tajgram Final Factory
+name: Tajgram Final Factory
 on:
   workflow_dispatch:
 
@@ -15,73 +14,55 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🛠️ Пӯшонидани Оммавии Матнҳо бо CDATA аз рӯи Шаблон
+      - name: 🛠️ Ислоҳи Маҷбурии Синтаксиси Файли Тоҷикӣ
         run: |
           python3 -c "
           import re, os
 
-          english_file = 'TMessagesProj/src/main/res/values/strings.xml'
           tajik_file = 'TMessagesProj/src/main/res/values-tg/strings.xml'
           output_file = 'tajgram_factory_clean.xml'
 
-          if not os.path.exists(english_file) or not os.path.exists(tajik_file):
-              print('❌ Файлҳои аслӣ ёфт нашуданд!')
+          if not os.path.exists(tajik_file):
+              print('❌ Файли тоҷикӣ ёфт нашуд!')
               exit(1)
 
-          # 1. Танҳо матнҳои тоҷикиро аз тегҳо ҷудо карда мегирем
-          tg_dict = {}
           with open(tajik_file, 'r', encoding='utf-8') as f:
-              tg_content = f.read()
+              data = f.read()
 
-          # Ивази аввалияи хатогиҳои маъмули сатри нав (/n)
-          tg_content = tg_content.replace('/n/', '\\n').replace('/n', '\\n')
+          # 1. Ивази ҳамаи /n-ҳои хато ба \n-и техникӣ
+          data = data.replace('/n/', '\\n').replace('/n', '\\n')
 
-          tg_pattern = r'<string[^>]*name=\"([^\"]+)\"[^>]*>(.*?)</string>'
-          for m in re.finditer(tg_pattern, tg_content, flags=re.DOTALL):
-              name = m.group(1)
-              text = m.group(2).strip()
-              
-              # Ислоҳи фосилаҳои хатои тағирёбандаҳо пеш аз бандубаст
-              text = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', text)
-              text = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', text)
-              text = re.sub(r'%\s*d', '%d', text)
-              text = re.sub(r'%\s*s', '%s', text)
-              
-              tg_dict[name] = text
+          # 2. Тезкор тоза кардани фосилаҳои хато дар тағирёбандаҳо (%1$s, %2$s)
+          data = re.sub(r'%\s*(\d+)\s*\{\s*s', r'%\1$s', data)
+          data = re.sub(r'%\s*(\d+)\s*\$\s*s', r'%\1$s', data)
+          data = re.sub(r'%\s*(\d+)\s*\$\s*d', r'%\1$d', data)
+          data = re.sub(r'%\s*d', '%d', data)
+          data = re.sub(r'%\s*s', '%s', data)
 
-          # 2. Хониши Шаблони заводии англисӣ
-          with open(english_file, 'r', encoding='utf-8') as f:
-              eng_content = f.read()
-
-          def inject_with_cdata(match):
-              full_tag = match.group(0)
+          # 3. Ислоҳи қатъии апострофҳо ва нохунакҳо, ки XML-ро мешикананд
+          # Аввал ҳамаи заводиҳоро оддӣ мекунем, баъд аз нав экранизатсия мекунем
+          def clean_syntax(match):
               tag_open = match.group(1)
               name = match.group(2)
               tag_close = match.group(3)
-              eng_text = match.group(4)
+              content = match.group(4)
 
-              if name in tg_dict and tg_dict[name]:
-                  tg_text = tg_dict[name]
+              # Тоза кардани CDATA-ҳои хатои пешина, агар монда бошанд
+              content = content.replace('<![CDATA[', '').replace(']]>', '')
 
-                  # Агар дар матни тоҷикӣ аллакай CDATA набошад, онро ба дохили CDATA мегирем
-                  if not tg_text.startswith('<![CDATA['):
-                      # Муҳофизати 100% заводии матни тоҷикӣ аз шикастани XML
-                      tg_text = f'<![CDATA[{tg_text}]]>'
+              # Экранизатсияи техникӣ
+              content = content.replace(\"\\\'\", \"'\").replace(\"'\", \"\\'\")
+              content = content.replace('\\\"', '\"').replace('\"', '\\\"')
+              content = re.sub(r'&(?!([a-zA-Z0-9]+|#[0-9]+);)', '&amp;', content)
 
-                  return f'{tag_open}{name}{tag_close}{tg_text}</string>'
-              
-              # Агар тарҷума набошад, худи англисиаш мемонад, то барнома ҳангоми сохтан хато накунад
-              if not eng_text.startswith('<![CDATA['):
-                  eng_text = f'<![CDATA[{eng_text}]]>'
-              return f'{tag_open}{name}{tag_close}{eng_text}</string>'
+              return f'{tag_open}{name}{tag_close}{content}</string>'
 
-          # Ивазкунии оммавӣ ва бехатар дар тамоми 11 000 сатр
-          search_pattern = r'(<string[^>]*name=\")([^\"]+)(\"[^>]*>)(.*?)</string>'
-          final_xml = re.sub(search_pattern, inject_with_cdata, eng_content, flags=re.DOTALL)
+          pattern = r'(<string[^>]*name=\")([^\"]+)(\"[^>]*>)(.*?)</string>'
+          final_data = re.sub(pattern, clean_syntax, data, flags=re.DOTALL)
 
           with open(output_file, 'w', encoding='utf-8') as f:
-              f.write(final_xml)
-          print('✅ Файли 100% заводию муҳофизатшуда сохта шуд!')
+              f.write(final_data)
+          print('✅ Файли тоҷикӣ аз нигоҳи синтаксис солим шуд!')
           "
 
       - name: 💾 Сабти файл ба Мастер
@@ -91,7 +72,7 @@ jobs:
           
           if [ -f "tajgram_factory_clean.xml" ]; then
             git add tajgram_factory_clean.xml
-            git commit -m "📦 Protected mass production via CDATA block [skip ci]" || echo "Татбиқи нав нест"
+            git commit -m "🛠️ Clean XML syntax and error fixing [skip ci]" || echo "Татбиқи нав нест"
             git push origin HEAD:master --force
           else
             echo "❌ Хатогӣ: файл сохта нашуд!"
